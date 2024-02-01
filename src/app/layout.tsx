@@ -14,7 +14,11 @@ import CookieConsentComponent from './layouts/cookie/CookieConsent';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const RootLayout = ({ children, componentsVisible }: Readonly<{ children: React.ReactNode; componentsVisible: boolean; }>) => {
+interface RootLayoutProps {
+	children: React.ReactNode;
+	componentsVisible: boolean;
+}
+const RootLayout: React.FC<RootLayoutProps> = ({ children, componentsVisible }) => {
 	return (
 		<>
 			<html lang='en' className='cc--darkmode dark'>
