@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@import './home.scss';
+
+.contact-container {
+  position: relative;
+  padding-top: calc(var(--main-container-padd-top) + 1rem);
+  width: 40rem;
+  margin: 0 auto;
+  height: max-content;
+  @include tablet-700 {
+    width: 95%;
+  }
+}
+
+.contact-box {
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--gray-3232);
+  border-radius: 4px;
+  padding: 2rem;
+  font-size: .82rem;
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+  }
+  .contact-input-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    margin-top: 2.5rem;
+    height: calc(100% - 4px - 39.38px - 36px - 2.5rem);
+    section {
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
+      width: 100%;
+      input[type=text], .contact-message-textarea {
+        padding: 0px 10px;
+        color: var(--white);
+        font-size: .88rem;
+        outline: 1px solid var(--gray-5050);
+        border: 1px solid transparent;
+        border-radius: 4px;
+        background-color: transparent;
+        &:focus {
+          @include orange-outline;
+        }
+      }
+      input[type=text] {
+        height: 2.6rem;
+      }
+      .contact-message-textarea {
+        height: 11rem;
+        padding-top: .7rem;
+      }
+    }
+    .contact-submit-btn {
+      @include btn-style;
+    }
+  }
+}

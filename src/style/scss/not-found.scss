@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@import './home.scss';
+
+.notfound-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 8.3rem;
+  padding-bottom: 5rem;
+  column-gap: 6rem;
+  height: 100vh;
+  width: 100%;
+  @include tablet-1350 {
+    padding: 0px 6rem;
+  }
+  @include tablet-950 {
+    flex-direction: column-reverse;
+    padding: 0px 5rem;
+    padding-top: 2rem;
+    justify-content: center;
+    row-gap: 5rem;
+  }
+  @include mobile-600 {
+    padding: 0px 3rem;
+    padding-bottom: 1rem;
+  }
+  @include mobile-400 {
+    padding: 0px 1.5rem;
+    padding-bottom: 4rem;
+  }
+  @include mobile-318 {
+    padding-bottom: 8rem;
+  }
+  .notfound-left-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 12px;
+    height: 12rem;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      background-image: url('https://obejrzyj.to/build/assets/404-2-14c4a897.png');
+      background-repeat: no-repeat;
+      background-size: 80%;
+      background-position: left;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      opacity: .1;
+    }
+    h1 {
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.4;
+      @include mobile-600 {
+        font-size: 1.3rem;
+      }
+      @include mobile-400 {
+        font-size: 1.1rem;
+      }
+    }
+    span {
+      font-size: 1rem;
+      font-weight: 300;
+      @include mobile-600 {
+        font-size: .9rem;
+      }
+      @include mobile-400 {
+        font-size: .85rem;
+      }
+    }
+    a {
+      background-color: var(--orange);
+      width: max-content;
+      padding: 13px 20px;
+      border-radius: 5px;
+      font-weight: 500;
+      margin-top: 10px;
+      transition: .2s;
+      cursor: pointer;
+      &:hover {
+        filter: brightness(90%);
+        transition: .2s;
+      }
+    }
+  }
+}

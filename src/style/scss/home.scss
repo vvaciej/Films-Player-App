@@ -1,0 +1,214 @@
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin orange-outline {
+  position: relative;
+	border: 1px solid var(--dark-orange-opacited);
+	outline: 4px solid var(--orange-opacited-15);
+	transition: outline .1s;
+}
+
+@mixin btn-style {
+	background-color: var(--orange);
+	padding: 0.5rem 1rem;
+	border-radius: 0.3rem;
+	transition: background-color .2s;
+	width: max-content;
+	&:hover {
+		background-color: var(--dark-orange);
+		transition: background-color .2s;
+	}
+}
+
+html.dark {
+	--white: #ffffff;
+	--dark-1a1a: #1a1a1a;
+	--dark-orange-opacited: rgba(255, 123, 0, 0.5);
+	--orange: #f27318;
+	--orange-opacited-15: #fe6a0015;
+	--dark-orange: #d66819;
+
+	--dark-121212: #121212;
+	--gray-3232: #323232;
+	--gray-5050: #505050;
+	--gray-2222: #222222;
+	
+	--light-gray-ddd: #ddd;
+	--light-gray-d0d0: #d0d0d0;
+
+	--brown: #37271C;
+	--main-container-padd-top: 5.6rem;
+
+	--cc-bg: var(--gray-2222);
+	--cc-secondary-color: var(--white);
+
+	--cc-btn-primary-bg: var(--orange);
+	--cc-btn-primary-color: var(--white);
+	--cc-btn-primary-hover-color: var(--white);
+	--cc-btn-primary-hover-bg: var(--dark-orange);
+
+	--cc-separator-border-color: var(--gray-5050);
+}
+
+@mixin tablet-1350 {
+	@media screen and (max-width: 1350px) {
+		@content;
+	}
+}
+
+@mixin tablet-1240 {
+	@media screen and (max-width: 1240px) {
+		@content;
+	}
+}
+
+@mixin tablet-1080 {
+	@media screen and (max-width: 1080px) {
+		@content;
+	}
+}
+
+@mixin tablet-950 {
+  @media (max-width: 950px) {
+    @content;
+  }
+}
+
+@mixin tablet-800 {
+	@media screen and (max-width: 800px) {
+		@content;
+	}
+}
+
+@mixin tablet-700 {
+	@media screen and (max-width: 700px) {
+		@content;
+	}
+}
+
+@mixin mobile-600 {
+	@media screen and (max-width: 600px) {
+		@content;
+	}
+}
+
+@mixin mobile-400 {
+	@media screen and (max-width: 400px) {
+		@content;
+	}
+}
+
+@mixin mobile-365 {
+	@media screen and (max-width: 365px) {
+		@content;
+	}
+}
+
+@mixin mobile-340 {
+	@media screen and (max-width: 340px) {
+		@content;
+	}
+}
+
+@mixin mobile-318 {
+	@media screen and (max-width: 318px) {
+		@content;
+	}
+}
+
+@mixin mobile-290 {
+	@media screen and (max-width: 290px) {
+		@content;
+	}
+}
+
+@mixin mobile-270 {
+	@media screen and (max-width: 270px) {
+		@content;
+	}
+}
+
+@mixin mobile-260 {
+	@media screen and (max-width: 260px) {
+		@content;
+	}
+}
+
+@import './layouts/navbar';
+@import './home-components/heading-container';
+@import './home-components/films-categories';
+@import './layouts/footer';
+
+*::before,
+*::after,
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 1rem;
+	height: max-content;
+	color: var(--white);
+	transition: opacity .3s, backdrop-filter .3s;
+	position: relative;
+}
+
+.opacity-el.active::before {
+	content: "";
+	position: fixed;
+	backdrop-filter: blur(4px);
+	width: 100%;
+	height: 150%;
+	top: -200px;
+	z-index: 10;
+  background-color: rgba(0, 0, 0, 0.55);
+  transition: background-color .2s ease-in-out;
+}
+
+body {
+	height: max-content;
+	padding-bottom: 1.5rem;
+	background: var(--dark-1a1a) !important;
+	@include mobile-270 {
+		padding-bottom: 3rem;
+	}
+}
+
+.film-play-btn {
+	position: absolute;
+	height: 2.6rem;
+	width: 2.6rem;
+	border-radius: 50%;
+	background-color: var(--white);
+	bottom: 12px;
+	left: 12px;
+	@include flex-center;
+}
+
+.content-wrapper {
+	position: relative;
+	z-index: 1;
+	height: max-content;
+	padding-top: var(--main-container-padd-top);
+	margin: 0 auto;
+	width: 77.5rem;
+	overflow: hidden;
+	@include tablet-1350 {
+		width: 93%;
+	}
+	@include tablet-1080 {
+		width: 90%;
+	}
+	@include mobile-600 {
+		width: 93%;
+		padding-top: 5rem;
+	}
+	@include mobile-365 {
+		padding-top: 4.5rem;
+	}
+}

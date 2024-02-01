@@ -1,0 +1,29 @@
+@import './home.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.policy-container {
+  height: max-content;
+  width: 1240px;
+  margin: 0 auto;
+  padding: calc(var(--main-container-padd-top) + 1.5rem) 0rem;
+  @include tablet-1240 {
+    width: 92%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    @include tablet-1240 {
+      font-size: 1.9rem;
+    }
+  }
+  p {
+    margin-top: 1rem;
+  }
+}

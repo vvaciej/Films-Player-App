@@ -1,0 +1,236 @@
+.header-container {
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	background-color: var(--dark-121212);
+	height: 4.35rem;
+	display: flex;
+	padding: 0px 1.3rem;
+	z-index: 6;
+	@include tablet-1350 {
+		height: 4rem;
+	}
+	@include mobile-600 {
+		padding: 0px 1.08rem;
+	}
+	@include mobile-365 {
+		height: 3.6rem;
+	}
+	@include mobile-290 {
+		padding: 0px .9rem;
+	}
+}
+	
+.header-left-section {
+	display: flex;
+	align-items: center;
+	width: 70rem;
+	margin-right: 2.5rem;
+	@include mobile-290 {
+		margin-right: 1rem;
+	}
+	.header-brand-text {
+		font-size: 3rem;
+		font-weight: bold;
+		@include tablet-1350 {
+			font-size: 2.8rem;
+		}
+		@include mobile-600 {
+			font-size: 2.1rem;
+		}
+		@include mobile-400 {
+			font-size: 1.8rem;
+		}
+		@include mobile-365 {
+			font-size: 1.6rem;
+		}
+		@include mobile-340 {
+			font-size: 1.4rem;
+		}
+		@include mobile-318 {
+			font-size: 1.2rem;
+		}
+		@include mobile-290 {
+			font-size: 1.1rem;
+		}
+		@include mobile-260 {
+			font-size: .95rem;
+		}
+	}
+	> .header-left-nav-section {
+		display: flex;
+		height: 100%;
+		width: 100%;
+		align-items: center;
+		.header-search-section {
+			height: 100%;
+			position: relative;
+			display: flex;
+			width: 100%;
+			align-items: center;
+			@include tablet-1080 {
+				width: 0rem;
+			}
+			.header-search-input {
+				height: calc(100% - 2.2rem);
+				background-color: var(--gray-3232);
+				border-radius: 0.3rem;
+				outline: 1px solid var(--gray-5050);
+				border: 1px solid transparent;
+				margin-left: 1.9rem;
+				width: 100%;
+				padding: 0px 2.5rem;
+				font-size: 0.85rem;
+				@include tablet-1350 {
+					height: calc(100% - 1.8rem);
+				}
+				@include tablet-1080 {
+					display: none;
+				}
+				&:focus {
+					@include orange-outline;
+				}
+				&::placeholder {
+					color: var(--light-gray-d0d0);
+				}
+			}
+		}
+		.header-search-icon {
+			position: absolute;
+			height: 1.2rem;
+			left: 2.5rem;
+			color: var(--light-gray-d0d0);
+			@include tablet-1080 {
+				left: 1rem;
+			}
+			@include mobile-260 {
+				left: .6rem
+			}
+		}
+	}
+	.navbar-cutted-style {
+		display: none !important;
+	}
+	.header-menu-btn {
+		@include flex-center;
+			display: none;
+			cursor: pointer;
+		@include tablet-1080 {
+			display: flex;
+			margin-left: 3rem;
+		}
+		@include mobile-365 {
+			.header-menu-icon {
+				height: 1.5rem;
+			}
+		}
+		@include mobile-260 {
+			margin-left: 2.5rem;
+		}
+	}
+	.header-btn-section {
+		display: flex;
+		margin-left: 2rem;
+		column-gap: 1.9rem;
+		@include tablet-1350 {
+			column-gap: 1.3rem;
+		}
+		@include tablet-1080 {
+			display: none;
+		}
+		a {
+			display: flex;
+			align-items: center;
+			column-gap: 0.55rem;
+			color: var(--light-gray-ddd);
+			font-weight: 500;
+			font-size: 0.8rem;
+			.header-fa {
+				height: 1rem;
+				color: var(--light-gray-ddd);
+			}
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+
+.header-right-section {
+	display: flex;
+	align-items: center;
+	column-gap: 0.6rem;
+	font-weight: 600;
+	font-size: 0.8rem;
+	@include tablet-1080 {
+		display: none;
+	}
+	.header-register-btn {
+		padding: 0.5rem 1rem;
+		transition: background-color 0.3s ease;
+		&:hover {
+			background-color: #4d4d4d50;
+			border-radius: 0.3rem;
+			transition: background-color 0.3s ease;
+		}
+	}
+	.header-login-btn {
+		@include btn-style;
+	}
+}
+
+.header-right-user-btn {
+	@include flex-center;
+	display: none;
+	@include tablet-1080 {
+		display: flex;
+	}
+	@include mobile-600 {
+		.header-right-user-icon {
+			height: 1.4rem;
+			@include mobile-365 {
+				height: 1.3rem;
+			}
+		}
+	}
+}
+
+
+.navbar-dropdown {
+	padding: 6px 0px;
+	position: fixed;
+	bottom: 0;
+	width: 70%;
+	left: 50%;
+	transform: translate(-50%);
+	height: 6rem;
+	border: 1px solid var(--gray-5050);
+	background-color: var(--dark-121212);
+	z-index: 20;
+	&:not(.active) {
+		display: none;
+	}
+
+	nav {
+		@include flex-center;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		height: 100%;
+		a {
+			column-gap: 8px;
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+			color: var(--white);
+			height: 50%;
+			padding-left: 1rem;
+			width: 100%;
+			&:hover {
+				background-color: var(--gray-2222);
+			}
+		}
+	}
+}
