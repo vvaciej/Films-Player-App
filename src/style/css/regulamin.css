@@ -6,11 +6,14 @@ html.dark {
   --orange-opacited-15: #fe6a0015;
   --dark-orange: #d66819;
   --dark-121212: #121212;
+  --gray-2222: #222222;
   --gray-3232: #323232;
   --gray-5050: #505050;
-  --gray-2222: #222222;
+  --gray-9999: #999999;
   --light-gray-ddd: #ddd;
   --light-gray-d0d0: #d0d0d0;
+  --light-gray-eee: #eee;
+  --btn-opacited-hover-bg: #4d4d4d50;
   --brown: #37271C;
   --main-container-padd-top: 5.6rem;
   --cc-bg: var(--gray-2222);
@@ -247,7 +250,7 @@ html.dark {
   transition: background-color 0.3s ease;
 }
 .header-right-section .header-register-btn:hover {
-  background-color: rgba(77, 77, 77, 0.3137254902);
+  background-color: var(--btn-opacited-hover-bg);
   border-radius: 0.3rem;
   transition: background-color 0.3s ease;
 }
@@ -628,6 +631,7 @@ html.dark {
   flex-direction: column;
   row-gap: 3.8rem;
   margin-top: 2.8rem;
+  margin-bottom: 2.5rem;
 }
 @media screen and (max-width: 800px) {
   .films-wrapper {
@@ -774,8 +778,8 @@ html.dark {
   left: 50%;
   transform: translate(-50%);
   width: 1240px;
-  height: 9.5rem;
-  margin-top: 6.5rem;
+  height: max-content;
+  margin-top: 4.5rem;
   color: var(--light-gray-ddd);
   font-size: 14px;
 }
@@ -797,12 +801,14 @@ html.dark {
   width: 100%;
 }
 .footer-topside-section .footer-choose-lang-div, .footer-bottomside-section .footer-choose-lang-div {
+  position: relative;
   width: 100%;
   height: 3rem;
   border: 1px solid var(--gray-3232);
   border-radius: 5px;
   padding: 5px 0px;
   transition: opacity 0.1s;
+  bottom: 8px;
 }
 .footer-topside-section .footer-choose-lang-div:not(.active), .footer-bottomside-section .footer-choose-lang-div:not(.active) {
   pointer-events: none;
@@ -870,7 +876,6 @@ html {
   color: var(--white);
   transition: opacity 0.3s, backdrop-filter 0.3s;
   position: relative;
-  background-color: var(--dark-1a1a);
 }
 
 .opacity-el.active::before {
@@ -887,11 +892,12 @@ html {
 
 body {
   height: max-content;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0 !important;
+  background: var(--dark-1a1a) !important;
 }
 @media screen and (max-width: 270px) {
   body {
-    padding-bottom: 3rem;
+    padding-bottom: 2rem !important;
   }
 }
 
@@ -946,7 +952,7 @@ body {
 }
 
 .policy-container {
-  height: max-content;
+  height: 46rem;
   width: 1240px;
   margin: 0 auto;
   padding: calc(var(--main-container-padd-top) + 1.5rem) 0rem;

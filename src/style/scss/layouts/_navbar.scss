@@ -171,7 +171,7 @@
 		padding: 0.5rem 1rem;
 		transition: background-color 0.3s ease;
 		&:hover {
-			background-color: #4d4d4d50;
+			background-color: var(--btn-opacited-hover-bg);
 			border-radius: 0.3rem;
 			transition: background-color 0.3s ease;
 		}

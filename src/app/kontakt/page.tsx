@@ -6,6 +6,7 @@ import '../../style/css/contact.css';
 import { Navbar } from '@/app/layouts/Navbar';
 import React, { useRef } from 'react';
 import useDocumentTitle from '../helpers/PageTitle';
+import RootLayout from '../layout';
 
 const Kontakt: React.FC = () => {
 	useDocumentTitle('Skontaktuj się - vvaciej.app');
@@ -17,7 +18,7 @@ const Kontakt: React.FC = () => {
 	};
 
 	return (
-		<>
+		<RootLayout componentsVisible={true}>
 			<Navbar isCutted={true} />
 			<div className='contact-container'>
 				<div className='contact-box'>
@@ -42,7 +43,7 @@ const Kontakt: React.FC = () => {
 					</form>
 				</div>
 			</div>
-		</>
+		</RootLayout>
 	);
 };
 

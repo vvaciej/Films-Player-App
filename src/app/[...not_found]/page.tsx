@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Navbar } from '../layouts/Navbar';
+import RootLayout from '../layout';
 
 import '../../style/css/home.css';
 import '../../style/css/not-found.css';
@@ -11,7 +12,7 @@ const SiteNotFound: React.FC = () => {
 	useDocumentTitle('Nie znaleziono - vvaciej.app')
 	
 	return (
-		<>
+		<RootLayout componentsVisible={true}>
 			<Navbar isCutted={false} />
 			<div className='notfound-container'>
 				<section className='notfound-left-section'>
@@ -23,7 +24,7 @@ const SiteNotFound: React.FC = () => {
 					<img src='https://obejrzyj.to/build/assets/404-1-176145e9.png' alt='error-art' />
 				</section>
 			</div>
-		</>
+		</RootLayout>
 	);
 }
 

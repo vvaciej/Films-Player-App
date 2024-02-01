@@ -11,7 +11,7 @@
   padding-top: calc(var(--main-container-padd-top) + 1rem);
   width: 40rem;
   margin: 0 auto;
-  height: max-content;
+  height: 46rem;
   @include tablet-700 {
     width: 95%;
   }
@@ -40,19 +40,10 @@
       row-gap: 4px;
       width: 100%;
       input[type=text], .contact-message-textarea {
-        padding: 0px 10px;
-        color: var(--white);
-        font-size: .88rem;
-        outline: 1px solid var(--gray-5050);
-        border: 1px solid transparent;
-        border-radius: 4px;
-        background-color: transparent;
+        @include input-style;
         &:focus {
           @include orange-outline;
         }
-      }
-      input[type=text] {
-        height: 2.6rem;
       }
       .contact-message-textarea {
         height: 11rem;

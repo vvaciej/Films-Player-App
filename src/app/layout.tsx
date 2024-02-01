@@ -14,7 +14,7 @@ import CookieConsentComponent from './layouts/cookie/CookieConsent';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+const RootLayout = ({ children, componentsVisible }: Readonly<{ children: React.ReactNode; componentsVisible: boolean; }>) => {
 	return (
 		<>
 			<html lang='en' className='cc--darkmode dark'>
@@ -24,7 +24,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
 				</Head>
 				<body className={inter.className}>
 					{children}
-					<Footer />
+					{componentsVisible && <Footer />}
 					<CookieConsentComponent />
 				</body>
 				<SpeedInsights />

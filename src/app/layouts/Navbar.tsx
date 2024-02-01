@@ -58,23 +58,23 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						</button>
 						<section className='header-btn-section'>
 							<section>
-								<a href='#'>
+								<Link href='#'>
 									<FilmIcon className='header-fa' />
 									<span>Filmy</span>
-								</a>
+								</Link>
 							</section>
 							<section>
-								<a href='#'>
+								<Link href='#'>
 									<TvIcon className='header-fa' />
 									<span>Seriale</span>
-								</a>
+								</Link>
 							</section>
 						</section>
 					</nav>
 				</section>
 				<nav className='header-right-section'>
-					<button className='header-register-btn'>Rejestracja</button>
-					<button className='header-login-btn'>Logowanie</button>
+					<Link href='/register' className='header-register-btn'>Rejestracja</Link>
+					<Link href='/login' className='header-login-btn'>Logowanie</Link>
 				</nav>
 				<nav
 					className='header-right-user-btn'
@@ -88,19 +88,19 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 			<div ref={dropdownRef} className={`navbar-dropdown ${isClickedBtn ? 'active' : ''}`}>
 				{isUserOrMenuClicked === 'menu' ? (
 					<nav>
-						<a href='#'>
+						<Link href='#'>
 							<FilmIcon className='h-5' />
 							<span>Filmy</span>
-						</a>
-						<a href='#'>
+						</Link>
+						<Link href='#'>
 							<TvIcon className='h-5' />
 							<span>Seriale</span>
-						</a>
+						</Link>
 					</nav>
 				) : (
 					<nav>
-						<a href='#'>Logowanie</a>
-						<a href='#'>Rejestracja</a>
+						<Link href='/login'>Logowanie</Link>
+						<Link href='/register'>Rejestracja</Link>
 					</nav>
 				)}
 			</div>
