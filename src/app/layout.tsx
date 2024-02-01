@@ -24,7 +24,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 			<html lang='en' className='cc--darkmode dark'>
 				<Head>
 					<link rel='icon' href='/vercel.svg' />
-					<meta name='theme-color' content='#121212' />
+					<meta name='theme-color' content='#1a1a1a' />
 				</Head>
 				<body className={inter.className}>
 					{children}
