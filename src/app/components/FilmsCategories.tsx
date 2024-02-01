@@ -101,7 +101,8 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 				navigation={{ prevEl: navigationPrevRef.current, nextEl: navigationNextRef.current }}
 				spaceBetween={20}
 				slidesPerView={slidesPerView}
-				speed={1200}
+				speed={800}
+				cssMode
 				mousewheel
 				freeMode
 				keyboard
