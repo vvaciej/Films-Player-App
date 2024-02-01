@@ -7,8 +7,7 @@
 	}
 	@include tablet-800 {
 		height: 100%;
-	}
-	
+	}	
 	.main-heading-left-container {
 		min-width: calc(100% - 14rem);
 		height: 100%;
@@ -32,7 +31,6 @@
 			min-width: 100%;
 			height: 100%;
 			position: relative;
-			
 			.main-heading-fullhd-img {
 				position: relative;
 				height: 100%;
@@ -95,7 +93,6 @@
 						background-color: #fefefe35;
 						transition: background-color 0.2s;
 					}
-		
 				}
 				.main-heading-left-bottom-section {
 					display: flex;
@@ -109,7 +106,6 @@
 					@include tablet-800 {
 						align-items: center;
 					}
-		
 					.main-heading-miniature {
 						height: 19.1rem;
 						width: 13rem;
@@ -124,16 +120,16 @@
 						@include tablet-800 {
 							display: none;
 						}
-		
 					}
-		
 					.main-heading-left-text-container {
 						display: flex;
 						flex-direction: column;
 						row-gap: 0.6rem;
 						width: 37rem;
 						user-select: none;
-		
+						@include mobile-318 {
+							row-gap: 0.4rem;
+						}
 						.main-heading-left-text-film-title {
 							font-size: 2.5rem;
 							line-height: 1.1;
@@ -162,12 +158,11 @@
 								font-size: 1.1rem;
 							}
 							@include mobile-260 {
-								font-size: 1rem;
+								font-size: .9rem;
 							}
 							&:hover {
 								text-decoration: underline;
 							}
-		
 						}
 						.main-heading-left-text-film-description {
 							margin-bottom: 0.8rem;
@@ -183,15 +178,12 @@
 								display: none;
 							}
 						}
-		
 						.main-heading-left-text-btn {
-							background-color: var(--orange);
-							width: max-content;
-							padding: 0.75rem 1.5rem;
+							@include btn-style;
+							@include flex-center;
 							border-radius: 30px;
 							font-size: 0.82rem;
 							font-weight: 600;
-							@include flex-center;
 							column-gap: 0.5rem;
 							transition: background-color 0.3s;
 							@include tablet-1080 {
@@ -200,23 +192,19 @@
 							@include mobile-365 {
 								padding: .5rem 1.2rem;
 							}
+							@include mobile-260 {
+								padding: .4rem 1rem;
+							}
 							&:hover {
 								background-color: #d56210;
 								transition: background-color 0.3s;
 							}
-		
 						}
-		
 					}
-					
 				}
-	
 			}
-
 		}
-
 	}
-  
 }
 
 .main-heading-right-container {
@@ -232,24 +220,20 @@
 		row-gap: 1.8rem;
 		height: calc(100% - 0.6rem - 1.649rem);
 		margin-top: 0.6rem;
-
 		.main-heading-right-film {
 			width: 100%;
 			display: flex;
 			flex-direction: column;
 			row-gap: 6px;
-
 			.main-heading-right-film-miniature-section {
 				height: 100%;
 				width: 100%;
 				position: relative;
-
 				.main-heading-right-film-miniature-link {
 					&:hover {
 						filter: brightness(85%);
 						transition: filter 0.2s;
 					}
-
 					img {
 						width: 100%;
 						height: 100%;
@@ -258,17 +242,12 @@
 						height: 7rem;
 						transition: filter 0.2s;
 					}
-
 				}
-
 			}
 			.main-heading-right-film-title {
 				font-size: 0.93rem;
 				margin-top: 2px;
 			}
-
 		}
-
 	}
-
 }

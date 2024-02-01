@@ -486,6 +486,11 @@ html.dark {
   width: 37rem;
   user-select: none;
 }
+@media screen and (max-width: 318px) {
+  .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container {
+    row-gap: 0.4rem;
+  }
+}
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-film-title {
   font-size: 2.5rem;
   line-height: 1.1;
@@ -528,7 +533,7 @@ html.dark {
 }
 @media screen and (max-width: 260px) {
   .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-film-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-film-title:hover {
@@ -556,16 +561,22 @@ html.dark {
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-btn {
   background-color: var(--orange);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.2s;
   width: max-content;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-size: 0.82rem;
-  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 30px;
+  font-size: 0.82rem;
+  font-weight: 600;
   column-gap: 0.5rem;
   transition: background-color 0.3s;
+}
+.main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-btn:hover {
+  background-color: var(--dark-orange);
+  transition: background-color 0.2s;
 }
 @media screen and (max-width: 1080px) {
   .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-btn {
@@ -575,6 +586,11 @@ html.dark {
 @media screen and (max-width: 365px) {
   .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-btn {
     padding: 0.5rem 1.2rem;
+  }
+}
+@media screen and (max-width: 260px) {
+  .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-btn {
+    padding: 0.4rem 1rem;
   }
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-btn:hover {
@@ -943,5 +959,11 @@ body {
 @media screen and (max-width: 365px) {
   .content-wrapper {
     padding-top: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .main-text-rating {
+    font-size: 0.9rem;
   }
 }/*# sourceMappingURL=home.css.map */

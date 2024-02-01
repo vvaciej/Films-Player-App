@@ -11,7 +11,7 @@
   padding-top: calc(var(--main-container-padd-top) + 1rem);
   width: 40rem;
   margin: 0 auto;
-  height: 46rem;
+  height: max-content;
   @include tablet-700 {
     width: 95%;
   }

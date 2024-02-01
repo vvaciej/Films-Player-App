@@ -54,11 +54,8 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 			} else if (windowWidth >= 460) {
 				setSlidesPerView(3);
 				setSlidesPerGroup(2);
-			} else if (windowWidth >= 270) {
-				setSlidesPerView(2);
-				setSlidesPerGroup(1);
 			} else {
-				setSlidesPerView(1);
+				setSlidesPerView(2);
 				setSlidesPerGroup(1);
 			}
 		};
@@ -99,7 +96,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 			<Swiper
 				modules={[Navigation, Pagination, A11y]}
 				navigation={{ prevEl: navigationPrevRef.current, nextEl: navigationNextRef.current }}
-				spaceBetween={20}
+				spaceBetween={18}
 				slidesPerView={slidesPerView}
 				speed={800}
 				mousewheel
