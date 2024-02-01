@@ -14,27 +14,27 @@ import CookieConsentComponent from './layouts/cookie/CookieConsent';
 
 const inter = Inter({ subsets: ['latin'] });
 
-interface RootLayoutProps {
-	children: React.ReactNode;
-	componentsVisible: boolean;
+interface LayoutProps {
+	children?: React.ReactNode
+	componentsVisible?: boolean
 }
-const RootLayout: React.FC<RootLayoutProps> = ({ children, componentsVisible }) => {
+
+const RootLayout: React.FC<LayoutProps> = ({ children, componentsVisible }) => {
+
 	return (
-		<>
-			<html lang='en' className='cc--darkmode dark'>
-				<Head>
-					<link rel='icon' href='/vercel.svg' />
-					<meta name='theme-color' content='#121212' />
-				</Head>
-				<body className={inter.className}>
-					{children}
-					{componentsVisible && <Footer />}
-					<CookieConsentComponent />
-				</body>
-				<SpeedInsights />
-				<Analytics />
-			</html>
-		</>
+		<html lang='en' className='cc--darkmode dark'>
+			<Head>
+				<link rel='icon' href='/vercel.svg' />
+				<meta name='theme-color' content='#121212' />
+			</Head>
+			<body className={inter.className}>
+				{children}
+				{componentsVisible && <Footer />}
+				<CookieConsentComponent />
+			</body>
+			<SpeedInsights />
+			<Analytics />
+		</html>
 	);
 };
 
