@@ -24,8 +24,8 @@ interface LayoutPropsExtended {
 }
 
 const RootLayout = (props: LayoutProps | LayoutPropsExtended) => {
-		const { children, componentsVisible } = props;
-
+	const { children } = props;
+	const componentsVisible = (props as LayoutPropsExtended).componentsVisible;
 
 	return (
 		<html lang='en' className='cc--darkmode dark'>
