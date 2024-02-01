@@ -98,10 +98,10 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 				navigation={{ prevEl: navigationPrevRef.current, nextEl: navigationNextRef.current }}
 				spaceBetween={18}
 				slidesPerView={slidesPerView}
-				speed={800}
+				cssMode
 				mousewheel
-				freeMode
 				keyboard
+				freeMode
 				slidesPerGroup={slidesPerGroup}
 				onSwiper={swiper => setSwiper(swiper)}>
 				{filmsData.map((film: FilmData, index: number) => (
