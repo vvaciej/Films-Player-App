@@ -14,7 +14,7 @@ import CookieConsentComponent from './layouts/cookie/CookieConsent';
 
 const inter = Inter({ subsets: ['latin'] });
 
-interface RootLayoutProps {
+type RootLayoutProps = {
 	children: React.ReactNode;
 	componentsVisible: boolean;
 }
