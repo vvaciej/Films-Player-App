@@ -4,14 +4,13 @@ import '../../style/css/home.css';
 import '../../style/css/register.css';
 
 import useDocumentTitle from '@/app/helpers/PageTitle';
-import RootLayout from '../layout';
 import Link from 'next/link';
 
 const Policy: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Rejestracja');
 
 	return (
-		<RootLayout componentsVisible={false}>
+		<>
 			<div className='register-container'>
 				<Link href='/' className='header-brand-text'>
 					VVACIEJ.APP
@@ -54,7 +53,7 @@ const Policy: React.FC = () => {
 					&copy; src obejrzyj.to
 				</Link>
 			</div>
-		</RootLayout>
+		</>
 	);
 };
 
