@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import React from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 import { Footer } from './layouts/Footer';
 
@@ -27,6 +28,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
 					<CookieConsentComponent />
 				</body>
 				<SpeedInsights />
+				<Analytics />
 			</html>
 		</>
 	);
