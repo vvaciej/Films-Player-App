@@ -7,6 +7,7 @@ import { HeadingFilmsInteraction } from './components/HeadingContainer';
 import useDocumentTitle from './helpers/PageTitle';
 
 import { Navbar } from './layouts/Navbar';
+import { Footer } from './layouts/Footer';
 
 const Home: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Darmowe filmy i seriale');
@@ -21,6 +22,8 @@ const Home: React.FC = () => {
 					<FilmsCategories />
 				</div>
 			</main>
+
+			<Footer isVisible={true} />
 		</>
 	);
 };

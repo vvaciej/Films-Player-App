@@ -4,6 +4,7 @@ import '../../style/css/home.css';
 import '../../style/css/contact.css';
 
 import { Navbar } from '@/app/layouts/Navbar';
+import { Footer } from '../layouts/Footer';
 import React, { useRef } from 'react';
 import useDocumentTitle from '../helpers/PageTitle';
 
@@ -42,6 +43,7 @@ const Kontakt: React.FC = () => {
 					</form>
 				</div>
 			</div>
+			<Footer isVisible={true} />
 		</>
 	);
 };

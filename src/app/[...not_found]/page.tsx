@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Navbar } from '../layouts/Navbar';
+import { Footer } from '../layouts/Footer';
 
 import '../../style/css/home.css';
 import '../../style/css/not-found.css';
@@ -23,6 +24,7 @@ const SiteNotFound: React.FC = () => {
 					<img src='https://obejrzyj.to/build/assets/404-1-176145e9.png' alt='error-art' />
 				</section>
 			</div>
+			<Footer isVisible={true} />
 		</>
 	);
 }

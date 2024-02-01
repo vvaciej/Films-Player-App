@@ -28,7 +28,6 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 				</Head>
 				<body className={inter.className}>
 					{children}
-					<Footer />
 				</body>
 			</html>
 			<CookieConsentComponent />

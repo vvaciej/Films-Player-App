@@ -4,6 +4,7 @@ import '../../style/css/home.css';
 import '../../style/css/register.css';
 
 import useDocumentTitle from '@/app/helpers/PageTitle';
+import { Footer } from '../layouts/Footer';
 import Link from 'next/link';
 
 const Policy: React.FC = () => {
@@ -53,6 +54,7 @@ const Policy: React.FC = () => {
 					&copy; src obejrzyj.to
 				</Link>
 			</div>
+			<Footer isVisible={false} />
 		</>
 	);
 };
