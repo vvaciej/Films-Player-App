@@ -30,11 +30,11 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children, componentsVisible }) 
 				<body className={inter.className}>
 					{children}
 					{componentsVisible && <Footer />}
-					<CookieConsentComponent />
 				</body>
-				<SpeedInsights />
-				<Analytics />
 			</html>
+			<CookieConsentComponent />
+			<SpeedInsights />
+			<Analytics />
 		</>
 	);
 };
