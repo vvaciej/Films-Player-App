@@ -83,26 +83,17 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 					460: {
 						slidesPerView: 3,
 						spaceBetween: 10,
-						longSwipes: false,
-						freeMode: true,
-						speed: 1200,
-						effect: 'cards',
+						cssMode: true,
 					},
 					270: {
 						slidesPerView: 2,
 						spaceBetween: 10,
-						longSwipes: false,
-						freeMode: true,
-						speed: 1200,
-						effect: 'cards',
+						cssMode: true,
 					},
 					0: {
 						slidesPerView: 1,
 						spaceBetween: 10,
-						longSwipes: false,
-						freeMode: true,
-						speed: 1200,
-						effect: 'cards',
+						cssMode: true,
 					},
 				}}
 				onSwiper={swiper => setSwiper(swiper)}>
