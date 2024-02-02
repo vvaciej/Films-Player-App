@@ -29,45 +29,12 @@ type FilmData = {
 	image: string;
 	title: string;
 	rating: number;
-}
+};
 
 const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 	const navigationPrevRef = useRef<HTMLButtonElement>(null);
 	const navigationNextRef = useRef<HTMLButtonElement>(null);
 	const [swiper, setSwiper] = useState<any>(null);
-
-	const [slidesPerView, setSlidesPerView] = useState<number>(6);
-	const [slidesPerGroup, setSlidesPerGroup] = useState<number>(6);
-
-	useEffect(() => {
-		const handleResize = () => {
-			const windowWidth = window.innerWidth;
-
-			if (windowWidth >= 1220) {
-				setSlidesPerView(6);
-			} else if (windowWidth >= 980) {
-				setSlidesPerView(5);
-				setSlidesPerGroup(3);
-			} else if (windowWidth >= 750) {
-				setSlidesPerView(4);
-				setSlidesPerGroup(2);
-			} else if (windowWidth >= 460) {
-				setSlidesPerView(3);
-				setSlidesPerGroup(2);
-			} else {
-				setSlidesPerView(2);
-				setSlidesPerGroup(1);
-			}
-		};
-
-		handleResize();
-
-		window.addEventListener('resize', handleResize);
-
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	}, []);
 
 	const handlePrevClick = () => {
 		swiper?.slidePrev?.();
@@ -96,13 +63,48 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 			<Swiper
 				modules={[Navigation, Pagination, A11y]}
 				navigation={{ prevEl: navigationPrevRef.current, nextEl: navigationNextRef.current }}
-				spaceBetween={20}
-				slidesPerView={slidesPerView}
-				cssMode
-				mousewheel
-				keyboard
-				freeMode
-				slidesPerGroup={slidesPerGroup}
+				breakpoints={{
+					1120: {
+						slidesPerView: 6,
+						slidesPerGroup: 6,
+						spaceBetween: 20,
+						keyboard: true,
+					},
+					930: {
+						slidesPerView: 5,
+						slidesPerGroup: 2,
+						spaceBetween: 15,
+					},
+					700: {
+						slidesPerView: 4,
+						slidesPerGroup: 2,
+						spaceBetween: 15,
+					},
+					460: {
+						slidesPerView: 3,
+						spaceBetween: 10,
+						longSwipes: false,
+						freeMode: true,
+						speed: 1200,
+						effect: 'cards',
+					},
+					270: {
+						slidesPerView: 2,
+						spaceBetween: 10,
+						longSwipes: false,
+						freeMode: true,
+						speed: 1200,
+						effect: 'cards',
+					},
+					0: {
+						slidesPerView: 1,
+						spaceBetween: 10,
+						longSwipes: false,
+						freeMode: true,
+						speed: 1200,
+						effect: 'cards',
+					},
+				}}
 				onSwiper={swiper => setSwiper(swiper)}>
 				{filmsData.map((film: FilmData, index: number) => (
 					<SwiperSlide key={index}>
@@ -147,4 +149,4 @@ export const FilmsCategories: React.FC = () => {
 			<FilmCategory headingText='Popularne seriale' filmsData={popularSerials} />
 		</div>
 	);
-}
+};
