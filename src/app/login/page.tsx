@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Login: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Logowanie');
-  
+
 	return (
 		<div className='content-container'>
 			<div className='reg-log-container'>
@@ -44,8 +44,7 @@ const Login: React.FC = () => {
 						</span>
 						<button className='reg-log-google-authorize-btn'>
 							<img
-								src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png '
-								className='h-10'
+								src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png'
 								alt='google-icon'
 							/>
 						</button>
@@ -64,4 +63,5 @@ const Login: React.FC = () => {
 		</div>
 	);
 };
+
 export default Login;
