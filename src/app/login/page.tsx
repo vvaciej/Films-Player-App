@@ -45,13 +45,14 @@ const Login: React.FC = () => {
 						<button className='reg-log-google-authorize-btn'>
 							<img
 								src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png'
+								className='h-10'
 								alt='google-icon'
 							/>
 						</button>
 					</section>
 				</div>
 				<p>
-					Don't have an account?&nbsp;
+					Don&apos;t have an account?&nbsp;
 					<Link href='/register' className='orange-link'>
 						Sign up
 					</Link>
