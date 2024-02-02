@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 html.dark {
   --white: #ffffff;
   --dark-1a1a: #1a1a1a;
@@ -962,8 +963,42 @@ body {
   }
 }
 
+.orange-link {
+  color: var(--orange);
+}
+.orange-link:hover {
+  text-decoration: underline;
+  filter: brightness(95%);
+}
+
 @media screen and (max-width: 340px) {
   .main-text-rating {
     font-size: 0.9rem;
   }
+}
+
+.orange-checkbox {
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 2px;
+  border: 1px solid var(--light-gray-d0d0);
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.orange-checkbox:checked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--orange);
+  border: 0;
+}
+.orange-checkbox:checked:before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #121212;
+  font-size: 14px;
+  padding-top: 2px;
 }/*# sourceMappingURL=home.css.map */

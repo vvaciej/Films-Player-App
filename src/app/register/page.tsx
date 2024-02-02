@@ -1,24 +1,23 @@
 'use client';
 
 import '../../style/css/home.css';
-import '../../style/css/register.css';
+import '../../style/css/reg-log.css';
 
 import useDocumentTitle from '@/app/helpers/PageTitle';
-import { Footer } from '../layouts/Footer';
 import Link from 'next/link';
 
 const Policy: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Rejestracja');
 
 	return (
-		<>
-			<div className='register-container'>
-				<Link href='/' className='header-brand-text'>
+		<div className='content-container'>
+			<div className='reg-log-container'>
+				<Link href='/' className='reg-log-brand-text'>
 					VVACIEJ.APP
 				</Link>
-				<div className='register-box'>
+				<div className='reg-log-box'>
 					<h1>Stwórz nowe konto</h1>
-					<section className='register-input-form'>
+					<section className='reg-log-input-form'>
 						<section>
 							<label htmlFor='email'>Email</label>
 							<input type='text' id='email' />
@@ -32,30 +31,29 @@ const Policy: React.FC = () => {
 							<input type='text' id='confirm-password' />
 						</section>
 					</section>
-					<button className='register-create-acc-btn'>Stwórz konto</button>
-					<section className='register-autorize-section'>
-						<span>
+					<button className='reg-log-create-acc-btn'>Stwórz konto</button>
+					<section className='reg-log-authorize-section'>
+						<span className='register-authorize-text'>
 							Lub zajerestruj się przez
 							<hr></hr>
 						</span>
-						<button className='register-google-authorize-btn'>
+						<button className='reg-log-google-authorize-btn'>
 							<img
 								src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png '
 								className='h-10'
-								alt=''
+								alt='google-icon'
 							/>
 						</button>
 					</section>
 				</div>
 				<p>
-					Already have an account? <Link href='/login'>Sign in</Link>
+					Already have an account? <Link href='/login' className='orange-link'>Sign in</Link>
 				</p>
-				<Link href='/regulamin' className='register-bottom-link'>
-					&copy; src obejrzyj.to
-				</Link>
 			</div>
-			<Footer isVisible={false} />
-		</>
+			<Link href='/' className='reg-log-bottom-link'>
+				&copy; src obejrzyj.to
+			</Link>
+		</div>
 	);
 };
 

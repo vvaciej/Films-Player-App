@@ -163,6 +163,8 @@ html.dark { // root for dark layout
 @import './home-components/films-categories';
 @import './layouts/footer';
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
 *::before,
 *::after,
 * {
@@ -234,8 +236,40 @@ body {
 	}
 }
 
+.orange-link {
+	color: var(--orange);
+	&:hover {
+		text-decoration: underline;
+		filter: brightness(95%);
+	}
+}
+
 .main-text-rating {
 	@include mobile-340 {
 		font-size: .9rem;
+	}
+}
+
+.orange-checkbox {
+	appearance: none;
+	width: 17px;
+	height: 17px;
+	border-radius: 2px;
+	border: 1px solid var(--light-gray-d0d0);
+	background-color: transparent;
+	position: relative;
+	cursor: pointer;
+	&:checked {
+		@include flex-center;
+		background-color: var(--orange);
+		border: 0;
+		&:before {
+			content: "\f00c";
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+			color: #121212;
+			font-size: 14px;
+			padding-top: 2px;
+		}
 	}
 }

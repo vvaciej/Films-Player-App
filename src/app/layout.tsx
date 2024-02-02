@@ -6,8 +6,6 @@ import React from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 
-import { Footer } from './layouts/Footer';
-
 import './globals.css';
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import CookieConsentComponent from './layouts/cookie/CookieConsent';

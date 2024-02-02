@@ -38,7 +38,7 @@ const Login: React.FC = () => {
 						</section>
 					</section>
 					<button className='reg-log-create-acc-btn'>Kontynuuj</button>
-					<section className='reg-log-autorize-section'>
+					<section className='reg-log-authorize-section'>
 						<span className='login-authorize-text'>
 							Lub zaloguj się przez <hr></hr>
 						</span>

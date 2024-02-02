@@ -4,10 +4,8 @@ html.dark {
   --dark-1a1a: #1a1a1a;
   --dark-orange-opacited: rgba(255, 123, 0, 0.5);
   --orange: #f27318;
-  --dark-orange: #d66819;
   --orange-opacited-15: #fe6a0015;
-  --black: #000;
-  --black-opacited-85: #00000085;
+  --dark-orange: #d66819;
   --dark-121212: #121212;
   --gray-2222: #222222;
   --gray-3232: #323232;
@@ -17,9 +15,8 @@ html.dark {
   --light-gray-ddd: #ddd;
   --light-gray-d0d0: #d0d0d0;
   --light-gray-eee: #eee;
-  --light-gray-opacited-35: #fefefe35;
   --btn-opacited-hover-bg: #4d4d4d50;
-  --brown: #37271c;
+  --brown: #37271C;
   --main-container-padd-top: 5.6rem;
   --cc-bg: var(--gray-2222);
   --cc-secondary-color: var(--white);
@@ -392,14 +389,14 @@ html.dark {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(to top, var(--black) 9%, transparent);
+  background: linear-gradient(to top, #000 9%, transparent);
   height: 100%;
   border-radius: 0.3rem;
   width: 100%;
 }
 @media screen and (max-width: 800px) {
   .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-fullhd-img-gradient {
-    background: linear-gradient(to bottom, var(--black-opacited-85) 100%, transparent);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5215686275) 100%, transparent);
     border-radius: 0.2rem;
   }
 }
@@ -448,7 +445,7 @@ html.dark {
   right: 1rem;
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-control-btn:hover {
-  background-color: var(--light-gray-opacited-35);
+  background-color: rgba(254, 254, 254, 0.2078431373);
   transition: background-color 0.2s;
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section {
@@ -598,7 +595,7 @@ html.dark {
   }
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-btn:hover {
-  background-color: var(--dark-orange);
+  background-color: #d56210;
   transition: background-color 0.3s;
 }
 
@@ -966,18 +963,18 @@ body {
   }
 }
 
-@media screen and (max-width: 340px) {
-  .main-text-rating {
-    font-size: 0.9rem;
-  }
-}
-
 .orange-link {
   color: var(--orange);
 }
 .orange-link:hover {
   text-decoration: underline;
   filter: brightness(95%);
+}
+
+@media screen and (max-width: 340px) {
+  .main-text-rating {
+    font-size: 0.9rem;
+  }
 }
 
 .orange-checkbox {
@@ -1001,7 +998,7 @@ body {
   content: "\f00c";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: var(--dark-121212);
+  color: #121212;
   font-size: 14px;
   padding-top: 2px;
 }
@@ -1135,7 +1132,7 @@ body {
   background-color: var(--dark-orange);
   transition: background-color 0.2s;
 }
-.reg-log-container .reg-log-box .reg-log-autorize-section {
+.reg-log-container .reg-log-box .reg-log-authorize-section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1143,7 +1140,7 @@ body {
   width: 100%;
   row-gap: 1.2rem;
 }
-.reg-log-container .reg-log-box .reg-log-autorize-section span {
+.reg-log-container .reg-log-box .reg-log-authorize-section span {
   font-size: 0.8rem;
   color: var(--light-gray-d5d5);
   position: relative;
@@ -1152,7 +1149,7 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
-.reg-log-container .reg-log-box .reg-log-autorize-section span::before {
+.reg-log-container .reg-log-box .reg-log-authorize-section span::before {
   content: "";
   position: absolute;
   height: 100%;
@@ -1161,7 +1158,7 @@ body {
   transform: translate(-50%);
   z-index: -1;
 }
-.reg-log-container .reg-log-box .reg-log-autorize-section span > hr {
+.reg-log-container .reg-log-box .reg-log-authorize-section span > hr {
   position: absolute;
   width: 100%;
   border-radius: 2px;
@@ -1171,13 +1168,13 @@ body {
   z-index: -2;
   border: 0.5px solid var(--gray-3232);
 }
-.reg-log-container .reg-log-box .reg-log-autorize-section .login-authorize-text:before {
+.reg-log-container .reg-log-box .reg-log-authorize-section .login-authorize-text:before {
   width: 9rem;
 }
-.reg-log-container .reg-log-box .reg-log-autorize-section .register-authorize-text:before {
+.reg-log-container .reg-log-box .reg-log-authorize-section .register-authorize-text:before {
   width: 10rem;
 }
-.reg-log-container .reg-log-box .reg-log-autorize-section .reg-log-google-authorize-btn {
+.reg-log-container .reg-log-box .reg-log-authorize-section .reg-log-google-authorize-btn {
   padding: 0.05rem 0.05rem;
   border-radius: 4px;
   width: max-content;
@@ -1185,7 +1182,7 @@ body {
   border: 1px solid var(--gray-3232);
   transition: background-color 0.3s ease;
 }
-.reg-log-container .reg-log-box .reg-log-autorize-section .reg-log-google-authorize-btn:hover {
+.reg-log-container .reg-log-box .reg-log-authorize-section .reg-log-google-authorize-btn:hover {
   background-color: var(--btn-opacited-hover-bg);
   transition: background-color 0.3s ease;
 }
