@@ -96,7 +96,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 			<Swiper
 				modules={[Navigation, Pagination, A11y]}
 				navigation={{ prevEl: navigationPrevRef.current, nextEl: navigationNextRef.current }}
-				spaceBetween={18}
+				spaceBetween={20}
 				slidesPerView={slidesPerView}
 				cssMode
 				mousewheel
