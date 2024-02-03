@@ -1255,6 +1255,8 @@ body {
   bottom: 2.5rem;
   color: var(--gray-9999);
   transition: filter 0.2s;
+  left: 50%;
+  transform: translate(-50%);
 }
 .reg-log-bottom-link:hover {
   filter: brightness(140%);

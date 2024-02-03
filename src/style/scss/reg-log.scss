@@ -169,6 +169,8 @@
 	bottom: 2.5rem;
 	color: var(--gray-9999);
 	transition: filter 0.2s;
+	left: 50%;
+	transform: translate(-50%);
 	&:hover {
 		filter: brightness(140%);
 		transition: filter 0.2s;
