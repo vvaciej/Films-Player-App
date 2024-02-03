@@ -1076,11 +1076,13 @@ body {
 .reg-log-container {
   padding-top: calc(var(--main-container-padd-top) - 2.2rem);
   display: flex;
+  align-items: center;
   height: max-content;
   flex-direction: column;
   font-size: 0.75rem;
   position: relative;
   padding-bottom: 9rem;
+  width: 100%;
 }
 @media screen and (max-width: 500px) {
   .reg-log-container {

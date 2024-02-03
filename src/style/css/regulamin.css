@@ -1065,7 +1065,7 @@ body {
 .policy-container {
   height: max-content;
   width: 1240px;
-  padding: calc(var(--main-container-padd-top) + 1.5rem) 0rem;
+  padding: var(--main-container-padd-top) 0rem;
 }
 @media screen and (max-width: 1240px) {
   .policy-container {
