@@ -13,7 +13,7 @@ const Home: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Darmowe filmy i seriale');
 
 	return (
-		<>
+		<div className='space-light'>
 			<Navbar isCutted={false} />
 
 			<main className='main-wrapper'>
@@ -23,8 +23,8 @@ const Home: React.FC = () => {
 				</div>
 			</main>
 
-			<Footer isVisible={true} />
-		</>
+			<Footer />
+		</div>
 	);
 };
 

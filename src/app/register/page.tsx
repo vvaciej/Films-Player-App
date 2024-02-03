@@ -1,6 +1,5 @@
 'use client';
 
-import '../../style/css/home.css';
 import '../../style/css/reg-log.css';
 
 import useDocumentTitle from '@/app/helpers/PageTitle';
@@ -10,49 +9,51 @@ const Policy: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Rejestracja');
 
 	return (
-		<div className='content-container'>
-			<div className='reg-log-container'>
-				<Link href='/' className='reg-log-brand-text'>
-					VVACIEJ.APP
-				</Link>
-				<div className='reg-log-box'>
-					<h1>Stwórz nowe konto</h1>
-					<section className='reg-log-input-form'>
-						<section>
-							<label htmlFor='email'>Email</label>
-							<input type='text' id='email' />
+		<div className='space-dark-reg-log'>
+			<div className='content-full-space-centered'>
+				<div className='reg-log-container'>
+					<Link href='/' className='reg-log-brand-text'>
+						VVACIEJ.APP
+					</Link>
+					<div className='reg-log-box'>
+						<h1>Stwórz nowe konto</h1>
+						<section className='reg-log-input-form'>
+							<section>
+								<label htmlFor='email'>Email</label>
+								<input type='text' id='email' />
+							</section>
+							<section>
+								<label htmlFor='password'>Hasło</label>
+								<input type='text' id='password' />
+							</section>
+							<section>
+								<label htmlFor='confirm-password'>Potwierdź hasło</label>
+								<input type='text' id='confirm-password' />
+							</section>
 						</section>
-						<section>
-							<label htmlFor='password'>Hasło</label>
-							<input type='text' id='password' />
+						<button className='reg-log-create-acc-btn'>Stwórz konto</button>
+						<section className='reg-log-authorize-section'>
+							<span className='register-authorize-text'>
+								Lub zajerestruj się przez
+								<hr></hr>
+							</span>
+							<button className='reg-log-google-authorize-btn'>
+								<img
+									src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png '
+									className='h-10'
+									alt='google-icon'
+								/>
+							</button>
 						</section>
-						<section>
-							<label htmlFor='confirm-password'>Potwierdź hasło</label>
-							<input type='text' id='confirm-password' />
-						</section>
-					</section>
-					<button className='reg-log-create-acc-btn'>Stwórz konto</button>
-					<section className='reg-log-authorize-section'>
-						<span className='register-authorize-text'>
-							Lub zajerestruj się przez
-							<hr></hr>
-						</span>
-						<button className='reg-log-google-authorize-btn'>
-							<img
-								src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png '
-								className='h-10'
-								alt='google-icon'
-							/>
-						</button>
-					</section>
+					</div>
+					<p>
+						Already have an account? <Link href='/login' className='orange-link'>Sign in</Link>
+					</p>
 				</div>
-				<p>
-					Already have an account? <Link href='/login' className='orange-link'>Sign in</Link>
-				</p>
+				<Link href='/' className='reg-log-bottom-link'>
+					&copy; src obejrzyj.to
+				</Link>
 			</div>
-			<Link href='/' className='reg-log-bottom-link'>
-				&copy; src obejrzyj.to
-			</Link>
 		</div>
 	);
 };

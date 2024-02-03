@@ -7,9 +7,8 @@
 }
 
 .policy-container {
-  height: 45.55rem;
+  height: max-content;
   width: 1240px;
-  margin: 0 auto;
   padding: calc(var(--main-container-padd-top) + 1.5rem) 0rem;
   @include tablet-1240 {
     width: 92%;

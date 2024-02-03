@@ -1,10 +1,9 @@
 .footer-container {
 	position: relative;
-	left: 50%;
-	transform: translate(-50%);
 	width: 1240px;
-	height:  max-content;
+	height: max-content;
 	margin-top: 4.5rem;
+	padding-bottom: 2rem;
 	color: var(--light-gray-ddd);
 	font-size: 14px;
 	@include tablet-1350 {
@@ -16,23 +15,32 @@
 	}
 }
 
-.footer-topside-section, .footer-bottomside-section {
+.footer-topside-section,
+.footer-bottomside-section {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 	.footer-choose-lang-div {
-		position: relative;
-		width: 100%;
+		position: absolute;
+		width: 11rem;
 		height: 3rem;
 		border: 1px solid var(--gray-3232);
 		border-radius: 5px;
+		background-color: var(--dark-1a1a);
+		right: 0;
+		bottom: 3rem;
 		padding: 5px 0px;
-		transition: opacity .1s;
-		bottom: 8px;
+		transition: opacity 0.2s;
+		@include mobile-600 {
+			left: 50%;
+			transform: translate(-50%);
+			bottom: 2.1rem;
+			width: 8rem;
+		}
 		&:not(.active) {
-			pointer-events: none;
+			visibility: hidden;
 			opacity: 0;
-			transition: opacity .2s;
+			transition: opacity 0.1s;
 		}
 		.footer-lang-option {
 			width: 100%;
@@ -77,10 +85,11 @@
 }
 
 .footer-bottomside-section {
+	height: max-content;
 	@include mobile-600 {
 		flex-direction: column;
 		align-items: center;
-		row-gap: .2rem;
+		row-gap: 0.2rem;
 		font-size: 13px;
 	}
 }

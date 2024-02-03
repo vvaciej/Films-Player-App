@@ -10,18 +10,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 8.3rem;
+  width: 85%;
   padding-bottom: 5rem;
   column-gap: 6rem;
   height: 100vh;
-  width: 100%;
   @include tablet-1350 {
-    padding: 0px 6rem;
+    width: 90%;
   }
   @include tablet-950 {
     flex-direction: column-reverse;
     padding: 0px 5rem;
-    padding-top: 2rem;
+    padding-top: 3rem;
     justify-content: center;
     row-gap: 5rem;
   }
@@ -31,10 +30,10 @@
   }
   @include mobile-400 {
     padding: 0px 1.5rem;
-    padding-bottom: 4rem;
+    padding-bottom: 5.5rem;
   }
   @include mobile-318 {
-    padding-bottom: 8rem;
+    padding-bottom: 10rem;
   }
   .notfound-left-section {
     display: flex;

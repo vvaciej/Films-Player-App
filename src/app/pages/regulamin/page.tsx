@@ -1,6 +1,5 @@
 'use client';
 
-import '../../../style/css/home.css';
 import '../../../style/css/regulamin.css';
 
 import { Navbar } from '@/app/layouts/Navbar';
@@ -11,30 +10,32 @@ const Policy: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Regulamin');
 
 	return (
-		<>
+		<div className='space-light'>
 			<Navbar isCutted={true} />
-			<div className='policy-container'>
-				<h1>Regulamin</h1>
-				<p>
-					<h4>§ 1. ...</h4>
-					<h4>§ 2. ...</h4>
-					<h4>§ 3. ...</h4>
-					<h4>§ 4. ...</h4>
-					<h4>§ 5. ...</h4>
-					<h4>§ 6. ...</h4>
-					<h4>§ 7. ...</h4>
-					<h4>§ 8. ...</h4>
-					<h4>§ 8. ...</h4>
-					<h4>§ 9. ...</h4>
-					<h4>§ 10. ...</h4>
-					<h4>§ 11. ...</h4>
-					<h4>§ 12. ...</h4>
-					<h4>§ 13. ...</h4>
-					<h4>§ 14. ...</h4>
-				</p>
+			<div className='content-full-space-centered'>
+				<div className='policy-container'>
+					<h1>Regulamin</h1>
+					<div>
+						<h4>§ 1. ...</h4>
+						<h4>§ 2. ...</h4>
+						<h4>§ 3. ...</h4>
+						<h4>§ 4. ...</h4>
+						<h4>§ 5. ...</h4>
+						<h4>§ 6. ...</h4>
+						<h4>§ 7. ...</h4>
+						<h4>§ 8. ...</h4>
+						<h4>§ 8. ...</h4>
+						<h4>§ 9. ...</h4>
+						<h4>§ 10. ...</h4>
+						<h4>§ 11. ...</h4>
+						<h4>§ 12. ...</h4>
+						<h4>§ 13. ...</h4>
+						<h4>§ 14. ...</h4>
+					</div>
+				</div>
 			</div>
-			<Footer isVisible={true} />
-		</>
+			<Footer />
+		</div>
 	);
 };
 

@@ -59,6 +59,7 @@ html.dark {
 	--main-container-padd-top: 5.6rem;
 
 	--cc-bg: var(--gray-2222);
+	--dark-opacited-85: rgba(0, 0, 0, 0.55);
 	--cc-secondary-color: var(--white);
 
 	--cc-btn-primary-bg: var(--orange);
@@ -74,7 +75,7 @@ html.dark {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #7B7B7B !important;
+	background-color: #7b7b7b !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -189,9 +190,11 @@ html.dark {
 html {
 	font-size: 1rem;
 	height: max-content;
+	width: 100%;
 	color: var(--white);
 	transition: opacity 0.3s, backdrop-filter 0.3s;
 	position: relative;
+	background-color: var(--dark-1a1a);
 }
 
 .opacity-el.active::before {
@@ -202,17 +205,13 @@ html {
 	height: 150%;
 	top: -200px;
 	z-index: 10;
-	background-color: rgba(0, 0, 0, 0.55);
+	background-color: var(--dark-opacited-85);
 	transition: background-color 0.2s ease-in-out;
 }
 
 body {
 	height: max-content;
-	padding-bottom: 0 !important;
-	background: var(--dark-1a1a) !important;
-	@include mobile-270 {
-		padding-bottom: 2rem !important;
-	}
+	width: 100%;
 }
 
 .film-play-btn {
@@ -224,6 +223,31 @@ body {
 	bottom: 12px;
 	left: 12px;
 	@include flex-center;
+}
+
+@mixin full-space {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 100vh;
+	height: max-content;
+}
+
+.space-dark {
+	background-color: var(--dark-121212);
+	@include full-space;
+}
+
+.space-light {
+	background-color: var(--dark-1a1a);
+	@include full-space;
+}
+
+.content-full-space-centered {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .content-wrapper {
@@ -280,7 +304,7 @@ body {
 			content: '\f00c';
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 900;
-			color: #121212;
+			color: var(--dark-121212);
 			font-size: 14px;
 			padding-top: 2px;
 		}

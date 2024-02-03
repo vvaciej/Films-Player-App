@@ -7,17 +7,11 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
 import Link from 'next/link';
 
-interface FooterProps {
-	isVisible: boolean
-}
-
-export const Footer: React.FC<FooterProps> = ({ isVisible }) => {
+export const Footer: React.FC = () => {
 	const [btnClickedBool, setBtnClickedBool] = useState<boolean>(false);
 
 	return (
-		<>
-			{isVisible ?
-
+		<div className='content-full-space-centered'>
 			<footer className='footer-container'>
 				<section className='footer-topside-section'>
 					<section className='footer-topside-leftside-section'>
@@ -32,15 +26,15 @@ export const Footer: React.FC<FooterProps> = ({ isVisible }) => {
 					</section>
 				</section>
 				<hr className='mt-3 mb-3 border-neutral-700' />
-				<section className='footer-bottomside-section h-max'>
+				<section className='footer-bottomside-section'>
 					<section>
 						<p className='mb-1'>
-							Source <a href='obejrzyj.to'>obejrzyj.to</a>, site for learning coding
+							Source <Link href='#'>obejrzyj.to</Link>, site for learning coding
 						</p>
 					</section>
-					<section>
+					<section className='relative'>
 						<button
-							className='footer-lang-btn-select flex items-center gap-x-2 py-2 px-3 rounded-md'
+							className='footer-lang-btn-select flex items-center gap-x-2 py-2 px-3 rounded-md relative'
 							onClick={() => setBtnClickedBool(!btnClickedBool)}>
 							<GlobeAltIcon className='h-5' />
 							<span className='mr-1'>Polski</span>
@@ -54,8 +48,6 @@ export const Footer: React.FC<FooterProps> = ({ isVisible }) => {
 					</section>
 				</section>
 			</footer>
-			
-			: ''}
-		</>
+		</div>
 	);
 }

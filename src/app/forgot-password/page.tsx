@@ -1,6 +1,5 @@
 'use client';
 
-import '../../style/css/home.css';
 import '../../style/css/reg-log.css';
 
 import useDocumentTitle from '../helpers/PageTitle';
@@ -10,7 +9,7 @@ const Login: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Logowanie');
 
 	return (
-		<div className='content-container'>
+		<div className='space-dark-reg-log'>
 			<div className='reg-log-container'>
 				<Link href='/' className='reg-log-brand-text'>
 					VVACIEJ.APP

@@ -8,10 +8,11 @@
 
 .contact-container {
   position: relative;
-  padding-top: calc(var(--main-container-padd-top) + 1rem);
+  margin-top: calc(var(--main-container-padd-top));
   width: 40rem;
-  margin: 0 auto;
   height: max-content;
+  border: 1px solid var(--gray-3232);
+  background-color: var(--dark-1a1a);
   @include tablet-700 {
     width: 95%;
   }
