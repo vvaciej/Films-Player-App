@@ -282,9 +282,7 @@ body {
 }
 
 .main-text-rating {
-	@include mobile-340 {
-		font-size: 0.9rem;
-	}
+	font-size: .9rem;
 }
 
 .orange-checkbox {
