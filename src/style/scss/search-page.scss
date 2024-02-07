@@ -1,0 +1,45 @@
+@import './home.scss';
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.search-wrapper {
+	width: 1240px;
+	height: max-content;
+	min-height: 76vh;
+	padding: var(--main-container-padd-top) 0rem;
+	margin-top: 2rem;
+	.search-movies-section {
+		margin-top: 2rem;
+	}
+	.search-movies-section {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		.search-category-text {
+			position: relative;
+			&:not(.active) {
+				display: none;
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				width: 4px;
+				height: 100%;
+				background-color: var(--orange);
+				border-radius: 5px;
+			}
+		}
+		.search-movies-films-container {
+			height: max-content;
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			grid-template-rows: auto;
+		}
+	}
+}

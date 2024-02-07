@@ -2,7 +2,7 @@
 
 import { MagnifyingGlassIcon, Bars3Icon, UserIcon } from '@heroicons/react/24/solid';
 import { TvIcon, FilmIcon } from '@heroicons/react/24/outline';
-import { SetStateAction, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
 import React from 'react';
@@ -44,6 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 	const [isTyped, setIsTyped] = useState<boolean>(false);
 	const [searchResults, setSearchResults] = useState<FilmData[]>([]);
 	const [isSearchResultsNull, setIsSearchResultsNull] = useState<boolean>(true);
+	const [whatSearchVal, setWhatSearchVal] = useState<string>('');
 
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	const headerEl = useRef<HTMLElement>(null);
@@ -54,6 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 
 	const handleSearchType = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const inputVal = event.target.value.toLowerCase();
+		setWhatSearchVal(inputVal);
 		const uniqueTitles = new Set<string>();
 
 		allFilmsData.forEach(film => {
@@ -62,10 +64,9 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 			}
 		});
 
-		const filteredData = Array.from(uniqueTitles)
-			.map(title => allFilmsData.find(film => film.title === title));
+		const filteredData = Array.from(uniqueTitles).map(title => allFilmsData.find(film => film.title === title));
 
-		setSearchResults((filteredData as FilmData[]));
+		setSearchResults(filteredData as FilmData[]);
 
 		if (inputVal.length > 0 && filteredData.length > 0) {
 			setIsTyped(true);
@@ -101,18 +102,21 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					</Link>
 					<nav className={`header-left-nav-section ${isCutted ? 'navbar-cutted-style' : ''}`}>
 						<section className='header-search-section'>
-							<input
-								type='text'
-								placeholder='Szukaj filmu, serialu lub aktora...'
-								className='header-search-input'
-								onChange={handleSearchType}
-								onFocus={event => {
-									if (event.target.value.length > 0 && !isSearchResultsNull) {
-										setIsTyped(true);
-									}
-								}}
-								onBlur={() => setIsTyped(false)}
-							/>
+							<form action={`/search/${whatSearchVal}`}>
+								<input
+									type='text'
+									placeholder='Szukaj filmu, serialu lub aktora...'
+									className='header-search-input'
+									onChange={handleSearchType}
+									onFocus={event => {
+										if (event.target.value.length > 0 && !isSearchResultsNull) {
+											setIsTyped(true);
+										}
+									}}
+									onBlur={() => setIsTyped(false)}
+								/>
+								<button type='submit' style={{ display: 'none' }}></button>
+							</form>
 							<Link href='/search' className='header-search-icon-link'>
 								<MagnifyingGlassIcon className='header-search-icon' />
 							</Link>

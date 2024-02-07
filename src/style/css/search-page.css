@@ -1,10 +1,4 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 html.dark {
   --white: #ffffff;
   --dark-1a1a: #1a1a1a;
@@ -1117,73 +1111,46 @@ body {
   padding-top: 2px;
 }
 
-.contact-container {
-  position: relative;
-  margin-top: calc(var(--main-container-padd-top));
-  width: 40rem;
-  height: max-content;
-  border: 1px solid var(--gray-3232);
-  background-color: var(--dark-1a1a);
-}
-@media screen and (max-width: 700px) {
-  .contact-container {
-    width: 95%;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.contact-box {
-  height: 100%;
-  width: 100%;
-  border: 1px solid var(--gray-3232);
-  border-radius: 4px;
-  padding: 2rem;
-  font-size: 0.82rem;
+.search-wrapper {
+  width: 1240px;
+  height: max-content;
+  min-height: 76vh;
+  padding: var(--main-container-padd-top) 0rem;
+  margin-top: 2rem;
 }
-.contact-box h1 {
-  font-size: 1.5rem;
-  margin-bottom: 4px;
+.search-wrapper .search-movies-section {
+  margin-top: 2rem;
 }
-.contact-box .contact-input-form {
+.search-wrapper .search-movies-section {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  row-gap: 1.5rem;
-  margin-top: 2.5rem;
-  height: calc(100% - 4px - 39.38px - 36px - 2.5rem);
 }
-.contact-box .contact-input-form section {
-  display: flex;
-  flex-direction: column;
-  row-gap: 4px;
-  width: 100%;
-}
-.contact-box .contact-input-form section input[type=text], .contact-box .contact-input-form section .contact-message-textarea {
-  padding: 0px 10px;
-  color: var(--white);
-  font-size: 0.88rem;
-  outline: 1px solid var(--gray-5050);
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background-color: transparent;
-  height: 2.6rem;
-}
-.contact-box .contact-input-form section input[type=text]:focus, .contact-box .contact-input-form section .contact-message-textarea:focus {
+.search-wrapper .search-movies-section .search-category-text {
   position: relative;
-  border: 1px solid var(--dark-orange-opacited);
-  outline: 4px solid var(--orange-opacited-15);
-  transition: outline 0.1s;
 }
-.contact-box .contact-input-form section .contact-message-textarea {
-  height: 11rem;
-  padding-top: 0.7rem;
+.search-wrapper .search-movies-section .search-category-text:not(.active) {
+  display: none;
 }
-.contact-box .contact-input-form .contact-submit-btn {
+.search-wrapper .search-movies-section .search-category-text:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 100%;
   background-color: var(--orange);
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-  transition: background-color 0.2s;
-  width: max-content;
+  border-radius: 5px;
 }
-.contact-box .contact-input-form .contact-submit-btn:hover {
-  background-color: var(--dark-orange);
-  transition: background-color 0.2s;
-}/*# sourceMappingURL=contact.css.map */
+.search-wrapper .search-movies-section .search-movies-films-container {
+  height: max-content;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+}/*# sourceMappingURL=search-page.css.map */

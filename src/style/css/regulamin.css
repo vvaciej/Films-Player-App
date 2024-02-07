@@ -137,8 +137,14 @@ html.dark {
 .header-left-section > .header-left-nav-section {
   display: flex;
   height: 100%;
-  width: 100%;
   align-items: center;
+  width: 100%;
+}
+.header-left-section > .header-left-nav-section form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 .header-left-section > .header-left-nav-section .header-search-section {
   height: 100%;
@@ -1113,6 +1119,7 @@ body {
 
 .policy-container {
   height: max-content;
+  min-height: 76vh;
   width: 1240px;
   padding: var(--main-container-padd-top) 0rem;
 }
