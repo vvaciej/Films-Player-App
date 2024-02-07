@@ -61,7 +61,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 							className='main-heading-fullhd-img'
 							src={film.imgFullHDPath}
 							alt={`Poster for ${film.title}`}
-							loading='lazy'
+							loading='eager'
 						/>
 						<div className='main-heading-fullhd-img-gradient'></div>
 						<div className='main-heading-onimage-container'>
@@ -105,7 +105,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 				))
 			) : (
 				<div className='main-heading-left-film-wrapper'>
-					<img className='main-heading-fullhd-img' src={imgFullHDPath} alt={`Poster for ${title}`} loading='lazy' />
+					<img className='main-heading-fullhd-img' src={imgFullHDPath} alt={`Poster for ${title}`} loading='eager' />
 					<div className='main-heading-fullhd-img-gradient'></div>
 					<div className='main-heading-onimage-container'>
 						<button className='main-heading-control-btn' onClick={leftBtnFunction}>

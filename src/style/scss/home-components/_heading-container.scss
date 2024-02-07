@@ -25,6 +25,9 @@
 			& > * {
 				scroll-snap-align: start;
 			}
+			&::-webkit-scrollbar {
+        display: none;
+    	}
 		}
 		.main-heading-left-film-wrapper {
 			display: flex;

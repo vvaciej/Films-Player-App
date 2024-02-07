@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { ChevronRightIcon, StarIcon, PlayIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 
@@ -10,15 +10,7 @@ import 'swiper/css/pagination';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import {
-	popularFilmsData,
-	lastAddedFilmsData,
-	popularActionFilmsData,
-	popularComediaFilmsData,
-	popularHorrorFilms,
-	popularPolishFilms,
-	popularSerials,
-} from '../data/main-films';
+import * as filmData from '../data/main-films';
 
 interface FilmProps {
 	headingText: string;
@@ -131,13 +123,13 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 export const FilmsCategories: React.FC = () => {
 	return (
 		<div className='films-wrapper'>
-			<FilmCategory headingText='Popularne filmy' filmsData={popularFilmsData} />
-			<FilmCategory headingText='Ostatnio dodane filmy' filmsData={lastAddedFilmsData} />
-			<FilmCategory headingText='Popularne filmy akcji' filmsData={popularActionFilmsData} />
-			<FilmCategory headingText='Popularne komedie' filmsData={popularComediaFilmsData} />
-			<FilmCategory headingText='Popularne horrory' filmsData={popularHorrorFilms} />
-			<FilmCategory headingText='Popularne polskie filmy' filmsData={popularPolishFilms} />
-			<FilmCategory headingText='Popularne seriale' filmsData={popularSerials} />
+			<FilmCategory headingText='Popularne filmy' filmsData={filmData.popularFilmsData} />
+			<FilmCategory headingText='Ostatnio dodane filmy' filmsData={filmData.lastAddedFilmsData} />
+			<FilmCategory headingText='Popularne filmy akcji' filmsData={filmData.popularActionFilmsData} />
+			<FilmCategory headingText='Popularne komedie' filmsData={filmData.popularComediaFilmsData} />
+			<FilmCategory headingText='Popularne horrory' filmsData={filmData.popularHorrorFilms} />
+			<FilmCategory headingText='Popularne polskie filmy' filmsData={filmData.popularPolishFilms} />
+			<FilmCategory headingText='Popularne seriale' filmsData={filmData.popularSerials} />
 		</div>
 	);
 };

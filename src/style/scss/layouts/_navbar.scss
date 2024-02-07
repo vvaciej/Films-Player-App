@@ -19,10 +19,10 @@
 		height: 3.6rem;
 	}
 	@include mobile-290 {
-		padding: 0px .9rem;
+		padding: 0px 0.9rem;
 	}
 }
-	
+
 .header-left-section {
 	display: flex;
 	align-items: center;
@@ -34,8 +34,12 @@
 	.header-brand-text {
 		font-size: 3rem;
 		font-weight: bold;
+		margin-right: 1.9rem;
 		@include tablet-1350 {
 			font-size: 2.8rem;
+		}
+		@include tablet-1080 {
+			margin-right: 0.8rem;
 		}
 		@include mobile-600 {
 			font-size: 2.1rem;
@@ -56,7 +60,7 @@
 			font-size: 1.1rem;
 		}
 		@include mobile-260 {
-			font-size: .95rem;
+			font-size: 0.95rem;
 		}
 	}
 	> .header-left-nav-section {
@@ -79,7 +83,6 @@
 				border-radius: 0.3rem;
 				outline: 1px solid var(--gray-5050);
 				border: 1px solid transparent;
-				margin-left: 1.9rem;
 				width: 100%;
 				padding: 0px 2.5rem;
 				font-size: 0.85rem;
@@ -97,17 +100,18 @@
 				}
 			}
 		}
-		.header-search-icon {
+		.header-search-icon-link {
 			position: absolute;
-			height: 1.2rem;
-			left: 2.5rem;
-			color: var(--light-gray-d0d0);
+			left: 0.7rem;
+			pointer-events: none;
 			@include tablet-1080 {
-				left: 1rem;
+				pointer-events: all;
 			}
-			@include mobile-260 {
-				left: .6rem
-			}
+		}
+
+		.header-search-icon {
+			height: 1.2rem;
+			color: var(--light-gray-d0d0);
 		}
 	}
 	.navbar-cutted-style {
@@ -115,8 +119,8 @@
 	}
 	.header-menu-btn {
 		@include flex-center;
-			display: none;
-			cursor: pointer;
+		display: none;
+		cursor: pointer;
 		@include tablet-1080 {
 			display: flex;
 			margin-left: 3rem;
@@ -158,7 +162,6 @@
 	}
 }
 
-
 .header-right-section {
 	display: flex;
 	align-items: center;
@@ -198,7 +201,6 @@
 	}
 }
 
-
 .navbar-dropdown {
 	padding: 6px 0px;
 	position: fixed;
@@ -231,6 +233,56 @@
 			width: 100%;
 			&:hover {
 				background-color: var(--gray-2222);
+			}
+		}
+	}
+}
+
+.input-box-search {
+	width: 100%;
+	position: absolute;
+	background-color: var(--dark-1a1a);
+	top: 4rem;
+	border-radius: 0.2rem;
+	height: max-content;
+	max-height: 36.9rem;
+	outline: 1px solid var(--gray-5050);
+	padding: 0.3rem 0;
+	overflow-y: auto;
+	font-size: 0.8rem;
+	transition: opacity 0.2s;
+	&:not(.active) {
+		visibility: hidden;
+		z-index: -3;
+		opacity: 0;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		li {
+			display: flex;
+			padding: 0.5rem 1.2rem;
+			height: 5.2rem;
+			column-gap: 0.8rem;
+			cursor: pointer;
+			&:hover {
+				background-color: var(--gray-3232);
+			}
+			img {
+				height: 100%;
+				border-radius: 0.2rem;
+				object-fit: cover;
+			}
+			section {
+				padding-top: 0.22rem;
+				padding-bottom: 0.15rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				span {
+					font-size: 0.71rem;
+					color: var(--light-gray-d0d0);
+				}
 			}
 		}
 	}
