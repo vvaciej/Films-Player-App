@@ -23,6 +23,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 				<Head>
 					<link rel='icon' href='/vercel.svg' />
 					<meta name='theme-color' content='#1a1a1a' />
+					<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 				</Head>
 				<body className={inter.className}>
 					{children}
