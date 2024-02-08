@@ -91,6 +91,7 @@
 	margin-bottom: 2rem;
 	display: none;
 	height: 3rem !important;
+	touch-action: none;
 	@include tablet-1080 {
 		display: flex;
 		width: 28rem;

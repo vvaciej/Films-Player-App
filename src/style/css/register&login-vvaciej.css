@@ -1,10 +1,4 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 html.dark {
   --white: #ffffff;
   --dark-1a1a: #1a1a1a;
@@ -1127,46 +1121,82 @@ body {
   padding-top: 2px;
 }
 
-.contact-container {
-  position: relative;
-  margin-top: calc(var(--main-container-padd-top));
-  width: 40rem;
-  height: max-content;
-  border: 1px solid var(--gray-3232);
-  background-color: var(--dark-1a1a);
-}
-@media screen and (max-width: 700px) {
-  .contact-container {
-    width: 95%;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.contact-box {
-  height: 100%;
-  width: 100%;
-  border: 1px solid var(--gray-3232);
-  border-radius: 4px;
-  padding: 2rem;
-  font-size: 0.82rem;
+.register-container {
+  padding-top: calc(var(--main-container-padd-top) - 2.2rem);
+  display: flex;
+  align-items: center;
+  height: 57rem;
+  flex-direction: column;
+  position: relative;
 }
-.contact-box h1 {
-  font-size: 1.5rem;
-  margin-bottom: 4px;
+.register-container .header-brand-text {
+  font-size: 3.5rem;
+  font-weight: bold;
 }
-.contact-box .contact-input-form {
+@media screen and (max-width: 500px) {
+  .register-container .header-brand-text {
+    font-size: 2.8rem;
+  }
+}
+@media screen and (max-width: 340px) {
+  .register-container .header-brand-text {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (max-width: 290px) {
+  .register-container .header-brand-text {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 270px) {
+  .register-container .header-brand-text {
+    font-size: 1.9rem;
+  }
+}
+.register-container .register-box {
   display: flex;
   flex-direction: column;
-  row-gap: 1.5rem;
-  margin-top: 2.5rem;
-  height: calc(100% - 4px - 39.38px - 36px - 2.5rem);
+  justify-content: space-between;
+  height: 65%;
+  width: 28rem;
+  border: 1px solid var(--gray-3232);
+  border-radius: 6px;
+  margin-top: 1rem;
+  padding: 2.8rem;
+  padding-bottom: 2rem;
 }
-.contact-box .contact-input-form section {
+@media screen and (max-width: 500px) {
+  .register-container .register-box {
+    padding: 2rem;
+    padding-bottom: 1.5rem;
+    width: 92%;
+  }
+}
+@media screen and (max-width: 365px) {
+  .register-container .register-box {
+    padding: 1.5rem 1rem;
+  }
+}
+.register-container .register-box h1 {
+  font-size: 1.2rem;
+}
+.register-container .register-box .register-input-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.3rem;
+}
+.register-container .register-box .register-input-form section {
   display: flex;
   flex-direction: column;
   row-gap: 4px;
-  width: 100%;
 }
-.contact-box .contact-input-form section input[type=text], .contact-box .contact-input-form section .contact-message-textarea {
+.register-container .register-box .register-input-form section input[type=text] {
   padding: 0px 10px;
   color: var(--white);
   font-size: 0.88rem;
@@ -1175,25 +1205,103 @@ body {
   border-radius: 4px;
   background-color: transparent;
   height: 2.6rem;
+  margin-bottom: 1.8rem;
 }
-.contact-box .contact-input-form section input[type=text]:focus, .contact-box .contact-input-form section .contact-message-textarea:focus {
+.register-container .register-box .register-input-form section input[type=text]:focus {
   position: relative;
   border: 1px solid var(--dark-orange-opacited);
   outline: 4px solid var(--orange-opacited-15);
   transition: outline 0.1s;
 }
-.contact-box .contact-input-form section .contact-message-textarea {
-  height: 11rem;
-  padding-top: 0.7rem;
+.register-container .register-box .register-input-form section label {
+  font-size: 0.84rem;
 }
-.contact-box .contact-input-form .contact-submit-btn {
+.register-container .register-box .register-create-acc-btn {
   background-color: var(--orange);
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
   transition: background-color 0.2s;
   width: max-content;
+  font-size: 0.95rem !important;
+  font-weight: 500;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
-.contact-box .contact-input-form .contact-submit-btn:hover {
+.register-container .register-box .register-create-acc-btn:hover {
   background-color: var(--dark-orange);
   transition: background-color 0.2s;
-}/*# sourceMappingURL=contact.css.map */
+}
+.register-container .register-box .register-autorize-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 1.2rem;
+}
+.register-container .register-box .register-autorize-section span {
+  font-size: 0.8rem;
+  color: var(--light-gray-d5d5);
+  position: relative;
+  text-align: center;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.register-container .register-box .register-autorize-section span::before {
+  content: "";
+  position: absolute;
+  width: 10rem;
+  height: 100%;
+  background-color: var(--dark-1a1a);
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -1;
+}
+.register-container .register-box .register-autorize-section span > hr {
+  position: absolute;
+  width: 100%;
+  border-radius: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -2;
+  border: 0.5px solid var(--gray-3232);
+}
+.register-container .register-box .register-autorize-section .register-google-authorize-btn {
+  padding: 0.05rem 0.05rem;
+  border-radius: 4px;
+  width: max-content;
+  background-color: transparent;
+  border: 1px solid var(--gray-3232);
+  transition: background-color 0.3s ease;
+}
+.register-container .register-box .register-autorize-section .register-google-authorize-btn:hover {
+  background-color: var(--btn-opacited-hover-bg);
+  transition: background-color 0.3s ease;
+}
+.register-container > p {
+  margin-top: 2rem;
+  font-size: 0.81rem;
+  color: var(--light-gray-eee);
+}
+.register-container > p a {
+  color: var(--orange);
+}
+.register-container > p a:hover {
+  text-decoration: underline;
+  filter: brightness(90%);
+}
+.register-container .register-bottom-link {
+  font-size: 0.85rem;
+  position: absolute;
+  bottom: 0;
+  color: var(--gray-9999);
+  transition: filter 0.2s;
+}
+.register-container .register-bottom-link:hover {
+  filter: brightness(140%);
+  transition: filter 0.2s;
+}/*# sourceMappingURL=register&login.css.map */

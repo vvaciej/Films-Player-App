@@ -736,6 +736,7 @@ html.dark {
 .film-container {
   margin-top: 2rem;
   font-size: 13.5px;
+  max-height: 20rem;
 }
 @media screen and (max-width: 600px) {
   .film-container {
@@ -1232,6 +1233,7 @@ body {
   margin-bottom: 2rem;
   display: none;
   height: 3rem !important;
+  touch-action: none;
 }
 @media screen and (max-width: 1080px) {
   .search-page-input-style {
