@@ -14,7 +14,6 @@ import {
 	popularPolishFilms,
 	popularSerials,
 } from '../data/main-films';
-import { text } from 'stream/consumers';
 
 const allFilmsData = [
 	...popularFilmsData,
@@ -39,7 +38,6 @@ interface SearchProps {
 let searchTimeout: NodeJS.Timeout;
 
 const Search: React.FC<SearchProps> = ({ textVisible }) => {
-	const [searchResults, setSearchResults] = useState<FilmData[]>([]);
 	const [whatSearchVal, setWhatSearchVal] = useState<string>('');
 	const router = useRouter();
 
@@ -53,10 +51,6 @@ const Search: React.FC<SearchProps> = ({ textVisible }) => {
 				uniqueTitles.add(film.title);
 			}
 		});
-
-		const filteredData = Array.from(uniqueTitles).map(title => allFilmsData.find(film => film.title === title));
-
-		setSearchResults(filteredData as FilmData[]);
 	};
 
 	const handleKeyUp = () => {
@@ -70,7 +64,9 @@ const Search: React.FC<SearchProps> = ({ textVisible }) => {
 	return (
     <div className='search-page-container'>
       <div className='w-full text-center'>
-        <form action={`/search/${whatSearchVal}`} className='flex justify-center'>
+        <form className='flex justify-center' onSubmit={event => {
+					event.preventDefault();
+				}}>
           <input
             type='text'
             placeholder='Szukaj filmu, serialu lub aktora...'

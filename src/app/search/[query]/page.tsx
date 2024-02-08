@@ -18,6 +18,7 @@ import {
 	popularPolishFilms,
 	popularSerials,
 } from '../../data/main-films';
+import React from 'react';
 
 const allFilmsData = [
 	...popularFilmsData,
@@ -42,23 +43,24 @@ interface MobileSearchProps {
 }
 
 const MobileSearch: React.FC<MobileSearchProps> = ({ params }) => {
-  useDocumentTitle(`Search results for ${params.query} - vvaciej.app`);
+	useDocumentTitle(`Search results for ${params.query} - vvaciej.app`);
+	const decodedQuery = decodeURIComponent(params.query);
 
-  const [searchResults, setSearchResults] = useState<FilmData[]>([]);
-  
-  useEffect(() => {
-    const uniqueTitles = new Set<string>();
+	const [searchResults, setSearchResults] = useState<FilmData[]>([]);
 
-    allFilmsData.forEach(film => {
-      if (film.title.toLowerCase().includes(params.query)) {
-        uniqueTitles.add(film.title);
-      }
-    });
-    
-    const filteredData = Array.from(uniqueTitles).map(title => allFilmsData.find(film => film.title === title));
-    
-    setSearchResults(filteredData as FilmData[]);
-  }, [])
+	useEffect(() => {
+		const uniqueTitles = new Set<string>();
+
+		allFilmsData.forEach(film => {
+			if (film.title.toLowerCase().includes(decodedQuery.toLowerCase())) {
+				uniqueTitles.add(film.title);
+			}
+		});
+
+		const filteredData = Array.from(uniqueTitles).map(title => allFilmsData.find(film => film.title === title));
+
+		setSearchResults(filteredData as FilmData[]);
+	}, [decodedQuery]);
 
 	return (
 		<div className='space-light'>
@@ -67,7 +69,7 @@ const MobileSearch: React.FC<MobileSearchProps> = ({ params }) => {
 				<div className='search-container'>
 					<Search textVisible={false} />
 					<div className='searched-films-wrapper'>
-						<h1 className='text-2xl font-semibold sm:text-3xl'>Search results for: {params.query}</h1>
+						<h1 className='text-2xl font-semibold sm:text-3xl'>Search results for: {decodedQuery}</h1>
 						<section className='search-movies-section'>
 							<a
 								href='#'
