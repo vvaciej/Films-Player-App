@@ -6,12 +6,23 @@
 	box-sizing: border-box;
 }
 
-.search-wrapper {
+.search-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 76vh;
+	padding: calc(var(--main-container-padd-top) + .3rem) 0rem;
+	@include tablet-1350 {
+		width: 90%;
+	}
+}
+
+.searched-films-wrapper {
 	width: 1240px;
 	height: max-content;
-	min-height: 76vh;
-	padding: var(--main-container-padd-top) 0rem;
-	margin-top: 2rem;
+	margin-top: 1rem;
+	@include tablet-1350 {
+		width: 100%;
+	}
 	.search-movies-section {
 		margin-top: 2rem;
 	}
@@ -40,6 +51,54 @@
 			display: grid;
 			grid-template-columns: repeat(6, 1fr);
 			grid-template-rows: auto;
+			gap: 1.2rem;
+			@include tablet-1350 {
+				grid-template-columns: repeat(5, 1fr);
+			}
+			@include tablet-950 {
+				grid-template-columns: repeat(4, 1fr);
+			}
+			@include tablet-800 {
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: 1rem;
+			}
+			@include mobile-500 {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@include mobile-318 {
+				grid-template-columns: auto;
+			}
 		}
+	}
+}
+
+.search-page-container {
+	width: 1240px;
+	height: max-content;
+	@include tablet-1350 {
+		width: 100%;
+	}
+}
+
+.search-page-text-section {
+	&:not(.active) {
+		display: none;
+	}
+}
+
+.search-page-input-style {
+	@include input-style;
+	margin-bottom: 2rem;
+	display: none;
+	height: 3rem !important;
+	@include tablet-1080 {
+		display: flex;
+		width: 28rem;
+	}
+	@include mobile-600 {
+		width: 90%;
+	}
+	&:focus {
+		@include orange-outline;
 	}
 }
