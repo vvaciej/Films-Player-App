@@ -754,11 +754,15 @@ html.dark {
 .films-image-section a img {
   height: 100%;
   max-width: 100%;
-  max-height: 18rem;
   border-radius: 0.2rem;
   object-fit: cover;
   filter: brightness(90%);
   cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .films-image-section a img {
+    max-height: 18rem;
+  }
 }
 
 .films-text-section {
@@ -1132,6 +1136,7 @@ body {
   flex-direction: column;
   min-height: 76vh;
   padding: calc(var(--main-container-padd-top) + 0.3rem) 0rem;
+  padding-bottom: 3rem;
 }
 @media screen and (max-width: 1350px) {
   .search-container {
@@ -1234,6 +1239,7 @@ body {
   display: none;
   height: 3rem !important;
   touch-action: none;
+  font-size: 16px;
 }
 @media screen and (max-width: 1080px) {
   .search-page-input-style {

@@ -10,7 +10,8 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 76vh;
-	padding: calc(var(--main-container-padd-top) + .3rem) 0rem;
+	padding: calc(var(--main-container-padd-top) + 0.3rem) 0rem;
+	padding-bottom: 3rem;
 	@include tablet-1350 {
 		width: 90%;
 	}
@@ -92,6 +93,7 @@
 	display: none;
 	height: 3rem !important;
 	touch-action: none;
+	font-size: 16px;
 	@include tablet-1080 {
 		display: flex;
 		width: 28rem;
