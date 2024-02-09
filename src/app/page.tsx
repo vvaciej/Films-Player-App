@@ -21,7 +21,7 @@ const Home: React.FC = () => {
 
 		const loaderTimeout = setTimeout(() => {
 			requestAnimationFrame(handleLoad);
-		}, 50);
+		}, 80);
 
 		return () => clearTimeout(loaderTimeout);
 	}, []);
