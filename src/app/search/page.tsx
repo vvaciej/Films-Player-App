@@ -48,14 +48,25 @@ const SearchPage: React.FC = () => {
 	useDocumentTitle(decodedQuery !== '' ? `Search results for ${decodedQuery} - vvaciej.app` : 'Search - vvaciej.app');
 
 	useEffect(() => {
-		if (whatSearchVal !== '') {
-			router.replace(`/search?query=${whatSearchVal}`);
+		const queryParamMatch = window.location.search.match(/[\?&]query=([^&]+)/);
+
+		if (queryParamMatch) {
+			const decodedQueryParam = decodeURIComponent(queryParamMatch[1]);
+			setWhatSearchVal(decodedQueryParam);
 		}
+	}, []);
+
+	useEffect(() => {
+		handleSearch(whatSearchVal);
+	}, [whatSearchVal]);
+
+	useEffect(() => {
+		router.replace(`/search?query=${whatSearchVal}`);
 	}, [whatSearchVal, router]);
 
-	const handleSearchType = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const inputVal = event.target.value.toLowerCase();
-		setWhatSearchVal(inputVal);
+	const handleSearch = (inputValue: string) => {
+		const inputVal = inputValue.toLowerCase();
+
 		const uniqueTitles = new Set<string>();
 
 		allFilmsData.forEach(film => {
@@ -67,6 +78,11 @@ const SearchPage: React.FC = () => {
 		const filteredData = Array.from(uniqueTitles).map(title => allFilmsData.find(film => film.title === title));
 
 		setSearchResults(filteredData as FilmData[]);
+	};
+
+	const handleSearchType = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const inputValue = event.target.value;
+		setWhatSearchVal(inputValue);
 	};
 
 	return (
