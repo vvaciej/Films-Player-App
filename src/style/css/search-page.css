@@ -189,7 +189,7 @@ html.dark {
 }
 .header-left-section > .header-left-nav-section .header-search-icon-link {
   position: absolute;
-  left: 0.7rem;
+  left: 0.25rem;
   pointer-events: none;
 }
 @media screen and (max-width: 1080px) {
@@ -1255,4 +1255,22 @@ body {
   border: 1px solid var(--dark-orange-opacited);
   outline: 4px solid var(--orange-opacited-15);
   transition: outline 0.1s;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  position: absolute;
+  top: 40%;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, var(--orange) 94%, rgba(0, 0, 0, 0)) top/8px 8px no-repeat, conic-gradient(rgba(0, 0, 0, 0) 30%, var(--orange));
+  -webkit-mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+}
+
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
 }/*# sourceMappingURL=search-page.css.map */

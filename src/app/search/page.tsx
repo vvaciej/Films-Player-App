@@ -65,14 +65,16 @@ const SearchPage: React.FC = () => {
 		router.replace(`/search?query=${whatSearchVal}`);
 	}, [whatSearchVal, router]);
 
-  useEffect(() => {
+	useEffect(() => {
 		const handleLoad = () => {
 			setIsLoaded(true);
 		};
 
-		setTimeout(() => {
-			handleLoad();
-		}, 300)
+		const loaderTimeout = setTimeout(() => {
+			requestAnimationFrame(handleLoad);	
+		});
+
+		return () => clearTimeout(loaderTimeout)
 	}, []);
 
 	const handleSearch = (inputValue: string) => {
@@ -81,8 +83,10 @@ const SearchPage: React.FC = () => {
 
 		const filteredData = allFilmsData.filter(film => {
 			const lowerCaseTitle = film.title.toLowerCase();
-			
-			return !uniqueTitles.has(lowerCaseTitle) && lowerCaseTitle.includes(inputVal) ? uniqueTitles.add(lowerCaseTitle) : false;
+
+			return !uniqueTitles.has(lowerCaseTitle) && lowerCaseTitle.includes(inputVal)
+				? uniqueTitles.add(lowerCaseTitle)
+				: false;
 		});
 
 		setSearchResults(filteredData as FilmData[]);
@@ -98,7 +102,7 @@ const SearchPage: React.FC = () => {
 			<Navbar isCutted={false} />
 			<div className='content-full-space-centered'>
 				<div className='search-container'>
-					{isLoaded ?
+					{isLoaded ? (
 						<div>
 							<section className='search-text-input-section'>
 								<div className='w-full text-center'>
@@ -171,7 +175,9 @@ const SearchPage: React.FC = () => {
 								</section>
 							</section>
 						</div>
-					: ''}
+					) : (
+						<div className='loader'></div>
+					)}
 				</div>
 			</div>
 			<Footer />
