@@ -52,8 +52,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	const headerEl = useRef<HTMLElement>(null);
 
-	const searchFormRef = useRef<HTMLFormElement>(null);
-
 	const handleClickBtnDropdown = () => {
 		setIsClickedBtn(!isClickedBtn);
 	};
@@ -62,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 		if (event.key === 'Enter') {
 			event.preventDefault();
 
-			router.push(`/search/${whatSearchVal}}`);
+			window.location.href = `/search?query=${encodeURIComponent(whatSearchVal)}`;
 		}
 	};
 
@@ -116,7 +114,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					<nav className={`header-left-nav-section ${isCutted ? 'navbar-cutted-style' : ''}`}>
 						<section className='header-search-section'>
 							<form
-								ref={searchFormRef}
 								onSubmit={event => {
 									event.preventDefault();
 								}}>

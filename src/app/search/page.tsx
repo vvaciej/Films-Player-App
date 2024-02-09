@@ -54,7 +54,7 @@ const SearchPage: React.FC = () => {
 			const decodedQueryParam = decodeURIComponent(queryParamMatch[1]);
 			setWhatSearchVal(decodedQueryParam);
 		}
-	}, []);
+	}, [router]);
 
 	useEffect(() => {
 		handleSearch(whatSearchVal);
@@ -67,15 +67,7 @@ const SearchPage: React.FC = () => {
 	const handleSearch = (inputValue: string) => {
 		const inputVal = inputValue.toLowerCase();
 
-		const uniqueTitles = new Set<string>();
-
-		allFilmsData.forEach(film => {
-			if (film.title.toLowerCase().includes(inputVal)) {
-				uniqueTitles.add(film.title);
-			}
-		});
-
-		const filteredData = Array.from(uniqueTitles).map(title => allFilmsData.find(film => film.title === title));
+		const filteredData = allFilmsData.filter(film => film.title.toLowerCase().includes(inputVal));
 
 		setSearchResults(filteredData as FilmData[]);
 	};
