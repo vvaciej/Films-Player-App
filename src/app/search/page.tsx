@@ -72,11 +72,13 @@ const SearchPage: React.FC = () => {
 			setIsLoaded(true);
 		};
 
-		const loaderTimeout = setTimeout(() => {
-			requestAnimationFrame(handleLoad);
-		}, 200);
+		if (typeof window !== 'undefined') {
+			const loaderTimeout = setTimeout(() => {
+				requestAnimationFrame(handleLoad);
+			}, 200);
 
-		return () => clearTimeout(loaderTimeout);
+			return () => clearTimeout(loaderTimeout);
+		}
 	}, []);
 
 	const handleSearch = (inputValue: string) => {
