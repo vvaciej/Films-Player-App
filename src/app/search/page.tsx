@@ -8,7 +8,10 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import '../../style/css/search-page.css';
 import { PlayIcon, StarIcon } from '@heroicons/react/24/solid';
 import React, { useState, useEffect } from 'react';
+import { squircle } from 'ldrs';
 import { useRouter } from 'next/navigation';
+
+squircle.register();
 
 import {
 	popularFilmsData,
@@ -72,7 +75,7 @@ const SearchPage: React.FC = () => {
 
 		const loaderTimeout = setTimeout(() => {
 			requestAnimationFrame(handleLoad);
-		}, 120);
+		}, 200);
 
 		return () => clearTimeout(loaderTimeout);
 	}, []);
@@ -176,8 +179,8 @@ const SearchPage: React.FC = () => {
 							</section>
 						</div>
 					) : (
-						<div className='flex justify-center w-full h-full'>
-							<div className='loader'></div>
+						<div className='flex justify-center w-full h-full relative top-40'>
+							<l-squircle size='37' stroke='5' stroke-length='0.15' bg-opacity='0.1' speed='0.9' color='gray'></l-squircle>
 						</div>
 					)}
 				</div>
