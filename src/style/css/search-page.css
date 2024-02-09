@@ -1134,9 +1134,8 @@ body {
 .search-container {
   display: flex;
   flex-direction: column;
-  min-height: 76vh;
+  min-height: 78vh;
   padding: calc(var(--main-container-padd-top) + 0.3rem) 0rem;
-  padding-bottom: 3rem;
 }
 @media screen and (max-width: 1350px) {
   .search-container {
@@ -1148,6 +1147,9 @@ body {
   width: 1240px;
   height: max-content;
   margin-top: 1rem;
+}
+.searched-films-wrapper:not(.active) {
+  display: none;
 }
 @media screen and (max-width: 1350px) {
   .searched-films-wrapper {
@@ -1204,11 +1206,7 @@ body {
 @media screen and (max-width: 500px) {
   .searched-films-wrapper .search-movies-section .search-movies-films-container {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 318px) {
-  .searched-films-wrapper .search-movies-section .search-movies-films-container {
-    grid-template-columns: auto;
+    gap: 0.8rem;
   }
 }
 

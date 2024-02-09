@@ -1214,6 +1214,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 1.3rem;
+  font-size: 16px;
 }
 .reg-log-container .reg-log-box .reg-log-input-form > section {
   display: flex;

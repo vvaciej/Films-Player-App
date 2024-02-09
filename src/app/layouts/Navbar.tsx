@@ -61,10 +61,10 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 	const handleSearchDirectPage = (event: React.KeyboardEvent<HTMLInputElement>) => {
 		if (event.key === 'Enter') {
 			event.preventDefault();
-			
-			router.push(`/search/${whatSearchVal}`);
+
+			router.push(`/search/${whatSearchVal}}`);
 		}
-	}
+	};
 
 	const handleSearchType = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const inputVal = event.target.value.toLowerCase();
@@ -115,14 +115,17 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					</Link>
 					<nav className={`header-left-nav-section ${isCutted ? 'navbar-cutted-style' : ''}`}>
 						<section className='header-search-section'>
-							<form ref={searchFormRef} onSubmit={event => {
-								event.preventDefault();
-							}}>
+							<form
+								ref={searchFormRef}
+								onSubmit={event => {
+									event.preventDefault();
+								}}>
 								<input
 									type='text'
 									placeholder='Szukaj filmu, serialu lub aktora...'
 									className='header-search-input'
 									onKeyUp={handleSearchDirectPage}
+									value={whatSearchVal}
 									onChange={handleSearchType}
 									onFocus={event => {
 										if (event.target.value.length > 0 && !isSearchResultsNull) {
