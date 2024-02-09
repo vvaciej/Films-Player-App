@@ -23,7 +23,7 @@ const Login: React.FC = () => {
 						<section>
 							<section className='flex justify-between'>
 								<label htmlFor='password'>Hasło</label>
-								<Link href='/forgot-password' className='orange-link'>
+								<Link href='/forgot-password' className='orange-link text-sm'>
 									Zapomniałeś hasła?
 								</Link>
 							</section>

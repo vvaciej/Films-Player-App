@@ -71,10 +71,10 @@ const SearchPage: React.FC = () => {
 		};
 
 		const loaderTimeout = setTimeout(() => {
-			requestAnimationFrame(handleLoad);	
-		}, 50);
+			requestAnimationFrame(handleLoad);
+		}, 70);
 
-		return () => clearTimeout(loaderTimeout)
+		return () => clearTimeout(loaderTimeout);
 	}, []);
 
 	const handleSearch = (inputValue: string) => {
@@ -176,7 +176,9 @@ const SearchPage: React.FC = () => {
 							</section>
 						</div>
 					) : (
-						<div className='loader'></div>
+						<div className='flex justify-center w-full h-full'>
+							<div className='loader'></div>
+						</div>
 					)}
 				</div>
 			</div>

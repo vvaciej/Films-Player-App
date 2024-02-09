@@ -324,9 +324,14 @@ html.dark {
   border: 1px solid var(--gray-5050);
   background-color: var(--dark-121212);
   z-index: 20;
+  opacity: 1;
+  transition: opacity 0.3s, bottom 0.2s;
 }
 .navbar-dropdown:not(.active) {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  bottom: -100px;
+  transition: opacity 0.3s, bottom 0.2s;
 }
 .navbar-dropdown nav {
   display: flex;

@@ -108,7 +108,7 @@
 		}
 		.header-search-icon-link {
 			position: absolute;
-			left: .25rem;
+			left: 0.25rem;
 			pointer-events: none;
 			@include tablet-1080 {
 				pointer-events: all;
@@ -218,8 +218,13 @@
 	border: 1px solid var(--gray-5050);
 	background-color: var(--dark-121212);
 	z-index: 20;
+	opacity: 1;
+	transition: opacity 0.3s, bottom 0.2s;
 	&:not(.active) {
-		display: none;
+		visibility: hidden;
+		opacity: 0;
+		bottom: -100px;
+		transition: opacity 0.3s, bottom 0.2s;
 	}
 
 	nav {
