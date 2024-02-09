@@ -72,7 +72,7 @@ const SearchPage: React.FC = () => {
 
 		const loaderTimeout = setTimeout(() => {
 			requestAnimationFrame(handleLoad);
-		}, 200);
+		}, 150);
 
 		return () => clearTimeout(loaderTimeout);
 	}, []);
