@@ -25,12 +25,6 @@ const allFilmsData = [
 	...popularSerials,
 ];
 
-type FilmData = {
-	image: string;
-	title: string;
-	rating: number;
-};
-
 interface SearchProps {
 	textVisible: boolean,
 }
@@ -58,7 +52,7 @@ const Search: React.FC<SearchProps> = ({ textVisible }) => {
 
 		searchTimeout = setTimeout(() => {
 			router.push(`/search/${whatSearchVal}`);
-		}, 1000);
+		}, 500);
 	};
 
 	return (
