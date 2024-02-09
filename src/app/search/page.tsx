@@ -65,16 +65,24 @@ const SearchPage: React.FC = () => {
 		router.replace(`/search?query=${whatSearchVal}`);
 	}, [whatSearchVal, router]);
 
+  useEffect(() => {
+		const handleLoad = () => {
+			setIsLoaded(true);
+		};
+
+		setTimeout(() => {
+			handleLoad();
+		}, 300)
+	}, []);
+
 	const handleSearch = (inputValue: string) => {
 		const inputVal = inputValue.toLowerCase();
 		const uniqueTitles = new Set<string>();
 
 		const filteredData = allFilmsData.filter(film => {
 			const lowerCaseTitle = film.title.toLowerCase();
-
-			return !uniqueTitles.has(lowerCaseTitle) && lowerCaseTitle.includes(inputVal)
-				? uniqueTitles.add(lowerCaseTitle)
-				: false;
+			
+			return !uniqueTitles.has(lowerCaseTitle) && lowerCaseTitle.includes(inputVal) ? uniqueTitles.add(lowerCaseTitle) : false;
 		});
 
 		setSearchResults(filteredData as FilmData[]);
@@ -90,78 +98,80 @@ const SearchPage: React.FC = () => {
 			<Navbar isCutted={false} />
 			<div className='content-full-space-centered'>
 				<div className='search-container'>
-					<div>
-						<section className='search-text-input-section'>
-							<div className='w-full text-center'>
-								<form
-									className='flex justify-center'
-									onSubmit={event => {
-										event.preventDefault();
-									}}>
-									<input
-										type='text'
-										placeholder='Szukaj filmu, serialu lub aktora...'
-										className='search-page-input-style'
-										value={whatSearchVal}
-										onChange={handleSearchType}
-									/>
-								</form>
-								<section
-									className={`search-page-text-section flex flex-col items-center gap-y-1 text-center ${
-										whatSearchVal !== '' ? '' : 'active'
-									}`}>
-									<MagnifyingGlassIcon className='min-h-10 h-10 mb-2' />
-									<h1 className='text-lg'>Search vvaciej.to</h1>
-									<span
-										className='text-sm'
-										style={{
-											color: 'var(--gray-9999)',
-											padding: '0rem .4rem',
+					{isLoaded ?
+						<div>
+							<section className='search-text-input-section'>
+								<div className='w-full text-center'>
+									<form
+										className='flex justify-center'
+										onSubmit={event => {
+											event.preventDefault();
 										}}>
-										Find movies, tv series, people and more.
-									</span>
-								</section>
-							</div>
-						</section>
-						<section className={`searched-films-wrapper ${whatSearchVal !== '' ? 'active' : ''}`}>
-							<h1 className='text-2xl font-semibold sm:text-3xl'>Search results for: {decodedQuery}</h1>
-							<section className='search-movies-section'>
-								<a
-									href='#'
-									className={`search-category-text flex items-center relative w-max ${
-										searchResults.length > 0 ? 'active' : ''
-									}`}>
-									<span className='text-2xl font-medium pl-4 leading-6'>Movies</span>
-								</a>
-								<div className='search-movies-films-container'>
-									{searchResults.map((film: FilmData, index: number) => (
-										<article className='film-container w-full' key={index}>
-											<section className='films-image-section'>
-												<a href='#'>
-													<img src={film.image} alt={`Poster for ${film.title}`} />
-													<button className='film-play-btn'>
-														<PlayIcon className='text-black h-5' />
-													</button>
-												</a>
-											</section>
-											<section className='films-text-section'>
-												<p className='main-text-rating flex items-center'>
-													<StarIcon
-														className='h-5 mr-2'
-														style={{
-															color: 'var(--orange)',
-														}}
-													/>
-													<span>{film.rating} / 10</span>
-												</p>
-												<a className='film-link-title search-title pr-1'>{film.title}</a>
-											</section>
-										</article>
-									))}
+										<input
+											type='text'
+											placeholder='Szukaj filmu, serialu lub aktora...'
+											className='search-page-input-style'
+											value={whatSearchVal}
+											onChange={handleSearchType}
+										/>
+									</form>
+									<section
+										className={`search-page-text-section flex flex-col items-center gap-y-1 text-center ${
+											whatSearchVal !== '' ? '' : 'active'
+										}`}>
+										<MagnifyingGlassIcon className='min-h-10 h-10 mb-2' />
+										<h1 className='text-lg'>Search vvaciej.to</h1>
+										<span
+											className='text-sm'
+											style={{
+												color: 'var(--gray-9999)',
+												padding: '0rem .4rem',
+											}}>
+											Find movies, tv series, people and more.
+										</span>
+									</section>
 								</div>
 							</section>
-						</section>
-					</div>
+							<section className={`searched-films-wrapper ${whatSearchVal !== '' ? 'active' : ''}`}>
+								<h1 className='text-2xl font-semibold sm:text-3xl'>Search results for: {decodedQuery}</h1>
+								<section className='search-movies-section'>
+									<a
+										href='#'
+										className={`search-category-text flex items-center relative w-max ${
+											searchResults.length > 0 ? 'active' : ''
+										}`}>
+										<span className='text-2xl font-medium pl-4 leading-6'>Movies</span>
+									</a>
+									<div className='search-movies-films-container'>
+										{searchResults.map((film: FilmData, index: number) => (
+											<article className='film-container w-full' key={index}>
+												<section className='films-image-section'>
+													<a href='#'>
+														<img src={film.image} alt={`Poster for ${film.title}`} />
+														<button className='film-play-btn'>
+															<PlayIcon className='text-black h-5' />
+														</button>
+													</a>
+												</section>
+												<section className='films-text-section'>
+													<p className='main-text-rating flex items-center'>
+														<StarIcon
+															className='h-5 mr-2'
+															style={{
+																color: 'var(--orange)',
+															}}
+														/>
+														<span>{film.rating} / 10</span>
+													</p>
+													<a className='film-link-title search-title pr-1'>{film.title}</a>
+												</section>
+											</article>
+										))}
+									</div>
+								</section>
+							</section>
+						</div>
+					: ''}
 				</div>
 			</div>
 			<Footer />
