@@ -49,9 +49,7 @@ const SearchPage: React.FC = () => {
 
 	useEffect(() => {
 		if (whatSearchVal !== '') {
-			router.push(`/search?query=${whatSearchVal}`);
-		} else {
-			router.push('/search');
+			router.replace(`/search?query=${whatSearchVal}`);
 		}
 	}, [whatSearchVal, router]);
 
