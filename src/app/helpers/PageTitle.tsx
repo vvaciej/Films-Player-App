@@ -8,4 +8,13 @@ const useDocumentTitle = (title: string) => {
 	}, [title]);
 };
 
-export default useDocumentTitle;
+
+const PageTitle = ({ title }: { title: string }) => {
+	if (typeof window !== 'undefined') {
+		useDocumentTitle(title);
+	}
+
+	return null;
+};
+
+export default PageTitle;
