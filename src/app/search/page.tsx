@@ -11,8 +11,6 @@ import React, { useState, useEffect } from 'react';
 import { squircle } from 'ldrs';
 import { useRouter } from 'next/navigation';
 
-squircle.register();
-
 import {
 	popularFilmsData,
 	lastAddedFilmsData,
@@ -42,6 +40,7 @@ type FilmData = {
 const SearchPage: React.FC = () => {
 	useDocumentTitle(`vvaciej.app - Darmowe filmy i seriale`);
 	const router = useRouter();
+	squircle.register();
 
 	const [whatSearchVal, setWhatSearchVal] = useState<string>('');
 	const [searchResults, setSearchResults] = useState<FilmData[]>([]);
