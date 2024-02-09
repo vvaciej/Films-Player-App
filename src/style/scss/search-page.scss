@@ -67,7 +67,7 @@
 			}
 			@include mobile-500 {
 				grid-template-columns: repeat(2, 1fr);
-				gap: .8rem;
+				gap: 0.8rem;
 			}
 		}
 	}
@@ -99,9 +99,10 @@
 		width: 28rem;
 	}
 	@include mobile-600 {
-		width: 90%;
+		width: 100%;
 	}
 	&:focus {
 		@include orange-outline;
 	}
 }
+

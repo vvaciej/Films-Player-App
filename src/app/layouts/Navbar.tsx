@@ -3,7 +3,6 @@
 import { MagnifyingGlassIcon, Bars3Icon, UserIcon } from '@heroicons/react/24/solid';
 import { TvIcon, FilmIcon } from '@heroicons/react/24/outline';
 import { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 import React from 'react';
@@ -46,8 +45,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 	const [searchResults, setSearchResults] = useState<FilmData[]>([]);
 	const [isSearchResultsNull, setIsSearchResultsNull] = useState<boolean>(true);
 	const [whatSearchVal, setWhatSearchVal] = useState<string>('');
-
-	const router = useRouter();
 
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	const headerEl = useRef<HTMLElement>(null);
@@ -134,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								<button type='submit' style={{ display: 'none' }}></button>
 							</form>
 							<Link href='/search' className='header-search-icon-link'>
-								<MagnifyingGlassIcon className='header-search-icon' />
+								<MagnifyingGlassIcon className='header-search-icon min-h-9 p-2' />
 							</Link>
 							<div className={`input-box-search ${isTyped ? 'active' : ''}`}>
 								<ul>

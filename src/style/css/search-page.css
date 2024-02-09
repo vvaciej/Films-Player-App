@@ -1247,7 +1247,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   .search-page-input-style {
-    width: 90%;
+    width: 100%;
   }
 }
 .search-page-input-style:focus {
