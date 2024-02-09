@@ -1135,6 +1135,32 @@ body {
   padding-top: 2px;
 }
 
+.loader {
+  width: 45px;
+  aspect-ratio: 1;
+  --c: no-repeat linear-gradient(#000 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 20% 100%;
+  animation: l1 1s infinite linear;
+}
+
+@keyframes l1 {
+  0% {
+    background-size: 20% 100%, 20% 100%, 20% 100%;
+  }
+  33% {
+    background-size: 20% 10%, 20% 100%, 20% 100%;
+  }
+  50% {
+    background-size: 20% 100%, 20% 10%, 20% 100%;
+  }
+  66% {
+    background-size: 20% 100%, 20% 100%, 20% 10%;
+  }
+  100% {
+    background-size: 20% 100%, 20% 100%, 20% 100%;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -1268,18 +1294,28 @@ body {
 }
 
 .loader {
-  position: absolute;
-  top: 35%;
-  width: 50px;
+  width: 20px;
   aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(farthest-side, var(--orange) 94%, rgba(0, 0, 0, 0)) top/8px 8px no-repeat, conic-gradient(rgba(0, 0, 0, 0) 30%, var(--orange));
-  -webkit-mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(100% - 8px), #000 0);
-  animation: l13 1s infinite linear;
+  background: var(--gray-9999);
+  box-shadow: 0 0 60px 15px var(--gray-9999);
+  transform: translate(-80px);
+  clip-path: inset(0);
+  animation: l4-1 0.5s ease-in-out infinite alternate, l4-2 1s ease-in-out infinite;
 }
 
-@keyframes l13 {
+@keyframes l4-1 {
   100% {
-    transform: rotate(1turn);
+    transform: translateX(80px);
+  }
+}
+@keyframes l4-2 {
+  33% {
+    clip-path: inset(0 0 0 -100px);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+  }
+  83% {
+    clip-path: inset(0 -100px 0 0);
   }
 }/*# sourceMappingURL=search-page.css.map */

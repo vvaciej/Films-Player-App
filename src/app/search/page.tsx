@@ -8,7 +8,6 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import '../../style/css/search-page.css';
 import { PlayIcon, StarIcon } from '@heroicons/react/24/solid';
 import React, { useState, useEffect } from 'react';
-import { squircle } from 'ldrs';
 import { useRouter } from 'next/navigation';
 
 import {
@@ -40,7 +39,6 @@ type FilmData = {
 const SearchPage: React.FC = () => {
 	useDocumentTitle(`vvaciej.app - Darmowe filmy i seriale`);
 	const router = useRouter();
-	squircle.register();
 
 	const [whatSearchVal, setWhatSearchVal] = useState<string>('');
 	const [searchResults, setSearchResults] = useState<FilmData[]>([]);
@@ -72,13 +70,11 @@ const SearchPage: React.FC = () => {
 			setIsLoaded(true);
 		};
 
-		if (typeof window !== 'undefined') {
-			const loaderTimeout = setTimeout(() => {
-				requestAnimationFrame(handleLoad);
-			}, 200);
+		const loaderTimeout = setTimeout(() => {
+			requestAnimationFrame(handleLoad);
+		}, 200);
 
-			return () => clearTimeout(loaderTimeout);
-		}
+		return () => clearTimeout(loaderTimeout);
 	}, []);
 
 	const handleSearch = (inputValue: string) => {
@@ -180,8 +176,8 @@ const SearchPage: React.FC = () => {
 							</section>
 						</div>
 					) : (
-						<div className='flex justify-center w-full h-full relative top-40'>
-							<l-squircle size='37' stroke='5' stroke-length='0.15' bg-opacity='0.1' speed='0.9' color='gray'></l-squircle>
+						<div className='flex justify-center w-full h-full items-center'>
+							<div className="loader"></div>
 						</div>
 					)}
 				</div>

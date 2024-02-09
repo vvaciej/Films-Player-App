@@ -107,18 +107,27 @@
 }
 
 .loader {
-	position: absolute;
-	top: 35%;
-  width: 50px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: 
-    radial-gradient(farthest-side, var(--orange) 94%,#0000) top/8px 8px no-repeat,
-    conic-gradient(#0000 30%,var(--orange));
-  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
-  animation: l13 1s infinite linear;
+	width: 20px;
+	aspect-ratio: 1;
+	background: var(--gray-9999);
+	box-shadow: 0 0 60px 15px var(--gray-9999);
+	transform: translate(-80px);
+	clip-path: inset(0);
+	animation: l4-1 0.5s ease-in-out infinite alternate, l4-2 1s ease-in-out infinite;
 }
-@keyframes l13{ 
-  100%{transform: rotate(1turn)}
+@keyframes l4-1 {
+	100% {
+		transform: translateX(80px);
+	}
 }
-
+@keyframes l4-2 {
+	33% {
+		clip-path: inset(0 0 0 -100px);
+	}
+	50% {
+		clip-path: inset(0 0 0 0);
+	}
+	83% {
+		clip-path: inset(0 -100px 0 0);
+	}
+}
