@@ -1,11 +1,8 @@
 import Search from "./Search";
 import { Navbar } from "../layouts/Navbar";
 import { Footer } from "../layouts/Footer";
-import useDocumentTitle from "../helpers/PageTitle";
 
 const SearchPage: React.FC = () => {
-	useDocumentTitle(`vvaciej.app - Darmowe filmy i seriale`);
-
 	return (
 		<div className='space-light'>
 			<Navbar isCutted={false} />

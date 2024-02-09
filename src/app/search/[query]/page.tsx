@@ -44,7 +44,7 @@ interface MobileSearchProps {
 
 const MobileSearch: React.FC<MobileSearchProps> = ({ params }) => {
 	const decodedQuery = decodeURIComponent(params.query);
-	useDocumentTitle(`Search results for ${params.query} - vvaciej.app`);
+	useDocumentTitle(`Search results for ${decodedQuery} - vvaciej.app`);
 
 	const [searchResults, setSearchResults] = useState<FilmData[]>([]);
 
