@@ -32,7 +32,7 @@ const Movies: React.FC = () => {
 		return filmTypeLowerCase === 'film';
 	});
 
-	return <Filters headingTitlePage='Wyszukiwarka filmów' mappingBy={filteredMovies} />;
+	return <Filters headingTitlePage='Filmy' mappingBy={filteredMovies} />;
 };
 
 export default Movies;

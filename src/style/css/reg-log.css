@@ -1024,7 +1024,7 @@ body {
   flex-direction: column;
   min-height: 78vh;
   width: 1240px;
-  padding: calc(var(--main-container-padd-top) + 0.3rem) 0rem;
+  padding: var(--main-container-padd-top) 0rem;
 }
 @media screen and (max-width: 1350px) {
   .typical-container-comp-with-films {
@@ -1319,7 +1319,7 @@ body {
 .reg-log-container .reg-log-box .reg-log-input-form > section input[type=text] {
   padding: 0px 10px;
   color: var(--white);
-  font-size: 0.88rem;
+  font-size: 1rem;
   outline: 1px solid var(--gray-5050);
   border: 1px solid transparent;
   border-radius: 4px;

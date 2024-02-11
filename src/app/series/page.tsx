@@ -32,7 +32,7 @@ const Series = () => {
 		return filmTypeLowerCase === 'serial';
 	});
 
-	return <Filters headingTitlePage='Wyszukiwarka seriali' mappingBy={filteredMovies} />;
+	return <Filters headingTitlePage='Seriale' mappingBy={filteredMovies} />;
 };
 
 export default Series;
