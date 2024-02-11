@@ -30,13 +30,13 @@
     }
     img {
       height: 100%;
-			max-width: 100%;
+			width: 100%;
       border-radius: 0.2rem;
       object-fit: cover;
       filter: brightness(90%);
       cursor: pointer;
 			@include mobile-600 {
-				max-height: 18rem;
+				max-height: 19rem;
 			}
     }
   }

@@ -759,7 +759,7 @@ html.dark {
 }
 .films-image-section a img {
   height: 100%;
-  max-width: 100%;
+  width: 100%;
   border-radius: 0.2rem;
   object-fit: cover;
   filter: brightness(90%);
@@ -767,7 +767,7 @@ html.dark {
 }
 @media screen and (max-width: 600px) {
   .films-image-section a img {
-    max-height: 18rem;
+    max-height: 19rem;
   }
 }
 
