@@ -27,7 +27,7 @@ const Login: React.FC = () => {
 									Zapomniałeś hasła?
 								</Link>
 							</section>
-							<input type='text' id='password' />
+							<input type='password' id='password' />
 							<section className='flex items-center gap-x-2 mt-2'>
 								<input type='checkbox' id='remember' className='orange-checkbox' />
 								<label htmlFor='remember' className='select-none'>

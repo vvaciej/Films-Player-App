@@ -23,11 +23,11 @@ const Policy: React.FC = () => {
 						</section>
 						<section>
 							<label htmlFor='password'>Hasło</label>
-							<input type='text' id='password' />
+							<input type='password' id='password' />
 						</section>
 						<section>
 							<label htmlFor='confirm-password'>Potwierdź hasło</label>
-							<input type='text' id='confirm-password' />
+							<input type='password' id='confirm-password' />
 						</section>
 					</section>
 					<button className='reg-log-create-acc-btn'>Stwórz konto</button>
@@ -46,7 +46,10 @@ const Policy: React.FC = () => {
 					</section>
 				</div>
 				<p>
-					Already have an account? <Link href='/login' className='orange-link'>Sign in</Link>
+					Already have an account?{' '}
+					<Link href='/login' className='orange-link'>
+						Sign in
+					</Link>
 				</p>
 			</div>
 			<Link href='/' className='reg-log-bottom-link'>
