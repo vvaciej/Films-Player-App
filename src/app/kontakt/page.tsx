@@ -4,17 +4,10 @@ import '../../style/css/contact.css';
 
 import { Navbar } from '@/app/layouts/Navbar';
 import { Footer } from '../layouts/Footer';
-import React, { useRef } from 'react';
 import useDocumentTitle from '../helpers/PageTitle';
 
 const Kontakt: React.FC = () => {
-	useDocumentTitle('Skontaktuj się - vvaciej.app');
-
-	const formRef = useRef<HTMLFormElement>(null);
-
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault();
-	};
+	useDocumentTitle('vvaciej.app - Skontaktuj się');
 
 	return (
 		<div className='space-dark'>
@@ -24,7 +17,7 @@ const Kontakt: React.FC = () => {
 					<div className='contact-box'>
 						<h1>Skontaktuj się</h1>
 						<p>Użyj poniższego formularza, aby przesłać nam wiadomość, a my skontaktujemy się z Tobą jak najszybciej.</p>
-						<form className='contact-input-form' ref={formRef} onSubmit={handleSubmit}>
+						<form className='contact-input-form' onSubmit={(event) => event.preventDefault()}>
 							<section>
 								<label htmlFor='title'>Tytuł</label>
 								<input type='text' id='title' required />

@@ -8,25 +8,24 @@ import Link from 'next/link';
 import React from 'react';
 
 import {
-	popularFilmsData,
-	lastAddedFilmsData,
-	popularActionFilmsData,
-	popularComediaFilmsData,
+	popularFilms,
+	lastAddedFilms,
+	popularActionFilms,
+	popularComediaFilms,
 	popularHorrorFilms,
 	popularPolishFilms,
 	popularSerials,
 } from '../data/main-films';
 
 const allFilmsData = [
-	...popularFilmsData,
-	...lastAddedFilmsData,
-	...popularActionFilmsData,
-	...popularComediaFilmsData,
+	...popularFilms,
+	...lastAddedFilms,
+	...popularActionFilms,
+	...popularComediaFilms,
 	...popularHorrorFilms,
 	...popularPolishFilms,
 	...popularSerials,
 ];
-
 interface NavbarProps {
 	isCutted: boolean;
 }
@@ -158,13 +157,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						</button>
 						<section className='header-btn-section'>
 							<section>
-								<Link href='#'>
+								<Link href='/movies'>
 									<FilmIcon className='header-fa' />
 									<span>Filmy</span>
 								</Link>
 							</section>
 							<section>
-								<Link href='#'>
+								<Link href='/series'>
 									<TvIcon className='header-fa' />
 									<span>Seriale</span>
 								</Link>
@@ -192,11 +191,11 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 			<div ref={dropdownRef} className={`navbar-dropdown ${isClickedBtn ? 'active' : ''}`}>
 				{isUserOrMenuClicked === 'menu' ? (
 					<nav>
-						<Link href='#'>
+						<Link href='/movies'>
 							<FilmIcon className='h-5' />
 							<span>Filmy</span>
 						</Link>
-						<Link href='#'>
+						<Link href='/series'>
 							<TvIcon className='h-5' />
 							<span>Seriale</span>
 						</Link>

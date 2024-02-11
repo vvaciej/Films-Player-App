@@ -1,10 +1,11 @@
-export const popularFilmsData = [
+export const popularFilms = [
 	{
 		title: 'Śnieżne bractwo',
 		image: 'https://image.tmdb.org/t/p/w300/gtSJ54lMuSf7OMAYAlnlXoBZwzm.jpg',
 		rating: 6.9,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Napoleon',
@@ -12,6 +13,7 @@ export const popularFilmsData = [
 		rating: 6.5,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Skok w przestworzach',
@@ -19,6 +21,7 @@ export const popularFilmsData = [
 		rating: 8,
 		year: 2024,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Aquaman i Zaginione Królestwo',
@@ -26,6 +29,7 @@ export const popularFilmsData = [
 		rating: 6.2,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Marvels',
@@ -33,6 +37,7 @@ export const popularFilmsData = [
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Wonka',
@@ -40,6 +45,7 @@ export const popularFilmsData = [
 		rating: 7.1,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Zabójcza gra',
@@ -47,6 +53,7 @@ export const popularFilmsData = [
 		rating: 5.8,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Oppenheimer',
@@ -54,6 +61,7 @@ export const popularFilmsData = [
 		rating: 8.1,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Super Mario Bros. Film',
@@ -61,6 +69,7 @@ export const popularFilmsData = [
 		rating: 7.7,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Plan wycieczki',
@@ -68,6 +77,7 @@ export const popularFilmsData = [
 		rating: 7.4,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Rebel Moon - część 1: Dziecko Ognia',
@@ -75,6 +85,7 @@ export const popularFilmsData = [
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 	{
 		title: 'Życzenie',
@@ -82,16 +93,18 @@ export const popularFilmsData = [
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
+		category: 'Popular',
 	},
 ];
 
-export const lastAddedFilmsData = [
+export const lastAddedFilms = [
 	{
 		title: 'Darkland 2',
 		image: 'https://image.tmdb.org/t/p/w300/A8EPXv3SV9qiNCIttIM4ezJRmhW.jpg',
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Darkland',
@@ -99,6 +112,7 @@ export const lastAddedFilmsData = [
 		rating: 6.1,
 		year: 2017,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Dotyk zła',
@@ -106,6 +120,7 @@ export const lastAddedFilmsData = [
 		rating: 4.2,
 		year: 2022,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Każdy kłamie',
@@ -113,6 +128,7 @@ export const lastAddedFilmsData = [
 		rating: 6.9,
 		year: 2022,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Pajęczyna',
@@ -120,6 +136,7 @@ export const lastAddedFilmsData = [
 		rating: 6.7,
 		year: 2023,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Zabójcza lekcja',
@@ -127,6 +144,7 @@ export const lastAddedFilmsData = [
 		rating: 6.7,
 		year: 2023,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Eternals',
@@ -134,6 +152,7 @@ export const lastAddedFilmsData = [
 		rating: 6.9,
 		year: 2021,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Bagażnik - uwięziona',
@@ -141,6 +160,7 @@ export const lastAddedFilmsData = [
 		rating: 6,
 		year: 2023,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Myśliwi z ruin',
@@ -148,6 +168,7 @@ export const lastAddedFilmsData = [
 		rating: 6.4,
 		year: 2024,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Bękart',
@@ -155,6 +176,7 @@ export const lastAddedFilmsData = [
 		rating: 7.5,
 		year: 2023,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Wizje',
@@ -162,6 +184,7 @@ export const lastAddedFilmsData = [
 		rating: 5.7,
 		year: 2023,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 	{
 		title: 'Milion dni',
@@ -169,16 +192,18 @@ export const lastAddedFilmsData = [
 		rating: 6.1,
 		year: 2023,
 		type: 'Film',
+		category: 'LastAdded',
 	},
 ];
 
-export const popularActionFilmsData = [
+export const popularActionFilms = [
 	{
 		title: 'Skok w przestworzach',
 		image: 'https://image.tmdb.org/t/p/w300/46sp1Z9b2PPTgCMyA87g9aTLUXi.jpg',
 		rating: 6.2,
 		year: 2024,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Zabójcza gra',
@@ -186,6 +211,7 @@ export const popularActionFilmsData = [
 		rating: 5.8,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Marvels',
@@ -193,6 +219,7 @@ export const popularActionFilmsData = [
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Plan wycieczki',
@@ -200,6 +227,7 @@ export const popularActionFilmsData = [
 		rating: 7.4,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Rebel Moon - część 1: Dziecko Ognia',
@@ -207,6 +235,7 @@ export const popularActionFilmsData = [
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Jeszcze jeden strzał',
@@ -214,6 +243,7 @@ export const popularActionFilmsData = [
 		rating: 6.7,
 		year: 2024,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Igrzyska śmierci: Ballada ptaków i węży',
@@ -221,6 +251,7 @@ export const popularActionFilmsData = [
 		rating: 7.2,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Szybcy i wściekli 10',
@@ -228,6 +259,7 @@ export const popularActionFilmsData = [
 		rating: 7.2,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Spider-Man: Poprzez multiwersum',
@@ -235,6 +267,7 @@ export const popularActionFilmsData = [
 		rating: 8.4,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Spider-Man: Bez drogi do domu',
@@ -242,6 +275,7 @@ export const popularActionFilmsData = [
 		rating: 8,
 		year: 2021,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'Transformers: Przebudzenie bestii',
@@ -249,6 +283,7 @@ export const popularActionFilmsData = [
 		rating: 7.4,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 	{
 		title: 'John Wick 4',
@@ -256,16 +291,18 @@ export const popularActionFilmsData = [
 		rating: 7.8,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularAction',
 	},
 ];
 
-export const popularComediaFilmsData = [
+export const popularComediaFilms = [
 	{
 		title: 'Skok w przestworzach',
 		image: 'https://image.tmdb.org/t/p/w300/46sp1Z9b2PPTgCMyA87g9aTLUXi.jpg',
 		rating: 6.2,
 		year: 2024,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Wonka',
@@ -273,6 +310,7 @@ export const popularComediaFilmsData = [
 		rating: 7.1,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Zabójcza gra',
@@ -280,6 +318,7 @@ export const popularComediaFilmsData = [
 		rating: 6.8,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Super Mario Bros. Film',
@@ -287,6 +326,7 @@ export const popularComediaFilmsData = [
 		rating: 7.7,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Plan wycieczki',
@@ -294,6 +334,7 @@ export const popularComediaFilmsData = [
 		rating: 7.4,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Barbie',
@@ -301,6 +342,7 @@ export const popularComediaFilmsData = [
 		rating: 7.1,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Między nami żywiołami',
@@ -308,6 +350,7 @@ export const popularComediaFilmsData = [
 		rating: 7.2,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Saltburn',
@@ -315,6 +358,7 @@ export const popularComediaFilmsData = [
 		rating: 7.2,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Leo',
@@ -322,6 +366,7 @@ export const popularComediaFilmsData = [
 		rating: 7.5,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Kot w butach: Ostatnie życzenie',
@@ -329,6 +374,7 @@ export const popularComediaFilmsData = [
 		rating: 8.3,
 		year: 2022,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Freelance',
@@ -336,6 +382,7 @@ export const popularComediaFilmsData = [
 		rating: 6.5,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 	{
 		title: 'Między nami żywiołami',
@@ -343,6 +390,7 @@ export const popularComediaFilmsData = [
 		rating: 7.7,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularComedia',
 	},
 ];
 
@@ -353,6 +401,7 @@ export const popularHorrorFilms = [
 		rating: 6.2,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Pięć koszmarnych nocy',
@@ -360,6 +409,7 @@ export const popularHorrorFilms = [
 		rating: 7.7,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Noc Dziękczynienia',
@@ -367,6 +417,7 @@ export const popularHorrorFilms = [
 		rating: 6.7,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Meg 2: Głębia',
@@ -374,6 +425,7 @@ export const popularHorrorFilms = [
 		rating: 6.7,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Piła X',
@@ -381,6 +433,7 @@ export const popularHorrorFilms = [
 		rating: 7.4,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Raz, dwa, trzy... wchodzisz do gry!',
@@ -388,6 +441,7 @@ export const popularHorrorFilms = [
 		rating: 5.4,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'When Evil Lurks',
@@ -395,6 +449,7 @@ export const popularHorrorFilms = [
 		rating: 7.3,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Egzorcysta: Wyznawca',
@@ -402,6 +457,7 @@ export const popularHorrorFilms = [
 		rating: 6.1,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Zakonnica II',
@@ -409,6 +465,7 @@ export const popularHorrorFilms = [
 		rating: 6.8,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Pajęczyna',
@@ -416,6 +473,7 @@ export const popularHorrorFilms = [
 		rating: 6.7,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Egzorcysta Papieża',
@@ -423,6 +481,7 @@ export const popularHorrorFilms = [
 		rating: 7.1,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 	{
 		title: 'Martwe Zło: Przebudzenie',
@@ -430,6 +489,7 @@ export const popularHorrorFilms = [
 		rating: 7,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularHorror',
 	},
 ];
 
@@ -440,6 +500,7 @@ export const popularPolishFilms = [
 		rating: 6.3,
 		year: 2021,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Poskromienie złośnicy 2',
@@ -447,6 +508,7 @@ export const popularPolishFilms = [
 		rating: 6.3,
 		year: 2022,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Znachor',
@@ -454,6 +516,7 @@ export const popularPolishFilms = [
 		rating: 8.1,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Freestyle',
@@ -461,6 +524,7 @@ export const popularPolishFilms = [
 		rating: 6.8,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Infinite Storm',
@@ -468,6 +532,7 @@ export const popularPolishFilms = [
 		rating: 5.8,
 		year: 2022,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Chłopi',
@@ -475,6 +540,7 @@ export const popularPolishFilms = [
 		rating: 8.1,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Sieć podejrzeń',
@@ -482,6 +548,7 @@ export const popularPolishFilms = [
 		rating: 5.5,
 		year: 2018,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Plan lekcji',
@@ -489,6 +556,7 @@ export const popularPolishFilms = [
 		rating: 6.2,
 		year: 2022,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'The Palace',
@@ -496,6 +564,7 @@ export const popularPolishFilms = [
 		rating: 5.6,
 		year: 2023,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Miłość do kwadratu',
@@ -503,6 +572,7 @@ export const popularPolishFilms = [
 		rating: 6.1,
 		year: 2021,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Przestroga',
@@ -510,6 +580,7 @@ export const popularPolishFilms = [
 		rating: 4.9,
 		year: 2021,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 	{
 		title: 'Obywatel Jones',
@@ -517,6 +588,7 @@ export const popularPolishFilms = [
 		rating: 6.7,
 		year: 2019,
 		type: 'Film',
+		category: 'PopularPolish',
 	},
 ];
 
@@ -527,6 +599,7 @@ export const popularSerials = [
 		rating: 8.7,
 		year: 2013,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Monarch: dziedzitwo potworów',
@@ -534,6 +607,7 @@ export const popularSerials = [
 		rating: 8.1,
 		year: 2023,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Loki',
@@ -541,6 +615,7 @@ export const popularSerials = [
 		rating: 8.2,
 		year: 2021,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Fear the Walking Dead',
@@ -548,6 +623,7 @@ export const popularSerials = [
 		rating: 7.7,
 		year: 2015,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Euforia',
@@ -555,6 +631,7 @@ export const popularSerials = [
 		rating: 8.3,
 		year: 2019,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Niezwyciężony',
@@ -562,6 +639,7 @@ export const popularSerials = [
 		rating: 8.7,
 		year: 2021,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Burmistrz Kingstown',
@@ -569,6 +647,7 @@ export const popularSerials = [
 		rating: 8,
 		year: 2021,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Your Honor',
@@ -576,6 +655,7 @@ export const popularSerials = [
 		rating: 8.1,
 		year: 2020,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Niebieskooki samuraj',
@@ -583,6 +663,7 @@ export const popularSerials = [
 		rating: 7.7,
 		year: 2023,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Nocny agent',
@@ -590,6 +671,7 @@ export const popularSerials = [
 		rating: 7.7,
 		year: 2023,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Agentka McCall',
@@ -597,6 +679,7 @@ export const popularSerials = [
 		rating: 7.6,
 		year: 2021,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 	{
 		title: 'Agenci NCIS: Hawaje',
@@ -604,5 +687,6 @@ export const popularSerials = [
 		rating: 8,
 		year: 2021,
 		type: 'Serial',
+		category: 'PopularSerial',
 	},
 ];

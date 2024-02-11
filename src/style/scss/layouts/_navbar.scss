@@ -178,13 +178,7 @@
 		display: none;
 	}
 	.header-register-btn {
-		padding: 0.5rem 1rem;
-		transition: background-color 0.3s ease;
-		&:hover {
-			background-color: var(--btn-opacited-hover-bg);
-			border-radius: 0.3rem;
-			transition: background-color 0.3s ease;
-		}
+		@include transparent-btn-style;
 	}
 	.header-login-btn {
 		@include btn-style;

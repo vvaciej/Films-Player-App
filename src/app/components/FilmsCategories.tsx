@@ -3,6 +3,7 @@
 import React, { useRef, useState } from 'react';
 import { ChevronRightIcon, StarIcon, PlayIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
+import Link from 'next/link';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,6 +16,7 @@ import * as filmData from '../data/main-films';
 interface FilmProps {
 	headingText: string;
 	filmsData: FilmData[];
+	linkDirectPage: string;
 }
 
 type FilmData = {
@@ -23,7 +25,7 @@ type FilmData = {
 	rating: number;
 };
 
-const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
+const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectPage }) => {
 	const navigationPrevRef = useRef<HTMLButtonElement>(null);
 	const navigationNextRef = useRef<HTMLButtonElement>(null);
 	const [swiper, setSwiper] = useState<any>(null);
@@ -38,19 +40,19 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 
 	return (
 		<div className='films-category-container'>
-			<section className='popular-films-heading-section'>
-				<a href='#' className='popular-films-category-heading-text'>
+			<section className='films-heading-section'>
+				<Link href={linkDirectPage} className='films-category-heading-text'>
 					<span>{headingText}</span>
-					<ChevronRightIcon className='h-6 popular-films-category-heading-icon transition-all' />
-				</a>
-				<div className='popular-films-category-control-btns'>
-					<button ref={navigationPrevRef} onClick={handlePrevClick} className={`popular-films-category-control-btn`}>
+					<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
+				</Link>
+				<section className='films-category-control-btns'>
+					<button ref={navigationPrevRef} onClick={handlePrevClick} className={`films-category-control-btn`}>
 						<ChevronLeftIcon className='h-5' />
 					</button>
-					<button ref={navigationNextRef} onClick={handleNextClick} className={`popular-films-category-control-btn`}>
+					<button ref={navigationNextRef} onClick={handleNextClick} className={`films-category-control-btn`}>
 						<ChevronRightIcon className='h-5' />
 					</button>
-				</div>
+				</section>
 			</section>
 			<Swiper
 				modules={[Navigation, Pagination, A11y]}
@@ -122,14 +124,42 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData }) => {
 
 export const FilmsCategories: React.FC = () => {
 	return (
-		<div className='films-wrapper'>
-			<FilmCategory headingText='Popularne filmy' filmsData={filmData.popularFilmsData} />
-			<FilmCategory headingText='Ostatnio dodane filmy' filmsData={filmData.lastAddedFilmsData} />
-			<FilmCategory headingText='Popularne filmy akcji' filmsData={filmData.popularActionFilmsData} />
-			<FilmCategory headingText='Popularne komedie' filmsData={filmData.popularComediaFilmsData} />
-			<FilmCategory headingText='Popularne horrory' filmsData={filmData.popularHorrorFilms} />
-			<FilmCategory headingText='Popularne polskie filmy' filmsData={filmData.popularPolishFilms} />
-			<FilmCategory headingText='Popularne seriale' filmsData={filmData.popularSerials} />
+		<div className='films-wrapper-carousel'>
+			<FilmCategory
+				headingText='Popularne filmy'
+				filmsData={filmData.popularFilms}
+				linkDirectPage='/channel/popularne-filmy'
+			/>
+			<FilmCategory
+				headingText='Ostatnio dodane filmy'
+				filmsData={filmData.lastAddedFilms}
+				linkDirectPage='/channel/ostatnio-dodane-filmy'
+			/>
+			<FilmCategory
+				headingText='Popularne filmy akcji'
+				filmsData={filmData.popularActionFilms}
+				linkDirectPage='/channel/popularne-filmy-akcji'
+			/>
+			<FilmCategory
+				headingText='Popularne komedie'
+				filmsData={filmData.popularComediaFilms}
+				linkDirectPage='/channel/popularne-komedie'
+			/>
+			<FilmCategory
+				headingText='Popularne horrory'
+				filmsData={filmData.popularHorrorFilms}
+				linkDirectPage='/channel/popularne-horrory'
+			/>
+			<FilmCategory
+				headingText='Popularne polskie filmy'
+				filmsData={filmData.popularPolishFilms}
+				linkDirectPage='/channel/popularne-polskie-filmy'
+			/>
+			<FilmCategory
+				headingText='Popularne seriale'
+				filmsData={filmData.popularSerials}
+				linkDirectPage='/channel/popularne-seriale'
+			/>
 		</div>
 	);
 };

@@ -4,11 +4,31 @@ import { faTwitter, faInstagram, faFacebook, faYoutube } from '@fortawesome/free
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 export const Footer: React.FC = () => {
-	const [btnClickedBool, setBtnClickedBool] = useState<boolean>(false);
+	const [langBtnClickedBool, setLangBtnClickedBool] = useState<boolean>(false);
+
+	const LangSelectDropdownRef = useRef<HTMLDivElement>(null);
+
+	const handleDocumentClick = (event: MouseEvent) => {
+		const isInsideDropdown = (target: EventTarget | null, dropdownRef: React.RefObject<HTMLDivElement>) => {
+			return dropdownRef.current && dropdownRef.current.contains(target as Node);
+		};
+
+		if (!isInsideDropdown(event.target, LangSelectDropdownRef)) {
+			setLangBtnClickedBool(false);
+		}
+	};
+
+	useEffect(() => {
+		document.body.addEventListener('click', handleDocumentClick);
+
+		return () => {
+			document.body.removeEventListener('click', handleDocumentClick);
+		};
+	}, []);
 
 	return (
 		<div className='content-full-space-centered'>
@@ -29,19 +49,19 @@ export const Footer: React.FC = () => {
 				<section className='footer-bottomside-section'>
 					<section>
 						<p className='mb-1'>
-							Source <Link href='#'>obejrzyj.to</Link>, site for learning coding
+							Source <Link href='/'>obejrzyj.to</Link>, site for learning coding
 						</p>
 					</section>
 					<section className='relative'>
 						<button
-							className='footer-lang-btn-select flex items-center gap-x-2 py-2 px-3 rounded-md relative'
-							onClick={() => setBtnClickedBool(!btnClickedBool)}>
+							className='flex items-center gap-x-2 py-2 px-3 rounded-md relative'
+							onClick={() => setLangBtnClickedBool(!langBtnClickedBool)}>
 							<GlobeAltIcon className='h-5' />
 							<span className='mr-1'>Polski</span>
 							<ChevronDownIcon className='h-4' />
 						</button>
-						<div className={`footer-choose-lang-div ${btnClickedBool ? 'active' : ''}`}>
-							<button className='footer-lang-option' onClick={() => setBtnClickedBool(!btnClickedBool)}>
+						<div className={`footer-dropdown-lang ${langBtnClickedBool ? 'active' : ''}`} ref={LangSelectDropdownRef}>
+							<button onClick={() => setLangBtnClickedBool(!langBtnClickedBool)} className='choosed'>
 								Polski
 							</button>
 						</div>
@@ -50,4 +70,4 @@ export const Footer: React.FC = () => {
 			</footer>
 		</div>
 	);
-}
+};

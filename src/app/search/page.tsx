@@ -11,20 +11,20 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import {
-	popularFilmsData,
-	lastAddedFilmsData,
-	popularActionFilmsData,
-	popularComediaFilmsData,
+	popularFilms,
+	lastAddedFilms,
+	popularActionFilms,
+	popularComediaFilms,
 	popularHorrorFilms,
 	popularPolishFilms,
 	popularSerials,
 } from '../data/main-films';
 
 const allFilmsData = [
-	...popularFilmsData,
-	...lastAddedFilmsData,
-	...popularActionFilmsData,
-	...popularComediaFilmsData,
+	...popularFilms,
+	...lastAddedFilms,
+	...popularActionFilms,
+	...popularComediaFilms,
 	...popularHorrorFilms,
 	...popularPolishFilms,
 	...popularSerials,
@@ -101,7 +101,7 @@ const SearchPage: React.FC = () => {
 		<div className='space-light'>
 			<Navbar isCutted={false} />
 			<div className='content-full-space-centered'>
-				<div className='search-container'>
+				<div className='typical-container-comp-with-films'>
 					{isLoaded ? (
 						<div>
 							<section className='search-text-input-section'>
@@ -146,7 +146,7 @@ const SearchPage: React.FC = () => {
 										}`}>
 										<span className='text-2xl font-medium pl-4 leading-6'>Movies</span>
 									</a>
-									<div className='search-movies-films-container'>
+									<div className='films-wrapper'>
 										{searchResults.map((film: FilmData, index: number) => (
 											<article className='film-container w-full' key={index}>
 												<section className='films-image-section'>
@@ -177,7 +177,7 @@ const SearchPage: React.FC = () => {
 						</div>
 					) : (
 						<div className='flex justify-center w-full h-full items-center'>
-							<div className="loader"></div>
+							<div className='loader'></div>
 						</div>
 					)}
 				</div>

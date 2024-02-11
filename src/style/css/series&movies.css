@@ -1,10 +1,4 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 html.dark {
   --white: #ffffff;
   --dark-1a1a: #1a1a1a;
@@ -1225,106 +1219,221 @@ body {
   }
 }
 
-.notfound-container {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.films-category-filter-btns {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 85%;
-  padding-bottom: 5rem;
-  column-gap: 6rem;
-  height: 100vh;
-}
-@media screen and (max-width: 1350px) {
-  .notfound-container {
-    width: 90%;
-  }
-}
-@media (max-width: 950px) {
-  .notfound-container {
-    flex-direction: column-reverse;
-    padding: 0px 5rem;
-    padding-top: 3rem;
-    justify-content: center;
-    row-gap: 5rem;
-  }
-}
-@media screen and (max-width: 600px) {
-  .notfound-container {
-    padding: 0px 3rem;
-    padding-bottom: 1rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .notfound-container {
-    padding: 0px 1.5rem;
-    padding-bottom: 5.5rem;
-  }
-}
-@media screen and (max-width: 318px) {
-  .notfound-container {
-    padding-bottom: 10rem;
-  }
-}
-.notfound-container .notfound-left-section {
-  display: flex;
   justify-content: center;
-  flex-direction: column;
-  row-gap: 12px;
-  height: 12rem;
-  position: relative;
+  column-gap: 0.9rem;
 }
-.notfound-container .notfound-left-section:before {
-  content: "";
-  position: absolute;
-  background-image: url("https://obejrzyj.to/build/assets/404-2-14c4a897.png");
-  background-repeat: no-repeat;
-  background-size: 80%;
-  background-position: left;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  opacity: 0.1;
+.films-category-filter-btns .films-category-filter-btn {
+  display: flex;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  align-items: center;
+  padding: 7.5px 10px;
 }
-.notfound-container .notfound-left-section h1 {
-  font-size: 1.55rem;
-  font-weight: 600;
-  line-height: 1.4;
+.films-category-filter-btns .films-category-filter-btn:hover {
+  background-color: var(--btn-opacited-hover-bg);
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
 }
-@media screen and (max-width: 600px) {
-  .notfound-container .notfound-left-section h1 {
-    font-size: 1.3rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .notfound-container .notfound-left-section h1 {
-    font-size: 1.1rem;
-  }
-}
-.notfound-container .notfound-left-section span {
-  font-size: 1rem;
-  font-weight: 300;
-}
-@media screen and (max-width: 600px) {
-  .notfound-container .notfound-left-section span {
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .notfound-container .notfound-left-section span {
-    font-size: 0.85rem;
-  }
-}
-.notfound-container .notfound-left-section a {
-  background-color: var(--orange);
-  width: max-content;
-  padding: 13px 20px;
-  border-radius: 5px;
+.films-category-filter-btns .films-category-filter-btn span {
+  font-size: 13.5px;
   font-weight: 500;
-  margin-top: 10px;
-  transition: 0.2s;
+  padding-left: 0.6rem;
+}
+
+.filter-dropdown {
+  position: absolute;
+  width: 100%;
+  height: max-content;
+  border: 1px solid var(--gray-3232);
+  border-radius: 4px;
+  background-color: var(--dark-1a1a);
+  z-index: 10;
+  padding: 5px 0px;
+  transition: 0.15s;
+  top: 38px;
+}
+@media screen and (max-width: 600px) {
+  .filter-dropdown {
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 2.1rem;
+    width: 8rem;
+  }
+}
+.filter-dropdown:not(.active) {
+  visibility: hidden;
+  opacity: 0;
+  top: 42px;
+  transition: 0.15s;
+}
+.filter-dropdown > button,
+.filter-dropdown label {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: var(--white);
+  text-align: left;
+  font-size: 13px;
+  padding: 0.6rem 0.5rem;
+  padding-left: 0.6rem;
+  transition: 0s;
   cursor: pointer;
 }
-.notfound-container .notfound-left-section a:hover {
-  filter: brightness(90%);
-  transition: 0.2s;
-}/*# sourceMappingURL=not-found.css.map */
+.filter-dropdown > button:hover,
+.filter-dropdown label:hover {
+  background-color: var(--gray-4040);
+}
+.filter-dropdown > button.choosed {
+  background-color: var(--brown);
+}
+.filter-dropdown > button.choosed:before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  left: 0;
+  font-size: 13px;
+  color: var(--dark-orange);
+  margin-right: 0.6rem;
+}
+.filter-dropdown button:not(.choosed) {
+  padding-left: 2rem;
+}
+
+.filter-dropdown.filters-section {
+  width: 18.5rem;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+.filter-dropdown.filters-section #clear-filters {
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--gray-3232);
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+}
+.filter-dropdown.filters-section #clear-filters:hover {
+  background-color: var(--btn-opacited-hover-bg);
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+}
+.filter-dropdown.filters-section #apply-filters {
+  background-color: var(--orange);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.2s;
+  width: max-content;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+}
+.filter-dropdown.filters-section #apply-filters:hover {
+  background-color: var(--dark-orange);
+  transition: background-color 0.2s;
+}
+.filter-dropdown.filters-section label {
+  border-top: 1px solid var(--gray-3232);
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  position: relative;
+}
+.filter-dropdown.filters-section label input {
+  height: 17px;
+  width: 17px;
+}
+.filter-dropdown.filters-section label input:checked ~ .filters-chevron-down-icon {
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+.filter-dropdown.filters-section .filters-chevron-down-icon {
+  position: absolute;
+  right: 0.6rem;
+  transition: 0.3s;
+}
+
+.filter-dropdown-label {
+  height: 4.3rem;
+  position: relative;
+  width: 100%;
+  transition: height 0.3s;
+  border-bottom: inherit;
+  overflow: hidden;
+  border-top: 1px solid var(--gray-3232);
+}
+.filter-dropdown-label:not(.active) {
+  height: 0;
+  padding: 0;
+  visibility: hidden;
+  transition: height 0.3s;
+}
+.filter-dropdown-label .filter-dropdown-content {
+  height: 4.3rem;
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filter-dropdown-label input {
+  padding: 0px 10px;
+  color: var(--white);
+  font-size: 0.88rem;
+  outline: 1px solid var(--gray-5050);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  height: 2.6rem;
+  height: 2.3rem;
+  width: 90%;
+  padding: 0rem 1.2rem;
+}
+.filter-dropdown-label input:focus {
+  position: relative;
+  border: 1px solid var(--dark-orange-opacited);
+  outline: 4px solid var(--orange-opacited-15);
+  transition: outline 0.1s;
+}
+
+.filter-dropdown-label.filter-column > .filter-dropdown-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding-top: 1rem;
+  height: max-content;
+  color: var(--light-gray-d0d0);
+}
+.filter-dropdown-label.filter-column > .filter-dropdown-content span {
+  font-size: 11.5px;
+}
+
+.filter-dropdown-label.filter-column.filter-ocena {
+  height: calc(105.59px + 1rem);
+}
+.filter-dropdown-label.filter-column.filter-ocena:not(.active) {
+  height: 0;
+}
+
+.filter-dropdown-label.filter-column.filter-2input-1text {
+  height: calc(137.59px + 1rem);
+}
+.filter-dropdown-label.filter-column.filter-2input-1text:not(.active) {
+  height: 0;
+}
+
+.filter-dropdown.filter-web {
+  width: 11rem;
+  left: 50%;
+  transform: translate(-50%);
+}/*# sourceMappingURL=series&movies.css.map */
