@@ -1266,12 +1266,9 @@ body {
   transition: 0.15s;
   top: 38px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1350px) {
   .filter-dropdown {
-    left: 50%;
-    transform: translate(-50%);
-    bottom: 2.1rem;
-    width: 8rem;
+    display: none !important;
   }
 }
 .filter-dropdown:not(.active) {
