@@ -2,7 +2,7 @@
 
 import { Navbar } from '../layouts/Navbar';
 import { Footer } from '../layouts/Footer';
-import '../../style/css/series&movies.css';
+import '../../style/css/filteres-page.css';
 import useDocumentTitle from '../helpers/PageTitle';
 import {
 	StarIcon,
@@ -190,7 +190,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 									</button>
 								</div>
 							</section>
-							<section className='relative' ref={mostPopularDropdownRef}>
+							<section className='relative' ref={filterDropdownRef}>
 								<button className={`films-category-filter-btn`} onClick={handleFilterClick}>
 									<AdjustmentsHorizontalIcon className='h-5' />
 									<span>Filtry</span>
