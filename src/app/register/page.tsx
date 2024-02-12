@@ -16,21 +16,23 @@ const Policy: React.FC = () => {
 				</Link>
 				<div className='reg-log-box'>
 					<h1>Stwórz nowe konto</h1>
-					<section className='reg-log-input-form'>
+					<form className='reg-log-input-form' onSubmit={(event) => {
+						event.preventDefault();
+					}}>
 						<section>
 							<label htmlFor='email'>Email</label>
-							<input type='text' id='email' />
+							<input type='text' id='email' required />
 						</section>
 						<section>
 							<label htmlFor='password'>Hasło</label>
-							<input type='password' id='password' />
+							<input type='password' id='password' required />
 						</section>
 						<section>
 							<label htmlFor='confirm-password'>Potwierdź hasło</label>
-							<input type='password' id='confirm-password' />
+							<input type='password' id='confirm-password' required />
 						</section>
-					</section>
-					<button className='reg-log-create-acc-btn'>Stwórz konto</button>
+						<button className='reg-log-create-acc-btn' type='submit'>Stwórz konto</button>
+					</form>
 					<section className='reg-log-authorize-section'>
 						<span className='register-authorize-text'>
 							Lub zajerestruj się przez

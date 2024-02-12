@@ -56,7 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 		if (event.key === 'Enter') {
 			event.preventDefault();
 
-			window.location.href = `/search?query=${encodeURIComponent(whatSearchVal)}`;
+			window.location.href = `/results?search_query=${encodeURIComponent(whatSearchVal)}`;
 		}
 	};
 
@@ -65,13 +65,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 		setWhatSearchVal(inputVal);
 		const uniqueTitles = new Set<string>();
 
-		allFilmsData.forEach(film => {
-			if (film.title.toLowerCase().includes(inputVal)) {
-				uniqueTitles.add(film.title);
-			}
-		});
+		const filteredData = allFilmsData.filter(film => {
+			const lowerCaseTitle = film.title.toLowerCase();
 
-		const filteredData = Array.from(uniqueTitles).map(title => allFilmsData.find(film => film.title === title));
+			return !uniqueTitles.has(lowerCaseTitle) && lowerCaseTitle.includes(inputVal)
+				? uniqueTitles.add(lowerCaseTitle)
+				: false;
+		});
 
 		setSearchResults(filteredData as FilmData[]);
 
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								/>
 								<button type='submit' style={{ display: 'none' }}></button>
 							</form>
-							<Link href='/search' className='header-search-icon-link'>
+							<Link href='/results' className='header-search-icon-link'>
 								<MagnifyingGlassIcon className='header-search-icon min-h-9 p-2' />
 							</Link>
 							<div className={`input-box-search ${isTyped ? 'active' : ''}`}>

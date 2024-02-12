@@ -16,9 +16,13 @@ const Login: React.FC = () => {
 				</Link>
 				<div className='reg-log-box'>
 					<h1>Zaloguj się na swoje konto</h1>
-					<section className='reg-log-input-form'>
+					<form
+						className='reg-log-input-form'
+						onSubmit={event => {
+							event.preventDefault();
+						}}>
 						<section>
-							<label htmlFor='email'>Email</label> <input type='text' id='email' />
+							<label htmlFor='email'>Email</label> <input type='text' id='email' required minLength={5} />
 						</section>
 						<section>
 							<section className='flex justify-between'>
@@ -27,7 +31,7 @@ const Login: React.FC = () => {
 									Zapomniałeś hasła?
 								</Link>
 							</section>
-							<input type='password' id='password' />
+							<input type='password' id='password' required minLength={7} maxLength={30} />
 							<section className='flex items-center gap-x-2 mt-2'>
 								<input type='checkbox' id='remember' className='orange-checkbox' />
 								<label htmlFor='remember' className='select-none'>
@@ -35,8 +39,10 @@ const Login: React.FC = () => {
 								</label>
 							</section>
 						</section>
-					</section>
-					<button className='reg-log-create-acc-btn'>Kontynuuj</button>
+						<button className='reg-log-create-acc-btn' type='submit'>
+							Kontynuuj
+						</button>
+					</form>
 					<section className='reg-log-authorize-section'>
 						<span className='login-authorize-text'>
 							Lub zaloguj się przez <hr></hr>

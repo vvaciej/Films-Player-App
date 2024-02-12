@@ -1316,7 +1316,7 @@ body {
   row-gap: 4px;
   margin-bottom: 1.8rem;
 }
-.reg-log-container .reg-log-box .reg-log-input-form > section input[type=text] {
+.reg-log-container .reg-log-box .reg-log-input-form > section input[type=text], .reg-log-container .reg-log-box .reg-log-input-form > section input[type=password] {
   padding: 0px 10px;
   color: var(--white);
   font-size: 1rem;
@@ -1326,7 +1326,7 @@ body {
   background-color: transparent;
   height: 2.6rem;
 }
-.reg-log-container .reg-log-box .reg-log-input-form > section input[type=text]:focus {
+.reg-log-container .reg-log-box .reg-log-input-form > section input[type=text]:focus, .reg-log-container .reg-log-box .reg-log-input-form > section input[type=password]:focus {
   position: relative;
   border: 1px solid var(--dark-orange-opacited);
   outline: 4px solid var(--orange-opacited-15);

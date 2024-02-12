@@ -9,6 +9,7 @@ import '../../style/css/search-page.css';
 import { PlayIcon, StarIcon } from '@heroicons/react/24/solid';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import {
 	popularFilms,
@@ -49,20 +50,17 @@ const SearchPage: React.FC = () => {
 	useDocumentTitle(decodedQuery !== '' ? `Search results for ${decodedQuery} - vvaciej.app` : 'Search - vvaciej.app');
 
 	useEffect(() => {
-		const queryParamMatch = window.location.search.match(/[\?&]query=([^&]+)/);
+		const queryParamMatch = window.location.search.match(/[\_?&]query=([^&]+)/);
 
 		if (queryParamMatch) {
 			const decodedQueryParam = decodeURIComponent(queryParamMatch[1]);
 			setWhatSearchVal(decodedQueryParam);
 		}
 	}, [router]);
-
+	
 	useEffect(() => {
 		handleSearch(whatSearchVal);
-	}, [whatSearchVal]);
-
-	useEffect(() => {
-		router.replace(`/search?query=${whatSearchVal}`);
+		router.replace(`/results?search_query=${whatSearchVal}`);
 	}, [whatSearchVal, router]);
 
 	useEffect(() => {
@@ -139,23 +137,23 @@ const SearchPage: React.FC = () => {
 							<section className={`searched-films-wrapper ${whatSearchVal !== '' ? 'active' : ''}`}>
 								<h1 className='text-2xl font-semibold sm:text-3xl'>Search results for: {decodedQuery}</h1>
 								<section className='search-movies-section'>
-									<a
+									<Link
 										href='#'
 										className={`search-category-text flex items-center relative w-max ${
 											searchResults.length > 0 ? 'active' : ''
 										}`}>
 										<span className='text-2xl font-medium pl-4 leading-6'>Movies</span>
-									</a>
+									</Link>
 									<div className='films-wrapper'>
 										{searchResults.map((film: FilmData, index: number) => (
 											<article className='film-container w-full' key={index}>
 												<section className='films-image-section'>
-													<a href='#'>
+													<Link href='#'>
 														<img src={film.image} alt={`Poster for ${film.title}`} />
 														<button className='film-play-btn'>
 															<PlayIcon className='text-black h-5' />
 														</button>
-													</a>
+													</Link>
 												</section>
 												<section className='films-text-section'>
 													<p className='main-text-rating flex items-center'>
@@ -167,7 +165,7 @@ const SearchPage: React.FC = () => {
 														/>
 														<span>{film.rating} / 10</span>
 													</p>
-													<a className='film-link-title search-title pr-1'>{film.title}</a>
+													<Link href='#' className='film-link-title search-title pr-1'>{film.title}</Link>
 												</section>
 											</article>
 										))}

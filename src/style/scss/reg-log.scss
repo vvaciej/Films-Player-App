@@ -79,7 +79,7 @@
 				flex-direction: column;
 				row-gap: 4px;
 				margin-bottom: 1.8rem;
-				input[type='text'] {
+				input[type='text'], input[type='password'] {
 					@include input-style;
 					&:focus {
 						@include orange-outline;
