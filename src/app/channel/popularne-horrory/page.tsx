@@ -26,10 +26,14 @@ const allFilmsData = [
 const PopularHorrorFilms: React.FC = () => {
 	useDocumentTitle('Popularne horrory - vvaciej.app');
 
+	const uniqueMovieTitles = new Set<string>();
 	const filteredMovies = allFilmsData.filter(movie => {
 		const filmTypeLowerCase = movie.category.toLowerCase();
+		const isPopularHorror = filmTypeLowerCase === 'popularhorror';
 
-		return filmTypeLowerCase === 'popularhorror';
+		if (isPopularHorror && !uniqueMovieTitles.has(movie.title)) {
+			return uniqueMovieTitles.add(movie.title);
+		}
 	});
 
 	return <Filters headingTitlePage='Popularne horrory' mappingBy={filteredMovies} />;

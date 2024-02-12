@@ -26,10 +26,14 @@ const allFilmsData = [
 const LastAddedActionFilms: React.FC = () => {
 	useDocumentTitle('Ostatnio dodane filmy akcji - vvaciej.app');
 
+	const uniqueMovieTitles = new Set<string>();
 	const filteredMovies = allFilmsData.filter(movie => {
 		const filmTypeLowerCase = movie.category.toLowerCase();
+		const isLastAddedAction =  filmTypeLowerCase === 'lastaddedaction';
 
-		return filmTypeLowerCase === 'lastaddedaction';
+		if (isLastAddedAction && !uniqueMovieTitles.has(movie.title)) {
+			return uniqueMovieTitles.add(movie.title);
+		}
 	});
 
 	return <Filters headingTitlePage='Popularne filmy akcji' mappingBy={filteredMovies} />;

@@ -26,10 +26,14 @@ const allFilmsData = [
 const PopularSerials: React.FC = () => {
 	useDocumentTitle('Popularne seriale - vvaciej.app');
 
+	const uniqueMovieTitles = new Set<string>();
 	const filteredMovies = allFilmsData.filter(movie => {
 		const filmTypeLowerCase = movie.category.toLowerCase();
+		const isPopularSerial = filmTypeLowerCase === 'popularserial';
 
-		return filmTypeLowerCase === 'popularserial';
+		if (isPopularSerial && !uniqueMovieTitles.has(movie.title)) {
+			return uniqueMovieTitles.add(movie.title);
+		}
 	});
 
 	return <Filters headingTitlePage='Popularne seriale' mappingBy={filteredMovies} />;

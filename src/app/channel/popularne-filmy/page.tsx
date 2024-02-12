@@ -26,10 +26,14 @@ const allFilmsData = [
 const PopularFilms: React.FC = () => {
 	useDocumentTitle('Popularne filmy - vvaciej.app');
 
+	const uniqueMovieTitles = new Set<string>();
 	const filteredMovies = allFilmsData.filter(movie => {
 		const filmTypeLowerCase = movie.category.toLowerCase();
+		const isPopular = filmTypeLowerCase === 'popular';
 
-		return filmTypeLowerCase === 'popular';
+		if (isPopular && !uniqueMovieTitles.has(movie.title)) {
+			return uniqueMovieTitles.add(movie.title);
+		}
 	});
 
 	return <Filters headingTitlePage='Popularne filmy' mappingBy={filteredMovies} />;

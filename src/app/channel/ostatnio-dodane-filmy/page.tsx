@@ -25,11 +25,15 @@ const allFilmsData = [
 
 const LastAddedFilms: React.FC = () => {
 	useDocumentTitle('Ostatnio dodane filmy - vvaciej.app');
-
+	
+	const uniqueMovieTitles = new Set<string>();
 	const filteredMovies = allFilmsData.filter(movie => {
 		const filmTypeLowerCase = movie.category.toLowerCase();
+		const isLastAdded = filmTypeLowerCase === 'lastadded';
 
-		return filmTypeLowerCase === 'lastadded';
+		if (isLastAdded && !uniqueMovieTitles.has(movie.title)) {
+			return uniqueMovieTitles.add(movie.title);
+		}
 	});
 
 	return <Filters headingTitlePage='Ostatnio dodane filmy' mappingBy={filteredMovies} />;

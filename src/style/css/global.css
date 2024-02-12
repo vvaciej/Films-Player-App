@@ -864,7 +864,7 @@ html.dark {
   left: 0;
   font-size: 13px;
   color: var(--dark-orange);
-  margin-right: 0.3rem;
+  margin-right: 0.7rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -1260,7 +1260,7 @@ body {
   left: 0;
   font-size: 13px;
   color: var(--dark-orange);
-  margin-right: 0.3rem;
+  margin-right: 0.7rem;
 }
 .typical-dropdown-style nav a,
 .typical-dropdown-style nav button,
@@ -1271,7 +1271,7 @@ body {
   align-items: center;
   font-size: 14px;
   color: var(--white);
-  height: 50%;
+  height: 100%;
   width: 100%;
   padding: 10px 1rem !important;
 }

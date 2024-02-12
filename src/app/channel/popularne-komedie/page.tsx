@@ -26,10 +26,14 @@ const allFilmsData = [
 const PopularComedyFilms: React.FC = () => {
 	useDocumentTitle('Popularne komedie - vvaciej.app');
 
+	const uniqueMovieTitles = new Set<string>();
 	const filteredMovies = allFilmsData.filter(movie => {
 		const filmTypeLowerCase = movie.category.toLowerCase();
+		const isPopularComedia = filmTypeLowerCase === 'popularcomedia';
 
-		return filmTypeLowerCase === 'popularcomedia';
+		if (isPopularComedia && !uniqueMovieTitles.has(movie.title)) {
+			return uniqueMovieTitles.add(movie.title);
+		}
 	});
 
 	return <Filters headingTitlePage='Popularne komedie' mappingBy={filteredMovies} />;

@@ -26,10 +26,14 @@ const allFilmsData = [
 const Series = () => {
 	useDocumentTitle('Wyszukiwarka seriali - vvaciej.app');
 
+	const uniqueMovieTitles = new Set<string>();
 	const filteredMovies = allFilmsData.filter(movie => {
 		const filmTypeLowerCase = movie.type.toLowerCase();
+		const isSerial = filmTypeLowerCase === 'serial';
 
-		return filmTypeLowerCase === 'serial';
+		if (isSerial && !uniqueMovieTitles.has(movie.title)) {
+			return uniqueMovieTitles.add(movie.title);
+		}
 	});
 
 	return <Filters headingTitlePage='Seriale' mappingBy={filteredMovies} />;

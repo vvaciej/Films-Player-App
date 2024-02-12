@@ -26,10 +26,14 @@ const allFilmsData = [
 const PopularPolishFilms: React.FC = () => {
 	useDocumentTitle('Popularne polskie filmy - vvaciej.app');
 
+	const uniqueMovieTitles = new Set<string>();
 	const filteredMovies = allFilmsData.filter(movie => {
 		const filmTypeLowerCase = movie.category.toLowerCase();
+		const isPopularPolish = filmTypeLowerCase === 'popularpolish';
 
-		return filmTypeLowerCase === 'popularpolish';
+		if (isPopularPolish && !uniqueMovieTitles.has(movie.title)) {
+			return uniqueMovieTitles.add(movie.title);
+		}
 	});
 
 	return <Filters headingTitlePage='Popularne polskie filmy' mappingBy={filteredMovies} />;
