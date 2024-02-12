@@ -45,7 +45,8 @@
 		}
 		@include btn-choosed-style;
 		button {
-			height: 100%;
+			display: flex;
+			column-gap: .3rem;
 		}
 	}
 }

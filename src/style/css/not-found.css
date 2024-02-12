@@ -855,12 +855,12 @@ html.dark {
   color: var(--white);
   text-align: left;
   padding: 0.5rem;
-  padding-left: 1.4rem;
+  padding-left: 1.2rem;
   font-size: 13px;
 }
 .footer-topside-section .footer-dropdown-lang button.choosed,
 .footer-bottomside-section .footer-dropdown-lang button.choosed {
-  height: 100%;
+  height: auto;
   background-color: var(--brown);
 }
 .footer-topside-section .footer-dropdown-lang button.choosed:before,
@@ -875,7 +875,8 @@ html.dark {
 }
 .footer-topside-section .footer-dropdown-lang button,
 .footer-bottomside-section .footer-dropdown-lang button {
-  height: 100%;
+  display: flex;
+  column-gap: 0.3rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -944,7 +945,6 @@ html {
   height: 150%;
   top: -200px;
   z-index: -10;
-  transition: 0.2s;
   display: none;
 }
 @media screen and (max-width: 1080px) {
@@ -957,7 +957,6 @@ html {
   background-color: var(--dark-opacited-85);
   backdrop-filter: blur(4px);
   z-index: 10;
-  transition: background-color 0.2s;
 }
 
 body {
@@ -1256,12 +1255,12 @@ body {
   color: var(--white);
   text-align: left;
   padding: 0.5rem;
-  padding-left: 1.4rem;
+  padding-left: 1.2rem;
   font-size: 13px;
 }
 .typical-dropdown-style nav button.choosed,
 .typical-dropdown-style div button.choosed {
-  height: 100%;
+  height: auto;
   background-color: var(--brown);
 }
 .typical-dropdown-style nav button.choosed:before,

@@ -1,74 +1,3 @@
-@mixin flex-center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-@mixin orange-outline {
-	position: relative;
-	border: 1px solid var(--dark-orange-opacited);
-	outline: 4px solid var(--orange-opacited-15);
-	transition: outline 0.1s;
-}
-
-@mixin btn-style {
-	background-color: var(--orange);
-	padding: 0.5rem 1rem;
-	border-radius: 0.3rem;
-	transition: background-color 0.2s;
-	width: max-content;
-	&:hover {
-		background-color: var(--dark-orange);
-		transition: background-color 0.2s;
-	}
-}
-
-@mixin input-style {
-	padding: 0px 10px;
-	color: var(--white);
-	font-size: 1rem;
-	outline: 1px solid var(--gray-5050);
-	border: 1px solid transparent;
-	border-radius: 4px;
-	background-color: transparent;
-	height: 2.6rem;
-}
-
-@mixin transparent-btn-style {
-	padding: 0.5rem 1rem;
-	transition: background-color 0.3s ease;
-	&:hover {
-		background-color: var(--btn-opacited-hover-bg);
-		border-radius: 0.3rem;
-		transition: background-color 0.3s ease;
-	}
-}
-
-@mixin btn-choosed-style {
-	button {
-		width: 100%;
-		height: 100%;
-		color: var(--white);
-		text-align: left;
-		padding: 0.5rem;
-		padding-left: 1.4rem;
-		font-size: 13px;
-	}
-	button.choosed {
-		height: 100%;
-		background-color: var(--brown);
-		&:before {
-			content: '\f00c';
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 900;
-			left: 0;
-			font-size: 13px;
-			color: var(--dark-orange);
-			margin-right: .3rem;
-		}
-	}
-}
-
 html.dark {
 	// root for dark layout
 	--white: #ffffff;
@@ -208,6 +137,77 @@ html.dark {
 	}
 }
 
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin orange-outline {
+	position: relative;
+	border: 1px solid var(--dark-orange-opacited);
+	outline: 4px solid var(--orange-opacited-15);
+	transition: outline 0.1s;
+}
+
+@mixin btn-style {
+	background-color: var(--orange);
+	padding: 0.5rem 1rem;
+	border-radius: 0.3rem;
+	transition: background-color 0.2s;
+	width: max-content;
+	&:hover {
+		background-color: var(--dark-orange);
+		transition: background-color 0.2s;
+	}
+}
+
+@mixin input-style {
+	padding: 0px 10px;
+	color: var(--white);
+	font-size: 1rem;
+	outline: 1px solid var(--gray-5050);
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: transparent;
+	height: 2.6rem;
+}
+
+@mixin transparent-btn-style {
+	padding: 0.5rem 1rem;
+	transition: background-color 0.3s ease;
+	&:hover {
+		background-color: var(--btn-opacited-hover-bg);
+		border-radius: 0.3rem;
+		transition: background-color 0.3s ease;
+	}
+}
+
+@mixin btn-choosed-style {
+	button {
+		width: 100%;
+		height: 100%;
+		color: var(--white);
+		text-align: left;
+		padding: 0.5rem;
+		padding-left: 1.2rem;
+		font-size: 13px;
+	}
+	button.choosed {
+		height: auto;
+		background-color: var(--brown);
+		&:before {
+			content: '\f00c';
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+			left: 0;
+			font-size: 13px;
+			color: var(--dark-orange);
+			margin-right: .3rem;
+		}
+	}
+}
+
 @import './layouts/navbar';
 @import './home-components/heading-container';
 @import './home-components/films-categories';
@@ -240,7 +240,6 @@ html {
 	height: 150%;
 	top: -200px;
 	z-index: -10;
-	transition: 0.2s;
 	display: none;
 	@include tablet-1080 {
 		display: block;
@@ -251,7 +250,6 @@ html {
 	background-color: var(--dark-opacited-85);
 	backdrop-filter: blur(4px);
 	z-index: 10;
-	transition: background-color 0.2s;
 }
 
 body {
