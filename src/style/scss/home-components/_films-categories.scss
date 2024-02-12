@@ -21,13 +21,13 @@
 }
 
 .films-image-section {
+	position: relative;
+	transition: filter 0.2s;
+	&:hover {
+		filter: brightness(84%);
+		transition: filter 0.2s;
+	}
   a {
-    position: relative;
-    transition: filter 0.2s;
-    &:hover {
-      filter: brightness(84%);
-      transition: filter 0.2s;
-    }
     img {
       height: 100%;
 			width: 100%;

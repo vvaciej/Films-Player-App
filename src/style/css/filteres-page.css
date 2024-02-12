@@ -749,11 +749,11 @@ html.dark {
   }
 }
 
-.films-image-section a {
+.films-image-section {
   position: relative;
   transition: filter 0.2s;
 }
-.films-image-section a:hover {
+.films-image-section:hover {
   filter: brightness(84%);
   transition: filter 0.2s;
 }
@@ -988,6 +988,7 @@ body {
   background-color: var(--white);
   bottom: 12px;
   left: 12px;
+  bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
