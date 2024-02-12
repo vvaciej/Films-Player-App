@@ -10,7 +10,7 @@ const Policy: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Regulamin');
 
 	return (
-		<div className='space-light'>
+		<div className='space-dark'>
 			<Navbar isCutted={true} />
 			<div className='content-full-space-centered'>
 				<div className='policy-container'>

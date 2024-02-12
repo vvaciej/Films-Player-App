@@ -757,7 +757,7 @@ html.dark {
   filter: brightness(84%);
   transition: filter 0.2s;
 }
-.films-image-section a img {
+.films-image-section img {
   height: 100%;
   width: 100%;
   border-radius: 0.2rem;
@@ -766,7 +766,7 @@ html.dark {
   cursor: pointer;
 }
 @media screen and (max-width: 600px) {
-  .films-image-section a img {
+  .films-image-section img {
     max-height: 19rem;
   }
 }
@@ -1025,7 +1025,8 @@ body {
   flex-direction: column;
   min-height: 78vh;
   width: 1240px;
-  padding: var(--main-container-padd-top) 0rem;
+  padding: calc(var(--main-container-padd-top) + 2.5rem) 0rem;
+  padding-bottom: var(--main-container-padd-top);
 }
 @media screen and (max-width: 1350px) {
   .typical-container-comp-with-films {

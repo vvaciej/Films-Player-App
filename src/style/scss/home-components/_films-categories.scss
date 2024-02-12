@@ -27,19 +27,17 @@
 		filter: brightness(84%);
 		transition: filter 0.2s;
 	}
-  a {
-    img {
-      height: 100%;
-			width: 100%;
-      border-radius: 0.2rem;
-      object-fit: cover;
-      filter: brightness(90%);
-      cursor: pointer;
-			@include mobile-600 {
-				max-height: 19rem;
-			}
-    }
-  }
+	img {
+		height: 100%;
+		width: 100%;
+		border-radius: 0.2rem;
+		object-fit: cover;
+		filter: brightness(90%);
+		cursor: pointer;
+		@include mobile-600 {
+			max-height: 19rem;
+		}
+	}
 }
 
 .films-text-section {

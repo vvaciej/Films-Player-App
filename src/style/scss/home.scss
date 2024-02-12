@@ -272,7 +272,8 @@ body {
 	flex-direction: column;
 	min-height: 78vh;
 	width: 1240px;
-	padding: var(--main-container-padd-top) 0rem;
+	padding: calc(var(--main-container-padd-top) + 2.5rem) 0rem;
+	padding-bottom: var(--main-container-padd-top);
 	@include tablet-1350 {
 		width: 90%;
 	}
