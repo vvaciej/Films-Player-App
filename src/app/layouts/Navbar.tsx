@@ -188,9 +188,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					<UserIcon className='h-6 header-right-user-icon' />
 				</nav>
 			</header>
-			<div ref={dropdownRef} className={`typical-dropdown-style ${isClickedBtn ? 'active' : ''}`} style={{
-				height: '6rem',
-			}}>
+			<div ref={dropdownRef} className={`typical-dropdown-style ${isClickedBtn ? 'active' : ''}`}>
 				{isUserOrMenuClicked === 'menu' ? (
 					<nav>
 						<Link href='/movies'>

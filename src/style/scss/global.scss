@@ -64,7 +64,7 @@
 			left: 0;
 			font-size: 13px;
 			color: var(--dark-orange);
-			margin-right: .7rem;
+			margin-right: .3rem;
 		}
 	}
 }
@@ -481,6 +481,7 @@ body {
 	position: fixed;
 	bottom: 0;
 	width: 70% !important;
+	height: 6rem;
 	left: 50%;
 	transform: translate(-50%);
 	border: 1px solid var(--gray-5050);
