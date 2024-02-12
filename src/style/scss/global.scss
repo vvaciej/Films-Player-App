@@ -50,7 +50,7 @@
 		height: 100%;
 		color: var(--white);
 		text-align: left;
-		padding: .5rem;
+		padding: 0.5rem;
 		padding-left: 1.4rem;
 		font-size: 13px;
 	}
@@ -241,6 +241,10 @@ html {
 	top: -200px;
 	z-index: -10;
 	transition: 0.2s;
+	display: none;
+	@include tablet-1080 {
+		display: block;
+	}
 }
 
 .opacity-el.active::before {
@@ -297,11 +301,15 @@ body {
 	flex-direction: column;
 	min-height: 78vh;
 	width: 1240px;
-	padding: calc(var(--main-container-padd-top) + .7rem) 0rem;
+	padding: calc(var(--main-container-padd-top) + 0.7rem) 0rem;
 	padding-bottom: var(--main-container-padd-top);
 	@include tablet-1350 {
 		width: 90%;
-		padding-bottom: calc(var(--main-container-padd-top) - .8rem) 0rem;
+		padding-top: var(--main-container-padd-top);
+		padding-bottom: calc(var(--main-container-padd-top) - 0.8rem) 0rem;
+	}
+	@include mobile-400 {
+		padding-top: calc(var(--main-container-padd-top) - .6rem);
 	}
 }
 
@@ -472,7 +480,7 @@ body {
 	padding: 6px 0px;
 	position: fixed;
 	bottom: 0;
-	width: 56% !important;
+	width: 70% !important;
 	height: max-content !important;
 	left: 50%;
 	transform: translate(-50%);
@@ -481,21 +489,27 @@ body {
 	z-index: 20;
 	opacity: 1;
 	transition: opacity 0.3s, bottom 0.15s;
+	display: none;
+	@include tablet-1080 {
+		display: block;
+	}
 	&:not(.active) {
 		visibility: hidden;
 		opacity: 0;
 		bottom: -100px;
-		transition: .2s;
+		transition: 0.2s;
 	}
 
-	nav, div {
+	nav,
+	div {
 		@include flex-center;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: space-between;
 		height: 100%;
 		@include btn-choosed-style;
-		a, button {
+		a,
+		button {
 			column-gap: 8px;
 			display: flex;
 			align-items: center;

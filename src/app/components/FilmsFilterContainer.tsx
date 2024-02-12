@@ -87,6 +87,8 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 	const filterDropdownRef = useRef<HTMLDivElement>(null);
 	const siatkaDropdownRef = useRef<HTMLDivElement>(null);
 
+	const mostPopularDropdownMobilesRef = useRef<HTMLDivElement>(null);
+
 	const handleDocumentClick = (event: MouseEvent) => {
 		const isInsideDropdown = (target: EventTarget | null, dropdownRef: React.RefObject<HTMLDivElement>) => {
 			return dropdownRef.current && dropdownRef.current.contains(target as Node);
@@ -95,7 +97,8 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 		if (
 			!isInsideDropdown(event.target, mostPopularDropdownRef) &&
 			!isInsideDropdown(event.target, filterDropdownRef) &&
-			!isInsideDropdown(event.target, siatkaDropdownRef)
+			!isInsideDropdown(event.target, siatkaDropdownRef) &&
+			!isInsideDropdown(event.target, mostPopularDropdownMobilesRef)
 		) {
 			setMostPopularBtnClicked(false);
 			setFilterBtnClicked(false);
@@ -428,7 +431,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 				</div>
 			</div>
 			<Footer />
-			<div ref={mostPopularDropdownRef} className={`typical-dropdown-style ${mostPopularBtnClicked ? 'active' : ''}`}>
+			<div ref={mostPopularDropdownMobilesRef} className={`typical-dropdown-style ${mostPopularBtnClicked ? 'active' : ''}`}>
 				{mostPopularBtnClicked ? (
 					<div>
 						<button
