@@ -1031,7 +1031,8 @@ body {
   flex-direction: column;
   min-height: 78vh;
   width: 1240px;
-  padding: var(--main-container-padd-top) 0rem;
+  padding: calc(var(--main-container-padd-top) + 1rem) 0rem;
+  padding-bottom: var(--main-container-padd-top);
 }
 @media screen and (max-width: 1350px) {
   .typical-container-comp-with-films {
