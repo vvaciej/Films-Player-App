@@ -1,6 +1,6 @@
 'use client';
 
-import '../style/css/home.css';
+import '../style/css/global.css';
 
 import { FilmsCategories } from './components/FilmsCategories';
 import { HeadingFilmsInteraction } from './components/HeadingContainer';

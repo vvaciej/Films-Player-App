@@ -26,10 +26,14 @@ const allFilmsData = [
 const Movies: React.FC = () => {
 	useDocumentTitle('Wyszukiwarka filmów - vvaciej.app');
 
+	const uniqueMovieTitles = new Set<string>();
 	const filteredMovies = allFilmsData.filter(movie => {
 		const filmTypeLowerCase = movie.type.toLowerCase();
+		const isFilm = filmTypeLowerCase === 'film';
 
-		return filmTypeLowerCase === 'film';
+		if (isFilm && !uniqueMovieTitles.has(movie.title)) {
+			return uniqueMovieTitles.add(movie.title);
+		}
 	});
 
 	return <Filters headingTitlePage='Filmy' mappingBy={filteredMovies} />;

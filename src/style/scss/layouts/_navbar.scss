@@ -201,48 +201,6 @@
 	}
 }
 
-.navbar-dropdown {
-	padding: 6px 0px;
-	position: fixed;
-	bottom: 0;
-	width: 70%;
-	left: 50%;
-	transform: translate(-50%);
-	height: 6rem;
-	border: 1px solid var(--gray-5050);
-	background-color: var(--dark-121212);
-	z-index: 20;
-	opacity: 1;
-	transition: opacity 0.3s, bottom 0.15s;
-	&:not(.active) {
-		visibility: hidden;
-		opacity: 0;
-		bottom: -100px;
-		transition: .2s;
-	}
-
-	nav {
-		@include flex-center;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: space-between;
-		height: 100%;
-		a {
-			column-gap: 8px;
-			display: flex;
-			align-items: center;
-			font-size: 14px;
-			color: var(--white);
-			height: 50%;
-			padding-left: 1rem;
-			width: 100%;
-			&:hover {
-				background-color: var(--gray-2222);
-			}
-		}
-	}
-}
-
 .input-box-search {
 	width: 100%;
 	position: absolute;

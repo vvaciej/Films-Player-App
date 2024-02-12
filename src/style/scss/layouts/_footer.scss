@@ -42,18 +42,7 @@
 			opacity: 0;
 			transition: opacity 0.1s;
 		}
-		button {
-			width: 100%;
-			height: 100%;
-			color: var(--white);
-			text-align: left;
-			padding: .5rem;
-			padding-left: 1.4rem;
-			font-size: 13px;
-		}
-		button.choosed {
-			background-color: var(--brown);
-		}
+		@include btn-choosed-style;
 	}
 }
 

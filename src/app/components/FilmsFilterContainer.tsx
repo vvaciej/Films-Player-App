@@ -18,11 +18,14 @@ type FilmData = {
 	image: string;
 	title: string;
 	rating: number;
+	addedDate: string;
+	filmwebPopularity: number;
+	budget: number;
 };
 
 interface FilterPageProps {
 	headingTitlePage: string;
-	mappingBy: any;
+	mappingBy: FilmData[];
 }
 
 const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => {
@@ -31,6 +34,9 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 	const [mostPopularBtnClicked, setMostPopularBtnClicked] = useState<boolean>(false);
 	const [filterBtnClicked, setFilterBtnClicked] = useState<boolean>(false);
 	const [siatkaClicked, setSiatkaClicked] = useState<boolean>(false);
+
+	const [mostPopularChoosed, setMostPopularChoosed] = useState<string>('Najbardziej popularne');
+	const [siatkaChoosed, setSiatkaChoosed] = useState<string>('Siatka');
 
 	const [selectedMostPopular, setSelectedMostPopular] = useState<string>('najbardziejPopularne');
 	const [selectedSiatka, setSelectedSiatka] = useState<string>('siatka');
@@ -46,22 +52,36 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 	const [przychodClicked, setPrzychodClicked] = useState<boolean>(false);
 
 	const handleMostPopularClick = () => {
-		setMostPopularBtnClicked(!mostPopularBtnClicked);
+		setMostPopularBtnClicked(prevState => !prevState);
 		setFilterBtnClicked(false);
 		setSiatkaClicked(false);
 	};
 
 	const handleFilterClick = () => {
-		setFilterBtnClicked(!filterBtnClicked);
+		setFilterBtnClicked(prevState => !prevState);
 		setMostPopularBtnClicked(false);
 		setSiatkaClicked(false);
 	};
 
 	const handleSiatkaClick = () => {
-		setSiatkaClicked(!siatkaClicked);
+		setSiatkaClicked(prevState => !prevState);
 		setMostPopularBtnClicked(false);
 		setFilterBtnClicked(false);
 	};
+
+	switch(mostPopularChoosed) {
+		case 'Najbardziej popularne':
+			mappingBy.sort((a: FilmData, b: FilmData) => b.filmwebPopularity - a.filmwebPopularity);
+			break;
+		case 'Ostatnio dodane':
+			mappingBy.sort((a: FilmData, b: FilmData) => new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime());
+			break;
+		case 'Najlepiej oceniane':
+			mappingBy.sort((a: FilmData, b: FilmData) => b.rating - a.rating);
+			break;
+		case 'Największy budżet':
+			mappingBy.sort((a: FilmData, b: FilmData) => b.budget - a.budget);
+	}
 
 	const mostPopularDropdownRef = useRef<HTMLDivElement>(null);
 	const filterDropdownRef = useRef<HTMLDivElement>(null);
@@ -108,32 +128,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 		});
 	};
 
-  const [whatFilterTypeVal, setWhatFilterTypeVal] = useState<string>('');
-
-	const handleFilterTypeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const inputVal = event.target.value.toLowerCase();
-		setWhatFilterTypeVal(inputVal);
-		const uniqueTitles = new Set<string>();
-
-		// allFilmsData.forEach(film => {
-		// 	if (film.title.toLowerCase().includes(inputVal)) {
-		// 		uniqueTitles.add(film.title);
-		// 	}
-		// });
-
-		// const filteredData = Array.from(uniqueTitles).map(title => allFilmsData.find(film => film.title === title));
-
-		// setSearchResults(filteredData as FilmData[]);
-
-		// if (inputVal.length > 0 && filteredData.length > 0) {
-		// 	setIsTyped(true);
-		// 	setIsSearchResultsNull(false);
-		// } else {
-		// 	setIsTyped(false);
-		// 	setIsSearchResultsNull(true);
-		// }
-	};
-
 	return (
 		<div className='space-light'>
 			<Navbar isCutted={false} />
@@ -145,7 +139,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							<section className='relative' ref={mostPopularDropdownRef}>
 								<button className={`films-category-filter-btn`} onClick={handleMostPopularClick}>
 									<Bars3BottomLeftIcon className='h-5' />
-									<span>Najbardziej popularne</span>
+									<span>{mostPopularChoosed}</span>
 								</button>
 								<div className={`filter-dropdown ${mostPopularBtnClicked ? 'active' : ''} select-none`}>
 									<button
@@ -153,6 +147,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										onClick={() => {
 											setMostPopularBtnClicked(false);
 											setSelectedMostPopular('najbardziejPopularne');
+											setMostPopularChoosed('Najbardziej popularne');
 										}}>
 										Najbardziej popularne
 									</button>
@@ -161,6 +156,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										onClick={() => {
 											setMostPopularBtnClicked(false);
 											setSelectedMostPopular('ostatnioDodane');
+											setMostPopularChoosed('Ostatnio dodane');
 										}}>
 										Ostatnio dodane
 									</button>
@@ -169,6 +165,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										onClick={() => {
 											setMostPopularBtnClicked(false);
 											setSelectedMostPopular('najlepiejOceniane');
+											setMostPopularChoosed('Najlepiej oceniane');
 										}}>
 										Najlepiej oceniane
 									</button>
@@ -177,16 +174,9 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										onClick={() => {
 											setMostPopularBtnClicked(false);
 											setSelectedMostPopular('najwiekszyBudzet');
+											setMostPopularChoosed('Największy budżet');
 										}}>
 										Największy budżet
-									</button>
-									<button
-										className={`${selectedMostPopular === 'najwiekszyPrzychod' ? 'choosed' : ''}`}
-										onClick={() => {
-											setMostPopularBtnClicked(false);
-											setSelectedMostPopular('najwiekszyPrzychod');
-										}}>
-										Największy przychód
 									</button>
 								</div>
 							</section>
@@ -221,7 +211,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 												id='gatunek'
 												className='orange-checkbox'
 												onClick={() => setGatunekClicked(!gatunekClicked)}
-												// onChange={handleFilterTypeSearch}
 											/>
 											<span>Gatunek</span>
 											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
@@ -231,7 +220,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 												<input type='text' placeholder='Wybierz gatunek' />
 											</section>
 										</div>
-                    {/* <div className={`filter-dropdown-ontype`}>
+										{/* <div className={`filter-dropdown-ontype`}>
 
                     </div> */}
 										<label htmlFor='dataWydania'>
@@ -376,7 +365,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							<section className='relative' ref={siatkaDropdownRef}>
 								<button className={`films-category-filter-btn`} onClick={handleSiatkaClick}>
 									<Squares2X2Icon className='h-5' />
-									<span>Siatka</span>
+									<span>{siatkaChoosed}</span>
 								</button>
 								<div className={`filter-dropdown filter-web ${siatkaClicked ? 'active' : ''} select-none`}>
 									<button
@@ -384,6 +373,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										onClick={() => {
 											setSiatkaClicked(false);
 											setSelectedSiatka('siatka');
+											setSiatkaChoosed('Siatka');
 										}}>
 										Siatka
 									</button>
@@ -392,6 +382,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										onClick={() => {
 											setSiatkaClicked(false);
 											setSelectedSiatka('pejzaz');
+											setSiatkaChoosed('Pejzaż');
 										}}>
 										Pejzaż
 									</button>
@@ -400,6 +391,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										onClick={() => {
 											setSiatkaClicked(false);
 											setSelectedSiatka('lista');
+											setSiatkaChoosed('Lista');
 										}}>
 										Lista
 									</button>
@@ -436,6 +428,51 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 				</div>
 			</div>
 			<Footer />
+			<div ref={mostPopularDropdownRef} className={`typical-dropdown-style ${mostPopularBtnClicked ? 'active' : ''}`}>
+				{mostPopularBtnClicked ? (
+					<div>
+						<button
+							className={`${selectedMostPopular === 'najbardziejPopularne' ? 'choosed' : ''}`}
+							onClick={() => {
+								setMostPopularBtnClicked(false);
+								setSelectedMostPopular('najbardziejPopularne');
+								setMostPopularChoosed('Najbardziej popularne');
+							}}>
+							Najbardziej popularne
+						</button>
+						<button
+							className={`${selectedMostPopular === 'ostatnioDodane' ? 'choosed' : ''}`}
+							onClick={() => {
+								setMostPopularBtnClicked(false);
+								setSelectedMostPopular('ostatnioDodane');
+								setMostPopularChoosed('Ostatnio dodane');
+							}}>
+							Ostatnio dodane
+						</button>
+						<button
+							className={`${selectedMostPopular === 'najlepiejOceniane' ? 'choosed' : ''}`}
+							onClick={() => {
+								setMostPopularBtnClicked(false);
+								setSelectedMostPopular('najlepiejOceniane');
+								setMostPopularChoosed('Najlepiej oceniane');
+							}}>
+							Najlepiej oceniane
+						</button>
+						<button
+							className={`${selectedMostPopular === 'najwiekszyBudzet' ? 'choosed' : ''}`}
+							onClick={() => {
+								setMostPopularBtnClicked(false);
+								setSelectedMostPopular('najwiekszyBudzet');
+								setMostPopularChoosed('Największy budżet');
+							}}>
+							Największy budżet
+						</button>
+					</div>
+				) : (
+					''
+				)}
+			</div>
+			<div className={`opacity-el ${mostPopularBtnClicked ? 'active' : ''}`}></div>
 		</div>
 	);
 };

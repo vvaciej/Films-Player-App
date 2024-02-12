@@ -44,6 +44,31 @@
 	}
 }
 
+@mixin btn-choosed-style {
+	button {
+		width: 100%;
+		height: 100%;
+		color: var(--white);
+		text-align: left;
+		padding: .5rem;
+		padding-left: 1.4rem;
+		font-size: 13px;
+	}
+	button.choosed {
+		height: 100%;
+		background-color: var(--brown);
+		&:before {
+			content: '\f00c';
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+			left: 0;
+			font-size: 13px;
+			color: var(--dark-orange);
+			margin-right: 0.3rem;
+		}
+	}
+}
+
 html.dark {
 	// root for dark layout
 	--white: #ffffff;
@@ -82,7 +107,7 @@ html.dark {
 }
 
 ::-webkit-scrollbar {
-	width: 15px;
+	width: 13px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -272,11 +297,10 @@ body {
 	flex-direction: column;
 	min-height: 78vh;
 	width: 1240px;
-	padding: calc(var(--main-container-padd-top) + .8rem) 0rem;
+	padding: calc(var(--main-container-padd-top) + .7rem) 0rem;
 	padding-bottom: var(--main-container-padd-top);
 	@include tablet-1350 {
 		width: 90%;
-		padding: var(--main-container-padd-top) 0rem;
 		padding-bottom: calc(var(--main-container-padd-top) - .8rem) 0rem;
 	}
 }
@@ -350,8 +374,8 @@ body {
 .loader {
 	width: 20px;
 	aspect-ratio: 1;
-	background: var(--gray-9999);
-	box-shadow: 0 0 60px 15px var(--gray-9999);
+	background: var(--dark-orange);
+	box-shadow: 0 0 60px 15px var(--dark-orange);
 	transform: translate(-80px);
 	clip-path: inset(0);
 	animation: l4-1 0.5s ease-in-out infinite alternate, l4-2 1s ease-in-out infinite;
@@ -441,5 +465,48 @@ body {
 	@include mobile-500 {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 0.8rem;
+	}
+}
+
+.typical-dropdown-style {
+	padding: 6px 0px;
+	position: fixed;
+	bottom: 0;
+	width: 56% !important;
+	height: max-content !important;
+	left: 50%;
+	transform: translate(-50%);
+	border: 1px solid var(--gray-5050);
+	background-color: var(--dark-121212);
+	z-index: 20;
+	opacity: 1;
+	transition: opacity 0.3s, bottom 0.15s;
+	&:not(.active) {
+		visibility: hidden;
+		opacity: 0;
+		bottom: -100px;
+		transition: .2s;
+	}
+
+	nav, div {
+		@include flex-center;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		height: 100%;
+		@include btn-choosed-style;
+		a, button {
+			column-gap: 8px;
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+			color: var(--white);
+			height: 50%;
+			width: 100%;
+			padding: 10px 1rem !important;
+			&:hover {
+				background-color: var(--gray-2222);
+			}
+		}
 	}
 }

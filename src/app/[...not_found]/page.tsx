@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Navbar } from '../layouts/Navbar';
 import { Footer } from '../layouts/Footer';
 
-import '../../style/css/home.css';
 import '../../style/css/not-found.css';
 import useDocumentTitle from '../helpers/PageTitle';
 

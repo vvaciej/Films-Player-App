@@ -27,13 +27,15 @@
 
 .filter-dropdown {
 	position: absolute;
-	width: 100%;
+	min-width: 12rem;
 	height: max-content;
 	border: 1px solid var(--gray-3232);
 	border-radius: 4px;
 	background-color: var(--dark-1a1a);
 	z-index: 10;
 	padding: 5px 0px;
+	left: 50%;
+	transform: translate(-50%);
 	transition: 0.15s;
 	top: 38px;
 	@include tablet-1350 {
@@ -179,6 +181,4 @@
 
 .filter-dropdown.filter-web {
 	width: 11rem;
-	left: 50%;
-	transform: translate(-50%);
 }
