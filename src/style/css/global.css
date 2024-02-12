@@ -812,6 +812,7 @@ html.dark {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  position: relative;
 }
 .footer-topside-section .footer-dropdown-lang,
 .footer-bottomside-section .footer-dropdown-lang {
@@ -865,6 +866,10 @@ html.dark {
   font-size: 13px;
   color: var(--dark-orange);
   margin-right: 0.3rem;
+}
+.footer-topside-section .footer-dropdown-lang button,
+.footer-bottomside-section .footer-dropdown-lang button {
+  height: 100%;
 }
 
 @media screen and (max-width: 600px) {
