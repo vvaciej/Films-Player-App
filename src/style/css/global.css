@@ -1321,7 +1321,7 @@ body {
   background-color: var(--dark-121212);
   z-index: 20;
   opacity: 1;
-  visibility: visible;
+  display: none;
   transition: bottom 0.15s, visibility 0.3s;
 }
 @media screen and (max-width: 1080px) {
@@ -1330,7 +1330,6 @@ body {
   }
 }
 .typical-dropdown-style:not(.active) {
-  visibility: hidden;
   opacity: 0;
   bottom: -100px;
 }
