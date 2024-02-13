@@ -447,9 +447,9 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 			<Footer />
 			<div
 				ref={mostPopularDropdownMobilesRef}
-				className={`typical-dropdown-style ${mostPopularBtnClicked ? 'active' : ''} !h-56`}>
+				className={`typical-dropdown-style ${mostPopularBtnClicked ? 'active' : ''} !h-max`}>
 				{mostPopularBtnClicked ? (
-					<div>
+					<div className='!h-52'>
 						<button
 							className={`${selectedMostPopular === 'najbardziejPopularne' ? 'choosed' : ''}`}
 							onClick={() => {

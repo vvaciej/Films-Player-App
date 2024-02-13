@@ -660,6 +660,7 @@ export const popularHorrorFilms = [
 		filmwebPopularity: 1340,
 		addedDate: 'February 7 2024',
 		budget: 165_000,
+		profit: 1,
 	},
 	{
 		title: 'When Evil Lurks',
