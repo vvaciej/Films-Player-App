@@ -13,6 +13,7 @@ import {
 	ChevronDownIcon,
 } from '@heroicons/react/24/solid';
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 type FilmData = {
 	image: string;
@@ -22,6 +23,8 @@ type FilmData = {
 	filmwebPopularity: number;
 	budget: number;
 	profit: number;
+	time: string;
+	description: string;
 };
 
 interface FilterPageProps {
@@ -70,7 +73,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 		setFilterBtnClicked(false);
 	};
 
-	switch(mostPopularChoosed) {
+	switch (mostPopularChoosed) {
 		case 'Najbardziej popularne':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.filmwebPopularity - a.filmwebPopularity);
 			break;
@@ -92,7 +95,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 	const filterDropdownRef = useRef<HTMLDivElement>(null);
 	const siatkaDropdownRef = useRef<HTMLDivElement>(null);
 
-	const mostPopularDropdownMobilesRef = useRef<HTMLDivElement>(null);
+	const dropdownMobilesRef = useRef<HTMLDivElement>(null);
 
 	const handleDocumentClick = (event: MouseEvent) => {
 		const isInsideDropdown = (target: EventTarget | null, dropdownRef: React.RefObject<HTMLDivElement>) => {
@@ -103,7 +106,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 			!isInsideDropdown(event.target, mostPopularDropdownRef) &&
 			!isInsideDropdown(event.target, filterDropdownRef) &&
 			!isInsideDropdown(event.target, siatkaDropdownRef) &&
-			!isInsideDropdown(event.target, mostPopularDropdownMobilesRef)
+			!isInsideDropdown(event.target, dropdownMobilesRef)
 		) {
 			setMostPopularBtnClicked(false);
 			setFilterBtnClicked(false);
@@ -237,9 +240,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 												<input type='text' placeholder='Wybierz gatunek' />
 											</section>
 										</div>
-										{/* <div className={`filter-dropdown-ontype`}>
-
-                    </div> */}
 										<label htmlFor='dataWydania'>
 											<input
 												type='checkbox'
@@ -416,40 +416,129 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							</section>
 						</section>
 					</section>
-					<section className='films-wrapper'>
-						{mappingBy.map((film: FilmData, index: number) => (
-							<article className='film-container w-full' key={index}>
-								<section className='films-image-section'>
-									<a href='#'>
-										<img src={film.image} alt={`Poster for ${film.title}`} />
-										<button className='film-play-btn'>
-											<PlayIcon className='text-black h-5' />
-										</button>
-									</a>
-								</section>
-								<section className='films-text-section'>
-									<p className='main-text-rating flex items-center'>
-										<StarIcon
-											className='h-5 mr-2'
-											style={{
-												color: 'var(--orange)',
-											}}
-										/>
-										<span>{film.rating} / 10</span>
-									</p>
-									<a className='film-link-title search-title pr-1'>{film.title}</a>
-								</section>
-							</article>
-						))}
-					</section>
+					{siatkaChoosed === 'Siatka' ? (
+						<section className='films-wrapper'>
+							{mappingBy.map((film: FilmData, index: number) => (
+								<article className='film-container w-full' key={index}>
+									<section className='films-image-section'>
+										<Link href='#'>
+											<img src={film.image} alt={`Poster for ${film.title}`} />
+											<button className='film-play-btn'>
+												<PlayIcon className='text-black h-5' />
+											</button>
+										</Link>
+									</section>
+									<section className='films-text-section'>
+										<section className='main-text-rating flex items-center'>
+											<StarIcon
+												className='h-5 mr-2'
+												style={{
+													color: 'var(--orange)',
+												}}
+											/>
+											<span>{film.rating} / 10</span>
+										</section>
+										<Link href='#' className='film-link-title search-title pr-1'>
+											{film.title}
+										</Link>
+									</section>
+								</article>
+							))}
+						</section>
+					) : siatkaChoosed === 'Pejzaż' ? (
+						<section
+							className='films-wrapper-pejzaz'
+							style={{
+								display: siatkaChoosed === 'Pejzaż' ? 'grid' : 'none',
+							}}>
+							{mappingBy.map((film: FilmData, index: number) => (
+								<article className='film-container w-full' key={index}>
+									<section className='films-image-section'>
+										<Link href='#'>
+											<img src={film.image} alt={`Poster for ${film.title}`} />
+											<button className='film-play-btn'>
+												<PlayIcon className='text-black h-5' />
+											</button>
+										</Link>
+									</section>
+									<section className='films-text-section'>
+										<section className='main-text-rating flex items-center'>
+											<StarIcon
+												className='h-5 mr-2'
+												style={{
+													color: 'var(--orange)',
+												}}
+											/>
+											<span>{film.rating} / 10</span>
+										</section>
+										<Link href='#' className='film-link-title search-title pr-1'>
+											{film.title}
+										</Link>
+									</section>
+								</article>
+							))}
+						</section>
+					) : siatkaChoosed === 'Lista' ? (
+						<section
+							className='films-wrapper-list'
+							style={{
+								display: siatkaChoosed === 'Lista' ? 'flex' : 'none',
+							}}>
+							{mappingBy.map((film: FilmData, index: number) => (
+								<article className='film-container-list w-full' key={index}>
+									<section className='films-image-section'>
+										<Link href='#'>
+											<img src={film.image} alt={`Poster for ${film.title}`} />
+											<button className='film-play-btn'>
+												<PlayIcon className='text-black h-5' />
+											</button>
+										</Link>
+									</section>
+									<section className='films-text-section'>
+										<Link href='#' className='film-link-title search-title pr-1'>
+											{film.title}
+										</Link>
+										<span className='text-xs sm:text-sm'>{film.time}</span>
+										<section className='main-text-rating'>
+											<section className='flex items-center'>
+												<StarIcon
+													className='h-4 mr-2'
+													style={{
+														color: 'var(--orange)',
+													}}
+												/>
+												<span>
+													{film.rating} / 10 &nbsp;&nbsp;
+													<span
+														className='film-list-rating-separate-symbol'
+														style={{
+															color: 'var(--gray-5050)',
+														}}>
+														|
+													</span>
+												</span>
+											</section>
+											<button className='rate-this-btn flex items-center gap-x-2'>
+												<StarIcon className='h-4' />
+												Oceń to
+											</button>
+										</section>
+										<p className='film-list-description'>{film.description}</p>
+									</section>
+								</article>
+							))}
+						</section>
+					) : (
+						''
+					)}
 				</div>
 			</div>
 			<Footer />
 			<div
-				ref={mostPopularDropdownMobilesRef}
-				className={`typical-dropdown-style ${mostPopularBtnClicked ? 'active' : ''}`}>
+				ref={dropdownMobilesRef}
+				className={`typical-dropdown-style ${mostPopularBtnClicked || siatkaClicked ? 'active' : ''}`}>
 				{mostPopularBtnClicked ? (
-					<div className='h-52'>
+					<div className='!h-52'>
 						<button
 							className={`${selectedMostPopular === 'najbardziejPopularne' ? 'choosed' : ''}`}
 							onClick={() => {
@@ -496,11 +585,41 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							Największy przychód
 						</button>
 					</div>
+				) : siatkaClicked ? (
+					<div className='!h-36'>
+						<button
+							className={`${selectedSiatka === 'siatka' ? 'choosed' : ''}`}
+							onClick={() => {
+								setSiatkaClicked(false);
+								setSelectedSiatka('siatka');
+								setSiatkaChoosed('Siatka');
+							}}>
+							Siatka
+						</button>
+						<button
+							className={`${selectedSiatka === 'pejzaz' ? 'choosed' : ''}`}
+							onClick={() => {
+								setSiatkaClicked(false);
+								setSelectedSiatka('pejzaz');
+								setSiatkaChoosed('Pejzaż');
+							}}>
+							Pejzaż
+						</button>
+						<button
+							className={`${selectedSiatka === 'lista' ? 'choosed' : ''}`}
+							onClick={() => {
+								setSiatkaClicked(false);
+								setSelectedSiatka('lista');
+								setSiatkaChoosed('Lista');
+							}}>
+							Lista
+						</button>
+					</div>
 				) : (
 					''
 				)}
 			</div>
-			<div className={`opacity-el ${mostPopularBtnClicked ? 'active' : ''}`}></div>
+			<div className={`opacity-el ${mostPopularBtnClicked || siatkaClicked ? 'active' : ''}`}></div>
 		</div>
 	);
 };

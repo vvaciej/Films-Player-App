@@ -9,6 +9,9 @@
 .films-category-filter-btns {
 	@include flex-center;
 	column-gap: 0.9rem;
+	@include mobile-340 {
+		column-gap: 0;
+	}
 	.films-category-filter-btn {
 		display: flex;
 		@include transparent-btn-style;

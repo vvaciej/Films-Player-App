@@ -10,6 +10,9 @@ export const popularFilms = [
 		addedDate: 'February 10 2024',
 		budget: 65_000_000,
 		profit: 1,
+		time: '2hr 24min',
+		description:
+			'13 października 1972 r. lot 571 urugwajskich sił powietrznych, wyczarterowany w celu zabrania drużyny rugby do Chile, rozbija się o lodowiec w sercu Andów.',
 	},
 	{
 		title: 'Napoleon',
@@ -22,6 +25,9 @@ export const popularFilms = [
 		addedDate: 'February 11 2024',
 		budget: 165_000_000,
 		profit: 213_400_000,
+		time: '2hr 38min',
+		description:
+			'Film Napoleon opowie historię bezwzględnego dojścia Napoleona Bonaparte do władzy i jego obsesyjnej miłości do żony, cesarzowej Józefiny.',
 	},
 	{
 		title: 'Skok w przestworzach',
@@ -34,10 +40,14 @@ export const popularFilms = [
 		addedDate: 'February 9 2024',
 		budget: 100_000_000,
 		profit: 1,
+		time: '1hr 44min',
+		description:
+			'Międzynarodowa ekipa złodziei podejmuje się misji powstrzymania ataku terrorystycznego. Musi dokonać skoku na samolot w trakcie lotu.',
 	},
 	{
 		title: 'Aquaman i Zaginione Królestwo',
 		image: 'https://image.tmdb.org/t/p/w300/46sp1Z9b2PPTgCMyA87g9aTLUXi.jpg',
+		imgFullHD: 'https://image.tmdb.org/t/p/w1280/jXJxMcVoEuXzym3vFnjqDW4ifo6.jpg',
 		rating: 6.2,
 		year: 2023,
 		type: 'Film',
@@ -46,11 +56,14 @@ export const popularFilms = [
 		addedDate: 'February 5 2024',
 		budget: 205_000_000,
 		profit: 398_442_014,
-		profit: 1,
+		time: '2hr 4min',
+		description:
+			'Poprzednio Czarna Manta nie zdołał pokonać Aquamana. Wciąż jednak pragnie pomścić śmierć ojca i dlatego nie cofnie się przed niczym, żeby rozprawić się z Aquamanem raz na zawsze. Tym razem Czarna Manta jest potężniejszy niż dotąd. Posiadł moc mitycznego Czarnego Trójzęba, który kryje w sobie starożytną i złowrogą siłę. Aby go pokonać, Aquaman nieoczekiwanie prosi o pomoc Orma, swojego uwięzionego brata i poprzedniego króla Atlantydy. Obaj muszą zapomnieć o różnicach, żeby ochronić królestwo oraz ocalić rodzinę Aquamana i cały świat przed nieodwracalnym zniszczeniem.',
 	},
 	{
 		title: 'Marvels',
 		image: 'https://image.tmdb.org/t/p/w300/zE9SzrVeZo3zwpXJCDu7zd3ztLX.jpg',
+		imgFullHD: 'https://image.tmdb.org/t/p/w1280/feSiISwgEpVzR1v3zv2n2AU4ANJ.jpg',
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
@@ -59,11 +72,14 @@ export const popularFilms = [
 		addedDate: 'February 8 2024',
 		budget: 275_000_000,
 		profit: 205_600_000,
-		profit: 1,
+		time: '1hr 49min',
+		description:
+			'Pełniąc swoje obowiązki, Carol Danvers – Kapitan Marvel – trafia do rewolucjonisty Kree. Jej moce łączą się z mocami superfanki Kamali Khan – Ms. Marvel – oraz z siostrzenicą Carol, obecnie astronautką S.A.B.E.R, kapitan Monicą Rambeau. Teraz to niezgrane trio musi dać prawdziwy popis i wspólnie uratować świat jako „The Marvels”.',
 	},
 	{
 		title: 'Wonka',
 		image: 'https://image.tmdb.org/t/p/w300/qhb1qOilapbapxWQn9jtRCMwXJF.jpg',
+		imgFullHD: 'https://image.tmdb.org/t/p/w1280/yOm993lsJyPmBodlYjgpPwBjXP9.jpg',
 		rating: 7.1,
 		year: 2023,
 		type: 'Film',
@@ -72,7 +88,9 @@ export const popularFilms = [
 		addedDate: 'February 7 2024',
 		budget: 125_000_000,
 		profit: 511_051_633,
-		profit: 1,
+		time: '1hr 57min',
+		description:
+			'Skupiając się na młodym Willym Wonce i tym, jak spotkał Oompa-Loompas podczas jednej ze swoich najwcześniejszych przygód.',
 	},
 	{
 		title: 'Zabójcza gra',
@@ -85,10 +103,14 @@ export const popularFilms = [
 		addedDate: 'February 4 2024',
 		budget: 13_000_000,
 		profit: 1,
+		time: '1hr 41min',
+		description:
+			'Emma i Dave zamierzają urozmaicić rocznicę ślubu pikantną zabawą w nieznajomych w Nowym Jorku. Sytuacja staje się jednak niebezpieczna, kiedy Bob demaskuje nieznane Dave’owi sekretne życie Emmy, międzynarodowej płatnej zabójczyni, narażając tym samym jej rodzinę. Emma musi polegać na śmiercionośnych umiejętnościach i determinacji, aby ochronić bliskich.',
 	},
 	{
 		title: 'Oppenheimer',
 		image: 'https://image.tmdb.org/t/p/w300/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
+		imgFullHD: 'https://image.tmdb.org/t/p/w1280/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg',
 		rating: 8.0,
 		year: 2023,
 		type: 'Film',
@@ -97,6 +119,9 @@ export const popularFilms = [
 		addedDate: 'February 2 2024',
 		budget: 100_000_000,
 		profit: 952_000_000,
+		time: '3hr 1min',
+		description:
+			'Oppenheimer w czasie II Wojny Światowej był dyrektorem programu rozwoju broni jądrowej "Manhattan". Poza działalnością związaną z bronią atomową Oppenheimer miał ogromne osiągnięcia w innych dziedzinach fizyki, między innymi w badaniach czarnych dziur oraz promieniowania kosmicznego. Resztę życia po opracowaniu bomby atomowej poświęcił na działalność na rzecz ograniczania rozprzestrzeniania się broni jądrowej. Był oskarżany przez amerykański rząd i służby o powiązania z ruchem komunistycznym oraz działalność szpiegowską. W latach 50. został pozbawiony dostępu do tajnych dokumentów. Dopiero prezydent Kennedy dokonał jego politycznej rehabilitacji. Oppenheimer jest dziś uznawany za jeden z symboli pacyfizmu i sprzeciwu wobec rozprzestrzeniania broni atomowej.',
 	},
 	{
 		title: 'Super Mario Bros. Film',
@@ -109,6 +134,9 @@ export const popularFilms = [
 		addedDate: 'February 1 2024',
 		budget: 100_000_000,
 		profit: 1_362_000_000,
+		time: '1hr 33min',
+		description:
+			'"Super Mario Bros. Film" to najnowsza animacja studia Illumination, które stworzyło uwielbiane przez wszystkich "Minionki" oraz "Sing". Minionki pokochali widzowie w każdym wieku na całym świecie. Są jednymi z najpopularniejszych animowanych postaci. Teraz studio Illumination stworzyło animację o bohaterze gry komputerowej i z pewnością dostarczą widzom wielu wspaniałych emocji. Produkcja jest oparta na kultowej grze komputerowej z lat osiemdziesiątych "Super Mario Bros". Gra ma wielu fanów do dziś i jest jedną najpopularniejszych w historii.',
 	},
 	{
 		title: 'Plan wycieczki',
@@ -121,6 +149,9 @@ export const popularFilms = [
 		addedDate: 'February 3 2024',
 		budget: 1,
 		profit: 208,
+		time: '1hr 58min',
+		description:
+			'Dan Morgan ma wiele ról: jest oddanym mężem, kochającym ojcem, popularnym sprzedawcą samochodów. Jest też byłym zabójcą. Kiedy jego przeszłość daje o sobie znać, zostaje zmuszony zabrać niczego nie podejrzewającą rodzinę na jedyną w swoim rodzaju wycieczkę.',
 	},
 	{
 		title: 'Rebel Moon - część 1: Dziecko Ognia',
@@ -133,6 +164,8 @@ export const popularFilms = [
 		addedDate: 'February 5 2024',
 		budget: 83_000_000,
 		profit: 1,
+		description:
+			'Kiedy pokojowa kolonia na krańcu galaktyki staje w obliczu ataku ze strony armii tyrana, tajemnicza Kora staje się największą nadzieją mieszkańców na przetrwanie. Próbując pozyskać sojuszników do niemożliwej misji, Kora gromadzi niewielką grupę wojowników – outsiderów, powstańców, wieśniaków i sierot wojennych z różnych światów – których łączy wspólne pragnienie zemsty i odkupienia. Gdy cień potężnego królestwa pada na najbardziej nieprawdopodobny z księżyców, wybucha bitwa o losy galaktyki, w której ogniu wykuwa się nowa armia bohaterów.',
 	},
 	{
 		title: 'Życzenie',
@@ -145,6 +178,9 @@ export const popularFilms = [
 		addedDate: 'February 6 2024',
 		budget: 175_000_000,
 		profit: 223_500_000,
+		time: '1hr 35min',
+		description:
+			'17-letnia Asha i jej koza Valentino poruszają się po Rosas, krainie życzeń, w której życzenia mogą się dosłownie spełnić.',
 	},
 ];
 
@@ -160,6 +196,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 7 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 50min',
+		description:
+			'Zaid po 7 latach spędzonych w więzieniu zaczyna działać pod przykrywką dla policji w zamian za zwolnienie i możliwość zobaczenia się z 7-letnim synem, z którym był w separacji. Desperacko próbuje połączyć swoje życie tajnego źródła w brutalnym gangu, budując relacje z synem, ale ostatecznie oba światy się zderzają. Po zdemaskowaniu musi zrobić wszystko, co w jego mocy, aby chronić syna.',
 	},
 	{
 		title: 'Darkland',
@@ -172,6 +211,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 8 2024',
 		budget: 2_800_000,
 		profit: 1,
+		time: '1hr 52min',
+		description:
+			'"Darkland" to opowieść o znanym lekarzu Zaidzie (w tej roli Dar Salim), który w czasie napadu gangu traci brata. Mężczyzna postanawia porzucić swoje uporządkowane życie i pomścić członka rodziny. Przywdziewa czarny kask i jako zamaskowany wojownik na motorze zaczyna wymierzać sprawiedliwość.',
 	},
 	{
 		title: 'The Creeping',
@@ -184,6 +226,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 12 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 33min',
+		description:
+			'Młoda kobieta przyjeżdża do domu swojej babci, by się nią opiekować. Wkrótce jednak przyjdzie jej walczyć ze złowrogą siłą...',
 	},
 	{
 		title: 'Każdy kłamie',
@@ -196,6 +241,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 11 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 32min',
+		description:
+			'Młody prokurator nakłania byłego policjanta do przyłączenia się do nowej grupy odpowiedzialnej za prowadzenie dochodzeń w „delikatnych” sprawach.',
 	},
 	{
 		title: 'Pajęczyna',
@@ -208,6 +256,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 1 2024',
 		budget: 1,
 		profit: 1,
+		time: '2hr 15min',
+		description:
+			'Lata 70., Korea Południowa. Reżyser Kim próbuje zmienić zakończenie swojego najnowszego filmu. Na przeszkodzie stają urząd cenzury, niechętny producent oraz zdezorientowana obsada.',
 	},
 	{
 		title: 'Zabójcza lekcja',
@@ -220,6 +271,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 6 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 25min',
+		description:
+			'Chłopak, nad którym znęcano się w szkole, doznaje urazu i trafia do szpitala. Po tym zdarzeniu zaczyna mieć wizje.',
 	},
 	{
 		title: 'Eternals',
@@ -232,6 +286,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 4 2024',
 		budget: 200_200_000,
 		profit: 402_064_899,
+		time: '2hr 36min',
+		description:
+			'Eternals to zespół starożytnych kosmitów, którzy żyją w tajemnicy na Ziemi od tysięcy lat. Kiedy niespodziewana tragedia wyprowadza ich z cienia, są zmuszeni ponownie zjednoczyć się przeciwko najstarszemu wrogowi ludzkości, Deviantom.',
 	},
 	{
 		title: 'Bagażnik - uwięziona',
@@ -244,6 +301,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 2 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 36min',
+		description:
+			'28-letnia studentka medycyny Malina budzi się w zamkniętym bagażniku i zdaje sobie sprawę, ku swemu przerażeniu, że brakuje jej nie tylko wspomnień tego, co się stało. Jako że tylko telefon łączy ją ze światem zewnętrznym, młoda kobieta prowadzi desperacką walkę o przeżycie, podczas gdy pojazd pędzi nieustannie ku strasznej tajemnicy.',
 	},
 	{
 		title: 'Myśliwi z ruin',
@@ -256,6 +316,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 6 2024',
 		budget: 18_000_000,
 		profit: 1,
+		time: '1hr 48min',
+		description:
+			'Zabójcze trzęsienie ziemi obraca Seul w pozbawioną wszelkich praw ruinę. W takim świecie odważny myśliwy próbuje uratować nastolatkę porwaną przez szalonego doktora.',
 	},
 	{
 		title: 'Bękart',
@@ -268,6 +331,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 8 2024',
 		budget: 8_500_000,
 		profit: 1,
+		time: '2hr 7min',
+		description:
+			'Jest to porywający dramat o podboju duńskich wrzosowisk. To film o niepoddającej się człowiekowi naturze, wielkich marzeniach i jeszcze większym poświęceniu. O zemście, dyscyplinie, miłości i stracie. To historia o dumnym i niepoddającym się przeciwnościom mężczyźnie oraz o kobiecie, która zostaje jego sprzymierzeńcem w walce ze złem, śmiercią i potępieniem.',
 	},
 	{
 		title: 'Wizje',
@@ -280,6 +346,9 @@ export const lastAddedFilms = [
 		addedDate: 'February 11 2024',
 		budget: 9_000_000,
 		profit: 1,
+		time: '2hr 3min',
+		description:
+			"Estelle, pilotka linii lotniczych, wiedzie perfekcyjne życie u boku swojego męża, Guillaume'a, wziętego lekarza. Ich małżeństwo zostaje poddane próbie, gdy Estelle przypadkowo spotyka Anę, swoją dawną miłość. W miarę jak ich romans nabiera intensywności, Estelle zaczyna doświadczać tajemniczych wizji. Granica między rzeczywistością a fantazją coraz bardziej się zaciera. Thriller psychologiczny, w którego obsadzie znaleźli się Diane Kruger, Mathieu Kassovitz oraz Marta Nieto.",
 	},
 	{
 		title: 'Milion dni',
@@ -292,6 +361,8 @@ export const lastAddedFilms = [
 		addedDate: 'February 9 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 20min',
+		description: 'W ciągu jednej nocy astronauta musi zdecydować, czy kontynuować dzieło swojego życia.',
 	},
 ];
 
@@ -307,6 +378,9 @@ export const popularActionFilms = [
 		addedDate: 'February 7 2024',
 		budget: 100_000_000,
 		profit: 1,
+		time: '1hr 44min',
+		description:
+			'Międzynarodowa ekipa złodziei podejmuje się misji powstrzymania ataku terrorystycznego. Musi dokonać skoku na samolot w trakcie lotu.',
 	},
 	{
 		title: 'Zabójcza gra',
@@ -319,10 +393,14 @@ export const popularActionFilms = [
 		addedDate: 'February 8 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 41min',
+		description:
+			'Emma i Dave zamierzają urozmaicić rocznicę ślubu pikantną zabawą w nieznajomych w Nowym Jorku. Sytuacja staje się jednak niebezpieczna, kiedy Bob demaskuje nieznane Dave’owi sekretne życie Emmy, międzynarodowej płatnej zabójczyni, narażając tym samym jej rodzinę. Emma musi polegać na śmiercionośnych umiejętnościach i determinacji, aby ochronić bliskich.',
 	},
 	{
 		title: 'Marvels',
 		image: 'https://image.tmdb.org/t/p/w300/zE9SzrVeZo3zwpXJCDu7zd3ztLX.jpg',
+		imgFullHD: 'https://image.tmdb.org/t/p/w1280/feSiISwgEpVzR1v3zv2n2AU4ANJ.jpg',
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
@@ -331,6 +409,9 @@ export const popularActionFilms = [
 		addedDate: 'February 8 2024',
 		budget: 275_000_000,
 		profit: 205_600_000,
+		time: '1hr 49min',
+		description:
+			'Pełniąc swoje obowiązki, Carol Danvers – Kapitan Marvel – trafia do rewolucjonisty Kree. Jej moce łączą się z mocami superfanki Kamali Khan – Ms. Marvel – oraz z siostrzenicą Carol, obecnie astronautką S.A.B.E.R, kapitan Monicą Rambeau. Teraz to niezgrane trio musi dać prawdziwy popis i wspólnie uratować świat jako „The Marvels”.',
 	},
 	{
 		title: 'Plan wycieczki',
@@ -343,6 +424,9 @@ export const popularActionFilms = [
 		addedDate: 'February 3 2024',
 		budget: 1,
 		profit: 208,
+		time: '1hr 58min',
+		description:
+			'Dan Morgan ma wiele ról: jest oddanym mężem, kochającym ojcem, popularnym sprzedawcą samochodów. Jest też byłym zabójcą. Kiedy jego przeszłość daje o sobie znać, zostaje zmuszony zabrać niczego nie podejrzewającą rodzinę na jedyną w swoim rodzaju wycieczkę.',
 	},
 	{
 		title: 'Rebel Moon - część 1: Dziecko Ognia',
@@ -355,6 +439,9 @@ export const popularActionFilms = [
 		addedDate: 'February 3 2024',
 		budget: 83_000_000,
 		profit: 1,
+		time: '2hr 15min',
+		description:
+			'Kiedy pokojowa kolonia na krańcu galaktyki staje w obliczu ataku ze strony armii tyrana, tajemnicza Kora staje się największą nadzieją mieszkańców na przetrwanie. Próbując pozyskać sojuszników do niemożliwej misji, Kora gromadzi niewielką grupę wojowników – outsiderów, powstańców, wieśniaków i sierot wojennych z różnych światów – których łączy wspólne pragnienie zemsty i odkupienia. Gdy cień potężnego królestwa pada na najbardziej nieprawdopodobny z księżyców, wybucha bitwa o losy galaktyki, w której ogniu wykuwa się nowa armia bohaterów.',
 	},
 	{
 		title: 'Jeszcze jeden strzał',
@@ -367,10 +454,14 @@ export const popularActionFilms = [
 		addedDate: 'February 2 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 42min',
+		description:
+			'Komandos Navy SEAL Jake Harris (Scott Adkins) ma za zadanie przetransportować kryminalistę z tajnego więzienia w Polsce. Na miejscu wpada z oddziałem w zasadzkę i musi wykorzystać swoje nabyte w boju umiejętności, aby przeżyć atak, którego celem jest odbicie podejrzanego o terroryzm Amina Mansura. Tymczasem podczas wystąpienia prezydenta USA ma dojść do detonacji bomby, a Mansur jako jedyny może znać jej lokalizację. Straciwszy cały oddział, Harris musi teraz za wszelką cenę chronić mężczyznę. W filmie, który wygląda jak nakręcony jednym ujęciem, występują także Michael Jai White, Alexis Knapp oraz Tom Berenger.',
 	},
 	{
 		title: 'Igrzyska śmierci: Ballada ptaków i węży',
 		image: 'https://image.tmdb.org/t/p/w300/hTm3t6aSH4EC5Woisnwp8wjcEKQ.jpg',
+		imgFullHD: 'https://image.tmdb.org/t/p/w1280/e0M3WVJm4nBrAg0LbJq0gdKi3U7.jpg',
 		rating: 7.2,
 		year: 2023,
 		type: 'Film',
@@ -379,6 +470,9 @@ export const popularActionFilms = [
 		addedDate: 'February 1 2024',
 		budget: 100_000_000,
 		profit: 336_400_000,
+		time: '2hr 37min',
+		description:
+			'Każda saga ma swój początek, a każdy bunt potrzebuje pierwszej iskry. Oto Dziesiąte Głodowe Igrzyska. W Kapitolu osiemnastoletni Coriolanus Snow zamierza skorzystać z szansy, jaką jest rola mentora i zdobyć sławę.',
 	},
 	{
 		title: 'Szybcy i wściekli 10',
@@ -391,6 +485,9 @@ export const popularActionFilms = [
 		addedDate: 'February 7 2024',
 		budget: 340_000_000,
 		profit: 704_709_600,
+		time: '2hr 21min',
+		description:
+			'Od kiedy Dom Toretto (Vin Diesel) rozpoczął swoją przygodę w świecie nielegalnych wyścigów po ulicach Los Angeles, razem z rodziną musiał pokonać niebywałe trudności, aby przechytrzyć i prześcignąć każdego rywala. Gdy jego zespół wyprowadził w pole podłego brazylijskiego mafiosa, nie miał pojęcia, że z boku przygląda się temu jego syn Dante (Jason Momoa). Teraz Dante staje się nowym przeciwnikiem, o wiele groźniejszym niż dotychczasowi. Jest żądny zemsty i zdeterminowany, by zniszczyć wszystko i każdego, kogo kocha Dom.',
 	},
 	{
 		title: 'Spider-Man: Poprzez multiwersum',
@@ -403,6 +500,9 @@ export const popularActionFilms = [
 		addedDate: 'February 8 2024',
 		budget: 100_000_000,
 		profit: 690_500_000,
+		time: '2hr 20min',
+		description:
+			'Z Brooklynu Miles trafia do multiwersum. Razem z Gwen Stacy, spotykają innych Spider-Man’ów, którzy mają za zadanie ochronę świata przed zagrożeniami. Kiedy bohaterowie spierają się o to, jak poradzić sobie z nowymi niebezpieczeństwami, Miles musi na nowo zdefiniować, co to znaczy być bohaterem i jak ocalić ludzi, których kocha.',
 	},
 	{
 		title: 'Spider-Man: Bez drogi do domu',
@@ -415,6 +515,9 @@ export const popularActionFilms = [
 		addedDate: 'February 9 2024',
 		budget: 200_000_000,
 		profit: 1_921_847_111,
+		time: '2hr 28min',
+		description:
+			"Po raz pierwszy w kinowej historii Spider-Mana nasz przyjazny bohater z sąsiedztwa zostaje zdemaskowany i nie jest już w stanie oddzielić swojego normalnego życia od wysokiej stawki bycia superbohaterem. Kiedy prosi o pomoc Doktora Strange'a, stawka staje się jeszcze bardziej niebezpieczna, zmuszając go do odkrycia, co to naprawdę znaczy być Spider-Manem.",
 	},
 	{
 		title: 'Transformers: Przebudzenie bestii',
@@ -427,6 +530,9 @@ export const popularActionFilms = [
 		addedDate: 'February 6 2024',
 		budget: 200_000_000,
 		profit: 439_000_000,
+		time: '2hr 7min',
+		description:
+			'OPTIMUS PRIME i AUTOBOTY w nowej, pełnej adrenaliny przygodzie. W obliczu grożącego planecie niebezpieczeństwa Transformersi muszą połączyć siły z potężną frakcją Maximali, aby wziąć udział w ostatecznej bitwie o ocalenie Ziemi. Gdy los ludzkości będzie zagrożony, Noah i Elena zrobią co tylko w ich mocy, by pomóc w ostatecznej walce o ocalenie Ziemi w nowym, ekscytującym rozdziale sagi z cyklu TRANSFORMERS',
 	},
 	{
 		title: 'John Wick 4',
@@ -439,6 +545,9 @@ export const popularActionFilms = [
 		addedDate: 'February 12 2024',
 		budget: 90_000_000,
 		profit: 426_978_565,
+		time: '2hr 50min',
+		description:
+			'Ceny idą w górę, więc także stawka za głowę legendarnego zabójcy, Johna Wicka przebiła już sufit. Stając do ostatecznego pojedynku, który może dać mu upragnioną wolność i zasłużoną emeryturę, John wie, że może liczyć tylko na siebie. Dla niego, to nic nowego. To co zmieniło się tym razem, to fakt, że przeciwko sobie ma całą międzynarodową organizację najlepszych płatnych zabójców, a jej nowy szef Markiz de Gramond jest równie wyrafinowany, co bezlitosny. Zanim John stanie z nim oko w oko, będzie musiał odwiedzić kilka kontynentów mierząc się z całą plejadą twardzieli, którzy wiedzą wszystko o zabijaniu. Tuż przed wielkim finałem tej morderczej symfonii, John Wick trafi na trop swojej dalekiej rodziny, której członkowie mogą mieć decydujący wpływ na wynik całej rozgrywki.',
 	},
 ];
 
@@ -454,10 +563,14 @@ export const popularComediaFilms = [
 		addedDate: 'February 7 2024',
 		budget: 100_000_000,
 		profit: 1,
+		time: '1hr 44min',
+		description:
+			'Międzynarodowa ekipa złodziei podejmuje się misji powstrzymania ataku terrorystycznego. Musi dokonać skoku na samolot w trakcie lotu.',
 	},
 	{
 		title: 'Wonka',
 		image: 'https://image.tmdb.org/t/p/w300/qhb1qOilapbapxWQn9jtRCMwXJF.jpg',
+		imgFullHD: 'https://image.tmdb.org/t/p/w1280/yOm993lsJyPmBodlYjgpPwBjXP9.jpg',
 		rating: 7.1,
 		year: 2023,
 		type: 'Film',
@@ -466,6 +579,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 7 2024',
 		budget: 125_000_000,
 		profit: 511_051_633,
+		time: '1hr 57min',
+		description:
+			'Skupiając się na młodym Willym Wonce i tym, jak spotkał Oompa-Loompas podczas jednej ze swoich najwcześniejszych przygód.',
 	},
 	{
 		title: 'Zabójcza gra',
@@ -478,6 +594,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 3 2024',
 		budget: 13_000_000,
 		profit: 1,
+		time: '1hr 41min',
+		description:
+			'Emma i Dave zamierzają urozmaicić rocznicę ślubu pikantną zabawą w nieznajomych w Nowym Jorku. Sytuacja staje się jednak niebezpieczna, kiedy Bob demaskuje nieznane Dave’owi sekretne życie Emmy, międzynarodowej płatnej zabójczyni, narażając tym samym jej rodzinę. Emma musi polegać na śmiercionośnych umiejętnościach i determinacji, aby ochronić bliskich.',
 	},
 	{
 		title: 'Super Mario Bros. Film',
@@ -490,6 +609,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 1 2024',
 		budget: 100_000_000,
 		profit: 1_362_000_000,
+		time: '1hr 33min',
+		description:
+			'"Super Mario Bros. Film" to najnowsza animacja studia Illumination, które stworzyło uwielbiane przez wszystkich "Minionki" oraz "Sing". Minionki pokochali widzowie w każdym wieku na całym świecie. Są jednymi z najpopularniejszych animowanych postaci. Teraz studio Illumination stworzyło animację o bohaterze gry komputerowej i z pewnością dostarczą widzom wielu wspaniałych emocji. Produkcja jest oparta na kultowej grze komputerowej z lat osiemdziesiątych "Super Mario Bros". Gra ma wielu fanów do dziś i jest jedną najpopularniejszych w historii.',
 	},
 	{
 		title: 'Plan wycieczki',
@@ -502,10 +624,14 @@ export const popularComediaFilms = [
 		addedDate: 'February 3 2024',
 		budget: 1,
 		profit: 208,
+		time: '1hr 58min',
+		description:
+			'Dan Morgan ma wiele ról: jest oddanym mężem, kochającym ojcem, popularnym sprzedawcą samochodów. Jest też byłym zabójcą. Kiedy jego przeszłość daje o sobie znać, zostaje zmuszony zabrać niczego nie podejrzewającą rodzinę na jedyną w swoim rodzaju wycieczkę.',
 	},
 	{
 		title: 'Barbie',
 		image: 'https://image.tmdb.org/t/p/w300/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg',
+		imgFullHD: 'https://image.tmdb.org/t/p/w1280/nHf61UzkfFno5X1ofIhugCPus2R.jpg',
 		rating: 6.5,
 		year: 2023,
 		type: 'Film',
@@ -514,6 +640,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 8 2024',
 		budget: 145_000_000,
 		profit: 1_445_648_421,
+		time: '1hr 54min',
+		description:
+			'Barbieland to bajkowa kraina, w której każda Barbie odnosi niesamowite sukcesy, wiodąc bajkowe życie pełne zabawy, brokatu i pięknych kreacji! Nieodłącznym elementem codzienności każdej lalki jest radość i tocząca się dookoła niej egzystencja w cukierkowym świecie pozbawionym zmartwień. Wszystko zmienia się kiedy stereotypowa Barbie doświadcza pierwszych sennych koszmarów, które stopniowo przeradzają się w egzystencjalny kryzys…',
 	},
 	{
 		title: 'Trolle 3',
@@ -526,6 +655,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 8 2024',
 		budget: 95_000_000,
 		profit: 203_900_000,
+		time: '1hr 33min',
+		description:
+			'Po dwóch filmach prawdziwej przyjaźni i flirtowania, Poppy i Mruk są teraz oficjalnie parą! Poppy odkrywa, że Mruk ma sekretną przeszłość. Był kiedyś częścią fenomenalnego boysbandu, BroZone, wraz ze swoimi czterema braćmi: Floydem, Johnem Dory, Sprucem i Clayem. BroZone rozpadł się, a Mruk od tamtej pory nie widział swoich braci. Mruk i Poppy wyruszają w pełną emocji podróż, aby zjednoczyć braci.',
 	},
 	{
 		title: 'Saltburn',
@@ -538,6 +670,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 10 2024',
 		budget: 13_000_000,
 		profit: 19_313_341,
+		time: '2hr 11min',
+		description:
+			'Student Uniwersytetu Oksfordzkiego zostaje wciągnięty w świat czarującego i arystokratycznego kolegi z klasy, który zaprasza go do rozległej posiadłości swojej ekscentrycznej rodziny na lato, którego nigdy nie zapomni.',
 	},
 	{
 		title: 'Leo',
@@ -550,6 +685,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 11 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 42min',
+		description:
+			'Animowana komedia muzyczna o dorastaniu, opowiadająca o ostatnim roku szkoły podstawowej widzianym oczami klasowego zwierzaka. Aktor i komik Adam Sandler jest całkowicie w swoim żywiole użyczając głosu 74-letniej jaszczurce o imieniu Leo. Ten zmęczony życiem gad od dekad przebywa w tej samej sali lekcyjnej, dzieląc terrarium z żółwim kumplem (Bill Burr). Gdy Leo dowiaduje się, że został mu tylko rok życia, postanawia uciec na wolność, ale zamiast tego zostaje wplątany w problemy nerwowych uczniów i pewnego niemożebnie wrednego pedagoga. Tym samym lista rzeczy, które powinien zrobić przed śmiercią, okazuje się wyjątkowo dziwaczna, ale za to jakże fascynująca...',
 	},
 	{
 		title: 'Kot w butach: Ostatnie życzenie',
@@ -562,6 +700,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 4 2024',
 		budget: 90_000_000,
 		profit: 484_700_000,
+		time: '1hr 43min',
+		description:
+			'ot w Butach odkryje, że jest pasjonatem przygód. Wykorzystał już wszystkie swoje osiem z dziewięciu istnień. Postanawia wyruszyć w podróż, aby znaleźć mityczne „Ostatnie Życzenie” i przywrócić swoje dziewięć żyć.',
 	},
 	{
 		title: 'Freelance',
@@ -574,6 +715,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 12 2024',
 		budget: 40_000_000,
 		profit: 8_900_000,
+		time: '1hr 48min',
+		description:
+			'Mason Pettis (John Cena), były agent sił specjalnych podejmuje się niebezpiecznego, ale dobrze płatnego zlecenia. Musi zapewnić prywatną ochronę dziennikarce podczas jej wyjazdu na wywiad z ekscentrycznym dyktatorem. Pech chce, że w trakcie rozmowy wybucha wojskowy zamach stanu, a cała trójka ląduje w dżungli zdana sama na siebie. Ich jedyną misją jest przeżyć i nie pozabijać się nawzajem.',
 	},
 	{
 		title: 'Między nami żywiołami',
@@ -586,6 +730,9 @@ export const popularComediaFilms = [
 		addedDate: 'February 2 2024',
 		budget: 200_000_000,
 		profit: 496_000_000,
+		time: '1hr 42min',
+		description:
+			'„Między nami żywiołami” to najnowsza animacja Disneya i Pixara. Akcja filmu rozgrywa się w Żywiołowie, mieście zamieszkanym przez przedstawicieli ognia, wody, ziemi i powietrza. Iskra to twarda, sprytna i ognista dziewczyna, która wbrew woli ojca zaprzyjaźnia się z zabawnym, płynącym z prądem chłopakiem imieniem Wodek. Ich znajomość wywraca świat Iskry do góry nogami i sprawia, że bohaterowie zaczynają na nowo odkrywać otaczający ich świat.',
 	},
 ];
 
@@ -601,6 +748,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 4 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 30min',
+		description:
+			'Po niedawnej śmierci ojca dwie siostry, będące w separacji, są prześladowane przez złowrogą istotę znaną jako The Jester. Ujawniając się jako coś więcej niż tylko człowiek w masce, zła istota zaczyna w noc Halloween jeszcze bardziej dręczyć mieszkańców tego małego miasteczka. Droga do pokonania tego bezbożnego potwora leży w rękach dwóch sióstr, które zdają sobie sprawę, że jedynym sposobem na przetrwanie jest wymyślenie, jak naprawić zło, które wyrządziła im mroczna przeszłość.',
 	},
 	{
 		title: 'Pięć koszmarnych nocy',
@@ -613,6 +763,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 6 2024',
 		budget: 20_000_000,
 		profit: 290_900_000,
+		time: '1hr 50min',
+		description:
+			"Historia stróża nocnego, który rozpoczyna pracę w Freddy Fazbear's Pizza. Już pierwszej nocy zdaje sobie sprawę, że ta praca u Freddy'ego nie będzie taka łatwa.",
 	},
 	{
 		title: 'Noc Dziękczynienia',
@@ -625,6 +778,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 3 2024',
 		budget: 15_000_000,
 		profit: 44_000_000,
+		time: '1hr 46min',
+		description:
+			'Po tragicznych zamieszkach w Czarny Piątek, zainspirowany Świętem Dziękczynnienia zabójca rozpoczyna rzeź. Za swój cel wybiera mieszkańców Plymouth w stanie Massachusetts. To miasto uznane za miejsce powstania tego święta.',
 	},
 	{
 		title: 'Meg 2: Głębia',
@@ -637,6 +793,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 6 2024',
 		budget: 133_000_000,
 		profit: 129_000_000,
+		time: '1hr 56min',
+		description:
+			'Zanurz się w nieznane wody z Jasonem Stathamem i światową gwiazdą kina akcji Wu Jingiem, którzy prowadzą zespół śmiałych badaczy na odkrywczą wyprawę w najgłębsze otchłanie oceanu. Badania zmieniają się jednak w chaos, kiedy bezwzględnie prowadzona operacja wydobywcza zagraża misji i zmusza jej uczestników do walki o przetrwanie. Zmagając się z gigantycznymi rekinami i nieustępliwymi niszczycielami środowiska, bohaterowie muszą prześcignąć i przechytrzyć bezlitosne drapieżniki w szaleńczym wyścigu z czasem.',
 	},
 	{
 		title: 'Piła X',
@@ -649,6 +808,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 8 2024',
 		budget: 13_000_000,
 		profit: 111_000_000,
+		time: '1hr 58min',
+		description:
+			'Cierpiący na chorobę nowotworową John wyrusza do Meksyku, by poddać się eksperymentalnemu leczeniu, które jest dla niego ostatnią szansą na przeżycie. Po zabiegu odkrywa, że padł ofiarą medycznych oszustów, którzy zbijają majątek na ludzkim cierpieniu. Nie wiedzą, że zadarli z człowiekiem, który w kwestiach cierpienia jest ekspertem. John zabiera się do pracy konstruując zestaw najbardziej skomplikowanych, szalonych i okrutnych pułapek jakie kiedykolwiek widzieliście.',
 	},
 	{
 		title: 'Raz, dwa, trzy... wchodzisz do gry!',
@@ -661,6 +823,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 7 2024',
 		budget: 165_000,
 		profit: 1,
+		time: '1hr 17min',
+		description:
+			'Grupa nastolatków z miasteczka Salem odkrywa przeklęty nóż z prowokującym zaklęciem. Uwolniony demon zmusza ich do grania w makabryczne, śmiercionośne wersje gier z dzieciństwa, stawiając przerażające ultimatum: grasz lub giniesz.',
 	},
 	{
 		title: 'When Evil Lurks',
@@ -673,6 +838,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 4 2024',
 		budget: 772_000,
 		profit: 1,
+		time: '1hr 39min',
+		description:
+			'Mieszkańcy małego wiejskiego miasteczka odkrywają, że demon ma się narodzić pośród nich. Rozpaczliwie próbują uciec, zanim zło się narodzi, ale może być już za późno.',
 	},
 	{
 		title: 'Egzorcysta: Wyznawca',
@@ -685,6 +853,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 8 2024',
 		budget: 30_000_000,
 		profit: 134_800_000,
+		time: '1hr 51min',
+		description:
+			'Sequel filmu z 1973 roku o 12-letniej dziewczynce opętanej przez tajemniczą demoniczną istotę, która zmusza matkę do szukania pomocy u dwóch księży, aby ją uratować.',
 	},
 	{
 		title: 'Zakonnica II',
@@ -697,6 +868,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 3 2024',
 		budget: 38_500_000,
 		profit: 268_100_000,
+		time: '1hr 50min',
+		description:
+			'Rok 1956, Francja. Pewien ksiądz zostaje zamordowany. Zło rozprzestrzenia się po świecie. Sequel globalnego przeboju opowiada o siostrze Irene, która raz jeszcze staje twarzą w twarz z Valak, demoniczną zakonnicą.',
 	},
 	{
 		title: 'Pajęczyna',
@@ -709,6 +883,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 1 2024',
 		budget: 1,
 		profit: 5_569_593,
+		time: '1hr 28min',
+		description:
+			'Od dnia przeprowadzki do nowego domu, ośmioletni Peter co noc doświadcza przerażającej obecności. Na początku jest to tajemnicze, niepokojące stukanie za ścianą sypialni, które słyszy tylko on. Później koszmar narasta, wraz z pojawieniem się wstrząsających wizji. Najgorszy jest jednak fakt, że rodzice lekceważą strach syna, twierdząc, że dręczą go wytwory własnej, wybujałej wyobraźni. Skazany na samotną konfrontację z demoniczną siłą, Peter zaczyna podejrzewać, że najbliżsi ukrywają przed nim straszną rodzinną tajemnicę.',
 	},
 	{
 		title: 'Egzorcysta Papieża',
@@ -721,6 +898,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 3 2024',
 		budget: 18_000_000,
 		profit: 70_204_824,
+		time: '1hr 43min',
+		description:
+			'Oparty na prawdziwych wspomnieniach, film "Egzorcysta Papieża" w reżyserii Juliusa Avery\'ego opowie o legendarnym, włoskim księdzu Gabrielu Amorth. Amoth przeprowadzał egzorcyzmy dla Watykanu. W roli Amortha zobaczymy Russella Crowe. Amorth, który zmarł w 2016 roku, pozostawił po sobie mnóstwo dodatkowych relacji z egzorcyzmów na całym świecie. Produkcja jest zrealizowana na podstawie książki autorstwa Gabriele Amorth’a. W Polsce ukazała się pod tytułem "Wyznania egzorcysty".',
 	},
 	{
 		title: 'Martwe Zło: Przebudzenie',
@@ -733,6 +913,9 @@ export const popularHorrorFilms = [
 		addedDate: 'February 6 2024',
 		budget: 15_000_000,
 		profit: 146_700_000,
+		time: '1hr 36min',
+		description:
+			'Akcja filmu "Martwe zło: Przebudzenie" przenosi się z lasu do miasta. Fabuła opowiada o dwóch nieutrzymujących ze sobą kontaktu siostrach (w ich rolach Sutherland i Sullivan). Ich spotkanie zostaje przerwane pojawieniem się demonów, które potrafią przejmować panowanie nad ludzkimi ciałami. W obliczu najkoszmarniejszej wersji rodziny, jaką można sobie wyobrazić, siostry zmuszone są podjąć brutalną walkę o przetrwanie.',
 	},
 ];
 
@@ -748,6 +931,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 5 2024',
 		budget: 1,
 		profit: 1,
+		time: '2hr',
+		description:
+			'Rok 1402. Królowa Małgorzata (Trine Dyrholm), która zjednoczyła Danię, Szwecję i Norwegię, rządziza pośrednictwem swego adoptowanego syna, Erika (Morten Hee Andersen). Stworzonej przez niej unii zaczyna jednak zagrażać niebezpieczeństwo. By odeprzeć atak wrogów, władczyni planuje małżeństwo syna z angielską księżniczką. Sojusz z Anglią powinien zapewnić jej imperium przetrwanie i status wschodzącej europejskiej potęgi. Niebawem jednak jej przeciwnicy zawiązują spisek. Stwierdzają, że rzekomo zmarły syn Małgorzaty żyje. Rozdarta kobieta musi zmierzyć się ze swoimi emocjami i walczyć o przetrwanie królestwa.',
 	},
 	{
 		title: 'Poskromienie złośnicy 2',
@@ -760,6 +946,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 9 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 38min',
+		description:
+			'Miłość Kaśki i Patryka zostaje poddana próbie, bo oboje podejrzewają się nawzajem o niewierność. Jakby tego było mało, sąsiedzi wciąż wtrącają się w ich sprawy.',
 	},
 	{
 		title: 'Znachor',
@@ -772,6 +961,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 9 2024',
 		budget: 40_000_000,
 		profit: 1,
+		time: '2hr 20min',
+		description:
+			'W tej adaptacji powieści Tadeusza Dołęgi-Mostowicza były szanowany chirurg profesor Rafał Wilczur próbuje odzyskać utraconą pamięć oraz córkę, która go nie rozpoznaje.',
 	},
 	{
 		title: 'Freestyle',
@@ -784,6 +976,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 10 2024',
 		budget: 3_000_000,
 		profit: 1,
+		time: '1hr 28min',
+		description:
+			'Próbując zarobić na nagranie debiutanckiej płyty, obiecujący uliczny raper i jego przyjaciel wpadają w tarapaty, kiedy duża transakcja sprzedaży narkotyków kończy się dla nich totalną katastrofą.',
 	},
 	{
 		title: 'Infinite Storm',
@@ -796,6 +991,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 11 2024',
 		budget: 5_000_000,
 		profit: 1_700_100,
+		time: '1hr 37min',
+		description:
+			'Pam Bales wyrusza na samotną wędrówkę na Górę Waszyngtona, najwyższe wzniesienie nieprzewidywalnych, targanych lodowatymi wichurami Gór Białych w amerykańskim stanie New Hampshire. Ta wyprawa to jej rytuał i sposób na poradzenie sobie z dramatycznymi wspomnieniami. I właśnie w dniu, w którym czuje się najsłabsza, będzie musiała wykazać się heroiczną siłą. Spotyka bowiem wyczerpanego mężczyznę, zupełnie nieprzygotowanego na wyprawę w tak niebezpieczne miejsce. Jeśli nie udzieli mu pomocy, najpewniej umrze. Z kolei gdy się na to zdecyduje, sama może zginąć.',
 	},
 	{
 		title: 'Chłopi',
@@ -808,6 +1006,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 12 2024',
 		budget: 7_000_000,
 		profit: 9_068_607,
+		time: '1hr 55min',
+		description:
+			'Na tle zmieniających się pór roku i sezonowych prac polowych rozgrywają się losy rodziny Borynów i pięknej, tajemniczej Jagny. To właśnie kobiety, w szczególności tragiczna postać Jagny, znajdą się w sercu fabuły. Unikalny mikroświat wiejskiej wspólnoty stanie się pretekstem do opowiedzenia uniwersalnej i niesamowicie aktualnej historii. Historii o tragicznej miłości i życiu w małej społeczności, gdzie reguły i brutalne zasady gry wyznaczają każdemu określone miejsce w grupie, a wyjście poza ciasne ramy grozi upokorzeniem i odrzuceniem.',
 	},
 	{
 		title: 'Sieć podejrzeń',
@@ -820,6 +1021,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 3 2024',
 		budget: 8_500_000,
 		profit: 1,
+		time: '1hr 40min',
+		description:
+			'Evan Birch (Guy Pearce) to z pozoru szczęśliwy mężczyzna, wiodący idylliczne życie. Czarujący i przystojny profesor ma jednak również drugie oblicze, kobieciarza romansującego ze studentkami. Gdy ginie młoda kobieta, Evan zostaje głównym podejrzanym. Śledztwo prowadzi lokalny detektyw Robert Malloy (Pierce Brosnan), którego dochodzenie nie tylko dowodzi złej reputacji profesora, ale również mocno go obciąża. Przeszłość Evana ujawnia, iż jest on zdolny do popełnienia zbrodni. Z czasem w niewinność męża zaczyna powątpiewać także jego żona, Ellen (Minnie Driver).',
 	},
 	{
 		title: 'Plan lekcji',
@@ -832,6 +1036,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 5 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 58min',
+		description:
+			'Po śmierci nauczyciela jego przyjaciel i były policjant podejmuje pracę w szkole, aby zmierzyć się z gangiem podejrzewanym o jego zabójstwo.',
 	},
 	{
 		title: 'The Palace',
@@ -844,6 +1051,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 6 2024',
 		budget: 17_000_000,
 		profit: 420_350,
+		time: '1hr 40min',
+		description:
+			'W ekskluzywnym hotelu w szwajcarskich Alpach, egzotyczna mieszanka zamożnych gości, rozpieszczanych przez obsługę hotelową, stawia czoła ostatniemu dniu mijającego milenium. Niektórzy boją się końca świata, inni nie mogą doczekać się świtu nowej, wspaniałej przyszłości.',
 	},
 	{
 		title: 'Miłość do kwadratu',
@@ -856,6 +1066,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 7 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 41min',
+		description:
+			'"Miłość do kwadratu" to komedia romantyczna o prowadzącej podwójne życie nauczycielce Monice. Pewnego dnia (podczas sesji zdjęciowej jako modelka Klaudia) poznaje ona popularnego flirciarza o imieniu Enzo. Spotkanie to rozpoczyna skomplikowany wzór na miłość, do którego nie przygotowała ich żadna lekcja...',
 	},
 	{
 		title: 'Przestroga',
@@ -868,6 +1081,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 10 2024',
 		budget: 1,
 		profit: 1,
+		time: '1hr 25min',
+		description:
+			'Akcja filmu rozgrywa się w niedalekiej przyszłości i bada konsekwencje z jaką boryka się ludzkość. Gdy globalna burza powoduje, że elektronika wariuje, świat wywraca się do góry nogami. To, co na pierwszy rzut oka nie powinno niepokoić, zaczyna zamieniać ludzkie życie w prawdziwy koszmar.',
 	},
 	{
 		title: 'Obywatel Jones',
@@ -880,6 +1096,9 @@ export const popularPolishFilms = [
 		addedDate: 'February 11 2024',
 		budget: 1,
 		profit: 2_855_316,
+		time: '1hr 59min',
+		description:
+			'Gareth Jones przybywa do ZSRR, chcąc przeprowadzić wywiad ze Stalinem. Na miejscu dowiaduje się o pladze głodu na Ukrainie. Zszokowany i oburzony, zrobi wszystko, aby świat poznał prawdę. Czy jednak świat będzie go słuchał? Agnieszka Holland przedstawia film historyczny, w którym pobrzmiewają echa współczesnych wydarzeń.',
 	},
 ];
 
@@ -895,6 +1114,9 @@ export const popularSerials = [
 		addedDate: 'February 10 2024',
 		budget: 15_000_000,
 		profit: 1,
+		time: '7 sezonów | 22min',
+		description:
+			'Głównymi bohaterami są dziadek i wnuczek. Dziadek, Rick, to szalony wynalazca, który podróżuje przez odległe światy z taką swobodą, z jaką inni dziadkowie spacerują po parku. Wnuczek, Morty, to zwykły dzieciak, zakochany w koleżance z klasy i opuszczający coraz więcej lekcji z powodu przygód, które przeżywa z dziadkiem.',
 	},
 	{
 		title: 'Monarch: dziedzitwo potworów',
@@ -907,6 +1129,9 @@ export const popularSerials = [
 		addedDate: 'February 4 2024',
 		budget: 1,
 		profit: 1,
+		time: '1 sezon | 46min',
+		description:
+			'Cate udaje się przetrwać atak Godzilli na San Francisco, po czym przeżywa kolejny wstrząs, gdy odkrywa szokujący sekret. Stawiając czoła potwornym zagrożeniom, wyrusza w pełną przygód podróż, aby poznać prawdę o swojej rodzinie i tajemniczej organizacji zwanej Monarch.',
 	},
 	{
 		title: 'Loki',
@@ -919,6 +1144,9 @@ export const popularSerials = [
 		addedDate: 'February 6 2024',
 		budget: 140_000_000,
 		profit: 1,
+		time: '2 sezony | 1hr',
+		description:
+			'Po kradzieży Tesseraktu Loki podróżuje w czasie zmieniając historię ludzkości uwięziony we własnym thrillerze kryminalnym.',
 	},
 	{
 		title: 'Fear the Walking Dead',
@@ -931,6 +1159,9 @@ export const popularSerials = [
 		addedDate: 'February 8 2024',
 		budget: 4_000_000,
 		profit: 1,
+		time: '8 sezony | 44min',
+		description:
+			'Spin-off serialu "The Walking Dead". Akcja rozpoczyna się w Los Angeles na krótko przed wybuchem epidemii zombie.',
 	},
 	{
 		title: 'Euforia',
@@ -943,6 +1174,9 @@ export const popularSerials = [
 		addedDate: 'February 10 2024',
 		budget: 250_000_000,
 		profit: 1,
+		time: '3 sezony | 1hr',
+		description:
+			'Życie uzależnionej od narkotyków nastolatki zmienia się, gdy poznaje transseksualną dziewczynę, która przybyła do miasta.',
 	},
 	{
 		title: 'Niezwyciężony',
@@ -955,6 +1189,8 @@ export const popularSerials = [
 		addedDate: 'February 7 2024',
 		budget: 17_000_000,
 		profit: 1,
+		time: '2 sezony | 45min',
+		description: 'Historia nastolatka, którego ojciec jest najpotężniejszym superbohaterem.',
 	},
 	{
 		title: 'Burmistrz Kingstown',
@@ -967,6 +1203,9 @@ export const popularSerials = [
 		addedDate: 'February 9 2024',
 		budget: 1,
 		profit: 1,
+		time: '2 sezony | 53min',
+		description:
+			'Akcja rozgrywa się w małym miasteczku w stanie Michigan, gdzie jedyną kwitnącą gałęzią gospodarki są federalne, stanowe i prywatne więzienia. Historia opowiada o rodzinie McClusky, pośrednikach między policją, przestępcami, więźniami, strażnikami więziennymi i politykami, w mieście całkowicie zależnym od więzień i przetrzymywanych w nich więźniów.',
 	},
 	{
 		title: 'Your Honor',
@@ -979,6 +1218,8 @@ export const popularSerials = [
 		addedDate: 'February 10 2024',
 		budget: 1,
 		profit: 1,
+		time: '2 sezony | 1hr',
+		description: 'Syn szanowanego sędziego jest zamieszany w wypadek, co prowadzi do kłamstw i trudnych wyborów.',
 	},
 	{
 		title: 'Niebieskooki samuraj',
@@ -991,6 +1232,9 @@ export const popularSerials = [
 		addedDate: 'February 11 2024',
 		budget: 1,
 		profit: 1,
+		time: '2 sezony | 48min',
+		description:
+			'Szukając wybawienia w zemście na tych, którzy uczynili ją wyrzutkiem w Japonii okresu Edo, młoda wojowniczka podąża krwawą ścieżką ku przeznaczeniu.',
 	},
 	{
 		title: 'Nocny agent',
@@ -1003,6 +1247,9 @@ export const popularSerials = [
 		addedDate: 'February 1 2024',
 		budget: 160_000_000,
 		profit: 1,
+		time: '2 sezony | 49min',
+		description:
+			'Podczas monitorowania linii alarmowej czujny agent FBI odbiera telefon, który wciąga go w śmiertelnie niebezpieczny spisek z udziałem szpiega działającego w Białym Domu.',
 	},
 	{
 		title: 'Agentka McCall',
@@ -1015,6 +1262,9 @@ export const popularSerials = [
 		addedDate: 'February 2 2024',
 		budget: 1,
 		profit: 1,
+		time: '4 sezony | 45min',
+		description:
+			'Perypetie Robyn McCall, byłej agentki CIA, która wykorzystuje swoje liczne talenty, by pomagać niewinnym ludziom, desperacko potrzebującym pomocy. Jest ona samotną matką zajętą wychowywaniem nastoletniej córki Delilahi, jednak, gdy dochodzi do niesprawiedliwości, nie waha się brać udziału w kolejnych tajnych misjach.',
 	},
 	{
 		title: 'Agenci NCIS: Hawaje',
@@ -1027,5 +1277,8 @@ export const popularSerials = [
 		addedDate: 'February 5 2024',
 		budget: 1,
 		profit: 1,
+		time: '3 sezony | 42min',
+		description:
+			'Zespół NCIS na Hawajach bada przestępstwa o wysokiej stawce, związane między innymi z działaniami wojskowymi, bezpieczeństwem narodowym i wieloma innymi tajemnicami rajskich wysp.',
 	},
 ];
