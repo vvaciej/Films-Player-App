@@ -21,6 +21,7 @@ type FilmData = {
 	addedDate: string;
 	filmwebPopularity: number;
 	budget: number;
+	profit: number;
 };
 
 interface FilterPageProps {
@@ -81,6 +82,10 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 			break;
 		case 'Największy budżet':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.budget - a.budget);
+			break;
+		case 'Największy przychód':
+			mappingBy.sort((a: FilmData, b: FilmData) => b.profit - a.profit);
+			break;
 	}
 
 	const mostPopularDropdownRef = useRef<HTMLDivElement>(null);
@@ -180,6 +185,15 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											setMostPopularChoosed('Największy budżet');
 										}}>
 										Największy budżet
+									</button>
+									<button
+										className={`${selectedMostPopular === 'najwiekszyPrzychod' ? 'choosed' : ''}`}
+										onClick={() => {
+											setMostPopularBtnClicked(false);
+											setSelectedMostPopular('najwiekszyPrzychod');
+											setMostPopularChoosed('Największy przychód');
+										}}>
+										Największy przychód
 									</button>
 								</div>
 							</section>
@@ -431,7 +445,9 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 				</div>
 			</div>
 			<Footer />
-			<div ref={mostPopularDropdownMobilesRef} className={`typical-dropdown-style ${mostPopularBtnClicked ? 'active' : ''} !h-48`}>
+			<div
+				ref={mostPopularDropdownMobilesRef}
+				className={`typical-dropdown-style ${mostPopularBtnClicked ? 'active' : ''} !h-56`}>
 				{mostPopularBtnClicked ? (
 					<div>
 						<button
@@ -469,6 +485,15 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								setMostPopularChoosed('Największy budżet');
 							}}>
 							Największy budżet
+						</button>
+						<button
+							className={`${selectedMostPopular === 'najwiekszyPrzychod' ? 'choosed' : ''}`}
+							onClick={() => {
+								setMostPopularBtnClicked(false);
+								setSelectedMostPopular('najwiekszyPrzychod');
+								setMostPopularChoosed('Największy przychód');
+							}}>
+							Największy przychód
 						</button>
 					</div>
 				) : (

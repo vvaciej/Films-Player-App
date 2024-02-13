@@ -8,7 +8,8 @@ export const popularFilms = [
 		category: 'Popular',
 		filmwebPopularity: 27_113,
 		addedDate: 'February 10 2024',
-		budget: 60_000_000,
+		budget: 65_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Napoleon',
@@ -19,7 +20,8 @@ export const popularFilms = [
 		category: 'Popular',
 		filmwebPopularity: 20_438,
 		addedDate: 'February 11 2024',
-		budget: 100_000_000,
+		budget: 165_000_000,
+		profit: 213_400_000,
 	},
 	{
 		title: 'Skok w przestworzach',
@@ -31,6 +33,7 @@ export const popularFilms = [
 		filmwebPopularity: 20_438,
 		addedDate: 'February 9 2024',
 		budget: 100_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Aquaman i Zaginione Królestwo',
@@ -42,6 +45,8 @@ export const popularFilms = [
 		filmwebPopularity: 7_560,
 		addedDate: 'February 5 2024',
 		budget: 205_000_000,
+		profit: 398_442_014,
+		profit: 1,
 	},
 	{
 		title: 'Marvels',
@@ -53,6 +58,8 @@ export const popularFilms = [
 		filmwebPopularity: 10_715,
 		addedDate: 'February 8 2024',
 		budget: 275_000_000,
+		profit: 205_600_000,
+		profit: 1,
 	},
 	{
 		title: 'Wonka',
@@ -64,6 +71,8 @@ export const popularFilms = [
 		filmwebPopularity: 18_106,
 		addedDate: 'February 7 2024',
 		budget: 125_000_000,
+		profit: 511_051_633,
+		profit: 1,
 	},
 	{
 		title: 'Zabójcza gra',
@@ -75,6 +84,7 @@ export const popularFilms = [
 		filmwebPopularity: 1_470,
 		addedDate: 'February 4 2024',
 		budget: 13_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Oppenheimer',
@@ -86,6 +96,7 @@ export const popularFilms = [
 		filmwebPopularity: 104_335,
 		addedDate: 'February 2 2024',
 		budget: 100_000_000,
+		profit: 952_000_000,
 	},
 	{
 		title: 'Super Mario Bros. Film',
@@ -97,6 +108,7 @@ export const popularFilms = [
 		filmwebPopularity: 14_711,
 		addedDate: 'February 1 2024',
 		budget: 100_000_000,
+		profit: 1_362_000_000,
 	},
 	{
 		title: 'Plan wycieczki',
@@ -107,7 +119,8 @@ export const popularFilms = [
 		category: 'Popular',
 		filmwebPopularity: 3_053,
 		addedDate: 'February 3 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 208,
 	},
 	{
 		title: 'Rebel Moon - część 1: Dziecko Ognia',
@@ -118,7 +131,8 @@ export const popularFilms = [
 		category: 'Popular',
 		filmwebPopularity: 16_043,
 		addedDate: 'February 5 2024',
-		budget: 166_000_000,
+		budget: 83_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Życzenie',
@@ -129,7 +143,8 @@ export const popularFilms = [
 		category: 'Popular',
 		filmwebPopularity: 2_913,
 		addedDate: 'February 6 2024',
-		budget: 200_000_000,
+		budget: 175_000_000,
+		profit: 223_500_000,
 	},
 ];
 
@@ -143,7 +158,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 126,
 		addedDate: 'February 7 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Darkland',
@@ -155,6 +171,7 @@ export const lastAddedFilms = [
 		filmwebPopularity: 1_361,
 		addedDate: 'February 8 2024',
 		budget: 2_800_000,
+		profit: 1,
 	},
 	{
 		title: 'The Creeping',
@@ -165,7 +182,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 76,
 		addedDate: 'February 12 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Każdy kłamie',
@@ -176,7 +194,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 5_391,
 		addedDate: 'February 11 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Pajęczyna',
@@ -187,7 +206,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 105,
 		addedDate: 'February 1 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Zabójcza lekcja',
@@ -198,7 +218,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 98,
 		addedDate: 'February 6 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Eternals',
@@ -209,7 +230,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 47_021,
 		addedDate: 'February 4 2024',
-		budget: 236_200_000,
+		budget: 200_200_000,
+		profit: 402_064_899,
 	},
 	{
 		title: 'Bagażnik - uwięziona',
@@ -220,7 +242,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 101,
 		addedDate: 'February 2 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Myśliwi z ruin',
@@ -232,6 +255,7 @@ export const lastAddedFilms = [
 		filmwebPopularity: 1_170,
 		addedDate: 'February 6 2024',
 		budget: 18_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Bękart',
@@ -242,7 +266,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 1_285,
 		addedDate: 'February 8 2024',
-		budget: 8_000_000,
+		budget: 8_500_000,
+		profit: 1,
 	},
 	{
 		title: 'Wizje',
@@ -253,7 +278,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 120,
 		addedDate: 'February 11 2024',
-		budget: 2_000_000,
+		budget: 9_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Milion dni',
@@ -264,7 +290,8 @@ export const lastAddedFilms = [
 		category: 'LastAdded',
 		filmwebPopularity: 57,
 		addedDate: 'February 9 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 ];
 
@@ -279,6 +306,7 @@ export const popularActionFilms = [
 		filmwebPopularity: 20_438,
 		addedDate: 'February 7 2024',
 		budget: 100_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Zabójcza gra',
@@ -289,7 +317,8 @@ export const popularActionFilms = [
 		category: 'PopularAction',
 		filmwebPopularity: 72,
 		addedDate: 'February 8 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Marvels',
@@ -297,21 +326,23 @@ export const popularActionFilms = [
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
-		category: 'PopularAction',
+		category: 'Popular',
 		filmwebPopularity: 10_715,
-		addedDate: 'February 5 2024',
-		budget: 270_000_000,
+		addedDate: 'February 8 2024',
+		budget: 275_000_000,
+		profit: 205_600_000,
 	},
 	{
 		title: 'Plan wycieczki',
 		image: 'https://image.tmdb.org/t/p/w300/5XfKg0ddStt7tpjVZpKCG9Ve933.jpg',
-		rating: 7.4,
+		rating: 5.9,
 		year: 2023,
 		type: 'Film',
-		category: 'PopularAction',
+		category: 'Popular',
 		filmwebPopularity: 3_053,
-		addedDate: 'February 4 2024',
-		budget: 2_000_000,
+		addedDate: 'February 3 2024',
+		budget: 1,
+		profit: 208,
 	},
 	{
 		title: 'Rebel Moon - część 1: Dziecko Ognia',
@@ -322,7 +353,8 @@ export const popularActionFilms = [
 		category: 'PopularAction',
 		filmwebPopularity: 16_043,
 		addedDate: 'February 3 2024',
-		budget: 166_000_000,
+		budget: 83_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Jeszcze jeden strzał',
@@ -333,7 +365,8 @@ export const popularActionFilms = [
 		category: 'PopularAction',
 		filmwebPopularity: 230,
 		addedDate: 'February 2 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Igrzyska śmierci: Ballada ptaków i węży',
@@ -345,6 +378,7 @@ export const popularActionFilms = [
 		filmwebPopularity: 20_171,
 		addedDate: 'February 1 2024',
 		budget: 100_000_000,
+		profit: 336_400_000,
 	},
 	{
 		title: 'Szybcy i wściekli 10',
@@ -356,6 +390,7 @@ export const popularActionFilms = [
 		filmwebPopularity: 15_968,
 		addedDate: 'February 7 2024',
 		budget: 340_000_000,
+		profit: 704_709_600,
 	},
 	{
 		title: 'Spider-Man: Poprzez multiwersum',
@@ -367,6 +402,7 @@ export const popularActionFilms = [
 		filmwebPopularity: 31_176,
 		addedDate: 'February 8 2024',
 		budget: 100_000_000,
+		profit: 690_500_000,
 	},
 	{
 		title: 'Spider-Man: Bez drogi do domu',
@@ -378,6 +414,7 @@ export const popularActionFilms = [
 		filmwebPopularity: 86_299,
 		addedDate: 'February 9 2024',
 		budget: 200_000_000,
+		profit: 1_921_847_111,
 	},
 	{
 		title: 'Transformers: Przebudzenie bestii',
@@ -389,6 +426,7 @@ export const popularActionFilms = [
 		filmwebPopularity: 10_287,
 		addedDate: 'February 6 2024',
 		budget: 200_000_000,
+		profit: 439_000_000,
 	},
 	{
 		title: 'John Wick 4',
@@ -399,7 +437,8 @@ export const popularActionFilms = [
 		category: 'PopularAction',
 		filmwebPopularity: 38_809,
 		addedDate: 'February 12 2024',
-		budget: 100_000_000,
+		budget: 90_000_000,
+		profit: 426_978_565,
 	},
 ];
 
@@ -414,6 +453,7 @@ export const popularComediaFilms = [
 		filmwebPopularity: 20_438,
 		addedDate: 'February 7 2024',
 		budget: 100_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Wonka',
@@ -421,10 +461,11 @@ export const popularComediaFilms = [
 		rating: 7.1,
 		year: 2023,
 		type: 'Film',
-		category: 'PopularComedia',
+		category: 'Popular',
 		filmwebPopularity: 18_106,
-		addedDate: 'February 5 2024',
+		addedDate: 'February 7 2024',
 		budget: 125_000_000,
+		profit: 511_051_633,
 	},
 	{
 		title: 'Zabójcza gra',
@@ -436,28 +477,31 @@ export const popularComediaFilms = [
 		filmwebPopularity: 1_446,
 		addedDate: 'February 3 2024',
 		budget: 13_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Super Mario Bros. Film',
 		image: 'https://image.tmdb.org/t/p/w300/dwzF2MPUpNYA5siUo8lChs1FYTv.jpg',
-		rating: 7.7,
+		rating: 6.6,
 		year: 2023,
 		type: 'Film',
-		category: 'PopularComedia',
+		category: 'Popular',
 		filmwebPopularity: 14_711,
-		addedDate: 'February 4 2024',
+		addedDate: 'February 1 2024',
 		budget: 100_000_000,
+		profit: 1_362_000_000,
 	},
 	{
 		title: 'Plan wycieczki',
 		image: 'https://image.tmdb.org/t/p/w300/5XfKg0ddStt7tpjVZpKCG9Ve933.jpg',
-		rating: 7.4,
+		rating: 5.9,
 		year: 2023,
 		type: 'Film',
-		category: 'PopularComedia',
+		category: 'Popular',
 		filmwebPopularity: 3_053,
-		addedDate: 'February 6 2024',
-		budget: 2_000_000,
+		addedDate: 'February 3 2024',
+		budget: 1,
+		profit: 208,
 	},
 	{
 		title: 'Barbie',
@@ -468,7 +512,8 @@ export const popularComediaFilms = [
 		category: 'PopularComedia',
 		filmwebPopularity: 109_267,
 		addedDate: 'February 8 2024',
-		budget: 140_000_000,
+		budget: 145_000_000,
+		profit: 1_445_648_421,
 	},
 	{
 		title: 'Trolle 3',
@@ -480,6 +525,7 @@ export const popularComediaFilms = [
 		filmwebPopularity: 1_402,
 		addedDate: 'February 8 2024',
 		budget: 95_000_000,
+		profit: 203_900_000,
 	},
 	{
 		title: 'Saltburn',
@@ -490,7 +536,8 @@ export const popularComediaFilms = [
 		category: 'PopularComedia',
 		filmwebPopularity: 33_878,
 		addedDate: 'February 10 2024',
-		budget: 30_000_000,
+		budget: 13_000_000,
+		profit: 19_313_341,
 	},
 	{
 		title: 'Leo',
@@ -501,7 +548,8 @@ export const popularComediaFilms = [
 		category: 'PopularComedia',
 		filmwebPopularity: 8_267,
 		addedDate: 'February 11 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Kot w butach: Ostatnie życzenie',
@@ -513,6 +561,7 @@ export const popularComediaFilms = [
 		filmwebPopularity: 34_525,
 		addedDate: 'February 4 2024',
 		budget: 90_000_000,
+		profit: 484_700_000,
 	},
 	{
 		title: 'Freelance',
@@ -524,6 +573,7 @@ export const popularComediaFilms = [
 		filmwebPopularity: 861,
 		addedDate: 'February 12 2024',
 		budget: 40_000_000,
+		profit: 8_900_000,
 	},
 	{
 		title: 'Między nami żywiołami',
@@ -535,6 +585,7 @@ export const popularComediaFilms = [
 		filmwebPopularity: 3_936,
 		addedDate: 'February 2 2024',
 		budget: 200_000_000,
+		profit: 496_000_000,
 	},
 ];
 
@@ -548,7 +599,8 @@ export const popularHorrorFilms = [
 		category: 'PopularHorror',
 		filmwebPopularity: 212,
 		addedDate: 'February 4 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Pięć koszmarnych nocy',
@@ -560,6 +612,7 @@ export const popularHorrorFilms = [
 		filmwebPopularity: 11_448,
 		addedDate: 'February 6 2024',
 		budget: 20_000_000,
+		profit: 290_900_000,
 	},
 	{
 		title: 'Noc Dziękczynienia',
@@ -571,6 +624,7 @@ export const popularHorrorFilms = [
 		filmwebPopularity: 4_275,
 		addedDate: 'February 3 2024',
 		budget: 15_000_000,
+		profit: 44_000_000,
 	},
 	{
 		title: 'Meg 2: Głębia',
@@ -582,6 +636,7 @@ export const popularHorrorFilms = [
 		filmwebPopularity: 13_765,
 		addedDate: 'February 6 2024',
 		budget: 133_000_000,
+		profit: 129_000_000,
 	},
 	{
 		title: 'Piła X',
@@ -593,6 +648,7 @@ export const popularHorrorFilms = [
 		filmwebPopularity: 10_917,
 		addedDate: 'February 8 2024',
 		budget: 13_000_000,
+		profit: 111_000_000,
 	},
 	{
 		title: 'Raz, dwa, trzy... wchodzisz do gry!',
@@ -603,7 +659,7 @@ export const popularHorrorFilms = [
 		category: 'PopularHorror',
 		filmwebPopularity: 1340,
 		addedDate: 'February 7 2024',
-		budget: 2_000_000,
+		budget: 165_000,
 	},
 	{
 		title: 'When Evil Lurks',
@@ -614,7 +670,8 @@ export const popularHorrorFilms = [
 		category: 'PopularHorror',
 		filmwebPopularity: 2_011,
 		addedDate: 'February 4 2024',
-		budget: 2_000_000,
+		budget: 772_000,
+		profit: 1,
 	},
 	{
 		title: 'Egzorcysta: Wyznawca',
@@ -626,6 +683,7 @@ export const popularHorrorFilms = [
 		filmwebPopularity: 3_971,
 		addedDate: 'February 8 2024',
 		budget: 30_000_000,
+		profit: 134_800_000,
 	},
 	{
 		title: 'Zakonnica II',
@@ -637,6 +695,7 @@ export const popularHorrorFilms = [
 		filmwebPopularity: 15_382,
 		addedDate: 'February 3 2024',
 		budget: 38_500_000,
+		profit: 268_100_000,
 	},
 	{
 		title: 'Pajęczyna',
@@ -647,7 +706,8 @@ export const popularHorrorFilms = [
 		category: 'PopularHorror',
 		filmwebPopularity: 3_897,
 		addedDate: 'February 1 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 5_569_593,
 	},
 	{
 		title: 'Egzorcysta Papieża',
@@ -659,6 +719,7 @@ export const popularHorrorFilms = [
 		filmwebPopularity: 21_157,
 		addedDate: 'February 3 2024',
 		budget: 18_000_000,
+		profit: 70_204_824,
 	},
 	{
 		title: 'Martwe Zło: Przebudzenie',
@@ -670,6 +731,7 @@ export const popularHorrorFilms = [
 		filmwebPopularity: 20_234,
 		addedDate: 'February 6 2024',
 		budget: 15_000_000,
+		profit: 146_700_000,
 	},
 ];
 
@@ -683,7 +745,8 @@ export const popularPolishFilms = [
 		category: 'PopularPolish',
 		filmwebPopularity: 517,
 		addedDate: 'February 5 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Poskromienie złośnicy 2',
@@ -694,7 +757,8 @@ export const popularPolishFilms = [
 		category: 'PopularPolish',
 		filmwebPopularity: 3_159,
 		addedDate: 'February 9 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Znachor',
@@ -706,6 +770,7 @@ export const popularPolishFilms = [
 		filmwebPopularity: 59_239,
 		addedDate: 'February 9 2024',
 		budget: 40_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Freestyle',
@@ -717,6 +782,7 @@ export const popularPolishFilms = [
 		filmwebPopularity: 6_883,
 		addedDate: 'February 10 2024',
 		budget: 3_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Infinite Storm',
@@ -728,6 +794,7 @@ export const popularPolishFilms = [
 		filmwebPopularity: 6_057,
 		addedDate: 'February 11 2024',
 		budget: 5_000_000,
+		profit: 1_700_100,
 	},
 	{
 		title: 'Chłopi',
@@ -738,7 +805,8 @@ export const popularPolishFilms = [
 		category: 'PopularPolish',
 		filmwebPopularity: 57_151,
 		addedDate: 'February 12 2024',
-		budget: 30_000_000,
+		budget: 7_000_000,
+		profit: 9_068_607,
 	},
 	{
 		title: 'Sieć podejrzeń',
@@ -750,6 +818,7 @@ export const popularPolishFilms = [
 		filmwebPopularity: 4_542,
 		addedDate: 'February 3 2024',
 		budget: 8_500_000,
+		profit: 1,
 	},
 	{
 		title: 'Plan lekcji',
@@ -760,7 +829,8 @@ export const popularPolishFilms = [
 		category: 'PopularPolish',
 		filmwebPopularity: 7_971,
 		addedDate: 'February 5 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'The Palace',
@@ -772,6 +842,7 @@ export const popularPolishFilms = [
 		filmwebPopularity: 1_461,
 		addedDate: 'February 6 2024',
 		budget: 17_000_000,
+		profit: 420_350,
 	},
 	{
 		title: 'Miłość do kwadratu',
@@ -782,7 +853,8 @@ export const popularPolishFilms = [
 		category: 'PopularPolish',
 		filmwebPopularity: 17_337,
 		addedDate: 'February 7 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Przestroga',
@@ -793,7 +865,8 @@ export const popularPolishFilms = [
 		category: 'PopularPolish',
 		filmwebPopularity: 1_344,
 		addedDate: 'February 10 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Obywatel Jones',
@@ -804,7 +877,8 @@ export const popularPolishFilms = [
 		category: 'PopularPolish',
 		filmwebPopularity: 20_254,
 		addedDate: 'February 11 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 2_855_316,
 	},
 ];
 
@@ -819,6 +893,7 @@ export const popularSerials = [
 		filmwebPopularity: 110_102,
 		addedDate: 'February 10 2024',
 		budget: 15_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Monarch: dziedzitwo potworów',
@@ -829,7 +904,8 @@ export const popularSerials = [
 		category: 'PopularSerial',
 		filmwebPopularity: 2_591,
 		addedDate: 'February 4 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Loki',
@@ -841,6 +917,7 @@ export const popularSerials = [
 		filmwebPopularity: 34_084,
 		addedDate: 'February 6 2024',
 		budget: 140_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Fear the Walking Dead',
@@ -852,6 +929,7 @@ export const popularSerials = [
 		filmwebPopularity: 22_013,
 		addedDate: 'February 8 2024',
 		budget: 4_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Euforia',
@@ -863,6 +941,7 @@ export const popularSerials = [
 		filmwebPopularity: 72_696,
 		addedDate: 'February 10 2024',
 		budget: 250_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Niezwyciężony',
@@ -874,6 +953,7 @@ export const popularSerials = [
 		filmwebPopularity: 13_502,
 		addedDate: 'February 7 2024',
 		budget: 17_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Burmistrz Kingstown',
@@ -884,7 +964,8 @@ export const popularSerials = [
 		category: 'PopularSerial',
 		filmwebPopularity: 1_927,
 		addedDate: 'February 9 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Your Honor',
@@ -895,7 +976,8 @@ export const popularSerials = [
 		category: 'PopularSerial',
 		filmwebPopularity: 2_758,
 		addedDate: 'February 10 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Niebieskooki samuraj',
@@ -906,7 +988,8 @@ export const popularSerials = [
 		category: 'PopularSerial',
 		filmwebPopularity: 10_556,
 		addedDate: 'February 11 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Nocny agent',
@@ -918,6 +1001,7 @@ export const popularSerials = [
 		filmwebPopularity: 10_614,
 		addedDate: 'February 1 2024',
 		budget: 160_000_000,
+		profit: 1,
 	},
 	{
 		title: 'Agentka McCall',
@@ -928,7 +1012,8 @@ export const popularSerials = [
 		category: 'PopularSerial',
 		filmwebPopularity: 227,
 		addedDate: 'February 2 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 	{
 		title: 'Agenci NCIS: Hawaje',
@@ -939,6 +1024,7 @@ export const popularSerials = [
 		category: 'PopularSerial',
 		filmwebPopularity: 114,
 		addedDate: 'February 5 2024',
-		budget: 2_000_000,
+		budget: 1,
+		profit: 1,
 	},
 ];

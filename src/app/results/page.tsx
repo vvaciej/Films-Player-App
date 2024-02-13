@@ -75,12 +75,29 @@ const SearchPage: React.FC = () => {
 		return () => clearTimeout(loaderTimeout);
 	}, []);
 
+	const normalizePolishCharacters = (input: string): string => {
+		const polishCharactersMap: Record<string, string> = {
+			ą: 'a',
+			ć: 'c',
+			ę: 'e',
+			ł: 'l',
+			ń: 'n',
+			ó: 'o',
+			ś: 's',
+			ź: 'z',
+			ż: 'z',
+		};
+
+		return input.replace(/[ąćęłńóśźż]/g, match => polishCharactersMap[match]);
+	};
+
 	const handleSearch = (inputValue: string) => {
-		const inputVal = inputValue.toLowerCase();
+		const inputVal = normalizePolishCharacters(inputValue.toLowerCase());
+		setWhatSearchVal(inputVal);
 		const uniqueTitles = new Set<string>();
 
 		const filteredData = allFilmsData.filter(film => {
-			const lowerCaseTitle = film.title.toLowerCase();
+			const lowerCaseTitle = normalizePolishCharacters(film.title.toLowerCase());
 
 			return !uniqueTitles.has(lowerCaseTitle) && lowerCaseTitle.includes(inputVal)
 				? uniqueTitles.add(lowerCaseTitle)
