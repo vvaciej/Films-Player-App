@@ -50,17 +50,20 @@ const SearchPage: React.FC = () => {
 	useDocumentTitle(decodedQuery !== '' ? `Search results for ${decodedQuery} - vvaciej.app` : 'Search - vvaciej.app');
 
 	useEffect(() => {
-		const queryParamMatch = window.location.search.match(/[\_?&]query=([^&]+)/);
+		const queryParamMatch = window.location.search.match(/[\?&]query=([^&]+)/);
 
 		if (queryParamMatch) {
 			const decodedQueryParam = decodeURIComponent(queryParamMatch[1]);
 			setWhatSearchVal(decodedQueryParam);
 		}
 	}, [router]);
-	
+
 	useEffect(() => {
 		handleSearch(whatSearchVal);
-		router.replace(`/results?search_query=${whatSearchVal}`);
+	}, [whatSearchVal]);
+
+	useEffect(() => {
+		router.replace(`/results?query=${whatSearchVal}`);
 	}, [whatSearchVal, router]);
 
 	useEffect(() => {
@@ -93,7 +96,6 @@ const SearchPage: React.FC = () => {
 
 	const handleSearch = (inputValue: string) => {
 		const inputVal = normalizePolishCharacters(inputValue.toLowerCase());
-		setWhatSearchVal(inputVal);
 		const uniqueTitles = new Set<string>();
 
 		const filteredData = allFilmsData.filter(film => {
@@ -182,7 +184,9 @@ const SearchPage: React.FC = () => {
 														/>
 														<span>{film.rating} / 10</span>
 													</p>
-													<Link href='#' className='film-link-title search-title pr-1'>{film.title}</Link>
+													<Link href='#' className='film-link-title search-title pr-1'>
+														{film.title}
+													</Link>
 												</section>
 											</article>
 										))}

@@ -479,7 +479,7 @@ body {
 	position: fixed;
 	bottom: 0;
 	width: 70% !important;
-	height: 6rem;
+	height: max-content;
 	left: 50%;
 	transform: translate(-50%);
 	border: 1px solid var(--gray-5050);
