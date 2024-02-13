@@ -47,7 +47,6 @@ export const popularFilms = [
 	{
 		title: 'Aquaman i Zaginione Królestwo',
 		image: 'https://image.tmdb.org/t/p/w300/46sp1Z9b2PPTgCMyA87g9aTLUXi.jpg',
-		imgFullHD: 'https://image.tmdb.org/t/p/w1280/jXJxMcVoEuXzym3vFnjqDW4ifo6.jpg',
 		rating: 6.2,
 		year: 2023,
 		type: 'Film',
@@ -63,7 +62,6 @@ export const popularFilms = [
 	{
 		title: 'Marvels',
 		image: 'https://image.tmdb.org/t/p/w300/zE9SzrVeZo3zwpXJCDu7zd3ztLX.jpg',
-		imgFullHD: 'https://image.tmdb.org/t/p/w1280/feSiISwgEpVzR1v3zv2n2AU4ANJ.jpg',
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
@@ -79,7 +77,6 @@ export const popularFilms = [
 	{
 		title: 'Wonka',
 		image: 'https://image.tmdb.org/t/p/w300/qhb1qOilapbapxWQn9jtRCMwXJF.jpg',
-		imgFullHD: 'https://image.tmdb.org/t/p/w1280/yOm993lsJyPmBodlYjgpPwBjXP9.jpg',
 		rating: 7.1,
 		year: 2023,
 		type: 'Film',
@@ -110,7 +107,6 @@ export const popularFilms = [
 	{
 		title: 'Oppenheimer',
 		image: 'https://image.tmdb.org/t/p/w300/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
-		imgFullHD: 'https://image.tmdb.org/t/p/w1280/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg',
 		rating: 8.0,
 		year: 2023,
 		type: 'Film',
@@ -164,6 +160,7 @@ export const popularFilms = [
 		addedDate: 'February 5 2024',
 		budget: 83_000_000,
 		profit: 1,
+		time: '2hr 15min',
 		description:
 			'Kiedy pokojowa kolonia na krańcu galaktyki staje w obliczu ataku ze strony armii tyrana, tajemnicza Kora staje się największą nadzieją mieszkańców na przetrwanie. Próbując pozyskać sojuszników do niemożliwej misji, Kora gromadzi niewielką grupę wojowników – outsiderów, powstańców, wieśniaków i sierot wojennych z różnych światów – których łączy wspólne pragnienie zemsty i odkupienia. Gdy cień potężnego królestwa pada na najbardziej nieprawdopodobny z księżyców, wybucha bitwa o losy galaktyki, w której ogniu wykuwa się nowa armia bohaterów.',
 	},
@@ -400,7 +397,6 @@ export const popularActionFilms = [
 	{
 		title: 'Marvels',
 		image: 'https://image.tmdb.org/t/p/w300/zE9SzrVeZo3zwpXJCDu7zd3ztLX.jpg',
-		imgFullHD: 'https://image.tmdb.org/t/p/w1280/feSiISwgEpVzR1v3zv2n2AU4ANJ.jpg',
 		rating: 6.4,
 		year: 2023,
 		type: 'Film',
@@ -461,7 +457,6 @@ export const popularActionFilms = [
 	{
 		title: 'Igrzyska śmierci: Ballada ptaków i węży',
 		image: 'https://image.tmdb.org/t/p/w300/hTm3t6aSH4EC5Woisnwp8wjcEKQ.jpg',
-		imgFullHD: 'https://image.tmdb.org/t/p/w1280/e0M3WVJm4nBrAg0LbJq0gdKi3U7.jpg',
 		rating: 7.2,
 		year: 2023,
 		type: 'Film',
@@ -570,7 +565,6 @@ export const popularComediaFilms = [
 	{
 		title: 'Wonka',
 		image: 'https://image.tmdb.org/t/p/w300/qhb1qOilapbapxWQn9jtRCMwXJF.jpg',
-		imgFullHD: 'https://image.tmdb.org/t/p/w1280/yOm993lsJyPmBodlYjgpPwBjXP9.jpg',
 		rating: 7.1,
 		year: 2023,
 		type: 'Film',
@@ -631,7 +625,6 @@ export const popularComediaFilms = [
 	{
 		title: 'Barbie',
 		image: 'https://image.tmdb.org/t/p/w300/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg',
-		imgFullHD: 'https://image.tmdb.org/t/p/w1280/nHf61UzkfFno5X1ofIhugCPus2R.jpg',
 		rating: 6.5,
 		year: 2023,
 		type: 'Film',
