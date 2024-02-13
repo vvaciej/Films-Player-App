@@ -36,7 +36,7 @@ html.dark {
 }
 
 ::-webkit-scrollbar {
-	width: 13px;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -526,7 +526,9 @@ body {
 				font-size: 12px;
 			}
 			&::-webkit-scrollbar {
-				display: none;
+				@include mobile-340 {
+					display: none;
+				}
 			}
 		}
 	}
@@ -559,7 +561,7 @@ body {
 	z-index: 20;
 	opacity: 1;
 	visibility: visible;
-	transition: opacity 0.3s, bottom 0.15s, visibility .3s;
+	transition: bottom 0.15s, visibility .3s;
 	@include tablet-1080 {
 		display: block;
 	}
@@ -567,7 +569,6 @@ body {
 		visibility: hidden;
 		opacity: 0;
 		bottom: -100px;
-		transition: 0.2s;
 	}
 
 	nav,

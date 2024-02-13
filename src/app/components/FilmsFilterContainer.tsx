@@ -586,7 +586,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 						</button>
 					</div>
 				) : siatkaClicked ? (
-					<div className='!h-36'>
+					<div className='!h-30'>
 						<button
 							className={`${selectedSiatka === 'siatka' ? 'choosed' : ''}`}
 							onClick={() => {

@@ -30,7 +30,7 @@ html.dark {
 }
 
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1287,8 +1287,10 @@ body {
     font-size: 12px;
   }
 }
-.films-wrapper-list .film-container-list .film-list-description::-webkit-scrollbar {
-  display: none;
+@media screen and (max-width: 340px) {
+  .films-wrapper-list .film-container-list .film-list-description::-webkit-scrollbar {
+    display: none;
+  }
 }
 .films-wrapper-list .main-text-rating {
   display: flex;
@@ -1320,7 +1322,7 @@ body {
   z-index: 20;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s, bottom 0.15s, visibility 0.3s;
+  transition: bottom 0.15s, visibility 0.3s;
 }
 @media screen and (max-width: 1080px) {
   .typical-dropdown-style {
@@ -1331,7 +1333,6 @@ body {
   visibility: hidden;
   opacity: 0;
   bottom: -100px;
-  transition: 0.2s;
 }
 .typical-dropdown-style nav,
 .typical-dropdown-style div {
