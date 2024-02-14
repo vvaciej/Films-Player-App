@@ -12,7 +12,7 @@ import {
 	Squares2X2Icon,
 	ChevronDownIcon,
 	ListBulletIcon,
-	ViewColumnsIcon
+	ViewColumnsIcon,
 } from '@heroicons/react/24/solid';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
@@ -45,9 +45,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 
 	const [mostPopularChoosed, setMostPopularChoosed] = useState<string>('Najbardziej popularne');
 	const [siatkaChoosed, setSiatkaChoosed] = useState<string>('Siatka');
-
-	const [selectedMostPopular, setSelectedMostPopular] = useState<string>('najbardziejPopularne');
-	const [selectedSiatka, setSelectedSiatka] = useState<string>('siatka');
 
 	const [gatunekClicked, setGatunekClicked] = useState<boolean>(false);
 	const [dataWydaniaClicked, setDataWydaniaClicked] = useState<boolean>(false);
@@ -118,6 +115,36 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 		}
 	};
 
+	const getCookie = (name: string) => {
+		if (typeof document === 'undefined') {
+			return '';
+		}
+
+		const decoded = decodeURIComponent(document.cookie);
+		const splited = decoded.split('; ');
+		let result = '';
+
+		splited.forEach(e => {
+			const [cookieName, cookieValue] = e.split('=');
+			if (cookieName === name) result = cookieValue;
+		});
+
+		return result;
+	};
+
+	useEffect(() => {
+		document.cookie = `siatkaChoosed=${siatkaChoosed}; path=/`;
+		document.cookie = `mostPopularChoosed=${mostPopularChoosed}; path=/`;
+	}, [siatkaChoosed, mostPopularChoosed]);
+
+	useEffect(() => {
+    const siatkaCookie = getCookie('siatkaChoosed');
+		const mostPopularCookie = getCookie('mostPopularChoosed');
+
+		setSiatkaChoosed(siatkaCookie);
+		setMostPopularChoosed(mostPopularCookie);
+	}, []);
+
 	useEffect(() => {
 		document.body.addEventListener('click', handleDocumentClick);
 
@@ -158,46 +185,41 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								</button>
 								<div className={`filter-dropdown ${mostPopularBtnClicked ? 'active' : ''} select-none`}>
 									<button
-										className={`${selectedMostPopular === 'najbardziejPopularne' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'Najbardziej popularne' ? 'choosed' : ''}`}
 										onClick={() => {
 											setMostPopularBtnClicked(false);
-											setSelectedMostPopular('najbardziejPopularne');
 											setMostPopularChoosed('Najbardziej popularne');
 										}}>
 										Najbardziej popularne
 									</button>
 									<button
-										className={`${selectedMostPopular === 'ostatnioDodane' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'Ostatnio dodane' ? 'choosed' : ''}`}
 										onClick={() => {
 											setMostPopularBtnClicked(false);
-											setSelectedMostPopular('ostatnioDodane');
 											setMostPopularChoosed('Ostatnio dodane');
 										}}>
 										Ostatnio dodane
 									</button>
 									<button
-										className={`${selectedMostPopular === 'najlepiejOceniane' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'Najlepiej oceniane' ? 'choosed' : ''}`}
 										onClick={() => {
 											setMostPopularBtnClicked(false);
-											setSelectedMostPopular('najlepiejOceniane');
 											setMostPopularChoosed('Najlepiej oceniane');
 										}}>
 										Najlepiej oceniane
 									</button>
 									<button
-										className={`${selectedMostPopular === 'najwiekszyBudzet' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'Największy budżet' ? 'choosed' : ''}`}
 										onClick={() => {
 											setMostPopularBtnClicked(false);
-											setSelectedMostPopular('najwiekszyBudzet');
 											setMostPopularChoosed('Największy budżet');
 										}}>
 										Największy budżet
 									</button>
 									<button
-										className={`${selectedMostPopular === 'najwiekszyPrzychod' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'Największy przychód' ? 'choosed' : ''}`}
 										onClick={() => {
 											setMostPopularBtnClicked(false);
-											setSelectedMostPopular('najwiekszyPrzychod');
 											setMostPopularChoosed('Największy przychód');
 										}}>
 										Największy przychód
@@ -391,33 +413,32 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										<ViewColumnsIcon className='h-5' />
 									) : siatkaChoosed === 'Lista' ? (
 										<ListBulletIcon className='h-5' />
-									) : ''}
+									) : (
+										''
+									)}
 									<span>{siatkaChoosed}</span>
 								</button>
 								<div className={`filter-dropdown filter-web ${siatkaClicked ? 'active' : ''} select-none`}>
 									<button
-										className={`${selectedSiatka === 'siatka' ? 'choosed' : ''}`}
+										className={`${siatkaChoosed === 'Siatka' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSelectedSiatka('siatka');
 											setSiatkaChoosed('Siatka');
 										}}>
 										Siatka
 									</button>
 									<button
-										className={`${selectedSiatka === 'pejzaz' ? 'choosed' : ''}`}
+										className={`${siatkaChoosed === 'Pejzaż' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSelectedSiatka('pejzaz');
 											setSiatkaChoosed('Pejzaż');
 										}}>
 										Pejzaż
 									</button>
 									<button
-										className={`${selectedSiatka === 'lista' ? 'choosed' : ''}`}
+										className={`${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSelectedSiatka('lista');
 											setSiatkaChoosed('Lista');
 										}}>
 										Lista
@@ -551,46 +572,41 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 				{mostPopularBtnClicked ? (
 					<div className='!h-52'>
 						<button
-							className={`${selectedMostPopular === 'najbardziejPopularne' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'Najbardziej popularne' ? 'choosed' : ''}`}
 							onClick={() => {
 								setMostPopularBtnClicked(false);
-								setSelectedMostPopular('najbardziejPopularne');
 								setMostPopularChoosed('Najbardziej popularne');
 							}}>
 							Najbardziej popularne
 						</button>
 						<button
-							className={`${selectedMostPopular === 'ostatnioDodane' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'Ostatnio dodane' ? 'choosed' : ''}`}
 							onClick={() => {
 								setMostPopularBtnClicked(false);
-								setSelectedMostPopular('ostatnioDodane');
 								setMostPopularChoosed('Ostatnio dodane');
 							}}>
 							Ostatnio dodane
 						</button>
 						<button
-							className={`${selectedMostPopular === 'najlepiejOceniane' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'Najlepiej oceniane' ? 'choosed' : ''}`}
 							onClick={() => {
 								setMostPopularBtnClicked(false);
-								setSelectedMostPopular('najlepiejOceniane');
 								setMostPopularChoosed('Najlepiej oceniane');
 							}}>
 							Najlepiej oceniane
 						</button>
 						<button
-							className={`${selectedMostPopular === 'najwiekszyBudzet' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'Największy budżet' ? 'choosed' : ''}`}
 							onClick={() => {
 								setMostPopularBtnClicked(false);
-								setSelectedMostPopular('najwiekszyBudzet');
 								setMostPopularChoosed('Największy budżet');
 							}}>
 							Największy budżet
 						</button>
 						<button
-							className={`${selectedMostPopular === 'najwiekszyPrzychod' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'Największy przychód' ? 'choosed' : ''}`}
 							onClick={() => {
 								setMostPopularBtnClicked(false);
-								setSelectedMostPopular('najwiekszyPrzychod');
 								setMostPopularChoosed('Największy przychód');
 							}}>
 							Największy przychód
@@ -599,28 +615,25 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 				) : siatkaClicked ? (
 					<div className='!h-32'>
 						<button
-							className={`${selectedSiatka === 'siatka' ? 'choosed' : ''}`}
+							className={`${siatkaChoosed === 'Siatka' ? 'choosed' : ''}`}
 							onClick={() => {
 								setSiatkaClicked(false);
-								setSelectedSiatka('siatka');
 								setSiatkaChoosed('Siatka');
 							}}>
 							Siatka
 						</button>
 						<button
-							className={`${selectedSiatka === 'pejzaz' ? 'choosed' : ''}`}
+							className={`${siatkaChoosed === 'Pejzaż' ? 'choosed' : ''}`}
 							onClick={() => {
 								setSiatkaClicked(false);
-								setSelectedSiatka('pejzaz');
 								setSiatkaChoosed('Pejzaż');
 							}}>
 							Pejzaż
 						</button>
 						<button
-							className={`${selectedSiatka === 'lista' ? 'choosed' : ''}`}
+							className={`${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
 							onClick={() => {
 								setSiatkaClicked(false);
-								setSelectedSiatka('lista');
 								setSiatkaChoosed('Lista');
 							}}>
 							Lista
