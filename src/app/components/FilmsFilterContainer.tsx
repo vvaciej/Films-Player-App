@@ -394,7 +394,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								<button className={`films-category-filter-btn`} onClick={handleSiatkaClick}>
 									{siatkaChoosed === 'Siatka' ? (
 										<Squares2X2Icon className='h-5' />
-									) : siatkaChoosed === 'Pejzaż' ? (
+									) : siatkaChoosed === 'Pejzaz' ? (
 										<ViewColumnsIcon className='h-5' />
 									) : (
 										<ListBulletIcon className='h-5' />
@@ -411,12 +411,12 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										Siatka
 									</button>
 									<button
-										className={`${siatkaChoosed === 'Pejzaż' ? 'choosed' : ''}`}
+										className={`${siatkaChoosed === 'Pejzaz' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSiatkaChoosed('Pejzaż');
+											setSiatkaChoosed('Pejzaz');
 										}}>
-										Pejzaż
+										Pejzaz
 									</button>
 									<button
 										className={`${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
@@ -459,7 +459,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								</article>
 							))}
 						</section>
-					) : siatkaChoosed === 'Pejzaż' ? (
+					) : siatkaChoosed === 'Pejzaz' ? (
 						<section className='films-wrapper-pejzaz'>
 							{mappingBy.map((film: FilmData, index: number) => (
 								<article className='film-container-pejzaz w-full' key={index}>
@@ -598,12 +598,12 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							Siatka
 						</button>
 						<button
-							className={`${siatkaChoosed === 'Pejzaż' ? 'choosed' : ''}`}
+							className={`${siatkaChoosed === 'Pejzaz' ? 'choosed' : ''}`}
 							onClick={() => {
 								setSiatkaClicked(false);
-								setSiatkaChoosed('Pejzaż');
+								setSiatkaChoosed('Pejzaz');
 							}}>
-							Pejzaż
+							Pejzaz
 						</button>
 						<button
 							className={`${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
