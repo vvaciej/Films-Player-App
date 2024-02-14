@@ -11,6 +11,8 @@ import {
 	Bars3BottomLeftIcon,
 	Squares2X2Icon,
 	ChevronDownIcon,
+	ListBulletIcon,
+	ViewColumnsIcon
 } from '@heroicons/react/24/solid';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
@@ -25,6 +27,8 @@ type FilmData = {
 	profit: number;
 	time: string;
 	description: string;
+	imgFullHd: string;
+	releaseDate: string;
 };
 
 interface FilterPageProps {
@@ -381,7 +385,13 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							</section>
 							<section className='relative' ref={siatkaDropdownRef}>
 								<button className={`films-category-filter-btn`} onClick={handleSiatkaClick}>
-									<Squares2X2Icon className='h-5' />
+									{siatkaChoosed === 'Siatka' ? (
+										<Squares2X2Icon className='h-5' />
+									) : siatkaChoosed === 'Pejzaż' ? (
+										<ViewColumnsIcon className='h-5' />
+									) : siatkaChoosed === 'Lista' ? (
+										<ListBulletIcon className='h-5' />
+									) : ''}
 									<span>{siatkaChoosed}</span>
 								</button>
 								<div className={`filter-dropdown filter-web ${siatkaClicked ? 'active' : ''} select-none`}>
@@ -452,16 +462,20 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								display: siatkaChoosed === 'Pejzaż' ? 'grid' : 'none',
 							}}>
 							{mappingBy.map((film: FilmData, index: number) => (
-								<article className='film-container w-full' key={index}>
+								<article className='film-container-pejzaz w-full' key={index}>
 									<section className='films-image-section'>
 										<Link href='#'>
-											<img src={film.image} alt={`Poster for ${film.title}`} />
+											<img src={film.imgFullHd} alt={`Poster for ${film.title}`} />
 											<button className='film-play-btn'>
 												<PlayIcon className='text-black h-5' />
 											</button>
 										</Link>
 									</section>
 									<section className='films-text-section'>
+										<Link href='#' className='film-link-title search-title pr-1'>
+											{film.title}
+										</Link>
+										<span className='text-xs sm:text-sm'>{film.releaseDate}</span>
 										<section className='main-text-rating flex items-center'>
 											<StarIcon
 												className='h-5 mr-2'
@@ -471,9 +485,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											/>
 											<span>{film.rating} / 10</span>
 										</section>
-										<Link href='#' className='film-link-title search-title pr-1'>
-											{film.title}
-										</Link>
 									</section>
 								</article>
 							))}

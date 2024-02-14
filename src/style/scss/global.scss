@@ -477,6 +477,33 @@ body {
 	}
 }
 
+.films-wrapper-pejzaz {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	column-gap: 1.4rem;
+	row-gap: 2rem;
+	margin-top: 2rem;
+	@include tablet-1080 {
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 1.1rem;
+	}
+	@include tablet-800 {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: .9rem;
+	}
+	@include mobile-365 {
+		grid-template-columns: repeat(1, 1fr);	
+	}
+	.film-container-pejzaz {
+		img {
+			width: 100%;
+		}
+	}
+}
+
 .films-wrapper-list {
 	height: max-content;
 	width: 100%;
