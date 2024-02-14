@@ -4,6 +4,7 @@ import { MagnifyingGlassIcon, Bars3Icon, UserIcon } from '@heroicons/react/24/so
 import { TvIcon, FilmIcon } from '@heroicons/react/24/outline';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import normalizePolishCharacters from '../helpers/NormalizePolishSymbols';
 
 import React from 'react';
 
@@ -58,22 +59,6 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 
 			window.location.href = `/results?query=${encodeURIComponent(whatSearchVal)}`;
 		}
-	};
-
-	const normalizePolishCharacters = (input: string): string => {
-		const polishCharactersMap: Record<string, string> = {
-			ą: 'a',
-			ć: 'c',
-			ę: 'e',
-			ł: 'l',
-			ń: 'n',
-			ó: 'o',
-			ś: 's',
-			ź: 'z',
-			ż: 'z',
-		};
-
-		return input.replace(/[ąćęłńóśźż]/g, match => polishCharactersMap[match]);
 	};
 
 	const handleSearchType = (event: React.ChangeEvent<HTMLInputElement>) => {

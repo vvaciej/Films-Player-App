@@ -4,6 +4,8 @@ import { Navbar } from '../layouts/Navbar';
 import { Footer } from '../layouts/Footer';
 import '../../style/css/filteres-page.css';
 import useDocumentTitle from '../helpers/PageTitle';
+import getCookie from '../helpers/GetCookie';
+
 import {
 	StarIcon,
 	PlayIcon,
@@ -38,13 +40,26 @@ interface FilterPageProps {
 
 const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => {
 	useDocumentTitle('Wyszukiwarka filmów - vvaciej.app');
+	
+	const [mostPopularChoosed, setMostPopularChoosed] = useState<string>(getCookie('mostPopularChoosed'));
+	const [siatkaChoosed, setSiatkaChoosed] = useState<string>(getCookie('siatkaChoosed'));
+
+	useEffect(() => {
+		document.cookie = `siatkaChoosed=${siatkaChoosed}; path=/`;
+		document.cookie = `mostPopularChoosed=${mostPopularChoosed}; path=/`;
+	}, [siatkaChoosed, mostPopularChoosed]);
+
+	useEffect(() => {
+		const siatkaCookie = getCookie('siatkaChoosed');
+		const mostPopularCookie = getCookie('mostPopularChoosed');
+
+		setSiatkaChoosed(siatkaCookie || 'Siatka');
+		setMostPopularChoosed(mostPopularCookie || 'Najbardziej popularne');
+	}, []);
 
 	const [mostPopularBtnClicked, setMostPopularBtnClicked] = useState<boolean>(false);
 	const [filterBtnClicked, setFilterBtnClicked] = useState<boolean>(false);
 	const [siatkaClicked, setSiatkaClicked] = useState<boolean>(false);
-
-	const [mostPopularChoosed, setMostPopularChoosed] = useState<string>('Najbardziej popularne');
-	const [siatkaChoosed, setSiatkaChoosed] = useState<string>('Siatka');
 
 	const [gatunekClicked, setGatunekClicked] = useState<boolean>(false);
 	const [dataWydaniaClicked, setDataWydaniaClicked] = useState<boolean>(false);
@@ -114,36 +129,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 			setSiatkaClicked(false);
 		}
 	};
-
-	const getCookie = (name: string) => {
-		if (typeof document === 'undefined') {
-			return '';
-		}
-
-		const decoded = decodeURIComponent(document.cookie);
-		const splited = decoded.split('; ');
-		let result = '';
-
-		splited.forEach(e => {
-			const [cookieName, cookieValue] = e.split('=');
-			if (cookieName === name) result = cookieValue;
-		});
-
-		return result;
-	};
-
-	useEffect(() => {
-		document.cookie = `siatkaChoosed=${siatkaChoosed}; path=/`;
-		document.cookie = `mostPopularChoosed=${mostPopularChoosed}; path=/`;
-	}, [siatkaChoosed, mostPopularChoosed]);
-
-	useEffect(() => {
-    const siatkaCookie = getCookie('siatkaChoosed');
-		const mostPopularCookie = getCookie('mostPopularChoosed');
-
-		setSiatkaChoosed(siatkaCookie);
-		setMostPopularChoosed(mostPopularCookie);
-	}, []);
 
 	useEffect(() => {
 		document.body.addEventListener('click', handleDocumentClick);

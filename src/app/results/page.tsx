@@ -10,6 +10,7 @@ import { PlayIcon, StarIcon } from '@heroicons/react/24/solid';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import normalizePolishCharacters from '../helpers/NormalizePolishSymbols';
 
 import {
 	popularFilms,
@@ -77,22 +78,6 @@ const SearchPage: React.FC = () => {
 
 		return () => clearTimeout(loaderTimeout);
 	}, []);
-
-	const normalizePolishCharacters = (input: string): string => {
-		const polishCharactersMap: Record<string, string> = {
-			ą: 'a',
-			ć: 'c',
-			ę: 'e',
-			ł: 'l',
-			ń: 'n',
-			ó: 'o',
-			ś: 's',
-			ź: 'z',
-			ż: 'z',
-		};
-
-		return input.replace(/[ąćęłńóśźż]/g, match => polishCharactersMap[match]);
-	};
 
 	const handleSearch = (inputValue: string) => {
 		const inputVal = normalizePolishCharacters(inputValue.toLowerCase());
