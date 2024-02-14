@@ -406,7 +406,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										className={`${siatkaChoosed === 'Siatka' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSiatkaChoosed(prevState => 'Siatka');
+											setSiatkaChoosed('Siatka');
 										}}>
 										Siatka
 									</button>
@@ -414,7 +414,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										className={`${siatkaChoosed === 'Pejzaż' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSiatkaChoosed(prevState => 'Pejzaż');
+											setSiatkaChoosed('Pejzaż');
 										}}>
 										Pejzaż
 									</button>
@@ -422,7 +422,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										className={`${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSiatkaChoosed(prevState => 'Lista');
+											setSiatkaChoosed('Lista');
 										}}>
 										Lista
 									</button>
