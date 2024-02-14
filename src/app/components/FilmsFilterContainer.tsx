@@ -99,10 +99,10 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 		case 'Najlepiej oceniane':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.rating - a.rating);
 			break;
-		case 'Największy budżet':
+		case 'Najwiekszy budzet':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.budget - a.budget);
 			break;
-		case 'Największy przychód':
+		case 'Najwiekszy przychod':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.profit - a.profit);
 			break;
 	}
@@ -194,20 +194,20 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										Najlepiej oceniane
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'Największy budżet' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'Najwiekszy budzet' ? 'choosed' : ''}`}
 										onClick={() => {
 											setMostPopularBtnClicked(false);
-											setMostPopularChoosed('Największy budżet');
+											setMostPopularChoosed('Najwiekszy budzet');
 										}}>
-										Największy budżet
+										Najwiekszy budzet
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'Największy przychód' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'Najwiekszy przychod' ? 'choosed' : ''}`}
 										onClick={() => {
 											setMostPopularBtnClicked(false);
-											setMostPopularChoosed('Największy przychód');
+											setMostPopularChoosed('Najwiekszy przychod');
 										}}>
-										Największy przychód
+										Najwiekszy przychod
 									</button>
 								</div>
 							</section>
@@ -571,20 +571,20 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							Najlepiej oceniane
 						</button>
 						<button
-							className={`${mostPopularChoosed === 'Największy budżet' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'Najwiekszy budzet' ? 'choosed' : ''}`}
 							onClick={() => {
 								setMostPopularBtnClicked(false);
-								setMostPopularChoosed('Największy budżet');
+								setMostPopularChoosed('Najwiekszy budzet');
 							}}>
-							Największy budżet
+							Najwiekszy budzet
 						</button>
 						<button
-							className={`${mostPopularChoosed === 'Największy przychód' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'Najwiekszy przychod' ? 'choosed' : ''}`}
 							onClick={() => {
 								setMostPopularBtnClicked(false);
-								setMostPopularChoosed('Największy przychód');
+								setMostPopularChoosed('Najwiekszy przychod');
 							}}>
-							Największy przychód
+							Najwiekszy przychod
 						</button>
 					</div>
 				) : siatkaClicked ? (
