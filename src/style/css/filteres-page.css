@@ -871,6 +871,7 @@ html.dark {
   font-size: 13px;
   color: var(--dark-orange);
   margin-right: 0.3rem;
+  height: 100%;
 }
 .footer-topside-section .footer-dropdown-lang button,
 .footer-bottomside-section .footer-dropdown-lang button {
@@ -1373,7 +1374,6 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 100%;
 }
 .typical-dropdown-style nav button,
 .typical-dropdown-style div button {
@@ -1399,6 +1399,7 @@ body {
   font-size: 13px;
   color: var(--dark-orange);
   margin-right: 0.3rem;
+  height: 100%;
 }
 .typical-dropdown-style nav a,
 .typical-dropdown-style nav button,
@@ -1463,7 +1464,7 @@ body {
 .filter-dropdown {
   position: absolute;
   min-width: 12rem;
-  height: max-content;
+  height: auto;
   border: 1px solid var(--gray-3232);
   border-radius: 4px;
   background-color: var(--dark-1a1a);
