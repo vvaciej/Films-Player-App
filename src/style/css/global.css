@@ -871,6 +871,7 @@ html.dark {
   font-size: 13px;
   color: var(--dark-orange);
   margin-right: 0.3rem;
+  height: 100%;
 }
 .footer-topside-section .footer-dropdown-lang button,
 .footer-bottomside-section .footer-dropdown-lang button {
@@ -1399,6 +1400,7 @@ body {
   font-size: 13px;
   color: var(--dark-orange);
   margin-right: 0.3rem;
+  height: 100%;
 }
 .typical-dropdown-style nav a,
 .typical-dropdown-style nav button,
