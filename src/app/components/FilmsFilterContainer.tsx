@@ -45,8 +45,8 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 	const [siatkaChoosed, setSiatkaChoosed] = useState<string>(getCookie('siatkaChoosed'));
 
 	useEffect(() => {
-		document.cookie = `siatkaChoosed=${siatkaChoosed}; path=/`;
-		document.cookie = `mostPopularChoosed=${mostPopularChoosed}; path=/`;
+		document.cookie = `siatkaChoosed=${siatkaChoosed}; path=/; samesite=None; secure`;
+		document.cookie = `mostPopularChoosed=${mostPopularChoosed}; path=/; samesite=None; secure`;
 	}, [siatkaChoosed, mostPopularChoosed]);
 
 	useEffect(() => {
