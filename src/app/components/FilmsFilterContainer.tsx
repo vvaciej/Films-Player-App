@@ -40,13 +40,13 @@ interface FilterPageProps {
 
 const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => {
 	useDocumentTitle('Wyszukiwarka filmów - vvaciej.app');
-	
+
 	const [mostPopularChoosed, setMostPopularChoosed] = useState<string>(getCookie('mostPopularChoosed'));
 	const [siatkaChoosed, setSiatkaChoosed] = useState<string>(getCookie('siatkaChoosed'));
 
 	useEffect(() => {
-		document.cookie = `siatkaChoosed=${siatkaChoosed}; path=/; samesite=None; secure`;
-		document.cookie = `mostPopularChoosed=${mostPopularChoosed}; path=/; samesite=None; secure`;
+		document.cookie = `siatkaChoosed=${siatkaChoosed}; path=/;`;
+		document.cookie = `mostPopularChoosed=${mostPopularChoosed}; path=/;`;
 	}, [siatkaChoosed, mostPopularChoosed]);
 
 	useEffect(() => {
@@ -55,7 +55,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 
 		setSiatkaChoosed(siatkaCookie || 'Siatka');
 		setMostPopularChoosed(mostPopularCookie || 'Najbardziej popularne');
-	}, []);
+	}, [siatkaChoosed]);
 
 	const [mostPopularBtnClicked, setMostPopularBtnClicked] = useState<boolean>(false);
 	const [filterBtnClicked, setFilterBtnClicked] = useState<boolean>(false);
@@ -408,7 +408,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										className={`${siatkaChoosed === 'Siatka' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSiatkaChoosed('Siatka');
+											setSiatkaChoosed(prevState => 'Siatka');
 										}}>
 										Siatka
 									</button>
@@ -416,7 +416,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										className={`${siatkaChoosed === 'Pejzaż' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSiatkaChoosed('Pejzaż');
+											setSiatkaChoosed(prevState => 'Pejzaż');
 										}}>
 										Pejzaż
 									</button>
@@ -424,7 +424,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										className={`${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
-											setSiatkaChoosed('Lista');
+											setSiatkaChoosed(prevState => 'Lista');
 										}}>
 										Lista
 									</button>
@@ -462,11 +462,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							))}
 						</section>
 					) : siatkaChoosed === 'Pejzaż' ? (
-						<section
-							className='films-wrapper-pejzaz'
-							style={{
-								display: siatkaChoosed === 'Pejzaż' ? 'grid' : 'none',
-							}}>
+						<section className='films-wrapper-pejzaz'>
 							{mappingBy.map((film: FilmData, index: number) => (
 								<article className='film-container-pejzaz w-full' key={index}>
 									<section className='films-image-section'>
@@ -496,11 +492,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							))}
 						</section>
 					) : siatkaChoosed === 'Lista' ? (
-						<section
-							className='films-wrapper-list'
-							style={{
-								display: siatkaChoosed === 'Lista' ? 'flex' : 'none',
-							}}>
+						<section className='films-wrapper-list'>
 							{mappingBy.map((film: FilmData, index: number) => (
 								<article className='film-container-list w-full' key={index}>
 									<section className='films-image-section'>
@@ -603,7 +595,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							className={`${siatkaChoosed === 'Siatka' ? 'choosed' : ''}`}
 							onClick={() => {
 								setSiatkaClicked(false);
-								setSiatkaChoosed('Siatka');
+								setSiatkaChoosed(prevState => 'Siatka');
 							}}>
 							Siatka
 						</button>
@@ -611,7 +603,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							className={`${siatkaChoosed === 'Pejzaż' ? 'choosed' : ''}`}
 							onClick={() => {
 								setSiatkaClicked(false);
-								setSiatkaChoosed('Pejzaż');
+								setSiatkaChoosed(prevState => 'Pejzaż');
 							}}>
 							Pejzaż
 						</button>
@@ -619,7 +611,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							className={`${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
 							onClick={() => {
 								setSiatkaClicked(false);
-								setSiatkaChoosed('Lista');
+								setSiatkaChoosed(prevState => 'Lista');
 							}}>
 							Lista
 						</button>
