@@ -1007,7 +1007,7 @@ body {
 .typical-container-comp-with-films {
   display: flex;
   flex-direction: column;
-  min-height: 79vh;
+  min-height: 78vh;
   width: 1240px;
   padding: calc(var(--main-container-padd-top) + 0.7rem) 0rem;
   padding-bottom: var(--main-container-padd-top);
@@ -1101,9 +1101,12 @@ body {
 
 .loader-container {
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.loader-container .loader {
+  height: 20px;
 }
 
 .loader {

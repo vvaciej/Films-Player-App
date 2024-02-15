@@ -44,7 +44,7 @@ const SearchPage: React.FC = () => {
 
 	const [whatSearchVal, setWhatSearchVal] = useState<string>('');
 	const [searchResults, setSearchResults] = useState<FilmData[]>([]);
-	const [isLoaded, setIsLoaded] = useState(false);
+	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
 	const decodedQuery = decodeURIComponent(whatSearchVal);
 
@@ -68,15 +68,9 @@ const SearchPage: React.FC = () => {
 	}, [whatSearchVal, router]);
 
 	useEffect(() => {
-		const handleLoad = () => {
+		setTimeout(() => {
 			setIsLoaded(true);
-		};
-
-		const loaderTimeout = setTimeout(() => {
-			requestAnimationFrame(handleLoad);
-		}, 150);
-
-		return () => clearTimeout(loaderTimeout);
+		}, 150)
 	}, []);
 
 	const handleSearch = (inputValue: string) => {
