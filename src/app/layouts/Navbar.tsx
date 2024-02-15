@@ -5,6 +5,7 @@ import { TvIcon, FilmIcon } from '@heroicons/react/24/outline';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import normalizePolishCharacters from '../helpers/NormalizePolishSymbols';
+import getCookie from '../helpers/GetCookie';
 
 import React from 'react';
 
@@ -158,13 +159,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						</button>
 						<section className='header-btn-section'>
 							<section>
-								<Link href='/movies'>
+								<Link href={`/movies?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
 									<FilmIcon className='header-fa' />
 									<span>Filmy</span>
 								</Link>
 							</section>
 							<section>
-								<Link href='/series'>
+								<Link href={`/series?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
 									<TvIcon className='header-fa' />
 									<span>Seriale</span>
 								</Link>
@@ -197,11 +198,11 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 				}}>
 				{isUserOrMenuClicked === 'menu' ? (
 					<nav>
-						<Link href='/movies'>
+						<Link href={`/movies?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
 							<FilmIcon className='h-5' />
 							<span>Filmy</span>
 						</Link>
-						<Link href='/series'>
+						<Link href={`/series?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
 							<TvIcon className='h-5' />
 							<span>Seriale</span>
 						</Link>

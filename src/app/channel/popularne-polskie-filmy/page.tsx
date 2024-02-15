@@ -2,6 +2,7 @@
 
 import useDocumentTitle from '@/app/helpers/PageTitle';
 import Filters from '@/app/components/FilmsFilterContainer';
+import IteratingFilmsPage from '@/app/helpers/FilmsIteratingFilter';
 
 import {
 	popularFilms,
@@ -26,15 +27,7 @@ const allFilmsData = [
 const PopularPolishFilms: React.FC = () => {
 	useDocumentTitle('Popularne polskie filmy - vvaciej.app');
 
-	const uniqueMovieTitles = new Set<string>();
-	const filteredMovies = allFilmsData.filter(movie => {
-		const filmTypeLowerCase = movie.category.toLowerCase();
-		const isPopularPolish = filmTypeLowerCase === 'popularpolish';
-
-		if (isPopularPolish && !uniqueMovieTitles.has(movie.title)) {
-			return uniqueMovieTitles.add(movie.title);
-		}
-	});
+	const filteredMovies = IteratingFilmsPage(allFilmsData, 'category', 'popularpolish');
 
 	return <Filters headingTitlePage='Popularne polskie filmy' mappingBy={filteredMovies} />;
 };

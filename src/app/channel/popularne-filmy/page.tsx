@@ -2,6 +2,7 @@
 
 import useDocumentTitle from '@/app/helpers/PageTitle';
 import Filters from '@/app/components/FilmsFilterContainer';
+import IteratingFilmsPage from '@/app/helpers/FilmsIteratingFilter';
 
 import {
 	popularFilms,
@@ -26,15 +27,7 @@ const allFilmsData = [
 const PopularFilms: React.FC = () => {
 	useDocumentTitle('Popularne filmy - vvaciej.app');
 
-	const uniqueMovieTitles = new Set<string>();
-	const filteredMovies = allFilmsData.filter(movie => {
-		const filmTypeLowerCase = movie.category.toLowerCase();
-		const isPopular = filmTypeLowerCase === 'popular';
-
-		if (isPopular && !uniqueMovieTitles.has(movie.title)) {
-			return uniqueMovieTitles.add(movie.title);
-		}
-	});
+	const filteredMovies = IteratingFilmsPage(allFilmsData, 'category', 'popular');
 
 	return <Filters headingTitlePage='Popularne filmy' mappingBy={filteredMovies} />;
 };

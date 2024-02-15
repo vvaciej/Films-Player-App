@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import * as filmData from '../data/main-films';
+import getCookie from '../helpers/GetCookie';
 
 interface FilmProps {
 	headingText: string;
@@ -128,37 +129,37 @@ export const FilmsCategories: React.FC = () => {
 			<FilmCategory
 				headingText='Popularne filmy'
 				filmsData={filmData.popularFilms}
-				linkDirectPage='/channel/popularne-filmy'
+				linkDirectPage={`/channel/popularne-filmy?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 			<FilmCategory
 				headingText='Ostatnio dodane filmy'
 				filmsData={filmData.lastAddedFilms}
-				linkDirectPage='/channel/ostatnio-dodane-filmy'
+				linkDirectPage={`/channel/ostatnio-dodane-filmy?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 			<FilmCategory
 				headingText='Popularne filmy akcji'
 				filmsData={filmData.popularActionFilms}
-				linkDirectPage='/channel/popularne-filmy-akcji'
+				linkDirectPage={`/channel/popularne-filmy-akcji?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 			<FilmCategory
 				headingText='Popularne komedie'
 				filmsData={filmData.popularComediaFilms}
-				linkDirectPage='/channel/popularne-komedie'
+				linkDirectPage={`/channel/popularne-komedie?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 			<FilmCategory
 				headingText='Popularne horrory'
 				filmsData={filmData.popularHorrorFilms}
-				linkDirectPage='/channel/popularne-horrory'
+				linkDirectPage={`/channel/popularne-horrory?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 			<FilmCategory
 				headingText='Popularne polskie filmy'
 				filmsData={filmData.popularPolishFilms}
-				linkDirectPage='/channel/popularne-polskie-filmy'
+				linkDirectPage={`/channel/popularne-polskie-filmy?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 			<FilmCategory
 				headingText='Popularne seriale'
 				filmsData={filmData.popularSerials}
-				linkDirectPage='/channel/popularne-seriale'
+				linkDirectPage={`/channel/popularne-seriale?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 		</div>
 	);

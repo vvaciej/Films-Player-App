@@ -5,6 +5,8 @@ import { Footer } from '../layouts/Footer';
 import '../../style/css/filteres-page.css';
 import useDocumentTitle from '../helpers/PageTitle';
 import getCookie from '../helpers/GetCookie';
+import FilterFncs from '../helpers/FiltersFunction';
+import { useRouter } from 'next/navigation';
 
 import {
 	StarIcon,
@@ -40,6 +42,7 @@ interface FilterPageProps {
 
 const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => {
 	useDocumentTitle('Wyszukiwarka filmów - vvaciej.app');
+	const router = useRouter();
 
 	const [mostPopularChoosed, setMostPopularChoosed] = useState<string>(getCookie('mostPopularChoosed'));
 	const [siatkaChoosed, setSiatkaChoosed] = useState<string>(getCookie('siatkaChoosed'));
@@ -54,61 +57,50 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 		const mostPopularCookie = getCookie('mostPopularChoosed');
 
 		setSiatkaChoosed(siatkaCookie || 'Siatka');
-		setMostPopularChoosed(mostPopularCookie || 'Najbardziej popularne');
-	}, [siatkaChoosed]);
+		setMostPopularChoosed(mostPopularCookie || 'most_popular');
+	}, [siatkaChoosed, mostPopularChoosed]);
 
 	const [mostPopularBtnClicked, setMostPopularBtnClicked] = useState<boolean>(false);
-	const [filterBtnClicked, setFilterBtnClicked] = useState<boolean>(false);
 	const [siatkaClicked, setSiatkaClicked] = useState<boolean>(false);
-
-	const [gatunekClicked, setGatunekClicked] = useState<boolean>(false);
-	const [dataWydaniaClicked, setDataWydaniaClicked] = useState<boolean>(false);
-	const [ocenaClicked, setOcenaClicked] = useState<boolean>(false);
-	const [czasTrwaniaClicked, setCzasTrwaniaClicked] = useState<boolean>(false);
-	const [orginalnyJezykClicked, setOrginalnyJezykClicked] = useState<boolean>(false);
-	const [nakreconoWClicked, setNakreconoWClicked] = useState<boolean>(false);
-	const [ograniczeniaWiekoweClicked, setOgraniczeniaWiekoweClicked] = useState<boolean>(false);
-	const [budzetClicked, setBudzetClicked] = useState<boolean>(false);
-	const [przychodClicked, setPrzychodClicked] = useState<boolean>(false);
 
 	const handleMostPopularClick = () => {
 		setMostPopularBtnClicked(prevState => !prevState);
-		setFilterBtnClicked(false);
-		setSiatkaClicked(false);
-	};
-
-	const handleFilterClick = () => {
-		setFilterBtnClicked(prevState => !prevState);
-		setMostPopularBtnClicked(false);
 		setSiatkaClicked(false);
 	};
 
 	const handleSiatkaClick = () => {
 		setSiatkaClicked(prevState => !prevState);
 		setMostPopularBtnClicked(false);
-		setFilterBtnClicked(false);
 	};
 
+	useEffect(() => {
+		const queryParamMatch = window.location.search.match(/[\?&]order=([^&]+)/);
+
+		if (queryParamMatch) {
+			const decodedQueryParam = decodeURIComponent(queryParamMatch[1]);
+			setMostPopularChoosed(decodedQueryParam);
+		}
+	}, [router]);
+
 	switch (mostPopularChoosed) {
-		case 'Najbardziej popularne':
+		case 'most_popular':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.filmwebPopularity - a.filmwebPopularity);
 			break;
-		case 'Ostatnio dodane':
+		case 'last_added':
 			mappingBy.sort((a: FilmData, b: FilmData) => new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime());
 			break;
-		case 'Najlepiej oceniane':
+		case 'highest_rating':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.rating - a.rating);
 			break;
-		case 'Najwiekszy budzet':
+		case 'highest_budget':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.budget - a.budget);
 			break;
-		case 'Najwiekszy przychod':
+		case 'highest_profit':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.profit - a.profit);
 			break;
 	}
 
 	const mostPopularDropdownRef = useRef<HTMLDivElement>(null);
-	const filterDropdownRef = useRef<HTMLDivElement>(null);
 	const siatkaDropdownRef = useRef<HTMLDivElement>(null);
 
 	const dropdownMobilesRef = useRef<HTMLDivElement>(null);
@@ -120,12 +112,10 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 
 		if (
 			!isInsideDropdown(event.target, mostPopularDropdownRef) &&
-			!isInsideDropdown(event.target, filterDropdownRef) &&
 			!isInsideDropdown(event.target, siatkaDropdownRef) &&
 			!isInsideDropdown(event.target, dropdownMobilesRef)
 		) {
 			setMostPopularBtnClicked(false);
-			setFilterBtnClicked(false);
 			setSiatkaClicked(false);
 		}
 	};
@@ -138,23 +128,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 		};
 	}, []);
 
-	const clearFilters = () => {
-		setGatunekClicked(false);
-		setDataWydaniaClicked(false);
-		setOcenaClicked(false);
-		setCzasTrwaniaClicked(false);
-		setOrginalnyJezykClicked(false);
-		setNakreconoWClicked(false);
-		setOgraniczeniaWiekoweClicked(false);
-		setBudzetClicked(false);
-		setPrzychodClicked(false);
-
-		const inputElements = document.querySelectorAll('input[type="checkbox"]');
-		inputElements.forEach(input => {
-			(input as HTMLInputElement).checked = false;
-		});
-	};
-
 	return (
 		<div className='space-light'>
 			<Navbar isCutted={false} />
@@ -166,228 +139,54 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							<section className='relative' ref={mostPopularDropdownRef}>
 								<button className={`films-category-filter-btn`} onClick={handleMostPopularClick}>
 									<Bars3BottomLeftIcon className='h-5' />
-									<span>{mostPopularChoosed}</span>
+									<span>{mostPopularChoosed === 'most_popular' ? 'Najbadziej popularne' : mostPopularChoosed === 'last_added' ? 'Ostatnio dodane' : mostPopularChoosed === 'highest_rating' ? 'Najlepiej oceniane' : mostPopularChoosed === 'highest_budget' ? 'Największy budżet' : mostPopularChoosed === 'highest_profit' ? 'Największy przychód' : ''}</span>
 								</button>
 								<div className={`filter-dropdown ${mostPopularBtnClicked ? 'active' : ''} select-none`}>
 									<button
-										className={`${mostPopularChoosed === 'Najbardziej popularne' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'most_popular' ? 'choosed' : ''}`}
 										onClick={() => {
+											router.push(`?order=most_popular`);
 											setMostPopularBtnClicked(false);
-											setMostPopularChoosed('Najbardziej popularne');
+											setMostPopularChoosed('most_popular');
 										}}>
 										Najbardziej popularne
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'Ostatnio dodane' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'last_added' ? 'choosed' : ''}`}
 										onClick={() => {
+											router.push(`?order=last_added`);
 											setMostPopularBtnClicked(false);
-											setMostPopularChoosed('Ostatnio dodane');
+											setMostPopularChoosed('last_added');
 										}}>
 										Ostatnio dodane
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'Najlepiej oceniane' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'highest_rating' ? 'choosed' : ''}`}
 										onClick={() => {
+											router.push(`?order=highest_rating`);
 											setMostPopularBtnClicked(false);
-											setMostPopularChoosed('Najlepiej oceniane');
+											setMostPopularChoosed('highest_rating');
 										}}>
 										Najlepiej oceniane
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'Najwiekszy budzet' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'highest_budget' ? 'choosed' : ''}`}
 										onClick={() => {
+											router.push(`?order=highest_budget`);
 											setMostPopularBtnClicked(false);
-											setMostPopularChoosed('Najwiekszy budzet');
+											setMostPopularChoosed('highest_budget');
 										}}>
-										Najwiekszy budzet
+										Największy budżet
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'Najwiekszy przychod' ? 'choosed' : ''}`}
+										className={`${mostPopularChoosed === 'highest_profit' ? 'choosed' : ''}`}
 										onClick={() => {
+											router.push(`?order=highest_profit`);
 											setMostPopularBtnClicked(false);
-											setMostPopularChoosed('Najwiekszy przychod');
+											setMostPopularChoosed('highest_profit');
 										}}>
-										Najwiekszy przychod
+										Największy przychód
 									</button>
-								</div>
-							</section>
-							<section className='relative' ref={filterDropdownRef}>
-								<button className={`films-category-filter-btn`} onClick={handleFilterClick}>
-									<AdjustmentsHorizontalIcon className='h-5' />
-									<span>Filtry</span>
-								</button>
-								<div className={`filter-dropdown filters-section ${filterBtnClicked ? 'active' : ''} select-none`}>
-									<section className='flex items-center w-full justify-between px-3 pt-2 pb-3 text-xs font-medium'>
-										<button id='clear-filters' onClick={clearFilters}>
-											Wyczyść
-										</button>
-										<span
-											style={{
-												fontSize: '13.5px',
-											}}>
-											Filtry
-										</span>
-										<button id='apply-filters' onClick={() => setFilterBtnClicked(false)}>
-											Zastosuj
-										</button>
-									</section>
-									<section
-										style={{
-											maxHeight: '42rem',
-											overflowY: 'auto',
-										}}>
-										<label htmlFor='gatunek' className='!border-t-0'>
-											<input
-												type='checkbox'
-												id='gatunek'
-												className='orange-checkbox'
-												onClick={() => setGatunekClicked(!gatunekClicked)}
-											/>
-											<span>Gatunek</span>
-											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
-										</label>
-										<div className={`filter-dropdown-label ${gatunekClicked ? 'active' : ''}`}>
-											<section className='filter-dropdown-content'>
-												<input type='text' placeholder='Wybierz gatunek' />
-											</section>
-										</div>
-										<label htmlFor='dataWydania'>
-											<input
-												type='checkbox'
-												id='dataWydania'
-												className='orange-checkbox'
-												onClick={() => setDataWydaniaClicked(!dataWydaniaClicked)}
-											/>
-											<span>Data Wydania</span>
-											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
-										</label>
-										<div className={`filter-dropdown-label ${dataWydaniaClicked ? 'active' : ''}`}>
-											<section className='filter-dropdown-content'>
-												<input type='date' />
-											</section>
-										</div>
-										<label htmlFor='ocena'>
-											<input
-												type='checkbox'
-												id='ocena'
-												className='orange-checkbox'
-												onClick={() => setOcenaClicked(!ocenaClicked)}
-											/>
-											<span>Ocena</span>
-											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
-										</label>
-										<div className={`filter-dropdown-label filter-column filter-ocena ${ocenaClicked ? 'active' : ''}`}>
-											<section className='filter-dropdown-content'>
-												<input type='text' />
-												<input type='text' />
-											</section>
-										</div>
-										<label htmlFor='czasTrwania'>
-											<input
-												type='checkbox'
-												id='czasTrwania'
-												className='orange-checkbox'
-												onClick={() => setCzasTrwaniaClicked(!czasTrwaniaClicked)}
-											/>
-											<span>Czas Trwania</span>
-											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
-										</label>
-										<div
-											className={`filter-dropdown-label filter-column filter-2input-1text ${
-												czasTrwaniaClicked ? 'active' : ''
-											}`}>
-											<section className='filter-dropdown-content'>
-												<span className='w-full text-left pl-4'>Czas trwania w minutach</span>
-												<input type='text' />
-												<input type='text' />
-											</section>
-										</div>
-										<label htmlFor='orginalnyJezyk'>
-											<input
-												type='checkbox'
-												id='orginalnyJezyk'
-												className='orange-checkbox'
-												onClick={() => setOrginalnyJezykClicked(!orginalnyJezykClicked)}
-											/>
-											<span>Orginalny język</span>
-											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
-										</label>
-										<div className={`filter-dropdown-label ${orginalnyJezykClicked ? 'active' : ''}`}>
-											<section className='filter-dropdown-content'>
-												<input type='text' placeholder='Wybierz język' />
-											</section>
-										</div>
-										<label htmlFor='nakreconoW'>
-											<input
-												type='checkbox'
-												id='nakreconoW'
-												className='orange-checkbox'
-												onClick={() => setNakreconoWClicked(!nakreconoWClicked)}
-											/>
-											<span>Nakręcono w</span>
-											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
-										</label>
-										<div className={`filter-dropdown-label ${nakreconoWClicked ? 'active' : ''}`}>
-											<section className='filter-dropdown-content'>
-												<input type='text' placeholder='Wybierz kraj' />
-											</section>
-										</div>
-										<label htmlFor='ograniczeniaWiekowe'>
-											<input
-												type='checkbox'
-												id='ograniczeniaWiekowe'
-												className='orange-checkbox'
-												onClick={() => setOgraniczeniaWiekoweClicked(!ograniczeniaWiekoweClicked)}
-											/>
-											<span>Ograniczenia Wiekowe</span>
-											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
-										</label>
-										<div className={`filter-dropdown-label ${ograniczeniaWiekoweClicked ? 'active' : ''}`}>
-											<section className='filter-dropdown-content'>
-												<input type='text' placeholder='Wybierz' />
-											</section>
-										</div>
-										<label htmlFor='budzet'>
-											<input
-												type='checkbox'
-												id='budzet'
-												className='orange-checkbox'
-												onClick={() => setBudzetClicked(!budzetClicked)}
-											/>
-											<span>Budżet</span>
-											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
-										</label>
-										<div
-											className={`filter-dropdown-label filter-column filter-2input-1text ${
-												budzetClicked ? 'active' : ''
-											}`}>
-											<section className='filter-dropdown-content'>
-												<span className='w-full text-left pl-4'>W dolarach amerykańskich $</span>
-												<input type='text' placeholder='Wybierz kraj' />
-												<input type='text' />
-											</section>
-										</div>
-										<label htmlFor='przychod'>
-											<input
-												type='checkbox'
-												id='przychod'
-												className='orange-checkbox'
-												onClick={() => setPrzychodClicked(!przychodClicked)}
-											/>
-											<span>Przychód</span>
-											<ChevronDownIcon className='h-4 filters-chevron-down-icon' />
-										</label>
-										<div
-											className={`filter-dropdown-label filter-column filter-2input-1text ${
-												przychodClicked ? 'active' : ''
-											}`}>
-											<section className='filter-dropdown-content'>
-												<span className='w-full text-left pl-4'>W dolarach amerykańskich $</span>
-												<input type='text' placeholder='Wybierz kraj' />
-												<input type='text' />
-											</section>
-										</div>
-									</section>
 								</div>
 							</section>
 							<section className='relative' ref={siatkaDropdownRef}>
@@ -399,7 +198,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 									) : (
 										<ListBulletIcon className='h-5' />
 									)}
-									<span>{siatkaChoosed}</span>
+									<span>{siatkaChoosed === 'Siatka' ? 'Siatka' : siatkaChoosed === 'Pejzaz' ? 'Pejzaż' : siatkaChoosed === 'Lista' ? 'Lista': ''}</span>
 								</button>
 								<div className={`filter-dropdown filter-siatka ${siatkaClicked ? 'active' : ''} select-none`}>
 									<button
@@ -416,7 +215,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											setSiatkaClicked(false);
 											setSiatkaChoosed('Pejzaz');
 										}}>
-										Pejzaz
+										Pejzaż
 									</button>
 									<button
 										className={`${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
@@ -547,42 +346,47 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 				{mostPopularBtnClicked ? (
 					<div className='!h-52'>
 						<button
-							className={`${mostPopularChoosed === 'Najbardziej popularne' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'most_popular' ? 'choosed' : ''}`}
 							onClick={() => {
+								router.push(`?order=most_popular`);
 								setMostPopularBtnClicked(false);
-								setMostPopularChoosed('Najbardziej popularne');
+								setMostPopularChoosed('most_popular');
 							}}>
 							Najbardziej popularne
 						</button>
 						<button
-							className={`${mostPopularChoosed === 'Ostatnio dodane' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'last_added' ? 'choosed' : ''}`}
 							onClick={() => {
+								router.push(`?order=last_added`);
 								setMostPopularBtnClicked(false);
-								setMostPopularChoosed('Ostatnio dodane');
+								setMostPopularChoosed('last_added');
 							}}>
 							Ostatnio dodane
 						</button>
 						<button
-							className={`${mostPopularChoosed === 'Najlepiej oceniane' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'highest_rating' ? 'choosed' : ''}`}
 							onClick={() => {
+								router.push(`?order=highest_rating`);
 								setMostPopularBtnClicked(false);
-								setMostPopularChoosed('Najlepiej oceniane');
+								setMostPopularChoosed('highest_rating');
 							}}>
 							Najlepiej oceniane
 						</button>
 						<button
-							className={`${mostPopularChoosed === 'Najwiekszy budzet' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'highest_budget' ? 'choosed' : ''}`}
 							onClick={() => {
+								router.push('?order=highest_budget');
 								setMostPopularBtnClicked(false);
-								setMostPopularChoosed('Najwiekszy budzet');
+								setMostPopularChoosed('highest_budget');
 							}}>
 							Najwiekszy budzet
 						</button>
 						<button
-							className={`${mostPopularChoosed === 'Najwiekszy przychod' ? 'choosed' : ''}`}
+							className={`${mostPopularChoosed === 'highest_profit' ? 'choosed' : ''}`}
 							onClick={() => {
+								router.push('?order=highest_profit');
 								setMostPopularBtnClicked(false);
-								setMostPopularChoosed('Najwiekszy przychod');
+								setMostPopularChoosed('highest_profit');
 							}}>
 							Najwiekszy przychod
 						</button>

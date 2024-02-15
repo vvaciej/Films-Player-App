@@ -125,7 +125,7 @@
 }
 
 .filter-dropdown-label {
-	height: 4.3rem;
+	height: calc(1.2rem + 35px + 35px);
 	position: relative;
 	width: 100%;
 	transition: height 0.3s;
@@ -143,10 +143,14 @@
 		width: inherit;
 		@include flex-center;
 	}
+	form {
+		width: 90%;
+	}
 	input {
 		@include input-style;
-		height: 2.3rem;
-		width: 90%;
+		font-size: 13px;
+		height: 35px;
+		width: 90% !important;
 		padding: 0rem 1.2rem;
 		&:focus {
 			@include orange-outline;
@@ -179,6 +183,66 @@
 	height: calc(137.59px + 1rem);
 	&:not(.active) {
 		height: 0;
+	}
+}
+
+.btn-outline-orange-focus {
+	@include transparent-btn-style;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid transparent;
+	outline: 1px solid var(--gray-5050);
+	height: 35px;
+	width: 90%;
+	border-radius: 4px;
+	padding-left: 1rem !important;
+	&:hover {
+		background-color: transparent;
+		border-radius: 4px;
+	}
+	&:focus {
+		@include orange-outline;
+	}
+	span {
+		color: var(--white);
+		font-size: 13px !important;
+	}
+}
+
+.filter-options-dropdown {
+	position: absolute;
+	top: 3.5rem;
+	height: 7.4rem;
+	display: flex;
+	flex-direction: column;
+	width: 91%;
+	border-radius: 4px;
+	border: 1px solid var(--gray-5050);
+	background-color: var(--dark-1a1a);
+	z-index: 15;
+	left: 50%;
+	transform: translate(-50%);
+	transition: top .3s, opacity .15s;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	&:not(.active) {
+		visibility: hidden;
+		z-index: -5;
+		top: 4rem;
+		opacity: 0;
+		position: fixed;
+	}
+	@include btn-choosed-style;
+	button {
+		padding-left: 1.2rem !important;
+	}
+	button:hover {
+		background-color: var(--gray-4040);
+	}
+	button:before {
+		content: "" !important;
+		margin-right: 0 !important;
 	}
 }
 
