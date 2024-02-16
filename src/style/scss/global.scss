@@ -162,6 +162,30 @@ html.dark {
 	}
 }
 
+.orange-btn-style {
+	background-color: var(--orange);
+	padding: 0.5rem 1rem;
+	border-radius: 0.3rem;
+	transition: background-color 0.2s;
+	width: max-content;
+	&:hover {
+		background-color: var(--dark-orange);
+		transition: background-color 0.2s;
+	}
+}
+
+.orange-outlined-btn-style {
+	outline: 1px solid var(--dark-orange-opacited);
+	border-radius: 4px;
+	color: var(--dark-orange);
+	transition: .1s;
+	&:hover {
+		outline-color: var(--dark-orange);
+		background-color: var(--orange-opacited-15);
+		transition: .1s;
+	}
+}
+
 @mixin input-style {
 	padding: 0px 10px;
 	color: var(--white);
@@ -540,15 +564,6 @@ body {
 				min-width: 80px;
 			}
 		}
-		.rate-this-btn {
-			@include transparent-btn-style;
-			@include mobile-500 {
-				padding: 0.3rem 0;
-				&:hover {
-					background-color: transparent;
-				}
-			}
-		}
 		.film-list-description {
 			width: 100%;
 			font-size: 13px;
@@ -576,6 +591,16 @@ body {
 			@include mobile-500 {
 				display: none;
 			}
+		}
+	}
+}
+
+.rate-this-btn {
+	@include transparent-btn-style;
+	@include mobile-500 {
+		padding: 0.3rem 0;
+		&:hover {
+			background-color: transparent;
 		}
 	}
 }

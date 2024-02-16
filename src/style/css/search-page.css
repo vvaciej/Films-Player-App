@@ -41,6 +41,30 @@ html.dark {
   background-color: #424242 !important;
 }
 
+.orange-btn-style {
+  background-color: var(--orange);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.2s;
+  width: max-content;
+}
+.orange-btn-style:hover {
+  background-color: var(--dark-orange);
+  transition: background-color 0.2s;
+}
+
+.orange-outlined-btn-style {
+  outline: 1px solid var(--dark-orange-opacited);
+  border-radius: 4px;
+  color: var(--dark-orange);
+  transition: 0.1s;
+}
+.orange-outlined-btn-style:hover {
+  outline-color: var(--dark-orange);
+  background-color: var(--orange-opacited-15);
+  transition: 0.1s;
+}
+
 .header-container {
   position: fixed;
   display: flex;
@@ -1295,23 +1319,6 @@ body {
     min-width: 80px;
   }
 }
-.films-wrapper-list .film-container-list .rate-this-btn {
-  padding: 0.5rem 0.9rem;
-  transition: background-color 0.3s ease;
-}
-.films-wrapper-list .film-container-list .rate-this-btn:hover {
-  background-color: var(--btn-opacited-hover-bg);
-  border-radius: 0.3rem;
-  transition: background-color 0.3s ease;
-}
-@media screen and (max-width: 500px) {
-  .films-wrapper-list .film-container-list .rate-this-btn {
-    padding: 0.3rem 0;
-  }
-  .films-wrapper-list .film-container-list .rate-this-btn:hover {
-    background-color: transparent;
-  }
-}
 .films-wrapper-list .film-container-list .film-list-description {
   width: 100%;
   font-size: 13px;
@@ -1342,6 +1349,24 @@ body {
 @media screen and (max-width: 500px) {
   .films-wrapper-list .main-text-rating .film-list-rating-separate-symbol {
     display: none;
+  }
+}
+
+.rate-this-btn {
+  padding: 0.5rem 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.rate-this-btn:hover {
+  background-color: var(--btn-opacited-hover-bg);
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+}
+@media screen and (max-width: 500px) {
+  .rate-this-btn {
+    padding: 0.3rem 0;
+  }
+  .rate-this-btn:hover {
+    background-color: transparent;
   }
 }
 

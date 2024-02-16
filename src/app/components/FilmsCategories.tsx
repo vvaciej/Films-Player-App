@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import { ChevronRightIcon, StarIcon, PlayIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import Link from 'next/link';
+import convertTitleToUrl from '../helpers/ConvertTitleToURL';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -24,6 +25,7 @@ type FilmData = {
 	image: string;
 	title: string;
 	rating: number;
+	ref: number;
 };
 
 const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectPage }) => {
@@ -96,15 +98,15 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 					<SwiperSlide key={index}>
 						<article className='film-container'>
 							<section className='films-image-section'>
-								<a href='#'>
+								<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}>
 									<img src={film.image} alt={`Poster for ${film.title}`} />
 									<button className='film-play-btn'>
 										<PlayIcon className='text-black h-5' />
 									</button>
-								</a>
+								</Link>
 							</section>
 							<section className='films-text-section'>
-								<p className='main-text-rating flex items-center'>
+								<section className='main-text-rating flex items-center'>
 									<StarIcon
 										className='h-5 mr-2'
 										style={{
@@ -112,8 +114,10 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 										}}
 									/>
 									<span>{film.rating} / 10</span>
-								</p>
-								<a className='film-container-title'>{film.title}</a>
+								</section>
+								<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`} className='film-container-title'>
+									{film.title}
+								</Link>
 							</section>
 						</article>
 					</SwiperSlide>
