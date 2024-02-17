@@ -11,6 +11,7 @@ html.dark {
   --gray-3232: #323232;
   --gray-4040: #404040;
   --gray-5050: #505050;
+  --gray-6161: #616161;
   --gray-9999: #999999;
   --light-gray-d5d5: #d5d5d5;
   --light-gray-ddd: #ddd;
@@ -75,7 +76,7 @@ html.dark {
   height: 4.35rem;
   display: flex;
   padding: 0px 1.3rem;
-  z-index: 6;
+  z-index: 7;
 }
 @media screen and (max-width: 1350px) {
   .header-container {
@@ -1182,7 +1183,7 @@ body {
   font-weight: 600;
   column-gap: 0.5rem;
   line-height: 1.3;
-  cursor: pointer;
+  cursor: text;
 }
 @media screen and (max-width: 1080px) {
   .films-category-heading-text {
@@ -1199,9 +1200,6 @@ body {
   .films-category-heading-text {
     font-size: 1.3rem;
   }
-}
-.films-category-heading-text:hover {
-  text-decoration: underline;
 }
 .films-category-heading-text:hover .popular-films-category-heading-icon {
   transform: translate(6px);

@@ -7,27 +7,11 @@ import '../../../../style/css/film-page.css';
 import SiteNotFound from '@/app/[...not_found]/page';
 import convertTitleToUrl from '@/app/helpers/ConvertTitleToURL';
 import { ChevronRightIcon, StarIcon, PlayIcon, ChevronLeftIcon, PlusIcon, ShareIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
-import {
-	popularFilms,
-	lastAddedFilms,
-	popularActionFilms,
-	popularComediaFilms,
-	popularHorrorFilms,
-	popularPolishFilms,
-	popularSerials,
-} from '../../../data/main-films';
 import { useEffect, useState } from 'react';
 
-const allFilmsData = [
-	...popularFilms,
-	...lastAddedFilms,
-	...popularActionFilms,
-	...popularComediaFilms,
-	...popularHorrorFilms,
-	...popularPolishFilms,
-	...popularSerials,
-];
+import { allFilms } from '@/app/data/films-data';
 
 interface pageProps {
 	params: { ref: number; title: string };
@@ -42,7 +26,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 		}, 200);
 	}, []);
 
-	const infoOfChoosedFilm = allFilmsData.find(film => convertTitleToUrl(film.title) === params.title);
+	const infoOfChoosedFilm = allFilms.find(film => convertTitleToUrl(film.title) === params.title);
 
 	const extractYearFromReleaseDate = (releaseDate: string | undefined) => {
 		const yearRegex = /(\d{2})\/(\d{2})\/(\d{4})/;
@@ -58,7 +42,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 	const [isFilmExist, setIsFilmExist] = useState<boolean>(false);
 
 	useEffect(() => {
-		const checkIfPageExist = allFilmsData.some(
+		const checkIfPageExist = allFilms.some(
 			film => film.ref === Number(params.ref) && convertTitleToUrl(film.title) === params.title
 		);
 
@@ -67,10 +51,10 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 
 	return (
 		<>
-				<div className='space-light'>
-					<Navbar isCutted={false} />
-					{isLoaded ? (
-						isFilmExist ? (
+			<div className='space-light'>
+				<Navbar isCutted={false} />
+				{isLoaded ? (
+					isFilmExist ? (
 						<>
 							<div className='film-page-image-fullhd-preview'>
 								<button className='film-play-btn'>
@@ -86,7 +70,11 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 							<div className='content-full-space-centered'>
 								<div className='film-page-container'>
 									<aside className='film-page-aside'>
-										<img src={infoOfChoosedFilm?.image} alt={`Poster for ${infoOfChoosedFilm?.title}`} />
+										<img
+											src={infoOfChoosedFilm?.image}
+											alt={`Poster for ${infoOfChoosedFilm?.title}`}
+											className='cursor-pointer'
+										/>
 										<button className='orange-btn-style'>
 											<PlayIcon className='h-4' />
 											Obejrzyj to
@@ -101,22 +89,30 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 										</button>
 										<section>
 											<b>Oryginalny język</b>
-											<span>---</span>
+											<span>{infoOfChoosedFilm?.originalLang}</span>
 										</section>
-										<section>
+										<section
+											style={{
+												display: infoOfChoosedFilm?.title === infoOfChoosedFilm?.originalTitle ? 'none' : 'flex',
+											}}>
 											<b>Oryginalny tytuł</b>
-											<span>---</span>
+											<span>{infoOfChoosedFilm?.originalTitle}</span>
 										</section>
-										<section>
+										<section
+											style={{
+												display: infoOfChoosedFilm?.budget === 1 ? 'none' : 'flex',
+											}}>
 											<b>Budżet</b>
 											<span>
 												{infoOfChoosedFilm?.budget.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 											</span>
 										</section>
-										<section>
+										<section
+											style={{
+												display: infoOfChoosedFilm?.profit === 1 ? 'none' : 'flex',
+											}}>
 											<b>Przychód</b>
 											<span>
-												{' '}
 												{infoOfChoosedFilm?.profit.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 											</span>
 										</section>
@@ -155,6 +151,16 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													</section>
 												</section>
 											</section>
+											<section className='film-page-main-film-categories-section'>
+												<ul>
+													{infoOfChoosedFilm?.categoryArr &&
+														infoOfChoosedFilm?.categoryArr.map((categories: string[] | string, index: number) => (
+															<Link href='#' key={index}>
+																<li>{categories}</li>
+															</Link>
+														))}
+												</ul>
+											</section>
 											<p className='film-page-film-description'>{infoOfChoosedFilm?.description}</p>
 										</section>
 									</main>
@@ -170,8 +176,8 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 						<div className='loader'></div>
 					</div>
 				)}
-      </div>
-    </>
+			</div>
+		</>
 	);
 };
 

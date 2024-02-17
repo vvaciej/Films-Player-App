@@ -44,7 +44,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 	return (
 		<div className='films-category-container'>
 			<section className='films-heading-section'>
-				<Link href={linkDirectPage} className='films-category-heading-text'>
+				<Link href={linkDirectPage} className='films-category-heading-text hover:underline !cursor-pointer'>
 					<span>{headingText}</span>
 					<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
 				</Link>

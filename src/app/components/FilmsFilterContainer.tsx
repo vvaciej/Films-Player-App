@@ -5,8 +5,8 @@ import { Footer } from '../layouts/Footer';
 import '../../style/css/filteres-page.css';
 import useDocumentTitle from '../helpers/PageTitle';
 import getCookie from '../helpers/GetCookie';
-import FilterFncs from '../helpers/FiltersFunction';
 import { useRouter } from 'next/navigation';
+import convertTitleToUrl from '../helpers/ConvertTitleToURL';
 
 import {
 	StarIcon,
@@ -33,6 +33,7 @@ type FilmData = {
 	description: string;
 	imgFullHd500: string;
 	releaseDate: string;
+	ref: number;
 };
 
 interface FilterPageProps {
@@ -139,7 +140,19 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							<section className='relative' ref={mostPopularDropdownRef}>
 								<button className={`films-category-filter-btn`} onClick={handleMostPopularClick}>
 									<Bars3BottomLeftIcon className='h-5' />
-									<span>{mostPopularChoosed === 'most_popular' ? 'Najbadziej popularne' : mostPopularChoosed === 'last_added' ? 'Ostatnio dodane' : mostPopularChoosed === 'highest_rating' ? 'Najlepiej oceniane' : mostPopularChoosed === 'highest_budget' ? 'Największy budżet' : mostPopularChoosed === 'highest_profit' ? 'Największy przychód' : ''}</span>
+									<span>
+										{mostPopularChoosed === 'most_popular'
+											? 'Najbadziej popularne'
+											: mostPopularChoosed === 'last_added'
+											? 'Ostatnio dodane'
+											: mostPopularChoosed === 'highest_rating'
+											? 'Najlepiej oceniane'
+											: mostPopularChoosed === 'highest_budget'
+											? 'Największy budżet'
+											: mostPopularChoosed === 'highest_profit'
+											? 'Największy przychód'
+											: ''}
+									</span>
 								</button>
 								<div className={`filter-dropdown ${mostPopularBtnClicked ? 'active' : ''} select-none`}>
 									<button
@@ -198,7 +211,15 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 									) : (
 										<ListBulletIcon className='h-5' />
 									)}
-									<span>{siatkaChoosed === 'Siatka' ? 'Siatka' : siatkaChoosed === 'Pejzaz' ? 'Pejzaż' : siatkaChoosed === 'Lista' ? 'Lista': ''}</span>
+									<span>
+										{siatkaChoosed === 'Siatka'
+											? 'Siatka'
+											: siatkaChoosed === 'Pejzaz'
+											? 'Pejzaż'
+											: siatkaChoosed === 'Lista'
+											? 'Lista'
+											: ''}
+									</span>
 								</button>
 								<div className={`filter-dropdown filter-siatka ${siatkaClicked ? 'active' : ''} select-none`}>
 									<button
@@ -234,7 +255,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							{mappingBy.map((film: FilmData, index: number) => (
 								<article className='film-container w-full' key={index}>
 									<section className='films-image-section'>
-										<Link href='#'>
+										<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}>
 											<img src={film.image} alt={`Poster for ${film.title}`} />
 											<button className='film-play-btn'>
 												<PlayIcon className='text-black h-5' />

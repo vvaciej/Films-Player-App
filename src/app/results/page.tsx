@@ -11,31 +11,15 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import normalizePolishCharacters from '../helpers/NormalizePolishSymbols';
+import convertTitleToUrl from '../helpers/ConvertTitleToURL';
 
-import {
-	popularFilms,
-	lastAddedFilms,
-	popularActionFilms,
-	popularComediaFilms,
-	popularHorrorFilms,
-	popularPolishFilms,
-	popularSerials,
-} from '../data/main-films';
-
-const allFilmsData = [
-	...popularFilms,
-	...lastAddedFilms,
-	...popularActionFilms,
-	...popularComediaFilms,
-	...popularHorrorFilms,
-	...popularPolishFilms,
-	...popularSerials,
-];
+import { allFilms } from '../data/films-data';
 
 type FilmData = {
 	image: string;
 	title: string;
 	rating: number;
+	ref: number;
 };
 
 const SearchPage: React.FC = () => {
@@ -70,19 +54,16 @@ const SearchPage: React.FC = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setIsLoaded(true);
-		}, 150)
+		}, 150);
 	}, []);
 
 	const handleSearch = (inputValue: string) => {
 		const inputVal = normalizePolishCharacters(inputValue.toLowerCase());
-		const uniqueTitles = new Set<string>();
 
-		const filteredData = allFilmsData.filter(film => {
+		const filteredData = allFilms.filter(film => {
 			const lowerCaseTitle = normalizePolishCharacters(film.title.toLowerCase());
 
-			return !uniqueTitles.has(lowerCaseTitle) && lowerCaseTitle.includes(inputVal)
-				? uniqueTitles.add(lowerCaseTitle)
-				: false;
+			return lowerCaseTitle.includes(inputVal);
 		});
 
 		setSearchResults(filteredData as FilmData[]);
@@ -135,18 +116,17 @@ const SearchPage: React.FC = () => {
 							<section className={`searched-films-wrapper ${whatSearchVal !== '' ? 'active' : ''}`}>
 								<h1 className='text-2xl font-semibold sm:text-3xl'>Search results for: {decodedQuery}</h1>
 								<section className='search-movies-section'>
-									<Link
-										href='#'
+									<section
 										className={`search-category-text flex items-center relative w-max ${
 											searchResults.length > 0 ? 'active' : ''
 										}`}>
-										<span className='text-2xl font-medium pl-4 leading-6'>Movies</span>
-									</Link>
+										<h1 className='text-2xl font-medium pl-4 leading-6'>Movies</h1>
+									</section>
 									<div className='films-wrapper'>
 										{searchResults.map((film: FilmData, index: number) => (
 											<article className='film-container w-full' key={index}>
 												<section className='films-image-section'>
-													<Link href='#'>
+													<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}>
 														<img src={film.image} alt={`Poster for ${film.title}`} />
 														<button className='film-play-btn'>
 															<PlayIcon className='text-black h-5' />
