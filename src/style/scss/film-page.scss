@@ -134,7 +134,21 @@
 			b {
 				font-weight: 500;
 				font-size: 15px;
-				margin-bottom: 0.2rem;
+				margin-bottom: .3rem;
+			}
+		}
+		.film-page-aside-filmed-in-section {
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				gap: .5rem;
+				margin-top: 5px;
+				li {
+					padding: 1px 9px;
+					outline: 1px solid var(--gray-4040);
+					font-size: 13px;
+					border-radius: 10px;
+				}
 			}
 		}
 	}

@@ -1605,7 +1605,19 @@ body {
 .film-page-container .film-page-aside section b {
   font-weight: 500;
   font-size: 15px;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
+}
+.film-page-container .film-page-aside .film-page-aside-filmed-in-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 5px;
+}
+.film-page-container .film-page-aside .film-page-aside-filmed-in-section ul li {
+  padding: 1px 9px;
+  outline: 1px solid var(--gray-4040);
+  font-size: 13px;
+  border-radius: 10px;
 }
 .film-page-container .film-page-main {
   font-size: 14.5px;
