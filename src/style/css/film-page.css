@@ -1498,7 +1498,7 @@ body {
 }
 .film-page-image-fullhd-preview .film-play-btn {
   position: absolute;
-  z-index: 6;
+  z-index: 4;
   height: 50px;
   width: 50px;
   left: 50%;
