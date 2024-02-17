@@ -1647,7 +1647,8 @@ body {
 }
 .film-page-container .film-page-main .film-page-main-film-categories-section ul {
   display: flex;
-  column-gap: 0.7rem;
+  flex-wrap: wrap;
+  gap: 0.7rem;
 }
 .film-page-container .film-page-main .film-page-main-film-categories-section ul li {
   padding: 7px 11px;

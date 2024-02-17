@@ -169,7 +169,8 @@
 		.film-page-main-film-categories-section {
 			ul {
 				display: flex;
-				column-gap: .7rem;
+				flex-wrap: wrap;
+				gap: .7rem;
 				li {
 					padding: 7px 11px;
 					background-color: var(--gray-6161);
