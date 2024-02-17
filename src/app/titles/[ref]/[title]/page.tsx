@@ -39,7 +39,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 	useEffect(() => {
 		setTimeout(() => {
 			setIsLoaded(true);
-		}, 400);
+		}, 200);
 	}, []);
 
 	const infoOfChoosedFilm = allFilmsData.find(film => convertTitleToUrl(film.title) === params.title);
@@ -67,10 +67,10 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 
 	return (
 		<>
-			{isFilmExist ? (
 				<div className='space-light'>
 					<Navbar isCutted={false} />
 					{isLoaded ? (
+						isFilmExist ? (
 						<>
 							<div className='film-page-image-fullhd-preview'>
 								<button className='film-play-btn'>
@@ -160,18 +160,18 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 									</main>
 								</div>
 							</div>
+							<Footer />
 						</>
 					) : (
-						<div className='loader-container flex justify-center w-full h-full'>
-							<div className='loader'></div>
-						</div>
-					)}
-					<Footer />
-				</div>
-			) : (
-				<SiteNotFound />
-			)}
-		</>
+						<SiteNotFound />
+					)
+				) : (
+					<div className='loader-container flex justify-center w-full h-full'>
+						<div className='loader'></div>
+					</div>
+				)}
+      </div>
+    </>
 	);
 };
 
