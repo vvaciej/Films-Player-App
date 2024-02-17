@@ -31,7 +31,7 @@ type FilmData = {
 	profit: number;
 	time: string;
 	description: string;
-	imgFullHd: string;
+	imgFullHd500: string;
 	releaseDate: string;
 };
 
@@ -264,7 +264,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								<article className='film-container-pejzaz w-full' key={index}>
 									<section className='films-image-section'>
 										<Link href='#'>
-											<img src={film.imgFullHd} alt={`Poster for ${film.title}`} />
+											<img src={film.imgFullHd500} alt={`Poster for ${film.title}`} />
 											<button className='film-play-btn'>
 												<PlayIcon className='text-black h-5' />
 											</button>

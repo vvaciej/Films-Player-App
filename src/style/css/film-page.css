@@ -1457,20 +1457,122 @@ body {
 
 .film-page-image-fullhd-preview {
   width: 100%;
-  background-color: red;
-  height: 31rem;
+  background-color: black;
+  height: 32rem;
   overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 1350px) {
+  .film-page-image-fullhd-preview {
+    height: 28rem;
+  }
+}
+@media (max-width: 950px) {
+  .film-page-image-fullhd-preview {
+    height: 24rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .film-page-image-fullhd-preview {
+    height: 20rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .film-page-image-fullhd-preview {
+    height: 16rem;
+  }
+}
+.film-page-image-fullhd-preview .film-page-image-blured {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+}
+.film-page-image-fullhd-preview .film-page-image-gradient {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 1%, transparent);
+}
+.film-page-image-fullhd-preview .film-play-btn {
+  position: absolute;
+  z-index: 6;
+  height: 50px;
+  width: 50px;
+  left: 50%;
+  top: 50%;
+}
+.film-page-image-fullhd-preview > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.3;
+}
+.film-page-image-fullhd-preview div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.film-page-image-fullhd-preview div img {
+  height: 100%;
+  width: 1240px;
+  object-fit: cover;
+  position: relative;
+  margin-top: 140px;
+  z-index: 3;
+  filter: brightness(78%);
+}
+@media screen and (max-width: 1350px) {
+  .film-page-image-fullhd-preview div img {
+    width: 87%;
+    margin-top: 130px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .film-page-image-fullhd-preview div img {
+    margin-top: 110px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .film-page-image-fullhd-preview div img {
+    width: 92%;
+  }
 }
 
 .film-page-container {
   width: 1240px;
-  height: 150vh;
+  height: max-content;
   position: relative;
   margin-bottom: 3rem;
   margin-top: 2rem;
   display: grid;
   column-gap: 3rem;
   grid-template-columns: 1fr 3fr;
+}
+@media screen and (max-width: 1350px) {
+  .film-page-container {
+    width: 87%;
+    column-gap: 1.5rem;
+  }
+}
+@media screen and (max-width: 340px) {
+  .film-page-container {
+    width: 92%;
+  }
+}
+@media (max-width: 950px) {
+  .film-page-container {
+    grid-template-columns: auto;
+  }
 }
 .film-page-container .film-page-aside {
   position: sticky;
@@ -1480,6 +1582,11 @@ body {
   row-gap: 0.9rem;
   height: max-content;
   width: 100%;
+}
+@media (max-width: 950px) {
+  .film-page-container .film-page-aside {
+    display: none;
+  }
 }
 .film-page-container .film-page-aside button {
   display: flex;
@@ -1509,11 +1616,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 3.2rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 950px) {
+  .film-page-container .film-page-main .film-page-main-top-info-heading-section {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .film-page-container .film-page-main .film-page-main-top-info-heading-section {
+    margin-bottom: 2rem;
+  }
 }
 .film-page-container .film-page-main .film-page-main-top-info-heading-section .film-page-film-title {
   font-size: 2.5rem;
-  line-height: 1.3;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  margin-right: 2rem;
+}
+@media screen and (max-width: 800px) {
+  .film-page-container .film-page-main .film-page-main-top-info-heading-section .film-page-film-title {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .film-page-container .film-page-main .film-page-main-top-info-heading-section .film-page-film-title {
+    font-size: 2rem;
+  }
 }
 .film-page-container .film-page-main .film-page-main-top-info-text-section {
   padding-bottom: 0.8rem;

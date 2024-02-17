@@ -34,9 +34,7 @@ interface pageProps {
 }
 
 const FilmPage: React.FC<pageProps> = ({ params }) => {
-	const infoOfChoosedFilm = allFilmsData.find(
-		film => convertTitleToUrl(film.title) === params.title
-	);
+	const infoOfChoosedFilm = allFilmsData.find(film => convertTitleToUrl(film.title) === params.title);
 
 	const extractYearFromReleaseDate = (releaseDate: string | undefined) => {
 		const yearRegex = /(\d{2})\/(\d{2})\/(\d{4})/;
@@ -53,10 +51,8 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 
 	useEffect(() => {
 		const checkIfPageExist = allFilmsData.some(
-			film =>
-				film.ref === Number(params.ref) && convertTitleToUrl(film.title) === params.title
+			film => film.ref === Number(params.ref) && convertTitleToUrl(film.title) === params.title
 		);
-
 
 		checkIfPageExist ? setIsFilmExist(true) : setIsFilmExist(false);
 	}, [params]);
@@ -66,7 +62,17 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 			{isFilmExist ? (
 				<div className='space-light'>
 					<Navbar isCutted={false} />
-					<div className='film-page-image-fullhd-preview'></div>
+					<div className='film-page-image-fullhd-preview'>
+						<button className='film-play-btn'>
+							<PlayIcon className='text-black h-6' />
+						</button>
+						<div className='film-page-image-gradient'></div>
+						<div className='film-page-image-blured'></div>
+						<img src={infoOfChoosedFilm?.imgFullHd1280} alt={`Image for ${infoOfChoosedFilm?.title}`} />
+						<div className='relative'>
+							<img src={infoOfChoosedFilm?.imgFullHd1280} alt={`Image for ${infoOfChoosedFilm?.title}`} />
+						</div>
+					</div>
 					<div className='content-full-space-centered'>
 						<div className='film-page-container'>
 							<aside className='film-page-aside'>
@@ -117,7 +123,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</section>
 										</section>
 										<section>
-											<section className='main-text-rating flex items-center'>
+											<section className='main-text-rating flex items-center min-w-max'>
 												<StarIcon
 													className='h-5 mr-2'
 													style={{
