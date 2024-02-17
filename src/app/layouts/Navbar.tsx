@@ -9,25 +9,8 @@ import getCookie from '../helpers/GetCookie';
 
 import React from 'react';
 
-import {
-	popularFilms,
-	lastAddedFilms,
-	popularActionFilms,
-	popularComediaFilms,
-	popularHorrorFilms,
-	popularPolishFilms,
-	popularSerials,
-} from '../data/main-films';
-
-const allFilmsData = [
-	...popularFilms,
-	...lastAddedFilms,
-	...popularActionFilms,
-	...popularComediaFilms,
-	...popularHorrorFilms,
-	...popularPolishFilms,
-	...popularSerials,
-];
+import { allFilms } from '../data/films-data';
+import convertTitleToUrl from '../helpers/ConvertTitleToURL';
 interface NavbarProps {
 	isCutted: boolean;
 }
@@ -37,6 +20,7 @@ type FilmData = {
 	title: string;
 	year: number;
 	type: string;
+	ref: number;
 };
 
 export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
@@ -47,8 +31,9 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 	const [isSearchResultsNull, setIsSearchResultsNull] = useState<boolean>(true);
 	const [whatSearchVal, setWhatSearchVal] = useState<string>('');
 
-	const dropdownRef = useRef<HTMLDivElement>(null);
-	const headerEl = useRef<HTMLElement>(null);
+	const mobileDropdownsRef = useRef<HTMLDivElement>(null);
+	const searchDropdownRef = useRef<HTMLDivElement>(null);
+	const searchInputRef = useRef<HTMLInputElement>(null);
 
 	const handleClickBtnDropdown = () => {
 		setIsClickedBtn(!isClickedBtn);
@@ -65,14 +50,11 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 	const handleSearchType = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const inputVal = normalizePolishCharacters(event.target.value.toLowerCase());
 		setWhatSearchVal(inputVal);
-		const uniqueTitles = new Set<string>();
 
-		const filteredData = allFilmsData.filter(film => {
+		const filteredData = allFilms.filter(film => {
 			const lowerCaseTitle = normalizePolishCharacters(film.title.toLowerCase());
 
-			return !uniqueTitles.has(lowerCaseTitle) && lowerCaseTitle.includes(inputVal)
-				? uniqueTitles.add(lowerCaseTitle)
-				: false;
+			return lowerCaseTitle.includes(inputVal);
 		});
 
 		setSearchResults(filteredData as FilmData[]);
@@ -86,25 +68,31 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 		}
 	};
 
-	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			if (
-				!dropdownRef.current?.contains(event.target as HTMLElement) &&
-				!headerEl.current?.contains(event.target as HTMLElement)
-			) {
-				setIsClickedBtn(false);
-			}
+	const handleDocumentClick = (event: MouseEvent) => {
+		const isInsideDropdown = (target: EventTarget | null, dropdownRef: React.RefObject<HTMLDivElement>) => {
+			return dropdownRef.current && dropdownRef.current.contains(target as Node);
 		};
 
-		document.addEventListener('click', handleClickOutside);
+		if (!isInsideDropdown(event.target, searchDropdownRef) && !isInsideDropdown(event.target, searchInputRef)) {
+			setIsTyped(false);
+		}
+
+		if (!isInsideDropdown(event.target, mobileDropdownsRef)) {
+			setIsClickedBtn(false);
+		}
+	};
+
+	useEffect(() => {
+		document.body.addEventListener('click', handleDocumentClick);
+
 		return () => {
-			document.removeEventListener('click', handleClickOutside);
+			document.body.removeEventListener('click', handleDocumentClick);
 		};
 	}, []);
 
 	return (
 		<>
-			<header className='header-container' ref={headerEl}>
+			<header className='header-container'>
 				<section className='header-left-section'>
 					<Link href='/' className='header-brand-text'>
 						VVACIEJ.APP
@@ -122,29 +110,31 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 									onKeyUp={handleSearchDirectPage}
 									value={whatSearchVal}
 									onChange={handleSearchType}
+									ref={searchInputRef}
 									onFocus={event => {
 										if (event.target.value.length > 0 && !isSearchResultsNull) {
 											setIsTyped(true);
 										}
 									}}
-									onBlur={() => setIsTyped(false)}
 								/>
 								<button type='submit' style={{ display: 'none' }}></button>
 							</form>
 							<Link href='/results' className='header-search-icon-link'>
 								<MagnifyingGlassIcon className='header-search-icon min-h-9 p-2' />
 							</Link>
-							<div className={`input-box-search ${isTyped ? 'active' : ''}`}>
+							<div className={`input-box-search ${isTyped ? 'active' : ''}`} ref={searchDropdownRef}>
 								<ul>
 									{searchResults.map((film: FilmData, index: number) => (
-										<li key={index}>
-											<img src={film.image} alt={film.title} />
-											<section>
-												<h1>{film.title}</h1>
-												<span>{film.year}</span>
-												<span>{film.type}</span>
-											</section>
-										</li>
+										<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`} key={index}>
+											<li>
+												<img src={film.image} alt={film.title} />
+												<section>
+													<h1>{film.title}</h1>
+													<span>{film.year}</span>
+													<span>{film.type}</span>
+												</section>
+											</li>
+										</Link>
 									))}
 								</ul>
 							</div>
@@ -191,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 				</nav>
 			</header>
 			<div
-				ref={dropdownRef}
+				ref={mobileDropdownsRef}
 				className={`typical-dropdown-style ${isClickedBtn ? 'active' : ''}`}
 				style={{
 					height: '6rem',
