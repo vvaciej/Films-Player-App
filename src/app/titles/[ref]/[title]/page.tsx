@@ -119,7 +119,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 										<section
 											className='film-page-aside-filmed-in-keywords-section'
 											style={{
-												display: !infoOfChoosedFilm?.filmedIn ? 'none' : 'flex',
+												display: infoOfChoosedFilm?.filmedIn.length === 0 ? 'none' : 'flex',
 											}}>
 											<b>Nakręcono w</b>
 											<ul>
@@ -134,9 +134,9 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 										<section
 											className='film-page-aside-filmed-in-keywords-section'
 											style={{
-												display: !infoOfChoosedFilm?.keywords ? 'none' : 'flex',
+												display: infoOfChoosedFilm?.keywords.length === 0 ? 'none' : 'flex',
 											}}>
-											<b>Nakręcono w</b>
+											<b>Słowa kluczowe</b>
 											<ul>
 												{infoOfChoosedFilm?.keywords &&
 													infoOfChoosedFilm?.keywords.map((keywords: string[] | string, index: number) => (
