@@ -1552,8 +1552,7 @@ body {
 
 .film-page-container {
   width: 1240px;
-  min-height: 100vh;
-  height: max-content;
+  height: 100%;
   position: relative;
   margin-bottom: 3rem;
   margin-top: 2rem;
@@ -1607,17 +1606,20 @@ body {
   font-size: 15px;
   margin-bottom: 0.3rem;
 }
-.film-page-container .film-page-aside .film-page-aside-filmed-in-section ul {
+.film-page-container .film-page-aside .film-page-aside-filmed-in-keywords-section ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 5px;
 }
-.film-page-container .film-page-aside .film-page-aside-filmed-in-section ul li {
-  padding: 1px 9px;
+.film-page-container .film-page-aside .film-page-aside-filmed-in-keywords-section ul li {
+  padding: 2px 10px;
   outline: 1px solid var(--gray-4040);
   font-size: 13px;
   border-radius: 10px;
+}
+.film-page-container .film-page-aside .film-page-aside-filmed-in-keywords-section ul li:hover {
+  text-decoration: underline;
 }
 .film-page-container .film-page-main {
   font-size: 14.5px;

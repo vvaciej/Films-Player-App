@@ -116,7 +116,8 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												{infoOfChoosedFilm?.profit.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 											</span>
 										</section>
-										<section className='film-page-aside-filmed-in-section'
+										<section
+											className='film-page-aside-filmed-in-keywords-section'
 											style={{
 												display: !infoOfChoosedFilm?.filmedIn ? 'none' : 'flex',
 											}}>
@@ -126,6 +127,21 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													infoOfChoosedFilm?.filmedIn.map((filmedIn: string[] | string, index: number) => (
 														<Link href='#' key={index}>
 															<li>{filmedIn}</li>
+														</Link>
+													))}
+											</ul>
+										</section>
+										<section
+											className='film-page-aside-filmed-in-keywords-section'
+											style={{
+												display: !infoOfChoosedFilm?.keywords ? 'none' : 'flex',
+											}}>
+											<b>Nakręcono w</b>
+											<ul>
+												{infoOfChoosedFilm?.keywords &&
+													infoOfChoosedFilm?.keywords.map((keywords: string[] | string, index: number) => (
+														<Link href='#' key={index}>
+															<li>{keywords}</li>
 														</Link>
 													))}
 											</ul>
