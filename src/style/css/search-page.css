@@ -517,6 +517,7 @@ html.dark {
   align-items: flex-end;
   column-gap: 1.55rem;
   height: 100%;
+  padding-left: 1rem;
   width: 100%;
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-miniature {
@@ -529,9 +530,9 @@ html.dark {
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-miniature {
   height: 19.1rem;
-  width: 13rem;
+  min-width: 13rem;
   border-radius: 0.3rem;
-  margin-left: 1rem;
+  margin-left: 0rem !important;
   cursor: pointer;
   transition: filter 0.3s;
 }
@@ -600,18 +601,15 @@ html.dark {
   text-decoration: underline;
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-film-description {
-  margin-bottom: 0.8rem;
-  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  max-height: 9.1rem !important;
+  overflow: hidden;
+  line-height: 1.75;
   font-size: 1rem;
-}
-@media screen and (max-width: 1350px) {
-  .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-film-description {
-    font-size: 0.95rem;
-  }
 }
 @media screen and (max-width: 1080px) {
   .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-film-description {
-    font-size: 0.9rem;
+    font-size: 1rem !important;
   }
 }
 @media screen and (max-width: 800px) {

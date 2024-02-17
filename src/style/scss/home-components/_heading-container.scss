@@ -102,6 +102,7 @@
 					align-items: flex-end;
 					column-gap: 1.55rem;
 					height: 100%;
+					padding-left: 1rem;
 					width: 100%;
 					.main-heading-miniature {
 						width: 13.1rem !important;
@@ -111,9 +112,9 @@
 					}
 					.main-heading-miniature {
 						height: 19.1rem;
-						width: 13rem;
+						min-width: 13rem;
 						border-radius: 0.3rem;
-						margin-left: 1rem;
+						margin-left: 0rem !important;
 						cursor: pointer;
 						transition: filter 0.3s;
 						&:hover {
@@ -165,14 +166,13 @@
 							}
 						}
 						.main-heading-left-text-film-description {
-							margin-bottom: 0.8rem;
-							line-height: 1.8;
+							margin-bottom: 0.5rem;
+							max-height: 9.1rem !important;
+							overflow: hidden;
+							line-height: 1.75;
 							font-size: 1rem;
-							@include tablet-1350 {
-								font-size: .95rem;
-							}
 							@include tablet-1080 {
-								font-size: .9rem;
+								font-size: 1rem !important;
 							}
 							@include tablet-800 {
 								display: none;
