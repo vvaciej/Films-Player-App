@@ -1537,7 +1537,7 @@ body {
 }
 @media screen and (max-width: 1350px) {
   .film-page-image-fullhd-preview div img {
-    width: 87%;
+    width: 93%;
     margin-top: 130px;
   }
 }
@@ -1564,13 +1564,8 @@ body {
 }
 @media screen and (max-width: 1350px) {
   .film-page-container {
-    width: 87%;
+    width: 93%;
     column-gap: 1.5rem;
-  }
-}
-@media screen and (max-width: 340px) {
-  .film-page-container {
-    width: 92%;
   }
 }
 @media (max-width: 950px) {
