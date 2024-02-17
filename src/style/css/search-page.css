@@ -1362,9 +1362,6 @@ body {
   transition: background-color 0.3s ease;
 }
 @media screen and (max-width: 500px) {
-  .rate-this-btn {
-    padding: 0.3rem 0;
-  }
   .rate-this-btn:hover {
     background-color: transparent;
   }

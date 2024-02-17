@@ -1362,9 +1362,6 @@ body {
   transition: background-color 0.3s ease;
 }
 @media screen and (max-width: 500px) {
-  .rate-this-btn {
-    padding: 0.3rem 0;
-  }
   .rate-this-btn:hover {
     background-color: transparent;
   }
@@ -1506,6 +1503,13 @@ body {
   width: 50px;
   left: 50%;
   top: 50%;
+  transform: translate(-50%);
+}
+@media screen and (max-width: 365px) {
+  .film-page-image-fullhd-preview .film-play-btn {
+    height: 45px;
+    width: 45px;
+  }
 }
 .film-page-image-fullhd-preview > img {
   width: 100%;

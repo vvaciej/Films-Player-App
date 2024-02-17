@@ -37,7 +37,7 @@
 		width: 100%;
 		position: absolute;
 		z-index: 5;
-		background: linear-gradient(to bottom, rgba(0, 0, 0, .6) 1%, transparent);
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 1%, transparent);
 	}
 	.film-play-btn {
 		position: absolute;
@@ -46,6 +46,11 @@
 		width: 50px;
 		left: 50%;
 		top: 50%;
+		transform: translate(-50%);
+		@include mobile-365 {
+			height: 45px;
+			width: 45px;
+		}
 	}
 	> img {
 		width: 100%;
@@ -53,7 +58,7 @@
 		object-fit: cover;
 		position: absolute;
 		z-index: 1;
-		opacity: .3;
+		opacity: 0.3;
 	}
 	div {
 		height: 100%;
