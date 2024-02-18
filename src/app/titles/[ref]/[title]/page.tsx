@@ -220,7 +220,10 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</section>
 											<p className='film-page-film-description'>{infoOfChoosedFilm?.description}</p>
 										</section>
-										<section>
+										<section
+											style={{
+												display: findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0 ? 'block' : 'none'
+											}}>
 											<section className='films-heading-section mt-6'>
 												<Link href={'#'} className='films-category-heading-text hover:underline !cursor-pointer'>
 													<span>Podobne filmy</span>
