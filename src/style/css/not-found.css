@@ -726,6 +726,7 @@ html.dark {
 }
 
 .film-container {
+  max-width: 190px;
   margin-top: 2rem;
   font-size: 13.5px;
 }

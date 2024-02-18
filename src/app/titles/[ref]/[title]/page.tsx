@@ -9,16 +9,33 @@ import convertTitleToUrl from '@/app/helpers/ConvertTitleToURL';
 import { ChevronRightIcon, StarIcon, PlayIcon, ChevronLeftIcon, PlusIcon, ShareIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 
-import { useEffect, useState } from 'react';
+import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { useEffect, useRef, useState } from 'react';
 
 import { allFilms } from '@/app/data/films-data';
-
 interface pageProps {
 	params: { ref: number; title: string };
 }
 
 const FilmPage: React.FC<pageProps> = ({ params }) => {
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+	const photosSwiperNextBtn = useRef<HTMLButtonElement>(null);
+	const photosSwiperPrevBtn = useRef<HTMLButtonElement>(null);
+	const [swiper, setSwiper] = useState<any>(null);
+
+	const handlePrevClick = () => {
+		swiper?.slidePrev?.();
+	};
+
+	const handleNextClick = () => {
+		swiper?.slideNext?.();
+	};
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -48,6 +65,16 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 
 		checkIfPageExist ? setIsFilmExist(true) : setIsFilmExist(false);
 	}, [params]);
+
+	const findSimilarFilms = (keywords: string[] | undefined, title: string | undefined) => {
+		const similarFilms = allFilms.filter(film => {
+			if (film.title !== title) {
+				return film.keywords.some(keyword => keywords?.includes(keyword));
+			}
+		});
+
+		return similarFilms;
+	};
 
 	return (
 		<>
@@ -192,6 +219,85 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												</ul>
 											</section>
 											<p className='film-page-film-description'>{infoOfChoosedFilm?.description}</p>
+										</section>
+										<section>
+											<section className='films-heading-section mt-6'>
+												<Link href={'#'} className='films-category-heading-text hover:underline !cursor-pointer'>
+													<span>Podobne filmy</span>
+													<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
+												</Link>
+												<section className='films-category-control-btns'>
+													<button
+														className={`films-category-control-btn`}
+														onClick={handlePrevClick}
+														ref={photosSwiperPrevBtn}>
+														<ChevronLeftIcon className='h-5' />
+													</button>
+													<button
+														className={`films-category-control-btn`}
+														onClick={handleNextClick}
+														ref={photosSwiperNextBtn}>
+														<ChevronRightIcon className='h-5' />
+													</button>
+												</section>
+											</section>
+											<div className='film-page-swiper-container'>
+												<Swiper
+													modules={[Navigation, Pagination, A11y]}
+													navigation={{ prevEl: photosSwiperPrevBtn.current, nextEl: photosSwiperNextBtn.current }}
+													className='film-page-main-similiar-films-section'
+													onSwiper={swiper => setSwiper(swiper)}
+													breakpoints={{
+														800: {
+															slidesPerView: 4,
+															slidesPerGroup: 4,
+															spaceBetween: 20,
+														},
+														420: {
+															slidesPerView: 3,
+															slidesPerGroup: 3,
+															spaceBetween: 10,
+														},
+														0: {
+															slidesPerView: 2,
+															slidesPerGroup: 2,
+															spaceBetween: 10,
+														},
+													}}>
+													{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).map(
+														(similarFilm, index: number) => (
+															<SwiperSlide key={index}>
+																<article className='film-container !max-w-64'>
+																	<section className='films-image-section'>
+																		<Link href={`/titles/${similarFilm?.ref}/${convertTitleToUrl(similarFilm?.title)}`}>
+																			<img src={similarFilm?.image} alt={`Poster for ${similarFilm?.title}`} />
+																			<button className='film-play-btn'>
+																				<PlayIcon className='text-black h-5' />
+																			</button>
+																		</Link>
+																	</section>
+																	<section className='films-text-section'>
+																		<section className='main-text-rating flex items-center'>
+																			<StarIcon
+																				className='h-5 mr-2'
+																				style={{
+																					color: 'var(--orange)',
+																				}}
+																			/>
+																			<span>{similarFilm?.rating} / 10</span>
+																		</section>
+																		<Link
+																			href={`/titles/${similarFilm?.ref}/${convertTitleToUrl(similarFilm?.title)}`}
+																			className='film-container-title'>
+																			{similarFilm?.title}
+																		</Link>
+																	</section>
+																</article>
+															</SwiperSlide>
+														)
+													)}
+												</Swiper>
+											</div>
 										</section>
 									</main>
 								</div>

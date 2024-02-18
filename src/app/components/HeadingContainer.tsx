@@ -155,7 +155,7 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes }) => (
 	<section className='main-heading-right-container'>
 		<h1 className='main-heading-right-top-text'>Następne</h1>
 		<div className='main-heading-right-films-container'>
-			{sidebarFilmsData.slice(...currentIndexes).map((film: FilmData, index: number) => (
+			{sidebarFilmsData.slice(...currentIndexes).map((film: any, index: number) => (
 				<div key={index} className='main-heading-right-film'>
 					<section className={'main-heading-right-film-miniature-section'}>
 						<Link

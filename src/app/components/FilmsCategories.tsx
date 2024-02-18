@@ -25,6 +25,14 @@ type FilmData = {
 	image: string;
 	title: string;
 	rating: number;
+	addedDate: string;
+	filmwebPopularity: number;
+	budget: number;
+	profit: number;
+	time: string;
+	description: string;
+	imgFullHd500: string;
+	releaseDate: string;
 	ref: number;
 };
 
