@@ -163,7 +163,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			margin-bottom: 1.3rem;
+			margin-bottom: 1rem;
 			@include tablet-950 {
 				flex-direction: column;
 				align-items: flex-start;
@@ -197,7 +197,7 @@
 					border-radius: 1rem;
 				}
 			}
-			margin-bottom: 1.2rem;
+			margin-bottom: 1rem;
 		}
 		.film-page-opinion-ab-film {
 			margin-top: 1.5rem;
@@ -358,6 +358,10 @@
 								position: absolute;
 								bottom: 13px;
 								left: 13px;
+								@include tablet-700 {
+									bottom: 9px;
+									left: 9px;
+								}
 							}
 						}
 					}
