@@ -1753,6 +1753,19 @@ body {
   flex-direction: column;
   row-gap: 5px;
 }
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container > section > section .film-page-opinions-stars-icons {
+  height: 22px;
+}
+@media screen and (max-width: 340px) {
+  .film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container > section > section .film-page-opinions-stars-icons {
+    height: 17px;
+  }
+}
+@media screen and (max-width: 260px) {
+  .film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container > section > section .film-page-opinions-stars-icons {
+    height: 15px;
+  }
+}
 @media screen and (max-width: 700px) {
   .film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container > section > section {
     padding: 7px 0px;

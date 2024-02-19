@@ -250,6 +250,15 @@
 						display: flex;
 						flex-direction: column;
 						row-gap: 5px;
+						.film-page-opinions-stars-icons {
+							height: 22px;
+							@include mobile-340 {
+								height: 17px;
+							}
+							@include mobile-260 {
+								height: 15px;
+							}
+						}
 						@include tablet-700 {
 							padding: 7px 0px;
 						}
@@ -288,7 +297,7 @@
 				h1 {
 					font-size: 1.2rem;
 					font-weight: 500;
-					padding: 0px .7rem;
+					padding: 0px 0.7rem;
 					@include mobile-400 {
 						font-size: 1.1rem;
 					}

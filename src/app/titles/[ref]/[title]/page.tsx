@@ -260,7 +260,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 														<section className='flex'>
 															{Array.from({ length: 10 }).map((_, index: number) => (
 																<StarIcon
-																	className='sm:h-6 h-4 cursor-pointer sm:px-1 pr-1'
+																	className='film-page-opinions-stars-icons cursor-pointer sm:px-1 pr-1'
 																	key={index}
 																	onMouseOver={() => setHoveredStars(index + 1)}
 																	onMouseOut={() => setHoveredStars(null)}
