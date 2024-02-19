@@ -1823,10 +1823,69 @@ body {
     font-size: 14px;
   }
 }
-.film-page-container .film-page-main .film-page-swiper-container {
-  width: 100%;
+.film-page-container .film-page-main .film-page-sources-container {
+  margin-top: 2rem;
+}
+.film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container {
+  margin-top: 1.5rem;
+  display: flex;
+  column-gap: 1.2rem;
+}
+@media screen and (max-width: 700px) {
+  .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container {
+    column-gap: 0.9rem;
+  }
+}
+@media screen and (max-width: 365px) {
+  .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+}
+.film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container section {
+  position: relative;
+  max-width: 270px;
   height: max-content;
 }
-.film-page-container .film-page-main .film-page-swiper-container .film-page-main-similiar-films-section {
+@media screen and (max-width: 700px) {
+  .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container section {
+    max-width: 100%;
+  }
+}
+.film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article section {
+  cursor: pointer;
+}
+.film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article section .film-page-sources-gradient-image {
+  width: 100%;
   height: 100%;
+  position: absolute;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 1%, transparent);
+}
+.film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article section .film-page-sources-imageontext {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  font-weight: 400;
+  font-size: 14px;
+}
+.film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article section .film-page-sources-imageontext section {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  position: absolute;
+  bottom: 13px;
+  left: 13px;
+}
+.film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article a {
+  font-size: 14px;
+  font-weight: 500;
+}
+.film-page-container .film-page-main .film-page-alike-films-container {
+  width: 100%;
+  height: max-content;
 }/*# sourceMappingURL=film-page.css.map */

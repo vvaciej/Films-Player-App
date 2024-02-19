@@ -6,7 +6,18 @@ import { Footer } from '@/app/layouts/Footer';
 import '../../../../style/css/film-page.css';
 import SiteNotFound from '@/app/[...not_found]/page';
 import convertTitleToUrl from '@/app/helpers/ConvertTitleToURL';
-import { ChevronRightIcon, StarIcon, PlayIcon, ChevronLeftIcon, PlusIcon, ShareIcon } from '@heroicons/react/24/solid';
+import {
+	ChevronRightIcon,
+	StarIcon,
+	PlayIcon,
+	ChevronLeftIcon,
+	PlusIcon,
+	ShareIcon,
+	Bars3BottomLeftIcon,
+	AdjustmentsHorizontalIcon,
+	ListBulletIcon,
+	PlayCircleIcon,
+} from '@heroicons/react/24/solid';
 import Link from 'next/link';
 
 import { Navigation, Pagination, A11y } from 'swiper/modules';
@@ -244,7 +255,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 														</span>
 													</section>
 													<button className='btn-style-outlined ml-4'>
-														<StarIcon className='h-4' />
+														<Bars3BottomLeftIcon className='h-4' />
 														Najnowsze
 													</button>
 												</section>
@@ -286,18 +297,64 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											<div className='film-page-opinion-must-be-logged-container'>
 												<h1>Wymagana jest rejestracja</h1>
 												<p>
-													Please <Link href='/login' className='orange-link'>login</Link> or <Link href='/register' className='orange-link'>create account</Link> to add a review
+													Please{' '}
+													<Link href='/login' className='orange-link'>
+														login
+													</Link>{' '}
+													or{' '}
+													<Link href='/register' className='orange-link'>
+														create account
+													</Link>{' '}
+													to add a review
 												</p>
 											</div>
 										</section>
-										<section
+										<div className='film-page-sources-container'>
+											<section className='films-heading-section !justify-normal items-center gap-x-2'>
+												<h1 className='films-category-heading-text hover:underline !cursor-pointer'>Źródła</h1>
+												<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
+											</section>
+											<section className='film-page-sources-landscapes-container'>
+												<article className='mb-2'>
+													<section>
+														<div className='film-page-sources-gradient-image'></div>
+														<div className='film-page-sources-imageontext'>
+															<section>
+																<PlayCircleIcon className='h-6' />
+																<span>Full Video</span>
+															</section>
+														</div>
+														<img src={infoOfChoosedFilm?.imgFullHd500} alt={`Poster for ${infoOfChoosedFilm?.title}`} />
+													</section>
+													<Link href='#' className='hover:underline font-medium'>
+														Cały film, Lektor Polski
+													</Link>
+												</article>
+												<article>
+													<section>
+														<div className='film-page-sources-gradient-image'></div>
+														<div className='film-page-sources-imageontext'>
+															<section>
+																<PlayCircleIcon className='h-6' />
+																<span>Trailer</span>
+															</section>
+														</div>
+														<img src={infoOfChoosedFilm?.imgFullHd500} alt={`Poster for ${infoOfChoosedFilm?.title}`} />
+													</section>
+													<Link href='#' className='hover:underline font-medium'>
+														Zwiastun
+													</Link>
+												</article>
+											</section>
+										</div>
+										<div
 											style={{
 												display:
 													findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
 														? 'block'
 														: 'none',
 											}}>
-											<section className='films-heading-section mt-6'>
+											<section className='films-heading-section mt-10'>
 												<Link href={'#'} className='films-category-heading-text hover:underline !cursor-pointer'>
 													<span>Podobne filmy</span>
 													<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
@@ -317,11 +374,10 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													</button>
 												</section>
 											</section>
-											<div className='film-page-swiper-container'>
+											<div className='film-page-alike-films-container'>
 												<Swiper
 													modules={[Navigation, Pagination, A11y]}
 													navigation={{ prevEl: photosSwiperPrevBtn.current, nextEl: photosSwiperNextBtn.current }}
-													className='film-page-main-similiar-films-section'
 													onSwiper={swiper => setSwiper(swiper)}
 													breakpoints={{
 														1200: {
@@ -382,7 +438,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													)}
 												</Swiper>
 											</div>
-										</section>
+										</div>
 									</main>
 								</div>
 							</div>
