@@ -29,6 +29,9 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 	const photosSwiperPrevBtn = useRef<HTMLButtonElement>(null);
 	const [swiper, setSwiper] = useState<any>(null);
 
+	const [isHoveredStar, setHoveredStars] = useState<number | null>(null);
+	const [indexStars, setIndexStars] = useState<number | null>(null);
+
 	const handlePrevClick = () => {
 		swiper?.slidePrev?.();
 	};
@@ -220,9 +223,79 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</section>
 											<p className='film-page-film-description'>{infoOfChoosedFilm?.description}</p>
 										</section>
+										<section className='film-page-opinion-ab-film'>
+											<section className='films-heading-section'>
+												<h1 className='films-category-heading-text hover:underline !cursor-pointer'>Recenzje</h1>
+												<section className='flex'>
+													<section className='main-text-rating flex items-center min-w-max'>
+														<StarIcon
+															className='h-5 mr-2'
+															style={{
+																color: 'var(--orange)',
+															}}
+														/>
+														<span>{infoOfChoosedFilm?.rating} / 10</span>
+														<span
+															className='film-list-rating-separate-symbol ml-3'
+															style={{
+																color: 'var(--gray-5050)',
+															}}>
+															|
+														</span>
+													</section>
+													<button className='btn-style-outlined ml-4'>
+														<StarIcon className='h-4' />
+														Najnowsze
+													</button>
+												</section>
+											</section>
+											<div className='film-page-opinion-ab-film-review-container'>
+												<section>
+													<img
+														src='https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/default-profile-picture-grey-male-icon.png'
+														alt=''
+													/>
+													<section>
+														<span>Review as</span>
+														<section className='flex'>
+															{Array.from({ length: 10 }).map((_, index: number) => (
+																<StarIcon
+																	className='sm:h-6 h-4 cursor-pointer sm:px-1 pr-1'
+																	key={index}
+																	onMouseOver={() => setHoveredStars(index + 1)}
+																	onMouseOut={() => setHoveredStars(null)}
+																	onClick={() => setIndexStars(index + 1)}
+																	style={{
+																		color:
+																			(!indexStars &&
+																				!isHoveredStar &&
+																				infoOfChoosedFilm &&
+																				index < Number(String(infoOfChoosedFilm?.rating).slice(0, 1))) ||
+																			(isHoveredStar && isHoveredStar > index) ||
+																			(indexStars && !isHoveredStar && indexStars >= index + 1)
+																				? 'var(--orange)'
+																				: 'var(--gray-5050)',
+																	}}
+																/>
+															))}
+														</section>
+													</section>
+												</section>
+												<button>Dodaj recenzję</button>
+											</div>
+											<div className='film-page-opinion-must-be-logged-container'>
+												<h1>Wymagana jest rejestracja</h1>
+												<p>
+													Please <Link href='/login' className='orange-link'>login</Link> or <Link href='/register' className='orange-link'>create account</Link> to add a review
+												</p>
+											</div>
+										</section>
 										<section
 											style={{
-												display: findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0 ? 'block' : 'none'
+												display:
+													findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
+														? 'block'
+														: 'none',
 											}}>
 											<section className='films-heading-section mt-6'>
 												<Link href={'#'} className='films-category-heading-text hover:underline !cursor-pointer'>
@@ -251,20 +324,28 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													className='film-page-main-similiar-films-section'
 													onSwiper={swiper => setSwiper(swiper)}
 													breakpoints={{
-														800: {
+														1200: {
+															slidesPerView: 5,
+															slidesPerGroup: 5,
+															spaceBetween: 10,
+														},
+														650: {
 															slidesPerView: 4,
 															slidesPerGroup: 4,
-															spaceBetween: 20,
+															spaceBetween: 10,
+															cssMode: true,
 														},
 														420: {
 															slidesPerView: 3,
 															slidesPerGroup: 3,
 															spaceBetween: 10,
+															cssMode: true,
 														},
 														0: {
 															slidesPerView: 2,
 															slidesPerGroup: 2,
 															spaceBetween: 10,
+															cssMode: true,
 														},
 													}}>
 													{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).map(

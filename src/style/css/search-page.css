@@ -6,6 +6,7 @@ html.dark {
   --orange: #f27318;
   --orange-opacited-15: #fe6a0015;
   --dark-orange: #d66819;
+  --dark-0f0f: #0f0f0f;
   --dark-121212: #121212;
   --gray-2222: #222222;
   --gray-3232: #323232;
@@ -64,6 +65,28 @@ html.dark {
   outline-color: var(--dark-orange);
   background-color: var(--orange-opacited-15);
   transition: 0.1s;
+}
+
+.btn-style-outlined {
+  padding: 5px 10px;
+  color: var(--white);
+  font-size: 1rem;
+  outline: 1px solid var(--gray-5050);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  height: max-content;
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.btn-style-outlined:hover {
+  background-color: var(--btn-opacited-hover-bg);
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
 }
 
 .header-container {

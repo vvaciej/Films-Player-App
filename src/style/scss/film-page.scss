@@ -96,7 +96,7 @@
 	margin-top: 2rem;
 	display: grid;
 	column-gap: 2.7rem;
-	grid-template-columns: minmax(5rem, 16rem) minmax(35rem, 60rem);
+	grid-template-columns: minmax(5rem, 17rem) minmax(35rem, 60rem);
 	@include tablet-1350 {
 		width: 93%;
 		column-gap: 2rem;
@@ -198,6 +198,110 @@
 				}
 			}
 			margin-bottom: 1.2rem;
+		}
+		.film-page-opinion-ab-film {
+			margin-top: 1.5rem;
+			margin-bottom: 3rem;
+			.films-heading-section {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 1rem;
+				width: 100%;
+				.main-text-rating {
+					@include mobile-500 {
+						display: none;
+					}
+				}
+				.btn-style-outlined {
+					@include mobile-290 {
+						display: none;
+					}
+				}
+			}
+			.film-page-opinion-ab-film-review-container {
+				width: 100%;
+				height: max-content;
+				border-radius: 4px;
+				background-color: var(--dark-0f0f);
+				border: 1px solid var(--gray-3232);
+				display: flex;
+				padding: 0.9rem 1.5rem;
+				align-items: center;
+				justify-content: space-between;
+				@include tablet-700 {
+					flex-direction: column;
+					align-items: flex-start;
+					row-gap: 0.7rem;
+					padding: 0.8rem 1rem;
+				}
+
+				> section {
+					display: flex;
+					column-gap: 1.5rem;
+					@include mobile-500 {
+						flex-direction: column;
+						row-gap: 0.4rem;
+					}
+					> section {
+						padding: 2px 0px;
+						color: var(--light-gray-d0d0);
+						font-size: 13px;
+						display: flex;
+						flex-direction: column;
+						row-gap: 5px;
+						@include tablet-700 {
+							padding: 7px 0px;
+						}
+					}
+					img {
+						height: max-content;
+						width: 55px;
+					}
+				}
+				button {
+					padding: 7.5px 1rem;
+					background-color: var(--gray-6161);
+					filter: brightness(60%);
+					font-weight: 500;
+					font-size: 13px;
+					border-radius: 5px;
+					cursor: not-allowed;
+				}
+				button.logged {
+					filter: brightness(100%);
+					cursor: pointer;
+				}
+			}
+			.film-page-opinion-must-be-logged-container {
+				width: 95%;
+				margin: 0 auto;
+				height: max-content;
+				padding: 1.5rem 0px;
+				border: 2px dotted var(--gray-3232);
+				border-radius: 3px;
+				margin-top: 2rem;
+				@include flex-center;
+				flex-direction: column;
+				row-gap: 6px;
+				text-align: center;
+				h1 {
+					font-size: 1.2rem;
+					font-weight: 500;
+					padding: 0px .7rem;
+					@include mobile-400 {
+						font-size: 1.1rem;
+					}
+				}
+				p {
+					color: var(--light-gray-d0d0);
+					font-size: 15px;
+					padding: 0px 1rem;
+					@include mobile-400 {
+						font-size: 14px;
+					}
+				}
+			}
 		}
 		.film-page-swiper-container {
 			width: 100%;

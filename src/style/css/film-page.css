@@ -6,6 +6,7 @@ html.dark {
   --orange: #f27318;
   --orange-opacited-15: #fe6a0015;
   --dark-orange: #d66819;
+  --dark-0f0f: #0f0f0f;
   --dark-121212: #121212;
   --gray-2222: #222222;
   --gray-3232: #323232;
@@ -64,6 +65,28 @@ html.dark {
   outline-color: var(--dark-orange);
   background-color: var(--orange-opacited-15);
   transition: 0.1s;
+}
+
+.btn-style-outlined {
+  padding: 5px 10px;
+  color: var(--white);
+  font-size: 1rem;
+  outline: 1px solid var(--gray-5050);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  height: max-content;
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.btn-style-outlined:hover {
+  background-color: var(--btn-opacited-hover-bg);
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
 }
 
 .header-container {
@@ -1557,7 +1580,7 @@ body {
   margin-top: 2rem;
   display: grid;
   column-gap: 2.7rem;
-  grid-template-columns: minmax(5rem, 16rem) minmax(35rem, 60rem);
+  grid-template-columns: minmax(5rem, 17rem) minmax(35rem, 60rem);
 }
 @media screen and (max-width: 1350px) {
   .film-page-container {
@@ -1671,6 +1694,121 @@ body {
   background-color: var(--gray-6161);
   font-size: 13px;
   border-radius: 1rem;
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .films-heading-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+@media screen and (max-width: 500px) {
+  .film-page-container .film-page-main .film-page-opinion-ab-film .films-heading-section .main-text-rating {
+    display: none;
+  }
+}
+@media screen and (max-width: 290px) {
+  .film-page-container .film-page-main .film-page-opinion-ab-film .films-heading-section .btn-style-outlined {
+    display: none;
+  }
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container {
+  width: 100%;
+  height: max-content;
+  border-radius: 4px;
+  background-color: var(--dark-0f0f);
+  border: 1px solid var(--gray-3232);
+  display: flex;
+  padding: 0.9rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 700px) {
+  .film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 0.7rem;
+    padding: 0.8rem 1rem;
+  }
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container > section {
+  display: flex;
+  column-gap: 1.5rem;
+}
+@media screen and (max-width: 500px) {
+  .film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container > section {
+    flex-direction: column;
+    row-gap: 0.4rem;
+  }
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container > section > section {
+  padding: 2px 0px;
+  color: var(--light-gray-d0d0);
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+@media screen and (max-width: 700px) {
+  .film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container > section > section {
+    padding: 7px 0px;
+  }
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container > section img {
+  height: max-content;
+  width: 55px;
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container button {
+  padding: 7.5px 1rem;
+  background-color: var(--gray-6161);
+  filter: brightness(60%);
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-ab-film-review-container button.logged {
+  filter: brightness(100%);
+  cursor: pointer;
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-must-be-logged-container {
+  width: 95%;
+  margin: 0 auto;
+  height: max-content;
+  padding: 1.5rem 0px;
+  border: 2px dotted var(--gray-3232);
+  border-radius: 3px;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 6px;
+  text-align: center;
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-must-be-logged-container h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0px 0.7rem;
+}
+@media screen and (max-width: 400px) {
+  .film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-must-be-logged-container h1 {
+    font-size: 1.1rem;
+  }
+}
+.film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-must-be-logged-container p {
+  color: var(--light-gray-d0d0);
+  font-size: 15px;
+  padding: 0px 1rem;
+}
+@media screen and (max-width: 400px) {
+  .film-page-container .film-page-main .film-page-opinion-ab-film .film-page-opinion-must-be-logged-container p {
+    font-size: 14px;
+  }
 }
 .film-page-container .film-page-main .film-page-swiper-container {
   width: 100%;
