@@ -315,30 +315,29 @@
 		.film-page-sources-container {
 			margin-top: 2rem;
 			.film-page-sources-landscapes-container {
+				width: 100%;
+				height: max-content;
 				margin-top: 1.5rem;
-				display: flex;
 				column-gap: 1.2rem;
 				@include tablet-700 {
 					column-gap: 0.9rem;
 				}
-				@include mobile-365 {
-					flex-direction: column;
-					row-gap: 1rem;
-				}
 				section {
 					position: relative;
-					max-width: 270px;
-					height: max-content;
-					@include tablet-700 {
-						max-width: 100%;
-					}
 				}
 				article {
+					width: 100%;
 					display: flex;
 					flex-direction: column;
 					row-gap: 8px;
+					transition: filter 0.2s;
+					&:hover {
+						filter: brightness(84%);
+						transition: filter 0.2s;
+					}
 					section {
 						cursor: pointer;
+						width: 100%;
 						.film-page-sources-gradient-image {
 							width: 100%;
 							height: 100%;
@@ -368,6 +367,7 @@
 					a {
 						font-size: 14px;
 						font-weight: 500;
+						padding-right: .6rem;
 					}
 				}
 			}

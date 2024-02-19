@@ -1827,8 +1827,9 @@ body {
   margin-top: 2rem;
 }
 .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container {
+  width: 100%;
+  height: max-content;
   margin-top: 1.5rem;
-  display: flex;
   column-gap: 1.2rem;
 }
 @media screen and (max-width: 700px) {
@@ -1836,29 +1837,23 @@ body {
     column-gap: 0.9rem;
   }
 }
-@media screen and (max-width: 365px) {
-  .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container {
-    flex-direction: column;
-    row-gap: 1rem;
-  }
-}
 .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container section {
   position: relative;
-  max-width: 270px;
-  height: max-content;
-}
-@media screen and (max-width: 700px) {
-  .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container section {
-    max-width: 100%;
-  }
 }
 .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article {
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 8px;
+  transition: filter 0.2s;
+}
+.film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article:hover {
+  filter: brightness(84%);
+  transition: filter 0.2s;
 }
 .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article section {
   cursor: pointer;
+  width: 100%;
 }
 .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article section .film-page-sources-gradient-image {
   width: 100%;
@@ -1890,6 +1885,7 @@ body {
 .film-page-container .film-page-main .film-page-sources-container .film-page-sources-landscapes-container article a {
   font-size: 14px;
   font-weight: 500;
+  padding-right: 0.6rem;
 }
 .film-page-container .film-page-main .film-page-alike-films-container {
   width: 100%;

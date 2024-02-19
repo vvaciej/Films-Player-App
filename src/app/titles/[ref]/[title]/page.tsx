@@ -36,19 +36,31 @@ interface pageProps {
 const FilmPage: React.FC<pageProps> = ({ params }) => {
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
-	const photosSwiperNextBtn = useRef<HTMLButtonElement>(null);
-	const photosSwiperPrevBtn = useRef<HTMLButtonElement>(null);
-	const [swiper, setSwiper] = useState<any>(null);
+	const alikeFilmsSwiperNextBtn = useRef<HTMLButtonElement>(null);
+	const alikeFilmsSwiperPrevtn = useRef<HTMLButtonElement>(null);
+	const sourcesSwiperNextBtn = useRef<HTMLButtonElement>(null);
+	const sourcesSwiperPrevBtn = useRef<HTMLButtonElement>(null);
+
+	const [swiperAlikeFilms, setSwiperAlikeFilms] = useState<any>(null);
+	const [swiperSources, setSwiperSources] = useState<any>(null);
 
 	const [isHoveredStar, setHoveredStars] = useState<number | null>(null);
 	const [indexStars, setIndexStars] = useState<number | null>(null);
 
-	const handlePrevClick = () => {
-		swiper?.slidePrev?.();
+	const handlePrevClickAlikeSwiper = () => {
+		swiperAlikeFilms?.slidePrev?.();
 	};
 
-	const handleNextClick = () => {
-		swiper?.slideNext?.();
+	const handleNextClickAlikeSwiper = () => {
+		swiperAlikeFilms?.slideNext?.();
+	};
+
+	const handlePrevClickSourcesSwiper = () => {
+		swiperSources?.slidePrev?.();
+	};
+
+	const handleNextClickSourcesSwiper = () => {
+		swiperSources?.slideNext?.();
 	};
 
 	useEffect(() => {
@@ -264,7 +276,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												<section>
 													<img
 														src='https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/default-profile-picture-grey-male-icon.png'
-														alt=''
+														alt={`Poster for ${infoOfChoosedFilm?.title}`}
 													/>
 													<section>
 														<span>Review as</span>
@@ -297,54 +309,104 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											<div className='film-page-opinion-must-be-logged-container'>
 												<h1>Wymagana jest rejestracja</h1>
 												<p>
-													Please{' '}
+													Please
 													<Link href='/login' className='orange-link'>
 														login
-													</Link>{' '}
-													or{' '}
+													</Link>
+													or
 													<Link href='/register' className='orange-link'>
 														create account
-													</Link>{' '}
+													</Link>
 													to add a review
 												</p>
 											</div>
 										</section>
 										<div className='film-page-sources-container'>
-											<section className='films-heading-section !justify-normal items-center gap-x-2'>
-												<h1 className='films-category-heading-text hover:underline !cursor-pointer'>Źródła</h1>
-												<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
+											<section className='films-heading-section'>
+												<section className='flex items-center gap-x-2'>
+													<h1 className='films-category-heading-text hover:underline !cursor-pointer'>Źródła</h1>
+													<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
+												</section>
+												<section className='films-category-control-btns'>
+													<button
+														className={`films-category-control-btn`}
+														onClick={handlePrevClickSourcesSwiper}
+														ref={sourcesSwiperPrevBtn}>
+														<ChevronLeftIcon className='h-5' />
+													</button>
+													<button
+														className={`films-category-control-btn`}
+														onClick={handleNextClickSourcesSwiper}
+														ref={sourcesSwiperNextBtn}>
+														<ChevronRightIcon className='h-5' />
+													</button>
+												</section>
 											</section>
 											<section className='film-page-sources-landscapes-container'>
-												<article className='mb-2'>
-													<section>
-														<div className='film-page-sources-gradient-image'></div>
-														<div className='film-page-sources-imageontext'>
+												<Swiper
+													modules={[Navigation, Pagination, A11y]}
+													navigation={{ prevEl: sourcesSwiperPrevBtn.current, nextEl: sourcesSwiperNextBtn.current }}
+													breakpoints={{
+														700: {
+															slidesPerGroup: 3,
+															slidesPerView: 3,
+															spaceBetween: 20,
+														},
+														270: {
+															slidesPerGroup: 2,
+															slidesPerView: 2,
+															spaceBetween: 10,
+															cssMode: true,
+														},
+														0: {
+															slidesPerGroup: 1,
+															slidesPerView: 1,
+															spaceBetween: 10,
+															cssMode: true,
+														},
+													}}
+													onSwiper={swiper => setSwiperSources(swiper)}>
+													<SwiperSlide>
+														<article className='mb-2'>
 															<section>
-																<PlayCircleIcon className='h-6' />
-																<span>Full Video</span>
+																<div className='film-page-sources-gradient-image'></div>
+																<div className='film-page-sources-imageontext'>
+																	<section>
+																		<PlayCircleIcon className='h-6' />
+																		<span>Full Video</span>
+																	</section>
+																</div>
+																<img
+																	src={infoOfChoosedFilm?.imgFullHd500}
+																	alt={`Poster for ${infoOfChoosedFilm?.title}`}
+																/>
 															</section>
-														</div>
-														<img src={infoOfChoosedFilm?.imgFullHd500} alt={`Poster for ${infoOfChoosedFilm?.title}`} />
-													</section>
-													<Link href='#' className='hover:underline font-medium'>
-														Cały film, Lektor Polski
-													</Link>
-												</article>
-												<article>
-													<section>
-														<div className='film-page-sources-gradient-image'></div>
-														<div className='film-page-sources-imageontext'>
+															<Link href='#' className='hover:underline font-medium'>
+																Cały film, Lektor Polski
+															</Link>
+														</article>
+													</SwiperSlide>
+													<SwiperSlide>
+														<article>
 															<section>
-																<PlayCircleIcon className='h-6' />
-																<span>Trailer</span>
+																<div className='film-page-sources-gradient-image'></div>
+																<div className='film-page-sources-imageontext'>
+																	<section>
+																		<PlayCircleIcon className='h-6' />
+																		<span>Trailer</span>
+																	</section>
+																</div>
+																<img
+																	src={infoOfChoosedFilm?.imgFullHd500}
+																	alt={`Poster for ${infoOfChoosedFilm?.title}`}
+																/>
 															</section>
-														</div>
-														<img src={infoOfChoosedFilm?.imgFullHd500} alt={`Poster for ${infoOfChoosedFilm?.title}`} />
-													</section>
-													<Link href='#' className='hover:underline font-medium'>
-														Zwiastun
-													</Link>
-												</article>
+															<Link href='#' className='hover:underline font-medium'>
+																Zwiastun
+															</Link>
+														</article>
+													</SwiperSlide>
+												</Swiper>
 											</section>
 										</div>
 										<div
@@ -362,14 +424,14 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												<section className='films-category-control-btns'>
 													<button
 														className={`films-category-control-btn`}
-														onClick={handlePrevClick}
-														ref={photosSwiperPrevBtn}>
+														onClick={handlePrevClickAlikeSwiper}
+														ref={alikeFilmsSwiperPrevtn}>
 														<ChevronLeftIcon className='h-5' />
 													</button>
 													<button
 														className={`films-category-control-btn`}
-														onClick={handleNextClick}
-														ref={photosSwiperNextBtn}>
+														onClick={handleNextClickAlikeSwiper}
+														ref={alikeFilmsSwiperNextBtn}>
 														<ChevronRightIcon className='h-5' />
 													</button>
 												</section>
@@ -377,8 +439,11 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											<div className='film-page-alike-films-container'>
 												<Swiper
 													modules={[Navigation, Pagination, A11y]}
-													navigation={{ prevEl: photosSwiperPrevBtn.current, nextEl: photosSwiperNextBtn.current }}
-													onSwiper={swiper => setSwiper(swiper)}
+													navigation={{
+														prevEl: alikeFilmsSwiperPrevtn.current,
+														nextEl: alikeFilmsSwiperNextBtn.current,
+													}}
+													onSwiper={swiper => setSwiperAlikeFilms(swiper)}
 													breakpoints={{
 														1200: {
 															slidesPerView: 5,
