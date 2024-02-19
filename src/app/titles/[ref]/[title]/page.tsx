@@ -309,15 +309,15 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											<div className='film-page-opinion-must-be-logged-container'>
 												<h1>Wymagana jest rejestracja</h1>
 												<p>
-													Please
+													Please&nbsp;
 													<Link href='/login' className='orange-link'>
 														login
 													</Link>
-													or
+													&nbsp;or&nbsp;
 													<Link href='/register' className='orange-link'>
 														create account
 													</Link>
-													to add a review
+													&nbsp;to add a review
 												</p>
 											</div>
 										</section>
