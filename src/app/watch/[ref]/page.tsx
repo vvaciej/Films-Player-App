@@ -135,7 +135,14 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 											<span className='text-gray-300'>Be the first to comment</span>
 										</section>
 									</section>
-									<section className='watch-film-page-alike-films-section'>
+									<section
+										className='watch-film-page-alike-films-section'
+										style={{
+											display:
+												findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
+													? 'block'
+													: 'none',
+										}}>
 										<section className='films-heading-section'>
 											<h1 className='films-category-heading-text hover:underline !cursor-pointer !text-2xl'>Podobne</h1>
 										</section>

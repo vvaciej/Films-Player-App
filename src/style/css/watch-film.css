@@ -1520,7 +1520,7 @@ body {
 
 .watch-film-page-main-container {
   width: 1220px;
-  min-height: 100vh;
+  height: max-content;
   margin-top: calc(var(--main-container-padd-top));
 }
 @media screen and (max-width: 1350px) {

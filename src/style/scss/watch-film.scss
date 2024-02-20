@@ -8,7 +8,7 @@
 
 .watch-film-page-main-container {
 	width: 1220px;
-	min-height: 100vh;
+	height: max-content;
 	margin-top: calc(var(--main-container-padd-top));
 	@include tablet-1350 {
 		width: 93%;
