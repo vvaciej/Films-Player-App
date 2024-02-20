@@ -148,7 +148,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 										</section>
 										<section>
 											{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title)
-												.slice(0, 5)
+												.slice(0, 4)
 												.map((similarFilm, index) => (
 													<article className='film-container !max-w-80' key={index}>
 														<section className='films-image-section'>

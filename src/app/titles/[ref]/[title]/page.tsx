@@ -66,7 +66,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 	useEffect(() => {
 		setTimeout(() => {
 			setIsLoaded(true);
-		}, 200);
+		}, 300);
 	}, []);
 
 	const infoOfChoosedFilm = allFilms.find(film => convertTitleToUrl(film.title) === params.title);

@@ -1589,6 +1589,6 @@ body {
 }
 @media screen and (max-width: 800px) {
   .watch-film-page-main-container .watch-film-page-text-container .watch-film-page-alike-films-section {
-    display: none;
+    display: none !important;
   }
 }/*# sourceMappingURL=watch-film.css.map */
