@@ -108,11 +108,11 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 				<Navbar isCutted={false} />
 				{isLoaded ? (
 					isFilmExist ? (
-						<>
+						<main>
 							<div className='film-page-image-fullhd-preview'>
-								<button className='film-play-btn'>
+								<Link href={`/watch/${infoOfChoosedFilm?.ref}`} className='film-play-btn'>
 									<PlayIcon className='text-black h-6' />
-								</button>
+								</Link>
 								<div className='film-page-image-gradient'></div>
 								<div className='film-page-image-blured'></div>
 								<img src={infoOfChoosedFilm?.imgFullHd1280} alt={`Image for ${infoOfChoosedFilm?.title}`} />
@@ -306,7 +306,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												</section>
 												<button>Dodaj recenzję</button>
 											</div>
-											<div className='film-page-opinion-must-be-logged-container'>
+											<div className='opinion-must-be-logged-container'>
 												<h1>Wymagana jest rejestracja</h1>
 												<p>
 													Please&nbsp;
@@ -508,7 +508,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 								</div>
 							</div>
 							<Footer />
-						</>
+						</main>
 					) : (
 						<SiteNotFound />
 					)

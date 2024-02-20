@@ -6,7 +6,7 @@ html.dark {
 	--orange: #f27318;
 	--orange-opacited-15: #fe6a0015;
 	--dark-orange: #d66819;
-	
+
 	--dark-0f0f: #0f0f0f;
 	--dark-121212: #121212;
 	--gray-2222: #222222;
@@ -222,6 +222,16 @@ html.dark {
 }
 
 @mixin transparent-btn-style {
+	padding: 0.5rem 0.9rem;
+	transition: background-color 0.3s ease;
+	&:hover {
+		background-color: var(--btn-opacited-hover-bg);
+		border-radius: 0.3rem;
+		transition: background-color 0.3s ease;
+	}
+}
+
+.transparent-btn-style {
 	padding: 0.5rem 0.9rem;
 	transition: background-color 0.3s ease;
 	&:hover {
@@ -666,6 +676,36 @@ body {
 			&:hover {
 				background-color: var(--gray-2222);
 			}
+		}
+	}
+}
+
+.opinion-must-be-logged-container {
+	width: 95%;
+	margin: 0 auto;
+	height: max-content;
+	padding: 1.5rem 0px;
+	border: 2px dotted var(--gray-3232);
+	border-radius: 3px;
+	margin-top: 2rem;
+	@include flex-center;
+	flex-direction: column;
+	row-gap: 6px;
+	text-align: center;
+	h1 {
+		font-size: 1.2rem;
+		font-weight: 500;
+		padding: 0px 0.7rem;
+		@include mobile-400 {
+			font-size: 1.1rem;
+		}
+	}
+	p {
+		color: var(--light-gray-d0d0);
+		font-size: 15px;
+		padding: 0px 1rem;
+		@include mobile-400 {
+			font-size: 14px;
 		}
 	}
 }

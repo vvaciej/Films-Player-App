@@ -1,10 +1,4 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 html.dark {
   --white: #ffffff;
   --dark-1a1a: #1a1a1a;
@@ -1498,7 +1492,7 @@ body {
   text-align: center;
 }
 .opinion-must-be-logged-container h1 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   padding: 0px 0.7rem;
 }
@@ -1518,73 +1512,83 @@ body {
   }
 }
 
-.contact-container {
-  position: relative;
-  margin-top: calc(var(--main-container-padd-top));
-  width: 40rem;
-  height: max-content;
-  border: 1px solid var(--gray-3232);
-  background-color: var(--dark-1a1a);
-}
-@media screen and (max-width: 700px) {
-  .contact-container {
-    width: 95%;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.contact-box {
-  height: 100%;
+.watch-film-page-main-container {
+  width: 1220px;
+  min-height: 100vh;
+  margin-top: calc(var(--main-container-padd-top));
+}
+@media screen and (max-width: 1350px) {
+  .watch-film-page-main-container {
+    width: 93%;
+  }
+}
+.watch-film-page-main-container .watch-film-page-film-player-container {
   width: 100%;
-  border: 1px solid var(--gray-3232);
-  border-radius: 4px;
-  padding: 2rem;
-  font-size: 0.82rem;
+  height: max-content;
+  border-radius: 2px;
 }
-.contact-box h1 {
-  font-size: 1.5rem;
-  margin-bottom: 4px;
-}
-.contact-box .contact-input-form {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
-  margin-top: 2.5rem;
-  height: calc(100% - 4px - 39.38px - 36px - 2.5rem);
-}
-.contact-box .contact-input-form section {
-  display: flex;
-  flex-direction: column;
-  row-gap: 4px;
+.watch-film-page-main-container .watch-film-page-film-player-container video {
+  height: max-content;
   width: 100%;
 }
-.contact-box .contact-input-form section input[type=text], .contact-box .contact-input-form section .contact-message-textarea {
-  padding: 0px 10px;
-  color: var(--white);
-  font-size: 1rem;
-  outline: 1px solid var(--gray-5050);
-  border: 1px solid transparent;
+.watch-film-page-main-container .watch-film-page-text-container {
+  margin-top: 3rem;
+  height: max-content;
+  display: flex;
+  column-gap: 3.2rem;
+}
+@media screen and (max-width: 1240px) {
+  .watch-film-page-main-container .watch-film-page-text-container {
+    column-gap: 2rem;
+    margin-top: 2rem;
+  }
+}
+.watch-film-page-main-container .watch-film-page-text-container .watch-film-page-info-ab-film-section {
+  display: flex;
+  column-gap: 0.9rem;
+  overflow: hidden;
+  max-height: 209px;
+}
+@media screen and (max-width: 700px) {
+  .watch-film-page-main-container .watch-film-page-text-container .watch-film-page-info-ab-film-section {
+    column-gap: 0.7rem;
+  }
+}
+.watch-film-page-main-container .watch-film-page-text-container .watch-film-page-info-ab-film-section img {
+  max-height: 209px;
   border-radius: 4px;
-  background-color: transparent;
-  height: 2.6rem;
 }
-.contact-box .contact-input-form section input[type=text]:focus, .contact-box .contact-input-form section .contact-message-textarea:focus {
-  position: relative;
-  border: 1px solid var(--dark-orange-opacited);
-  outline: 4px solid var(--orange-opacited-15);
-  transition: outline 0.1s;
+@media screen and (max-width: 400px) {
+  .watch-film-page-main-container .watch-film-page-text-container .watch-film-page-info-ab-film-section img {
+    display: none;
+  }
 }
-.contact-box .contact-input-form section .contact-message-textarea {
-  height: 11rem;
-  padding-top: 0.7rem;
+.watch-film-page-main-container .watch-film-page-text-container .watch-film-page-info-ab-film-section > section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 5px;
 }
-.contact-box .contact-input-form .contact-submit-btn {
-  background-color: var(--orange);
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-  transition: background-color 0.2s;
-  width: max-content;
+.watch-film-page-main-container .watch-film-page-text-container .watch-film-page-info-ab-film-section > section h1 {
+  font-size: 1.4rem;
+  font-weight: 500;
 }
-.contact-box .contact-input-form .contact-submit-btn:hover {
-  background-color: var(--dark-orange);
-  transition: background-color 0.2s;
-}/*# sourceMappingURL=contact.css.map */
+.watch-film-page-main-container .watch-film-page-text-container .watch-film-page-alike-films-section {
+  min-width: 270px;
+}
+@media screen and (max-width: 1080px) {
+  .watch-film-page-main-container .watch-film-page-text-container .watch-film-page-alike-films-section {
+    min-width: 230px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .watch-film-page-main-container .watch-film-page-text-container .watch-film-page-alike-films-section {
+    display: none;
+  }
+}/*# sourceMappingURL=watch-film.css.map */
