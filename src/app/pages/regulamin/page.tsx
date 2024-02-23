@@ -5,6 +5,7 @@ import '../../../style/css/regulamin.css';
 import { Navbar } from '@/app/layouts/Navbar';
 import { Footer } from '@/app/layouts/Footer';
 import useDocumentTitle from '@/app/helpers/PageTitle';
+import { useState } from 'react';
 
 const Policy: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Regulamin');

@@ -177,3 +177,7 @@
 		transition: filter 0.2s;
 	}
 }
+
+.failed-log {
+	outline: 1px solid rgba(239, 58, 48, 0.704) !important;
+}

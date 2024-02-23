@@ -1,12 +1,42 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import '../../style/css/reg-log.css';
 
 import useDocumentTitle from '../helpers/PageTitle';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import getCookie from '../helpers/GetCookie';
 
 const Login: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Logowanie');
+	const router = useRouter();
+
+	const exampleLogin = { email: 'user@example.com', password: 'test' };
+	const emailInputRef = useRef<any>(null);
+	const passwordInputRef = useRef<any>(null);
+
+	const [isLogged, setLogged] = useState<boolean>(true);
+
+	const [loggedEmail, setLoggedEmail] = useState('');
+
+	useEffect(() => {
+		document.cookie = `email=${loggedEmail}; path=/;`;
+	}, [loggedEmail]);
+
+	const handleLogin = () => {
+		const enteredPassword = passwordInputRef.current.value;
+		const enteredEmail = emailInputRef.current.value;
+
+		if (exampleLogin.email.includes(enteredEmail) && exampleLogin.password.includes(enteredPassword)) {
+			setLogged(true);
+			router.push('/');
+			setLoggedEmail(enteredEmail);
+		} else {
+			setLogged(false);
+		}
+	};
 
 	return (
 		<div className='space-dark-reg-log'>
@@ -20,9 +50,18 @@ const Login: React.FC = () => {
 						className='reg-log-input-form'
 						onSubmit={event => {
 							event.preventDefault();
+							handleLogin();
 						}}>
 						<section>
-							<label htmlFor='email'>Email</label> <input type='text' id='email' required minLength={5} />
+							<label htmlFor='email'>Email</label>{' '}
+							<input
+								type='text'
+								ref={emailInputRef}
+								id='email'
+								required
+								minLength={5}
+								className={`${isLogged ? '' : 'failed-log'}`}
+							/>
 						</section>
 						<section>
 							<section className='flex justify-between'>
@@ -31,7 +70,15 @@ const Login: React.FC = () => {
 									Zapomniałeś hasła?
 								</Link>
 							</section>
-							<input type='password' id='password' required minLength={7} maxLength={30} />
+							<input
+								type='password'
+								ref={passwordInputRef}
+								id='password'
+								required
+								minLength={4}
+								maxLength={30}
+								className={`${isLogged ? '' : 'failed-log'}`}
+							/>
 							<section className='flex items-center gap-x-2 mt-2'>
 								<input type='checkbox' id='remember' className='orange-checkbox' />
 								<label htmlFor='remember' className='select-none'>

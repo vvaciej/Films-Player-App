@@ -11,6 +11,7 @@ import React from 'react';
 
 import { allFilms } from '../data/films-data';
 import convertTitleToUrl from '../helpers/ConvertTitleToURL';
+
 interface NavbarProps {
 	isCutted: boolean;
 }
@@ -37,6 +38,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 
 	const handleClickBtnDropdown = () => {
 		setIsClickedBtn(!isClickedBtn);
+	};
+
+	const [isLogged, setIsLogged] = useState(getCookie('email') ? true : false);
+
+	const deleteCookie = (name: string) => {
+		document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+		setIsLogged(false);
 	};
 
 	const handleSearchDirectPage = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -164,12 +172,23 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					</nav>
 				</section>
 				<nav className='header-right-section'>
-					<Link href='/register' className='header-register-btn'>
-						Rejestracja
-					</Link>
-					<Link href='/login' className='header-login-btn'>
-						Logowanie
-					</Link>
+					{isLogged ? (
+						<>
+							<span>{getCookie('email') || ''}&nbsp;</span>
+							<button onClick={() => deleteCookie('email')} className='header-login-btn'>
+								Wyloguj się
+							</button>
+						</>
+					) : (
+						<>
+							<Link href='/register' className='header-register-btn'>
+								Rejestracja
+							</Link>
+							<Link href='/login' className='header-login-btn'>
+								Logowanie
+							</Link>
+						</>
+					)}
 				</nav>
 				<nav
 					className='header-right-user-btn'

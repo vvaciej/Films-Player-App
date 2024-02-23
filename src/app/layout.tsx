@@ -24,7 +24,9 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 					<link rel='icon' href='/vercel.svg' />
 					<meta name='theme-color' content='#1a1a1a' />
 				</Head>
-				<body className={inter.className}>{children}</body>
+				<body className={inter.className}>
+					{children}
+				</body>
 			</html>
 			<CookieConsentComponent />
 			<SpeedInsights />
