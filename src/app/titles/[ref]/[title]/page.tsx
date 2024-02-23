@@ -282,7 +282,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													<section className='!w-max film-page-opinion-ab-film-left-section'>
 														{isLogged ? (
 															<img
-																src='https://www.gravatar.com/avatar/713725b435cc9533ff473f1f8c956f10?s=&d=retro'
+																src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
 																alt='user avatar'
 																className='mr-4 hidden sm:block w-12 h-max'
 																style={{
@@ -353,10 +353,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																onClick={() => setAddOpinionSelected(!isAddOpinionSelected)}>
 																Anuluj
 															</button>
-															<button
-																className='orange-btn-style w-max sm:!px-7 !py-2 text-sm'>
-																Dodaj
-															</button>
+															<button className='orange-btn-style w-max sm:!px-7 !py-2 text-sm'>Dodaj</button>
 														</section>
 													</>
 												) : (

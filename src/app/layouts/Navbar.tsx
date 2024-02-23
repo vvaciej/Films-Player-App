@@ -193,11 +193,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								className='transparent-btn-style flex gap-x-2 items-center'
 								onClick={() => setUserDropdownClicked(!userDropdownClicked)}>
 								<img
-									src='https://www.gravatar.com/avatar/713725b435cc9533ff473f1f8c956f10?s=&d=retro'
+									src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
 									alt='user avatar'
-									className='h-8 mr-1' style={{
+									className='h-8 mr-1'
+									style={{
 										outline: '1px solid var(--gray-3232)',
-										borderRadius: '2px'
+										borderRadius: '2px',
 									}}
 								/>
 								{getCookie('email').match(/^(.+)@/)?.[1] || ''}
