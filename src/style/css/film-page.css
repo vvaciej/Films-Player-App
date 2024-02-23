@@ -1954,9 +1954,14 @@ body {
 .film-page-adding-opinion-container {
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 1.7rem;
   width: 100%;
   margin-top: 0.7rem;
+}
+@media screen and (max-width: 600px) {
+  .film-page-adding-opinion-container {
+    row-gap: 1rem;
+  }
 }
 .film-page-adding-opinion-container section {
   display: flex;

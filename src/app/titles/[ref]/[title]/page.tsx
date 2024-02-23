@@ -347,7 +347,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																<textarea id='opinion-mess' />
 															</section>
 														</section>
-														<section className='flex gap-x-2 justify-end'>
+														<section className='flex gap-x-2 justify-end mt-1'>
 															<button
 																className='btn-style-outlined w-max sm:!px-7 !py-2 !text-md'
 																onClick={() => setAddOpinionSelected(!isAddOpinionSelected)}>
