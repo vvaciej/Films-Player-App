@@ -227,28 +227,20 @@
 				border: 1px solid var(--gray-3232);
 				display: flex;
 				padding: 0.9rem 1.5rem;
-				align-items: center;
-				justify-content: space-between;
+				flex-direction: column;
+				row-gap: 1rem;
 				@include tablet-700 {
 					flex-direction: column;
-					align-items: flex-start;
 					row-gap: 0.7rem;
 					padding: 0.8rem 1rem;
 				}
-
-				> section {
-					display: flex;
-					column-gap: 1.5rem;
-					@include mobile-500 {
-						flex-direction: column;
-						row-gap: 0.4rem;
-					}
-					> section {
+				.film-page-opinion-ab-film-heading-section {
+					.film-page-opinion-ab-film-left-section {
 						padding: 2px 0px;
 						color: var(--light-gray-d0d0);
 						font-size: 13px;
 						display: flex;
-						flex-direction: column;
+						width: 100%;
 						row-gap: 5px;
 						.film-page-opinions-stars-icons {
 							height: 22px;
@@ -263,23 +255,27 @@
 							padding: 7px 0px;
 						}
 					}
-					img {
-						height: max-content;
-						width: 55px;
-					}
 				}
-				button {
+				.film-page-add-opinion-btn {
 					padding: 7.5px 1rem;
 					background-color: var(--gray-6161);
 					filter: brightness(60%);
 					font-weight: 500;
 					font-size: 13px;
+					width: max-content;
+					height: max-content;
 					border-radius: 5px;
 					cursor: not-allowed;
 				}
-				button.logged {
+				.film-page-add-opinion-btn.logged {
 					filter: brightness(100%);
 					cursor: pointer;
+					background-color: var(--orange);
+					transition: 0.2s;
+					&:hover {
+						transition: 0.2s;
+						filter: brightness(90%);
+					}
 				}
 			}
 		}
@@ -338,7 +334,7 @@
 					a {
 						font-size: 14px;
 						font-weight: 500;
-						padding-right: .6rem;
+						padding-right: 0.6rem;
 					}
 				}
 			}
@@ -346,6 +342,33 @@
 		.film-page-alike-films-container {
 			width: 100%;
 			height: max-content;
+		}
+	}
+}
+
+.film-page-adding-opinion-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+	width: 100%;
+	margin-top: 0.7rem;
+	section {
+		display: flex;
+		flex-direction: column;
+		row-gap: 4px;
+		label {
+			font-size: 13px;
+		}
+		input,
+		textarea {
+			@include input-style;
+			font-size: 16px;
+			&:focus {
+				@include orange-outline;
+			}
+		}
+		textarea {
+			padding: 7px 10px;
 		}
 	}
 }

@@ -18,7 +18,7 @@ const Login: React.FC = () => {
 	const passwordInputRef = useRef<any>(null);
 
 	const [isLogged, setLogged] = useState<boolean>(true);
-	const [loggedEmail, setLoggedEmail] = useState('');
+	const [emailLogged, setEmailLogged] = useState('');
 
 	const [rememberChecked, setRememberChecked] = useState(false);
 
@@ -26,11 +26,11 @@ const Login: React.FC = () => {
 		if (!rememberChecked) {
 			const expirationDate = new Date();
 			expirationDate.setTime(expirationDate.getTime() + 60 * 60 * 1000);
-			document.cookie = `email=${loggedEmail}; expires=${expirationDate.toUTCString()}; path=/;`;
+			document.cookie = `email=${emailLogged}; expires=${expirationDate.toUTCString()}; path=/;`;
 		} else {
-			document.cookie = `email=${loggedEmail}; path=/;`;
+			document.cookie = `email=${emailLogged}; path=/;`;
 		}
-	}, [loggedEmail, rememberChecked]);
+	}, [emailLogged, rememberChecked]);
 
 	const handleLogin = () => {
 		const enteredPassword = passwordInputRef.current.value;
@@ -39,7 +39,7 @@ const Login: React.FC = () => {
 		if (exampleLogin.email.includes(enteredEmail) && exampleLogin.password.includes(enteredPassword)) {
 			setLogged(true);
 			router.push('/');
-			setLoggedEmail(enteredEmail);
+			setEmailLogged(enteredEmail);
 		} else {
 			setLogged(false);
 		}
