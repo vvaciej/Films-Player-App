@@ -18,7 +18,6 @@ const Login: React.FC = () => {
 	const passwordInputRef = useRef<any>(null);
 
 	const [isLogged, setLogged] = useState<boolean>(true);
-
 	const [loggedEmail, setLoggedEmail] = useState('');
 
 	const [rememberChecked, setRememberChecked] = useState(false);

@@ -1,6 +1,15 @@
 'use client';
 
-import { MagnifyingGlassIcon, Bars3Icon, UserIcon } from '@heroicons/react/24/solid';
+import {
+	MagnifyingGlassIcon,
+	Bars3Icon,
+	UserIcon,
+	ChevronDownIcon,
+	UserCircleIcon,
+	Cog8ToothIcon,
+	CheckBadgeIcon,
+	ArrowRightEndOnRectangleIcon,
+} from '@heroicons/react/24/solid';
 import { TvIcon, FilmIcon } from '@heroicons/react/24/outline';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
@@ -11,6 +20,7 @@ import React from 'react';
 
 import { allFilms } from '../data/films-data';
 import convertTitleToUrl from '../helpers/ConvertTitleToURL';
+import { HtmlContext } from 'next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints';
 
 interface NavbarProps {
 	isCutted: boolean;
@@ -31,14 +41,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 	const [searchResults, setSearchResults] = useState<FilmData[]>([]);
 	const [isSearchResultsNull, setIsSearchResultsNull] = useState<boolean>(true);
 	const [whatSearchVal, setWhatSearchVal] = useState<string>('');
+	const [userDropdownClicked, setUserDropdownClicked] = useState(false);
 
 	const mobileDropdownsRef = useRef<HTMLDivElement>(null);
 	const searchDropdownRef = useRef<HTMLDivElement>(null);
 	const searchInputRef = useRef<HTMLInputElement>(null);
-
-	const handleClickBtnDropdown = () => {
-		setIsClickedBtn(!isClickedBtn);
-	};
+	const userDropdownRef = useRef<HTMLDivElement>(null);
+	const userBtnDropdownRef = useRef<any>(null);
 
 	const [isLogged, setIsLogged] = useState(getCookie('email') ? true : false);
 
@@ -85,7 +94,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 			setIsTyped(false);
 		}
 
-		if (!isInsideDropdown(event.target, mobileDropdownsRef)) {
+		if (
+			!isInsideDropdown(event.target, userDropdownRef) &&
+			!isInsideDropdown(event.target, mobileDropdownsRef) &&
+			!isInsideDropdown(event.target, userBtnDropdownRef)
+		) {
+			setUserDropdownClicked(false);
 			setIsClickedBtn(false);
 		}
 	};
@@ -151,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							className='header-menu-btn'
 							onClick={() => {
 								setIsUserOrMenuClicked('menu');
-								handleClickBtnDropdown();
+								setIsClickedBtn(!isClickedBtn);
 							}}>
 							<Bars3Icon className='h-7 header-menu-icon' />
 						</button>
@@ -171,13 +185,41 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						</section>
 					</nav>
 				</section>
-				<nav className='header-right-section'>
+				<nav className='header-right-section relative'>
 					{isLogged ? (
 						<>
-							<span>{getCookie('email') || ''}&nbsp;</span>
-							<button onClick={() => deleteCookie('email')} className='header-login-btn'>
-								Wyloguj się
+							<button
+								ref={userBtnDropdownRef}
+								className='transparent-btn-style flex gap-x-2 items-center'
+								onClick={() => setUserDropdownClicked(!userDropdownClicked)}>
+								<img
+									src='https://www.gravatar.com/avatar/713725b435cc9533ff473f1f8c956f10?s=&d=retro'
+									alt='user avatar'
+									className='h-8 mr-1 outline-zinc-100'
+								/>
+								{getCookie('email').match(/^(.+)@/)?.[1] || ''}
+								<ChevronDownIcon className='h-4' />
 							</button>
+							<div
+								className={`user-dropdown-container ${userDropdownClicked ? 'active' : ''} py-1`}
+								ref={userDropdownRef}>
+								<button className='user-dropdown-options'>
+									<CheckBadgeIcon className='h-5' />
+									Do obejrzenia
+								</button>
+								<button className='user-dropdown-options'>
+									<Cog8ToothIcon className='h-5' />
+									Ustawienia konta
+								</button>
+								<button className='user-dropdown-options'>
+									<UserCircleIcon className='h-5' />
+									Mój profil
+								</button>
+								<button className='user-dropdown-options' onClick={() => deleteCookie('email')}>
+									<ArrowRightEndOnRectangleIcon className='h-5' />
+									Wyloguj się
+								</button>
+							</div>
 						</>
 					) : (
 						<>
@@ -194,7 +236,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					className='header-right-user-btn'
 					onClick={() => {
 						setIsUserOrMenuClicked('user');
-						handleClickBtnDropdown();
+						setIsClickedBtn(!isClickedBtn);
+						setUserDropdownClicked(!userDropdownClicked);
 					}}>
 					<UserIcon className='h-6 header-right-user-icon' />
 				</nav>
@@ -203,10 +246,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 				ref={mobileDropdownsRef}
 				className={`typical-dropdown-style ${isClickedBtn ? 'active' : ''}`}
 				style={{
-					height: '6rem',
+					height: 'max-content',
 				}}>
 				{isUserOrMenuClicked === 'menu' ? (
-					<nav>
+					<nav
+						style={{
+							height: '6rem',
+						}}>
 						<Link href={`/movies?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
 							<FilmIcon className='h-5' />
 							<span>Filmy</span>
@@ -216,8 +262,35 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							<span>Seriale</span>
 						</Link>
 					</nav>
+				) : isLogged ? (
+					<div
+						className={`${userDropdownClicked ? 'active' : ''}`}
+						ref={userDropdownRef}
+						style={{
+							height: '11rem',
+						}}>
+						<button className='user-dropdown-options'>
+							<CheckBadgeIcon className='h-5' />
+							Do obejrzenia
+						</button>
+						<button className='user-dropdown-options'>
+							<Cog8ToothIcon className='h-5' />
+							Ustawienia konta
+						</button>
+						<button className='user-dropdown-options'>
+							<UserCircleIcon className='h-5' />
+							Mój profil
+						</button>
+						<button className='user-dropdown-options' onClick={() => deleteCookie('email')}>
+							<ArrowRightEndOnRectangleIcon className='h-5' />
+							Wyloguj się
+						</button>
+					</div>
 				) : (
-					<nav>
+					<nav
+						style={{
+							height: '6rem',
+						}}>
 						<Link href='/login'>Logowanie</Link>
 						<Link href='/register'>Rejestracja</Link>
 					</nav>
