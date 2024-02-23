@@ -306,11 +306,11 @@
 						filter: brightness(84%);
 						transition: filter 0.2s;
 					}
-					section {
+					a {
 						cursor: pointer;
 						width: 100%;
 						.film-page-sources-gradient-image {
-							width: 100%;
+							width: 97%;
 							height: 100%;
 							position: absolute;
 							background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 1%, transparent);

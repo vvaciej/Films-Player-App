@@ -274,7 +274,8 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</section>
 											<div className='film-page-opinion-ab-film-review-container'>
 												<section>
-													<img className='object-cover max-w-12 max-h-12'
+													<img
+														className='object-cover max-w-12 max-h-12'
 														src='https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/default-profile-picture-grey-male-icon.png'
 														alt={`Poster for ${infoOfChoosedFilm?.title}`}
 													/>
@@ -368,7 +369,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													onSwiper={swiper => setSwiperSources(swiper)}>
 													<SwiperSlide>
 														<article className='mb-2'>
-															<section>
+															<Link href={`/watch/${infoOfChoosedFilm?.ref}`} className='relative' >
 																<div className='film-page-sources-gradient-image'></div>
 																<div className='film-page-sources-imageontext'>
 																	<section>
@@ -380,15 +381,15 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	src={infoOfChoosedFilm?.imgFullHd500}
 																	alt={`Poster for ${infoOfChoosedFilm?.title}`}
 																/>
-															</section>
-															<Link href='#' className='hover:underline font-medium'>
+															</Link>
+															<Link href={`/watch/${infoOfChoosedFilm?.ref}`} className='hover:underline font-medium'>
 																Cały film, Lektor Polski
 															</Link>
 														</article>
 													</SwiperSlide>
 													<SwiperSlide>
 														<article>
-															<section>
+															<Link href={`/watch/${infoOfChoosedFilm?.ref}`} className='relative' >
 																<div className='film-page-sources-gradient-image'></div>
 																<div className='film-page-sources-imageontext'>
 																	<section>
@@ -400,7 +401,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	src={infoOfChoosedFilm?.imgFullHd500}
 																	alt={`Poster for ${infoOfChoosedFilm?.title}`}
 																/>
-															</section>
+															</Link>
 															<Link href='#' className='hover:underline font-medium'>
 																Zwiastun
 															</Link>

@@ -21,9 +21,17 @@ const Login: React.FC = () => {
 
 	const [loggedEmail, setLoggedEmail] = useState('');
 
+	const [rememberChecked, setRememberChecked] = useState(false);
+
 	useEffect(() => {
-		document.cookie = `email=${loggedEmail}; path=/;`;
-	}, [loggedEmail]);
+		if (!rememberChecked) {
+			const expirationDate = new Date();
+			expirationDate.setTime(expirationDate.getTime() + 60 * 60 * 1000);
+			document.cookie = `email=${loggedEmail}; expires=${expirationDate.toUTCString()}; path=/;`;
+		} else {
+			document.cookie = `email=${loggedEmail}; path=/;`;
+		}
+	}, [loggedEmail, rememberChecked]);
 
 	const handleLogin = () => {
 		const enteredPassword = passwordInputRef.current.value;
@@ -81,7 +89,7 @@ const Login: React.FC = () => {
 							/>
 							<section className='flex items-center gap-x-2 mt-2'>
 								<input type='checkbox' id='remember' className='orange-checkbox' />
-								<label htmlFor='remember' className='select-none'>
+								<label htmlFor='remember' className='select-none' onClick={() => setRememberChecked(!rememberChecked)}>
 									Zapamiętaj
 								</label>
 							</section>
