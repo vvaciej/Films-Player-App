@@ -274,7 +274,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</section>
 											<div className='film-page-opinion-ab-film-review-container'>
 												<section>
-													<img
+													<img className='object-cover max-w-12 max-h-12'
 														src='https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/default-profile-picture-grey-male-icon.png'
 														alt={`Poster for ${infoOfChoosedFilm?.title}`}
 													/>
