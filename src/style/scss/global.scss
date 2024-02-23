@@ -200,6 +200,16 @@ html.dark {
 	background-color: transparent;
 	height: 2.6rem;
 }
+.input-style {
+	padding: 0px 10px;
+	color: var(--white);
+	font-size: 1rem;
+	outline: 1px solid var(--gray-5050);
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: transparent;
+	height: 2.6rem;
+}
 
 .btn-style-outlined {
 	padding: 5px 10px;
@@ -254,6 +264,33 @@ html.dark {
 		font-size: 13px;
 	}
 	button.choosed {
+		height: auto;
+		background-color: var(--brown);
+		&:before {
+			content: '\f00c';
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+			left: 0;
+			font-size: 13px;
+			color: var(--dark-orange);
+			margin-right: 0.3rem;
+			height: 100%;
+		}
+	}
+}
+
+.btn-choosed-style {
+	width: 100%;
+	height: 100%;
+	color: var(--white);
+	text-align: left;
+	padding: 0.5rem;
+	padding-left: 1.2rem;
+	font-size: 13px;
+	&:hover {
+		background-color: var(--gray-2222);
+	}
+	&.choosed {
 		height: auto;
 		background-color: var(--brown);
 		&:before {

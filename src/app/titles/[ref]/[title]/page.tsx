@@ -14,8 +14,6 @@ import {
 	PlusIcon,
 	ShareIcon,
 	Bars3BottomLeftIcon,
-	AdjustmentsHorizontalIcon,
-	ListBulletIcon,
 	PlayCircleIcon,
 } from '@heroicons/react/24/solid';
 import Link from 'next/link';

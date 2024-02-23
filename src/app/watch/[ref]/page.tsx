@@ -46,6 +46,12 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 	const [isAddOpinionSelected, setAddOpinionSelected] = useState<boolean>(false);
 
 	const isLogged = getCookie('email');
+	const [isLiked, setIsLiked] = useState(false);
+
+	const handleLikeClick = () => {
+	};
+	const handleUnLikeClick = () => {
+	};
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -83,16 +89,39 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 											<section>
 												<h1>{infoOfChoosedFilm?.title}</h1>
 												<section className='flex gap-x-2 items-center justify-between w-full mb-1'>
-													<section className='flex'>
-														<Link href='/login' className='flex gap-x-2 items-center transparent-btn-style !p-2'>
-															<HandThumbUpIcon className='h-5' />
-															<span className='font-semibold'>0</span>
-														</Link>
-														<Link href='/login' className='flex gap-x-2 items-center transparent-btn-style !p-2'>
-															<HandThumbDownIcon className='h-5' />
-															<span className='font-semibold'>0</span>
-														</Link>
-													</section>
+													{isLogged ? (
+														<section className='flex'>
+															<button
+																onClick={() => {
+																	handleLikeClick();
+																	setIsLiked(true);
+																}}
+																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
+																<HandThumbUpIcon className='h-5' />
+																<span className='font-semibold'></span>
+															</button>
+															<button
+																onClick={() => {
+																	handleUnLikeClick();
+																	setIsLiked(true);
+																}}
+																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
+																<HandThumbDownIcon className='h-5' />
+																<span className='font-semibold'></span>
+															</button>
+														</section>
+													) : (
+														<section className='flex'>
+															<Link href='/login' className='flex gap-x-2 items-center transparent-btn-style !p-2'>
+																<HandThumbUpIcon className='h-5' />
+																<span className='font-semibold'>0</span>
+															</Link>
+															<Link href='/login' className='flex gap-x-2 items-center transparent-btn-style !p-2'>
+																<HandThumbDownIcon className='h-5' />
+																<span className='font-semibold'>0</span>
+															</Link>
+														</section>
+													)}
 													<section className='flex'>
 														<Link href='/login'>
 															<FlagIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
@@ -232,7 +261,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 											<span className='text-gray-300'>Be the first to comment</span>
 										</section>
 									</section>
-									<section
+									<aside
 										className='watch-film-page-alike-films-section'
 										style={{
 											display:
@@ -266,7 +295,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 													</article>
 												))}
 										</section>
-									</section>
+									</aside>
 								</div>
 							</div>
 						</div>

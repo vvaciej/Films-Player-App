@@ -1613,86 +1613,13 @@ body {
   box-sizing: border-box;
 }
 
-.searched-films-wrapper {
+.acc-settings-page-container {
   width: 1240px;
-  height: max-content;
-  margin-top: 1rem;
-}
-.searched-films-wrapper:not(.active) {
-  display: none;
+  min-height: 100vh;
+  padding: calc(var(--main-container-padd-top) + 0.7rem) 0rem;
 }
 @media screen and (max-width: 1350px) {
-  .searched-films-wrapper {
-    width: 100%;
+  .acc-settings-page-container {
+    width: 93%;
   }
-}
-.searched-films-wrapper .search-movies-section {
-  margin-top: 2rem;
-}
-.searched-films-wrapper .search-movies-section {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-.searched-films-wrapper .search-movies-section .search-category-text {
-  position: relative;
-}
-.searched-films-wrapper .search-movies-section .search-category-text:not(.active) {
-  display: none;
-}
-.searched-films-wrapper .search-movies-section .search-category-text:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background-color: var(--orange);
-  border-radius: 5px;
-}
-
-.search-page-container {
-  width: 1240px;
-  height: max-content;
-}
-@media screen and (max-width: 1350px) {
-  .search-page-container {
-    width: 100%;
-  }
-}
-
-.search-page-text-section:not(.active) {
-  display: none;
-}
-
-.search-page-input-style {
-  padding: 0px 10px;
-  color: var(--white);
-  font-size: 1rem;
-  outline: 1px solid var(--gray-5050);
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background-color: transparent;
-  height: 2.6rem;
-  margin-bottom: 2rem;
-  display: none;
-  height: 3rem !important;
-  touch-action: none;
-  font-size: 16px;
-}
-@media screen and (max-width: 1080px) {
-  .search-page-input-style {
-    display: flex;
-    width: 28rem;
-  }
-}
-@media screen and (max-width: 600px) {
-  .search-page-input-style {
-    width: 100%;
-  }
-}
-.search-page-input-style:focus {
-  position: relative;
-  border: 1px solid var(--dark-orange-opacited);
-  outline: 4px solid var(--orange-opacited-15);
-  transition: outline 0.1s;
-}/*# sourceMappingURL=search-page.css.map */
+}/*# sourceMappingURL=acc-settings.css.map */

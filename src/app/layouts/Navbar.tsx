@@ -275,10 +275,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						style={{
 							height: '11rem',
 						}}>
-						<button className='user-dropdown-options'>
+						<Link
+							href={`/watchlist?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
+							className='user-dropdown-options'>
 							<CheckBadgeIcon className='h-5' />
 							Do obejrzenia
-						</button>
+						</Link>
 						<button className='user-dropdown-options'>
 							<Cog8ToothIcon className='h-5' />
 							Ustawienia konta
