@@ -81,7 +81,7 @@ const SearchPage: React.FC = () => {
 				<div className='typical-container-comp-with-films'>
 					{isLoaded ? (
 						<div>
-							<section>
+							<header>
 								<div className='w-full text-center'>
 									<form
 										className='flex justify-center'
@@ -114,8 +114,8 @@ const SearchPage: React.FC = () => {
 										</span>
 									</section>
 								</div>
-							</section>
-							<section
+							</header>
+							<main
 								className={`lg:w-[1240px] mt-4 h-max w-full ${whatSearchVal !== '' ? 'active' : ''}`}
 								style={{
 									display: whatSearchVal ? 'block' : 'none',
@@ -162,7 +162,7 @@ const SearchPage: React.FC = () => {
 										))}
 									</div>
 								</section>
-							</section>
+							</main>
 						</div>
 					) : (
 						<div className='flex justify-center w-full h-full items-center'>

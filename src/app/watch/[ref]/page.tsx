@@ -7,7 +7,6 @@ import React from 'react';
 import useDocumentTitle from '@/app/helpers/PageTitle';
 import { allFilms } from '@/app/data/films-data';
 import SiteNotFound from '@/app/[...not_found]/page';
-import '../../../style/css/watch-film.css';
 import '../../../style/css/film-page.css';
 import Link from 'next/link';
 import convertTitleToUrl from '@/app/helpers/ConvertTitleToURL';
@@ -15,13 +14,13 @@ import getCookie from '@/app/helpers/GetCookie';
 
 import {
 	PlayIcon,
-	StarIcon,
 	HandThumbUpIcon,
 	HandThumbDownIcon,
 	ChatBubbleBottomCenterIcon,
 	FlagIcon,
 	ShareIcon,
 } from '@heroicons/react/24/solid';
+import ReviewAs from '@/app/components/ReviewAsContainer';
 
 interface pageProps {
 	params: { ref: number };
@@ -41,12 +40,8 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 		checkIfPageExist ? setIsFilmExist(true) : setIsFilmExist(false);
 	}, [params]);
 
-	const [isHoveredStar, setHoveredStars] = useState<number | null>(null);
-	const [indexStars, setIndexStars] = useState<number | null>(null);
-	const [isAddOpinionSelected, setAddOpinionSelected] = useState<boolean>(false);
-
 	const isLogged = getCookie('email');
-	const [isLiked, setIsLiked] = useState(false);
+	const [, setIsLiked] = useState(false);
 
 	const handleLikeClick = () => {
 	};
@@ -76,18 +71,26 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 				isFilmExist ? (
 					<>
 						<div className='content-full-space-centered'>
-							<div className='watch-film-page-main-container'>
-								<main className='watch-film-page-film-player-container'>
-									<video controls controlsList='nodownload'>
+							<div
+								className='xl:w-[1220px] w-[95%] h-max'
+								style={{
+									marginTop: 'calc(var(--main-container-padd-top) - .5rem)',
+								}}>
+								<main className='w-full h-max rounded'>
+									<video controls controlsList='nodownload' className='h-max w-full'>
 										<source src='' type='video/mp4' />
 									</video>
 								</main>
-								<div className='watch-film-page-text-container'>
+								<div className='lg:mt-10 mt-8 h-max flex gap-x-8 lg:gap-x-12'>
 									<section className='watch-film-page-text-section'>
-										<section className='watch-film-page-info-ab-film-section'>
-											<img src={infoOfChoosedFilm?.image} alt={`Poster for ${infoOfChoosedFilm?.title}`} />
-											<section>
-												<h1>{infoOfChoosedFilm?.title}</h1>
+										<section className='flex gap-x-3 sm:gap-x-4 overflow-hidden max-h-[209px] mb-6'>
+											<img
+												className='max-h-[209px] sm:block hidden rounded'
+												src={infoOfChoosedFilm?.image}
+												alt={`Poster for ${infoOfChoosedFilm?.title}`}
+											/>
+											<section className='flex flex-col items-start gap-x-2'>
+												<h1 className='text-2xl font-medium'>{infoOfChoosedFilm?.title}</h1>
 												<section className='flex gap-x-2 items-center justify-between w-full mb-1'>
 													{isLogged ? (
 														<section className='flex'>
@@ -140,115 +143,13 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 												</p>
 											</section>
 										</section>
+										<ReviewAs infoOfChoosedFilm={infoOfChoosedFilm} />
 										<section>
 											<section className='flex gap-x-2 mt-8 mb-2'>
 												<ChatBubbleBottomCenterIcon className='h-5' />
 												<span className='text-sm'>0 comments</span>
 											</section>
 											<hr className='border-zinc-700 border-1 w-full' />
-										</section>
-										<section className='film-page-opinion-ab-film'>
-											<div className='film-page-opinion-ab-film-review-container'>
-												<section className='flex sm:items-center justify-between flex-col sm:flex-row gap-y-2 film-page-opinion-ab-film-heading-section'>
-													<section className='!w-max film-page-opinion-ab-film-left-section'>
-														{isLogged ? (
-															<img
-																src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
-																alt='user avatar'
-																className='mr-4 hidden sm:block w-12 h-max'
-																style={{
-																	outline: '1px solid var(--gray-3232)',
-																	borderRadius: '50%',
-																}}></img>
-														) : (
-															<img
-																className='object-cover max-w-12 max-h-12 mr-4 w-12 h-max'
-																src='https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/default-profile-picture-grey-male-icon.png'
-																alt={`Poster for ${infoOfChoosedFilm?.title}`}
-															/>
-														)}
-														<section>
-															<span className='pl-1'>
-																Review as&nbsp;
-																<b className='text-white'>
-																	{isLogged ? getCookie('email').match(/^(.+)@/)?.[1] || '' : ''}
-																</b>
-															</span>
-															<section className='flex mt-1'>
-																{Array.from({ length: 10 }).map((_, index: number) => (
-																	<StarIcon
-																		className='film-page-opinions-stars-icons cursor-pointer sm:px-1 pr-1'
-																		key={index}
-																		onMouseOver={() => setHoveredStars(index + 1)}
-																		onMouseOut={() => setHoveredStars(null)}
-																		onClick={() => setIndexStars(index + 1)}
-																		style={{
-																			color:
-																				(!indexStars &&
-																					!isHoveredStar &&
-																					infoOfChoosedFilm &&
-																					index < Number(String(infoOfChoosedFilm?.rating).slice(0, 1))) ||
-																				(isHoveredStar && isHoveredStar > index) ||
-																				(indexStars && !isHoveredStar && indexStars >= index + 1)
-																					? 'var(--orange)'
-																					: 'var(--gray-5050)',
-																		}}
-																	/>
-																))}
-															</section>
-														</section>
-													</section>
-													<button
-														className={`${isLogged ? 'logged' : ''} ${
-															isAddOpinionSelected ? 'hidden' : 'flex'
-														} film-page-add-opinion-btn`}
-														onClick={() => setAddOpinionSelected(!isAddOpinionSelected)}>
-														Dodaj recenzję
-													</button>
-												</section>
-												{isLogged && isAddOpinionSelected ? (
-													<>
-														<section className='film-page-adding-opinion-container'>
-															<section>
-																<label htmlFor='title'>Tytuł</label>
-																<input type='text' id='title' />
-															</section>
-															<section>
-																<label htmlFor='opinion-mess'>Recenzja</label>
-																<textarea id='opinion-mess' />
-															</section>
-														</section>
-														<section className='flex gap-x-2 justify-end mt-1'>
-															<button
-																className='btn-style-outlined w-max sm:!px-7 !py-2 !text-md'
-																onClick={() => setAddOpinionSelected(!isAddOpinionSelected)}>
-																Anuluj
-															</button>
-															<button className='orange-btn-style w-max sm:!px-7 !py-2 text-sm'>Dodaj</button>
-														</section>
-													</>
-												) : (
-													''
-												)}
-											</div>
-											<div
-												className='opinion-must-be-logged-container'
-												style={{
-													display: `${isLogged ? 'none' : 'flex'}`,
-												}}>
-												<h1>Wymagana jest rejestracja</h1>
-												<p>
-													Please&nbsp;
-													<Link href='/login' className='orange-link'>
-														login
-													</Link>
-													&nbsp;or&nbsp;
-													<Link href='/register' className='orange-link'>
-														create account
-													</Link>
-													&nbsp;to add a review
-												</p>
-											</div>
 										</section>
 										<section className='text-center text-sm mt-8'>
 											<h2
@@ -262,7 +163,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 										</section>
 									</section>
 									<aside
-										className='watch-film-page-alike-films-section'
+										className='min-w-[260px] lg:!block !hidden'
 										style={{
 											display:
 												findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
