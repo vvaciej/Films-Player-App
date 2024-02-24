@@ -121,6 +121,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					<nav className={`header-left-nav-section ${isCutted ? 'navbar-cutted-style' : ''}`}>
 						<section className='header-search-section'>
 							<form
+								className='header-search-form'
 								onSubmit={event => {
 									event.preventDefault();
 								}}>
@@ -141,18 +142,30 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								<button type='submit' style={{ display: 'none' }}></button>
 							</form>
 							<Link href='/results' className='header-search-icon-link'>
-								<MagnifyingGlassIcon className='header-search-icon min-h-9 p-2' />
+								<MagnifyingGlassIcon className='header-search-icon' />
 							</Link>
 							<div className={`input-box-search ${isTyped ? 'active' : ''}`} ref={searchDropdownRef}>
-								<ul>
+								<ul className='flex flex-col'>
 									{searchResults.map((film: FilmData, index: number) => (
 										<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`} key={index}>
-											<li>
-												<img src={film.image} alt={film.title} />
-												<section>
+											<li className='flex h-[5.2rem] cursor-pointer gap-x-3 px-9 py-2'>
+												<img className='h-full object-cover rounded' src={film.image} alt={film.title} />
+												<section className='pt-[0.22rem] pb-[0.15rem] flex flex-col justify-between'>
 													<h1>{film.title}</h1>
-													<span>{film.year}</span>
-													<span>{film.type}</span>
+													<span
+														className='text-xs'
+														style={{
+															color: 'var(--light-gray-d0d0)',
+														}}>
+														{film.year}
+													</span>
+													<span
+														className='text-xs'
+														style={{
+															color: 'var(--light-gray-d0d0)',
+														}}>
+														{film.type}
+													</span>
 												</section>
 											</li>
 										</Link>
@@ -170,13 +183,17 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						</button>
 						<section className='header-btn-section'>
 							<section>
-								<Link href={`/movies?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
+								<Link
+									className='header-nav-btns-films-serials'
+									href={`/movies?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
 									<FilmIcon className='header-fa' />
 									<span>Filmy</span>
 								</Link>
 							</section>
 							<section>
-								<Link href={`/series?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
+								<Link
+									className='header-nav-btns-films-serials'
+									href={`/series?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
 									<TvIcon className='header-fa' />
 									<span>Seriale</span>
 								</Link>

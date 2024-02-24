@@ -52,40 +52,6 @@
 			width: 45px;
 		}
 	}
-	> img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		position: absolute;
-		z-index: 1;
-		opacity: 0.3;
-	}
-	div {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	div img {
-		height: 100%;
-		width: 1240px;
-		object-fit: cover;
-		position: relative;
-		margin-top: 140px;
-		z-index: 3;
-		filter: brightness(78%);
-		@include tablet-1350 {
-			width: 93%;
-			margin-top: 130px;
-		}
-		@include tablet-700 {
-			margin-top: 110px;
-		}
-		@include mobile-340 {
-			width: 92%;
-		}
-	}
 }
 
 .film-page-container {
@@ -185,84 +151,6 @@
 			padding-bottom: 0.8rem;
 			border-bottom: 1px solid var(--gray-3232);
 		}
-		.film-page-main-film-categories-section {
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0.7rem;
-				li {
-					padding: 7px 11px;
-					background-color: var(--gray-6161);
-					font-size: 13px;
-					border-radius: 1rem;
-				}
-			}
-			margin-bottom: 1rem;
-		}
-		.film-page-sources-container {
-			margin-top: 2rem;
-			.film-page-sources-landscapes-container {
-				width: 100%;
-				height: max-content;
-				margin-top: 1.5rem;
-				column-gap: 1.2rem;
-				@include tablet-700 {
-					column-gap: 0.9rem;
-				}
-				section {
-					position: relative;
-				}
-				article {
-					width: 100%;
-					display: flex;
-					flex-direction: column;
-					row-gap: 8px;
-					transition: filter 0.2s;
-					&:hover {
-						filter: brightness(84%);
-						transition: filter 0.2s;
-					}
-					a {
-						cursor: pointer;
-						width: 100%;
-						.film-page-sources-gradient-image {
-							width: 97%;
-							height: 100%;
-							position: absolute;
-							background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 1%, transparent);
-						}
-						.film-page-sources-imageontext {
-							height: 100%;
-							width: 100%;
-							position: absolute;
-							font-weight: 400;
-							font-size: 14px;
-							section {
-								display: flex;
-								align-items: center;
-								column-gap: 5px;
-								position: absolute;
-								bottom: 13px;
-								left: 13px;
-								@include tablet-700 {
-									bottom: 9px;
-									left: 9px;
-								}
-							}
-						}
-					}
-					a {
-						font-size: 14px;
-						font-weight: 500;
-						padding-right: 0.6rem;
-					}
-				}
-			}
-		}
-		.film-page-alike-films-container {
-			width: 100%;
-			height: max-content;
-		}
 	}
 }
 
@@ -357,22 +245,22 @@
 	@include mobile-600 {
 		row-gap: 1rem;
 	}
-	section {
+	.film-page-adding-opinion-input-section {
 		display: flex;
 		flex-direction: column;
 		row-gap: 4px;
-		label {
+		.film-page-adding-opinion-label-for-input {
 			font-size: 13px;
 		}
-		input,
-		textarea {
+		.film-page-adding-opinion-input,
+		.film-page-adding-opinion-description-textarea {
 			@include input-style;
 			font-size: 16px;
 			&:focus {
 				@include orange-outline;
 			}
 		}
-		textarea {
+		.film-page-adding-opinion-description-textarea {
 			padding: 7px 10px;
 		}
 	}

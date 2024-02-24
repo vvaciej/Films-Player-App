@@ -51,7 +51,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 
 	return (
 		<div className='films-category-container'>
-			<section className='films-heading-section'>
+			<section className='films-heading-section mb-4'>
 				<Link href={linkDirectPage} className='films-category-heading-text hover:underline !cursor-pointer'>
 					<span>{headingText}</span>
 					<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
@@ -104,17 +104,17 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 				onSwiper={swiper => setSwiper(swiper)}>
 				{filmsData.map((film: FilmData, index: number) => (
 					<SwiperSlide key={index}>
-						<article className='film-container'>
-							<section className='films-image-section'>
+						<article className='sm:mb-8 mb-6 text-sm font-medium'>
+							<section className='relative transition-all hover:brightness-75'>
 								<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}>
-									<img src={film.image} alt={`Poster for ${film.title}`} />
+									<img className='max-h-[19rem] sm:h-full w-full rounded object-cover brightness-90 cursor-pointer' src={film.image} alt={`Poster for ${film.title}`} />
 									<button className='film-play-btn'>
 										<PlayIcon className='text-black h-5' />
 									</button>
 								</Link>
 							</section>
 							<section className='films-text-section'>
-								<section className='main-text-rating flex items-center'>
+								<section className='flex items-center'>
 									<StarIcon
 										className='h-5 mr-2'
 										style={{
@@ -137,7 +137,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 
 export const FilmsCategories: React.FC = () => {
 	return (
-		<div className='films-wrapper-carousel'>
+		<div className='flex flex-col gap-y-10 sm:gap-y-16 mt-12 mb-10'>
 			<FilmCategory
 				headingText='Popularne filmy'
 				filmsData={filmData.popularFilms}

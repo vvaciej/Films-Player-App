@@ -119,9 +119,9 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 								</Link>
 								<div className='film-page-image-gradient'></div>
 								<div className='film-page-image-blured'></div>
-								<img src={infoOfChoosedFilm?.imgFullHd1280} alt={`Image for ${infoOfChoosedFilm?.title}`} />
-								<div className='relative'>
-									<img src={infoOfChoosedFilm?.imgFullHd1280} alt={`Image for ${infoOfChoosedFilm?.title}`} />
+								<img className='w-full h-full absolute object-cover z-[1] opacity-[0.3]' src={infoOfChoosedFilm?.imgFullHd1280} alt={`Image for ${infoOfChoosedFilm?.title}`} />
+								<div className='relative h-full w-full items-center flex justify-center'>
+									<img className='h-full relative sm:mt-[120px] lg:mt-[140px] z-[3] brightness-75 w-[92%] lg:w-[1240px] object-cover' src={infoOfChoosedFilm?.imgFullHd1280} alt={`Image for ${infoOfChoosedFilm?.title}`} />
 								</div>
 							</div>
 							<div className='content-full-space-centered'>
@@ -238,17 +238,23 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													</section>
 												</section>
 											</section>
-											<section className='film-page-main-film-categories-section'>
-												<ul>
+											<section className='mb-4'>
+												<ul className='flex flex-wrap gap-x-3 text-sm'>
 													{infoOfChoosedFilm?.categoryArr &&
 														infoOfChoosedFilm?.categoryArr.map((categories: string[] | string, index: number) => (
 															<Link href='#' key={index}>
-																<li>{categories}</li>
+																<li
+																	className='py-2 px-3 rounded-2xl hover:underline'
+																	style={{
+																		backgroundColor: 'var(--gray-6161)',
+																	}}>
+																	{categories}
+																</li>
 															</Link>
 														))}
 												</ul>
 											</section>
-											<p className='film-page-film-description'>{infoOfChoosedFilm?.description}</p>
+											<p>{infoOfChoosedFilm?.description}</p>
 										</section>
 										<section className='film-page-opinion-ab-film'>
 											<section className='films-heading-section'>
@@ -296,7 +302,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												</p>
 											</div>
 										</section>
-										<div className='film-page-sources-container'>
+										<div className='film-page-sources-container mt-1'>
 											<section className='films-heading-section'>
 												<section className='flex items-center gap-x-2'>
 													<h1 className='films-category-heading-text hover:underline !cursor-pointer'>Źródła</h1>
@@ -317,7 +323,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													</button>
 												</section>
 											</section>
-											<section className='film-page-sources-landscapes-container'>
+											<section className='w-full h-max mt-6 sm:gap-x-5 gap-x-4'>
 												<Swiper
 													modules={[Navigation, Pagination, A11y]}
 													navigation={{ prevEl: sourcesSwiperPrevBtn.current, nextEl: sourcesSwiperNextBtn.current }}
@@ -342,11 +348,17 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													}}
 													onSwiper={swiper => setSwiperSources(swiper)}>
 													<SwiperSlide>
-														<article className='mb-2'>
-															<Link href={`/watch/${infoOfChoosedFilm?.ref}`} className='relative'>
-																<div className='film-page-sources-gradient-image'></div>
-																<div className='film-page-sources-imageontext'>
-																	<section>
+														<article className='mb-2 w-full flex flex-col gap-y-2 transition-all hover:brightness-75'>
+															<Link
+																href={`/watch/${infoOfChoosedFilm?.ref}`}
+																className='relative cursor-pointer w-full text-sm pr-[0.6rem]'>
+																<div
+																	className='w-[97%] h-full absolute'
+																	style={{
+																		background: 'linear-gradient(to top, rgba(0, 0, 0, 0.6) 1%, transparent)',
+																	}}></div>
+																<div className='h-full w-full absolute text-sm font-normal'>
+																	<section className='flex items-center gap-x-2 absolute bottom-2 sm:bottom-3 sm:left-3 left-2'>
 																		<PlayCircleIcon className='h-6' />
 																		<span>Full Video</span>
 																	</section>
@@ -356,28 +368,10 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	alt={`Poster for ${infoOfChoosedFilm?.title}`}
 																/>
 															</Link>
-															<Link href={`/watch/${infoOfChoosedFilm?.ref}`} className='hover:underline font-medium'>
+															<Link
+																href={`/watch/${infoOfChoosedFilm?.ref}`}
+																className='hover:underline font-medium text-sm'>
 																Cały film, Lektor Polski
-															</Link>
-														</article>
-													</SwiperSlide>
-													<SwiperSlide>
-														<article>
-															<Link href={`/watch/${infoOfChoosedFilm?.ref}`} className='relative'>
-																<div className='film-page-sources-gradient-image'></div>
-																<div className='film-page-sources-imageontext'>
-																	<section>
-																		<PlayCircleIcon className='h-6' />
-																		<span>Trailer</span>
-																	</section>
-																</div>
-																<img
-																	src={infoOfChoosedFilm?.imgFullHd500}
-																	alt={`Poster for ${infoOfChoosedFilm?.title}`}
-																/>
-															</Link>
-															<Link href='#' className='hover:underline font-medium'>
-																Zwiastun
 															</Link>
 														</article>
 													</SwiperSlide>
@@ -411,7 +405,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													</button>
 												</section>
 											</section>
-											<div className='film-page-alike-films-container'>
+											<div className='w-full h-max'>
 												<Swiper
 													modules={[Navigation, Pagination, A11y]}
 													navigation={{

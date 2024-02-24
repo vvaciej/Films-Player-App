@@ -69,13 +69,15 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 			{isLogged && isAddOpinionSelected ? (
 				<>
 					<section className='film-page-adding-opinion-container'>
-						<section>
-							<label htmlFor='title'>Tytuł</label>
-							<input type='text' id='title' />
+						<section className='film-page-adding-opinion-input-section'>
+							<label className='film-page-adding-opinion-label-for-input' htmlFor='title'>
+								Tytuł
+							</label>
+							<input className='film-page-adding-opinion-input' type='text' id='title' />
 						</section>
 						<section>
 							<label htmlFor='opinion-mess'>Recenzja</label>
-							<textarea id='opinion-mess' />
+							<textarea className='film-page-adding-opinion-description-textarea' id='opinion-mess' />
 						</section>
 					</section>
 					<section className='flex gap-x-2 justify-end mt-1'>

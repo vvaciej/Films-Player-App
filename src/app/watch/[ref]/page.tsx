@@ -163,7 +163,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 										</section>
 									</section>
 									<aside
-										className='min-w-[260px] lg:!block !hidden'
+										className='min-w-[260px] lg:block hidden'
 										style={{
 											display:
 												findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0

@@ -140,7 +140,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							<section className='relative' ref={mostPopularDropdownRef}>
 								<button className={`films-category-filter-btn`} onClick={handleMostPopularClick}>
 									<Bars3BottomLeftIcon className='h-5' />
-									<span>
+									<span className='text-sm font-medium pl-2 lg:flex hidden'>
 										{mostPopularChoosed === 'most_popular'
 											? 'Najbadziej popularne'
 											: mostPopularChoosed === 'last_added'
@@ -156,7 +156,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								</button>
 								<div className={`filter-dropdown ${mostPopularBtnClicked ? 'active' : ''} select-none`}>
 									<button
-										className={`${mostPopularChoosed === 'most_popular' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${mostPopularChoosed === 'most_popular' ? 'choosed' : ''}`}
 										onClick={() => {
 											router.push(`?order=most_popular`);
 											setMostPopularBtnClicked(false);
@@ -165,7 +165,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										Najbardziej popularne
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'last_added' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${mostPopularChoosed === 'last_added' ? 'choosed' : ''}`}
 										onClick={() => {
 											router.push(`?order=last_added`);
 											setMostPopularBtnClicked(false);
@@ -174,7 +174,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										Ostatnio dodane
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'highest_rating' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${mostPopularChoosed === 'highest_rating' ? 'choosed' : ''}`}
 										onClick={() => {
 											router.push(`?order=highest_rating`);
 											setMostPopularBtnClicked(false);
@@ -183,7 +183,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										Najlepiej oceniane
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'highest_budget' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${mostPopularChoosed === 'highest_budget' ? 'choosed' : ''}`}
 										onClick={() => {
 											router.push(`?order=highest_budget`);
 											setMostPopularBtnClicked(false);
@@ -192,7 +192,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										Największy budżet
 									</button>
 									<button
-										className={`${mostPopularChoosed === 'highest_profit' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${mostPopularChoosed === 'highest_profit' ? 'choosed' : ''}`}
 										onClick={() => {
 											router.push(`?order=highest_profit`);
 											setMostPopularBtnClicked(false);
@@ -211,7 +211,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 									) : (
 										<ListBulletIcon className='h-5' />
 									)}
-									<span>
+									<span className='text-sm font-medium pl-2 lg:flex hidden'>
 										{siatkaChoosed === 'Siatka'
 											? 'Siatka'
 											: siatkaChoosed === 'Pejzaz'
@@ -223,7 +223,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								</button>
 								<div className={`filter-dropdown filter-siatka ${siatkaClicked ? 'active' : ''} select-none`}>
 									<button
-										className={`${siatkaChoosed === 'Siatka' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${siatkaChoosed === 'Siatka' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
 											setSiatkaChoosed('Siatka');
@@ -231,7 +231,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										Siatka
 									</button>
 									<button
-										className={`${siatkaChoosed === 'Pejzaz' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${siatkaChoosed === 'Pejzaz' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
 											setSiatkaChoosed('Pejzaz');
@@ -239,7 +239,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										Pejzaż
 									</button>
 									<button
-										className={`${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${siatkaChoosed === 'Lista' ? 'choosed' : ''}`}
 										onClick={() => {
 											setSiatkaClicked(false);
 											setSiatkaChoosed('Lista');

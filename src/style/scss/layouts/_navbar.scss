@@ -6,7 +6,6 @@
 	width: 100%;
 	background-color: var(--dark-121212);
 	height: 4.35rem;
-	display: flex;
 	border-bottom: 1px solid var(--dark-1a1a);
 	padding: 0px 1.3rem;
 	z-index: 7;
@@ -35,12 +34,12 @@
 	.header-brand-text {
 		font-size: 3rem;
 		font-weight: bold;
-		margin-right: 1.9rem;
+		margin-right: 1.5rem;
 		@include tablet-1350 {
 			font-size: 2.8rem;
 		}
 		@include tablet-1080 {
-			margin-right: 0.8rem;
+			margin-right: 0.3rem;
 		}
 		@include mobile-600 {
 			font-size: 2.1rem;
@@ -69,7 +68,7 @@
 		height: 100%;
 		align-items: center;
 		width: 100%;
-		form {
+		.header-search-form {
 			display: flex;
 			align-items: center;
 			width: 100%;
@@ -117,6 +116,8 @@
 		}
 
 		.header-search-icon {
+			min-height: 2.25rem;
+			padding: 0.5rem;
 			height: 1.2rem;
 			color: var(--light-gray-d0d0);
 		}
@@ -151,7 +152,7 @@
 		@include tablet-1080 {
 			display: none;
 		}
-		a {
+		.header-nav-btns-films-serials {
 			display: flex;
 			align-items: center;
 			column-gap: 0.55rem;
@@ -219,36 +220,6 @@
 		visibility: hidden;
 		z-index: -3;
 		opacity: 0;
-	}
-	ul {
-		display: flex;
-		flex-direction: column;
-		li {
-			display: flex;
-			padding: 0.5rem 1.2rem;
-			height: 5.2rem;
-			column-gap: 0.8rem;
-			cursor: pointer;
-			&:hover {
-				background-color: var(--gray-3232);
-			}
-			img {
-				height: 100%;
-				border-radius: 0.2rem;
-				object-fit: cover;
-			}
-			section {
-				padding-top: 0.22rem;
-				padding-bottom: 0.15rem;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				span {
-					font-size: 0.71rem;
-					color: var(--light-gray-d0d0);
-				}
-			}
-		}
 	}
 }
 
