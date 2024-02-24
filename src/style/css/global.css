@@ -73,6 +73,11 @@ html.dark {
     width: 93%;
   }
 }
+@media screen and (max-width: 800px) {
+  .main-container-width-padd-top-1240 {
+    padding: var(--main-container-padd-top) 0rem;
+  }
+}
 
 .orange-outlined-btn-style {
   outline: 1px solid var(--dark-orange-opacited);

@@ -26,14 +26,19 @@ const Login: React.FC = () => {
 	const [rememberChecked, setRememberChecked] = useState(false);
 
 	useEffect(() => {
+		const expirationDate = new Date();
 		if (!rememberChecked) {
-			const expirationDate = new Date();
 			expirationDate.setTime(expirationDate.getTime() + 60 * 60 * 1000);
+			
 			document.cookie = `email=${emailLogged}; expires=${expirationDate.toUTCString()}; path=/;`;
-			document.cookie = `avatarSrc=${exampleLogin.avatarSrc}; path=/;`
+			document.cookie = `avatarSrc=${exampleLogin.avatarSrc}; path=/;`;
 			document.cookie = `ref=${exampleLogin.ref}; path=/;`;
 		} else {
-			document.cookie = `email=${emailLogged}; path=/;`;
+			expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+
+			document.cookie = `email=${emailLogged}; expires=${expirationDate.toUTCString()}; path=/;`;
+			document.cookie = `avatarSrc=${exampleLogin.avatarSrc}; expires=${expirationDate.toUTCString()}; path=/;`;
+			document.cookie = `ref=${exampleLogin.ref}; expires=${expirationDate.toUTCString()}; path=/;`;
 		}
 	}, [emailLogged, rememberChecked]);
 
