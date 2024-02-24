@@ -49,7 +49,7 @@ const Login: React.FC = () => {
 					VVACIEJ.APP
 				</Link>
 				<div
-					className='reg-log-box flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-11/12'
+					className='flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-[93%]'
 					style={{
 						backgroundColor: 'var(--dark-1a1a)',
 						border: '1px solid var(--gray-3232)',
