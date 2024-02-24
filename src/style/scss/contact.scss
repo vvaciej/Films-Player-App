@@ -1,58 +1,19 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 @import './global.scss';
 
-.contact-container {
-  position: relative;
-  margin-top: calc(var(--main-container-padd-top));
-  width: 40rem;
-  height: max-content;
-  border: 1px solid var(--gray-3232);
-  background-color: var(--dark-1a1a);
-  @include tablet-700 {
-    width: 95%;
-  }
-}
-
-.contact-box {
-  height: 100%;
-  width: 100%;
-  border: 1px solid var(--gray-3232);
-  border-radius: 4px;
-  padding: 2rem;
-  font-size: .82rem;
-  h1 {
-    font-size: 1.5rem;
-    margin-bottom: 4px;
-  }
-  .contact-input-form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.5rem;
-    margin-top: 2.5rem;
-    height: calc(100% - 4px - 39.38px - 36px - 2.5rem);
-    section {
-      display: flex;
-      flex-direction: column;
-      row-gap: 4px;
-      width: 100%;
-      input[type=text], .contact-message-textarea {
-        @include input-style;
-        &:focus {
-          @include orange-outline;
-        }
-      }
-      .contact-message-textarea {
-        height: 11rem;
-        padding-top: .7rem;
-      }
-    }
-    .contact-submit-btn {
-      @include btn-style;
-    }
-  }
+.contact-input-form {
+	section {
+		.contact-message-textarea {
+			height: 11rem;
+			padding-top: 0.7rem;
+		}
+	}
+	.contact-submit-btn {
+		@include btn-style;
+	}
 }

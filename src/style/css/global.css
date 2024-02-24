@@ -960,12 +960,6 @@ html.dark {
   color: var(--gray-3232);
 }
 
-@media screen and (max-width: 600px) {
-  .footer-dropdown-lang {
-    width: 8rem;
-  }
-}
-
 *::before,
 *::after,
 * {
