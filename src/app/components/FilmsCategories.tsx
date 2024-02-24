@@ -90,13 +90,8 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 						spaceBetween: 10,
 						cssMode: true,
 					},
-					270: {
-						slidesPerView: 2,
-						spaceBetween: 10,
-						cssMode: true,
-					},
 					0: {
-						slidesPerView: 1,
+						slidesPerView: 2,
 						spaceBetween: 10,
 						cssMode: true,
 					},

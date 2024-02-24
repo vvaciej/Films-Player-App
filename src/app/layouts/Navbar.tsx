@@ -233,10 +233,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 									<Cog8ToothIcon className='h-5' />
 									Ustawienia konta
 								</Link>
-								<button className='user-dropdown-options'>
+								<Link
+									href={`/user/${getCookie('ref') || 1}/${getCookie('email').match(/^(.+)@/)?.[1] || ''}`}
+									className='user-dropdown-options'>
 									<UserCircleIcon className='h-5' />
 									Mój profil
-								</button>
+								</Link>
 								<button className='user-dropdown-options' onClick={() => deleteCookie('email')}>
 									<ArrowRightEndOnRectangleIcon className='h-5' />
 									Wyloguj się

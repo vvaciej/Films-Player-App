@@ -272,7 +272,9 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											/>
 											<span>{film.rating} / 10</span>
 										</section>
-										<Link href='#' className='film-link-title search-title pr-1'>
+										<Link
+											href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}
+											className='film-link-title search-title pr-1'>
 											{film.title}
 										</Link>
 									</section>
@@ -284,7 +286,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							{mappingBy.map((film: FilmData, index: number) => (
 								<article className='film-container-pejzaz w-full' key={index}>
 									<section className='films-image-section'>
-										<Link href='#'>
+										<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}>
 											<img src={film.imgFullHd500} alt={`Poster for ${film.title}`} />
 											<button className='film-play-btn'>
 												<PlayIcon className='text-black h-5' />
@@ -292,7 +294,9 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										</Link>
 									</section>
 									<section className='films-text-section'>
-										<Link href='#' className='film-link-title search-title pr-1'>
+										<Link
+											href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}
+											className='film-link-title search-title pr-1'>
 											{film.title}
 										</Link>
 										<span className='text-xs sm:text-sm'>{film.releaseDate}</span>
@@ -314,7 +318,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							{mappingBy.map((film: FilmData, index: number) => (
 								<article className='film-container-list w-full' key={index}>
 									<section className='films-image-section'>
-										<Link href='#'>
+										<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}>
 											<img className='max-h-46 max-w-32 pr-2' src={film.image} alt={`Poster for ${film.title}`} />
 											<button className='film-play-btn'>
 												<PlayIcon className='text-black h-5' />
@@ -322,7 +326,9 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										</Link>
 									</section>
 									<section className='films-text-section'>
-										<Link href='#' className='film-link-title search-title pr-1'>
+										<Link
+											href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}
+											className='film-link-title search-title pr-1'>
 											{film.title}
 										</Link>
 										<span className='text-xs sm:text-sm'>{film.time}</span>
