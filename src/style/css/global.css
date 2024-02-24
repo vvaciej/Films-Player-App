@@ -1421,4 +1421,8 @@ body {
   .opinion-must-be-logged-container p {
     font-size: 14px;
   }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=global.css.map */
