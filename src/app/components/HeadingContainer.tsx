@@ -162,7 +162,7 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes }) => (
 					<section>
 						<Link
 							href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}
-							className='font-semibold main-heading-right-film-title hover:underline'>
+							className='font-medium main-heading-right-film-title hover:underline'>
 							{film.title}
 						</Link>
 						<p className='main-heading-left-text-rating flex mt-1'>
