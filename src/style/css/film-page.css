@@ -733,14 +733,14 @@ html.dark {
 }
 .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-film-description {
   margin-bottom: 0.5rem;
-  max-height: 9.1rem !important;
+  max-height: 8.1rem !important;
   overflow: hidden;
-  line-height: 1.75;
-  font-size: 1rem;
+  line-height: 1.68;
+  font-size: 0.97rem;
 }
 @media screen and (max-width: 1080px) {
   .main-heading-container .main-heading-left-container .main-heading-left-film-wrapper .main-heading-onimage-container .main-heading-left-bottom-section .main-heading-left-text-container .main-heading-left-text-film-description {
-    font-size: 1rem !important;
+    font-size: 0.97rem !important;
   }
 }
 @media screen and (max-width: 800px) {

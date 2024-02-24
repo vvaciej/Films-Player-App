@@ -167,12 +167,12 @@
 						}
 						.main-heading-left-text-film-description {
 							margin-bottom: 0.5rem;
-							max-height: 9.1rem !important;
+							max-height: 8.1rem !important;
 							overflow: hidden;
-							line-height: 1.75;
-							font-size: 1rem;
+							line-height: 1.68;
+							font-size: .97rem;
 							@include tablet-1080 {
-								font-size: 1rem !important;
+								font-size: .97rem !important;
 							}
 							@include tablet-800 {
 								display: none;

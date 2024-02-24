@@ -18,14 +18,6 @@ interface HeadingProps {
 	leftBtnFunction: () => void;
 }
 
-type FilmData = {
-	image: string;
-	title: string;
-	rating: number;
-	ref: number;
-	imgFullHd500: string;
-};
-
 export const HeadingContainer: React.FC<HeadingProps> = ({
 	rating,
 	title,
