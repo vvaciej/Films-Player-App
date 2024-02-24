@@ -49,69 +49,71 @@ const Login: React.FC = () => {
 					VVACIEJ.APP
 				</Link>
 				<div
-					className='reg-log-box flex flex-col h-4/6 mt-4 rounded p-6 sm:p-10 sm:pb-8 pb-6 sm:w-[28rem] w-11/12'
+					className='reg-log-box flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-11/12'
 					style={{
 						backgroundColor: 'var(--dark-1a1a)',
 						border: '1px solid var(--gray-3232)',
 					}}>
 					<h1 className='text-lg'>Zaloguj się na swoje konto</h1>
-					<form
-						className='flex flex-col mt-6 text-base'
-						onSubmit={event => {
-							event.preventDefault();
-							handleLogin();
-						}}>
-						<section className='flex flex-col gap-y-1 mb-6'>
-							<label htmlFor='email' className='text-sm'>
-								Email
-							</label>
-							<input
-								type='text'
-								ref={emailInputRef}
-								id='email'
-								required
-								minLength={5}
-								className='orange-outline-focus input-style'
-								style={{
-									outline: isLogged ? '' : '1px solid rgba(239, 58, 48, 0.704)',
-								}}
-							/>
-						</section>
-						<section className='flex flex-col gap-y-1 mb-6'>
-							<section className='flex justify-between'>
-								<label htmlFor='password' className='text-sm'>
-									Hasło
+					<main>
+						<form
+							className='flex flex-col mt-6 text-base'
+							onSubmit={event => {
+								event.preventDefault();
+								handleLogin();
+							}}>
+							<section className='flex flex-col gap-y-1 mb-6'>
+								<label htmlFor='email' className='text-sm'>
+									Email
 								</label>
-								<Link href='/forgot-password' className='orange-link text-xs'>
-									Zapomniałeś hasła?
-								</Link>
+								<input
+									type='text'
+									ref={emailInputRef}
+									id='email'
+									required
+									minLength={5}
+									className='orange-outline-focus input-style'
+									style={{
+										outline: isLogged ? '' : '1px solid rgba(239, 58, 48, 0.704)',
+									}}
+								/>
 							</section>
-							<input
-								type='password'
-								ref={passwordInputRef}
-								id='password'
-								required
-								minLength={4}
-								maxLength={30}
-								className='orange-outline-focus input-style'
-								style={{
-									outline: isLogged ? '' : '1px solid rgba(239, 58, 48, 0.704)',
-								}}
-							/>
-							<section className='flex items-center gap-x-2 mt-2'>
-								<input type='checkbox' id='remember' className='orange-checkbox' />
-								<label
-									htmlFor='remember'
-									className='select-none text-sm'
-									onClick={() => setRememberChecked(!rememberChecked)}>
-									Zapamiętaj
-								</label>
+							<section className='flex flex-col gap-y-1 mb-6'>
+								<section className='flex justify-between'>
+									<label htmlFor='password' className='text-sm'>
+										Hasło
+									</label>
+									<Link href='/forgot-password' className='orange-link text-xs'>
+										Zapomniałeś hasła?
+									</Link>
+								</section>
+								<input
+									type='password'
+									ref={passwordInputRef}
+									id='password'
+									required
+									minLength={4}
+									maxLength={30}
+									className='orange-outline-focus input-style'
+									style={{
+										outline: isLogged ? '' : '1px solid rgba(239, 58, 48, 0.704)',
+									}}
+								/>
+								<section className='flex items-center gap-x-2 mt-2'>
+									<input type='checkbox' id='remember' className='orange-checkbox' />
+									<label
+										htmlFor='remember'
+										className='select-none text-sm'
+										onClick={() => setRememberChecked(!rememberChecked)}>
+										Zapamiętaj
+									</label>
+								</section>
 							</section>
-						</section>
-						<button className='orange-btn-style !w-full mb-4' type='submit'>
-							Kontynuuj
-						</button>
-					</form>
+							<button className='orange-btn-style !w-full mb-4' type='submit'>
+								Kontynuuj
+							</button>
+						</form>
+					</main>
 					<section className='flex items-center justify-center flex-col w-full gap-y-5'>
 						<span
 							className='login-authorize-text text-xs text-center w-full px-2'
@@ -144,15 +146,17 @@ const Login: React.FC = () => {
 					</Link>
 				</p>
 			</div>
-			<Link
-				href='/'
-				className='text-sm absolute bottom-10 transition-all left-1/2 translate-x-1/2 hover:brightness-125'
-				style={{
-					color: 'var(--gray-9999)',
-					transform: 'translate(-50%)',
-				}}>
-				&copy; src obejrzyj.to
-			</Link>
+			<footer>
+				<Link
+					href='/'
+					className='text-sm absolute bottom-10 transition-all left-1/2 translate-x-1/2 hover:brightness-125'
+					style={{
+						color: 'var(--gray-9999)',
+						transform: 'translate(-50%)',
+					}}>
+					&copy; src obejrzyj.to
+				</Link>
+			</footer>
 		</div>
 	);
 };
