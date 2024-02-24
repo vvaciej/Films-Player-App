@@ -76,7 +76,9 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 							<input className='film-page-adding-opinion-input' type='text' id='title' />
 						</section>
 						<section className='film-page-adding-opinion-input-section'>
-							<label htmlFor='opinion-mess'>Recenzja</label>
+							<label className='film-page-adding-opinion-label-for-input' htmlFor='opinion-mess'>
+								Recenzja
+							</label>
 							<textarea className='film-page-adding-opinion-description-textarea' id='opinion-mess' />
 						</section>
 					</section>
