@@ -5,7 +5,7 @@ import { Footer } from '../layouts/Footer';
 import useDocumentTitle from '../helpers/PageTitle';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import '../../style/css/search-page.css';
+import '../../style/css/global.css';
 import { PlayIcon, StarIcon } from '@heroicons/react/24/solid';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -81,7 +81,7 @@ const SearchPage: React.FC = () => {
 				<div className='typical-container-comp-with-films'>
 					{isLoaded ? (
 						<div>
-							<section className='search-text-input-section'>
+							<section>
 								<div className='w-full text-center'>
 									<form
 										className='flex justify-center'
@@ -91,7 +91,7 @@ const SearchPage: React.FC = () => {
 										<input
 											type='text'
 											placeholder='Szukaj filmu, serialu lub aktora...'
-											className='search-page-input-style'
+											className='input-style mb-8 flex w-full sm:w-[28rem] lg:hidden !h-12 touch-none text-base orange-outline-focus'
 											value={whatSearchVal}
 											onChange={handleSearchType}
 										/>
@@ -99,7 +99,9 @@ const SearchPage: React.FC = () => {
 									<section
 										className={`search-page-text-section flex flex-col items-center gap-y-1 text-center ${
 											whatSearchVal !== '' ? '' : 'active'
-										}`}>
+										}`} style={{
+											display: whatSearchVal !== '' ? 'none' : 'flex',
+										}}>
 										<MagnifyingGlassIcon className='min-h-10 h-10 mb-2' />
 										<h1 className='text-lg'>Search vvaciej.to</h1>
 										<span
@@ -113,14 +115,23 @@ const SearchPage: React.FC = () => {
 									</section>
 								</div>
 							</section>
-							<section className={`searched-films-wrapper ${whatSearchVal !== '' ? 'active' : ''}`}>
+							<section
+								className={`lg:w-[1240px] mt-4 h-max w-full ${whatSearchVal !== '' ? 'active' : ''}`}
+								style={{
+									display: whatSearchVal ? 'block' : 'none',
+								}}>
 								<h1 className='text-2xl font-semibold sm:text-3xl'>Search results for: {decodedQuery}</h1>
-								<section className='search-movies-section'>
+								<section className='flex flex-col justify-between mt-8'>
 									<section
-										className={`search-category-text flex items-center relative w-max ${
+										style={{
+											display: searchResults.length > 0 ? 'flex' : 'none',
+										}}
+										className={`flex items-center relative w-max category-movies-title-before-orange-hr ${
 											searchResults.length > 0 ? 'active' : ''
 										}`}>
-										<h1 className='text-2xl font-medium pl-4 leading-6'>Movies</h1>
+										<h1 className='text-2xl font-medium pl-4 leading-6 category-movies-title-before-orange-hr'>
+											Movies
+										</h1>
 									</section>
 									<div className='films-wrapper'>
 										{searchResults.map((film: FilmData, index: number) => (

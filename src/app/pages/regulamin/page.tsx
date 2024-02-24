@@ -13,7 +13,7 @@ const Policy: React.FC = () => {
 		<div className='space-dark'>
 			<Navbar isCutted={true} />
 			<div className='content-full-space-centered h-[76vh] overflow-hidden'>
-				<div className='main-container-width-padd-top-1240'>
+				<main className='main-container-width-padd-top-1240'>
 					<h1 className='text-2xl mb-4'>Regulamin</h1>
 					<div>
 						<h4>§ 1. ...</h4>
@@ -32,7 +32,7 @@ const Policy: React.FC = () => {
 						<h4>§ 13. ...</h4>
 						<h4>§ 14. ...</h4>
 					</div>
-				</div>
+				</main>
 			</div>
 			<Footer />
 		</div>

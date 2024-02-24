@@ -1,6 +1,6 @@
 'use client';
 
-import '../../style/css/contact.css';
+import '../../style/css/global.css';
 
 import { Navbar } from '@/app/layouts/Navbar';
 import { Footer } from '../layouts/Footer';
@@ -14,7 +14,7 @@ const Kontakt: React.FC = () => {
 			<Navbar isCutted={true} />
 			<div className='content-full-space-centered'>
 				<div className='main-container-width-padd-top-1240 !min-h-[76vh] !pb-0 h-max sm:!w-[40rem] w-[93%]'>
-					<div
+					<main
 						className='h-full w-full rounded p-8 text-[0.82rem]'
 						style={{
 							border: '1px solid var(--gray-3232)',
@@ -47,7 +47,7 @@ const Kontakt: React.FC = () => {
 								</button>
 							</section>
 						</form>
-					</div>
+					</main>
 				</div>
 			</div>
 			<Footer />

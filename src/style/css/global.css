@@ -156,6 +156,16 @@ html.dark {
   height: 100%;
 }
 
+.category-movies-title-before-orange-hr:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--orange);
+  border-radius: 5px;
+}
+
 .header-container {
   position: fixed;
   display: flex;
