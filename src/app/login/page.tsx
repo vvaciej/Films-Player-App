@@ -5,6 +5,7 @@ import useDocumentTitle from '../helpers/PageTitle';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import '../../style/css/global.css';
 
 const Login: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Logowanie');
@@ -29,7 +30,7 @@ const Login: React.FC = () => {
 		const expirationDate = new Date();
 		if (!rememberChecked) {
 			expirationDate.setTime(expirationDate.getTime() + 60 * 60 * 1000);
-			
+
 			document.cookie = `email=${emailLogged}; expires=${expirationDate.toUTCString()}; path=/;`;
 			document.cookie = `avatarSrc=${exampleLogin.avatarSrc}; path=/;`;
 			document.cookie = `ref=${exampleLogin.ref}; path=/;`;
@@ -113,11 +114,13 @@ const Login: React.FC = () => {
 									}}
 								/>
 								<section className='flex items-center gap-x-2 mt-2'>
-									<input type='checkbox' id='remember' className='orange-checkbox' />
-									<label
-										htmlFor='remember'
-										className='select-none text-sm'
-										onClick={() => setRememberChecked(!rememberChecked)}>
+									<input
+										type='checkbox'
+										id='remember'
+										className='orange-checkbox'
+										onClick={() => setRememberChecked(!rememberChecked)}
+									/>
+									<label htmlFor='remember' className='select-none text-sm'>
 										Zapamiętaj
 									</label>
 								</section>

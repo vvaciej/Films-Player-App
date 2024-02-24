@@ -2,6 +2,7 @@
 
 import useDocumentTitle from '@/app/helpers/PageTitle';
 import Link from 'next/link';
+import '../../style/css/global.css';
 
 const Policy: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Rejestracja');

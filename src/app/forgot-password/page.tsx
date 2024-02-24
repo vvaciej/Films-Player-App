@@ -2,6 +2,7 @@
 
 import useDocumentTitle from '../helpers/PageTitle';
 import Link from 'next/link';
+import '../../style/css/global.css';
 
 const Login: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Logowanie');
@@ -12,7 +13,7 @@ const Login: React.FC = () => {
 				<Link href='/' className='sm:text-6xl text-3xl font-bold'>
 					VVACIEJ.APP
 				</Link>
-				<main>
+				<main className='flex justify-center'>
 					<form
 						onSubmit={event => {
 							event.preventDefault();
