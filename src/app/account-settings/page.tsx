@@ -1,16 +1,19 @@
+'use client';
+
 import useDocumentTitle from '../helpers/PageTitle';
 import { Navbar } from '../layouts/Navbar';
 import { Footer } from '../layouts/Footer';
 import '../../style/css/global.css';
-import '../../style/css/acc-settings.css';
 import { CameraIcon, FilmIcon, PhotoIcon, UserIcon } from '@heroicons/react/24/solid';
 
 const AccSettings = () => {
+	useDocumentTitle('Ustawienia konta - vvaciej.app');
+
 	return (
 		<div className='space-dark'>
 			<Navbar isCutted={true} />
 			<div className='content-full-space-centered'>
-				<div className='acc-settings-page-container'>
+				<div className='main-container-width-padd-top-1240'>
 					<header className='w-full text-left mb-12'>
 						<h1 className='text-3xl'>Ustawienia konta</h1>
 						<span className='text-zinc-400'>Zaktualizuj informacje o swoim koncie.</span>
@@ -28,7 +31,7 @@ const AccSettings = () => {
 						</aside>
 						<main className='w-full h-max'>
 							<div
-								className='acc-settings-container-for-information bg-slate-400 px-5 py-4 text-zinc-200 rounded'
+								className='bg-slate-400 px-5 py-4 text-zinc-200 rounded'
 								style={{
 									backgroundColor: 'var(--gray-2222)',
 									border: '1px solid var(--gray-3232)',

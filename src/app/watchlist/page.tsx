@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation';
 import getCookie from '../helpers/GetCookie';
 
 import '../../style/css/filteres-page.css';
-import '../../style/css/watchlist.css';
 import Link from 'next/link';
 
 import {
@@ -128,7 +127,7 @@ const Watchlist = () => {
 		<div className='space-light'>
 			<Navbar isCutted={false} />
 			<div className='content-full-space-centered'>
-				<div className='watchlist-page-container'>
+				<div className='main-container-width-padd-top-1240'>
 					{isLogged ? (
 						<>
 							<header className='films-heading-section flex flex-col gap-y-4'>

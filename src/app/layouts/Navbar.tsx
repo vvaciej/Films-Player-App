@@ -20,7 +20,6 @@ import React from 'react';
 
 import { allFilms } from '../data/films-data';
 import convertTitleToUrl from '../helpers/ConvertTitleToURL';
-import { HtmlContext } from 'next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints';
 
 interface NavbarProps {
 	isCutted: boolean;
@@ -213,10 +212,10 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 									<CheckBadgeIcon className='h-5' />
 									Do obejrzenia
 								</Link>
-								<button className='user-dropdown-options'>
+								<Link href={`/account-settings`} className='user-dropdown-options'>
 									<Cog8ToothIcon className='h-5' />
 									Ustawienia konta
-								</button>
+								</Link>
 								<button className='user-dropdown-options'>
 									<UserCircleIcon className='h-5' />
 									Mój profil
@@ -281,10 +280,10 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							<CheckBadgeIcon className='h-5' />
 							Do obejrzenia
 						</Link>
-						<button className='user-dropdown-options'>
+						<Link href={`/account-settings`} className='user-dropdown-options'>
 							<Cog8ToothIcon className='h-5' />
 							Ustawienia konta
-						</button>
+						</Link>
 						<button className='user-dropdown-options'>
 							<UserCircleIcon className='h-5' />
 							Mój profil

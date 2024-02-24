@@ -154,6 +154,15 @@ html.dark {
 	transition: outline 0.1s;
 }
 
+.orange-outline-focus {
+	&:focus {
+		position: relative;
+		border: 1px solid var(--dark-orange-opacited) !important;
+		outline: 4px solid var(--orange-opacited-15) !important;
+		transition: outline 0.1s;
+	}
+}
+
 @mixin btn-style {
 	background-color: var(--orange);
 	padding: 0.5rem 1rem;
@@ -175,6 +184,14 @@ html.dark {
 	&:hover {
 		background-color: var(--dark-orange);
 		transition: background-color 0.2s;
+	}
+}
+.main-container-width-padd-top-1240 {
+	width: 1240px;
+	min-height: 100vh;
+	padding: calc(var(--main-container-padd-top) + 0.7rem) 0rem;
+	@include tablet-1350 {
+		width: 93%;
 	}
 }
 
