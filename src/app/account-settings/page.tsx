@@ -118,7 +118,7 @@ const AccSettings = () => {
 			{isLogged ? (
 				<div className='content-full-space-centered'>
 					<div className='main-container-width-padd-top-1240'>
-						<header className='w-full text-left mb-2 sm:mb-12'>
+						<header className='w-full text-left mb-6 sm:mb-12'>
 							<h1 className='text-3xl'>Ustawienia konta</h1>
 							<span className='text-zinc-400'>Zaktualizuj informacje o swoim koncie.</span>
 						</header>

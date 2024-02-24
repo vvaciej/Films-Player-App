@@ -193,6 +193,9 @@ html.dark {
 	@include tablet-1350 {
 		width: 93%;
 	}
+	@include tablet-800 {
+		padding: var(--main-container-padd-top) 0rem;
+	}
 }
 
 .orange-outlined-btn-style {
@@ -776,5 +779,5 @@ body {
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
