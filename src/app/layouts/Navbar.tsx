@@ -268,7 +268,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 			</header>
 			<div
 				ref={mobileDropdownsRef}
-				className={`typical-dropdown-style ${isClickedBtn ? 'active' : ''}`}
+				className={`typical-dropdown-style ${isClickedBtn ? 'active pointer-events-auto' : 'pointer-events-none'}`}
 				style={{
 					height: 'max-content',
 				}}>
