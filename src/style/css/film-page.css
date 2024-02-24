@@ -906,6 +906,7 @@ html {
   transition: opacity 0.3s, backdrop-filter 0.3s;
   position: relative;
   background-color: var(--dark-1a1a);
+  scroll-behavior: smooth;
 }
 
 .opacity-el::before {
@@ -1185,7 +1186,6 @@ body {
 @media screen and (max-width: 500px) {
   .films-wrapper {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
   }
 }
 

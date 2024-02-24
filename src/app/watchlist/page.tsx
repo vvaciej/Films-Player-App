@@ -19,6 +19,12 @@ const Watchlist = () => {
 
 	const isLogged = getCookie('email') ? true : false;
 
+	useEffect(() => {
+		if (!isLogged) {
+			router.push('/login');
+		}
+	}, []);
+
 	// switch (mostPopularChoosed) {
 	// 	case 'most_popular':
 	// 		mappingBy.sort((a: FilmData, b: FilmData) => b.filmwebPopularity - a.filmwebPopularity);
@@ -43,7 +49,13 @@ const Watchlist = () => {
 		<div className='space-light'>
 			<Navbar isCutted={false} />
 			<div className='content-full-space-centered'>
-				<Filters headingTitlePage='Do obejrzenia' mappingBy={filteredMovies} />
+				{isLogged ? (
+					<Filters headingTitlePage='Do obejrzenia' mappingBy={filteredMovies} />
+				) : (
+					<div className='h-full absolute right-1/2 top-36 translate-x-1/2'>
+						<div className='loader'></div>
+					</div>
+				)}
 			</div>
 		</div>
 	);
