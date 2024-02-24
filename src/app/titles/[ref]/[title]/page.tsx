@@ -386,7 +386,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 														: 'none',
 											}}>
 											<section className='films-heading-section mt-10'>
-												<Link href={'#'} className='films-category-heading-text hover:underline !cursor-pointer'>
+												<Link href={'#'} className='films-category-heading-text hover:underline !cursor-pointer mb-4'>
 													<span>Podobne filmy</span>
 													<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
 												</Link>
@@ -442,7 +442,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 														(similarFilm, index: number) => (
 															<SwiperSlide key={index}>
 																<article className='film-container !max-w-64'>
-																	<section className='films-image-section'>
+																	<section className='films-image-section relative'>
 																		<Link href={`/titles/${similarFilm?.ref}/${convertTitleToUrl(similarFilm?.title)}`}>
 																			<img src={similarFilm?.image} alt={`Poster for ${similarFilm?.title}`} />
 																			<button className='film-play-btn'>

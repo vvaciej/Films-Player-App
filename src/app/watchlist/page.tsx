@@ -37,7 +37,7 @@ const Watchlist = () => {
 	// 		break;
 	// }
 
-	const filteredMovies = IteratingFilmsPage(allFilms, 'category', 'lastadded');
+	const filteredMovies = IteratingFilmsPage(allFilms, 'category', 'favourite');
 
 	return (
 		<div className='space-light'>

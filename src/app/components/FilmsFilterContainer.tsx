@@ -256,7 +256,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								<article className='film-container w-full' key={index}>
 									<section className='films-image-section'>
 										<Link href={`/titles/${film.ref}/${convertTitleToUrl(film.title)}`}>
-											<img src={film.image} alt={`Poster for ${film.title}`} />
+											<img src={film.image} className='max-h-[17.2rem]' alt={`Poster for ${film.title}`} />
 											<button className='film-play-btn'>
 												<PlayIcon className='text-black h-5' />
 											</button>

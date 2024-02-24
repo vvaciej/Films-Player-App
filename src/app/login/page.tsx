@@ -10,7 +10,12 @@ const Login: React.FC = () => {
 	useDocumentTitle('vvaciej.app - Logowanie');
 	const router = useRouter();
 
-	const exampleLogin = { email: 'user@example.com', password: 'test' };
+	const exampleLogin = {
+		email: 'user@example.com',
+		password: 'test',
+		avatarSrc: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png',
+	};
+
 	const emailInputRef = useRef<any>(null);
 	const passwordInputRef = useRef<any>(null);
 
@@ -24,6 +29,7 @@ const Login: React.FC = () => {
 			const expirationDate = new Date();
 			expirationDate.setTime(expirationDate.getTime() + 60 * 60 * 1000);
 			document.cookie = `email=${emailLogged}; expires=${expirationDate.toUTCString()}; path=/;`;
+			document.cookie = `avatarSrc=${exampleLogin.avatarSrc}; path=/;`
 		} else {
 			document.cookie = `email=${emailLogged}; path=/;`;
 		}
