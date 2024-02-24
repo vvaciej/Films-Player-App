@@ -2,13 +2,14 @@
 
 import { Navbar } from '@/app/layouts/Navbar';
 import { Footer } from '@/app/layouts/Footer';
+import Link from 'next/link';
 
 import '../../../../style/css/global.css';
 import getCookie from '@/app/helpers/GetCookie';
 import { useRouter } from 'next/navigation';
 import useDocumentTitle from '@/app/helpers/PageTitle';
 import { useEffect, useState } from 'react';
-import { BookmarkSlashIcon, CloudIcon, ListBulletIcon, PencilIcon, StarIcon } from '@heroicons/react/24/solid';
+import { BookmarkSlashIcon, PencilIcon, StarIcon } from '@heroicons/react/24/solid';
 import { BookmarkIcon } from '@heroicons/react/24/outline';
 
 const UserPage = () => {
@@ -40,10 +41,10 @@ const UserPage = () => {
 								/>
 								<section className='flex flex-col gap-y-2'>
 									<h1 className='text-2xl font-semibold'>{getCookie('email').match(/^(.+)@/)?.[1] || ''}</h1>
-									<button className='btn-style-outlined !text-xs'>
+									<Link href='/account-settings' className='btn-style-outlined !text-xs'>
 										<PencilIcon className='h-4' />
 										<span>Edytuj profil</span>
-									</button>
+									</Link>
 								</section>
 							</section>
 							<section className='flex gap-x-3 items-center'>
