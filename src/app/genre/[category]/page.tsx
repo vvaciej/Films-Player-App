@@ -17,7 +17,7 @@ const Genre: React.FC<params> = ({ params }) => {
 
 	const filteredByGenre = IteratingFilmsPageArrays(allFilms, 'categoryArr', categoryArray);
 
-    const isGap = filteredByGenre.length === 0;
+	const isGap = filteredByGenre.length === 0;
 
 	return (
 		<Filters

@@ -29,6 +29,7 @@ import { useEffect, useRef, useState } from 'react';
 import { allFilms } from '@/app/data/films-data';
 import getCookie from '@/app/helpers/GetCookie';
 import ReviewAs from '@/app/components/ReviewAsContainer';
+import normalizePolishCharacters from '@/app/helpers/NormalizePolishSymbols';
 interface pageProps {
 	params: { ref: number; title: string };
 }
@@ -192,8 +193,8 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													infoOfChoosedFilm?.filmedIn.map((filmedIn: string[] | string, index: number) => (
 														<Link
 															href={`/production-countries/${encodeURIComponent(
-																String(filmedIn).toLowerCase().replace(/ /g, '-') as any
-															)}`}
+																normalizePolishCharacters(String(filmedIn).toLowerCase()).replace(/ /g, '-') as any
+															)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 															key={index}>
 															<li>{filmedIn}</li>
 														</Link>
@@ -211,8 +212,8 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													infoOfChoosedFilm?.keywords.map((keyword: string[] | string, index: number) => (
 														<Link
 															href={`/keyword/${encodeURIComponent(
-																String(keyword).toLowerCase().replace(/ /g, '-') as any
-															)}`}
+																normalizePolishCharacters(String(keyword).toLowerCase()).replace(/ /g, '-') as any
+															)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 															key={index}>
 															<li>{keyword}</li>
 														</Link>
@@ -258,7 +259,11 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												<ul className='flex flex-wrap gap-x-3 text-sm'>
 													{infoOfChoosedFilm?.categoryArr &&
 														infoOfChoosedFilm?.categoryArr.map((category: string | string, index: number) => (
-															<Link href={`/genre/${encodeURIComponent(String(category).toLowerCase().replace(/ /g, '-')).toLowerCase()}`} key={index}>
+															<Link
+																href={`/genre/${encodeURIComponent(
+																	normalizePolishCharacters(String(category).toLowerCase()).replace(/ /g, '-')
+																).toLowerCase()}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
+																key={index}>
 																<li
 																	className='py-[7px] px-3 rounded-2xl hover:underline'
 																	style={{

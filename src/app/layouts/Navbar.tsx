@@ -185,7 +185,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							<section>
 								<Link
 									className='header-nav-btns-films-serials'
-									href={`/movies?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
+									href={`/movies?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}>
 									<FilmIcon className='header-fa' />
 									<span>Filmy</span>
 								</Link>
@@ -193,7 +193,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							<section>
 								<Link
 									className='header-nav-btns-films-serials'
-									href={`/series?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
+									href={`/series?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}>
 									<TvIcon className='header-fa' />
 									<span>Seriale</span>
 								</Link>
@@ -224,7 +224,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								className={`user-dropdown-container ${userDropdownClicked ? 'active' : ''} py-1`}
 								ref={userDropdownRef}>
 								<Link
-									href={`/watchlist?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
+									href={`/watchlist?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 									className='user-dropdown-options'>
 									<CheckBadgeIcon className='h-5' />
 									Do obejrzenia
@@ -277,11 +277,11 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						style={{
 							height: '6rem',
 						}}>
-						<Link href={`/movies?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
+						<Link href={`/movies?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}>
 							<FilmIcon className='h-5' />
 							<span>Filmy</span>
 						</Link>
-						<Link href={`/series?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}>
+						<Link href={`/series?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}>
 							<TvIcon className='h-5' />
 							<span>Seriale</span>
 						</Link>
@@ -294,7 +294,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							height: '11rem',
 						}}>
 						<Link
-							href={`/watchlist?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
+							href={`/watchlist?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 							className='user-dropdown-options'>
 							<CheckBadgeIcon className='h-5' />
 							Do obejrzenia
