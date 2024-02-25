@@ -292,7 +292,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	normalizePolishCharacters(String(filmedIn).toLowerCase()).replace(/ /g, '-') as any
 																)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 																key={index}>
-																<li className='film-page-aside-keywords-section-keyword'>{filmedIn}</li>
+																<li className='film-page-aside-keywords-section-keyword'>{t(filmedIn)}</li>
 															</Link>
 														))}
 												</ul>

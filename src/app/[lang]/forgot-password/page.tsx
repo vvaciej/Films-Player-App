@@ -2,12 +2,12 @@
 
 import useDocumentTitle from '../helpers/PageTitle';
 import Link from 'next/link';
-import '../../style/css/global.css';
+import '../../../style/css/global.css';
 import getCookie from '../helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
 
 const Login: React.FC = () => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	useDocumentTitle(`${t(`Logowanie`)} - vvaciej.app`);
 
 	return (

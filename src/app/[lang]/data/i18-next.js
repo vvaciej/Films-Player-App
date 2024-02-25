@@ -312,6 +312,7 @@ i18next.use(initReactI18next).init({
 				'Nie masz konta?': "Don't have an account?",
 				'Zaloguj sie': 'Sign up',
 				// keywords, genre, tags
+				'Angielski': 'English',
 				Kryminał: 'Crime',
 				Historyczny: 'Historic',
 				'Akcja I Przygoda': 'Action and Adventure',
