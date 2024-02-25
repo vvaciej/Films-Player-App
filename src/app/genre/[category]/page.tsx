@@ -21,7 +21,7 @@ const Genre: React.FC<params> = ({ params }) => {
 
 	return (
 		<Filters
-			headingTitlePage={`${isGap ? categoryArray
+			headingTitlePage={`${!isGap ? categoryArray
 				.join(', ')
 				.split(' ')
 				.map(word => word.charAt(0).toUpperCase() + word.slice(1)) : 'restricted'} movies and series`}
