@@ -28,7 +28,7 @@ const Genre: React.FC<params> = ({ params }) => {
 					? categoryArray
 							.join(', ')
 							.split(' ')
-							.map(word => word.charAt(0).toUpperCase() + word.slice(1))
+							.map(word => word.charAt(0).toUpperCase() + word.slice(1).replace(/-/g, ' '))
 					: t('zastrzeżone')
 			} ${t('filmy i seriale')}`}
 			mappingBy={filteredByGenre}

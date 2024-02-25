@@ -1606,6 +1606,12 @@ body {
   border-bottom: 1px solid var(--gray-3232);
 }
 
+@media screen and (max-width: 1080px) {
+  .watch-page-aside-container {
+    display: none !important;
+  }
+}
+
 .film-page-opinion-ab-film {
   margin-top: 1.5rem;
   margin-bottom: 3rem;

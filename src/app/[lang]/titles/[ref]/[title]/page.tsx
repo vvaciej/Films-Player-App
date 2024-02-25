@@ -436,7 +436,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 															spaceBetween: 20,
 															cssMode: true,
 														},
-														270: {
+														350: {
 															slidesPerGroup: 2,
 															slidesPerView: 2,
 															spaceBetween: 10,
@@ -457,18 +457,13 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	infoOfChoosedFilm?.ref
 																}`}
 																className='relative cursor-pointer w-full text-sm pr-[0.6rem]'>
-																<div
-																	className='w-[97%] h-full absolute'
-																	style={{
-																		background: 'linear-gradient(to top, rgba(0, 0, 0, 0.6) 1%, transparent)',
-																	}}></div>
 																<div className='h-full w-full absolute text-sm font-normal'>
 																	<section className='flex items-center gap-x-2 absolute bottom-2 sm:bottom-3 sm:left-3 left-2'>
-																		<PlayCircleIcon className='h-6' />
-																		<span>{t('Całe video')}</span>
+																		<PlayCircleIcon className='h-6 z-10' />
+																		<span className='z-10'>{t('Całe video')}</span>
 																	</section>
 																</div>
-																<img
+																<img className='opacity-60 rounded'
 																	src={infoOfChoosedFilm?.imgFullHd500}
 																	alt={`Poster for ${t(infoOfChoosedFilm?.title || '')}`}
 																/>

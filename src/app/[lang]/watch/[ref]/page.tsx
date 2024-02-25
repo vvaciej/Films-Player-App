@@ -81,14 +81,14 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 									</video>
 								</main>
 								<div className='lg:mt-10 mt-8 h-max flex gap-x-8 lg:gap-x-12'>
-									<section className='watch-film-page-text-section'>
+									<section className='watch-film-page-text-section w-full'>
 										<section className='flex gap-x-3 sm:gap-x-4 overflow-hidden max-h-[209px] mb-6'>
 											<img
 												className='max-h-[209px] sm:block hidden rounded'
 												src={infoOfChoosedFilm?.image}
 												alt={`Poster for ${t(infoOfChoosedFilm?.title || '')}`}
 											/>
-											<section className='flex flex-col items-start gap-x-2'>
+											<section className='flex flex-col items-start gap-x-2 w-full'>
 												<h1 className='text-2xl font-medium'>{t(infoOfChoosedFilm?.title || '')}</h1>
 												<section className='flex gap-x-2 items-center justify-between w-full mb-1'>
 													{isLogged ? (
@@ -165,15 +165,15 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 										</section>
 									</section>
 									<aside
-										className='min-w-[260px] lg:block hidden'
+										className='min-w-[260px] watch-page-aside-container'
 										style={{
 											display:
 												findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
-													? 'block'
+													? 'block '
 													: 'none',
 										}}>
 										<section className='films-heading-section'>
-											<h1 className='films-category-heading-text !text-2xl mb-6'>{t('Alike')}</h1>
+											<h1 className='films-category-heading-text !text-2xl mb-6'>{t('Podobne')}</h1>
 										</section>
 										<section>
 											{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title)

@@ -152,6 +152,12 @@
 	}
 }
 
+.watch-page-aside-container {
+	@include tablet-1080 {
+		display: none !important;
+	}
+}
+
 .film-page-opinion-ab-film {
 	margin-top: 1.5rem;
 	margin-bottom: 3rem;

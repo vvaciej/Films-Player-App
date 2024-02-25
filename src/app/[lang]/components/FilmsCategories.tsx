@@ -42,7 +42,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 	const navigationNextRef = useRef<HTMLButtonElement>(null);
 	const [swiper, setSwiper] = useState<any>(null);
 
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 
 	const handlePrevClick = () => {
 		swiper?.slidePrev?.();
@@ -53,7 +53,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 	};
 
 	return (
-		<div className='films-category-container'>
+		<div className='films-category-container overflow-y-hidden'>
 			<section className='films-heading-section mb-4'>
 				<Link href={linkDirectPage} className='films-category-heading-text hover:underline !cursor-pointer'>
 					<h1>{t(headingText)}</h1>

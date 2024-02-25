@@ -2119,7 +2119,7 @@ export const allFilms = [
 		originalLang: 'Angielski',
 		originalTitle: 'Rick and Morty',
 		ref: 62,
-		categoryArr: ['Akcja I Przygoda', 'Animacja', 'Komedia', 'Sci-Fi & Fantasy'],
+		categoryArr: ['Akcja I Przygoda', 'Animacja', 'Komedia', 'Sci-Fi Fantasy'],
 		filmedIn: ['USA'],
 		keywords: [
 			'Adult animation',
@@ -2157,7 +2157,7 @@ export const allFilms = [
 		originalLang: 'Angielski',
 		originalTitle: 'Monarch: Legacy of Monsters',
 		ref: 63,
-		categoryArr: ['Akcja I Przygoda', 'Dramat', 'Sci-Fi & Fantasy'],
+		categoryArr: ['Akcja I Przygoda', 'Dramat', 'Sci-Fi Fantasy'],
 		filmedIn: ['Japan', 'USA'],
 		keywords: [
 			'Based on movie',
@@ -2190,7 +2190,7 @@ export const allFilms = [
 		originalLang: 'Angielski',
 		originalTitle: 'Loki',
 		ref: 64,
-		categoryArr: ['Dramat', 'Sci-Fi & Fantasy'],
+		categoryArr: ['Dramat', 'Sci-Fi Fantasy'],
 		filmedIn: ['USA'],
 		keywords: [
 			'Alternate timeline',
@@ -2316,7 +2316,7 @@ export const allFilms = [
 		originalLang: 'Angielski',
 		originalTitle: 'Invincible',
 		ref: 67,
-		categoryArr: ['Animacja', 'Akcja', 'Akcja I Przygoda', 'Dramat', 'Sci-Fi & Fantasy'],
+		categoryArr: ['Animacja', 'Akcja', 'Akcja I Przygoda', 'Dramat', 'Sci-Fi Fantasy'],
 		filmedIn: ['Canada', 'USA'],
 		keywords: ['Adult animation', 'Anti hero', 'Based on comic', 'Gore', 'Superhero', 'Teen superhero'],
 		// ratingTest: MovieAPI(95557, 'tv').then(movie => (movie.vote_average).toFixed(1)),
