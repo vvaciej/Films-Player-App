@@ -144,7 +144,7 @@ html.dark {
   font-size: 13px;
 }
 .btn-choosed-style:hover {
-  background-color: var(--gray-2222);
+  background-color: var(--gray-3232);
 }
 .btn-choosed-style.choosed {
   height: auto;

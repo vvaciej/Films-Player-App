@@ -468,7 +468,7 @@ const AccSettings = () => {
 																	langSelected === 'polski' ? 'choosed' : ''
 																} p-3 flex gap-x-1 items-center`}
 																onClick={() => {
-																	setLangDropdownActive(!langDropdownActive);
+																	setLangDropdownActive(false);
 																	setLangSelected('polski');
 																}}>
 																polski
@@ -502,7 +502,7 @@ const AccSettings = () => {
 																	countrySelected === 'Poland' ? 'choosed' : ''
 																} p-3 flex gap-x-1 items-center`}
 																onClick={() => {
-																	setCountryDropdownActive(!countryDropdownActive);
+																	setCountryDropdownActive(false);
 																	setCountrySelected('Poland');
 																}}>
 																Poland
@@ -514,7 +514,7 @@ const AccSettings = () => {
 																	countrySelected === 'England' ? 'choosed' : ''
 																} p-3 flex gap-x-1 items-center`}
 																onClick={() => {
-																	setCountryDropdownActive(!countryDropdownActive);
+																	setCountryDropdownActive(false);
 																	setCountrySelected('England');
 																}}>
 																England
@@ -526,7 +526,7 @@ const AccSettings = () => {
 																	countrySelected === 'Norway' ? 'choosed' : ''
 																} p-3 flex gap-x-1 items-center`}
 																onClick={() => {
-																	setCountryDropdownActive(!countryDropdownActive);
+																	setCountryDropdownActive(false);
 																	setCountrySelected('Norway');
 																}}>
 																Norway

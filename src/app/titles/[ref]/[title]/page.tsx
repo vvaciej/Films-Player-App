@@ -6,6 +6,8 @@ import { Footer } from '@/app/layouts/Footer';
 import '../../../../style/css/film-page.css';
 import SiteNotFound from '@/app/[...not_found]/page';
 import convertTitleToUrl from '@/app/helpers/ConvertTitleToURL';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import {
 	ChevronRightIcon,
 	StarIcon,
@@ -15,6 +17,7 @@ import {
 	ShareIcon,
 	Bars3BottomLeftIcon,
 	PlayCircleIcon,
+	ClipboardDocumentCheckIcon,
 } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 
@@ -30,6 +33,8 @@ import { allFilms } from '@/app/data/films-data';
 import getCookie from '@/app/helpers/GetCookie';
 import ReviewAs from '@/app/components/ReviewAsContainer';
 import normalizePolishCharacters from '@/app/helpers/NormalizePolishSymbols';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SomethingDone from '@/app/components/SomethingDoneDropdown';
 interface pageProps {
 	params: { ref: number; title: string };
 }
@@ -45,10 +50,9 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 	const [swiperAlikeFilms, setSwiperAlikeFilms] = useState<any>(null);
 	const [swiperSources, setSwiperSources] = useState<any>(null);
 
-	const [isHoveredStar, setHoveredStars] = useState<number | null>(null);
-	const [indexStars, setIndexStars] = useState<number | null>(null);
+	const [shareDropdownActive, setShareDropdownActive] = useState<boolean>(false);
 
-	const [isAddOpinionSelected, setAddOpinionSelected] = useState<boolean>(false);
+	const [isVisibleSthDone, setIsVisibleSthDone] = useState<boolean>(false);
 
 	const handlePrevClickAlikeSwiper = () => {
 		swiperAlikeFilms?.slidePrev?.();
@@ -107,6 +111,30 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 		return similarFilms;
 	};
 
+	const shareDropdownRef = useRef<HTMLDivElement>(null);
+	const shareBtnRef = useRef<HTMLButtonElement>(null);
+
+	const handleDocumentClick = (event: MouseEvent) => {
+		const isInsideDropdown = (
+			target: EventTarget | null,
+			dropdownRef: React.RefObject<HTMLDivElement | HTMLButtonElement>
+		) => {
+			return dropdownRef.current && dropdownRef.current.contains(target as Node);
+		};
+
+		if (!isInsideDropdown(event.target, shareDropdownRef) && !isInsideDropdown(event.target, shareBtnRef)) {
+			setShareDropdownActive(false);
+		}
+	};
+
+	useEffect(() => {
+		document.body.addEventListener('click', handleDocumentClick);
+
+		return () => {
+			document.body.removeEventListener('click', handleDocumentClick);
+		};
+	}, []);
+
 	return (
 		<>
 			<div className='space-light'>
@@ -141,85 +169,137 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											alt={`Poster for ${infoOfChoosedFilm?.title}`}
 											className='cursor-pointer'
 										/>
-										<button className='orange-btn-style'>
-											<PlayIcon className='h-4' />
-											Obejrzyj to
-										</button>
-										<button className='orange-outlined-btn-style'>
-											<PlusIcon className='h-4' />
-											Obejrzyj potem
-										</button>
-										<button className='orange-outlined-btn-style'>
-											<ShareIcon className='h-4' />
-											Udostępnij
-										</button>
-										<section>
-											<b>Oryginalny język</b>
-											<span>{infoOfChoosedFilm?.originalLang}</span>
-										</section>
-										<section
-											style={{
-												display: infoOfChoosedFilm?.title === infoOfChoosedFilm?.originalTitle ? 'none' : 'flex',
-											}}>
-											<b>Oryginalny tytuł</b>
-											<span>{infoOfChoosedFilm?.originalTitle}</span>
-										</section>
-										<section
-											style={{
-												display: infoOfChoosedFilm?.budget === 1 ? 'none' : 'flex',
-											}}>
-											<b>Budżet</b>
-											<span>
-												{infoOfChoosedFilm?.budget.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
-											</span>
-										</section>
-										<section
-											style={{
-												display: infoOfChoosedFilm?.profit === 1 ? 'none' : 'flex',
-											}}>
-											<b>Przychód</b>
-											<span>
-												{infoOfChoosedFilm?.profit.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
-											</span>
-										</section>
-										<section
-											className='film-page-aside-filmed-in-keywords-section'
-											style={{
-												display: infoOfChoosedFilm?.filmedIn.length === 0 ? 'none' : 'flex',
-											}}>
-											<b>Nakręcono w</b>
-											<ul>
-												{infoOfChoosedFilm?.filmedIn &&
-													infoOfChoosedFilm?.filmedIn.map((filmedIn: string[] | string, index: number) => (
-														<Link
-															href={`/production-countries/${encodeURIComponent(
-																normalizePolishCharacters(String(filmedIn).toLowerCase()).replace(/ /g, '-') as any
-															)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
-															key={index}>
-															<li>{filmedIn}</li>
-														</Link>
-													))}
-											</ul>
-										</section>
-										<section
-											className='film-page-aside-filmed-in-keywords-section'
-											style={{
-												display: infoOfChoosedFilm?.keywords.length === 0 ? 'none' : 'flex',
-											}}>
-											<b>Słowa kluczowe</b>
-											<ul>
-												{infoOfChoosedFilm?.keywords &&
-													infoOfChoosedFilm?.keywords.map((keyword: string[] | string, index: number) => (
-														<Link
-															href={`/keyword/${encodeURIComponent(
-																normalizePolishCharacters(String(keyword).toLowerCase()).replace(/ /g, '-') as any
-															)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
-															key={index}>
-															<li>{keyword}</li>
-														</Link>
-													))}
-											</ul>
-										</section>
+										<div className='flex flex-col gap-y-3'>
+											<Link href={`/watch/${infoOfChoosedFilm?.ref}`} className='film-page-aside-btns orange-btn-style'>
+												<PlayIcon className='h-4' />
+												Obejrzyj to
+											</Link>
+											<button className='film-page-aside-btns orange-outlined-btn-style'>
+												<PlusIcon className='h-4' />
+												Obejrzyj potem
+											</button>
+											<section className='relative w-full h-full'>
+												<button ref={shareBtnRef}
+													className='film-page-aside-btns orange-outlined-btn-style'
+													onClick={() => setShareDropdownActive(!shareDropdownActive)}>
+													<ShareIcon className='h-4' />
+													Udostępnij
+												</button>
+												<div ref={shareDropdownRef}
+													className='absolute h-max w-full top-10 rounded py-1 transition-all z-10'
+													style={{
+														visibility: shareDropdownActive ? 'visible' : 'hidden',
+														opacity: shareDropdownActive ? '1' : '0',
+														pointerEvents: shareDropdownActive ? 'all' : 'none',
+														backgroundColor: 'var(--dark-1a1a)',
+														outline: '1px solid var(--gray-3232)',
+													}}>
+													<button
+														className='flex items-center px-7 btn-choosed-style w-full !py-[10.5px]'
+														onClick={() => {
+															navigator.clipboard.writeText(window.location.href);
+															setShareDropdownActive(false);
+															setIsVisibleSthDone(true);
+															setTimeout(() => setIsVisibleSthDone(false), 2500);
+														}}>
+														<ClipboardDocumentCheckIcon className='h-6 text-zinc-200' />
+														<span className=' !text-[13px] text-zinc-200 w-max pl-2'>Skopiuj link</span>
+													</button>
+													<button
+														className='flex items-center px-7 !py-[10.5px] btn-choosed-style w-full'
+														onClick={() => {
+															setShareDropdownActive(false);
+															window.location.href = `https://www.facebook.com/share.php?u=${encodeURI(
+																window.location.href
+															)}`;
+														}}>
+														<FontAwesomeIcon icon={faFacebook} className='h-5 text-zinc-200' />
+														<span className='!text-[13px] text-zinc-200 w-max pl-2'>Udostępnij na facebooku</span>
+													</button>
+													<button
+														className='flex items-center px-7 !py-[10.5px] btn-choosed-style w-full'
+														onClick={() => {
+															setShareDropdownActive(false);
+															window.location.href = `https://twitter.com/share?&url=${window.location.href}`;
+														}}>
+														<FontAwesomeIcon icon={faTwitter} className='h-5 text-zinc-200' />
+														<span className='!text-[13px] text-zinc-200 w-max pl-2'>Udostępnij na twitterze</span>
+													</button>
+												</div>
+											</section>
+										</div>
+										<div className='flex flex-col gap-y-2'>
+											<section className='film-page-aside-info-sections'>
+												<b className='film-page-aside-info-sections-heading-text'>Oryginalny język</b>
+												<span>{infoOfChoosedFilm?.originalLang}</span>
+											</section>
+											<section
+												className='film-page-aside-info-sections'
+												style={{
+													display: infoOfChoosedFilm?.title === infoOfChoosedFilm?.originalTitle ? 'none' : 'flex',
+												}}>
+												<b className='film-page-aside-info-sections-heading-text'>Oryginalny tytuł</b>
+												<span>{infoOfChoosedFilm?.originalTitle}</span>
+											</section>
+											<section
+												className='film-page-aside-info-sections'
+												style={{
+													display: infoOfChoosedFilm?.budget === 1 ? 'none' : 'flex',
+												}}>
+												<b className='film-page-aside-info-sections-heading-text'>Budżet</b>
+												<span>
+													{infoOfChoosedFilm?.budget.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+												</span>
+											</section>
+											<section
+												className='film-page-aside-info-sections'
+												style={{
+													display: infoOfChoosedFilm?.profit === 1 ? 'none' : 'flex',
+												}}>
+												<b className='film-page-aside-info-sections-heading-text'>Przychód</b>
+												<span>
+													{infoOfChoosedFilm?.profit.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+												</span>
+											</section>
+											<section
+												className='film-page-aside-info-sections'
+												style={{
+													display: infoOfChoosedFilm?.filmedIn.length === 0 ? 'none' : 'flex',
+												}}>
+												<b className='film-page-aside-info-sections-heading-text'>Nakręcono w</b>
+												<ul className='film-page-aside-keywords-section-keywords-list'>
+													{infoOfChoosedFilm?.filmedIn &&
+														infoOfChoosedFilm?.filmedIn.map((filmedIn: string[] | string, index: number) => (
+															<Link
+																href={`/production-countries/${encodeURIComponent(
+																	normalizePolishCharacters(String(filmedIn).toLowerCase()).replace(/ /g, '-') as any
+																)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
+																key={index}>
+																<li className='film-page-aside-keywords-section-keyword'>{filmedIn}</li>
+															</Link>
+														))}
+												</ul>
+											</section>
+											<section
+												className='film-page-aside-info-sections'
+												style={{
+													display: infoOfChoosedFilm?.keywords.length === 0 ? 'none' : 'flex',
+												}}>
+												<b className='film-page-aside-info-sections-heading-text'>Słowa kluczowe</b>
+												<ul className='film-page-aside-keywords-section-keywords-list'>
+													{infoOfChoosedFilm?.keywords &&
+														infoOfChoosedFilm?.keywords.map((keyword: string[] | string, index: number) => (
+															<Link
+																href={`/keyword/${encodeURIComponent(
+																	normalizePolishCharacters(String(keyword).toLowerCase()).replace(/ /g, '-') as any
+																)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
+																key={index}>
+																<li className='film-page-aside-keywords-section-keyword'>{keyword}</li>
+															</Link>
+														))}
+												</ul>
+											</section>
+										</div>
 									</aside>
 									<main className='film-page-main'>
 										<section className='film-page-main-top-info-text-section'>
@@ -232,31 +312,9 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 														<span>{infoOfChoosedFilm?.time}</span>
 													</section>
 												</section>
-												<section>
-													<section className='main-text-rating flex items-center min-w-max'>
-														<StarIcon
-															className='h-5 mr-2'
-															style={{
-																color: 'var(--orange)',
-															}}
-														/>
-														<span>{infoOfChoosedFilm?.rating} / 10</span>
-														<span
-															className='film-list-rating-separate-symbol ml-3'
-															style={{
-																color: 'var(--gray-5050)',
-															}}>
-															|
-														</span>
-														<button className='rate-this-btn flex items-center gap-x-2'>
-															<StarIcon className='h-4' />
-															Oceń to
-														</button>
-													</section>
-												</section>
 											</section>
 											<section className='mb-4'>
-												<ul className='flex flex-wrap gap-x-3 text-sm'>
+												<ul className='flex flex-wrap gap-2 text-[13px]'>
 													{infoOfChoosedFilm?.categoryArr &&
 														infoOfChoosedFilm?.categoryArr.map((category: string | string, index: number) => (
 															<Link
@@ -265,7 +323,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																).toLowerCase()}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 																key={index}>
 																<li
-																	className='py-[7px] px-3 rounded-2xl hover:underline'
+																	className='py-[6px] px-3 rounded-2xl hover:underline'
 																	style={{
 																		backgroundColor: 'var(--gray-6161)',
 																	}}>
@@ -279,7 +337,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 										</section>
 										<section className='film-page-opinion-ab-film'>
 											<section className='films-heading-section'>
-												<h1 className='films-category-heading-text hover:underline !cursor-pointer'>Recenzje</h1>
+												<h1 className='films-category-heading-text'>Recenzje</h1>
 												<section className='flex'>
 													<section className='main-text-rating flex items-center min-w-max'>
 														<StarIcon
@@ -326,8 +384,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 										<div className='film-page-sources-container mt-1'>
 											<section className='films-heading-section'>
 												<section className='flex items-center gap-x-2'>
-													<h1 className='films-category-heading-text hover:underline !cursor-pointer'>Źródła</h1>
-													<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
+													<h1 className='films-category-heading-text'>Źródła</h1>
 												</section>
 												<section className='films-category-control-btns'>
 													<button
@@ -407,10 +464,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 														: 'none',
 											}}>
 											<section className='films-heading-section mt-10'>
-												<Link href={'#'} className='films-category-heading-text hover:underline !cursor-pointer mb-4'>
-													<span>Podobne filmy</span>
-													<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
-												</Link>
+												<h1 className='films-category-heading-text mb-4'>Podobne filmy</h1>
 												<section className='films-category-control-btns'>
 													<button
 														className={`films-category-control-btn`}
@@ -507,6 +561,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 						<div className='loader'></div>
 					</div>
 				)}
+				<SomethingDone visible={isVisibleSthDone} text={'Copied link to clipboard'} />
 			</div>
 		</>
 	);

@@ -2,8 +2,7 @@
 
 import useDocumentTitle from '../helpers/PageTitle';
 import { Navbar } from '../layouts/Navbar';
-import { Footer } from '../layouts/Footer';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import getCookie from '../helpers/GetCookie';
 import { allFilms } from '../data/films-data';
@@ -24,24 +23,6 @@ const Watchlist = () => {
 			router.push('/login');
 		}
 	}, []);
-
-	// switch (mostPopularChoosed) {
-	// 	case 'most_popular':
-	// 		mappingBy.sort((a: FilmData, b: FilmData) => b.filmwebPopularity - a.filmwebPopularity);
-	// 		break;
-	// 	case 'last_added':
-	// 		mappingBy.sort((a: FilmData, b: FilmData) => new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime());
-	// 		break;
-	// 	case 'highest_rating':
-	// 		mappingBy.sort((a: FilmData, b: FilmData) => b.rating - a.rating);
-	// 		break;
-	// 	case 'highest_budget':
-	// 		mappingBy.sort((a: FilmData, b: FilmData) => b.budget - a.budget);
-	// 		break;
-	// 	case 'highest_profit':
-	// 		mappingBy.sort((a: FilmData, b: FilmData) => b.profit - a.profit);
-	// 		break;
-	// }
 
 	const filteredMovies = IteratingFilmsPage(allFilms, 'category', 'favourite');
 

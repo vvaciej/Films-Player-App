@@ -43,10 +43,8 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 	const isLogged = getCookie('email');
 	const [, setIsLiked] = useState(false);
 
-	const handleLikeClick = () => {
-	};
-	const handleUnLikeClick = () => {
-	};
+	const handleLikeClick = () => {};
+	const handleUnLikeClick = () => {};
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -101,7 +99,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																}}
 																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
 																<HandThumbUpIcon className='h-5' />
-																<span className='font-semibold'></span>
+																<span className='font-semibold'>0</span>
 															</button>
 															<button
 																onClick={() => {
@@ -110,7 +108,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																}}
 																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
 																<HandThumbDownIcon className='h-5' />
-																<span className='font-semibold'></span>
+																<span className='font-semibold'>0</span>
 															</button>
 														</section>
 													) : (
@@ -143,7 +141,6 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 												</p>
 											</section>
 										</section>
-										<ReviewAs infoOfChoosedFilm={infoOfChoosedFilm} />
 										<section>
 											<section className='flex gap-x-2 mt-8 mb-2'>
 												<ChatBubbleBottomCenterIcon className='h-5' />
@@ -171,25 +168,29 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 													: 'none',
 										}}>
 										<section className='films-heading-section'>
-											<h1 className='films-category-heading-text hover:underline !cursor-pointer !text-2xl'>Podobne</h1>
+											<h1 className='films-category-heading-text !text-2xl mb-6'>Podobne</h1>
 										</section>
 										<section>
 											{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title)
 												.slice(0, 4)
 												.map((similarFilm, index) => (
-													<article className='film-container !max-w-80' key={index}>
-														<section className='films-image-section'>
+													<article className='film-container !max-w-80 mb-6' key={index}>
+														<section className='films-image-section relative'>
 															<Link href={`/titles/${similarFilm?.ref}/${convertTitleToUrl(similarFilm?.title)}`}>
-																<img src={similarFilm?.imgFullHd500} alt={`Poster for ${similarFilm?.title}`} />
+																<img
+																	className='rounded brightness-75'
+																	src={similarFilm?.imgFullHd500}
+																	alt={`Poster for ${similarFilm?.title}`}
+																/>
 																<button className='film-play-btn'>
 																	<PlayIcon className='text-black h-5' />
 																</button>
 															</Link>
 														</section>
-														<section className='films-text-section'>
+														<section className='films-text-section !pt-2 font-semibold'>
 															<Link
 																href={`/titles/${similarFilm?.ref}/${convertTitleToUrl(similarFilm?.title)}`}
-																className='film-container-title hover:underline'>
+																className='film-container-title text-[14px] hover:underline'>
 																{similarFilm?.title}
 															</Link>
 														</section>
