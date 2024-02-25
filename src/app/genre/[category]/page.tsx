@@ -3,6 +3,7 @@
 import Filters from '@/app/components/FilmsFilterContainer';
 import useDocumentTitle from '@/app/helpers/PageTitle';
 import { allFilms } from '@/app/data/films-data';
+import IteratingFilmsPageArrays from '@/app/helpers/FilmsIteratingFilterArrays';
 
 interface params {
 	params: {
@@ -14,18 +15,16 @@ const Genre: React.FC<params> = ({ params }) => {
 	const categoryArray = Array.isArray(params.category) ? params.category : [params.category];
 	useDocumentTitle(`${categoryArray.join(', ')} - vvaciej.app`);
 
-	const filteredByGenre = allFilms.filter((movie: any) => {
-		const filmCategories = movie['categoryArr'].map((category: any) => category.toLowerCase());
+	const filteredByGenre = IteratingFilmsPageArrays(allFilms, 'categoryArr', categoryArray);
 
-		return filmCategories.some((category: any) => categoryArray.includes(category));
-	});
+    const isGap = filteredByGenre.length === 0;
 
 	return (
 		<Filters
-			headingTitlePage={`${categoryArray
+			headingTitlePage={`${isGap ? categoryArray
 				.join(', ')
 				.split(' ')
-				.map(word => word.charAt(0).toUpperCase() + word.slice(1))} movies and series`}
+				.map(word => word.charAt(0).toUpperCase() + word.slice(1)) : 'restricted'} movies and series`}
 			mappingBy={filteredByGenre}
 		/>
 	);

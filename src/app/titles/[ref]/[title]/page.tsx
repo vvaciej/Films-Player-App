@@ -119,9 +119,17 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 								</Link>
 								<div className='film-page-image-gradient'></div>
 								<div className='film-page-image-blured'></div>
-								<img className='w-full h-full absolute object-cover z-[1] opacity-[0.3]' src={infoOfChoosedFilm?.imgFullHd1280} alt={`Image for ${infoOfChoosedFilm?.title}`} />
+								<img
+									className='w-full h-full absolute object-cover z-[1] opacity-[0.3]'
+									src={infoOfChoosedFilm?.imgFullHd1280}
+									alt={`Image for ${infoOfChoosedFilm?.title}`}
+								/>
 								<div className='relative h-full w-full items-center flex justify-center'>
-									<img className='h-full relative sm:mt-[120px] lg:mt-[140px] z-[3] brightness-75 w-[92%] lg:w-[1240px] object-cover' src={infoOfChoosedFilm?.imgFullHd1280} alt={`Image for ${infoOfChoosedFilm?.title}`} />
+									<img
+										className='h-full relative sm:mt-[120px] lg:mt-[140px] z-[3] brightness-75 w-[92%] lg:w-[1240px] object-cover'
+										src={infoOfChoosedFilm?.imgFullHd1280}
+										alt={`Image for ${infoOfChoosedFilm?.title}`}
+									/>
 								</div>
 							</div>
 							<div className='content-full-space-centered'>
@@ -182,7 +190,11 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											<ul>
 												{infoOfChoosedFilm?.filmedIn &&
 													infoOfChoosedFilm?.filmedIn.map((filmedIn: string[] | string, index: number) => (
-														<Link href='#' key={index}>
+														<Link
+															href={`/production-countries/${encodeURIComponent(
+																String(filmedIn).toLowerCase().replace(/ /g, '-') as any
+															)}`}
+															key={index}>
 															<li>{filmedIn}</li>
 														</Link>
 													))}
@@ -196,9 +208,13 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											<b>Słowa kluczowe</b>
 											<ul>
 												{infoOfChoosedFilm?.keywords &&
-													infoOfChoosedFilm?.keywords.map((keywords: string[] | string, index: number) => (
-														<Link href='#' key={index}>
-															<li>{keywords}</li>
+													infoOfChoosedFilm?.keywords.map((keyword: string[] | string, index: number) => (
+														<Link
+															href={`/keyword/${encodeURIComponent(
+																String(keyword).toLowerCase().replace(/ /g, '-') as any
+															)}`}
+															key={index}>
+															<li>{keyword}</li>
 														</Link>
 													))}
 											</ul>
@@ -242,7 +258,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												<ul className='flex flex-wrap gap-x-3 text-sm'>
 													{infoOfChoosedFilm?.categoryArr &&
 														infoOfChoosedFilm?.categoryArr.map((category: string | string, index: number) => (
-															<Link href={`/genre/${encodeURIComponent(category).toLowerCase()}`} key={index}>
+															<Link href={`/genre/${encodeURIComponent(String(category).toLowerCase().replace(/ /g, '-')).toLowerCase()}`} key={index}>
 																<li
 																	className='py-[7px] px-3 rounded-2xl hover:underline'
 																	style={{
