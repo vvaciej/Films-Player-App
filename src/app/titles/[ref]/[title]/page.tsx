@@ -241,14 +241,14 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											<section className='mb-4'>
 												<ul className='flex flex-wrap gap-x-3 text-sm'>
 													{infoOfChoosedFilm?.categoryArr &&
-														infoOfChoosedFilm?.categoryArr.map((categories: string[] | string, index: number) => (
-															<Link href='#' key={index}>
+														infoOfChoosedFilm?.categoryArr.map((category: string | string, index: number) => (
+															<Link href={`/genre/${encodeURIComponent(category).toLowerCase()}`} key={index}>
 																<li
-																	className='py-2 px-3 rounded-2xl hover:underline'
+																	className='py-[7px] px-3 rounded-2xl hover:underline'
 																	style={{
 																		backgroundColor: 'var(--gray-6161)',
 																	}}>
-																	{categories}
+																	{category}
 																</li>
 															</Link>
 														))}
