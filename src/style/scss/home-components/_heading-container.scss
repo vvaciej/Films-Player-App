@@ -143,17 +143,16 @@
 								font-size: 1.9rem;
 							}
 							@include tablet-800 {
-								margin-bottom: 1.5rem;
+								margin-bottom: .3rem;
 								font-size: 1.5rem;
 								width: 95%;
 							}
 							@include mobile-600 {
 								font-size: 1.2rem;
-								margin-bottom: 1rem;
 							}
 							@include mobile-365 {
 								font-size: 1.15rem;
-								margin-bottom: 0.3rem;
+								margin-bottom: 0.2rem;
 							}
 							@include mobile-340 {
 								font-size: 1.1rem;
@@ -187,13 +186,13 @@
 							column-gap: 0.5rem;
 							transition: background-color 0.3s;
 							@include tablet-1080 {
-								padding: 0.65rem 1.5rem;
+								padding: 0.45rem 1.1rem;
 							}
 							@include mobile-365 {
-								padding: .5rem 1.2rem;
+								padding: .4rem 1rem;
 							}
 							@include mobile-260 {
-								padding: .4rem 1rem;
+								padding: .3rem .9rem;
 							}
 							&:hover {
 								background-color: #d56210;
