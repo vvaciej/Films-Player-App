@@ -52,7 +52,7 @@ const SearchPage: React.FC = () => {
 	}, [whatSearchVal]);
 
 	useEffect(() => {
-		router.replace(`/results?query=${whatSearchVal}`);
+		router.replace(`/pl/results?query=${whatSearchVal}`);
 	}, [whatSearchVal, router]);
 
 	useEffect(() => {
