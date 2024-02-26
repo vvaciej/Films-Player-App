@@ -4,13 +4,13 @@ import { faTwitter, faInstagram, faFacebook, faYoutube } from '@fortawesome/free
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import { useState, useEffect, useRef, useContext } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import getCookie from '../helpers/GetCookie';
 
 export const Footer: React.FC = () => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 
 	const [langBtnClickedBool, setLangBtnClickedBool] = useState<boolean>(false);
 	const [langSelected, setLangSelected] = useState<string>(`${getCookie('langChoosed')}`);
