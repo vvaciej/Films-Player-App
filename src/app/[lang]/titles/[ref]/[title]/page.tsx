@@ -517,6 +517,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 															slidesPerView: 5,
 															slidesPerGroup: 5,
 															spaceBetween: 10,
+															cssMode: true,
 														},
 														650: {
 															slidesPerView: 4,
