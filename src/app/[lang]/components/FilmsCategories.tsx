@@ -77,6 +77,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 						slidesPerGroup: 6,
 						spaceBetween: 20,
 						keyboard: true,
+						cssMode: true,
 					},
 					930: {
 						slidesPerView: 5,
