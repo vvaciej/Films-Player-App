@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
 							<ChevronDownIcon className='h-4' />
 						</button>
 						<div
-							className={`absolute sm:w-[11rem] w-[8rem] h-12 rounded right-1/2 sm:translate-x-0 translate-x-1/2 sm:right-0 sm:bottom-15 bottom-16 py-1 transition-opacity ${
+							className={`absolute sm:w-[11rem] w-[8rem] h-18 rounded right-1/2 sm:translate-x-0 translate-x-1/2 sm:right-0 sm:bottom-10 bottom-10 py-1 transition-opacity ${
 								langBtnClickedBool ? 'active' : ''
 							}`}
 							ref={LangSelectDropdownRef}
