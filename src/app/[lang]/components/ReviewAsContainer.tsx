@@ -84,7 +84,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 							<textarea className='input-style orange-outline-focus !pt-2' id='opinion-mess' />
 						</section>
 					</section>
-					<section className='flex gap-x-2 justify-end mt-1'>
+					<section className='flex gap-x-2 justify-end mt-3'>
 						<button
 							className='btn-style-outlined w-max sm:!px-7 !py-2 !text-md'
 							onClick={() => setAddOpinionSelected(!isAddOpinionSelected)}>
