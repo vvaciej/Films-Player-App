@@ -110,69 +110,52 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 											<section className='flex flex-col items-start gap-x-2 w-full'>
 												<h1 className='text-2xl font-medium'>{t(infoOfChoosedFilm?.title || '')}</h1>
 												<section className='flex gap-x-2 items-center justify-between w-full mb-1'>
-													{isLogged ? (
-														<section className='flex'>
-															<button
-																onClick={() => {
-																	setUserVoted(true);
-																	userVoted ? '' : setUniqueFilmLikes(prevState => prevState + 1);
-																	setUserWhatVote('liked');
-																	setSthDoneVotedVisible(true);
-																	setTimeout(() => setSthDoneVotedVisible(false), 2500);
-																}}
-																style={{
-																	color:
-																		userVoted && userWhatVote !== 'liked'
-																			? 'var(--gray-9999)'
-																			: userVoted && userWhatVote === 'liked'
-																			? 'var(--green)'
-																			: '',
-																	cursor: userVoted ? 'not-allowed' : 'pointer',
-																	pointerEvents: userVoted ? 'none' : 'all',
-																}}
-																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
-																<HandThumbUpIcon className='h-5' />
-																<span className='font-semibold'>{uniqueFilmLikes}</span>
-															</button>
-															<button
-																onClick={() => {
-																	setUserVoted(true);
-																	userVoted ? '' : setUniqueFilmUnLikes(prevState => prevState + 1);
-																	setUserWhatVote('disLiked');
-																	setSthDoneVotedVisible(true);
-																	setTimeout(() => setSthDoneVotedVisible(false), 2500);
-																}}
-																style={{
-																	color:
-																		userVoted && userWhatVote !== 'disLiked'
-																			? 'var(--gray-9999)'
-																			: userVoted && userWhatVote === 'disLiked'
-																			? 'var(--red)'
-																			: '',
-																	cursor: userVoted ? 'not-allowed' : 'pointer',
-																	pointerEvents: userVoted ? 'none' : 'all',
-																}}
-																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
-																<HandThumbDownIcon className='h-5' />
-																<span className='font-semibold'>{uniqueFilmUnLikes}</span>
-															</button>
-														</section>
-													) : (
-														<section className='flex'>
-															<Link
-																href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}
-																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
-																<HandThumbUpIcon className='h-5' />
-																<span className='font-semibold'>0</span>
-															</Link>
-															<Link
-																href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}
-																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
-																<HandThumbDownIcon className='h-5' />
-																<span className='font-semibold'>0</span>
-															</Link>
-														</section>
-													)}
+													<section className='flex'>
+														<button
+															onClick={() => {
+																setUserVoted(true);
+																userVoted ? '' : setUniqueFilmLikes(prevState => prevState + 1);
+																setUserWhatVote('liked');
+																setSthDoneVotedVisible(true);
+																setTimeout(() => setSthDoneVotedVisible(false), 2500);
+															}}
+															style={{
+																color:
+																	userVoted && userWhatVote !== 'liked'
+																		? 'var(--gray-9999)'
+																		: userVoted && userWhatVote === 'liked'
+																		? 'var(--green)'
+																		: '',
+																cursor: userVoted ? 'not-allowed' : 'pointer',
+																pointerEvents: userVoted ? 'none' : 'all',
+															}}
+															className='flex gap-x-2 items-center transparent-btn-style !p-2'>
+															<HandThumbUpIcon className='h-5' />
+															<span className='font-semibold'>{uniqueFilmLikes}</span>
+														</button>
+														<button
+															onClick={() => {
+																setUserVoted(true);
+																userVoted ? '' : setUniqueFilmUnLikes(prevState => prevState + 1);
+																setUserWhatVote('disLiked');
+																setSthDoneVotedVisible(true);
+																setTimeout(() => setSthDoneVotedVisible(false), 2500);
+															}}
+															style={{
+																color:
+																	userVoted && userWhatVote !== 'disLiked'
+																		? 'var(--gray-9999)'
+																		: userVoted && userWhatVote === 'disLiked'
+																		? 'var(--red)'
+																		: '',
+																cursor: userVoted ? 'not-allowed' : 'pointer',
+																pointerEvents: userVoted ? 'none' : 'all',
+															}}
+															className='flex gap-x-2 items-center transparent-btn-style !p-2'>
+															<HandThumbDownIcon className='h-5' />
+															<span className='font-semibold'>{uniqueFilmUnLikes}</span>
+														</button>
+													</section>
 													<section className='flex gap-x-3'>
 														<button
 															onClick={() => {
