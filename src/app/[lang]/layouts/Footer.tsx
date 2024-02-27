@@ -43,6 +43,14 @@ export const Footer: React.FC = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			const url = window.location.pathname;
+			const urlLang = url.startsWith('/en') ? 'angielski' : 'polski';
+			setLangSelected(urlLang);
+		}
+	}, []);
+
 	return (
 		<div className='content-full-space-centered'>
 			<footer

@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 import getCookie from '../helpers/GetCookie';
 import { allFilms } from '../data/films-data';
 import { useTranslation } from 'react-i18next';
-import '../../../style/css/filteres-page.css';
 import IteratingFilmsPage from '../helpers/FilmsIteratingFilter';
 
 import Filters from '../components/FilmsFilterContainer';
@@ -25,14 +24,19 @@ const Watchlist = () => {
 		}
 	}, []);
 
-	const filteredMovies = IteratingFilmsPage(allFilms, 'category', 'favourite');
+	const formatedWatchlistArr = (getCookie('watchlist') || '').split(',').map(Number);
+	const watchlistRefs = formatedWatchlistArr;
+
+	const findedMovies = allFilms.filter((film) => {
+		return watchlistRefs.includes(film.ref)
+	});
 
 	return (
 		<div className='space-light'>
 			<Navbar isCutted={false} />
 			<div className='content-full-space-centered'>
 				{isLogged ? (
-					<Filters headingTitlePage={t('Do obejrzenia')} mappingBy={filteredMovies} />
+					<Filters headingTitlePage={t('Do obejrzenia')} mappingBy={findedMovies} />
 				) : (
 					<div className='h-full absolute right-1/2 top-36 translate-x-1/2'>
 						<div className='loader'></div>

@@ -3,7 +3,6 @@
 import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';
 import { Navbar } from '@/app/[lang]/layouts/Navbar';
 import { Footer } from '@/app/[lang]/layouts/Footer';
-import '../../../../../style/css/film-page.css';
 import SiteNotFound from '@/app/[lang]/[...not_found]/page';
 import convertTitleToUrl from '@/app/[lang]/helpers/ConvertTitleToURL';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +14,8 @@ import {
 	PlusIcon,
 	Bars3BottomLeftIcon,
 	PlayCircleIcon,
+	HeartIcon,
+	CheckIcon,
 } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 
@@ -109,6 +110,18 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 		return similarFilms;
 	};
 
+	const formatedWatchlistArr = (getCookie('watchlist') || '').split(',').map(Number);
+	const [refsAddedToWatchlist, setRefsAddedToWatchlist] = useState<Set<number | undefined>>(
+		new Set(formatedWatchlistArr)
+	);
+
+	useEffect(() => {
+		const watchlistArray = Array.from(refsAddedToWatchlist);
+		const watchlistString = watchlistArray.join(',');
+
+		document.cookie = `watchlist=${watchlistString}; path=/`;
+	}, [refsAddedToWatchlist]);
+
 	return (
 		<>
 			<div className='space-light'>
@@ -154,10 +167,37 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												<PlayIcon className='h-4' />
 												{t('Obejrzyj to')}
 											</Link>
-											<button className='film-page-aside-btns orange-outlined-btn-style'>
-												<PlusIcon className='h-5' />
-												{t('Obejrzyj potem')}
-											</button>
+											{getCookie('email') ? (
+												<button
+													className={`film-page-aside-btns rounded transition-all`}
+													style={{
+														outline: refsAddedToWatchlist.has(infoOfChoosedFilm?.ref)
+															? '1px solid var(--dark-orange-opacited)'
+															: '1px solid var(--gray-3232)',
+														color: refsAddedToWatchlist.has(infoOfChoosedFilm?.ref)
+															? 'var(--dark-orange)'
+															: 'var(--gray-9999)',
+													}}
+													onClick={() => {
+														if (infoOfChoosedFilm?.ref !== undefined) {
+															setRefsAddedToWatchlist(prevSet => new Set([...prevSet, infoOfChoosedFilm.ref]));
+														}
+													}}>
+													{refsAddedToWatchlist.has(infoOfChoosedFilm?.ref) ? (
+														<CheckIcon className='h-5' />
+													) : (
+														<PlusIcon className='h-5' />
+													)}
+													{t('Obejrzyj potem')}
+												</button>
+											) : (
+												<Link
+													href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}
+													className='film-page-aside-btns orange-outlined-btn-style'>
+													<PlusIcon className='h-5' />
+													{t('Obejrzyj potem')}
+												</Link>
+											)}
 											<ShareBtn setIsVisibleSthDone={setIsVisibleSthDone} whatBtnLook='not-basic' />
 										</div>
 										<div className='flex flex-col gap-y-2'>
@@ -380,7 +420,8 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																		<span className='z-10'>{t('Całe video')}</span>
 																	</section>
 																</div>
-																<img className='opacity-60 rounded'
+																<img
+																	className='opacity-60 rounded'
 																	src={infoOfChoosedFilm?.imgFullHd500}
 																	alt={`Poster for ${t(infoOfChoosedFilm?.title || '')}`}
 																/>
@@ -405,7 +446,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 														: 'none',
 											}}>
 											<section className='films-heading-section mt-10'>
-												<h1 className='films-category-heading-text mb-4'>{t('Podobne filmy')}</h1>
+												<h1 className='films-category-heading-text'>{t('Podobne filmy')}</h1>
 												<section className='films-category-control-btns'>
 													<button
 														className={`films-category-control-btn`}

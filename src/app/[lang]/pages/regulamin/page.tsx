@@ -1,7 +1,5 @@
 'use client';
 
-import '../../../../style/css/global.css';
-
 import { Navbar } from '../../layouts/Navbar';
 import { Footer } from '../../layouts/Footer';
 import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';

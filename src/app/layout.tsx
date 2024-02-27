@@ -6,11 +6,15 @@ import React, { useEffect } from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import './[lang]/data/i18-next';
-
-import './[lang]/globals.css';
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import CookieConsentComponent from './[lang]/layouts/cookie/CookieConsent';
 import getCookie from './[lang]/helpers/GetCookie';
+
+import '../../styles/globals.css';
+import '../../styles/css/film-page.css';
+import '../../styles/css/filteres-page.css';
+import '../../styles/css/series&movies.css';
+import '../../styles/css/global.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

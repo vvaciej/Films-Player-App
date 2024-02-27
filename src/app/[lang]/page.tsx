@@ -1,16 +1,12 @@
 'use client';
 
-import '../../style/css/global.css';
-
 import { FilmsCategories } from './components/FilmsCategories';
 import { HeadingFilmsInteraction } from './components/HeadingContainer';
 import useDocumentTitle from './helpers/PageTitle';
 
 import { Navbar } from './layouts/Navbar';
 import { Footer } from './layouts/Footer';
-import getCookie from './helpers/GetCookie';
 import SiteNotFound from './[...not_found]/page';
-import { useEffect } from 'react';
 
 interface params {
 	params: {

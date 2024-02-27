@@ -2,7 +2,6 @@
 
 import { Navbar } from '../layouts/Navbar';
 import { Footer } from '../layouts/Footer';
-import '../../../style/css/filteres-page.css';
 import useDocumentTitle from '../helpers/PageTitle';
 import getCookie from '../helpers/GetCookie';
 import { useRouter } from 'next/navigation';

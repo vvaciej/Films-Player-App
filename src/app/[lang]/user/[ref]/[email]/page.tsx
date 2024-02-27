@@ -5,7 +5,6 @@ import { Footer } from '@/app/[lang]/layouts/Footer';
 import Link from 'next/link';
 
 import { useTranslation } from 'react-i18next';
-import '../../../../../style/css/global.css';
 import getCookie from '@/app/[lang]/helpers/GetCookie';
 import { useRouter } from 'next/navigation';
 import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';

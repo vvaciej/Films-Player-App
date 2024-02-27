@@ -2,7 +2,6 @@
 
 import useDocumentTitle from '../helpers/PageTitle';
 import { Navbar } from '../layouts/Navbar';
-import '../../../style/css/global.css';
 import { useRef, useEffect } from 'react';
 import getCookie from '../helpers/GetCookie';
 import {

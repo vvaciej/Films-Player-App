@@ -7,7 +7,6 @@ import React from 'react';
 import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';
 import { allFilms } from '../../data/films-data';
 import SiteNotFound from '../../[...not_found]/page';
-import '../../../../style/css/film-page.css';
 import Link from 'next/link';
 import convertTitleToUrl from '@/app/[lang]/helpers/ConvertTitleToURL';
 import getCookie from '@/app/[lang]/helpers/GetCookie';

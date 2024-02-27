@@ -2,7 +2,6 @@
 
 import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';
 import Link from 'next/link';
-import '../../../style/css/global.css';
 import getCookie from '../helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
 

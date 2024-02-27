@@ -5,7 +5,6 @@ import { Footer } from '../layouts/Footer';
 import useDocumentTitle from '../helpers/PageTitle';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import '../../../style/css/global.css';
 import { PlayIcon, StarIcon } from '@heroicons/react/24/solid';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';

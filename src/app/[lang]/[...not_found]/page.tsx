@@ -5,7 +5,6 @@ import { Navbar } from '../layouts/Navbar';
 import { Footer } from '../layouts/Footer';
 import getCookie from '../helpers/GetCookie';
 
-import '../../../style/css/global.css';
 import useDocumentTitle from '../helpers/PageTitle';
 import { useTranslation } from 'react-i18next';
 
