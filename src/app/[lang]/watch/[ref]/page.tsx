@@ -162,7 +162,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																setSthDoneVisible(true);
 																setTimeout(() => setSthDoneVisible(false), 2500);
 															}}>
-															<FlagIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
+															<FlagIcon className='min-h-8 max-h-8 transparent-btn-style cursor-pointer !p-2' />
 														</button>
 														{getCookie('email') ? (
 															<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}>
