@@ -1,8 +1,8 @@
-import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useTranslation } from 'react-i18next';
 
 const SomethingDone = ({ visible, text }: any) => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 
 	return (
 		<div

@@ -6,8 +6,6 @@ import { Footer } from '@/app/[lang]/layouts/Footer';
 import '../../../../../style/css/film-page.css';
 import SiteNotFound from '@/app/[lang]/[...not_found]/page';
 import convertTitleToUrl from '@/app/[lang]/helpers/ConvertTitleToURL';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation } from 'react-i18next';
 import {
 	ChevronRightIcon,
@@ -15,10 +13,8 @@ import {
 	PlayIcon,
 	ChevronLeftIcon,
 	PlusIcon,
-	ShareIcon,
 	Bars3BottomLeftIcon,
 	PlayCircleIcon,
-	ClipboardDocumentCheckIcon,
 } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 
@@ -36,6 +32,7 @@ import ReviewAs from '@/app/[lang]/components/ReviewAsContainer';
 import normalizePolishCharacters from '@/app/[lang]/helpers/NormalizePolishSymbols';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SomethingDone from '@/app/[lang]/components/SomethingDoneDropdown';
+import ShareBtn from '@/app/[lang]/components/ShareBtn';
 interface pageProps {
 	params: { ref: number; title: string };
 }
@@ -52,8 +49,6 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 
 	const [swiperAlikeFilms, setSwiperAlikeFilms] = useState<any>(null);
 	const [swiperSources, setSwiperSources] = useState<any>(null);
-
-	const [shareDropdownActive, setShareDropdownActive] = useState<boolean>(false);
 
 	const [isVisibleSthDone, setIsVisibleSthDone] = useState<boolean>(false);
 
@@ -114,30 +109,6 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 		return similarFilms;
 	};
 
-	const shareDropdownRef = useRef<HTMLDivElement>(null);
-	const shareBtnRef = useRef<HTMLButtonElement>(null);
-
-	const handleDocumentClick = (event: MouseEvent) => {
-		const isInsideDropdown = (
-			target: EventTarget | null,
-			dropdownRef: React.RefObject<HTMLDivElement | HTMLButtonElement>
-		) => {
-			return dropdownRef.current && dropdownRef.current.contains(target as Node);
-		};
-
-		if (!isInsideDropdown(event.target, shareDropdownRef) && !isInsideDropdown(event.target, shareBtnRef)) {
-			setShareDropdownActive(false);
-		}
-	};
-
-	useEffect(() => {
-		document.body.addEventListener('click', handleDocumentClick);
-
-		return () => {
-			document.body.removeEventListener('click', handleDocumentClick);
-		};
-	}, []);
-
 	return (
 		<>
 			<div className='space-light'>
@@ -184,64 +155,10 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												{t('Obejrzyj to')}
 											</Link>
 											<button className='film-page-aside-btns orange-outlined-btn-style'>
-												<PlusIcon className='h-4' />
+												<PlusIcon className='h-5' />
 												{t('Obejrzyj potem')}
 											</button>
-											<section className='relative w-full h-full'>
-												<button
-													ref={shareBtnRef}
-													className='film-page-aside-btns orange-outlined-btn-style'
-													onClick={() => setShareDropdownActive(!shareDropdownActive)}>
-													<ShareIcon className='h-4' />
-													{t('Udostępnij')}
-												</button>
-												<div
-													ref={shareDropdownRef}
-													className='absolute h-max w-full top-10 rounded py-1 transition-all z-10'
-													style={{
-														visibility: shareDropdownActive ? 'visible' : 'hidden',
-														opacity: shareDropdownActive ? '1' : '0',
-														pointerEvents: shareDropdownActive ? 'all' : 'none',
-														backgroundColor: 'var(--dark-1a1a)',
-														outline: '1px solid var(--gray-3232)',
-													}}>
-													<button
-														className='flex items-center px-7 btn-choosed-style w-full !py-[10.5px]'
-														onClick={() => {
-															navigator.clipboard.writeText(window.location.href);
-															setShareDropdownActive(false);
-															setIsVisibleSthDone(true);
-															setTimeout(() => setIsVisibleSthDone(false), 2500);
-														}}>
-														<ClipboardDocumentCheckIcon className='h-6 text-zinc-200' />
-														<span className=' !text-[13px] text-zinc-200 w-max pl-2'>{t('Skopiuj link')}</span>
-													</button>
-													<button
-														className='flex items-center px-7 !py-[10.5px] btn-choosed-style w-full'
-														onClick={() => {
-															setShareDropdownActive(false);
-															window.location.href = `https://www.facebook.com/share.php?u=${encodeURI(
-																window.location.href
-															)}`;
-														}}>
-														<FontAwesomeIcon icon={faFacebook} className='h-5 text-zinc-200' />
-														<span className='!text-[13px] text-zinc-200 w-max pl-2'>
-															{t('Udostępnij na facebooku')}
-														</span>
-													</button>
-													<button
-														className='flex items-center px-7 !py-[10.5px] btn-choosed-style w-full'
-														onClick={() => {
-															setShareDropdownActive(false);
-															window.location.href = `https://twitter.com/share?&url=${window.location.href}`;
-														}}>
-														<FontAwesomeIcon icon={faTwitter} className='h-5 text-zinc-200' />
-														<span className='!text-[13px] text-zinc-200 w-max pl-2'>
-															{t('Udostępnij na twitterze')}
-														</span>
-													</button>
-												</div>
-											</section>
+											<ShareBtn setIsVisibleSthDone={setIsVisibleSthDone} whatBtnLook='not-basic' />
 										</div>
 										<div className='flex flex-col gap-y-2'>
 											<section className='film-page-aside-info-sections'>

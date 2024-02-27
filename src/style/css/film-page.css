@@ -1286,17 +1286,13 @@ body {
   color: var(--white);
   height: 100%;
   width: 100%;
-  padding: 0rem 1rem !important;
+  padding: 10px 1rem !important;
 }
 .typical-dropdown-style nav a:hover,
 .typical-dropdown-style nav button:hover,
 .typical-dropdown-style div a:hover,
 .typical-dropdown-style div button:hover {
   background-color: var(--gray-2222);
-}
-
-#overwrite {
-  padding: 0rem 1rem !important;
 }
 
 .opinion-must-be-logged-container {

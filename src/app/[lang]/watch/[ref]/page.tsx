@@ -12,6 +12,8 @@ import Link from 'next/link';
 import convertTitleToUrl from '@/app/[lang]/helpers/ConvertTitleToURL';
 import getCookie from '@/app/[lang]/helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
+import SomethingDone from '../../components/SomethingDoneDropdown';
+import ShareBtn from '../../components/ShareBtn';
 
 import {
 	PlayIcon,
@@ -29,10 +31,11 @@ interface pageProps {
 const WatchFilm: React.FC<pageProps> = ({ params }) => {
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 	const [isFilmExist, setIsFilmExist] = useState<boolean>(false);
+	const [sthDoneVisible, setSthDoneVisible] = useState<boolean>(false);
 
 	const infoOfChoosedFilm = allFilms.find(film => film.ref === Number(params.ref));
 
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 	useDocumentTitle(`${infoOfChoosedFilm?.title} - vvaciej-app`);
 
 	useEffect(() => {
@@ -82,7 +85,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 								</main>
 								<div className='lg:mt-10 mt-8 h-max flex gap-x-8 lg:gap-x-12'>
 									<section className='watch-film-page-text-section w-full'>
-										<section className='flex gap-x-3 sm:gap-x-4 overflow-hidden max-h-[209px] mb-6'>
+										<section className='flex gap-x-3 sm:gap-x-4 max-h-[209px] mb-6'>
 											<img
 												className='max-h-[209px] sm:block hidden rounded'
 												src={infoOfChoosedFilm?.image}
@@ -129,12 +132,26 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 														</section>
 													)}
 													<section className='flex'>
-														<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}>
-															<FlagIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
-														</Link>
-														<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}>
-															<ShareIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
-														</Link>
+														{getCookie('email') ? (
+															<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}>
+																<FlagIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
+															</Link>
+														) : (
+															<button
+																onClick={() => {
+																	setSthDoneVisible(true);
+																	setTimeout(() => setSthDoneVisible(false), 2500);
+																}}>
+																<FlagIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
+															</button>
+														)}
+														{getCookie('email') ? (
+															<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}>
+																<ShareIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
+															</Link>
+														) : (
+															<ShareBtn setIsVisibleSthDone={setSthDoneVisible} whatBtnLook='basic' />
+														)}
 													</section>
 												</section>
 												<p
@@ -179,7 +196,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 											{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title)
 												.slice(0, 4)
 												.map((similarFilm, index) => (
-													<article className='film-container !max-w-80 mb-6' key={index}>
+													<article className='film-container !max-w-80 mb-6 hover:brightness-75 transition-all' key={index}>
 														<section className='films-image-section relative'>
 															<Link
 																href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
@@ -212,12 +229,13 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 							</div>
 						</div>
 						<Footer />
+						<SomethingDone text={t('Zgłoszenie zostało wysłane')} visible={sthDoneVisible} />
 					</>
 				) : (
 					<SiteNotFound />
 				)
 			) : (
-				<div className='loader-container flex justify-center w-full h-full'>
+				<div className='loader-container absolute bottom-1/2 h-full'>
 					<div className='loader'></div>
 				</div>
 			)}

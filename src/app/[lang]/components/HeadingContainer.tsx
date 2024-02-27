@@ -93,9 +93,9 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 										href={`/${
 											getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
 										}/titles/${reference}/${convertTitleToUrl(title)}`}
-										className='main-heading-left-text-btn'>
+										className='main-heading-left-text-btn orange-btn-style'>
 										<PlayIcon className='h-4' />
-										<span className='orange-btn-style'>{t('Obejrzyj to')}</span>
+										<span>{t('Obejrzyj to')}</span>
 									</Link>
 								</div>
 							</div>
@@ -142,7 +142,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 									href={`/${
 										getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
 									}/titles/${reference}/${convertTitleToUrl(title)}`}
-									className='main-heading-left-text-btn'>
+									className='main-heading-left-text-btn orange-btn-style'>
 									<PlayIcon className='h-4' />
 									<span>{t('Obejrzyj to')}</span>
 								</Link>

@@ -236,13 +236,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								<ChevronDownIcon className='h-4' />
 							</button>
 							<div
-								className={`user-dropdown-container btn-choosed-style ${userDropdownClicked ? 'active' : ''} py-1`}
+								className={`user-dropdown-container ${userDropdownClicked ? 'active' : ''} py-1`}
 								ref={userDropdownRef}>
 								<Link
 									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/watchlist?order=${
 										getCookie('filterOrderChoosed') || 'most_popular'
 									}`}
-									className='user-dropdown-options overwrite'>
+									className='user-dropdown-options'>
 									<CheckBadgeIcon className='h-5' />
 									{t('Do obejrzenia')}
 								</Link>
