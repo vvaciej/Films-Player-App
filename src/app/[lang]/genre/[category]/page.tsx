@@ -1,9 +1,9 @@
 'use client';
 
 import Filters from '@/app/[lang]/components/FilmsFilterContainer';
-import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';
+import useDocumentTitle from '@/helpers/PageTitle';
 import { allFilms } from '../../data/films-data';
-import IteratingFilmsPageArrays from '@/app/[lang]/helpers/FilmsIteratingFilterArrays';
+import IteratingFilmsPageArrays from '@/helpers/FilmsIteratingFilterArrays';
 import { useTranslation } from 'react-i18next';
 
 interface params {

@@ -5,9 +5,9 @@ import { Footer } from '@/app/[lang]/layouts/Footer';
 import Link from 'next/link';
 
 import { useTranslation } from 'react-i18next';
-import getCookie from '@/app/[lang]/helpers/GetCookie';
+import getCookie from '@/helpers/GetCookie';
 import { useRouter } from 'next/navigation';
-import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';
+import useDocumentTitle from '@/helpers/PageTitle';
 import { useEffect, useState } from 'react';
 import { BookmarkSlashIcon, PencilIcon, StarIcon } from '@heroicons/react/24/solid';
 import { BookmarkIcon } from '@heroicons/react/24/outline';

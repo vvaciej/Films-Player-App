@@ -2,7 +2,7 @@
 
 import { FilmsCategories } from './components/FilmsCategories';
 import { HeadingFilmsInteraction } from './components/HeadingContainer';
-import useDocumentTitle from './helpers/PageTitle';
+import useDocumentTitle from '../../helpers/PageTitle';
 
 import { Navbar } from './layouts/Navbar';
 import { Footer } from './layouts/Footer';

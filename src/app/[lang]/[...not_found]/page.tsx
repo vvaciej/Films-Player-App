@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { Navbar } from '../layouts/Navbar';
 import { Footer } from '../layouts/Footer';
-import getCookie from '../helpers/GetCookie';
+import getCookie from '../../../helpers/GetCookie';
 
-import useDocumentTitle from '../helpers/PageTitle';
+import useDocumentTitle from '../../../helpers/PageTitle';
 import { useTranslation } from 'react-i18next';
 
 const SiteNotFound: React.FC = () => {

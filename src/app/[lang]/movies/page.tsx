@@ -1,6 +1,6 @@
 'use client';
 
-import useDocumentTitle from '../helpers/PageTitle';
+import useDocumentTitle from '../../../helpers/PageTitle';
 import Filters from '../components/FilmsFilterContainer';
 import { allFilms } from '../data/films-data';
 

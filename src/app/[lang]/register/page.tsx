@@ -1,8 +1,8 @@
 'use client';
 
-import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';
+import useDocumentTitle from '@/helpers/PageTitle';
 import Link from 'next/link';
-import getCookie from '../helpers/GetCookie';
+import getCookie from '../../../helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
 
 const Policy: React.FC = () => {
@@ -13,7 +13,7 @@ const Policy: React.FC = () => {
 		<div className='space-dark !justify-center items-center'>
 			<div className='flex items-center h-max flex-col text-xs relative w-full pb-24'>
 				<Link
-					href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`}
+					href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
 					className='sm:text-6xl text-3xl font-bold'>
 					VVACIEJ.APP
 				</Link>
@@ -80,14 +80,14 @@ const Policy: React.FC = () => {
 						color: 'var(--light-gray-eee)',
 					}}>
 					<span>{t('Masz już konto?')}</span>
-					<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`} className='orange-link'>
+					<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`} className='orange-link'>
 						&nbsp;{t('Zaloguj sie')}
 					</Link>
 				</p>
 			</div>
 			<footer>
 				<Link
-					href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`}
+					href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
 					className='text-sm absolute bottom-10 transition-all left-1/2 translate-x-1/2 hover:brightness-125'
 					style={{
 						color: 'var(--gray-9999)',

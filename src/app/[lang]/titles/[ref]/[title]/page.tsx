@@ -1,10 +1,10 @@
 'use client';
 
-import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';
+import useDocumentTitle from '@/helpers/PageTitle';
 import { Navbar } from '@/app/[lang]/layouts/Navbar';
 import { Footer } from '@/app/[lang]/layouts/Footer';
 import SiteNotFound from '@/app/[lang]/[...not_found]/page';
-import convertTitleToUrl from '@/app/[lang]/helpers/ConvertTitleToURL';
+import convertTitleToUrl from '@/helpers/ConvertTitleToURL';
 import { useTranslation } from 'react-i18next';
 import {
 	ChevronRightIcon,
@@ -28,9 +28,9 @@ import 'swiper/css/pagination';
 import { useEffect, useRef, useState } from 'react';
 
 import { allFilms } from '@/app/[lang]/data/films-data';
-import getCookie from '@/app/[lang]/helpers/GetCookie';
+import getCookie from '@/helpers/GetCookie';
 import ReviewAs from '@/app/[lang]/components/ReviewAsContainer';
-import normalizePolishCharacters from '@/app/[lang]/helpers/NormalizePolishSymbols';
+import normalizePolishCharacters from '@/helpers/NormalizePolishSymbols';
 import SomethingDone from '@/app/[lang]/components/SomethingDoneDropdown';
 import ShareBtn from '@/app/[lang]/components/ShareBtn';
 interface pageProps {
@@ -130,7 +130,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 						<main>
 							<div className='film-page-image-fullhd-preview'>
 								<Link
-									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/watch/${infoOfChoosedFilm?.ref}`}
+									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watch/${infoOfChoosedFilm?.ref}`}
 									className='film-play-btn'>
 									<PlayIcon className='text-black h-6' />
 								</Link>
@@ -159,7 +159,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 										/>
 										<div className='flex flex-col gap-y-3'>
 											<Link
-												href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/watch/${
+												href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watch/${
 													infoOfChoosedFilm?.ref
 												}`}
 												className='film-page-aside-btns orange-btn-style'>
@@ -191,7 +191,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												</button>
 											) : (
 												<Link
-													href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}
+													href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}
 													className='film-page-aside-btns orange-outlined-btn-style'>
 													<PlusIcon className='h-5' />
 													{t('Obejrzyj potem')}
@@ -518,7 +518,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																			<span>{similarFilm?.rating} / 10</span>
 																		</section>
 																		<Link
-																			href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+																			href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 																				similarFilm?.ref
 																			}/${convertTitleToUrl(similarFilm?.title)}`}
 																			className='film-container-title max-h-10'>

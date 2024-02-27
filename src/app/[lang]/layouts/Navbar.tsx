@@ -13,14 +13,14 @@ import {
 import { TvIcon, FilmIcon } from '@heroicons/react/24/outline';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import normalizePolishCharacters from '../helpers/NormalizePolishSymbols';
-import getCookie from '../helpers/GetCookie';
+import normalizePolishCharacters from '../../../helpers/NormalizePolishSymbols';
+import getCookie from '../../../helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
 
 import React from 'react';
 
 import { allFilms } from '../data/films-data';
-import convertTitleToUrl from '../helpers/ConvertTitleToURL';
+import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
 
 interface NavbarProps {
 	isCutted: boolean;
@@ -35,7 +35,7 @@ type FilmData = {
 };
 
 export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
-	const {t, i18n} = useTranslation();
+	const { t, i18n } = useTranslation();
 
 	const [isClickedBtn, setIsClickedBtn] = useState<boolean>(false);
 	const [isUserOrMenuClicked, setIsUserOrMenuClicked] = useState<string | null>(null);
@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 			event.preventDefault();
 
 			window.location.href = `/${
-				getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+				getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 			}/results?query=${encodeURIComponent(whatSearchVal)}`;
 		}
 	};
@@ -120,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 		<>
 			<header className='header-container !z-20'>
 				<section className='header-left-section'>
-					<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`} className='header-brand-text'>
+					<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`} className='header-brand-text'>
 						VVACIEJ.APP
 					</Link>
 					<nav className={`header-left-nav-section ${isCutted ? 'navbar-cutted-style' : ''}`}>
@@ -147,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								<button type='submit' style={{ display: 'none' }}></button>
 							</form>
 							<Link
-								href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/results`}
+								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/results`}
 								className='header-search-icon-link'>
 								<MagnifyingGlassIcon className='header-search-icon' />
 							</Link>
@@ -155,7 +155,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								<ul className='flex flex-col'>
 									{searchResults.map((film: FilmData, index: number) => (
 										<Link
-											href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}
 											key={index}>
@@ -196,7 +196,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							<section>
 								<Link
 									className='header-nav-btns-films-serials'
-									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/movies?order=${
+									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/movies?order=${
 										getCookie('filterOrderChoosed') || 'most_popular'
 									}`}>
 									<FilmIcon className='header-fa' />
@@ -206,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							<section>
 								<Link
 									className='header-nav-btns-films-serials'
-									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/series?order=${
+									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/series?order=${
 										getCookie('filterOrderChoosed') || 'most_popular'
 									}`}>
 									<TvIcon className='header-fa' />
@@ -239,7 +239,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								className={`user-dropdown-container ${userDropdownClicked ? 'active' : ''} py-1`}
 								ref={userDropdownRef}>
 								<Link
-									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/watchlist?order=${
+									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watchlist?order=${
 										getCookie('filterOrderChoosed') || 'most_popular'
 									}`}
 									className='user-dropdown-options'>
@@ -247,13 +247,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 									{t('Do obejrzenia')}
 								</Link>
 								<Link
-									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/account-settings`}
+									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/account-settings`}
 									className='user-dropdown-options'>
 									<Cog8ToothIcon className='h-5' />
 									{t('Ustawienia konta')}
 								</Link>
 								<Link
-									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/user/${getCookie('ref') || 1}/${
+									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/user/${getCookie('ref') || 1}/${
 										getCookie('email').match(/^(.+)@/)?.[1] || ''
 									}`}
 									className='user-dropdown-options'>
@@ -269,12 +269,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					) : (
 						<>
 							<Link
-								href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/register`}
+								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`}
 								className='transparent-btn-style'>
 								Rejestracja
 							</Link>
 							<Link
-								href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}
+								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}
 								className='orange-btn-style'>
 								Logowanie
 							</Link>
@@ -303,14 +303,14 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							height: '6rem',
 						}}>
 						<Link
-							href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/movies?order=${
+							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/movies?order=${
 								getCookie('filterOrderChoosed') || 'most_popular'
 							}`}>
 							<FilmIcon className='h-5' />
 							<span>Filmy</span>
 						</Link>
 						<Link
-							href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/series?order=${
+							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/series?order=${
 								getCookie('filterOrderChoosed') || 'most_popular'
 							}`}>
 							<TvIcon className='h-5' />
@@ -325,7 +325,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							height: '11rem',
 						}}>
 						<Link
-							href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/watchlist?order=${
+							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watchlist?order=${
 								getCookie('filterOrderChoosed') || 'most_popular'
 							}`}
 							className='user-dropdown-options'>
@@ -333,13 +333,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							Do obejrzenia
 						</Link>
 						<Link
-							href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/account-settings`}
+							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/account-settings`}
 							className='user-dropdown-options'>
 							<Cog8ToothIcon className='h-5' />
 							Ustawienia konta
 						</Link>
 						<Link
-							href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/user/${getCookie('ref') || 1}/${
+							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/user/${getCookie('ref') || 1}/${
 								getCookie('email').match(/^(.+)@/)?.[1] || ''
 							}`}
 							className='user-dropdown-options'>
@@ -356,8 +356,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						style={{
 							height: '6rem',
 						}}>
-						<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}>Logowanie</Link>
-						<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/register`}>Rejestracja</Link>
+						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}>Logowanie</Link>
+						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`}>Rejestracja</Link>
 					</nav>
 				)}
 			</div>

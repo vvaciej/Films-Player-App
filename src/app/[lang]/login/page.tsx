@@ -1,11 +1,11 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import useDocumentTitle from '../helpers/PageTitle';
+import useDocumentTitle from '../../../helpers/PageTitle';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import getCookie from '../helpers/GetCookie';
+import getCookie from '../../../helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
 
 const Login: React.FC = () => {
@@ -51,7 +51,7 @@ const Login: React.FC = () => {
 
 		if (exampleLogin.email.includes(enteredEmail) && exampleLogin.password.includes(enteredPassword)) {
 			setLogged(true);
-			router.push(`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`);
+			router.push(`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`);
 			setEmailLogged(enteredEmail);
 		} else {
 			setLogged(false);
@@ -62,7 +62,7 @@ const Login: React.FC = () => {
 		<div className='space-dark !justify-center items-center'>
 			<div className='flex items-center h-max flex-col text-xs relative w-full pb-24'>
 				<Link
-					href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`}
+					href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
 					className='sm:text-6xl text-3xl font-bold'>
 					VVACIEJ.APP
 				</Link>
@@ -102,7 +102,7 @@ const Login: React.FC = () => {
 										{t('Hasło')}
 									</label>
 									<Link
-										href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/forgot-password`}
+										href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/forgot-password`}
 										className='orange-link text-xs'>
 										{t('Zapomniałeś hasła?')}
 									</Link>
@@ -163,14 +163,14 @@ const Login: React.FC = () => {
 						color: 'var(--light-gray-eee)',
 					}}>
 					<span>{t('Nie masz konta?')}&nbsp;</span>
-					<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/register`} className='orange-link'>
+					<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`} className='orange-link'>
 						{t('Zarejestruj się')}
 					</Link>
 				</p>
 			</div>
 			<footer>
 				<Link
-					href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`}
+					href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
 					className='text-sm absolute bottom-10 transition-all left-1/2 translate-x-1/2 hover:brightness-125'
 					style={{
 						color: 'var(--gray-9999)',

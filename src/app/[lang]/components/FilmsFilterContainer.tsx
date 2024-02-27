@@ -2,10 +2,10 @@
 
 import { Navbar } from '../layouts/Navbar';
 import { Footer } from '../layouts/Footer';
-import useDocumentTitle from '../helpers/PageTitle';
-import getCookie from '../helpers/GetCookie';
+import useDocumentTitle from '../../../helpers/PageTitle';
+import getCookie from '../../../helpers/GetCookie';
 import { useRouter } from 'next/navigation';
-import convertTitleToUrl from '../helpers/ConvertTitleToURL';
+import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -255,7 +255,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								<article className='film-container w-full' key={index}>
 									<section className='films-image-section'>
 										<Link
-											href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
 											<img src={film.image} className='max-h-[17.2rem]' alt={`Poster for ${t(film.title)}`} />
@@ -272,7 +272,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											<span>{film.rating} / 10</span>
 										</section>
 										<Link
-											href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/${
+											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/${
 												getCookie('langChoosed') === 'polski' ? 'pl' : 'en'
 											}/titles/${film.ref}/${convertTitleToUrl(film.title)}`}
 											className='film-link-title search-title pr-1'>
@@ -288,7 +288,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								<article className='film-container-pejzaz w-full' key={index}>
 									<section className='films-image-section'>
 										<Link
-											href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
 											<img src={film.imgFullHd500} alt={`Poster for ${t(film.title)}`} />
@@ -296,7 +296,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 									</section>
 									<section className='films-text-section'>
 										<Link
-											href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}
 											className='film-link-title search-title pr-1'>
@@ -322,7 +322,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								<article className='film-container-list w-full' key={index}>
 									<section className='films-image-section'>
 										<Link
-											href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
 											<img className='max-h-46 max-w-32 pr-2' src={film.image} alt={`Poster for ${t(film.title)}`} />
@@ -330,7 +330,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 									</section>
 									<section className='films-text-section'>
 										<Link
-											href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}
 											className='film-link-title search-title pr-1'>

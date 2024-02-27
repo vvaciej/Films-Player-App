@@ -5,8 +5,8 @@ import { sidebarFilmsData, headingFilmsData } from '../data/heading-films';
 import { useState, useEffect } from 'react';
 
 import Link from 'next/link';
-import convertTitleToUrl from '../helpers/ConvertTitleToURL';
-import getCookie from '../helpers/GetCookie';
+import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
+import getCookie from '../../../helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
 
 interface HeadingProps {
@@ -83,7 +83,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 									</p>
 									<Link
 										href={`/${
-											getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+											getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 										}/titles/${reference}/${convertTitleToUrl(title)}`}
 										className='main-heading-left-text-film-title'>
 										{t(film.title)}
@@ -91,7 +91,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 									<p className='main-heading-left-text-film-description'>{t(film.description)}</p>
 									<Link
 										href={`/${
-											getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+											getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 										}/titles/${reference}/${convertTitleToUrl(title)}`}
 										className='main-heading-left-text-btn orange-btn-style'>
 										<PlayIcon className='h-4' />
@@ -116,7 +116,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 						<div className='main-heading-left-bottom-section'>
 							<Link
 								href={`/${
-									getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+									getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 								}/titles/${reference}/${convertTitleToUrl(title)}`}>
 								<img src={image} alt={`Poster for ${title}`} className='main-heading-miniature' loading='eager' />
 							</Link>
@@ -132,7 +132,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 								</p>
 								<Link
 									href={`/${
-										getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+										getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 									}/titles/${reference}/${convertTitleToUrl(title)}`}
 									className='main-heading-left-text-film-title'>
 									{t(title)}
@@ -140,7 +140,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 								<p className='main-heading-left-text-film-description'>{t(description)}</p>
 								<Link
 									href={`/${
-										getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+										getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 									}/titles/${reference}/${convertTitleToUrl(title)}`}
 									className='main-heading-left-text-btn orange-btn-style'>
 									<PlayIcon className='h-4' />
@@ -168,7 +168,7 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
 				<div key={index} className='main-heading-right-film'>
 					<section className={'main-heading-right-film-miniature-section'}>
 						<Link
-							href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
+							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
 								film.title
 							)}`}
 							className='main-heading-right-film-miniature-link'>
@@ -178,7 +178,7 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
 					<section>
 						<section className='max-h-6 overflow-hidden'>
 							<Link
-								href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 									film.ref
 								}/${convertTitleToUrl(film.title)}`}
 								className='font-medium main-heading-right-film-title hover:underline'>

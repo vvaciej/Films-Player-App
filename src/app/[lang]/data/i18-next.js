@@ -340,11 +340,11 @@ i18next.use(initReactI18next).init({
 				Wyślij: 'Send',
 				// login
 				Logowanie: 'Logging',
-				'Zapomniałeś hasła': 'Forgot password?',
+				'Zapomniałeś hasła?': 'Forgot password?',
 				'Lub zaloguj się przez': 'Or login by',
 				'Zarejestruj się': 'Sign up',
 				Zapamiętaj: 'Remember',
-				'Zaloguj sie na swoje konto': 'Login by your account',
+				'Zaloguj się na swoje konto': 'Login by your account',
 				// movies
 				Filmy: 'Films',
 				'Wyszukiwarka filmów': 'Video search engine',

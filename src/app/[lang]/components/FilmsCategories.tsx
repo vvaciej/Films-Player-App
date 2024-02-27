@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import { ChevronRightIcon, StarIcon, PlayIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import Link from 'next/link';
-import convertTitleToUrl from '../helpers/ConvertTitleToURL';
+import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
 import { useTranslation } from 'react-i18next';
 
 import 'swiper/css';
@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import * as filmData from '../data/main-films';
-import getCookie from '../helpers/GetCookie';
+import getCookie from '../../../helpers/GetCookie';
 
 interface FilmProps {
 	headingText: string;
@@ -108,7 +108,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 						<article className='sm:mb-8 mb-6 text-sm font-medium'>
 							<section className='relative transition-all hover:brightness-75'>
 								<Link
-									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 										film.ref
 									}/${convertTitleToUrl(film.title)}`}>
 									<img
@@ -129,7 +129,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 									<span>{film.rating} / 10</span>
 								</section>
 								<Link
-									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 										film.ref
 									}/${convertTitleToUrl(film.title)}`}
 									className='film-container-title'>
@@ -152,7 +152,7 @@ export const FilmsCategories: React.FC = () => {
 			<FilmCategory
 				headingText={t('Popularne filmy')}
 				filmsData={filmData.popularFilms}
-				linkDirectPage={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/channel/popularne-filmy?order=${
+				linkDirectPage={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/channel/popularne-filmy?order=${
 					getCookie('mostPopularChoosed') || 'most_popular'
 				}`}
 			/>
@@ -160,27 +160,27 @@ export const FilmsCategories: React.FC = () => {
 				headingText={'Ostatnio dodane filmy'}
 				filmsData={filmData.lastAddedFilms}
 				linkDirectPage={`/${
-					getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+					getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 				}/channel/ostatnio-dodane-filmy?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 			<FilmCategory
 				headingText={'Popularne filmy akcji'}
 				filmsData={filmData.popularActionFilms}
 				linkDirectPage={`/${
-					getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+					getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 				}/channel/popularne-filmy-akcji?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 			<FilmCategory
 				headingText={'Popularne komedie'}
 				filmsData={filmData.popularComediaFilms}
-				linkDirectPage={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/channel/popularne-komedie?order=${
+				linkDirectPage={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/channel/popularne-komedie?order=${
 					getCookie('mostPopularChoosed') || 'most_popular'
 				}`}
 			/>
 			<FilmCategory
 				headingText={'Popularne horrory'}
 				filmsData={filmData.popularHorrorFilms}
-				linkDirectPage={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/channel/popularne-horrory?order=${
+				linkDirectPage={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/channel/popularne-horrory?order=${
 					getCookie('mostPopularChoosed') || 'most_popular'
 				}`}
 			/>
@@ -188,13 +188,13 @@ export const FilmsCategories: React.FC = () => {
 				headingText={'Popularne polskie filmy'}
 				filmsData={filmData.popularPolishFilms}
 				linkDirectPage={`/${
-					getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+					getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 				}/channel/popularne-polskie-filmy?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
 			/>
 			<FilmCategory
 				headingText={'Popularne seriale'}
 				filmsData={filmData.popularSerials}
-				linkDirectPage={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/channel/popularne-seriale?order=${
+				linkDirectPage={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/channel/popularne-seriale?order=${
 					getCookie('mostPopularChoosed') || 'most_popular'
 				}`}
 			/>

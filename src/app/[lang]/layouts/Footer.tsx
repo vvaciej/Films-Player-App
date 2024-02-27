@@ -7,7 +7,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import getCookie from '../helpers/GetCookie';
+import getCookie from '../../../helpers/GetCookie';
 
 export const Footer: React.FC = () => {
 	const { t } = useTranslation();
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const url = window.location.pathname;
-			const urlLang = url.startsWith('/en') ? 'angielski' : 'polski';
+			const urlLang = url.startsWith('/en') ? 'english' : 'polish';
 			setLangSelected(urlLang);
 		}
 	}, []);
@@ -61,11 +61,11 @@ export const Footer: React.FC = () => {
 				<section className='flex justify-between w-full relative sm:flex-row flex-col sm:gap-y-0 gap-y-4'>
 					<section className='flex gap-x-5 text-sm'>
 						<Link
-							href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/pages/regulamin`}
+							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/pages/regulamin`}
 							className='orange-link'>
 							{t('Regulamin')}
 						</Link>
-						<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/kontakt`} className='orange-link'>
+						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/kontakt`} className='orange-link'>
 							{t('Kontakt')}
 						</Link>
 					</section>
@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
 				<section className='flex justify-between w-full relative h-max sm:flex-row flex-col sm:items-start items-center'>
 					<section>
 						<p className='mb-1'>
-							{t('Źródło')} <Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`}>obejrzyj.to</Link>
+							{t('Źródło')} <Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}>obejrzyj.to</Link>
 						</p>
 					</section>
 					<section className='relative'>
@@ -107,30 +107,30 @@ export const Footer: React.FC = () => {
 							<button
 								onClick={() => {
 									setLangBtnClickedBool(!langBtnClickedBool);
-									setLangSelected('polski');
+									setLangSelected('polish');
 									const currentPath = window.location.pathname;
 									const newPath = currentPath.startsWith('/en') ? currentPath.replace('/en', '/pl') : '/pl';
 									window.location.href = newPath;
 								}}
-								className={`btn-choosed-style ${langSelected === 'polski' ? 'choosed' : ''} gap-x-1 flex`}
+								className={`btn-choosed-style ${langSelected === 'polish' ? 'choosed' : ''} gap-x-1 flex`}
 								style={{
-									paddingLeft: langSelected === 'polski' ? '1rem' : '2.3rem',
+									paddingLeft: langSelected === 'polish' ? '1rem' : '2.3rem',
 								}}>
-								{t('polski')}
+								{t('polish')}
 							</button>
 							<button
 								onClick={() => {
 									setLangBtnClickedBool(!langBtnClickedBool);
-									setLangSelected('angielski');
+									setLangSelected('english');
 									const currentPath = window.location.pathname;
 									const newPath = currentPath.startsWith('/pl') ? currentPath.replace('/pl', '/en') : '/en';
 									window.location.href = newPath;
 								}}
-								className={`btn-choosed-style ${langSelected === 'angielski' ? 'choosed' : ''} gap-x-1 flex`}
+								className={`btn-choosed-style ${langSelected === 'english' ? 'choosed' : ''} gap-x-1 flex`}
 								style={{
-									paddingLeft: langSelected === 'angielski' ? '1rem' : '2.3rem',
+									paddingLeft: langSelected === 'english' ? '1rem' : '2.3rem',
 								}}>
-								{t('angielski')}
+								{t('english')}
 							</button>
 						</div>
 					</section>

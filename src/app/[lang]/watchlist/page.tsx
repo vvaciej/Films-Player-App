@@ -1,13 +1,13 @@
 'use client';
 
-import useDocumentTitle from '../helpers/PageTitle';
+import useDocumentTitle from '../../../helpers/PageTitle';
 import { Navbar } from '../layouts/Navbar';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import getCookie from '../helpers/GetCookie';
+import getCookie from '../../../helpers/GetCookie';
 import { allFilms } from '../data/films-data';
 import { useTranslation } from 'react-i18next';
-import IteratingFilmsPage from '../helpers/FilmsIteratingFilter';
+import IteratingFilmsPage from '../../../helpers/FilmsIteratingFilter';
 
 import Filters from '../components/FilmsFilterContainer';
 
@@ -27,8 +27,8 @@ const Watchlist = () => {
 	const formatedWatchlistArr = (getCookie('watchlist') || '').split(',').map(Number);
 	const watchlistRefs = formatedWatchlistArr;
 
-	const findedMovies = allFilms.filter((film) => {
-		return watchlistRefs.includes(film.ref)
+	const findedMovies = allFilms.filter(film => {
+		return watchlistRefs.includes(film.ref);
 	});
 
 	return (

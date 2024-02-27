@@ -2,18 +2,18 @@
 
 import { Navbar } from '../layouts/Navbar';
 import { Footer } from '../layouts/Footer';
-import useDocumentTitle from '../helpers/PageTitle';
+import useDocumentTitle from '../../../helpers/PageTitle';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import { PlayIcon, StarIcon } from '@heroicons/react/24/solid';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import normalizePolishCharacters from '../helpers/NormalizePolishSymbols';
-import convertTitleToUrl from '../helpers/ConvertTitleToURL';
+import normalizePolishCharacters from '../../../helpers/NormalizePolishSymbols';
+import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
 
 import { allFilms } from '../data/films-data';
-import getCookie from '../helpers/GetCookie';
+import getCookie from '../../../helpers/GetCookie';
 
 type FilmData = {
 	image: string;
@@ -144,7 +144,7 @@ const SearchPage: React.FC = () => {
 											<article className='film-container w-full' key={index}>
 												<section className='films-image-section'>
 													<Link
-														href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+														href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 															film.ref
 														}/${convertTitleToUrl(film.title)}`}>
 														<img src={film.image} alt={`Poster for ${film.title}`} />
@@ -161,7 +161,7 @@ const SearchPage: React.FC = () => {
 														<span>{film.rating} / 10</span>
 													</p>
 													<Link
-														href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+														href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 															film.ref
 														}/${convertTitleToUrl(film.title)}`}
 														className='film-link-title search-title pr-1'>

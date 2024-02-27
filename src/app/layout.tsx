@@ -8,7 +8,7 @@ import { Analytics } from '@vercel/analytics/react';
 import './[lang]/data/i18-next';
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import CookieConsentComponent from './[lang]/layouts/cookie/CookieConsent';
-import getCookie from './[lang]/helpers/GetCookie';
+import getCookie from '../helpers/GetCookie';
 
 import '../../styles/globals.css';
 import '../../styles/css/film-page.css';
@@ -26,7 +26,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const url = window.location.pathname;
-			const urlLang = url.startsWith('/en') ? 'angielski' : 'polski';
+			const urlLang = url.startsWith('/en') ? 'english' : 'polish';
 			document.cookie = `langChoosed=${urlLang}; path=/`;
 		}
 	});
@@ -35,9 +35,9 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 		const scrollYPosition = Number(getCookie('scrollY'));
 
 		window.scrollTo(0, scrollYPosition);
-	}, [])
+	}, []);
 
-  const handleScroll = () => {
+	const handleScroll = () => {
 		const scrollYPosition = window.scrollY;
 		document.cookie = `scrollY=${scrollYPosition}; path=/`;
 	};
@@ -52,7 +52,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 
 	return (
 		<>
-			<html lang={`${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`} className='cc--darkmode dark'>
+			<html lang={`${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`} className='cc--darkmode dark'>
 				<Head>
 					<link rel='icon' href='/vercel.svg' />
 					<meta name='theme-color' content='#1a1a1a' />

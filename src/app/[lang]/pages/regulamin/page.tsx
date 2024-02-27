@@ -2,7 +2,7 @@
 
 import { Navbar } from '../../layouts/Navbar';
 import { Footer } from '../../layouts/Footer';
-import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';
+import useDocumentTitle from '@/helpers/PageTitle';
 import { useTranslation } from 'react-i18next';
 
 const Policy: React.FC = () => {

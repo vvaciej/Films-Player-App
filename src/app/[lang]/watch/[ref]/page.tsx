@@ -4,12 +4,12 @@ import { Navbar } from '../../layouts/Navbar';
 import { Footer } from '../../layouts/Footer';
 import { useState, useEffect } from 'react';
 import React from 'react';
-import useDocumentTitle from '@/app/[lang]/helpers/PageTitle';
+import useDocumentTitle from '@/helpers/PageTitle';
 import { allFilms } from '../../data/films-data';
 import SiteNotFound from '../../[...not_found]/page';
 import Link from 'next/link';
-import convertTitleToUrl from '@/app/[lang]/helpers/ConvertTitleToURL';
-import getCookie from '@/app/[lang]/helpers/GetCookie';
+import convertTitleToUrl from '@/helpers/ConvertTitleToURL';
+import getCookie from '@/helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
 import SomethingDone from '../../components/SomethingDoneDropdown';
 import ShareBtn from '../../components/ShareBtn';
@@ -165,7 +165,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 															<FlagIcon className='min-h-8 max-h-8 transparent-btn-style cursor-pointer !p-2' />
 														</button>
 														{getCookie('email') ? (
-															<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}>
+															<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}>
 																<ShareIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
 															</Link>
 														) : (
@@ -220,7 +220,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 														key={index}>
 														<section className='films-image-section'>
 															<Link
-																href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+																href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 																	similarFilm?.ref
 																}/${convertTitleToUrl(similarFilm?.title)}`}>
 																<img
@@ -232,7 +232,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 														</section>
 														<section className='films-text-section !pt-2 font-semibold'>
 															<Link
-																href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
+																href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 																	similarFilm?.ref
 																}/${convertTitleToUrl(similarFilm?.title)}`}
 																className='film-container-title text-[14px] hover:underline'>

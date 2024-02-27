@@ -1,9 +1,9 @@
 'use client';
 
-import useDocumentTitle from '../helpers/PageTitle';
+import useDocumentTitle from '../../../helpers/PageTitle';
 import { Navbar } from '../layouts/Navbar';
 import { useRef, useEffect } from 'react';
-import getCookie from '../helpers/GetCookie';
+import getCookie from '../../../helpers/GetCookie';
 import {
 	CameraIcon,
 	UserIcon,
@@ -472,25 +472,25 @@ const AccSettings = () => {
 														<li>
 															<button
 																className={`btn-choosed-style ${
-																	langSelectedToDisplay === 'polski' ? 'choosed' : ''
+																	langSelectedToDisplay === 'polish' ? 'choosed' : ''
 																} p-3 flex gap-x-1 items-center`}
 																onClick={() => {
 																	setLangDropdownActive(false);
-																	setLangSelectedToDisplay('polski');
+																	setLangSelectedToDisplay('polish');
 																}}>
-																{t('polski')}
+																{t('polish')}
 															</button>
 														</li>
 														<li>
 															<button
 																className={`btn-choosed-style ${
-																	langSelectedToDisplay === 'angielski' ? 'choosed' : ''
+																	langSelectedToDisplay === 'english' ? 'choosed' : ''
 																} p-3 flex gap-x-1 items-center`}
 																onClick={() => {
 																	setLangDropdownActive(false);
-																	setLangSelectedToDisplay('angielski');
+																	setLangSelectedToDisplay('english');
 																}}>
-																{t('angielski')}
+																{t('english')}
 															</button>
 														</li>
 													</ul>
@@ -619,7 +619,7 @@ const AccSettings = () => {
 										<button
 											className='orange-btn-style text-sm font-medium'
 											onClick={() => {
-												setLangSelected(langSelectedToDisplay === 'polski' ? 'polski' : 'angielski');
+												setLangSelected(langSelectedToDisplay === 'polish' ? 'polish' : 'english');
 												const currentPath = window.location.pathname;
 												const newPath = currentPath.startsWith('/pl') ? currentPath.replace('/pl', '/en') : '/pl';
 												window.location.href = newPath;

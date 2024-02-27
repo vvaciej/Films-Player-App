@@ -1,8 +1,8 @@
 'use client';
 
-import useDocumentTitle from '../helpers/PageTitle';
+import useDocumentTitle from '../../../helpers/PageTitle';
 import Link from 'next/link';
-import getCookie from '../helpers/GetCookie';
+import getCookie from '../../../helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
 
 const Login: React.FC = () => {
@@ -13,7 +13,7 @@ const Login: React.FC = () => {
 		<div className='space-dark !justify-center items-center'>
 			<div className='flex items-center h-max flex-col text-xs relative w-full pb-16'>
 				<Link
-					href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`}
+					href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
 					className='sm:text-6xl text-3xl font-bold'>
 					VVACIEJ.APP
 				</Link>
@@ -45,7 +45,7 @@ const Login: React.FC = () => {
 						color: 'var(--light-gray-eee)',
 					}}>
 					<span>{t('Nie masz konta?')}</span>
-					<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/register`} className='orange-link'>
+					<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`} className='orange-link'>
 						&nbsp;{t('Zaloguj sie')}
 					</Link>
 				</p>
