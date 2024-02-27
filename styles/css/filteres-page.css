@@ -1362,10 +1362,6 @@ body {
   padding: 7.5px 10px;
 }
 
-.films-image-section {
-  position: relative !important;
-}
-
 .filter-dropdown {
   position: absolute;
   min-width: 12rem;
