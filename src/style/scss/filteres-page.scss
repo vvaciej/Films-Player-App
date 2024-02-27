@@ -37,7 +37,7 @@
 	transform: translate(-50%);
 	transition: 0.15s;
 	top: 38px;
-	@include tablet-1080 {
+	@include tablet-1024 {
 		display: none !important;
 	}
 	&:not(.active) {
@@ -77,81 +77,6 @@
 		padding-left: 2rem;
 	}
 }
-.filter-dropdown.filters-section {
-	width: 18.5rem;
-	left: 50%;
-	transform: translate(-50%);
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 3px;
-	padding-top: 3px;
-	#clear-filters {
-		@include transparent-btn-style;
-		border: 1px solid var(--gray-3232);
-		border-radius: 5px;
-		padding: 0.4rem 0.8rem;
-	}
-	#apply-filters {
-		@include btn-style;
-		border-radius: 5px;
-		padding: 0.4rem 0.8rem;
-	}
-	label {
-		border-top: 1px solid var(--gray-3232);
-		display: flex;
-		align-items: center;
-		column-gap: 0.8rem;
-		padding: 0.8rem 1rem;
-		position: relative;
-		input {
-			height: 17px;
-			width: 17px;
-		}
-		input:checked ~ .filters-chevron-down-icon {
-			transform: rotate(180deg);
-			transition: 0.3s;
-		}
-	}
-	.filters-chevron-down-icon {
-		position: absolute;
-		right: 0.6rem;
-		transition: 0.3s;
-	}
-}
-
-.filter-dropdown-label {
-	height: calc(1.2rem + 35px + 35px);
-	position: relative;
-	width: 100%;
-	transition: height 0.3s;
-	border-bottom: inherit;
-	overflow: hidden;
-	border-top: 1px solid var(--gray-3232);
-	&:not(.active) {
-		height: 0;
-		padding: 0;
-		visibility: hidden;
-		transition: height 0.3s;
-	}
-	.filter-dropdown-content {
-		height: 4.3rem;
-		width: inherit;
-		@include flex-center;
-	}
-	form {
-		width: 90%;
-	}
-	input {
-		@include input-style;
-		font-size: 13px;
-		height: 35px;
-		width: 90% !important;
-		padding: 0rem 1.2rem;
-		&:focus {
-			@include orange-outline;
-		}
-	}
-}
 
 .filter-dropdown-label.filter-column {
 	> .filter-dropdown-content {
@@ -181,30 +106,6 @@
 	}
 }
 
-.btn-outline-orange-focus {
-	@include transparent-btn-style;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	border: 1px solid transparent;
-	outline: 1px solid var(--gray-5050);
-	height: 35px;
-	width: 90%;
-	border-radius: 4px;
-	padding-left: 1rem !important;
-	&:hover {
-		background-color: transparent;
-		border-radius: 4px;
-	}
-	&:focus {
-		@include orange-outline;
-	}
-	span {
-		color: var(--white);
-		font-size: 13px !important;
-	}
-}
-
 .filter-options-dropdown {
 	position: absolute;
 	top: 3.5rem;
@@ -228,7 +129,6 @@
 		opacity: 0;
 		position: fixed;
 	}
-	@include btn-choosed-style;
 	button {
 		padding-left: 1.2rem !important;
 	}

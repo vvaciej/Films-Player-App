@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 	const isLogged = getCookie('email');
-	const {t, i18n} = useTranslation();
+	const { t } = useTranslation();
 
 	const [isHoveredStar, setHoveredStars] = useState<number | null>(null);
 	const [indexStars, setIndexStars] = useState<number | null>(null);
@@ -69,19 +69,19 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 				</button>
 			</section>
 			{isLogged && isAddOpinionSelected ? (
-				<>
-					<section className='film-page-adding-opinion-container'>
-						<section className='film-page-adding-opinion-input-section'>
-							<label className='film-page-adding-opinion-label-for-input' htmlFor='title'>
+				<div>
+					<section className='flex flex-col gap-y-4 sm:gap-y-7 w-full mt-3'>
+						<section className='flex flex-col gap-y-1'>
+							<label className='text-sm' htmlFor='title'>
 								{t('Tytuł')}
 							</label>
-							<input className='film-page-adding-opinion-input' type='text' id='title' />
+							<input className='input-style orange-outline-focus' type='text' id='title' />
 						</section>
-						<section className='film-page-adding-opinion-input-section'>
-							<label className='film-page-adding-opinion-label-for-input' htmlFor='opinion-mess'>
+						<section className='flex flex-col gap-y-1'>
+							<label className='text-sm' htmlFor='opinion-mess'>
 								{t('Recenzja')}
 							</label>
-							<textarea className='film-page-adding-opinion-description-textarea' id='opinion-mess' />
+							<textarea className='input-style orange-outline-focus !pt-2' id='opinion-mess' />
 						</section>
 					</section>
 					<section className='flex gap-x-2 justify-end mt-1'>
@@ -92,7 +92,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 						</button>
 						<button className='orange-btn-style w-max sm:!px-7 !py-2 text-sm'>{t('Dodaj')}</button>
 					</section>
-				</>
+				</div>
 			) : (
 				''
 			)}

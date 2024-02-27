@@ -153,7 +153,7 @@
 }
 
 .watch-page-aside-container {
-	@include tablet-1080 {
+	@include tablet-1024 {
 		display: none !important;
 	}
 }
@@ -163,15 +163,9 @@
 	margin-bottom: 3rem;
 	.films-heading-section {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 1rem;
 		width: 100%;
-		.main-text-rating {
-			@include mobile-500 {
-				display: none;
-			}
-		}
 		.btn-style-outlined {
 			@include mobile-290 {
 				display: none;
@@ -236,36 +230,6 @@
 		&:hover {
 			transition: 0.2s;
 			filter: brightness(90%);
-		}
-	}
-}
-
-.film-page-adding-opinion-container {
-	display: flex;
-	flex-direction: column;
-	row-gap: 1.7rem;
-	width: 100%;
-	margin-top: 0.7rem;
-	@include mobile-600 {
-		row-gap: 1rem;
-	}
-	.film-page-adding-opinion-input-section {
-		display: flex;
-		flex-direction: column;
-		row-gap: 4px;
-		.film-page-adding-opinion-label-for-input {
-			font-size: 13px;
-		}
-		.film-page-adding-opinion-input,
-		.film-page-adding-opinion-description-textarea {
-			@include input-style;
-			font-size: 16px;
-			&:focus {
-				@include orange-outline;
-			}
-		}
-		.film-page-adding-opinion-description-textarea {
-			padding: 7px 10px;
 		}
 	}
 }

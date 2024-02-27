@@ -38,7 +38,7 @@
 		@include tablet-1350 {
 			font-size: 2.8rem;
 		}
-		@include tablet-1080 {
+		@include tablet-1024 {
 			margin-right: 0.3rem;
 		}
 		@include mobile-600 {
@@ -80,7 +80,7 @@
 			display: flex;
 			width: 100%;
 			align-items: center;
-			@include tablet-1080 {
+			@include tablet-1024 {
 				width: 0rem;
 			}
 			.header-search-input {
@@ -95,11 +95,8 @@
 				@include tablet-1350 {
 					height: calc(100% - 1.8rem);
 				}
-				@include tablet-1080 {
+				@include tablet-1024 {
 					display: none;
-				}
-				&:focus {
-					@include orange-outline;
 				}
 				&::placeholder {
 					color: var(--light-gray-d0d0);
@@ -110,7 +107,7 @@
 			position: absolute;
 			left: 0.25rem;
 			pointer-events: none;
-			@include tablet-1080 {
+			@include tablet-1024 {
 				pointer-events: all;
 			}
 		}
@@ -129,7 +126,7 @@
 		@include flex-center;
 		display: none;
 		cursor: pointer;
-		@include tablet-1080 {
+		@include tablet-1024 {
 			display: flex;
 			margin-left: 3rem;
 		}
@@ -149,7 +146,7 @@
 		@include tablet-1350 {
 			column-gap: 1.3rem;
 		}
-		@include tablet-1080 {
+		@include tablet-1024 {
 			display: none;
 		}
 		.header-nav-btns-films-serials {
@@ -176,21 +173,15 @@
 	column-gap: 0.6rem;
 	font-weight: 600;
 	font-size: 0.8rem;
-	@include tablet-1080 {
+	@include tablet-1024 {
 		display: none;
-	}
-	.header-register-btn {
-		@include transparent-btn-style;
-	}
-	.header-login-btn {
-		@include btn-style;
 	}
 }
 
 .header-right-user-btn {
 	@include flex-center;
 	display: none;
-	@include tablet-1080 {
+	@include tablet-1024 {
 		display: flex;
 	}
 	@include mobile-600 {
@@ -241,7 +232,6 @@
 		transition: 0.2s;
 		pointer-events: none;
 	}
-	@include btn-choosed-style;
 	.user-dropdown-options {
 		display: flex;
 		padding: 10px 15px;

@@ -323,7 +323,7 @@ i18next.use(initReactI18next).init({
 				Akcja: 'Action',
 				'Komedia': 'Comedy',
 				'Romans': 'Love Story',
-				'Fantasy': 'Fantazja',
+				'Fantazja': 'Fantasy',
 				'Familijny': 'Family',
 				'Przygodowy': 'Adventure',
 				'Muzyczny': 'Musically',

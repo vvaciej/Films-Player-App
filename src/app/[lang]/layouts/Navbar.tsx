@@ -118,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 
 	return (
 		<>
-			<header className='header-container'>
+			<header className='header-container !z-20'>
 				<section className='header-left-section'>
 					<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`} className='header-brand-text'>
 						VVACIEJ.APP
@@ -133,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								<input
 									type='text'
 									placeholder={t('Szukaj filmu lub serialu')}
-									className='header-search-input'
+									className='header-search-input orange-outline-focus'
 									onKeyUp={handleSearchDirectPage}
 									value={whatSearchVal}
 									onChange={handleSearchType}
@@ -151,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								className='header-search-icon-link'>
 								<MagnifyingGlassIcon className='header-search-icon' />
 							</Link>
-							<div className={`input-box-search ${isTyped ? 'active' : ''}`} ref={searchDropdownRef}>
+							<div className={`input-box-search lg:block hidden ${isTyped ? 'active' : ''}`} ref={searchDropdownRef}>
 								<ul className='flex flex-col'>
 									{searchResults.map((film: FilmData, index: number) => (
 										<Link
@@ -159,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}
 											key={index}>
-											<li className='flex h-[5.2rem] cursor-pointer gap-x-3 px-9 pl-4 py-2'>
+											<li className='flex h-[5.2rem] cursor-pointer gap-x-3 px-9 pl-4 py-2 transparent-btn-style'>
 												<img className='h-full object-cover rounded' src={film.image} alt={film.title} />
 												<section className='pt-[0.22rem] pb-[0.15rem] flex flex-col justify-between'>
 													<h1>{t(film.title)}</h1>
@@ -236,13 +236,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								<ChevronDownIcon className='h-4' />
 							</button>
 							<div
-								className={`user-dropdown-container ${userDropdownClicked ? 'active' : ''} py-1`}
+								className={`user-dropdown-container btn-choosed-style ${userDropdownClicked ? 'active' : ''} py-1`}
 								ref={userDropdownRef}>
 								<Link
 									href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/watchlist?order=${
 										getCookie('filterOrderChoosed') || 'most_popular'
 									}`}
-									className='user-dropdown-options'>
+									className='user-dropdown-options overwrite'>
 									<CheckBadgeIcon className='h-5' />
 									{t('Do obejrzenia')}
 								</Link>
@@ -270,12 +270,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						<>
 							<Link
 								href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/register`}
-								className='header-register-btn'>
+								className='transparent-btn-style'>
 								Rejestracja
 							</Link>
 							<Link
 								href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}
-								className='header-login-btn'>
+								className='orange-btn-style'>
 								Logowanie
 							</Link>
 						</>

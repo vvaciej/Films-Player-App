@@ -95,7 +95,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 										}/titles/${reference}/${convertTitleToUrl(title)}`}
 										className='main-heading-left-text-btn'>
 										<PlayIcon className='h-4' />
-										<span>{t('Obejrzyj to')}</span>
+										<span className='orange-btn-style'>{t('Obejrzyj to')}</span>
 									</Link>
 								</div>
 							</div>

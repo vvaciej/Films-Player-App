@@ -154,7 +154,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											: ''}
 									</span>
 								</button>
-								<div className={`filter-dropdown ${mostPopularBtnClicked ? 'active' : ''} select-none`}>
+								<div className={`filter-dropdown btn-choosed-style ${mostPopularBtnClicked ? 'active' : ''} select-none`}>
 									<button
 										className={`filtering-dropdown-btns ${filterOrderChoosed === 'most_popular' ? 'choosed' : ''}`}
 										onClick={() => {
@@ -366,7 +366,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 													</span>
 												</span>
 											</section>
-											<button className='rate-this-btn flex items-center gap-x-2'>
+											<button className='rate-this-btn transparent-btn-style flex items-center gap-x-2'>
 												<StarIcon className='h-4' />
 												{t('Oceń to')}
 											</button>
@@ -384,7 +384,9 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 			<Footer />
 			<div
 				ref={dropdownMobilesRef}
-				className={`typical-dropdown-style ${mostPopularBtnClicked || siatkaClicked ? 'active' : ''}`}>
+				className={`typical-dropdown-style btn-choosed-style ${
+					mostPopularBtnClicked || siatkaClicked ? 'active' : ''
+				}`}>
 				{mostPopularBtnClicked ? (
 					<div className='!h-52'>
 						<button
