@@ -173,9 +173,6 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
 							)}`}
 							className='main-heading-right-film-miniature-link'>
 							<img src={film.imgFullHd500} alt={`Poster for ${film.title}`} loading='eager' />
-							<button className='film-play-btn'>
-								<PlayIcon className='text-black h-5' />
-							</button>
 						</Link>
 					</section>
 					<section>

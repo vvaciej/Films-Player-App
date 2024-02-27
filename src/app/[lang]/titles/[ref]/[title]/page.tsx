@@ -499,15 +499,12 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 														(similarFilm, index: number) => (
 															<SwiperSlide key={index}>
 																<article className='film-container !max-w-64'>
-																	<section className='films-image-section relative'>
-																		<Link className='!relative'
+																	<section className='films-image-section'>
+																		<Link
 																			href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
 																				similarFilm?.ref
 																			}/${convertTitleToUrl(similarFilm?.title)}`}>
 																			<img src={similarFilm?.image} alt={`Poster for ${t(similarFilm?.title)}`} />
-																			<button className='film-play-btn'>
-																				<PlayIcon className='text-black h-5' />
-																			</button>
 																		</Link>
 																	</section>
 																	<section className='films-text-section'>

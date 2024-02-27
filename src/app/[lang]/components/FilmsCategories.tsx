@@ -116,9 +116,6 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 										src={film.image}
 										alt={`Poster for ${t(film.title)}`}
 									/>
-									<button className='film-play-btn'>
-										<PlayIcon className='text-black h-5' />
-									</button>
 								</Link>
 							</section>
 							<section className='films-text-section max-h-12'>

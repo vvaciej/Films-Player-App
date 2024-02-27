@@ -259,9 +259,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
 											<img src={film.image} className='max-h-[17.2rem]' alt={`Poster for ${t(film.title)}`} />
-											<button className='film-play-btn'>
-												<PlayIcon className='text-black h-5' />
-											</button>
 										</Link>
 									</section>
 									<section className='films-text-section'>
@@ -295,9 +292,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
 											<img src={film.imgFullHd500} alt={`Poster for ${t(film.title)}`} />
-											<button className='film-play-btn'>
-												<PlayIcon className='text-black h-5' />
-											</button>
 										</Link>
 									</section>
 									<section className='films-text-section'>
@@ -332,9 +326,6 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
 											<img className='max-h-46 max-w-32 pr-2' src={film.image} alt={`Poster for ${t(film.title)}`} />
-											<button className='film-play-btn'>
-												<PlayIcon className='text-black h-5' />
-											</button>
 										</Link>
 									</section>
 									<section className='films-text-section'>

@@ -237,8 +237,8 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 													<article
 														className='film-container !max-w-80 mb-6 hover:brightness-75 transition-all'
 														key={index}>
-														<section className='films-image-section relative'>
-															<Link className='relative'
+														<section className='films-image-section'>
+															<Link
 																href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
 																	similarFilm?.ref
 																}/${convertTitleToUrl(similarFilm?.title)}`}>
@@ -247,9 +247,6 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																	src={similarFilm?.imgFullHd500}
 																	alt={`Poster for ${t(similarFilm?.title)}`}
 																/>
-																<button className='film-play-btn'>
-																	<PlayIcon className='text-black h-5' />
-																</button>
 															</Link>
 														</section>
 														<section className='films-text-section !pt-2 font-semibold'>
