@@ -125,7 +125,7 @@ const SearchPage: React.FC = () => {
 									display: whatSearchVal ? 'block' : 'none',
 								}}>
 								<h1 className='text-2xl font-semibold sm:text-3xl'>
-									{t('Wyniki wyszukiwania:')}: {decodedQuery}
+									{t('Wyniki wyszukiwania:')} {decodedQuery}
 								</h1>
 								<section className='flex flex-col justify-between mt-8'>
 									<section
