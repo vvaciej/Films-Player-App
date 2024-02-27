@@ -130,7 +130,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																		userVoted && userWhatVote !== 'liked'
 																			? 'var(--gray-9999)'
 																			: userVoted && userWhatVote === 'liked'
-																			? 'green'
+																			? 'var(--green)'
 																			: '',
 																	cursor: userVoted ? 'not-allowed' : 'pointer',
 																	pointerEvents: userVoted ? 'none' : 'all',
@@ -150,7 +150,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																		userVoted && userWhatVote !== 'disLiked'
 																			? 'var(--gray-9999)'
 																			: userVoted && userWhatVote === 'disLiked'
-																			? 'red'
+																			? 'var(--red)'
 																			: '',
 																	cursor: userVoted ? 'not-allowed' : 'pointer',
 																	pointerEvents: userVoted ? 'none' : 'all',
