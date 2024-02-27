@@ -44,10 +44,6 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 	}, [params]);
 
 	const isLogged = getCookie('email');
-	const [, setIsLiked] = useState(false);
-
-	const handleLikeClick = () => {};
-	const handleUnLikeClick = () => {};
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -64,6 +60,34 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 
 		return similarFilms;
 	};
+
+	const defaultVotingInfo = {
+		amountOfLikes: 0,
+		amountOfDisLikes: 0,
+		isUserAlrVoted: false,
+		whatUserVoted: '',
+	};
+
+	const infoAbVotesFilmCookie = getCookie(`${infoOfChoosedFilm?.ref}-infoAbVotesFilm`);
+	const infoAbVotesFilmParsed = JSON.parse(infoAbVotesFilmCookie);
+
+	const [userVoted, setUserVoted] = useState<boolean>(infoAbVotesFilmParsed?.isUserAlrVoted || false);
+	const [userWhatVote, setUserWhatVote] = useState<string>(infoAbVotesFilmParsed?.whatUserVoted || '');
+
+	const [uniqueFilmLikes, setUniqueFilmLikes] = useState<number>(infoAbVotesFilmParsed?.amountOfLikes || 0);
+	const [uniqueFilmUnLikes, setUniqueFilmUnLikes] = useState<number>(infoAbVotesFilmParsed?.amountOfDisLikes || 0);
+
+	const infoAbVotesFilm = {
+		amountOfLikes: uniqueFilmLikes,
+		amountOfDisLikes: uniqueFilmUnLikes,
+		isUserAlrVoted: userVoted,
+		whatUserVoted: userWhatVote,
+	};
+
+	useEffect(() => {
+		const infoAbVotesFilmString = JSON.stringify(infoAbVotesFilm);
+		document.cookie = `${infoOfChoosedFilm?.ref}-infoAbVotesFilm=${infoAbVotesFilmString}`;
+	}, [infoAbVotesFilm, infoOfChoosedFilm]);
 
 	return (
 		<div className='space-light'>
@@ -97,21 +121,43 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 														<section className='flex'>
 															<button
 																onClick={() => {
-																	handleLikeClick();
-																	setIsLiked(true);
+																	setUserVoted(true);
+																	userVoted ? '' : setUniqueFilmLikes(prevState => prevState + 1);
+																	setUserWhatVote('liked');
+																}}
+																style={{
+																	color:
+																		userVoted && userWhatVote !== 'liked'
+																			? 'var(--gray-9999)'
+																			: userVoted && userWhatVote === 'liked'
+																			? 'green'
+																			: '',
+																	cursor: userVoted ? 'not-allowed' : 'pointer',
+																	pointerEvents: userVoted ? 'none' : 'all',
 																}}
 																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
 																<HandThumbUpIcon className='h-5' />
-																<span className='font-semibold'>0</span>
+																<span className='font-semibold'>{uniqueFilmLikes}</span>
 															</button>
 															<button
 																onClick={() => {
-																	handleUnLikeClick();
-																	setIsLiked(true);
+																	setUserVoted(true);
+																	userVoted ? '' : setUniqueFilmUnLikes(prevState => prevState + 1);
+																	setUserWhatVote('disLiked');
+																}}
+																style={{
+																	color:
+																		userVoted && userWhatVote !== 'disLiked'
+																			? 'var(--gray-9999)'
+																			: userVoted && userWhatVote === 'disLiked'
+																			? 'red'
+																			: '',
+																	cursor: userVoted ? 'not-allowed' : 'pointer',
+																	pointerEvents: userVoted ? 'none' : 'all',
 																}}
 																className='flex gap-x-2 items-center transparent-btn-style !p-2'>
 																<HandThumbDownIcon className='h-5' />
-																<span className='font-semibold'>0</span>
+																<span className='font-semibold'>{uniqueFilmUnLikes}</span>
 															</button>
 														</section>
 													) : (
@@ -189,13 +235,15 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 													: 'none',
 										}}>
 										<section className='films-heading-section'>
-											<h1 className='films-category-heading-text !text-2xl mb-6'>{t('Podobne')}</h1>
+											<h1 className='films-category-heading-text !text-2xl'>{t('Podobne')}</h1>
 										</section>
 										<section>
 											{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title)
 												.slice(0, 4)
 												.map((similarFilm, index) => (
-													<article className='film-container !max-w-80 mb-6 hover:brightness-75 transition-all' key={index}>
+													<article
+														className='film-container !max-w-80 mb-6 hover:brightness-75 transition-all'
+														key={index}>
 														<section className='films-image-section relative'>
 															<Link
 																href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${

@@ -52,7 +52,7 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 			)}
 			<div
 				ref={shareDropdownRef}
-				className='absolute h-max w-full min-w-56 top-10 rounded py-1 transition-all z-10 right-0'
+				className='absolute h-max w-full min-w-64 top-10 rounded py-1 transition-all z-10 right-0'
 				style={{
 					visibility: shareDropdownActive ? 'visible' : 'hidden',
 					opacity: shareDropdownActive ? '1' : '0',
@@ -78,7 +78,7 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 						window.location.href = `https://www.facebook.com/share.php?u=${encodeURI(window.location.href)}`;
 					}}>
 					<FontAwesomeIcon icon={faFacebook} className='h-5 text-zinc-200' />
-					<span className='!text-[13px] text-zinc-200 w-max pl-2'>{t('Udostępnij na facebooku')}</span>
+					<span className='!text-[13px] text-zinc-200 w-max pl-3'>{t('Udostępnij na facebooku')}</span>
 				</button>
 				<button
 					className='flex items-center px-7 !py-[10.5px] btn-choosed-style w-full'
@@ -87,7 +87,7 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 						window.location.href = `https://twitter.com/share?&url=${window.location.href}`;
 					}}>
 					<FontAwesomeIcon icon={faTwitter} className='h-5 text-zinc-200' />
-					<span className='!text-[13px] text-zinc-200 w-max pl-2'>{t('Udostępnij na twitterze')}</span>
+					<span className='!text-[13px] text-zinc-200 w-max pl-3'>{t('Udostępnij na twitterze')}</span>
 				</button>
 			</div>
 		</section>

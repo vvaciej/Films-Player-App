@@ -31,7 +31,6 @@ import { allFilms } from '@/app/[lang]/data/films-data';
 import getCookie from '@/app/[lang]/helpers/GetCookie';
 import ReviewAs from '@/app/[lang]/components/ReviewAsContainer';
 import normalizePolishCharacters from '@/app/[lang]/helpers/NormalizePolishSymbols';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SomethingDone from '@/app/[lang]/components/SomethingDoneDropdown';
 import ShareBtn from '@/app/[lang]/components/ShareBtn';
 interface pageProps {
