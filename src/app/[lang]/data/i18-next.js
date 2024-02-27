@@ -409,6 +409,7 @@ i18next.use(initReactI18next).init({
 				'Troche tu cicho': 'Seems a little quiet over here',
 				'Bądź pierwszym komentującym': 'Be the first to comment',
 				Podobne: 'Alike',
+				'Głos został oddany': 'The vote has been cast',
 				// watchlist
 				'Do obejrzenia': 'Watchlist',
 			},

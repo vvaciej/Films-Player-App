@@ -248,7 +248,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 						</div>
 						<Footer />
 						<SomethingDone text={t('Głos został oddany')} visible={sthDoneVotedVisible} />
-						<SomethingDone text={t('Zgłoszenie zostało wysłane')} visible={sthDoneVisible} />
+						<SomethingDone text={t('Skopiowano link do schowka')} visible={sthDoneVisible} />
 					</>
 				) : (
 					<SiteNotFound />
