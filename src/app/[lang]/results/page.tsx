@@ -148,9 +148,6 @@ const SearchPage: React.FC = () => {
 															film.ref
 														}/${convertTitleToUrl(film.title)}`}>
 														<img src={film.image} alt={`Poster for ${film.title}`} />
-														<button className='film-play-btn'>
-															<PlayIcon className='text-black h-5' />
-														</button>
 													</Link>
 												</section>
 												<section className='films-text-section'>
