@@ -15,7 +15,7 @@ html.dark {
   --gray-6161: #616161;
   --gray-9999: #999999;
   --green: #00b894;
-  --red: #ED4C67;
+  --red: #ed4c67;
   --light-eee: #eee;
   --light-gray-d5d5: #d5d5d5;
   --light-gray-ddd: #ddd;
@@ -159,7 +159,7 @@ html.dark {
 }
 .btn-choosed-style.choosed:before {
   content: "";
-  background-image: url("/check-solid-orange.svg");
+  background-image: url("/icons/check-solid-orange.svg");
   left: 0;
   margin-right: 0.3rem;
   height: 1rem;
@@ -1014,11 +1014,12 @@ body {
   border: 0;
 }
 .orange-checkbox:checked:before {
-  content: "\f00c";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: var(--gray-3232);
-  font-size: 14px;
+  content: "";
+  background-image: url("/icons/check-solid-gray.svg");
+  height: 14px;
+  width: 14px;
+  display: block;
+  background-repeat: no-repeat;
   padding-top: 1px;
 }
 
