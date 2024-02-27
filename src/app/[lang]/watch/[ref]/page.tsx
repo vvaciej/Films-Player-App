@@ -69,7 +69,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 	};
 
 	const infoAbVotesFilmCookie = getCookie(`${infoOfChoosedFilm?.ref}-infoAbVotesFilm`);
-	const infoAbVotesFilmParsed = JSON.parse(infoAbVotesFilmCookie);
+	const infoAbVotesFilmParsed = infoAbVotesFilmCookie ? JSON.parse(infoAbVotesFilmCookie) : null;
 
 	const [userVoted, setUserVoted] = useState<boolean>(infoAbVotesFilmParsed?.isUserAlrVoted || false);
 	const [userWhatVote, setUserWhatVote] = useState<string>(infoAbVotesFilmParsed?.whatUserVoted || '');
