@@ -21,7 +21,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const AccSettings = () => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	useDocumentTitle(`${t(`Ustawienia konta`)} - vvaciej.app`);
 
 	const [selectedFile, setSelectedFile] = useState(null);

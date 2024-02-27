@@ -500,7 +500,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 															<SwiperSlide key={index}>
 																<article className='film-container !max-w-64'>
 																	<section className='films-image-section relative'>
-																		<Link
+																		<Link className='!relative'
 																			href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
 																				similarFilm?.ref
 																			}/${convertTitleToUrl(similarFilm?.title)}`}>

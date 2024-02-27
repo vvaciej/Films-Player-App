@@ -82,6 +82,8 @@ const UserPage = () => {
 								className='overflow-hidden overflow-x-auto hide-scrollbar'
 								style={{
 									borderBottom: '1px solid var(--gray-3232)',
+									scrollbarWidth: 'none',
+									msOverflowStyle: 'none',
 								}}>
 								<section className='text-sm justify-between flex w-[48rem] relative'>
 									<hr

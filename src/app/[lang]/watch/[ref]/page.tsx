@@ -61,13 +61,6 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 		return similarFilms;
 	};
 
-	const defaultVotingInfo = {
-		amountOfLikes: 0,
-		amountOfDisLikes: 0,
-		isUserAlrVoted: false,
-		whatUserVoted: '',
-	};
-
 	const infoAbVotesFilmCookie = getCookie(`${infoOfChoosedFilm?.ref}-infoAbVotesFilm`);
 	const infoAbVotesFilmParsed = infoAbVotesFilmCookie ? JSON.parse(infoAbVotesFilmCookie) : null;
 
@@ -245,7 +238,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 														className='film-container !max-w-80 mb-6 hover:brightness-75 transition-all'
 														key={index}>
 														<section className='films-image-section relative'>
-															<Link
+															<Link className='relative'
 																href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
 																	similarFilm?.ref
 																}/${convertTitleToUrl(similarFilm?.title)}`}>
