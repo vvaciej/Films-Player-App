@@ -137,7 +137,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 						<h1 className='films-category-heading-text'>{t(headingTitlePage)}</h1>
 						<section className='films-category-filter-btns'>
 							<section className='relative' ref={mostPopularDropdownRef}>
-								<button className={`films-category-filter-btn`} onClick={handleMostPopularClick}>
+								<button className={`films-category-filter-btn transparent-btn-style`} onClick={handleMostPopularClick}>
 									<Bars3BottomLeftIcon className='h-5' />
 									<span className='text-sm font-medium pl-2 lg:flex hidden'>
 										{filterOrderChoosed === 'most_popular'
@@ -202,7 +202,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								</div>
 							</section>
 							<section className='relative' ref={siatkaDropdownRef}>
-								<button className={`films-category-filter-btn`} onClick={handleSiatkaClick}>
+								<button className={`films-category-filter-btn transparent-btn-style`} onClick={handleSiatkaClick}>
 									{filmModeChoosed === 'Siatka' ? (
 										<Squares2X2Icon className='h-5' />
 									) : filmModeChoosed === 'Pejzaz' ? (
