@@ -356,19 +356,8 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 												/>
 												<span>
 													{film.rating} / 10 &nbsp;&nbsp;
-													<span
-														className='film-list-rating-separate-symbol'
-														style={{
-															color: 'var(--gray-5050)',
-														}}>
-														|
-													</span>
 												</span>
 											</section>
-											<button className='rate-this-btn transparent-btn-style flex items-center gap-x-2'>
-												<StarIcon className='h-4' />
-												{t('Oceń to')}
-											</button>
 										</section>
 										<p className='film-list-description'>{t(film.description)}</p>
 									</section>

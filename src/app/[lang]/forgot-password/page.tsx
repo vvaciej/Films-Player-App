@@ -12,7 +12,9 @@ const Login: React.FC = () => {
 	return (
 		<div className='space-dark !justify-center items-center'>
 			<div className='flex items-center h-max flex-col text-xs relative w-full pb-16'>
-				<Link href='/' className='sm:text-6xl text-3xl font-bold'>
+				<Link
+					href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`}
+					className='sm:text-6xl text-3xl font-bold'>
 					VVACIEJ.APP
 				</Link>
 				<main className='flex justify-center'>
@@ -44,7 +46,7 @@ const Login: React.FC = () => {
 					}}>
 					<span>{t('Nie masz konta?')}</span>
 					<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/register`} className='orange-link'>
-						{t('Zaloguj sie')}
+						&nbsp;{t('Zaloguj sie')}
 					</Link>
 				</p>
 			</div>
