@@ -15,7 +15,6 @@ import SomethingDone from '../../components/SomethingDoneDropdown';
 import ShareBtn from '../../components/ShareBtn';
 
 import {
-	PlayIcon,
 	HandThumbUpIcon,
 	HandThumbDownIcon,
 	ChatBubbleBottomCenterIcon,
@@ -31,6 +30,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 	const [isFilmExist, setIsFilmExist] = useState<boolean>(false);
 	const [sthDoneVisible, setSthDoneVisible] = useState<boolean>(false);
+	const [sthDoneVotedVisible, setSthDoneVotedVisible] = useState<boolean>(false);
 
 	const infoOfChoosedFilm = allFilms.find(film => film.ref === Number(params.ref));
 
@@ -117,6 +117,8 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																	setUserVoted(true);
 																	userVoted ? '' : setUniqueFilmLikes(prevState => prevState + 1);
 																	setUserWhatVote('liked');
+																	setSthDoneVotedVisible(true);
+																	setTimeout(() => setSthDoneVotedVisible(false), 2500);
 																}}
 																style={{
 																	color:
@@ -137,6 +139,8 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																	setUserVoted(true);
 																	userVoted ? '' : setUniqueFilmUnLikes(prevState => prevState + 1);
 																	setUserWhatVote('disLiked');
+																	setSthDoneVotedVisible(true);
+																	setTimeout(() => setSthDoneVotedVisible(false), 2500);
 																}}
 																style={{
 																	color:
@@ -169,20 +173,14 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 															</Link>
 														</section>
 													)}
-													<section className='flex'>
-														{getCookie('email') ? (
-															<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}>
-																<FlagIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
-															</Link>
-														) : (
-															<button
-																onClick={() => {
-																	setSthDoneVisible(true);
-																	setTimeout(() => setSthDoneVisible(false), 2500);
-																}}>
-																<FlagIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
-															</button>
-														)}
+													<section className='flex gap-x-3'>
+														<button
+															onClick={() => {
+																setSthDoneVisible(true);
+																setTimeout(() => setSthDoneVisible(false), 2500);
+															}}>
+															<FlagIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
+														</button>
 														{getCookie('email') ? (
 															<Link href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}>
 																<ShareIcon className='min-h-8 transparent-btn-style cursor-pointer !p-2' />
@@ -266,6 +264,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 							</div>
 						</div>
 						<Footer />
+						<SomethingDone text={t('Głos został oddany')} visible={sthDoneVotedVisible} />
 						<SomethingDone text={t('Zgłoszenie zostało wysłane')} visible={sthDoneVisible} />
 					</>
 				) : (
