@@ -128,7 +128,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 				{isLoaded ? (
 					isFilmExist ? (
 						<main>
-							<div className='film-page-image-fullhd-preview'>
+							<div className='film-page-image-fullhd-preview sm:pt-0 pt-16'>
 								<Link
 									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watch/${infoOfChoosedFilm?.ref}`}
 									className='film-play-btn'>
