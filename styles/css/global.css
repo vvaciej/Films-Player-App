@@ -794,7 +794,7 @@ html.dark {
 }
 
 .film-link-title {
-  font-size: 14.5px;
+  font-size: 15.2px !important;
   font-weight: 500;
   cursor: pointer;
 }
