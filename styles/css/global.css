@@ -1063,6 +1063,7 @@ body {
 
 .films-category-heading-text {
   padding-left: 15px;
+  padding-right: 10px;
   font-size: 1.7rem;
   display: flex;
   align-items: center;
@@ -1152,7 +1153,7 @@ body {
     column-gap: 0.8rem;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 450px) {
   .films-wrapper-landscape {
     grid-template-columns: repeat(1, 1fr);
   }

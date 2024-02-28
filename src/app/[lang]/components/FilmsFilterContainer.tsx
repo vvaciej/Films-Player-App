@@ -287,7 +287,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
-											<img src={film.imgFullHd500} alt={`Poster for ${t(film.title)}`} />
+											<img src={film.imgFullHd500} className='!max-h-[14rem]' alt={`Poster for ${t(film.title)}`} />
 										</Link>
 									</section>
 									<section className='films-text-section'>

@@ -128,7 +128,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 				{isLoaded ? (
 					isFilmExist ? (
 						<main>
-							<div className='film-page-image-fullhd-preview sm:pt-0 pt-16'>
+							<div className='film-page-image-fullhd-preview sm:pt-0 pt-12'>
 								<Link
 									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watch/${infoOfChoosedFilm?.ref}`}
 									className='film-play-btn'>
@@ -365,7 +365,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 															spaceBetween: 20,
 															cssMode: true,
 														},
-														400: {
+														370: {
 															slidesPerGroup: 2,
 															slidesPerView: 2,
 															spaceBetween: 10,
@@ -454,7 +454,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 															spaceBetween: 10,
 															cssMode: true,
 														},
-														420: {
+														400: {
 															slidesPerView: 3,
 															slidesPerGroup: 3,
 															spaceBetween: 10,

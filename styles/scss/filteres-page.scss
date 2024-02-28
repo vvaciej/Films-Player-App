@@ -8,7 +8,7 @@
 
 .films-category-filter-btns {
 	@include flex-center;
-	column-gap: 0.9rem;
+	column-gap: 0rem;
 	@include mobile-340 {
 		column-gap: 0;
 	}

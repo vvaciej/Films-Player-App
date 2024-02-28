@@ -1336,7 +1336,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 0.9rem;
+  column-gap: 0rem;
 }
 @media screen and (max-width: 340px) {
   .films-category-filter-btns {
