@@ -74,10 +74,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 								<div className='main-heading-left-text-container'>
 									<p className='main-text-rating flex items-center'>
 										<StarIcon
-											className='h-5 mr-2'
-											style={{
-												color: 'var(--orange)',
-											}}
+											className='h-5 mr-2 text-orange'
 										/>
 										<span>{film.rating} / 10</span>
 									</p>
@@ -123,10 +120,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 							<div className='main-heading-left-text-container'>
 								<p className='main-text-rating flex items-center'>
 									<StarIcon
-										className='h-5 mr-2'
-										style={{
-											color: 'var(--orange)',
-										}}
+										className='h-5 mr-2 text-orange'
 									/>
 									<span>{rating} / 10</span>
 								</p>
@@ -166,7 +160,7 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
 		<div className='main-heading-right-films-container'>
 			{sidebarFilmsData.slice(...currentIndexes).map((film: any, index: number) => (
 				<div key={index} className='main-heading-right-film'>
-					<section className={'main-heading-right-film-miniature-section'}>
+					<section className={'main-heading-right-film-miniature-section text-[14px]'}>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
 								film.title
@@ -187,10 +181,7 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
 						</section>
 						<p className='main-heading-left-text-rating flex mt-1'>
 							<StarIcon
-								className='h-5 mr-2'
-								style={{
-									color: 'var(--orange)',
-								}}
+								className='h-5 mr-2 text-orange'
 							/>
 							<span className='text-sm'>{film.rating} / 10</span>
 						</p>

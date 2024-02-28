@@ -88,11 +88,9 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 				isFilmExist ? (
 					<>
 						<div className='content-full-space-centered'>
-							<div
-								className='xl:w-[1220px] w-[95%] h-max'
-								style={{
-									marginTop: 'calc(var(--main-container-padd-top) - .5rem)',
-								}}>
+							<div className='xl:w-[1220px] w-[95%] h-max' style={{
+								marginTop: 'calc(var(--main-container-padd-top) - .5rem)',
+							}}>
 								<main className='w-full h-max rounded'>
 									<video controls controlsList='nodownload' className='h-max w-full'>
 										<source src='' type='video/mp4' />
@@ -118,17 +116,17 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																setSthDoneVotedVisible(true);
 																setTimeout(() => setSthDoneVotedVisible(false), 2500);
 															}}
-															style={{
-																color:
-																	userVoted && userWhatVote !== 'liked'
-																		? 'var(--gray-9999)'
-																		: userVoted && userWhatVote === 'liked'
-																		? 'var(--green)'
-																		: '',
-																cursor: userVoted ? 'not-allowed' : 'pointer',
-																pointerEvents: userVoted ? 'none' : 'all',
-															}}
-															className='flex gap-x-2 items-center transparent-btn-style !p-2'>
+															className={`flex gap-x-2 items-center transparent-btn-style !p-2 ${
+																userVoted && userWhatVote !== 'liked'
+																	? 'text-gray9999'
+																	: userVoted && userWhatVote === 'liked'
+																	? 'text-green'
+																	: ''
+															}  ${
+																userVoted
+																	? 'cursor-not-allowed pointer-events-none'
+																	: 'cursor-pointer pointer-events-auto'
+															}`}>
 															<HandThumbUpIcon className='h-5' />
 															<span className='font-semibold'>{uniqueFilmLikes}</span>
 														</button>
@@ -140,17 +138,17 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 																setSthDoneVotedVisible(true);
 																setTimeout(() => setSthDoneVotedVisible(false), 2500);
 															}}
-															style={{
-																color:
-																	userVoted && userWhatVote !== 'disLiked'
-																		? 'var(--gray-9999)'
-																		: userVoted && userWhatVote === 'disLiked'
-																		? 'var(--red)'
-																		: '',
-																cursor: userVoted ? 'not-allowed' : 'pointer',
-																pointerEvents: userVoted ? 'none' : 'all',
-															}}
-															className='flex gap-x-2 items-center transparent-btn-style !p-2'>
+															className={`flex gap-x-2 items-center transparent-btn-style !p-2 ${
+																userVoted && userWhatVote !== 'disLiked'
+																	? 'text-gray9999'
+																	: userVoted && userWhatVote === 'disLiked'
+																	? 'text-red'
+																	: ''
+															} ${
+																userVoted
+																	? 'cursor-not-allowed pointer-events-none'
+																	: 'cursor-pointer pointer-events-auto'
+															}`}>
 															<HandThumbDownIcon className='h-5' />
 															<span className='font-semibold'>{uniqueFilmUnLikes}</span>
 														</button>
@@ -172,13 +170,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 														)}
 													</section>
 												</section>
-												<p
-													className=' text-gray-300'
-													style={{
-														fontSize: '13.4px',
-													}}>
-													{t(infoOfChoosedFilm?.description || '')}
-												</p>
+												<p className=' text-gray-300 text-[13.4px]'>{t(infoOfChoosedFilm?.description || '')}</p>
 											</section>
 										</section>
 										<section>
@@ -189,24 +181,14 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 											<hr className='border-zinc-700 border-1 w-full' />
 										</section>
 										<section className='text-center text-sm mt-8'>
-											<h2
-												className='mb-1'
-												style={{
-													fontSize: '15.2px',
-												}}>
-												{t('Seems a little quiet over here')}
-											</h2>
+											<h2 className='mb-1 text-[15.2px]'>{t('Seems a little quiet over here')}</h2>
 											<span className='text-gray-300'>{t('Bądź pierwszym komentującym')}</span>
 										</section>
 									</section>
 									<aside
-										className='min-w-[260px] watch-page-aside-container'
-										style={{
-											display:
-												findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
-													? 'block '
-													: 'none',
-										}}>
+										className={`min-w-[260px] watch-page-aside-container ${
+											findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
+										? 'block' : 'hidden'}`}>
 										<section className='films-heading-section'>
 											<h1 className='films-category-heading-text !text-2xl'>{t('Alike')}</h1>
 										</section>

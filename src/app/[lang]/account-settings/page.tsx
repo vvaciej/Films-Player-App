@@ -206,23 +206,9 @@ const AccSettings = () => {
 							<main className='w-full h-max flex flex-col gap-y-7'>
 								<div
 									ref={informationRef}
-									className='bg-slate-400 px-5 py-4 text-zinc-200 rounded'
-									style={{
-										backgroundColor: 'var(--gray-2222)',
-										border: '1px solid var(--gray-3232)',
-									}}>
-									<h2
-										className='pb-2'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
-										{t('Update your name or profile picture.')}
-									</h2>
-									<section
-										className='flex flex-col sm:flex-row items-center'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
+									className='px-5 py-4 text-zinc-200 rounded border-[1px] bg-gray2222 border-gray3232'>
+									<h2 className='pb-2'>{t('Update your name or profile picture.')}</h2>
+									<section className='flex flex-col sm:flex-row items-center border-b-[1px] border-gray3232'>
 										<section className='w-full mt-6 text-sm flex-col flex gap-y-6 pb-8'>
 											<section className='flex flex-col gap-y-1'>
 												<label htmlFor='name'>{t('Name')}</label>
@@ -238,41 +224,22 @@ const AccSettings = () => {
 											<section className='relative '>
 												<label
 													htmlFor='upload'
-													className='h-9 w-9 flex items-center cursor-pointer justify-center absolute bottom-0 right-0 '>
+													className='h-9 w-9 flex items-center cursor-pointer justify-center absolute bottom-0 right-0'>
 													<input
 														type='file'
-														className='hidden'
+														className='hidden border-[1px] border-orange rounded-[50%] bg-gray3232'
 														id='upload'
 														onChange={handleFileChange}
-														style={{
-															border: '1px solid var(--orange)',
-															borderRadius: '50%',
-															backgroundColor: 'var(--gray-3232)',
-														}}
 													/>
-													<div
-														className='p-2 rounded-3xl hover:brightness-75 transition-all'
-														style={{
-															border: '1px solid var(--orange)',
-															backgroundColor: 'var(--gray-3232)',
-														}}>
-														<CameraIcon
-															className='h-5'
-															style={{
-																color: 'var(--orange)',
-															}}
-														/>
+													<div className='p-2 rounded-3xl hover:brightness-75 transition-all border-[1px] border-orange bg-gray3232'>
+														<CameraIcon className='h-5 text-orange' />
 													</div>
 												</label>
 												<img
 													src={`${photoFile}`}
 													alt='user avatar'
 													id='userAvatar'
-													className='h-20 w-20 mr-1'
-													style={{
-														outline: '1px solid var(--gray-3232)',
-														borderRadius: '50%',
-													}}
+													className='h-20 w-20 mr-1 outline-gray3232 outline outline-[1px] rounded-[50%]'
 												/>
 											</section>
 											<button className='text-red-500 text-xs mt-2'>{t('Delete picture')}</button>
@@ -284,29 +251,11 @@ const AccSettings = () => {
 								</div>
 								<div
 									ref={socialLoginRef}
-									className='bg-slate-400 px-5 py-4 text-zinc-200 rounded'
-									style={{
-										backgroundColor: 'var(--gray-2222)',
-										border: '1px solid var(--gray-3232)',
-									}}>
-									<h2
-										className='pb-2'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
-										{t('Login through social networks')}
-									</h2>
-									<section
-										className='flex items-center justify-between sm:px-3'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
+									className='px-5 py-4 text-zinc-200 rounded bg-gray2222 border-[1px] border-gray3232'>
+									<h2 className='pb-2 border-b-gray3232 border-b-[1px]'>{t('Login through social networks')}</h2>
+									<section className='flex items-center justify-between sm:px-3 border-b-[1px] border-gray3232'>
 										<section className='w-full flex mt-6 text-sm gap-1 gap-x-3 pb-8'>
-											<button
-												className='rounded transition-all hover:brightness-125 w-max'
-												style={{
-													border: '1px solid var(--gray-3232)',
-												}}>
+											<button className='rounded transition-all hover:brightness-125 w-max border-[1px] border-gray3232'>
 												<img
 													src='https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png '
 													className='h-10'
@@ -334,23 +283,9 @@ const AccSettings = () => {
 								</div>
 								<div
 									ref={passwordRef}
-									className='bg-slate-400 px-5 py-4 text-zinc-200 rounded'
-									style={{
-										backgroundColor: 'var(--gray-2222)',
-										border: '1px solid var(--gray-3232)',
-									}}>
-									<h2
-										className='pb-2'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
-										{t('Update password and informations')}
-									</h2>
-									<section
-										className='flex flex-col sm:flex-row items-center'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
+									className='px-5 py-4 text-zinc-200 rounded bg-gray2222 border-[1px] border-gray3232'>
+									<h2 className='pb-2 border-b-[1px] border-gray3232'>{t('Update password and informations')}</h2>
+									<section className='flex flex-col sm:flex-row items-center border-b-[1px] border-gray3232'>
 										<section className='w-full mt-6 text-sm flex-col flex gap-y-6 pb-8'>
 											<section className='flex flex-col gap-y-1'>
 												<label htmlFor='name'>{t('Name')}</label>
@@ -372,18 +307,8 @@ const AccSettings = () => {
 								</div>
 								<div
 									ref={twoFactorAuthRef}
-									className='bg-slate-400 px-5 py-4 text-zinc-200 rounded'
-									style={{
-										backgroundColor: 'var(--gray-2222)',
-										border: '1px solid var(--gray-3232)',
-									}}>
-									<h2
-										className='pb-2'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
-										{t('Two-factor authentication')}
-									</h2>
+									className='px-5 py-4 text-zinc-200 rounded border-b-[1px] border-gray3232 bg-gray2222'>
+									<h2 className='pb-2 border-b-[1px] border-gray3232'>{t('Two-factor authentication')}</h2>
 									<h1 className='mt-6 font-semibold'>{t('You have not enabled two-factor authentication.')}</h1>
 									<p className='mt-4 text-sm max-w-[40rem]'>
 										{t(
@@ -394,18 +319,8 @@ const AccSettings = () => {
 								</div>
 								<div
 									ref={activeSessionsRef}
-									className='bg-slate-400 px-5 py-4 text-zinc-200 rounded'
-									style={{
-										backgroundColor: 'var(--gray-2222)',
-										border: '1px solid var(--gray-3232)',
-									}}>
-									<h2
-										className='pb-2'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
-										{t('Active sessions')}
-									</h2>
+									className='px-5 py-4 text-zinc-200 rounded bg-gray2222 border-[1px] border-gray3232'>
+									<h2 className='pb-2 border-b-[1px] border-gray3232'>{t('Active sessions')}</h2>
 									<p className='mt-4 text-sm'>
 										{t(
 											'If necessary, you can log out of all other browser sessions on all devices. Your most recent sessions are listed below. If you think someone else has logged into your account, you should also update your password. (Locations and IP addresses may not be what they actually are due to the use of a VPN. This keeps every user of our site safe and anonymous.'
@@ -419,7 +334,7 @@ const AccSettings = () => {
 													<h1 className='text-sm text-white'>Windows - Chrome</h1>
 													<span className='text-xs'>Warsaw, Poland</span>
 													<p className='text-xs'>
-														{t('IP address..')} - <span className='text-green-300'>{t('This device')}</span>
+														{t('IP address..')} - <span className='text-green'>{t('This device')}</span>
 													</p>
 												</section>
 											</li>
@@ -429,25 +344,9 @@ const AccSettings = () => {
 										{t('Logout from other sessions')}
 									</button>
 								</div>
-								<div
-									ref={langRef}
-									className='bg-slate-400 px-5 py-4 text-zinc-200 rounded'
-									style={{
-										backgroundColor: 'var(--gray-2222)',
-										border: '1px solid var(--gray-3232)',
-									}}>
-									<h2
-										className='pb-2'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
-										{t('Date, time and language')}
-									</h2>
-									<section
-										className='flex flex-col sm:flex-row items-center'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
+								<div ref={langRef} className='px-5 py-4 text-zinc-200 rounded bg-gray2222 border-[1px] border-gray3232'>
+									<h2 className='pb-2 border-b-[1px] border-gray3232'>{t('Date, time and language')}</h2>
+									<section className='flex flex-col sm:flex-row items-center border-b-[1px] border-gray3232'>
 										<section className='w-full mt-6 text-sm flex-col flex gap-y-6 pb-8'>
 											<section className='flex flex-col gap-y-1 justify-between relative'>
 												<span>{t('Language')}</span>
@@ -460,14 +359,12 @@ const AccSettings = () => {
 												</button>
 												<div
 													ref={langDropdownRef}
-													className='absolute h-max w-full top-16 rounded py-1 transition-all z-10'
-													style={{
-														visibility: langDropdownActive ? 'visible' : 'hidden',
-														opacity: langDropdownActive ? '1' : '0',
-														pointerEvents: langDropdownActive ? 'all' : 'none',
-														backgroundColor: 'var(--dark-1a1a)',
-														outline: '1px solid var(--gray-3232)',
-													}}>
+													className={`absolute h-max w-full top-16 rounded py-1 transition-all z-10 bg-1a1a outline-[1px] outline outline-gray3232 ${
+														langDropdownActive
+															? 'visible opacity-100 pointer-events-auto'
+															: 'invisible opacity-0 pointer-events-none'
+													}`}
+													style={{}}>
 													<ul>
 														<li>
 															<button
@@ -506,14 +403,11 @@ const AccSettings = () => {
 												</button>
 												<div
 													ref={countryDropdownRef}
-													className='absolute h-max w-full top-16 rounded py-1 transition-all z-10'
-													style={{
-														visibility: countryDropdownActive ? 'visible' : 'hidden',
-														opacity: countryDropdownActive ? '1' : '0',
-														pointerEvents: countryDropdownActive ? 'all' : 'none',
-														backgroundColor: 'var(--dark-1a1a)',
-														outline: '1px solid var(--gray-3232)',
-													}}>
+													className={`absolute h-max w-full top-16 rounded py-1 transition-all z-10 bg-1a1a outline-[1px] outline outline-gray3232 ${
+														countryDropdownActive
+															? 'visible opacity-100 pointer-events-auto'
+															: 'invisible opacity-0 pointer-events-none'
+													}`}>
 													<ul>
 														<li>
 															<button
@@ -565,14 +459,11 @@ const AccSettings = () => {
 												</button>
 												<div
 													ref={timeZoneDropdownRef}
-													className='absolute h-max w-full top-16 rounded py-1 transition-all z-10'
-													style={{
-														visibility: timeZoneDropdownActive ? 'visible' : 'hidden',
-														opacity: timeZoneDropdownActive ? '1' : '0',
-														pointerEvents: timeZoneDropdownActive ? 'all' : 'none',
-														backgroundColor: 'var(--dark-1a1a)',
-														outline: '1px solid var(--gray-3232)',
-													}}>
+													className={`absolute h-max w-full top-16 rounded py-1 transition-all z-10 bg-1a1a outline-[1px] outline outline-gray3232 ${
+														timeZoneDropdownActive
+															? 'visible opacity-100 pointer-events-auto'
+															: 'invisible opacity-0 pointer-events-none'
+													}`}>
 													<ul>
 														<li>
 															<button
@@ -630,23 +521,9 @@ const AccSettings = () => {
 								</div>
 								<div
 									ref={deleteAccRef}
-									className='bg-slate-400 px-5 py-4 text-zinc-200 rounded'
-									style={{
-										backgroundColor: 'var(--gray-2222)',
-										border: '1px solid var(--gray-3232)',
-									}}>
-									<h2
-										className='pb-2'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}>
-										{t('Dangerous zone')}
-									</h2>
-									<section
-										className='flex flex-col sm:flex-row items-center'
-										style={{
-											borderBottom: '1px solid var(--gray-3232)',
-										}}></section>
+									className='bg-gray2222 border-[1px] border-gray3232 px-5 py-4 text-zinc-200 rounded'>
+									<h2 className='pb-2 border-b-[1px] border-gray3232'>{t('Dangerous zone')}</h2>
+									<section className='flex flex-col sm:flex-row items-center border-b-[1px] border-gray3232'></section>
 									<section className='mt-5'>
 										<button className='orange-btn-style !bg-red-500 hover:brightness-75 !transition-all text-sm font-medium'>
 											{t('Delete account')}

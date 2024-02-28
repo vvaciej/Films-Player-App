@@ -263,10 +263,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 									<section className='films-text-section'>
 										<section className='main-text-rating flex items-center'>
 											<StarIcon
-												className='h-5 mr-2'
-												style={{
-													color: 'var(--orange)',
-												}}
+												className='h-5 mr-2 text-orange'
 											/>
 											<span>{film.rating} / 10</span>
 										</section>
@@ -304,10 +301,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										<span className='text-xs sm:text-sm'>{film.releaseDate}</span>
 										<section className='main-text-rating flex items-center'>
 											<StarIcon
-												className='h-5 mr-2'
-												style={{
-													color: 'var(--orange)',
-												}}
+												className='h-5 mr-2 text-orange'
 											/>
 											<span>{film.rating} / 10</span>
 										</section>
@@ -339,10 +333,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										<section className='main-text-rating'>
 											<section className='flex items-center'>
 												<StarIcon
-													className='h-4 mr-2'
-													style={{
-														color: 'var(--orange)',
-													}}
+													className='h-4 mr-2 text-orange'
 												/>
 												<span>{film.rating} / 10 &nbsp;&nbsp;</span>
 											</section>

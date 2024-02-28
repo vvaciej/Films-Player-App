@@ -168,15 +168,11 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</Link>
 											{getCookie('email') ? (
 												<button
-													className={`film-page-aside-btns rounded transition-all`}
-													style={{
-														outline: refsAddedToWatchlist.has(infoOfChoosedFilm?.ref)
-															? '1px solid var(--dark-orange-opacited)'
-															: '1px solid var(--gray-3232)',
-														color: refsAddedToWatchlist.has(infoOfChoosedFilm?.ref)
-															? 'var(--dark-orange)'
-															: 'var(--gray-9999)',
-													}}
+													className={`film-page-aside-btns rounded transition-all ${
+														refsAddedToWatchlist.has(infoOfChoosedFilm?.ref)
+															? 'outline-[1px] outline outline-orangeOpacited text-darkOrange'
+															: 'outline-[1px] outline outline-gray3232 text-gray9999'
+													}`}
 													onClick={() => {
 														if (infoOfChoosedFilm?.ref !== undefined) {
 															setRefsAddedToWatchlist(prevSet => new Set([...prevSet, infoOfChoosedFilm.ref]));
@@ -205,38 +201,34 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												<span>{infoOfChoosedFilm?.originalLang}</span>
 											</section>
 											<section
-												className='film-page-aside-info-sections'
-												style={{
-													display: infoOfChoosedFilm?.title === infoOfChoosedFilm?.originalTitle ? 'none' : 'flex',
-												}}>
+												className={`film-page-aside-info-sections ${
+													infoOfChoosedFilm?.title === infoOfChoosedFilm?.originalTitle ? 'hidden' : 'flex'
+												}`}>
 												<b className='film-page-aside-info-sections-heading-text'>{t('Original title')}</b>
 												<span>{infoOfChoosedFilm?.originalTitle}</span>
 											</section>
 											<section
-												className='film-page-aside-info-sections'
-												style={{
-													display: infoOfChoosedFilm?.budget === 1 ? 'none' : 'flex',
-												}}>
+												className={`film-page-aside-info-sections ${
+													infoOfChoosedFilm?.budget === 1 ? 'hidden' : 'flex'
+												}`}>
 												<b className='film-page-aside-info-sections-heading-text'>{t('Budget')}</b>
 												<span>
 													{infoOfChoosedFilm?.budget.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 												</span>
 											</section>
 											<section
-												className='film-page-aside-info-sections'
-												style={{
-													display: infoOfChoosedFilm?.profit === 1 ? 'none' : 'flex',
-												}}>
+												className={`film-page-aside-info-sections ${
+													infoOfChoosedFilm?.profit === 1 ? 'hidden' : 'flex'
+												}`}>
 												<b className='film-page-aside-info-sections-heading-text'>{t('Profit')}</b>
 												<span>
 													{infoOfChoosedFilm?.profit.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 												</span>
 											</section>
 											<section
-												className='film-page-aside-info-sections'
-												style={{
-													display: infoOfChoosedFilm?.filmedIn.length === 0 ? 'none' : 'flex',
-												}}>
+												className={`film-page-aside-info-sections ${
+													infoOfChoosedFilm?.filmedIn.length === 0 ? 'hidden' : 'flex'
+												}`}>
 												<b className='film-page-aside-info-sections-heading-text'>{t('Filmed in')}</b>
 												<ul className='film-page-aside-keywords-section-keywords-list'>
 													{infoOfChoosedFilm?.filmedIn &&
@@ -254,10 +246,9 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												</ul>
 											</section>
 											<section
-												className='film-page-aside-info-sections'
-												style={{
-													display: infoOfChoosedFilm?.keywords.length === 0 ? 'none' : 'flex',
-												}}>
+												className={`film-page-aside-info-sections ${
+													infoOfChoosedFilm?.keywords.length === 0 ? 'hidden' : 'flex'
+												}`}>
 												<b className='film-page-aside-info-sections-heading-text'>{t('Keywords')}</b>
 												<ul className='film-page-aside-keywords-section-keywords-list'>
 													{infoOfChoosedFilm?.keywords &&
@@ -300,10 +291,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																).toLowerCase()}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 																key={index}>
 																<li
-																	className='py-[6px] px-3 rounded-2xl hover:underline'
-																	style={{
-																		backgroundColor: 'var(--gray-6161)',
-																	}}>
+																	className='py-[6px] px-3 rounded-2xl hover:underline bg-gray6161'>
 																	{t(category)}
 																</li>
 															</Link>
@@ -317,20 +305,9 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												<h1 className='films-category-heading-text'>{t('Reviews')}</h1>
 												<section className='sm:flex hidden'>
 													<section className='main-text-rating flex items-center min-w-max'>
-														<StarIcon
-															className='h-5 mr-2'
-															style={{
-																color: 'var(--orange)',
-															}}
-														/>
+														<StarIcon className='h-5 mr-2 text-orange' />
 														<span>{infoOfChoosedFilm?.rating} / 10</span>
-														<span
-															className='film-list-rating-separate-symbol ml-3'
-															style={{
-																color: 'var(--gray-5050)',
-															}}>
-															|
-														</span>
+														<span className='film-list-rating-separate-symbol ml-3 text-gray5050'>|</span>
 													</section>
 													<button className='btn-style-outlined ml-4'>
 														<Bars3BottomLeftIcon className='h-4' />
@@ -339,11 +316,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												</section>
 											</section>
 											<ReviewAs infoOfChoosedFilm={infoOfChoosedFilm} />
-											<div
-												className='opinion-must-be-logged-container'
-												style={{
-													display: `${isLogged ? 'none' : 'flex'}`,
-												}}>
+											<div className={`opinion-must-be-logged-container ${isLogged ? 'hidden' : 'flex'}`}>
 												<h1>{t('Register is required')}</h1>
 												<p>
 													<Link
@@ -438,12 +411,11 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</section>
 										</div>
 										<div
-											style={{
-												display:
-													findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
-														? 'block'
-														: 'none',
-											}}>
+											className={`${
+												findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
+													? 'block'
+													: 'hidden'
+											}`}>
 											<section className='films-heading-section mt-10'>
 												<h1 className='films-category-heading-text'>{t('Alike films')}</h1>
 												<section className='films-category-control-btns'>
@@ -509,12 +481,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	</section>
 																	<section className='films-text-section'>
 																		<section className='main-text-rating flex items-center'>
-																			<StarIcon
-																				className='h-5 mr-2'
-																				style={{
-																					color: 'var(--orange)',
-																				}}
-																			/>
+																			<StarIcon className='h-5 mr-2 text-orange' />
 																			<span>{similarFilm?.rating} / 10</span>
 																		</section>
 																		<Link

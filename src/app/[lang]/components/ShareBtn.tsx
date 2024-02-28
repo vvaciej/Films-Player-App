@@ -52,14 +52,9 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 			)}
 			<div
 				ref={shareDropdownRef}
-				className='absolute h-max w-full min-w-64 top-10 rounded py-1 transition-all z-10 right-0'
-				style={{
-					visibility: shareDropdownActive ? 'visible' : 'hidden',
-					opacity: shareDropdownActive ? '1' : '0',
-					pointerEvents: shareDropdownActive ? 'all' : 'none',
-					backgroundColor: 'var(--dark-1a1a)',
-					outline: '1px solid var(--gray-3232)',
-				}}>
+				className={`absolute h-max w-full min-w-64 top-10 rounded py-1 transition-all z-10 right-0 bg-1a1a outline-[1px] outline outline-gray3232 ${
+					shareDropdownActive ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'
+				}`}>
 				<button
 					className='flex items-center px-7 btn-choosed-style w-full !py-[10.5px]'
 					onClick={() => {

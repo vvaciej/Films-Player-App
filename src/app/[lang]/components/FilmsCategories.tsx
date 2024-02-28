@@ -54,7 +54,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 
 	return (
 		<div className='films-category-container overflow-y-hidden'>
-			<section className='films-heading-section mb-4'>
+			<section className='films-heading-section mb-5'>
 				<Link href={linkDirectPage} className='films-category-heading-text hover:underline !cursor-pointer'>
 					<h1>{t(headingText)}</h1>
 					<ChevronRightIcon className='h-6 films-category-heading-icon transition-all' />
@@ -121,10 +121,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 							<section className='films-text-section max-h-12'>
 								<section className='flex items-center'>
 									<StarIcon
-										className='h-5 mr-2'
-										style={{
-											color: 'var(--orange)',
-										}}
+										className='h-5 mr-2 text-orange'
 									/>
 									<span>{film.rating} / 10</span>
 								</section>
@@ -145,7 +142,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 };
 
 export const FilmsCategories: React.FC = () => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 
 	return (
 		<div className='flex flex-col gap-y-10 sm:gap-y-16 mt-12 mb-10'>

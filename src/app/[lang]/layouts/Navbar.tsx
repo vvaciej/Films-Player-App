@@ -132,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								}}>
 								<input
 									type='text'
-									placeholder={t('Szukaj filmu lub serialu')}
+									placeholder={t('Search movie or serial')}
 									className='header-search-input orange-outline-focus'
 									onKeyUp={handleSearchDirectPage}
 									value={whatSearchVal}
@@ -148,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							</form>
 							<Link
 								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/results`}
-								className='header-search-icon-link'>
+								className='header-search-icon-link !left-[0.7rem]'>
 								<MagnifyingGlassIcon className='header-search-icon' />
 							</Link>
 							<div className={`input-box-search lg:block hidden ${isTyped ? 'active' : ''}`} ref={searchDropdownRef}>
@@ -163,18 +163,9 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 												<img className='h-full object-cover rounded' src={film.image} alt={film.title} />
 												<section className='pt-[0.22rem] pb-[0.15rem] flex flex-col justify-between'>
 													<h1>{t(film.title)}</h1>
+													<span className='text-xs text-lightGrayD0d0'>{film.year}</span>
 													<span
-														className='text-xs'
-														style={{
-															color: 'var(--light-gray-d0d0)',
-														}}>
-														{film.year}
-													</span>
-													<span
-														className='text-xs'
-														style={{
-															color: 'var(--light-gray-d0d0)',
-														}}>
+														className='text-xs text-lightGrayD0d0'>
 														{film.type}
 													</span>
 												</section>
@@ -221,16 +212,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						<>
 							<button
 								ref={userBtnDropdownRef}
-								className='transparent-btn-style flex gap-x-2 items-center'
+								className='transparent-btn-style flex gap-x-2 items-center rounded'
 								onClick={() => setUserDropdownClicked(!userDropdownClicked)}>
 								<img
 									src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
 									alt='user avatar'
-									className='h-8 mr-1'
-									style={{
-										outline: '1px solid var(--gray-3232)',
-										borderRadius: '2px',
-									}}
+									className='h-8 mr-1 outline-[1px] outline outline-gray3232 rounded'
 								/>
 								{getCookie('email').match(/^(.+)@/)?.[1] || ''}
 								<ChevronDownIcon className='h-4' />
@@ -270,12 +257,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						<>
 							<Link
 								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`}
-								className='transparent-btn-style'>
+								className='transparent-btn-style w-max'>
 								{t('Sign in')}
 							</Link>
 							<Link
 								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}
-								className='orange-btn-style'>
+								className='orange-btn-style w-max'>
 								{t('Logging')}
 							</Link>
 						</>
@@ -293,15 +280,9 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 			</header>
 			<div
 				ref={mobileDropdownsRef}
-				className={`typical-dropdown-style ${isClickedBtn ? 'active pointer-events-auto' : 'pointer-events-none'}`}
-				style={{
-					height: 'max-content',
-				}}>
+				className={`typical-dropdown-style h-max ${isClickedBtn ? 'active pointer-events-auto' : 'pointer-events-none'}`}>
 				{isUserOrMenuClicked === 'menu' ? (
-					<nav
-						style={{
-							height: '6rem',
-						}}>
+					<nav className='h-[6rem]'>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/movies?order=${
 								getCookie('filterOrderChoosed') || 'most_popular'
@@ -319,11 +300,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					</nav>
 				) : isLogged ? (
 					<div
-						className={`${userDropdownClicked ? 'active' : ''}`}
-						ref={userDropdownRef}
-						style={{
-							height: '11rem',
-						}}>
+						className={`${userDropdownClicked ? 'active' : ''} h-[11rem]`}
+						ref={userDropdownRef}>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watchlist?order=${
 								getCookie('filterOrderChoosed') || 'most_popular'
@@ -352,10 +330,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						</button>
 					</div>
 				) : (
-					<nav
-						style={{
-							height: '6rem',
-						}}>
+					<nav className='h-[6rem] w-max'>
 						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}>{t('Logging')}</Link>
 						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`}>{t('Register')}</Link>
 					</nav>

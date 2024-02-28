@@ -226,6 +226,7 @@
 	border-radius: 3px;
 	border: 1px solid var(--gray-5050);
 	transition: top 0.15s, visibility 0.3s;
+	
 	&:not(.active) {
 		opacity: 0;
 		top: 64px;
@@ -233,6 +234,7 @@
 		pointer-events: none;
 	}
 	.user-dropdown-options {
+		width: 100%;
 		display: flex;
 		padding: 10px 15px;
 		column-gap: 7px;

@@ -22,11 +22,7 @@ const Login: React.FC = () => {
 						onSubmit={event => {
 							event.preventDefault();
 						}}
-						className='flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-11/12'
-						style={{
-							backgroundColor: 'var(--dark-1a1a)',
-							border: '1px solid var(--gray-3232)',
-						}}>
+						className='flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-11/12 bg-1a1a border-[1px] border-gray3232'>
 						<h3 className='text-sm mb-1'>{t('Wprowadź swój adres email aby otrzymać link do zresetowania hasła.')}</h3>
 						<section className='flex flex-col gap-y-1 mb-6'>
 							<label className='text-sm mt-4' htmlFor='email'>
@@ -40,11 +36,8 @@ const Login: React.FC = () => {
 					</form>
 				</main>
 				<p
-					className='mt-8 text-sm text-center'
-					style={{
-						color: 'var(--light-gray-eee)',
-					}}>
-					<span>{t('Don\'t have an account?')}</span>
+					className='mt-8 text-sm text-center text-lightGrayEee'>
+					<span>{t("Don't have an account?")}</span>
 					<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`} className='orange-link'>
 						&nbsp;{t('Sign in')}
 					</Link>
@@ -53,11 +46,7 @@ const Login: React.FC = () => {
 			<footer>
 				<Link
 					href='/'
-					className='text-sm absolute bottom-10 transition-all left-1/2 translate-x-1/2 hover:brightness-125'
-					style={{
-						color: 'var(--gray-9999)',
-						transform: 'translate(-50%)',
-					}}>
+					className='text-sm absolute bottom-10 transition-all right-1/2 translate-x-1/2 hover:brightness-125 text-gray9999'>
 					&copy; {t('Source')} obejrzyj.to
 				</Link>
 			</footer>

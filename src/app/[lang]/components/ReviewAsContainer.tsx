@@ -19,11 +19,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 						<img
 							src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
 							alt='user avatar'
-							className='mr-4 hidden sm:block w-12 h-max'
-							style={{
-								outline: '1px solid var(--gray-3232)',
-								borderRadius: '50%',
-							}}></img>
+							className='mr-4 hidden sm:block w-12 h-max outline-[1px] outline outline-gray3232 rounded-[50%]'></img>
 					) : (
 						<img
 							className='object-cover max-w-12 max-h-12 mr-4 w-12 h-max hidden sm:block'
@@ -39,22 +35,18 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 						<section className='flex mt-1'>
 							{Array.from({ length: 10 }).map((_, index: number) => (
 								<StarIcon
-									className='film-page-opinions-stars-icons cursor-pointer sm:px-1 pr-1'
+									className={`film-page-opinions-stars-icons cursor-pointer sm:px-1 pr-1 ${
+										(!indexStars &&
+											!isHoveredStar &&
+											infoOfChoosedFilm &&
+											index < Number(String(infoOfChoosedFilm?.rating).slice(0, 1))) ||
+										(isHoveredStar && isHoveredStar > index) ||
+										(indexStars && !isHoveredStar && indexStars >= index + 1) ? 'text-orange' : 'text-gray5050'
+									}`}
 									key={index}
 									onMouseOver={() => setHoveredStars(index + 1)}
 									onMouseOut={() => setHoveredStars(null)}
 									onClick={() => setIndexStars(index + 1)}
-									style={{
-										color:
-											(!indexStars &&
-												!isHoveredStar &&
-												infoOfChoosedFilm &&
-												index < Number(String(infoOfChoosedFilm?.rating).slice(0, 1))) ||
-											(isHoveredStar && isHoveredStar > index) ||
-											(indexStars && !isHoveredStar && indexStars >= index + 1)
-												? 'var(--orange)'
-												: 'var(--gray-5050)',
-									}}
 								/>
 							))}
 						</section>

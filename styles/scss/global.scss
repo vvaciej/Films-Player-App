@@ -286,8 +286,6 @@ html.dark {
 @import './home-components/heading-container';
 @import './home-components/films-categories';
 
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
-
 *::before,
 *::after,
 * {
@@ -630,10 +628,10 @@ body {
 .typical-dropdown-style {
 	padding: 6px 0px;
 	position: fixed;
-	bottom: 0;
-	width: 85% !important;
-	height: max-content;
 	left: 50%;
+	bottom: 0;
+	width: 93% !important;
+	height: max-content;
 	transform: translate(-50%);
 	border: 1px solid var(--gray-5050);
 	background-color: var(--dark-121212);
@@ -646,10 +644,11 @@ body {
 	}
 	&:not(.active) {
 		opacity: 0;
-		bottom: -100px;
+		left: -100px;
 	}
 	nav,
 	div {
+		width: 100%;
 		@include flex-center;
 		flex-direction: column;
 		align-items: flex-start;

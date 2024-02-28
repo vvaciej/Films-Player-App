@@ -55,22 +55,12 @@ const UserPage = () => {
 									<b className='text-lg'>0</b>
 									<span className='text-xs text-zinc-300'>{t('Followers')}</span>
 								</section>
-								<hr
-									className='border-r-2 h-8'
-									style={{
-										borderColor: 'var(--gray-3232)',
-									}}
-								/>
+								<hr className='h-8 border-[1px] border-gray3232' />
 								<section className='flex flex-col items-center uppercase'>
 									<b className='text-lg'>0</b>
 									<span className='text-xs text-zinc-300'>{t('Following')}</span>
 								</section>
-								<hr
-									className='border-r-2 h-8'
-									style={{
-										borderColor: 'var(--gray-3232)',
-									}}
-								/>
+								<hr className='border-r-2 h-8 border-gray3232' />
 								<section className='flex flex-col items-center uppercase'>
 									<b className='text-lg'>0</b>
 									<span className='text-xs text-zinc-300'>{t('Lists')}</span>
@@ -79,79 +69,68 @@ const UserPage = () => {
 						</header>
 						<main className='mt-10'>
 							<div
-								className='overflow-hidden overflow-x-auto hide-scrollbar'
+								className='overflow-hidden overflow-x-auto hide-scrollbar border-b-[1px] border-gray3232 '
 								style={{
-									borderBottom: '1px solid var(--gray-3232)',
 									scrollbarWidth: 'none',
 									msOverflowStyle: 'none',
 								}}>
 								<section className='text-sm justify-between flex w-[48rem] relative'>
 									<hr
-										className='absolute bottom-0 border-r-2 w-32 transition-all'
-										style={{
-											borderBottom: '1px solid var(--dark-orange)',
-											borderColor: 'var(--dark-orange)',
-											left:
-												selectedMode === 'Lists'
-													? '0'
-													: selectedMode === 'Grades'
-													? '128px'
-													: selectedMode === 'Reviews'
-													? 'calc(128px * 2)'
-													: selectedMode === 'Comments'
-													? 'calc(128px * 3)'
-													: selectedMode === 'Followers'
-													? 'calc(128px * 4)'
-													: selectedMode === 'Following'
-													? 'calc(128px * 5)'
-													: '',
-										}}></hr>
+										className={`absolute bottom-0 border-r-2 w-32 transition-all border-b-[1px] border-darkOrange ${
+											selectedMode === 'Lists'
+												? 'left-0'
+												: selectedMode === 'Grades'
+												? 'left-[128px]'
+												: selectedMode === 'Reviews'
+												? 'left-[256px]'
+												: selectedMode === 'Comments'
+												? 'left-[384px]'
+												: selectedMode === 'Followers'
+												? 'left-[512px]'
+												: selectedMode === 'Following'
+												? 'left-[640px]'
+												: ''
+										}`} />
 									<button
 										onClick={() => setSelectedMode('Lists')}
-										className='hover:brightness-125 w-full p-3'
-										style={{
-											color: selectedMode === 'Lists' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
-										}}>
+										className={`hover:brightness-125 w-full p-3 ${
+											selectedMode === 'Lists' ? 'text-darkOrange' : 'text-lightGrayDdd'
+										}`}>
 										{t('Lists')}
 									</button>
 									<button
 										onClick={() => setSelectedMode('Grades')}
-										className='hover:brightness-125 w-full p-3'
-										style={{
-											color: selectedMode === 'Grades' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
-										}}>
+										className={`hover:brightness-125 w-full p-3 ${
+											selectedMode === 'Grades' ? 'text-darkOrange' : 'text-lightGrayDdd'
+										}`}>
 										{t('Grades')}
 									</button>
 									<button
 										onClick={() => setSelectedMode('Reviews')}
-										className='hover:brightness-125 w-full p-3'
-										style={{
-											color: selectedMode === 'Reviews' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
-										}}>
+										className={`hover:brightness-125 w-full p-3 ${
+											selectedMode === 'Reviews' ? 'text-darkOrange' : 'text-lightGrayDdd'
+										}`}>
 										{t('Reviews')}
 									</button>
 									<button
 										onClick={() => setSelectedMode('Comments')}
-										className='hover:brightness-125 w-full p-3'
-										style={{
-											color: selectedMode === 'Comments' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
-										}}>
+										className={`hover:brightness-125 w-full p-3 ${
+											selectedMode === 'Comments' ? 'text-darkOrange' : 'text-lightGrayDdd'
+										}`}>
 										{t('Comments')}
 									</button>
 									<button
 										onClick={() => setSelectedMode('Followers')}
-										className='hover:brightness-125 w-full p-3'
-										style={{
-											color: selectedMode === 'Followers' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
-										}}>
+										className={`hover:brightness-125 w-full p-3 ${
+											selectedMode === 'Followers' ? 'text-darkOrange' : 'text-lightGrayDdd'
+										}`}>
 										{t('Followers')}
 									</button>
 									<button
 										onClick={() => setSelectedMode('Following')}
-										className='hover:brightness-125 w-full p-3'
-										style={{
-											color: selectedMode === 'Following' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
-										}}>
+										className={`hover:brightness-125 w-full p-3 ${
+											selectedMode === 'Following' ? 'text-darkOrange' : 'text-lightGrayDdd'
+										}`}>
 										{t('Following')}
 									</button>
 								</section>

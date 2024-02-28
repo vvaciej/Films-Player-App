@@ -14,18 +14,13 @@ const Kontakt: React.FC = () => {
 			<Navbar isCutted={true} />
 			<div className='content-full-space-centered'>
 				<div className='main-container-width-padd-top-1240 !min-h-[76vh] !pb-0 h-max sm:!w-[40rem] w-[93%]'>
-					<main
-						className='h-full w-full rounded p-8 text-[0.82rem]'
-						style={{
-							border: '1px solid var(--gray-3232)',
-						}}>
+					<main className='h-full w-full rounded p-8 text-[0.82rem] border-[1px] border-gray3232'>
 						<h1 className='text-2xl mb-1'>{t('Get in touch')}</h1>
 						<p>{t('Use the form below to send us a message, and we will contact you as soon as possible.')}</p>
-						<form
+						<form style={{
+							height: 'calc(100% - 4px - 39.38px - 36px - 2.5rem)',
+						}}
 							className='flex flex-col gap-y-6 mt-10'
-							style={{
-								height: 'calc(100% - 4px - 39.38px - 36px - 2.5rem)',
-							}}
 							onSubmit={event => event.preventDefault()}>
 							<section className='flex flex-col gap-1 w-full'>
 								<label htmlFor='title'>{t('Title')}</label>

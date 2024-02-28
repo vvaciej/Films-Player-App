@@ -18,7 +18,7 @@ import { useTranslation } from 'react-i18next';
 
 const Home: React.FC<params> = ({ params }) => {
 	const { t } = useTranslation();
-	useDocumentTitle(`vvaciej.app - ${t('Darmowe filmy i seriale')}`);
+	useDocumentTitle(`vvaciej.app - ${t('Free films and serials')}`);
 
 	return (
 		<div className='space-light'>
@@ -33,7 +33,7 @@ const Home: React.FC<params> = ({ params }) => {
 							</div>
 						</main>
 						<Footer />
-					</>
+					</> 
 				</div>
 			) : (
 				<SiteNotFound />

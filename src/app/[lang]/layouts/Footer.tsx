@@ -53,11 +53,7 @@ export const Footer: React.FC = () => {
 
 	return (
 		<div className='content-full-space-centered'>
-			<footer
-				className='relative xl:w-[1240px] w-[93%] sm:h-max h-[11rem] mt-28 sm:mt-16 pb-8 text-sm'
-				style={{
-					color: 'var(--light-gray-ddd)',
-				}}>
+			<footer className='relative xl:w-[1240px] w-[93%] sm:h-max h-[11rem] mt-28 sm:mt-16 pb-8 text-sm text-lightGrayDdd'>
 				<section className='flex justify-between w-full relative sm:flex-row flex-col sm:gap-y-0 gap-y-4'>
 					<section className='flex gap-x-5 text-sm'>
 						<Link
@@ -94,16 +90,9 @@ export const Footer: React.FC = () => {
 						</button>
 						<div
 							className={`absolute sm:w-[11rem] w-[8rem] h-18 rounded right-1/2 sm:translate-x-0 translate-x-1/2 sm:right-0 sm:bottom-10 bottom-10 py-1 transition-opacity ${
-								langBtnClickedBool ? 'active' : ''
-							}`}
-							ref={LangSelectDropdownRef}
-							style={{
-								border: '1px solid var(--gray-3232)',
-								backgroundColor: 'var(--dark-1a1a)',
-								visibility: langBtnClickedBool ? 'visible' : 'hidden',
-								opacity: langBtnClickedBool ? '1' : '0',
-								transition: 'opacity 0.1s',
-							}}>
+								langBtnClickedBool ? 'active visible opacity-100' : 'invisible opacity-0'
+							} border-[1px] border-gray3232 bg-1a1a transition-opacity`}
+							ref={LangSelectDropdownRef}>
 							<button
 								onClick={() => {
 									setLangBtnClickedBool(!langBtnClickedBool);
@@ -112,10 +101,7 @@ export const Footer: React.FC = () => {
 									const newPath = currentPath.startsWith('/en') ? currentPath.replace('/en', '/pl') : '/pl';
 									window.location.href = newPath;
 								}}
-								className={`btn-choosed-style ${langSelected === 'polish' ? 'choosed' : ''} gap-x-1 flex`}
-								style={{
-									paddingLeft: langSelected === 'polish' ? '1rem' : '2.3rem',
-								}}>
+								className={`btn-choosed-style ${langSelected === 'polish' ? 'choosed' : ''} gap-x-1 flex`}>
 								{t('polish')}
 							</button>
 							<button
@@ -126,10 +112,7 @@ export const Footer: React.FC = () => {
 									const newPath = currentPath.startsWith('/pl') ? currentPath.replace('/pl', '/en') : '/en';
 									window.location.href = newPath;
 								}}
-								className={`btn-choosed-style ${langSelected === 'english' ? 'choosed' : ''} gap-x-1 flex`}
-								style={{
-									paddingLeft: langSelected === 'english' ? '1rem' : '2.3rem',
-								}}>
+								className={`btn-choosed-style ${langSelected === 'english' ? 'choosed' : ''} gap-x-1 flex`}>
 								{t('english')}
 							</button>
 						</div>

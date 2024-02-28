@@ -101,39 +101,26 @@ const SearchPage: React.FC = () => {
 									</form>
 									<section
 										className={`search-page-text-section flex flex-col items-center gap-y-1 text-center ${
-											whatSearchVal !== '' ? '' : 'active'
-										}`}
-										style={{
-											display: whatSearchVal !== '' ? 'none' : 'flex',
-										}}>
+											whatSearchVal ? 'hidden' : 'active flex'
+										}`}>
 										<MagnifyingGlassIcon className='min-h-10 h-10 mb-2' />
 										<h1 className='text-lg'>{t('Search')} - vvaciej.to</h1>
 										<span
-											className='text-sm'
-											style={{
-												color: 'var(--gray-9999)',
-												padding: '0rem .4rem',
-											}}>
+											className='text-sm text-gray9999 px-[0.4rem]'>
 											{t('Search movie or serial')}
 										</span>
 									</section>
 								</div>
 							</header>
 							<main
-								className={`lg:w-[1240px] mt-4 h-max w-full ${whatSearchVal !== '' ? 'active' : ''}`}
-								style={{
-									display: whatSearchVal ? 'block' : 'none',
-								}}>
+								className={`lg:w-[1240px] mt-4 h-max w-full ${whatSearchVal ? 'block active' : 'hidden'}`}>
 								<h1 className='text-2xl font-semibold sm:text-3xl'>
 									{t('Search results:')} {decodedQuery}
 								</h1>
-								<section className='flex flex-col justify-between mt-8'>
+								<section className={`flex flex-col justify-between mt-8`}>
 									<section
-										style={{
-											display: searchResults.length > 0 ? 'flex' : 'none',
-										}}
 										className={`flex items-center relative w-max category-movies-title-before-orange-hr ${
-											searchResults.length > 0 ? 'active' : ''
+											searchResults.length > 0 ? 'flex active' : 'hidden'
 										}`}>
 										<h1 className='text-2xl font-medium pl-4 leading-6 category-movies-title-before-orange-hr'>
 											{t('Movies')}
@@ -153,10 +140,7 @@ const SearchPage: React.FC = () => {
 												<section className='films-text-section'>
 													<p className='main-text-rating flex items-center'>
 														<StarIcon
-															className='h-5 mr-2'
-															style={{
-																color: 'var(--orange)',
-															}}
+															className='h-5 mr-2 text-orange'
 														/>
 														<span>{film.rating} / 10</span>
 													</p>
