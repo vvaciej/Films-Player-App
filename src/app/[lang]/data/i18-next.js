@@ -400,6 +400,7 @@ i18next.use(initReactI18next).init({
 				'No reviews': 'Brak recenzji',
 				'No comments': 'Brak komentarzy',
 				'No followers': 'Brak obserwujących',
+				'Be the first to follow': 'Bądź pierwszym obserwującym',
 				'No followers yet': 'Nikogo jeszcze nie obserwuje',
 				'Check back later to see users': 'Sprawdź później, aby zobaczyć użytkowników',
 				'is following': 'obserwujących',

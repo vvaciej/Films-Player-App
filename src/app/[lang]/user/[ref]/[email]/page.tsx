@@ -90,7 +90,8 @@ const UserPage = () => {
 												: selectedMode === 'Following'
 												? 'left-[640px]'
 												: ''
-										}`} />
+										}`}
+									/>
 									<button
 										onClick={() => setSelectedMode('Lists')}
 										className={`hover:brightness-125 w-full p-3 ${
@@ -141,7 +142,7 @@ const UserPage = () => {
 										<BookmarkSlashIcon className='h-5' />
 										<h3 className='text-md text-zinc-200 mt-1'>{t('No lists')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
+											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}&nbsp;
 											{t('for updates on lists they create in the future.')}
 										</p>
 									</>
@@ -150,7 +151,7 @@ const UserPage = () => {
 										<StarIcon className='h-5' />
 										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak ocen')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
+											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}&nbsp;
 											{t('for updates on lists they create in the future.')}
 										</p>
 									</>
@@ -159,7 +160,7 @@ const UserPage = () => {
 										<PencilIcon className='h-5' />
 										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak recenzji')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
+											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}&nbsp;
 											{t('for updates on lists they create in the future.')}
 										</p>
 									</>
@@ -168,16 +169,16 @@ const UserPage = () => {
 										<PencilIcon className='h-5' />
 										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak komentarzy')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
+											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}&nbsp;
 											{t('for updates on lists they create in the future.')}
 										</p>
 									</>
 								) : selectedMode === 'Followers' ? (
 									<>
 										<BookmarkIcon className='h-5' />
-										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak Followersch')}</h3>
+										<h3 className='text-md text-zinc-200 mt-1'>{t('No followers')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											Be the first to follow {getCookie('email').match(/^(.+)@/)?.[1] || ''}.
+											{t('Be the first to follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}.
 										</p>
 									</>
 								) : selectedMode === 'Following' ? (

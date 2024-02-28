@@ -131,7 +131,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 							<div className='film-page-image-fullhd-preview sm:pt-0 pt-12'>
 								<Link
 									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watch/${infoOfChoosedFilm?.ref}`}
-									className='film-play-btn'>
+									className='bg-white left-1/2 absolute z-10 h-12 w-12 flex justify-center items-center rounded-[50%] hover:brightness-75 transition-all'>
 									<PlayIcon className='text-black h-6' />
 								</Link>
 								<div className='film-page-image-gradient'></div>
@@ -313,7 +313,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												</section>
 											</section>
 											<ReviewAs infoOfChoosedFilm={infoOfChoosedFilm} />
-											<div className={`opinion-must-be-logged-container ${isLogged ? 'hidden' : 'flex'}`}>
+											<div className={`opinion-must-be-logged-container ${isLogged ? '!hidden' : 'flex'}`}>
 												<h1>{t('Register is required')}</h1>
 												<p>
 													<Link

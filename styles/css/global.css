@@ -920,7 +920,7 @@ body {
 }
 .typical-dropdown-style:not(.active) {
   opacity: 0;
-  left: -100px;
+  bottom: -100px;
 }
 .typical-dropdown-style nav,
 .typical-dropdown-style div {

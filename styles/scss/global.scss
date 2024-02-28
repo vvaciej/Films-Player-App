@@ -667,7 +667,7 @@ body {
 	}
 	&:not(.active) {
 		opacity: 0;
-		left: -100px;
+		bottom: -100px;
 	}
 	nav,
 	div {
