@@ -280,14 +280,14 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 						</section>
 					) : filmModeChoosed === 'Landscape' ? (
 						<section className='films-wrapper-landscape'>
-							{mappingBy.map((film: FilmData, index: number) => (
-								<article className='film-container-Landscape w-full' key={index}>
+							{mappingBy.map((film, index: number) => (
+								<article className='film-container-landscape w-full' key={index}>
 									<section className='films-image-section'>
 										<Link
 											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
-											<img src={film.imgFullHd500} className='!max-h-[14rem]' alt={`Poster for ${t(film.title)}`} />
+											<img src={film.imgFullHd500} className='!max-h-[14.2rem]' alt={`Poster for ${t(film.title)}`} />
 										</Link>
 									</section>
 									<section className='films-text-section'>
@@ -311,7 +311,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 						</section>
 					) : filmModeChoosed === 'List' ? (
 						<section className='films-wrapper-list'>
-							{mappingBy.map((film: FilmData, index: number) => (
+							{mappingBy.map((film, index: number) => (
 								<article className='film-container-list w-full' key={index}>
 									<section className='films-image-section'>
 										<Link
