@@ -1153,7 +1153,7 @@ body {
     column-gap: 0.8rem;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 400px) {
   .films-wrapper-landscape {
     grid-template-columns: repeat(1, 1fr);
   }
