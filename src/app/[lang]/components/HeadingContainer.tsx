@@ -52,45 +52,38 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 	}, []);
 
 	return (
-		<section className='main-heading-left-container'>
+		<section className='main-heading-left-container hide-scrollbar'>
 			{isWindowUnder800 ? (
 				headingFilmsData.map((film, index: number) => (
-					<div className='main-heading-left-film-wrapper' key={index}>
+					<div className='flex min-w-full h-full relative' key={index}>
 						<img
-							className='main-heading-fullhd-img'
+							className='w-full h-full object-cover rounded !brightness-50'
 							src={film.imgFullHd1280}
 							alt={`Poster for ${film.title}`}
 							loading='eager'
 						/>
-						<div className='main-heading-fullhd-img-gradient'></div>
-						<div className='main-heading-onimage-container'>
-							<button className='main-heading-control-btn' onClick={leftBtnFunction}>
-								<ChevronLeftIcon className='h-7' />
-							</button>
-							<button className='main-heading-control-btn right-btn' onClick={rightBtnFunction}>
-								<ChevronRightIcon className='h-7' />
-							</button>
-							<div className='main-heading-left-bottom-section'>
-								<div className='main-heading-left-text-container'>
-									<p className='main-text-rating flex items-center'>
-										<StarIcon
-											className='h-5 mr-2 text-orange'
-										/>
+						<div className='absolute z-[1] top-0 left-0 h-full w-full px-2 sm:px-5 rounded-[0.3rem]'>
+							<div className='flex items-center gap-x-6 h-full w-full pl-3'>
+								<div className='flex flex-col gap-y-1 w-[37rem] select-none'>
+									<p className='text-sm flex items-center mb-[2px]'>
+										<StarIcon className='h-5 mr-2 text-orange' />
 										<span>{film.rating} / 10</span>
 									</p>
 									<Link
 										href={`/${
 											getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 										}/titles/${reference}/${convertTitleToUrl(title)}`}
-										className='main-heading-left-text-film-title'>
+										className='text-[17px] mb-1 leading-5'>
 										{t(film.title)}
 									</Link>
-									<p className='main-heading-left-text-film-description'>{t(film.description)}</p>
+									<p className='max-h-[5.3rem] overflow-hidden text-[14.5px] mb-3 sm:block hidden text-zinc-200'>
+										{t(film.description)}
+									</p>
 									<Link
 										href={`/${
 											getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 										}/titles/${reference}/${convertTitleToUrl(title)}`}
-										className='main-heading-left-text-btn orange-btn-style'>
+										className='flex items-center sm:text-sm text-xs gap-x-1 font-medium !rounded-full orange-btn-style sm:!py-2 sm:!px-3 mt-1'>
 										<PlayIcon className='h-4' />
 										<span>{t('Watch this')}</span>
 									</Link>
@@ -100,43 +93,57 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 					</div>
 				))
 			) : (
-				<div className='main-heading-left-film-wrapper'>
-					<img className='main-heading-fullhd-img' src={imgFullHd1280} alt={`Poster for ${title}`} loading='eager' />
-					<div className='main-heading-fullhd-img-gradient'></div>
-					<div className='main-heading-onimage-container'>
-						<button className='main-heading-control-btn' onClick={leftBtnFunction}>
+				<div className='flex min-w-full h-full relative'>
+					<img
+						className='w-full h-full object-cover rounded'
+						src={imgFullHd1280}
+						alt={`Poster for ${title}`}
+						loading='eager'
+					/>
+					<div
+						className='absolute z-[1] top-0 left-0 h-full w-full rounded-[0.3rem]'
+						style={{
+							background: 'linear-gradient(to top, #000 9%, transparent)',
+						}}
+					/>
+					<div className='absolute h-full w-full z-[2] top-0 px-[1.5rem] py-7'>
+						<button
+							className='flex items-center justify-center text-[1.4rem] w-[3rem] h-[3rem] absolute left-4 top-[29.5%] transition-all hover:brightness-75 outline outline-[1px] outline-white rounded'
+							onClick={leftBtnFunction}>
 							<ChevronLeftIcon className='h-7' />
 						</button>
-						<button className='main-heading-control-btn right-btn' onClick={rightBtnFunction}>
+						<button
+							className='flex items-center justify-center text-[1.4rem] w-[3rem] h-[3rem] absolute right-4 top-[29.5%] transition-all hover:brightness-75 outline outline-[1px] outline-white rounded'
+							onClick={rightBtnFunction}>
 							<ChevronRightIcon className='h-7' />
 						</button>
-						<div className='main-heading-left-bottom-section'>
+						<div className='flex items-end gap-x-6 h-full w-full pl-2'>
 							<Link
-								href={`/${
-									getCookie('langChoosed') === 'english' ? 'en' : 'pl'
-								}/titles/${reference}/${convertTitleToUrl(title)}`}>
-								<img src={image} alt={`Poster for ${title}`} className='main-heading-miniature' loading='eager' />
+								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${reference}/${convertTitleToUrl(
+									title
+								)}`}>
+								<img src={image} alt={`Poster for ${title}`} className='w-[13.1rem]' loading='eager' />
 							</Link>
-							<div className='main-heading-left-text-container'>
-								<p className='main-text-rating flex items-center'>
-									<StarIcon
-										className='h-5 mr-2 text-orange'
-									/>
+							<div className='flex flex-col gap-y-2 w-[37rem] select-none'>
+								<p className='text-sm flex items-center'>
+									<StarIcon className='h-5 mr-2 text-orange' />
 									<span>{rating} / 10</span>
 								</p>
 								<Link
 									href={`/${
 										getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 									}/titles/${reference}/${convertTitleToUrl(title)}`}
-									className='main-heading-left-text-film-title'>
+									className='text-3xl hover:underline'>
 									{t(title)}
 								</Link>
-								<p className='main-heading-left-text-film-description'>{t(description)}</p>
+								<p className='mb-[0.5rem] max-h-[8.1rem] overflow-hidden leading-[1.68] text-[15.5px]'>
+									{t(description)}
+								</p>
 								<Link
 									href={`/${
 										getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 									}/titles/${reference}/${convertTitleToUrl(title)}`}
-									className='main-heading-left-text-btn orange-btn-style'>
+									className='flex items-center gap-x-2 !rounded-full text-sm font-medium orange-btn-style'>
 									<PlayIcon className='h-4' />
 									<span>{t('Watch this')}</span>
 								</Link>
@@ -155,17 +162,16 @@ interface SidebarProps {
 }
 
 const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
-	<section className='main-heading-right-container'>
-		<h1 className='main-heading-right-top-text'>{t('Next')}</h1>
-		<div className='main-heading-right-films-container'>
+	<section className='h-full w-full hidden lg:block'>
+		<h1>{t('Next')}</h1>
+		<div className='flex flex-col justify-between h-[92%] mt-[1.2rem]'>
 			{sidebarFilmsData.slice(...currentIndexes).map((film: any, index: number) => (
-				<div key={index} className='main-heading-right-film'>
-					<section className={'main-heading-right-film-miniature-section text-[14px]'}>
+				<div key={index} className='w-full flex flex-col gap-y-1'>
+					<section className={'text-[14px] hover:brightness-75 transition-all'}>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
 								film.title
-							)}`}
-							className='main-heading-right-film-miniature-link'>
+							)}`}>
 							<img src={film.imgFullHd500} alt={`Poster for ${film.title}`} loading='eager' />
 						</Link>
 					</section>
@@ -175,11 +181,11 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
 								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 									film.ref
 								}/${convertTitleToUrl(film.title)}`}
-								className='font-medium main-heading-right-film-title hover:underline'>
+								className='text-[14px] font-medium hover:underline'>
 								{t(film.title)}
 							</Link>
 						</section>
-						<p className='main-heading-left-text-rating flex mt-1'>
+						<p className='flex mt-1'>
 							<StarIcon
 								className='h-5 mr-2 text-orange'
 							/>
@@ -226,7 +232,7 @@ export const HeadingFilmsInteraction: React.FC = () => {
 	};
 
 	return (
-		<div className='main-heading-container'>
+		<div className='flex gap-x-5 h-full md:h-[37rem]'>
 			<HeadingContainer
 				rating={currentHeading.rating}
 				title={currentHeading.title}

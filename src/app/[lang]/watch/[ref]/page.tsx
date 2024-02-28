@@ -88,9 +88,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 				isFilmExist ? (
 					<>
 						<div className='content-full-space-centered'>
-							<div className='xl:w-[1220px] w-[95%] h-max' style={{
-								marginTop: 'calc(var(--main-container-padd-top) - .5rem)',
-							}}>
+							<div className='xl:w-[1220px] w-[95%] h-max mt-[calc(var(--main-container-padd-top)-0.5rem)]'>
 								<main className='w-full h-max rounded'>
 									<video controls controlsList='nodownload' className='h-max w-full'>
 										<source src='' type='video/mp4' />
@@ -188,7 +186,9 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 									<aside
 										className={`min-w-[260px] watch-page-aside-container ${
 											findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
-										? 'block' : 'hidden'}`}>
+												? 'block'
+												: 'hidden'
+										}`}>
 										<section className='films-heading-section'>
 											<h1 className='films-category-heading-text !text-2xl'>{t('Alike')}</h1>
 										</section>

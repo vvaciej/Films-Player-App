@@ -105,21 +105,17 @@ const SearchPage: React.FC = () => {
 										}`}>
 										<MagnifyingGlassIcon className='min-h-10 h-10 mb-2' />
 										<h1 className='text-lg'>{t('Search')} - vvaciej.to</h1>
-										<span
-											className='text-sm text-gray9999 px-[0.4rem]'>
-											{t('Search movie or serial')}
-										</span>
+										<span className='text-sm text-gray9999 px-[0.4rem]'>{t('Search movie or serial')}</span>
 									</section>
 								</div>
 							</header>
-							<main
-								className={`lg:w-[1240px] mt-4 h-max w-full ${whatSearchVal ? 'block active' : 'hidden'}`}>
+							<main className={`lg:w-[1240px] mt-3 h-max w-full ${whatSearchVal ? 'block active' : 'hidden'}`}>
 								<h1 className='text-2xl font-semibold sm:text-3xl'>
 									{t('Search results:')} {decodedQuery}
 								</h1>
-								<section className={`flex flex-col justify-between mt-8`}>
+								<section className={`flex flex-col justify-between mt-7`}>
 									<section
-										className={`flex items-center relative w-max category-movies-title-before-orange-hr ${
+										className={`flex items-center relative w-max mb-6 ${
 											searchResults.length > 0 ? 'flex active' : 'hidden'
 										}`}>
 										<h1 className='text-2xl font-medium pl-4 leading-6 category-movies-title-before-orange-hr'>
@@ -137,18 +133,16 @@ const SearchPage: React.FC = () => {
 														<img src={film.image} alt={`Poster for ${film.title}`} />
 													</Link>
 												</section>
-												<section className='films-text-section'>
+												<section className='pt-3 flex flex-col gap-y-1'>
 													<p className='main-text-rating flex items-center'>
-														<StarIcon
-															className='h-5 mr-2 text-orange'
-														/>
+														<StarIcon className='h-5 mr-2 text-orange' />
 														<span>{film.rating} / 10</span>
 													</p>
 													<Link
 														href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 															film.ref
 														}/${convertTitleToUrl(film.title)}`}
-														className='film-link-title search-title pr-1'>
+														className='text-[14px] font-medium search-title pr-1'>
 														{film.title}
 													</Link>
 												</section>

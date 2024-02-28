@@ -137,7 +137,7 @@
 				line-height: 1.1;
 				margin-bottom: 8px;
 				margin-right: 2rem;
-				@include tablet-800 {
+				@include tablet-768 {
 					font-size: 2.2rem;
 				}
 				@include mobile-400 {

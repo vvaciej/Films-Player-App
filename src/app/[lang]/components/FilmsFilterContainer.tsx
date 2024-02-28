@@ -132,7 +132,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 			<Navbar isCutted={false} />
 			<div className='content-full-space-centered'>
 				<div className='typical-container-comp-with-films'>
-					<section className='films-heading-section items-center'>
+					<section className='films-heading-section items-center mb-7'>
 						<h1 className='films-category-heading-text'>{t(headingTitlePage)}</h1>
 						<section className='films-category-filter-btns'>
 							<section className='relative' ref={mostPopularDropdownRef}>
@@ -260,18 +260,16 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											<img src={film.image} className='max-h-[17.2rem]' alt={`Poster for ${t(film.title)}`} />
 										</Link>
 									</section>
-									<section className='films-text-section'>
+									<section className='pt-3 flex flex-col gap-y-1'>
 										<section className='main-text-rating flex items-center'>
-											<StarIcon
-												className='h-5 mr-2 text-orange'
-											/>
+											<StarIcon className='h-5 mr-2 text-orange' />
 											<span>{film.rating} / 10</span>
 										</section>
 										<Link
 											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/${
 												getCookie('langChoosed') === 'polski' ? 'pl' : 'en'
 											}/titles/${film.ref}/${convertTitleToUrl(film.title)}`}
-											className='film-link-title search-title pr-1'>
+											className='text-sm font-medium search-title pr-1'>
 											{t(film.title)}
 										</Link>
 									</section>
@@ -290,19 +288,17 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											<img src={film.imgFullHd500} className='!max-h-[13rem]' alt={`Poster for ${t(film.title)}`} />
 										</Link>
 									</section>
-									<section className='films-text-section'>
+									<section className='pt-3 flex flex-col gap-y-1'>
 										<Link
 											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}
-											className='film-link-title search-title pr-1'>
+											className='text-[14.5px] font-medium search-title pr-1'>
 											{t(film.title)}
 										</Link>
 										<span className='text-xs sm:text-sm'>{film.releaseDate}</span>
 										<section className='main-text-rating flex items-center'>
-											<StarIcon
-												className='h-5 mr-2 text-orange'
-											/>
+											<StarIcon className='h-5 mr-2 text-orange' />
 											<span>{film.rating} / 10</span>
 										</section>
 									</section>
@@ -321,20 +317,18 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											<img className='max-h-46 max-w-32 pr-2' src={film.image} alt={`Poster for ${t(film.title)}`} />
 										</Link>
 									</section>
-									<section className='films-text-section'>
+									<section className='pt-3 flex flex-col gap-y-1'>
 										<Link
 											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}
-											className='film-link-title search-title pr-1'>
+											className='text-[14.5px] font-medium search-title pr-1'>
 											{t(film.title)}
 										</Link>
 										<span className='text-xs sm:text-sm'>{film.time}</span>
 										<section className='main-text-rating'>
 											<section className='flex items-center'>
-												<StarIcon
-													className='h-4 mr-2 text-orange'
-												/>
+												<StarIcon className='h-4 mr-2 text-orange' />
 												<span>{film.rating} / 10 &nbsp;&nbsp;</span>
 											</section>
 										</section>

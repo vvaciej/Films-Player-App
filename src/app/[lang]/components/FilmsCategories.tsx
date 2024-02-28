@@ -91,7 +91,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 						spaceBetween: 15,
 						cssMode: true,
 					},
-					460: {
+					440: {
 						slidesPerView: 3,
 						spaceBetween: 10,
 						cssMode: true,
@@ -118,11 +118,9 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 									/>
 								</Link>
 							</section>
-							<section className='films-text-section max-h-12'>
+							<section className='pt-3 flex flex-col gap-y-1 max-h-12'>
 								<section className='flex items-center'>
-									<StarIcon
-										className='h-5 mr-2 text-orange'
-									/>
+									<StarIcon className='h-5 mr-2 text-orange' />
 									<span>{film.rating} / 10</span>
 								</section>
 								<Link
@@ -156,16 +154,16 @@ export const FilmsCategories: React.FC = () => {
 			<FilmCategory
 				headingText={'Last added films'}
 				filmsData={filmData.lastAddedFilms}
-				linkDirectPage={`/${
-					getCookie('langChoosed') === 'english' ? 'en' : 'pl'
-				}/channel/ostatnio-dodane-filmy?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
+				linkDirectPage={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/channel/ostatnio-dodane-filmy?order=${
+					getCookie('mostPopularChoosed') || 'most_popular'
+				}`}
 			/>
 			<FilmCategory
 				headingText={'Popular action films'}
 				filmsData={filmData.popularActionFilms}
-				linkDirectPage={`/${
-					getCookie('langChoosed') === 'english' ? 'en' : 'pl'
-				}/channel/popularne-filmy-akcji?order=${getCookie('mostPopularChoosed') || 'most_popular'}`}
+				linkDirectPage={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/channel/popularne-filmy-akcji?order=${
+					getCookie('mostPopularChoosed') || 'most_popular'
+				}`}
 			/>
 			<FilmCategory
 				headingText={'Popular comedies'}

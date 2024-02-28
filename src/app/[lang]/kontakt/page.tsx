@@ -17,10 +17,8 @@ const Kontakt: React.FC = () => {
 					<main className='h-full w-full rounded p-8 text-[0.82rem] border-[1px] border-gray3232'>
 						<h1 className='text-2xl mb-1'>{t('Get in touch')}</h1>
 						<p>{t('Use the form below to send us a message, and we will contact you as soon as possible.')}</p>
-						<form style={{
-							height: 'calc(100% - 4px - 39.38px - 36px - 2.5rem)',
-						}}
-							className='flex flex-col gap-y-6 mt-10'
+						<form
+							className='flex flex-col gap-y-6 mt-10 h-[calc(100%-4px-39.38px-36px-2.5rem)]'
 							onSubmit={event => event.preventDefault()}>
 							<section className='flex flex-col gap-1 w-full'>
 								<label htmlFor='title'>{t('Title')}</label>

@@ -290,10 +290,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	normalizePolishCharacters(String(category).toLowerCase()).replace(/ /g, '-')
 																).toLowerCase()}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 																key={index}>
-																<li
-																	className='py-[6px] px-3 rounded-2xl hover:underline bg-gray6161'>
-																	{t(category)}
-																</li>
+																<li className='py-[6px] px-3 rounded-2xl hover:underline bg-gray6161'>{t(category)}</li>
 															</Link>
 														))}
 												</ul>
@@ -416,7 +413,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													? 'block'
 													: 'hidden'
 											}`}>
-											<section className='films-heading-section mt-10'>
+											<section className='films-heading-section mt-10 mb-4'>
 												<h1 className='films-category-heading-text'>{t('Alike films')}</h1>
 												<section className='films-category-control-btns'>
 													<button
@@ -479,7 +476,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																			<img src={similarFilm?.image} alt={`Poster for ${t(similarFilm?.title)}`} />
 																		</Link>
 																	</section>
-																	<section className='films-text-section'>
+																	<section className='pt-3 flex flex-col gap-y-1'>
 																		<section className='main-text-rating flex items-center'>
 																			<StarIcon className='h-5 mr-2 text-orange' />
 																			<span>{similarFilm?.rating} / 10</span>
@@ -488,7 +485,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																			href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 																				similarFilm?.ref
 																			}/${convertTitleToUrl(similarFilm?.title)}`}
-																			className='film-container-title max-h-10'>
+																			className='text-[14px] font-medium max-h-10'>
 																			{t(similarFilm?.title)}
 																		</Link>
 																	</section>
