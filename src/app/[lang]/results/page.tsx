@@ -26,7 +26,7 @@ import { useTranslation } from 'react-i18next';
 
 const SearchPage: React.FC = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t('Darmowe filmy i seriale')} - vvaciej.app`);
+	useDocumentTitle(`${t('Free films and serials')} - vvaciej.app`);
 	const router = useRouter();
 
 	const [whatSearchVal, setWhatSearchVal] = useState<string>('');
@@ -51,7 +51,7 @@ const SearchPage: React.FC = () => {
 	}, [whatSearchVal]);
 
 	useEffect(() => {
-		router.replace(`/pl/results?query=${whatSearchVal}`);
+		router.replace(`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/results?query=${whatSearchVal}`);
 	}, [whatSearchVal, router]);
 
 	useEffect(() => {
@@ -107,7 +107,7 @@ const SearchPage: React.FC = () => {
 											display: whatSearchVal !== '' ? 'none' : 'flex',
 										}}>
 										<MagnifyingGlassIcon className='min-h-10 h-10 mb-2' />
-										<h1 className='text-lg'>{t('Szukaj')} - vvaciej.to</h1>
+										<h1 className='text-lg'>{t('Search')} - vvaciej.to</h1>
 										<span
 											className='text-sm'
 											style={{
@@ -125,7 +125,7 @@ const SearchPage: React.FC = () => {
 									display: whatSearchVal ? 'block' : 'none',
 								}}>
 								<h1 className='text-2xl font-semibold sm:text-3xl'>
-									{t('Wyniki wyszukiwania:')} {decodedQuery}
+									{t('Search results:')} {decodedQuery}
 								</h1>
 								<section className='flex flex-col justify-between mt-8'>
 									<section
