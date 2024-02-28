@@ -365,7 +365,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 															spaceBetween: 20,
 															cssMode: true,
 														},
-														350: {
+														400: {
 															slidesPerGroup: 2,
 															slidesPerView: 2,
 															spaceBetween: 10,
