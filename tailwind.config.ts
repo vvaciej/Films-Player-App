@@ -35,7 +35,10 @@ const config: Config = {
         lightGrayEee: '#eee',
         btnOpacitedHoverBg: '#4d4d4d50',
         brown: '#37271c',
-      }
+      },
+      boxShadow: {
+        'outline-focus': '4px var(--orange-opacited-15), 1px var(--dark-orange-opacited)',
+      },
 		},
 	},
 	plugins: [],

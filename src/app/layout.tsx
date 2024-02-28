@@ -13,7 +13,6 @@ import getCookie from '../helpers/GetCookie';
 import '../../styles/globals.css';
 import '../../styles/css/film-page.css';
 import '../../styles/css/filteres-page.css';
-import '../../styles/css/series&movies.css';
 import '../../styles/css/global.css';
 
 const inter = Inter({ subsets: ['latin'] });

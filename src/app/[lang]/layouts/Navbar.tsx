@@ -148,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							</form>
 							<Link
 								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/results`}
-								className='header-search-icon-link !left-[0.7rem]'>
+								className='header-search-icon-link'>
 								<MagnifyingGlassIcon className='header-search-icon' />
 							</Link>
 							<div className={`input-box-search lg:block hidden ${isTyped ? 'active' : ''}`} ref={searchDropdownRef}>
