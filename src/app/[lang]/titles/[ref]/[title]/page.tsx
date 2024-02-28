@@ -227,7 +227,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</section>
 											<section
 												className={`film-page-aside-info-sections ${
-													infoOfChoosedFilm?.filmedIn.length === 0 ? 'hidden' : 'flex'
+													infoOfChoosedFilm?.filmedIn.length === 0 ? '!hidden' : 'flex'
 												}`}>
 												<b className='film-page-aside-info-sections-heading-text'>{t('Filmed in')}</b>
 												<ul className='film-page-aside-keywords-section-keywords-list'>
@@ -247,7 +247,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</section>
 											<section
 												className={`film-page-aside-info-sections ${
-													infoOfChoosedFilm?.keywords.length === 0 ? 'hidden' : 'flex'
+													infoOfChoosedFilm?.keywords.length === 0 ? '!hidden' : 'flex'
 												}`}>
 												<b className='film-page-aside-info-sections-heading-text'>{t('Keywords')}</b>
 												<ul className='film-page-aside-keywords-section-keywords-list'>
