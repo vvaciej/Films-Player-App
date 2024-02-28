@@ -30,7 +30,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 	rightBtnFunction,
 	leftBtnFunction,
 }) => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	const isWindowDefined = typeof window !== 'undefined';
 
 	const [isWindowUnder800, setIsWindowUnder800] = useState<boolean>(isWindowDefined ? window.innerWidth < 800 : false);
@@ -95,7 +95,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 										}/titles/${reference}/${convertTitleToUrl(title)}`}
 										className='main-heading-left-text-btn orange-btn-style'>
 										<PlayIcon className='h-4' />
-										<span>{t('Obejrzyj to')}</span>
+										<span>{t('Watch this')}</span>
 									</Link>
 								</div>
 							</div>
@@ -144,7 +144,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 									}/titles/${reference}/${convertTitleToUrl(title)}`}
 									className='main-heading-left-text-btn orange-btn-style'>
 									<PlayIcon className='h-4' />
-									<span>{t('Obejrzyj to')}</span>
+									<span>{t('Watch this')}</span>
 								</Link>
 							</div>
 						</div>
@@ -162,7 +162,7 @@ interface SidebarProps {
 
 const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
 	<section className='main-heading-right-container'>
-		<h1 className='main-heading-right-top-text'>{t('Następne')}</h1>
+		<h1 className='main-heading-right-top-text'>{t('Next')}</h1>
 		<div className='main-heading-right-films-container'>
 			{sidebarFilmsData.slice(...currentIndexes).map((film: any, index: number) => (
 				<div key={index} className='main-heading-right-film'>
@@ -204,7 +204,7 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
 export const HeadingFilmsInteraction: React.FC = () => {
 	const [currentIndex, setCurrentIndex] = useState<number>(0);
 	const currentHeading = headingFilmsData[currentIndex];
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 
 	const [currentSidebarStart, setCurrentSidebarStart] = useState<number>(0);
 	const [currentSidebarEnd, setCurrentSidebarEnd] = useState<number>(3);

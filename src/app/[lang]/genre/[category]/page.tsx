@@ -14,7 +14,7 @@ interface params {
 
 const Genre: React.FC<params> = ({ params }) => {
 	const categoryArray = Array.isArray(params.category) ? params.category : [params.category];
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	useDocumentTitle(`${t(categoryArray.join(', '))} - vvaciej.app`);
 
 	const filteredByGenre = IteratingFilmsPageArrays(allFilms, 'categoryArr', categoryArray);
@@ -29,8 +29,8 @@ const Genre: React.FC<params> = ({ params }) => {
 							.join(', ')
 							.split(' ')
 							.map(word => word.charAt(0).toUpperCase() + word.slice(1).replace(/-/g, ' '))
-					: t('zastrzeżone')
-			} ${t('filmy i seriale')}`}
+					: t('restricted')
+			} ${t('films and serials')}`}
 			mappingBy={filteredByGenre}
 		/>
 	);

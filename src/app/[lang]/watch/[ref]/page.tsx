@@ -31,6 +31,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 	const [isFilmExist, setIsFilmExist] = useState<boolean>(false);
 	const [sthDoneVisible, setSthDoneVisible] = useState<boolean>(false);
 	const [sthDoneVotedVisible, setSthDoneVotedVisible] = useState<boolean>(false);
+	const [sthDoneBugVisible, setSthDoneBugVisible] = useState<boolean>(false);
 
 	const infoOfChoosedFilm = allFilms.find(film => film.ref === Number(params.ref));
 
@@ -42,8 +43,6 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 
 		checkIfPageExist ? setIsFilmExist(true) : setIsFilmExist(false);
 	}, [params]);
-
-	const isLogged = getCookie('email');
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -159,8 +158,8 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 													<section className='flex gap-x-3'>
 														<button
 															onClick={() => {
-																setSthDoneVisible(true);
-																setTimeout(() => setSthDoneVisible(false), 2500);
+																setSthDoneBugVisible(true);
+																setTimeout(() => setSthDoneBugVisible(false), 2500);
 															}}>
 															<FlagIcon className='min-h-8 max-h-8 transparent-btn-style cursor-pointer !p-2' />
 														</button>
@@ -185,7 +184,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 										<section>
 											<section className='flex gap-x-2 mt-8 mb-2'>
 												<ChatBubbleBottomCenterIcon className='h-5' />
-												<span className='text-sm'>0 {t('komentarzy')}</span>
+												<span className='text-sm'>0 {t('comments')}</span>
 											</section>
 											<hr className='border-zinc-700 border-1 w-full' />
 										</section>
@@ -195,7 +194,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 												style={{
 													fontSize: '15.2px',
 												}}>
-												{t('Troche tu cicho')}
+												{t('Seems a little quiet over here')}
 											</h2>
 											<span className='text-gray-300'>{t('Bądź pierwszym komentującym')}</span>
 										</section>
@@ -209,7 +208,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 													: 'none',
 										}}>
 										<section className='films-heading-section'>
-											<h1 className='films-category-heading-text !text-2xl'>{t('Podobne')}</h1>
+											<h1 className='films-category-heading-text !text-2xl'>{t('Alike')}</h1>
 										</section>
 										<section>
 											{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title)
@@ -247,8 +246,9 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 							</div>
 						</div>
 						<Footer />
-						<SomethingDone text={t('Głos został oddany')} visible={sthDoneVotedVisible} />
-						<SomethingDone text={t('Skopiowano link do schowka')} visible={sthDoneVisible} />
+						<SomethingDone text={t('The vote has been cast')} visible={sthDoneVotedVisible} />
+						<SomethingDone text={t('Issue reported successfully')} visible={sthDoneBugVisible} />
+						<SomethingDone text={t('Copied link to clipboard')} visible={sthDoneVisible} />
 					</>
 				) : (
 					<SiteNotFound />

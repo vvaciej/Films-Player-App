@@ -33,7 +33,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 					)}
 					<section>
 						<span className='pl-1'>
-							{t('Recenzja przez')}&nbsp;
+							{t('Review by')}&nbsp;
 							<b className='text-white'>{isLogged ? getCookie('email').match(/^(.+)@/)?.[1] || '' : ''}</b>
 						</span>
 						<section className='flex mt-1'>
@@ -65,7 +65,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 						isAddOpinionSelected ? 'hidden' : 'flex'
 					} film-page-add-opinion-btn`}
 					onClick={() => setAddOpinionSelected(!isAddOpinionSelected)}>
-					{t('Dodaj recenzję')}
+					{t('Add a review')}
 				</button>
 			</section>
 			{isLogged && isAddOpinionSelected ? (
@@ -73,13 +73,13 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 					<section className='flex flex-col gap-y-4 sm:gap-y-7 w-full mt-3'>
 						<section className='flex flex-col gap-y-1'>
 							<label className='text-sm' htmlFor='title'>
-								{t('Tytuł')}
+								{t('Title')}
 							</label>
 							<input className='input-style orange-outline-focus' type='text' id='title' />
 						</section>
 						<section className='flex flex-col gap-y-1'>
 							<label className='text-sm' htmlFor='opinion-mess'>
-								{t('Recenzja')}
+								{t('Review')}
 							</label>
 							<textarea className='input-style orange-outline-focus !pt-2' id='opinion-mess' />
 						</section>
@@ -88,9 +88,9 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 						<button
 							className='btn-style-outlined w-max sm:!px-7 !py-2 !text-md'
 							onClick={() => setAddOpinionSelected(!isAddOpinionSelected)}>
-							{t('Anuluj')}
+							{t('Cancel')}
 						</button>
-						<button className='orange-btn-style w-max sm:!px-7 !py-2 text-sm'>{t('Dodaj')}</button>
+						<button className='orange-btn-style w-max sm:!px-7 !py-2 text-sm'>{t('Add')}</button>
 					</section>
 				</div>
 			) : (

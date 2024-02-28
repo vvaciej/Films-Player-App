@@ -164,7 +164,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												}`}
 												className='film-page-aside-btns orange-btn-style'>
 												<PlayIcon className='h-4' />
-												{t('Obejrzyj to')}
+												{t('Watch this')}
 											</Link>
 											{getCookie('email') ? (
 												<button
@@ -187,21 +187,21 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													) : (
 														<PlusIcon className='h-5' />
 													)}
-													{t('Obejrzyj potem')}
+													{t('Watch later')}
 												</button>
 											) : (
 												<Link
 													href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}
 													className='film-page-aside-btns orange-outlined-btn-style'>
 													<PlusIcon className='h-5' />
-													{t('Obejrzyj potem')}
+													{t('Watch later')}
 												</Link>
 											)}
 											<ShareBtn setIsVisibleSthDone={setIsVisibleSthDone} whatBtnLook='not-basic' />
 										</div>
 										<div className='flex flex-col gap-y-2'>
 											<section className='film-page-aside-info-sections'>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Oryginalny język')}</b>
+												<b className='film-page-aside-info-sections-heading-text'>{t('Original language')}</b>
 												<span>{infoOfChoosedFilm?.originalLang}</span>
 											</section>
 											<section
@@ -209,7 +209,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												style={{
 													display: infoOfChoosedFilm?.title === infoOfChoosedFilm?.originalTitle ? 'none' : 'flex',
 												}}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Oryginalny tytuł')}</b>
+												<b className='film-page-aside-info-sections-heading-text'>{t('Original title')}</b>
 												<span>{infoOfChoosedFilm?.originalTitle}</span>
 											</section>
 											<section
@@ -217,7 +217,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												style={{
 													display: infoOfChoosedFilm?.budget === 1 ? 'none' : 'flex',
 												}}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Budżet')}</b>
+												<b className='film-page-aside-info-sections-heading-text'>{t('Budget')}</b>
 												<span>
 													{infoOfChoosedFilm?.budget.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 												</span>
@@ -227,7 +227,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												style={{
 													display: infoOfChoosedFilm?.profit === 1 ? 'none' : 'flex',
 												}}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Przychód')}</b>
+												<b className='film-page-aside-info-sections-heading-text'>{t('Profit')}</b>
 												<span>
 													{infoOfChoosedFilm?.profit.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 												</span>
@@ -237,13 +237,13 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												style={{
 													display: infoOfChoosedFilm?.filmedIn.length === 0 ? 'none' : 'flex',
 												}}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Nakręcono w')}</b>
+												<b className='film-page-aside-info-sections-heading-text'>{t('Filmed in')}</b>
 												<ul className='film-page-aside-keywords-section-keywords-list'>
 													{infoOfChoosedFilm?.filmedIn &&
 														infoOfChoosedFilm?.filmedIn.map((filmedIn: string[] | string, index: number) => (
 															<Link
 																href={`/${
-																	getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+																	getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 																}/production-countries/${encodeURIComponent(
 																	normalizePolishCharacters(String(filmedIn).toLowerCase()).replace(/ /g, '-') as any
 																)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
@@ -258,13 +258,13 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												style={{
 													display: infoOfChoosedFilm?.keywords.length === 0 ? 'none' : 'flex',
 												}}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Słowa kluczowe')}</b>
+												<b className='film-page-aside-info-sections-heading-text'>{t('Keywords')}</b>
 												<ul className='film-page-aside-keywords-section-keywords-list'>
 													{infoOfChoosedFilm?.keywords &&
 														infoOfChoosedFilm?.keywords.map((keyword: string[] | string, index: number) => (
 															<Link
 																href={`/${
-																	getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'
+																	getCookie('langChoosed') === 'english' ? 'en' : 'pl'
 																}/keyword/${encodeURIComponent(
 																	normalizePolishCharacters(String(keyword).toLowerCase()).replace(/ /g, '-') as any
 																)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
@@ -314,8 +314,8 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 										</section>
 										<section className='film-page-opinion-ab-film'>
 											<section className='films-heading-section'>
-												<h1 className='films-category-heading-text'>{t('Recenzje')}</h1>
-												<section className='flex'>
+												<h1 className='films-category-heading-text'>{t('Reviews')}</h1>
+												<section className='sm:flex hidden'>
 													<section className='main-text-rating flex items-center min-w-max'>
 														<StarIcon
 															className='h-5 mr-2'
@@ -334,7 +334,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													</section>
 													<button className='btn-style-outlined ml-4'>
 														<Bars3BottomLeftIcon className='h-4' />
-														{t('Najnowsze')}
+														{t('Newest')}
 													</button>
 												</section>
 											</section>
@@ -344,27 +344,27 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												style={{
 													display: `${isLogged ? 'none' : 'flex'}`,
 												}}>
-												<h1>{t('Wymagana jest rejestracja')}</h1>
+												<h1>{t('Register is required')}</h1>
 												<p>
 													<Link
 														href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}
 														className='orange-link'>
-														{t('Zaloguj sie')}
+														{t('Login')}
 													</Link>
-													&nbsp;{t('lub')}&nbsp;
+													&nbsp;{t('or')}&nbsp;
 													<Link
 														href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/register`}
 														className='orange-link'>
-														{t('stwórz konto')}
+														{t('create account')}
 													</Link>
-													&nbsp;{t('aby dodać recenzje')}
+													&nbsp;{t('to add review')}
 												</p>
 											</div>
 										</section>
 										<div className='film-page-sources-container mt-1'>
 											<section className='films-heading-section'>
 												<section className='flex items-center gap-x-2'>
-													<h1 className='films-category-heading-text'>{t('Źródła')}</h1>
+													<h1 className='films-category-heading-text'>{t('Sources')}</h1>
 												</section>
 												<section className='films-category-control-btns'>
 													<button
@@ -416,7 +416,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																<div className='h-full w-full absolute text-sm font-normal'>
 																	<section className='flex items-center gap-x-2 absolute bottom-2 sm:bottom-3 sm:left-3 left-2'>
 																		<PlayCircleIcon className='h-6 z-10' />
-																		<span className='z-10'>{t('Całe video')}</span>
+																		<span className='z-10'>{t('Full video')}</span>
 																	</section>
 																</div>
 																<img
@@ -430,7 +430,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	infoOfChoosedFilm?.ref
 																}`}
 																className='hover:underline font-medium text-sm'>
-																{t('Polski')} Dubbing
+																{t('Polish')} Dubbing
 															</Link>
 														</article>
 													</SwiperSlide>
@@ -445,7 +445,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 														: 'none',
 											}}>
 											<section className='films-heading-section mt-10'>
-												<h1 className='films-category-heading-text'>{t('Podobne filmy')}</h1>
+												<h1 className='films-category-heading-text'>{t('Alike films')}</h1>
 												<section className='films-category-control-btns'>
 													<button
 														className={`films-category-control-btn`}

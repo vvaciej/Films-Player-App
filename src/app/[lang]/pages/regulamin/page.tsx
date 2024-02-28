@@ -7,14 +7,14 @@ import { useTranslation } from 'react-i18next';
 
 const Policy: React.FC = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t(`Regulamin`)} - vvaciej.app`);
+	useDocumentTitle(`${t(`Rules`)} - vvaciej.app`);
 
 	return (
 		<div className='space-dark'>
 			<Navbar isCutted={true} />
 			<div className='content-full-space-centered h-[76vh] overflow-hidden'>
 				<main className='main-container-width-padd-top-1240'>
-					<h1 className='text-2xl mb-4'>{t(`Regulamin`)}</h1>
+					<h1 className='text-2xl mb-4'>{t(`Rules`)}</h1>
 					<div>
 						<h4>§ 1. ...</h4>
 						<h4>§ 2. ...</h4>

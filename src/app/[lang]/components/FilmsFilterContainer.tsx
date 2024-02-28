@@ -10,7 +10,6 @@ import { useTranslation } from 'react-i18next';
 
 import {
 	StarIcon,
-	PlayIcon,
 	Bars3BottomLeftIcon,
 	Squares2X2Icon,
 	ListBulletIcon,
@@ -24,7 +23,7 @@ type FilmData = {
 	title: string;
 	rating: number;
 	addedDate: string;
-	filmwebPopularity: number;
+	filmPortraitPopularity: number;
 	budget: number;
 	profit: number;
 	time: string;
@@ -40,9 +39,9 @@ interface FilterPageProps {
 }
 
 const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => {
-	useDocumentTitle('Wyszukiwarka filmów - vvaciej.app');
+	const { t } = useTranslation();
+	useDocumentTitle(`${t('Search engine')} - vvaciej.app`);
 	const router = useRouter();
-	const { t, i18n } = useTranslation();
 
 	const [filterOrderChoosed, setFilterOrderChoosed] = useState<string>(getCookie('filterOrderChoosed'));
 	const [filmModeChoosed, setFilmModeChoosed] = useState<string>(getCookie('filmModeChoosed'));
@@ -53,23 +52,23 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 	}, [filmModeChoosed, filterOrderChoosed]);
 
 	useEffect(() => {
-		const siatkaCookie = getCookie('filmModeChoosed');
+		const filmModeCookie = getCookie('filmModeChoosed');
 		const filterOrderCookie = getCookie('filterOrderChoosed');
 
-		setFilmModeChoosed(siatkaCookie || 'Siatka');
+		setFilmModeChoosed(filmModeCookie || 'Portrait');
 		setFilterOrderChoosed(filterOrderCookie || 'most_popular');
 	}, [filmModeChoosed, filterOrderChoosed]);
 
 	const [mostPopularBtnClicked, setMostPopularBtnClicked] = useState<boolean>(false);
-	const [siatkaClicked, setSiatkaClicked] = useState<boolean>(false);
+	const [ModeClicked, setModeClicked] = useState<boolean>(false);
 
 	const handleMostPopularClick = () => {
 		setMostPopularBtnClicked(prevState => !prevState);
-		setSiatkaClicked(false);
+		setModeClicked(false);
 	};
 
-	const handleSiatkaClick = () => {
-		setSiatkaClicked(prevState => !prevState);
+	const handleModeClick = () => {
+		setModeClicked(prevState => !prevState);
 		setMostPopularBtnClicked(false);
 	};
 
@@ -84,7 +83,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 
 	switch (filterOrderChoosed) {
 		case 'most_popular':
-			mappingBy.sort((a: FilmData, b: FilmData) => b.filmwebPopularity - a.filmwebPopularity);
+			mappingBy.sort((a: FilmData, b: FilmData) => b.filmPortraitPopularity - a.filmPortraitPopularity);
 			break;
 		case 'last_added':
 			mappingBy.sort((a: FilmData, b: FilmData) => new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime());
@@ -101,7 +100,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 	}
 
 	const mostPopularDropdownRef = useRef<HTMLDivElement>(null);
-	const siatkaDropdownRef = useRef<HTMLDivElement>(null);
+	const ModeDropdownRef = useRef<HTMLDivElement>(null);
 
 	const dropdownMobilesRef = useRef<HTMLDivElement>(null);
 
@@ -112,11 +111,11 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 
 		if (
 			!isInsideDropdown(event.target, mostPopularDropdownRef) &&
-			!isInsideDropdown(event.target, siatkaDropdownRef) &&
+			!isInsideDropdown(event.target, ModeDropdownRef) &&
 			!isInsideDropdown(event.target, dropdownMobilesRef)
 		) {
 			setMostPopularBtnClicked(false);
-			setSiatkaClicked(false);
+			setModeClicked(false);
 		}
 	};
 
@@ -141,15 +140,15 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 									<Bars3BottomLeftIcon className='h-5' />
 									<span className='text-sm font-medium pl-2 lg:flex hidden'>
 										{filterOrderChoosed === 'most_popular'
-											? t('Najbardziej popularne')
+											? t('Most popular')
 											: filterOrderChoosed === 'last_added'
-											? t('Ostatnio dodane')
+											? t('Last added')
 											: filterOrderChoosed === 'highest_rating'
-											? t('Najlepiej oceniane')
+											? t('Highest rating')
 											: filterOrderChoosed === 'highest_budget'
-											? t('Najwiekszy budzet')
+											? t('Highest budget')
 											: filterOrderChoosed === 'highest_profit'
-											? t('Najwiekszy przychod')
+											? t('Highest profit')
 											: ''}
 									</span>
 								</button>
@@ -161,7 +160,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											setMostPopularBtnClicked(false);
 											setFilterOrderChoosed('most_popular');
 										}}>
-										{t('Najbardziej popularne')}
+										{t('Most popular')}
 									</button>
 									<button
 										className={`filtering-dropdown-btns ${filterOrderChoosed === 'last_added' ? 'choosed' : ''}`}
@@ -170,7 +169,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											setMostPopularBtnClicked(false);
 											setFilterOrderChoosed('last_added');
 										}}>
-										{t('Ostatnio dodane')}
+										{t('Last added')}
 									</button>
 									<button
 										className={`filtering-dropdown-btns ${filterOrderChoosed === 'highest_rating' ? 'choosed' : ''}`}
@@ -179,7 +178,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											setMostPopularBtnClicked(false);
 											setFilterOrderChoosed('highest_rating');
 										}}>
-										{t('Najlepiej oceniane')}
+										{t('Highest rating')}
 									</button>
 									<button
 										className={`filtering-dropdown-btns ${filterOrderChoosed === 'highest_budget' ? 'choosed' : ''}`}
@@ -188,7 +187,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											setMostPopularBtnClicked(false);
 											setFilterOrderChoosed('highest_budget');
 										}}>
-										{t('Najwiekszy budzet')}
+										{t('Highest budget')}
 									</button>
 									<button
 										className={`filtering-dropdown-btns ${filterOrderChoosed === 'highest_profit' ? 'choosed' : ''}`}
@@ -197,59 +196,59 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											setMostPopularBtnClicked(false);
 											setFilterOrderChoosed('highest_profit');
 										}}>
-										{t('Najwiekszy przychod')}
+										{t('Highest profit')}
 									</button>
 								</div>
 							</section>
-							<section className='relative' ref={siatkaDropdownRef}>
-								<button className={`films-category-filter-btn transparent-btn-style`} onClick={handleSiatkaClick}>
-									{filmModeChoosed === 'Siatka' ? (
+							<section className='relative' ref={ModeDropdownRef}>
+								<button className={`films-category-filter-btn transparent-btn-style`} onClick={handleModeClick}>
+									{filmModeChoosed === 'Portrait' ? (
 										<Squares2X2Icon className='h-5' />
-									) : filmModeChoosed === 'Pejzaz' ? (
+									) : filmModeChoosed === 'Landscape' ? (
 										<ViewColumnsIcon className='h-5' />
 									) : (
 										<ListBulletIcon className='h-5' />
 									)}
 									<span className='text-sm font-medium pl-2 lg:flex hidden'>
-										{filmModeChoosed === 'Siatka'
-											? t('Siatka')
-											: filmModeChoosed === 'Pejzaz'
-											? t('Pejzaz')
-											: filmModeChoosed === 'Lista'
-											? t('Lista')
+										{filmModeChoosed === 'Portrait'
+											? t('Portrait')
+											: filmModeChoosed === 'Landscape'
+											? t('Landscape')
+											: filmModeChoosed === 'List'
+											? t('List')
 											: ''}
 									</span>
 								</button>
-								<div className={`filter-dropdown filter-siatka ${siatkaClicked ? 'active' : ''} select-none`}>
+								<div className={`filter-dropdown filter-Mode ${ModeClicked ? 'active' : ''} select-none`}>
 									<button
-										className={`filtering-dropdown-btns ${filmModeChoosed === 'Siatka' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${filmModeChoosed === 'Portrait' ? 'choosed' : ''}`}
 										onClick={() => {
-											setSiatkaClicked(false);
-											setFilmModeChoosed('Siatka');
+											setModeClicked(false);
+											setFilmModeChoosed('Portrait');
 										}}>
-										{t('Siatka')}
+										{t('Portrait')}
 									</button>
 									<button
-										className={`filtering-dropdown-btns ${filmModeChoosed === 'Pejzaz' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${filmModeChoosed === 'Landscape' ? 'choosed' : ''}`}
 										onClick={() => {
-											setSiatkaClicked(false);
-											setFilmModeChoosed('Pejzaz');
+											setModeClicked(false);
+											setFilmModeChoosed('Landscape');
 										}}>
-										{t('Pejzaz')}
+										{t('Landscape')}
 									</button>
 									<button
-										className={`filtering-dropdown-btns ${filmModeChoosed === 'Lista' ? 'choosed' : ''}`}
+										className={`filtering-dropdown-btns ${filmModeChoosed === 'List' ? 'choosed' : ''}`}
 										onClick={() => {
-											setSiatkaClicked(false);
-											setFilmModeChoosed('Lista');
+											setModeClicked(false);
+											setFilmModeChoosed('List');
 										}}>
-										{t('Lista')}
+										{t('List')}
 									</button>
 								</div>
 							</section>
 						</section>
 					</section>
-					{filmModeChoosed === 'Siatka' ? (
+					{filmModeChoosed === 'Portrait' ? (
 						<section className='films-wrapper'>
 							{mappingBy.map((film: FilmData, index: number) => (
 								<article className='film-container w-full' key={index}>
@@ -282,10 +281,10 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								</article>
 							))}
 						</section>
-					) : filmModeChoosed === 'Pejzaz' ? (
-						<section className='films-wrapper-pejzaz'>
+					) : filmModeChoosed === 'Landscape' ? (
+						<section className='films-wrapper-landscape'>
 							{mappingBy.map((film: FilmData, index: number) => (
-								<article className='film-container-pejzaz w-full' key={index}>
+								<article className='film-container-Landscape w-full' key={index}>
 									<section className='films-image-section'>
 										<Link
 											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
@@ -316,7 +315,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								</article>
 							))}
 						</section>
-					) : filmModeChoosed === 'Lista' ? (
+					) : filmModeChoosed === 'List' ? (
 						<section className='films-wrapper-list'>
 							{mappingBy.map((film: FilmData, index: number) => (
 								<article className='film-container-list w-full' key={index}>
@@ -361,7 +360,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 			<Footer />
 			<div
 				ref={dropdownMobilesRef}
-				className={`typical-dropdown-style ${mostPopularBtnClicked || siatkaClicked ? 'active' : ''}`}>
+				className={`typical-dropdown-style ${mostPopularBtnClicked || ModeClicked ? 'active' : ''}`}>
 				{mostPopularBtnClicked ? (
 					<div className='!h-52'>
 						<button
@@ -371,7 +370,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								setMostPopularBtnClicked(false);
 								setFilterOrderChoosed('most_popular');
 							}}>
-							{t('Najbardziej popularne')}
+							{t('Most popular')}
 						</button>
 						<button
 							className={`${filterOrderChoosed === 'last_added' ? 'choosed' : ''} btn-choosed-style`}
@@ -380,7 +379,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								setMostPopularBtnClicked(false);
 								setFilterOrderChoosed('last_added');
 							}}>
-							{t('Ostatnio dodane')}
+							{t('Last added')}
 						</button>
 						<button
 							className={`${filterOrderChoosed === 'highest_rating' ? 'choosed' : ''} btn-choosed-style`}
@@ -389,7 +388,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								setMostPopularBtnClicked(false);
 								setFilterOrderChoosed('highest_rating');
 							}}>
-							{t('Najlepiej oceniane')}
+							{t('Highest rating')}
 						</button>
 						<button
 							className={`${filterOrderChoosed === 'highest_budget' ? 'choosed' : ''} btn-choosed-style`}
@@ -398,8 +397,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								setMostPopularBtnClicked(false);
 								setFilterOrderChoosed('highest_budget');
 							}}>
-							Najwiekszy budzet
-							{t('Najwiekszy budzet')}
+							{t('Highest budget')}
 						</button>
 						<button
 							className={`${filterOrderChoosed === 'highest_profit' ? 'choosed' : ''} btn-choosed-style`}
@@ -408,41 +406,41 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								setMostPopularBtnClicked(false);
 								setFilterOrderChoosed('highest_profit');
 							}}>
-							{t('Najwiekszy przychod')}
+							{t('Highest profit')}
 						</button>
 					</div>
-				) : siatkaClicked ? (
+				) : ModeClicked ? (
 					<div className='!h-32'>
 						<button
-							className={`${filmModeChoosed === 'Siatka' ? 'choosed' : ''} btn-choosed-style`}
+							className={`${filmModeChoosed === 'Portrait' ? 'choosed' : ''} btn-choosed-style`}
 							onClick={() => {
-								setSiatkaClicked(false);
-								setFilmModeChoosed('Siatka');
+								setModeClicked(false);
+								setFilmModeChoosed('Portrait');
 							}}>
-							{t('Siatka')}
+							{t('Portrait')}
 						</button>
 						<button
-							className={`${filmModeChoosed === 'Pejzaz' ? 'choosed' : ''} btn-choosed-style`}
+							className={`${filmModeChoosed === 'Landscape' ? 'choosed' : ''} btn-choosed-style`}
 							onClick={() => {
-								setSiatkaClicked(false);
-								setFilmModeChoosed('Pejzaz');
+								setModeClicked(false);
+								setFilmModeChoosed('Landscape');
 							}}>
-							{t('Pejzaz')}
+							{t('Landscape')}
 						</button>
 						<button
-							className={`${filmModeChoosed === 'Lista' ? 'choosed' : ''} btn-choosed-style`}
+							className={`${filmModeChoosed === 'List' ? 'choosed' : ''} btn-choosed-style`}
 							onClick={() => {
-								setSiatkaClicked(false);
-								setFilmModeChoosed('Lista');
+								setModeClicked(false);
+								setFilmModeChoosed('List');
 							}}>
-							{t('Lista')}
+							{t('List')}
 						</button>
 					</div>
 				) : (
 					''
 				)}
 			</div>
-			<div className={`opacity-el ${mostPopularBtnClicked || siatkaClicked ? 'active' : ''}`}></div>
+			<div className={`opacity-el ${mostPopularBtnClicked || ModeClicked ? 'active' : ''}`}></div>
 		</div>
 	);
 };

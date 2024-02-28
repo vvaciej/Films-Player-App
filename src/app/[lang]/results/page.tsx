@@ -93,7 +93,7 @@ const SearchPage: React.FC = () => {
 										}}>
 										<input
 											type='text'
-											placeholder='Szukaj filmu, serialu lub aktora...'
+											placeholder={t('Search movie or serial')}
 											className='input-style mb-8 flex w-full sm:w-[28rem] lg:hidden !h-12 touch-none text-base orange-outline-focus'
 											value={whatSearchVal}
 											onChange={handleSearchType}
@@ -114,7 +114,7 @@ const SearchPage: React.FC = () => {
 												color: 'var(--gray-9999)',
 												padding: '0rem .4rem',
 											}}>
-											{t('Szukaj filmu lub serialu')}
+											{t('Search movie or serial')}
 										</span>
 									</section>
 								</div>

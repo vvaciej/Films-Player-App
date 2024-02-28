@@ -22,7 +22,7 @@ import { useTranslation } from 'react-i18next';
 
 const AccSettings = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t(`Ustawienia konta`)} - vvaciej.app`);
+	useDocumentTitle(`${t(`Account settings`)} - vvaciej.app`);
 
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [photoFile, setPhotoFile] = useState<string>(
@@ -125,8 +125,8 @@ const AccSettings = () => {
 				<div className='content-full-space-centered'>
 					<div className='main-container-width-padd-top-1240'>
 						<header className='w-full text-left mb-6 sm:mb-12'>
-							<h1 className='text-3xl'>{t('Ustawienia konta')}</h1>
-							<span className='text-zinc-400'>{t('Zaktualizuj informacje o swoim koncie.')}</span>
+							<h1 className='text-3xl'>{t('Account settings')}</h1>
+							<span className='text-zinc-400'>{t('Update password and informations')}</span>
 						</header>
 						<div className='flex gap-x-8'>
 							<aside className='w-max hidden lg:block sticky top-20 h-max'>
@@ -138,7 +138,7 @@ const AccSettings = () => {
 												informationRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 											}}>
 											<UserIcon className='h-5' />
-											<span>{t('Informacje')}</span>
+											<span>{t('Informations')}</span>
 										</button>
 									</li>
 									<li>
@@ -148,7 +148,7 @@ const AccSettings = () => {
 												socialLoginRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 											}}>
 											<ArrowRightEndOnRectangleIcon className='h-5' />
-											<span>{t('Logowanie przez inne portale')}</span>
+											<span>{t('Social login')}</span>
 										</button>
 									</li>
 									<li>
@@ -158,7 +158,7 @@ const AccSettings = () => {
 												passwordRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 											}}>
 											<LockClosedIcon className='h-5' />
-											<span>{t('Hasło')}</span>
+											<span>{t('Password')}</span>
 										</button>
 									</li>
 									<li>
@@ -168,7 +168,7 @@ const AccSettings = () => {
 												twoFactorAuthRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 											}}>
 											<DevicePhoneMobileIcon className='h-5' />
-											<span className='w-max'>{t('Uwierzytelnienia dwuskładnikowe')}</span>
+											<span className='w-max'>{t('Two-factor authentication')}</span>
 										</button>
 									</li>
 									<li>
@@ -178,7 +178,7 @@ const AccSettings = () => {
 												activeSessionsRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 											}}>
 											<ComputerDesktopIcon className='h-5' />
-											<span>{t('Aktywne sesje')}</span>
+											<span>{t('Active sessions')}</span>
 										</button>
 									</li>
 									<li>
@@ -188,7 +188,7 @@ const AccSettings = () => {
 												langRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 											}}>
 											<GlobeAmericasIcon className='h-5' />
-											<span>{t('Kraj i język')}</span>
+											<span>{t('Country and language')}</span>
 										</button>
 									</li>
 									<li>
@@ -198,7 +198,7 @@ const AccSettings = () => {
 												deleteAccRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 											}}>
 											<XCircleIcon className='h-5' />
-											<span>{t('Usuń konto')}</span>
+											<span>{t('Delete account')}</span>
 										</button>
 									</li>
 								</ul>
@@ -216,7 +216,7 @@ const AccSettings = () => {
 										style={{
 											borderBottom: '1px solid var(--gray-3232)',
 										}}>
-										{t('Zaktualizuj imię nazwisko lub zdjęcie profilowe.')}
+										{t('Update your name or profile picture.')}
 									</h2>
 									<section
 										className='flex flex-col sm:flex-row items-center'
@@ -225,16 +225,16 @@ const AccSettings = () => {
 										}}>
 										<section className='w-full mt-6 text-sm flex-col flex gap-y-6 pb-8'>
 											<section className='flex flex-col gap-y-1'>
-												<label htmlFor='name'>{t('Imię')}</label>
+												<label htmlFor='name'>{t('Name')}</label>
 												<input type='text' id='name' className='input-style' />
 											</section>
 											<section className='flex flex-col gap-y-1'>
-												<label htmlFor='surname'>{t('Nazwisko')}</label>
+												<label htmlFor='surname'>{t('Surname')}</label>
 												<input type='text' id='surname' className='input-style' />
 											</section>
 										</section>
 										<section className='text-sm sm:w-96 flex items-center flex-col gap-y-2 pb-3 sm:pb-0'>
-											<span>{t('Zdjecie profilowe')}</span>
+											<span>{t('Profile picture')}</span>
 											<section className='relative '>
 												<label
 													htmlFor='upload'
@@ -275,11 +275,11 @@ const AccSettings = () => {
 													}}
 												/>
 											</section>
-											<button className='text-red-500 text-xs mt-2'>{t('Usuń zdjęcie')}</button>
+											<button className='text-red-500 text-xs mt-2'>{t('Delete picture')}</button>
 										</section>
 									</section>
 									<section className='flex justify-end mt-2'>
-										<button className='orange-btn-style text-sm font-medium'>Zapisz</button>
+										<button className='orange-btn-style text-sm font-medium'>{t('Save')}</button>
 									</section>
 								</div>
 								<div
@@ -294,7 +294,7 @@ const AccSettings = () => {
 										style={{
 											borderBottom: '1px solid var(--gray-3232)',
 										}}>
-										{t('Logowanie poprzez portale społecznościowe')}
+										{t('Login through social networks')}
 									</h2>
 									<section
 										className='flex items-center justify-between sm:px-3'
@@ -314,7 +314,7 @@ const AccSettings = () => {
 												/>
 											</button>
 											<section>
-												<h2 className='font-semibold'>{t('Konto Google')}</h2>
+												<h2 className='font-semibold'>{t('Google account')}</h2>
 												<span className='text-xs'>{t('Disabled')}</span>
 											</section>
 										</section>
@@ -327,7 +327,7 @@ const AccSettings = () => {
 									<section className='mt-4'>
 										<p className='text-[13px] text-zinc-400'>
 											{t(
-												'Jeśli wyłączysz loginy społecznościowe, nadal będziesz mógł zalogować się za pomocą wiadomości e-mail i hasła.'
+												'If you disable social logins, you will still be able to log in with your e-mail and password.'
 											)}
 										</p>
 									</section>
@@ -344,7 +344,7 @@ const AccSettings = () => {
 										style={{
 											borderBottom: '1px solid var(--gray-3232)',
 										}}>
-										{t('Zaktualizuj hasło i dane')}
+										{t('Update password and informations')}
 									</h2>
 									<section
 										className='flex flex-col sm:flex-row items-center'
@@ -353,21 +353,21 @@ const AccSettings = () => {
 										}}>
 										<section className='w-full mt-6 text-sm flex-col flex gap-y-6 pb-8'>
 											<section className='flex flex-col gap-y-1'>
-												<label htmlFor='name'>{t('Imię')}</label>
+												<label htmlFor='name'>{t('Name')}</label>
 												<input type='text' id='name' className='input-style' />
 											</section>
 											<section className='flex flex-col gap-y-1'>
-												<label htmlFor='surname'>{t('Nazwisko')}</label>
+												<label htmlFor='surname'>{t('Surname')}</label>
 												<input type='text' id='surname' className='input-style' />
 											</section>
 											<section className='flex flex-col gap-y-1'>
-												<label htmlFor='surname'>{t('Potwierdź hasło')}</label>
+												<label htmlFor='surname'>{t('Confirm password')}</label>
 												<input type='text' id='surname' className='input-style' />
 											</section>
 										</section>
 									</section>
 									<section className='flex justify-end mt-2'>
-										<button className='orange-btn-style text-sm font-medium'>{t('Zaktualizuj hasło')}</button>
+										<button className='orange-btn-style text-sm font-medium'>{t('Update password')}</button>
 									</section>
 								</div>
 								<div
@@ -382,15 +382,15 @@ const AccSettings = () => {
 										style={{
 											borderBottom: '1px solid var(--gray-3232)',
 										}}>
-										{t('Uwierzytelnienia dwuskładnikowe')}
+										{t('Two-factor authentication')}
 									</h2>
-									<h1 className='mt-6 font-semibold'>{t('Nie włączyłeś uwierzytelniania dwuskładnikowego.')}</h1>
+									<h1 className='mt-6 font-semibold'>{t('You have not enabled two-factor authentication.')}</h1>
 									<p className='mt-4 text-sm max-w-[40rem]'>
 										{t(
-											'Po włączeniu uwierzytelniania dwuskładnikowego zostaniesz poproszony o bezpieczny, losowy token podczas uwierzytelniania. Możesz uzyskać ten token z aplikacji Google Authenticator swojego telefonu.'
+											"When you enable two-factor authentication, you will be asked for a secure, random token during authentication. You can get this token from your phone's Google Authenticator app."
 										)}
 									</p>
-									<button className='orange-btn-style mt-4'>{t('Włącz')}</button>
+									<button className='orange-btn-style mt-4'>{t('Turn on')}</button>
 								</div>
 								<div
 									ref={activeSessionsRef}
@@ -404,11 +404,11 @@ const AccSettings = () => {
 										style={{
 											borderBottom: '1px solid var(--gray-3232)',
 										}}>
-										{t('Aktywne sesje')}
+										{t('Active sessions')}
 									</h2>
 									<p className='mt-4 text-sm'>
 										{t(
-											'W razie potrzeby możesz wylogować się ze wszystkich innych sesji przeglądarki na wszystkich urządzeniach. Twoje ostatnie sesje są wymienione poniżej. Jeśli uważasz, że ktoś inny zalogował sie na twoje konto, powinieneś również zaktualizować swoje hasło. (Lokalizacje i adresy IP mogą być inne niż w rzeczywistości z powodu używania sieci VPN. Dzięki temu każdy użytkownik naszej strony jest bezpieczny i anonimowy.'
+											'If necessary, you can log out of all other browser sessions on all devices. Your most recent sessions are listed below. If you think someone else has logged into your account, you should also update your password. (Locations and IP addresses may not be what they actually are due to the use of a VPN. This keeps every user of our site safe and anonymous.'
 										)}
 									</p>
 									<section className='mt-6'>
@@ -419,14 +419,14 @@ const AccSettings = () => {
 													<h1 className='text-sm text-white'>Windows - Chrome</h1>
 													<span className='text-xs'>Warsaw, Poland</span>
 													<p className='text-xs'>
-														{t('Adres IP')} - <span className='text-green-300'>{t('to urządzenie')}</span>
+														{t('IP address..')} - <span className='text-green-300'>{t('This device')}</span>
 													</p>
 												</section>
 											</li>
 										</ul>
 									</section>
 									<button className='orange-outlined-btn-style text-sm py-1 px-3 transition-all mt-8'>
-										{t('Wyloguj z innych sesji')}
+										{t('Logout from other sessions')}
 									</button>
 								</div>
 								<div
@@ -441,7 +441,7 @@ const AccSettings = () => {
 										style={{
 											borderBottom: '1px solid var(--gray-3232)',
 										}}>
-										{t('Data, czas i język')}
+										{t('Date, time and language')}
 									</h2>
 									<section
 										className='flex flex-col sm:flex-row items-center'
@@ -450,7 +450,7 @@ const AccSettings = () => {
 										}}>
 										<section className='w-full mt-6 text-sm flex-col flex gap-y-6 pb-8'>
 											<section className='flex flex-col gap-y-1 justify-between relative'>
-												<span>{t('Język')}</span>
+												<span>{t('Language')}</span>
 												<button
 													ref={langSelectBtnRef}
 													className='btn-style-outlined min-h-10 justify-between'
@@ -497,7 +497,7 @@ const AccSettings = () => {
 												</div>
 											</section>
 											<section className='flex flex-col gap-y-1 relative'>
-												<span>{t('Kraj')}</span>
+												<span>{t('Country')}</span>
 												<button
 													ref={countrySelectBtnRef}
 													className='btn-style-outlined min-h-10 justify-between'
@@ -524,7 +524,7 @@ const AccSettings = () => {
 																	setCountryDropdownActive(false);
 																	setCountrySelected('Poland');
 																}}>
-																{t('Polska')}
+																{t('Poland')}
 															</button>
 														</li>
 														<li>
@@ -536,7 +536,7 @@ const AccSettings = () => {
 																	setCountryDropdownActive(false);
 																	setCountrySelected('England');
 																}}>
-																{t('Anglia')}
+																{t('England')}
 															</button>
 														</li>
 														<li>
@@ -548,7 +548,7 @@ const AccSettings = () => {
 																	setCountryDropdownActive(false);
 																	setCountrySelected('Norway');
 																}}>
-																{t('Norwegia')}
+																{t('Norway')}
 															</button>
 														</li>
 													</ul>
@@ -583,7 +583,7 @@ const AccSettings = () => {
 																	setTimeZoneDropdownActive(false);
 																	setTimeZoneSelected('Warsaw');
 																}}>
-																{t('Warszawa')}
+																{t('Warsaw')}
 															</button>
 														</li>
 														<li>
@@ -624,7 +624,7 @@ const AccSettings = () => {
 												const newPath = currentPath.startsWith('/pl') ? currentPath.replace('/pl', '/en') : '/pl';
 												window.location.href = newPath;
 											}}>
-											{t('Zapisz')}
+											{t('Save')}
 										</button>
 									</section>
 								</div>
@@ -640,7 +640,7 @@ const AccSettings = () => {
 										style={{
 											borderBottom: '1px solid var(--gray-3232)',
 										}}>
-										{t('Niebezpieczna strefa')}
+										{t('Dangerous zone')}
 									</h2>
 									<section
 										className='flex flex-col sm:flex-row items-center'
@@ -649,7 +649,7 @@ const AccSettings = () => {
 										}}></section>
 									<section className='mt-5'>
 										<button className='orange-btn-style !bg-red-500 hover:brightness-75 !transition-all text-sm font-medium'>
-											{t('Usuń konto')}
+											{t('Delete account')}
 										</button>
 									</section>
 								</div>

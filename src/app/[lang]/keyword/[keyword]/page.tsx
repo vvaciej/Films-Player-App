@@ -14,7 +14,7 @@ interface params {
 
 const Keywords: React.FC<params> = ({ params }) => {
 	const keywordArray = Array.isArray(params.keyword) ? params.keyword : [params.keyword];
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	useDocumentTitle(`${t(keywordArray.join(', '))} - vvaciej.app`);
 
 	const filteredByKeyword = IteratingFilmsPageArrays(allFilms, 'keywords', keywordArray);
@@ -29,8 +29,8 @@ const Keywords: React.FC<params> = ({ params }) => {
 							.join(', ')
 							.split(' ')
 							.map(word => word.charAt(0).toUpperCase() + word.slice(1).replace(/-/g, ' '))
-					: t('zastrzeżone')
-			}" ${t('słowo kluczowe')}`}
+					: t('restricted')
+			}" ${t('keyword')}`}
 			mappingBy={filteredByKeyword}
 		/>
 	);

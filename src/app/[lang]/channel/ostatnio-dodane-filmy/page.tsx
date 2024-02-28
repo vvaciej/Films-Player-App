@@ -9,11 +9,11 @@ import { useTranslation } from 'react-i18next';
 
 const LastAddedFilms: React.FC = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t(`Ostatnio dodane filmy`)} - vvaciej.app`);
+	useDocumentTitle(`${t(`Last added films`)} - vvaciej.app`);
 
 	const filteredMovies = IteratingFilmsPage(allFilms, 'category', 'lastadded');
 
-	return <Filters headingTitlePage='Ostatnio dodane filmy' mappingBy={filteredMovies} />;
+	return <Filters headingTitlePage='Last added films' mappingBy={filteredMovies} />;
 };
 
 export default LastAddedFilms;

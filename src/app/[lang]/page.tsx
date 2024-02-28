@@ -14,8 +14,11 @@ interface params {
 	};
 }
 
+import { useTranslation } from 'react-i18next';
+
 const Home: React.FC<params> = ({ params }) => {
-	useDocumentTitle('vvaciej.app - Darmowe filmy i seriale');
+	const { t } = useTranslation();
+	useDocumentTitle(`vvaciej.app - ${t('Darmowe filmy i seriale')}`);
 
 	return (
 		<div className='space-light'>

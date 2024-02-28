@@ -99,12 +99,12 @@ const Login: React.FC = () => {
 							<section className='flex flex-col gap-y-1 mb-6'>
 								<section className='flex justify-between'>
 									<label htmlFor='password' className='text-sm'>
-										{t('Hasło')}
+										{t('Password')}
 									</label>
 									<Link
 										href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/forgot-password`}
 										className='orange-link text-xs'>
-										{t('Zapomniałeś hasła?')}
+										{t('Forgot password?')}
 									</Link>
 								</section>
 								<input
@@ -127,12 +127,12 @@ const Login: React.FC = () => {
 										onClick={() => setRememberChecked(!rememberChecked)}
 									/>
 									<label htmlFor='remember' className='select-none text-sm'>
-										{t('Zapamiętaj')}
+										{t('Remember')}
 									</label>
 								</section>
 							</section>
 							<button className='orange-btn-style !w-full mb-4' type='submit'>
-								{t('Kontynuuj')}
+								{t('Continue')}
 							</button>
 						</form>
 					</main>
@@ -142,7 +142,7 @@ const Login: React.FC = () => {
 							style={{
 								color: 'var(--light-gray-d5d5)',
 							}}>
-							{t('Lub zaloguj się przez')}
+							{t('Or login by')}
 						</span>
 						<button
 							className='rounded transition-all hover:brightness-125'
@@ -162,9 +162,9 @@ const Login: React.FC = () => {
 					style={{
 						color: 'var(--light-gray-eee)',
 					}}>
-					<span>{t('Nie masz konta?')}&nbsp;</span>
+					<span>{t('Don\'t have account?')}&nbsp;</span>
 					<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`} className='orange-link'>
-						{t('Zarejestruj się')}
+						{t('Signin')}
 					</Link>
 				</p>
 			</div>
@@ -176,7 +176,7 @@ const Login: React.FC = () => {
 						color: 'var(--gray-9999)',
 						transform: 'translate(-50%)',
 					}}>
-					&copy; {t('Źródło')} obejrzyj.to
+					&copy; {t('Source')} obejrzyj.to
 				</Link>
 			</footer>
 		</div>

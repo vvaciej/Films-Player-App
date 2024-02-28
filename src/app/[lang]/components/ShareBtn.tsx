@@ -47,7 +47,7 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 					className='film-page-aside-btns orange-outlined-btn-style'
 					onClick={() => setShareDropdownActive(!shareDropdownActive)}>
 					<ShareIcon className='h-4' />
-					{t('Udostępnij')}
+					{t('Share')}
 				</button>
 			)}
 			<div
@@ -69,7 +69,7 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 						setTimeout(() => setIsVisibleSthDone(false), 2500);
 					}}>
 					<ClipboardDocumentCheckIcon className='h-6 text-zinc-200' />
-					<span className=' !text-[13px] text-zinc-200 w-max pl-2'>{t('Skopiuj link')}</span>
+					<span className=' !text-[13px] text-zinc-200 w-max pl-2'>{t('Copy link')}</span>
 				</button>
 				<button
 					className='flex items-center px-7 !py-[10.5px] btn-choosed-style w-full'
@@ -78,7 +78,7 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 						window.location.href = `https://www.facebook.com/share.php?u=${encodeURI(window.location.href)}`;
 					}}>
 					<FontAwesomeIcon icon={faFacebook} className='h-5 text-zinc-200' />
-					<span className='!text-[13px] text-zinc-200 w-max pl-3'>{t('Udostępnij na facebooku')}</span>
+					<span className='!text-[13px] text-zinc-200 w-max pl-3'>{t('Share on facebook')}</span>
 				</button>
 				<button
 					className='flex items-center px-7 !py-[10.5px] btn-choosed-style w-full'
@@ -87,7 +87,7 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 						window.location.href = `https://twitter.com/share?&url=${window.location.href}`;
 					}}>
 					<FontAwesomeIcon icon={faTwitter} className='h-5 text-zinc-200' />
-					<span className='!text-[13px] text-zinc-200 w-max pl-3'>{t('Udostępnij na twitterze')}</span>
+					<span className='!text-[13px] text-zinc-200 w-max pl-3'>{t('Share on twitter')}</span>
 				</button>
 			</div>
 		</section>

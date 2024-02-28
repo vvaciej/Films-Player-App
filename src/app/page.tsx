@@ -10,7 +10,7 @@ const Page = () => {
 
 	useEffect(() => {
 		if (window.location.pathname === '/' && window.location.hostname === 'www.vvaciej.codes') {
-			window.location.href = `/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}`;
+			window.location.href = `/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`;
 			document.cookie = `langChoosed=${getPageLangFromUrl()}`;
 		}
 	}, []);

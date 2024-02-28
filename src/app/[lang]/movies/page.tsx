@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 const Movies: React.FC = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t(`Wyszukiwarka filmów`)} - vvaciej.app`);
+	useDocumentTitle(`${t(`Search engine`)} - vvaciej.app`);
 
 	const filteredMovies = allFilms.filter(movie => {
 		const filmTypeLowerCase = movie.type.toLowerCase();
@@ -16,7 +16,7 @@ const Movies: React.FC = () => {
 		return filmTypeLowerCase === 'film';
 	});
 
-	return <Filters headingTitlePage={t('Filmy')} mappingBy={filteredMovies} />;
+	return <Filters headingTitlePage={t('Films')} mappingBy={filteredMovies as any} />;
 };
 
 export default Movies;

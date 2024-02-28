@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 const Policy: React.FC = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t('Rejestracja')} - vvaciej.app`);
+	useDocumentTitle(`${t('Signin')} - vvaciej.app`);
 
 	return (
 		<div className='space-dark !justify-center items-center'>
@@ -23,7 +23,7 @@ const Policy: React.FC = () => {
 						backgroundColor: 'var(--dark-1a1a)',
 						border: '1px solid var(--gray-3232)',
 					}}>
-					<h1 className='text-lg'>{t('Stwórz nowe konto')}</h1>
+					<h1 className='text-lg'>{t('Create new account')}</h1>
 					<main>
 						<form
 							className='flex flex-col mt-6 text-base'
@@ -38,18 +38,18 @@ const Policy: React.FC = () => {
 							</section>
 							<section className='flex flex-col gap-y-1 mb-6'>
 								<label htmlFor='password' className='text-sm'>
-									{t('Hasło')}
+									{t('Password')}
 								</label>
 								<input type='password' id='password' required className='orange-outline-focus input-style' />
 							</section>
 							<section className='flex flex-col gap-y-1 mb-6'>
 								<label htmlFor='confirm-password' className='text-sm'>
-									{t('Potwierdź hasło')}
+									{t('Confirm password')}
 								</label>
 								<input type='password' id='confirm-password' required className='orange-outline-focus input-style' />
 							</section>
 							<button className='orange-btn-style !w-full mb-4' type='submit'>
-								{t('Stwórz konto')}
+								{t('Create account')}
 							</button>
 						</form>
 					</main>
@@ -59,7 +59,7 @@ const Policy: React.FC = () => {
 							style={{
 								color: 'var(--light-gray-d5d5)',
 							}}>
-							{t('Lub zarejestruj sie przez')}
+							{t('Or signin by')}
 						</span>
 						<button
 							className='rounded transition-all hover:brightness-125'
@@ -79,9 +79,9 @@ const Policy: React.FC = () => {
 					style={{
 						color: 'var(--light-gray-eee)',
 					}}>
-					<span>{t('Masz już konto?')}</span>
+					<span>{t('Already have an account?')}</span>
 					<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`} className='orange-link'>
-						&nbsp;{t('Zaloguj sie')}
+						&nbsp;{t('Login')}
 					</Link>
 				</p>
 			</div>
@@ -93,7 +93,7 @@ const Policy: React.FC = () => {
 						color: 'var(--gray-9999)',
 						transform: 'translate(-50%)',
 					}}>
-					&copy; {t('Źródło')} obejrzyj.to
+					&copy; {t('Source')} obejrzyj.to
 				</Link>
 			</footer>
 		</div>

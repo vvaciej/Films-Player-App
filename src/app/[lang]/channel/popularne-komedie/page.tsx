@@ -9,11 +9,11 @@ import { useTranslation } from 'react-i18next';
 
 const PopularComedyFilms: React.FC = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t(`Popularne komedie`)} - vvaciej.app`);
+	useDocumentTitle(`${t(`Popular comedies`)} - vvaciej.app`);
 
 	const filteredMovies = IteratingFilmsPage(allFilms, 'category', 'popularcomedia');
 
-	return <Filters headingTitlePage='Popularne komedie' mappingBy={filteredMovies} />;
+	return <Filters headingTitlePage='Popular comedies' mappingBy={filteredMovies} />;
 };
 
 export default PopularComedyFilms;

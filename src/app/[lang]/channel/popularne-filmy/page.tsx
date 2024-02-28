@@ -9,11 +9,11 @@ import { useTranslation } from 'react-i18next';
 
 const PopularFilms: React.FC = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t(`Popularne filmy`)} - vvaciej.app`);
+	useDocumentTitle(`${t(`Popular films`)} - vvaciej.app`);
 
 	const filteredMovies = IteratingFilmsPage(allFilms, 'category', 'popular');
 
-	return <Filters headingTitlePage='Popularne filmy' mappingBy={filteredMovies} />;
+	return <Filters headingTitlePage='Popular films' mappingBy={filteredMovies} />;
 };
 
 export default PopularFilms;

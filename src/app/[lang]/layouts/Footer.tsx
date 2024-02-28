@@ -63,10 +63,10 @@ export const Footer: React.FC = () => {
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/pages/regulamin`}
 							className='orange-link'>
-							{t('Regulamin')}
+							{t('Rules')}
 						</Link>
 						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/kontakt`} className='orange-link'>
-							{t('Kontakt')}
+							{t('Contact')}
 						</Link>
 					</section>
 					<section className='footer-topside-rightside-section flex gap-x-7 text-xl'>

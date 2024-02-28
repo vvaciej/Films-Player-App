@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 import getCookie from '../../../helpers/GetCookie';
 import { allFilms } from '../data/films-data';
 import { useTranslation } from 'react-i18next';
-import IteratingFilmsPage from '../../../helpers/FilmsIteratingFilter';
 
 import Filters from '../components/FilmsFilterContainer';
 
@@ -36,7 +35,7 @@ const Watchlist = () => {
 			<Navbar isCutted={false} />
 			<div className='content-full-space-centered'>
 				{isLogged ? (
-					<Filters headingTitlePage={t('Do obejrzenia')} mappingBy={findedMovies} />
+					<Filters headingTitlePage={t('Watchlist')} mappingBy={findedMovies as any} />
 				) : (
 					<div className='h-full absolute right-1/2 top-36 translate-x-1/2'>
 						<div className='loader'></div>

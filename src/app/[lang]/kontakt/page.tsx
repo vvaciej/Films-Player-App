@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 const Kontakt: React.FC = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t(`Skontaktuj się`)} - vvaciej.app`);
+	useDocumentTitle(`${t(`Get in touch`)} - vvaciej.app`);
 
 	return (
 		<div className='space-dark'>
@@ -19,12 +19,8 @@ const Kontakt: React.FC = () => {
 						style={{
 							border: '1px solid var(--gray-3232)',
 						}}>
-						<h1 className='text-2xl mb-1'>{t('Skontaktuj się')}</h1>
-						<p>
-							{t(
-								'Użyj poniższego formularza, aby przesłać nam wiadomość, a my skontaktujemy się z Tobą jak najszybciej.'
-							)}
-						</p>
+						<h1 className='text-2xl mb-1'>{t('Get in touch')}</h1>
+						<p>{t('Use the form below to send us a message, and we will contact you as soon as possible.')}</p>
 						<form
 							className='flex flex-col gap-y-6 mt-10'
 							style={{
@@ -32,7 +28,7 @@ const Kontakt: React.FC = () => {
 							}}
 							onSubmit={event => event.preventDefault()}>
 							<section className='flex flex-col gap-1 w-full'>
-								<label htmlFor='title'>{t('Tytuł')}</label>
+								<label htmlFor='title'>{t('Title')}</label>
 								<input className='input-style orange-outline-focus' type='text' id='title' required />
 							</section>
 							<section className='flex flex-col gap-1 w-full'>
@@ -40,12 +36,12 @@ const Kontakt: React.FC = () => {
 								<input className='input-style orange-outline-focus' type='text' id='email' required />
 							</section>
 							<section className='flex flex-col gap-1 w-full'>
-								<label htmlFor='message'>{t('Wiadomość')}</label>
+								<label htmlFor='message'>{t('Message')}</label>
 								<textarea className='input-style orange-outline-focus !pt-2 !h-[11rem]' id='message' required />
 							</section>
 							<section className='w-full text-end'>
 								<button className='orange-btn-style' type='submit'>
-									{t('Wyślij')}
+									{t('Send')}
 								</button>
 							</section>
 						</form>

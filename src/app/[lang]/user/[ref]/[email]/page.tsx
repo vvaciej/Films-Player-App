@@ -25,7 +25,7 @@ const UserPage = () => {
 		}
 	}, []);
 
-	const [selectedMode, setSelectedMode] = useState<string>('Listy');
+	const [selectedMode, setSelectedMode] = useState<string>('Lists');
 
 	return (
 		<div className='space-light'>
@@ -46,14 +46,14 @@ const UserPage = () => {
 										href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/account-settings`}
 										className='btn-style-outlined !text-xs'>
 										<PencilIcon className='h-4' />
-										<span>{t('Edytuj profil')}</span>
+										<span>{t('Edit profile')}</span>
 									</Link>
 								</section>
 							</section>
 							<section className='flex gap-x-3 items-center'>
 								<section className='flex flex-col items-center uppercase'>
 									<b className='text-lg'>0</b>
-									<span className='text-xs text-zinc-300'>{t('Obserwujący')}</span>
+									<span className='text-xs text-zinc-300'>{t('Followers')}</span>
 								</section>
 								<hr
 									className='border-r-2 h-8'
@@ -63,7 +63,7 @@ const UserPage = () => {
 								/>
 								<section className='flex flex-col items-center uppercase'>
 									<b className='text-lg'>0</b>
-									<span className='text-xs text-zinc-300'>{t('Obserwuje')}</span>
+									<span className='text-xs text-zinc-300'>{t('Following')}</span>
 								</section>
 								<hr
 									className='border-r-2 h-8'
@@ -92,122 +92,122 @@ const UserPage = () => {
 											borderBottom: '1px solid var(--dark-orange)',
 											borderColor: 'var(--dark-orange)',
 											left:
-												selectedMode === 'Listy'
+												selectedMode === 'Lists'
 													? '0'
-													: selectedMode === 'Oceny'
+													: selectedMode === 'Grades'
 													? '128px'
-													: selectedMode === 'Recenzje'
+													: selectedMode === 'Reviews'
 													? 'calc(128px * 2)'
-													: selectedMode === 'Komentarze'
+													: selectedMode === 'Comments'
 													? 'calc(128px * 3)'
-													: selectedMode === 'Obserwujący'
+													: selectedMode === 'Followers'
 													? 'calc(128px * 4)'
-													: selectedMode === 'Obserwuje'
+													: selectedMode === 'Following'
 													? 'calc(128px * 5)'
 													: '',
 										}}></hr>
 									<button
-										onClick={() => setSelectedMode('Listy')}
+										onClick={() => setSelectedMode('Lists')}
 										className='hover:brightness-125 w-full p-3'
 										style={{
-											color: selectedMode === 'Listy' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
+											color: selectedMode === 'Lists' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
 										}}>
-										{t('Listy')}
+										{t('Lists')}
 									</button>
 									<button
-										onClick={() => setSelectedMode('Oceny')}
+										onClick={() => setSelectedMode('Grades')}
 										className='hover:brightness-125 w-full p-3'
 										style={{
-											color: selectedMode === 'Oceny' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
+											color: selectedMode === 'Grades' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
 										}}>
-										{t('Oceny')}
+										{t('Grades')}
 									</button>
 									<button
-										onClick={() => setSelectedMode('Recenzje')}
+										onClick={() => setSelectedMode('Reviews')}
 										className='hover:brightness-125 w-full p-3'
 										style={{
-											color: selectedMode === 'Recenzje' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
+											color: selectedMode === 'Reviews' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
 										}}>
-										{t('Recenzje')}
+										{t('Reviews')}
 									</button>
 									<button
-										onClick={() => setSelectedMode('Komentarze')}
+										onClick={() => setSelectedMode('Comments')}
 										className='hover:brightness-125 w-full p-3'
 										style={{
-											color: selectedMode === 'Komentarze' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
+											color: selectedMode === 'Comments' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
 										}}>
-										{t('Komentarze')}
+										{t('Comments')}
 									</button>
 									<button
-										onClick={() => setSelectedMode('Obserwujący')}
+										onClick={() => setSelectedMode('Followers')}
 										className='hover:brightness-125 w-full p-3'
 										style={{
-											color: selectedMode === 'Obserwujący' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
+											color: selectedMode === 'Followers' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
 										}}>
-										{t('Obserwujący')}
+										{t('Followers')}
 									</button>
 									<button
-										onClick={() => setSelectedMode('Obserwuje')}
+										onClick={() => setSelectedMode('Following')}
 										className='hover:brightness-125 w-full p-3'
 										style={{
-											color: selectedMode === 'Obserwuje' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
+											color: selectedMode === 'Following' ? 'var(--dark-orange)' : 'var(--light-gray-ddd)',
 										}}>
-										{t('Obserwuje')}
+										{t('Following')}
 									</button>
 								</section>
 							</div>
 							<div className='content-full-space-centered flex-col items-center gap-y-1 mt-10'>
-								{selectedMode === 'Listy' ? (
+								{selectedMode === 'Lists' ? (
 									<>
 										<BookmarkSlashIcon className='h-5' />
-										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak list')}</h3>
+										<h3 className='text-md text-zinc-200 mt-1'>{t('No lists')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											{t('Zaobserwuj')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
-											{t('o aktualizacje list, które utworzą w przyszłości.')}
+											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
+											{t('for updates on lists they create in the future.')}
 										</p>
 									</>
-								) : selectedMode === 'Oceny' ? (
+								) : selectedMode === 'Grades' ? (
 									<>
 										<StarIcon className='h-5' />
 										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak ocen')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											{t('Zaobserwuj')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
-											{t('o aktualizacje list, które utworzą w przyszłości.')}
+											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
+											{t('for updates on lists they create in the future.')}
 										</p>
 									</>
-								) : selectedMode === 'Recenzje' ? (
+								) : selectedMode === 'Reviews' ? (
 									<>
 										<PencilIcon className='h-5' />
 										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak recenzji')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											{t('Zaobserwuj')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
-											{t('o aktualizacje list, które utworzą w przyszłości.')}
+											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
+											{t('for updates on lists they create in the future.')}
 										</p>
 									</>
-								) : selectedMode === 'Komentarze' ? (
+								) : selectedMode === 'Comments' ? (
 									<>
 										<PencilIcon className='h-5' />
 										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak komentarzy')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											{t('Zaobserwuj')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
-											{t('o aktualizacje list, które utworzą w przyszłości.')}
+											{t('Follow')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}
+											{t('for updates on lists they create in the future.')}
 										</p>
 									</>
-								) : selectedMode === 'Obserwujący' ? (
+								) : selectedMode === 'Followers' ? (
 									<>
 										<BookmarkIcon className='h-5' />
-										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak obserwujących')}</h3>
+										<h3 className='text-md text-zinc-200 mt-1'>{t('Brak Followersch')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
 											Be the first to follow {getCookie('email').match(/^(.+)@/)?.[1] || ''}.
 										</p>
 									</>
-								) : selectedMode === 'Obserwuje' ? (
+								) : selectedMode === 'Following' ? (
 									<>
 										<BookmarkIcon className='h-5' />
-										<h3 className='text-md text-zinc-200 mt-1'>{t('Nikogo jeszcze nie obserwuje')}</h3>
+										<h3 className='text-md text-zinc-200 mt-1'>{t('No followers yet')}</h3>
 										<p className='text-[13.2px] text-zinc-400 text-center'>
-											{t('Sprawdź później, aby zobaczyć użytkowników')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}{' '}
-											{t('obserwujących')}
+											{t('Check back later to see users')} {getCookie('email').match(/^(.+)@/)?.[1] || ''}{' '}
+											{t('Followers')}
 										</p>
 									</>
 								) : (

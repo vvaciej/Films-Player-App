@@ -35,7 +35,7 @@ type FilmData = {
 };
 
 export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 
 	const [isClickedBtn, setIsClickedBtn] = useState<boolean>(false);
 	const [isUserOrMenuClicked, setIsUserOrMenuClicked] = useState<string | null>(null);
@@ -200,7 +200,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 										getCookie('filterOrderChoosed') || 'most_popular'
 									}`}>
 									<FilmIcon className='header-fa' />
-									<span>{t('Filmy')}</span>
+									<span>{t('Films')}</span>
 								</Link>
 							</section>
 							<section>
@@ -210,7 +210,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 										getCookie('filterOrderChoosed') || 'most_popular'
 									}`}>
 									<TvIcon className='header-fa' />
-									<span>{t('Seriale')}</span>
+									<span>{t('Serials')}</span>
 								</Link>
 							</section>
 						</section>
@@ -244,13 +244,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 									}`}
 									className='user-dropdown-options'>
 									<CheckBadgeIcon className='h-5' />
-									{t('Do obejrzenia')}
+									{t('Watchlist')}
 								</Link>
 								<Link
 									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/account-settings`}
 									className='user-dropdown-options'>
 									<Cog8ToothIcon className='h-5' />
-									{t('Ustawienia konta')}
+									{t('Account settings')}
 								</Link>
 								<Link
 									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/user/${getCookie('ref') || 1}/${
@@ -258,11 +258,11 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 									}`}
 									className='user-dropdown-options'>
 									<UserCircleIcon className='h-5' />
-									{t('Mój profil')}
+									{t('My profile')}
 								</Link>
 								<button className='user-dropdown-options' onClick={() => deleteCookie('email')}>
 									<ArrowRightEndOnRectangleIcon className='h-5' />
-									{t('Wyloguj sie')}
+									{t('Logout')}
 								</button>
 							</div>
 						</>
@@ -271,12 +271,12 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							<Link
 								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`}
 								className='transparent-btn-style'>
-								Rejestracja
+								{t('Sign in')}
 							</Link>
 							<Link
 								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}
 								className='orange-btn-style'>
-								Logowanie
+								{t('Logging')}
 							</Link>
 						</>
 					)}
@@ -307,14 +307,14 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								getCookie('filterOrderChoosed') || 'most_popular'
 							}`}>
 							<FilmIcon className='h-5' />
-							<span>Filmy</span>
+							<span>{t('Films')}</span>
 						</Link>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/series?order=${
 								getCookie('filterOrderChoosed') || 'most_popular'
 							}`}>
 							<TvIcon className='h-5' />
-							<span>Seriale</span>
+							<span>{t('Serials')}</span>
 						</Link>
 					</nav>
 				) : isLogged ? (
@@ -330,13 +330,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							}`}
 							className='user-dropdown-options'>
 							<CheckBadgeIcon className='h-5' />
-							Do obejrzenia
+							{t('Watchlist')}
 						</Link>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/account-settings`}
 							className='user-dropdown-options'>
 							<Cog8ToothIcon className='h-5' />
-							Ustawienia konta
+							{t('Account settings')}
 						</Link>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/user/${getCookie('ref') || 1}/${
@@ -344,11 +344,11 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 							}`}
 							className='user-dropdown-options'>
 							<UserCircleIcon className='h-5' />
-							Mój profil
+							{t('My profile')}
 						</Link>
 						<button className='user-dropdown-options' onClick={() => deleteCookie('email')}>
 							<ArrowRightEndOnRectangleIcon className='h-5' />
-							Wyloguj się
+							{t('Logout')}
 						</button>
 					</div>
 				) : (
@@ -356,8 +356,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 						style={{
 							height: '6rem',
 						}}>
-						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}>Logowanie</Link>
-						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`}>Rejestracja</Link>
+						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}>{t('Logging')}</Link>
+						<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`}>{t('Register')}</Link>
 					</nav>
 				)}
 			</div>

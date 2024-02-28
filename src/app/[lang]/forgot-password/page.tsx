@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 const Login: React.FC = () => {
 	const { t } = useTranslation();
-	useDocumentTitle(`${t(`Logowanie`)} - vvaciej.app`);
+	useDocumentTitle(`${t(`Sign in`)} - vvaciej.app`);
 
 	return (
 		<div className='space-dark !justify-center items-center'>
@@ -35,7 +35,7 @@ const Login: React.FC = () => {
 							<input type='text' className='orange-outline-focus input-style' id='email' />
 						</section>
 						<button className='orange-btn-style !w-full text-base font-medium' type='submit'>
-							{t('Kontynuuj')}
+							{t('Continue')}
 						</button>
 					</form>
 				</main>
@@ -44,9 +44,9 @@ const Login: React.FC = () => {
 					style={{
 						color: 'var(--light-gray-eee)',
 					}}>
-					<span>{t('Nie masz konta?')}</span>
+					<span>{t('Don\'t have an account?')}</span>
 					<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`} className='orange-link'>
-						&nbsp;{t('Zaloguj sie')}
+						&nbsp;{t('Sign in')}
 					</Link>
 				</p>
 			</div>
@@ -58,7 +58,7 @@ const Login: React.FC = () => {
 						color: 'var(--gray-9999)',
 						transform: 'translate(-50%)',
 					}}>
-					&copy; {t('Źródło')} obejrzyj.to
+					&copy; {t('Source')} obejrzyj.to
 				</Link>
 			</footer>
 		</div>

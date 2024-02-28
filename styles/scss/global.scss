@@ -542,7 +542,7 @@ body {
 	}
 }
 
-.films-wrapper-pejzaz {
+.films-wrapper-landscape {
 	height: 100%;
 	width: 100%;
 	display: grid;
@@ -556,17 +556,12 @@ body {
 		column-gap: 1rem;
 		row-gap: 1.7rem;
 	}
-	@include tablet-800 {
+	@include tablet-700 {
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 0.8rem;
 	}
-	@include mobile-365 {
+	@include mobile-500 {
 		grid-template-columns: repeat(1, 1fr);
-	}
-	.film-container-pejzaz {
-		img {
-			width: 100%;
-		}
 	}
 }
 
