@@ -56,7 +56,8 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 				<Head>
 					<link rel='icon' href='/vercel.svg' />
 					<meta name='theme-color' content='#1a1a1a' />
-					<meta name='description' content={t('Free films and serials online!')} />
+					<meta property='og:title' content={t('Free films and serials online!')} />
+					<meta property='og:description' content={t('vvaciej.app to popularna baza z filmami i serialami w pełni za darmo')} />
 					<meta name='keywords' content='filmy, seriale, filmy i seriale za darmo, filmy za darmo, seriale za darmo' />
 					<meta property='og:image' content='/favicon.ico' />
 				</Head>
