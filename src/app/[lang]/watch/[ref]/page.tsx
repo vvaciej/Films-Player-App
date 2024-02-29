@@ -102,7 +102,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 												src={infoOfChoosedFilm?.image}
 												alt={`Poster for ${t(infoOfChoosedFilm?.title || '')}`}
 											/>
-											<section className='flex flex-col items-start gap-x-2 w-full border-b-[1px] pb-5 border-gray3232'>
+											<section className='flex flex-col items-start gap-x-2 w-full sm:border-0 border-b-[1px] pb-5 border-gray3232'>
 												<h1 className='text-2xl font-medium'>{t(infoOfChoosedFilm?.title || '')}</h1>
 												<section className='flex gap-x-2 items-center justify-between w-full mb-1'>
 													<section className='flex'>
@@ -176,7 +176,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 										className={`min-w-[260px] hidden lg:block ${
 											findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).length > 0
 												? 'block'
-												: 'hidden'
+												: '!hidden'
 										}`}>
 										<section className='films-heading-section'>
 											<h1 className='films-category-heading-text !text-2xl mb-4'>{t('Alike')}</h1>
