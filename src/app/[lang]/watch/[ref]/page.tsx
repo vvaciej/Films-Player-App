@@ -96,7 +96,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 								</main>
 								<div className='lg:mt-10 mt-8 h-max flex gap-x-8 lg:gap-x-12'>
 									<section className='watch-film-page-text-section w-full'>
-										<section className='flex gap-x-3 sm:gap-x-4 max-h-[209px] mb-6'>
+										<section className='flex gap-x-3 sm:gap-x-4 max-h-[209px] mb-24'>
 											<img
 												className='max-h-[209px] sm:block hidden rounded'
 												src={infoOfChoosedFilm?.image}
