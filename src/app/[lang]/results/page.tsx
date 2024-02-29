@@ -122,7 +122,7 @@ const SearchPage: React.FC = () => {
 											{t('Movies')}
 										</h1>
 									</section>
-									<div className='films-wrapper'>
+									<div className='films-wrapper-default-mode'>
 										{searchResults.map((film: FilmData, index: number) => (
 											<article className='film-container w-full' key={index}>
 												<section className='films-image-section'>

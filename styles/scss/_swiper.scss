@@ -1,0 +1,28 @@
+.films-category-control-btns {
+	display: flex;
+	column-gap: 1.5rem;
+	@include tablet-768 {
+		column-gap: 0.8rem;
+	}
+	@include mobile-600 {
+		display: none;
+	}
+	.films-category-control-btn {
+		height: 2.3rem;
+		width: 2.3rem;
+		border-radius: 50%;
+		transition: background-color 0.2s;
+		@include flex-center;
+		&:not(.swiper-button-disabled):hover {
+			background-color: var(--gray-3232);
+			transition: background-color 0.2s;
+		}
+	}
+	.films-category-control-btn.swiper-button-disabled {
+		color: var(--gray-3232);
+	}
+}
+
+.swiper-wrapper {
+	overflow-y: hidden !important;
+}

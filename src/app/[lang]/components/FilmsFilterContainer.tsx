@@ -49,12 +49,10 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 	useEffect(() => {
 		document.cookie = `filmModeChoosed=${filmModeChoosed}; path=/;`;
 		document.cookie = `filterOrderChoosed=${filterOrderChoosed}; path=/;`;
-	}, [filmModeChoosed, filterOrderChoosed]);
 
-	useEffect(() => {
 		const filmModeCookie = getCookie('filmModeChoosed');
 		const filterOrderCookie = getCookie('filterOrderChoosed');
-
+	
 		setFilmModeChoosed(filmModeCookie || 'Portrait');
 		setFilterOrderChoosed(filterOrderCookie || 'most_popular');
 	}, [filmModeChoosed, filterOrderChoosed]);
@@ -249,7 +247,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 						</section>
 					</section>
 					{filmModeChoosed === 'Portrait' ? (
-						<section className='films-wrapper'>
+						<section className='films-wrapper-default-mode'>
 							{mappingBy.map((film: FilmData, index: number) => (
 								<article className='film-container w-full' key={index}>
 									<section className='films-image-section'>

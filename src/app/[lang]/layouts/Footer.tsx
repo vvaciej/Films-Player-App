@@ -36,19 +36,17 @@ export const Footer: React.FC = () => {
 	};
 
 	useEffect(() => {
-		document.body.addEventListener('click', handleDocumentClick);
-
-		return () => {
-			document.body.removeEventListener('click', handleDocumentClick);
-		};
-	}, []);
-
-	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const url = window.location.pathname;
 			const urlLang = url.startsWith('/en') ? 'english' : 'polish';
 			setLangSelected(urlLang);
 		}
+
+		document.body.addEventListener('click', handleDocumentClick);
+
+		return () => {
+			document.body.removeEventListener('click', handleDocumentClick);
+		};
 	}, []);
 
 	return (

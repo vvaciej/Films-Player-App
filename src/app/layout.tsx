@@ -32,20 +32,18 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 		const scrollYPosition = Number(getCookie('scrollY'));
 
 		window.scrollTo(0, scrollYPosition);
-	}, []);
 
-	const handleScroll = () => {
-		const scrollYPosition = window.scrollY;
-		document.cookie = `scrollY=${scrollYPosition}; path=/`;
-	};
-
-	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
 
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
+
+	const handleScroll = () => {
+		const scrollYPosition = window.scrollY;
+		document.cookie = `scrollY=${scrollYPosition}; path=/`;
+	};
 
 	return (
 		<>
