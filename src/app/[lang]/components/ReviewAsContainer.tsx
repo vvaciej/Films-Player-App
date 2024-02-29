@@ -22,7 +22,10 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 
 	return (
 		<>
-			<div className='bg-dark0f0f p-5 px-3 rounded w-full gap-y-4 flex outline-[1px] outline outline-gray3232 flex-col'>
+			<div
+				className={`bg-dark0f0f p-5 px-3 rounded w-full gap-y-4 flex outline-[1px] outline outline-gray3232 flex-col ${
+					reviewAdded ? 'hidden' : 'block'
+				} `}>
 				<section className='flex sm:items-center justify-between flex-col sm:flex-row gap-y-2'>
 					<section className='!w-max px-[2px] text-lightGrayD0d0 text-sm flex mb-1'>
 						{isLogged ? (
@@ -42,7 +45,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 								{t('Review by')}&nbsp;
 								<b className='text-white'>{isLogged ? getCookie('email').match(/^(.+)@/)?.[1] || '' : ''}</b>
 							</span>
-							<section className={`flex mt-1 ${reviewAdded ? 'hidden' : 'block'}`}>
+							<section className={`flex mt-1`}>
 								{Array.from({ length: 10 }).map((_, index: number) => (
 									<StarIcon
 										className={`sm:h-6 h-5 cursor-pointer sm:px-1 pr-1 ${
@@ -62,9 +65,6 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 									/>
 								))}
 							</section>
-							<section className={`${reviewAdded ? 'block' : 'hidden'} pl-1 mt-1`}>
-								<b>Recenzja została dodana</b>
-							</section>
 						</section>
 					</section>
 					<button
@@ -83,7 +83,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 				</section>
 				{isLogged && isAddOpinionSelected ? (
 					<>
-						<div className={`${reviewAdded ? 'hidden' : 'block'}`}>
+						<div>
 							<section className='flex flex-col gap-y-4 sm:gap-y-7 w-full mt-3'>
 								<section className='flex flex-col gap-y-1'>
 									<label className='text-sm' htmlFor='title'>
@@ -153,19 +153,22 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 				)}
 			</div>
 			{reviewAdded ? (
-				<div className={`w-full h-max mt-8 ${reviewAdded ? 'block' : 'hidden'}`}>
-					<div className='h-max px-5 flex gap-x-1'>
+				<div
+					className={`w-full h-max mt-6 ${
+						reviewAdded ? 'block' : 'hidden'
+					} bg-dark0f0f rounded outline outline-[1px] outline-gray3232 p-3 py-4`}>
+					<div className='h-max px-5 flex gap-x-1 border-b-[1px] border-gray3232 pb-3'>
 						<img
 							src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
 							alt='user avatar'
 							className='mr-4 hidden sm:block w-12 h-max outline-[1px] outline outline-gray3232 rounded-[50%]'></img>
-						<section className={`flex gap-y-1 flex-col`}>
+						<section className={`flex gap-y-1 flex-col w-full overflow-hidden`}>
 							<h1 className='font-medium'>{getCookie('email').match(/^(.+)@/)?.[1] || ''}</h1>
 							<section className='flex gap-x-2 items-center'>
 								<StarIcon className='text-orange h-6 w-max' />
 								<span className='text-sm'>{indexStars || infoOfChoosedFilm?.rating} / 10</span>
 							</section>
-							<h1 className='font-medium mt-1'>{reviewTitle}</h1>
+							<h1 className='font-medium mb-1 text-base'>{reviewTitle}</h1>
 							<p className='text-sm font-light'>{reviewDescription}</p>
 						</section>
 					</div>
