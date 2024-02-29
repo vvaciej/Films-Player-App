@@ -169,7 +169,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 								<span className='text-sm'>{indexStars || infoOfChoosedFilm?.rating} / 10</span>
 							</section>
 							<h1 className='font-medium mb-1 text-base'>{reviewTitle}</h1>
-							<p className='text-sm font-light'>{reviewDescription}</p>
+							<p className='text-sm font-normal'>{reviewDescription}</p>
 						</section>
 					</div>
 				</div>

@@ -85,9 +85,7 @@ const Login: React.FC = () => {
 									id='email'
 									required
 									minLength={5}
-									className={`orange-outline-focus input-style ${
-										isLogged ? '' : 'outline-[1px] outline outline-[rgba(239, 58, 48, 0.704)]'
-									}`}
+									className={`orange-outline-focus input-style transition-all`}
 								/>
 							</section>
 							<section className='flex flex-col gap-y-1 mb-6'>
@@ -108,9 +106,7 @@ const Login: React.FC = () => {
 									required
 									minLength={4}
 									maxLength={30}
-									className={`orange-outline-focus input-style ${
-										isLogged ? '' : 'outline-[1px] outline outline-[rgba(239, 58, 48, 0.704)]'
-									}`}
+									className={`orange-outline-focus input-style transition-all`}
 								/>
 								<section className='flex items-center gap-x-2 mt-2'>
 									<input
@@ -124,7 +120,19 @@ const Login: React.FC = () => {
 									</label>
 								</section>
 							</section>
-							<button className='orange-btn-style !w-full mb-4' type='submit'>
+							<button
+								className='orange-btn-style !w-full mb-4'
+								type='submit'
+								onClick={() => {
+									passwordInputRef.current.style.outline = '1px solid var(--red)';
+									emailInputRef.current.style.outline = '1px solid var(--red)';
+									setTimeout(() => {
+										if (!isLogged) {
+											passwordInputRef.current.style.outline = '';
+											emailInputRef.current.style.outline = '';
+										}
+									}, 1200);
+								}}>
 								{t('Continue')}
 							</button>
 						</form>
