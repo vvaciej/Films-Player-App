@@ -359,6 +359,7 @@ html.dark {
 			display: block;
 			background-repeat: no-repeat;
 			padding-top: 1px;
+			padding-left: 1px;
 		}
 	}
 }
@@ -478,6 +479,7 @@ html.dark {
 		display: block;
 	}
 	&:not(.active) {
+		pointer-events: none;
 		opacity: 0;
 		bottom: -100px;
 	}

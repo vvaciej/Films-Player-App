@@ -244,6 +244,7 @@ i18next.use(initReactI18next).init({
 				'Search movie or serial': 'Szukaj filmu lub serialu',
 				Films: 'Filmy',
 				Serials: 'Seriale',
+				'Continue': 'Kontynuuj',
 				'Take me there!': 'Zabierz mnie tam!',
 				'Not found': 'Nie znaleziono',
 				'Sorry about that! Please visit our homepage to get where you need to go.':

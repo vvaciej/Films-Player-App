@@ -294,7 +294,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 			<div
 				ref={mobileDropdownsRef}
 				className={`typical-dropdown-style-mobiles h-max ${
-					isClickedBtn ? 'active pointer-events-auto' : 'pointer-events-none'
+					isClickedBtn ? 'active' : ''
 				}`}>
 				{isUserOrMenuClicked === 'menu' ? (
 					<nav className='h-[6rem]'>
