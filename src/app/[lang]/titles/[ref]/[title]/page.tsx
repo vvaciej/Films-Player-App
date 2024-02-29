@@ -174,8 +174,22 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 															: 'outline-[1px] outline outline-gray3232 text-gray9999'
 													}`}
 													onClick={() => {
-														if (infoOfChoosedFilm?.ref !== undefined) {
+														if (
+															infoOfChoosedFilm?.ref !== undefined &&
+															!refsAddedToWatchlist.has(infoOfChoosedFilm?.ref)
+														) {
 															setRefsAddedToWatchlist(prevSet => new Set([...prevSet, infoOfChoosedFilm.ref]));
+														} else {
+															if (
+																infoOfChoosedFilm?.ref !== undefined &&
+																refsAddedToWatchlist.has(infoOfChoosedFilm?.ref)
+															) {
+																setRefsAddedToWatchlist(prevSet => {
+																	const newSet = new Set([...prevSet]);
+																	newSet.delete(infoOfChoosedFilm.ref);
+																	return newSet;
+																});
+															}
 														}
 													}}>
 													{refsAddedToWatchlist.has(infoOfChoosedFilm?.ref) ? (
@@ -304,12 +318,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													<section className='main-text-rating flex items-center min-w-max'>
 														<StarIcon className='h-5 mr-2 text-orange' />
 														<span>{infoOfChoosedFilm?.rating} / 10</span>
-														<span className='film-list-rating-separate-symbol ml-3 text-gray5050'>|</span>
 													</section>
-													<button className='btn-style-outlined ml-4'>
-														<Bars3BottomLeftIcon className='h-4' />
-														{t('Newest')}
-													</button>
 												</section>
 											</section>
 											<ReviewAs infoOfChoosedFilm={infoOfChoosedFilm} />

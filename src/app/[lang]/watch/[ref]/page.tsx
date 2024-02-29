@@ -171,17 +171,6 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 												<p className=' text-gray-300 text-[13.4px]'>{t(infoOfChoosedFilm?.description || '')}</p>
 											</section>
 										</section>
-										<section>
-											<section className='flex gap-x-2 mt-8 mb-2'>
-												<ChatBubbleBottomCenterIcon className='h-5' />
-												<span className='text-sm'>0 {t('comments')}</span>
-											</section>
-											<hr className='border-zinc-700 border-1 w-full' />
-										</section>
-										<section className='text-center text-sm mt-8'>
-											<h2 className='mb-1 text-[15.2px]'>{t('Seems a little quiet over here')}</h2>
-											<span className='text-gray-300'>{t('Bądź pierwszym komentującym')}</span>
-										</section>
 									</section>
 									<aside
 										className={`min-w-[260px] watch-page-aside-container ${
@@ -190,7 +179,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 												: 'hidden'
 										}`}>
 										<section className='films-heading-section'>
-											<h1 className='films-category-heading-text !text-2xl'>{t('Alike')}</h1>
+											<h1 className='films-category-heading-text !text-2xl mb-4'>{t('Alike')}</h1>
 										</section>
 										<section>
 											{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title)
