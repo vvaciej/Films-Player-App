@@ -318,8 +318,10 @@ i18next.use(initReactI18next).init({
 					'Wprowadź swój adres email aby otrzymać link do zresetowania hasła.',
 				"Don't have an account?": 'Nie masz konta?',
 				'Sign up': 'Zaloguj sie',
+				'Sign in to your account': 'Zaloguj sie na swoje konto',
 				English: 'Angielski',
 				Crime: 'Kryminał',
+				'Sign in': 'Zaloguj sie',
 				Historic: 'Historyczny',
 				'Action and Adventure': 'Akcja I Przygoda',
 				Sensational: 'Sensacyjny',
@@ -360,7 +362,6 @@ i18next.use(initReactI18next).init({
 				'Free films and serials': 'Darmowe filmy i seriale',
 				'films and serials': 'filmy i seriale',
 				Search: 'Szukaj',
-
 				'Search results:': 'Wyniki wyszukiwania:',
 				Movies: 'Filmy',
 				'Search serials': 'Wyszukiwarka seriali',

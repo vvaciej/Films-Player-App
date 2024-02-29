@@ -67,7 +67,7 @@ const Login: React.FC = () => {
 					VVACIEJ.APP
 				</Link>
 				<div className='flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-[93%] bg-1a1a border-[1px] border-gray3232'>
-					<h1 className='text-lg'>{t('Zaloguj się na swoje konto')}</h1>
+					<h1 className='text-lg'>{t('Sign in to your account')}</h1>
 					<main>
 						<form
 							className='flex flex-col mt-6 text-base'
@@ -153,7 +153,7 @@ const Login: React.FC = () => {
 				<p className='mt-8 text-sm text-center text-lightEee'>
 					<span>{t("Don't have account?")}&nbsp;</span>
 					<Link href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/register`} className='orange-link'>
-						{t('Signin')}
+						{t('Sign in')}
 					</Link>
 				</p>
 			</div>
