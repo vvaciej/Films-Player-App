@@ -109,7 +109,7 @@ const SearchPage: React.FC = () => {
 									</section>
 								</div>
 							</header>
-							<main className={`lg:w-[1240px] mt-3 h-max w-full ${whatSearchVal ? 'block active' : 'hidden'}`}>
+							<main className={`mt-3 h-max w-full ${whatSearchVal ? 'block active' : 'hidden'}`}>
 								<h1 className='text-2xl font-semibold sm:text-3xl'>
 									{t('Search results:')} {decodedQuery}
 								</h1>

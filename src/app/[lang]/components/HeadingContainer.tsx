@@ -33,11 +33,11 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 	const { t } = useTranslation();
 	const isWindowDefined = typeof window !== 'undefined';
 
-	const [isWindowUnder800, setIsWindowUnder800] = useState<boolean>(isWindowDefined ? window.innerWidth < 800 : false);
+	const [isWindowUnder768, setIsWindowUnder768] = useState<boolean>(isWindowDefined ? window.innerWidth < 800 : false);
 
 	useEffect(() => {
 		const handleResize = () => {
-			setIsWindowUnder800(isWindowDefined && window.innerWidth <= 800);
+			setIsWindowUnder768(isWindowDefined && window.innerWidth <= 768);
 		};
 
 		handleResize();
@@ -53,7 +53,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 
 	return (
 		<section className='main-heading-left-container hide-scrollbar'>
-			{isWindowUnder800 ? (
+			{isWindowUnder768 ? (
 				headingFilmsData.map((film, index: number) => (
 					<div className='flex min-w-full h-full relative' key={index}>
 						<img
