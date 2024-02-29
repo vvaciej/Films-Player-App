@@ -1,7 +1,6 @@
 'use client';
 
 import { Inter } from 'next/font/google';
-import Head from 'next/head';
 import React, { useEffect } from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';

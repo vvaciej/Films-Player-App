@@ -152,7 +152,7 @@ export const FilmsCategories: React.FC = () => {
 				}`}
 			/>
 			<FilmCategory
-				headingText={'Last added films'}
+				headingText={'Last added'}
 				filmsData={filmData.lastAddedFilms}
 				linkDirectPage={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/channel/ostatnio-dodane-filmy?order=${
 					getCookie('mostPopularChoosed') || 'most_popular'
