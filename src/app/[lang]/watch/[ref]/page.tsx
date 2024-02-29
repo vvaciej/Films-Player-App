@@ -88,7 +88,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 				isFilmExist ? (
 					<>
 						<div className='content-full-space-centered'>
-							<div className='xl:w-[1220px] w-[95%] h-max mt-[calc(var(--main-container-padd-top)-0.5rem)]'>
+							<div className='xl:w-[1220px] w-[95%] h-max mt-[calc(var(--main-container-padd-top)-0.7rem)]'>
 								<main className='w-full h-max rounded'>
 									<video controls controlsList='nodownload' className='h-max w-full'>
 										<source src='' type='video/mp4' />
@@ -102,7 +102,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 												src={infoOfChoosedFilm?.image}
 												alt={`Poster for ${t(infoOfChoosedFilm?.title || '')}`}
 											/>
-											<section className='flex flex-col items-start gap-x-2 w-full'>
+											<section className='flex flex-col items-start gap-x-2 w-full border-b-[1px] pb-5 border-gray3232'>
 												<h1 className='text-2xl font-medium'>{t(infoOfChoosedFilm?.title || '')}</h1>
 												<section className='flex gap-x-2 items-center justify-between w-full mb-1'>
 													<section className='flex'>

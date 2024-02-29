@@ -134,9 +134,11 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 				<div className='typical-container-comp-with-films'>
 					<section className='films-heading-section items-center mb-7'>
 						<h1 className='films-category-heading-text'>{t(headingTitlePage)}</h1>
-						<section className='films-category-filter-btns'>
+						<section className='flex items-center'>
 							<section className='relative' ref={mostPopularDropdownRef}>
-								<button className={`films-category-filter-btn transparent-btn-style`} onClick={handleMostPopularClick}>
+								<button
+									className={`flex items-center transparent-btn-style`}
+									onClick={handleMostPopularClick}>
 									<Bars3BottomLeftIcon className='h-5' />
 									<span className='text-sm font-medium pl-2 lg:flex hidden'>
 										{filterOrderChoosed === 'most_popular'
@@ -201,7 +203,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 								</div>
 							</section>
 							<section className='relative' ref={ModeDropdownRef}>
-								<button className={`films-category-filter-btn transparent-btn-style`} onClick={handleModeClick}>
+								<button className={`flex items-center transparent-btn-style`} onClick={handleModeClick}>
 									{filmModeChoosed === 'Portrait' ? (
 										<Squares2X2Icon className='h-5' />
 									) : filmModeChoosed === 'Landscape' ? (
