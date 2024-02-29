@@ -11,7 +11,6 @@ import CookieConsentComponent from './[lang]/layouts/cookie/CookieConsent';
 import getCookie from '../helpers/GetCookie';
 
 import '../../styles/globals.css';
-import '../../styles/css/film-page.css';
 import '../../styles/css/filteres-page.css';
 import '../../styles/css/global.css';
 

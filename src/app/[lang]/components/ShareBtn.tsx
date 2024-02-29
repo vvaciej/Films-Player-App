@@ -44,7 +44,7 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 			) : (
 				<button
 					ref={shareBtnRef}
-					className='film-page-aside-btns orange-outlined-btn-style'
+					className='flex items-center justify-center w-full gap-x-2 text-[13px] h-[2.3rem] font-medium orange-outlined-btn-style'
 					onClick={() => setShareDropdownActive(!shareDropdownActive)}>
 					<ShareIcon className='h-4' />
 					{t('Share')}

@@ -128,30 +128,30 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 				{isLoaded ? (
 					isFilmExist ? (
 						<main>
-							<div className='film-page-image-fullhd-preview sm:pt-0 pt-12'>
+							<div className='w-full bg-black h-[18rem] sm:h-[25rem] lg:h-[32rem] overflow-hidden relative sm:pt-0 pt-12'>
 								<Link
 									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watch/${infoOfChoosedFilm?.ref}`}
-									className='bg-white left-1/2 absolute z-10 h-12 w-12 flex justify-center items-center rounded-[50%] hover:brightness-75 transition-all'>
+									className='bg-white right-1/2 translate-x-1/2 top-1/2 absolute z-10 h-12 w-12 flex justify-center items-center rounded-[50%] hover:brightness-75 transition-all'>
 									<PlayIcon className='text-black h-6' />
 								</Link>
-								<div className='film-page-image-gradient'></div>
-								<div className='film-page-image-blured'></div>
 								<img
-									className='w-full h-full absolute object-cover z-[1] opacity-[0.3]'
+									className='w-full h-full absolute object-cover z-[1] opacity-[0.3] blur-md'
 									src={infoOfChoosedFilm?.imgFullHd1280}
 									alt={`Image for ${t(infoOfChoosedFilm?.title || '')}`}
 								/>
 								<div className='relative h-full w-full items-center flex justify-center'>
 									<img
-										className='h-full relative sm:mt-[120px] lg:mt-[140px] z-[3] brightness-75 w-[92%] lg:w-[1240px] object-cover'
+										className='h-full relative sm:mt-[120px] lg:mt-[140px] z-[3] brightness-50 w-[92%] lg:w-[1240px] object-cover'
 										src={infoOfChoosedFilm?.imgFullHd1280}
 										alt={`Image for ${t(infoOfChoosedFilm?.title || '')}`}
 									/>
 								</div>
 							</div>
 							<div className='content-full-space-centered'>
-								<div className='film-page-container'>
-									<aside className='film-page-aside'>
+								<div className='relative w-[93%] xl:w-[1240px] h-max lg:h-full mb-12 mt-8 flex flex-col lg:grid gap-x-8' style={{
+									gridTemplateColumns: 'minmax(5rem, 17rem) minmax(35rem, 60rem)',
+								}}>
+									<aside className='sticky top-[5rem] hidden lg:flex flex-col gap-y-3 h-max w-full'>
 										<img
 											src={infoOfChoosedFilm?.image}
 											alt={`Poster for ${t(infoOfChoosedFilm?.title || '')}`}
@@ -162,13 +162,13 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watch/${
 													infoOfChoosedFilm?.ref
 												}`}
-												className='film-page-aside-btns orange-btn-style'>
+												className='flex items-center justify-center !w-full gap-x-2 text-[13px] font-medium h-[2.3rem] orange-btn-style'>
 												<PlayIcon className='h-4' />
 												{t('Watch this')}
 											</Link>
 											{getCookie('email') ? (
 												<button
-													className={`film-page-aside-btns rounded transition-all ${
+													className={`flex items-center justify-center gap-x-2 text-[13px] h-[2.3rem] font-medium rounded transition-all ${
 														refsAddedToWatchlist.has(infoOfChoosedFilm?.ref)
 															? 'outline-[1px] outline outline-orangeOpacited text-darkOrange'
 															: 'outline-[1px] outline outline-gray3232 text-gray9999'
@@ -202,7 +202,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											) : (
 												<Link
 													href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`}
-													className='film-page-aside-btns orange-outlined-btn-style'>
+													className='flex items-center justify-center !w-full gap-x-2 text-[13px] font-medium h-[2.3rem] orange-btn-style'>
 													<PlusIcon className='h-5' />
 													{t('Watch later')}
 												</Link>
@@ -210,41 +210,41 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											<ShareBtn setIsVisibleSthDone={setIsVisibleSthDone} whatBtnLook='not-basic' />
 										</div>
 										<div className='flex flex-col gap-y-2'>
-											<section className='film-page-aside-info-sections'>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Original language')}</b>
+											<section className='flex flex-col text-[14.5px] mt-3'>
+												<b className='font-medium text-[15px] mb-1'>{t('Original language')}</b>
 												<span>{infoOfChoosedFilm?.originalLang}</span>
 											</section>
 											<section
-												className={`film-page-aside-info-sections ${
+												className={`flex flex-col text-[14.5px] mt-3 ${
 													infoOfChoosedFilm?.title === infoOfChoosedFilm?.originalTitle ? 'hidden' : 'flex'
 												}`}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Original title')}</b>
+												<b className='font-medium text-[15px] mb-1'>{t('Original title')}</b>
 												<span>{infoOfChoosedFilm?.originalTitle}</span>
 											</section>
 											<section
-												className={`film-page-aside-info-sections ${
+												className={`flex flex-col text-[14.5px] mt-3 ${
 													infoOfChoosedFilm?.budget === 1 ? 'hidden' : 'flex'
 												}`}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Budget')}</b>
+												<b className='font-medium text-[15px] mb-1'>{t('Budget')}</b>
 												<span>
 													{infoOfChoosedFilm?.budget.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 												</span>
 											</section>
 											<section
-												className={`film-page-aside-info-sections ${
+												className={`flex flex-col text-[14.5px] mt-3 ${
 													infoOfChoosedFilm?.profit === 1 ? 'hidden' : 'flex'
 												}`}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Profit')}</b>
+												<b className='font-medium text-[15px] mb-1'>{t('Profit')}</b>
 												<span>
 													{infoOfChoosedFilm?.profit.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
 												</span>
 											</section>
 											<section
-												className={`film-page-aside-info-sections ${
+												className={`flex flex-col text-[14.5px] mt-3 ${
 													infoOfChoosedFilm?.filmedIn.length === 0 ? '!hidden' : 'flex'
 												}`}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Filmed in')}</b>
-												<ul className='film-page-aside-keywords-section-keywords-list'>
+												<b className='font-medium text-[15px] mb-1'>{t('Filmed in')}</b>
+												<ul className='flex flex-wrap gap-2 mt-1'>
 													{infoOfChoosedFilm?.filmedIn &&
 														infoOfChoosedFilm?.filmedIn.map((filmedIn: string[] | string, index: number) => (
 															<Link
@@ -254,17 +254,19 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	normalizePolishCharacters(String(filmedIn).toLowerCase()).replace(/ /g, '-') as any
 																)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 																key={index}>
-																<li className='film-page-aside-keywords-section-keyword'>{t(filmedIn)}</li>
+																<li className='px-2 py-[1px] outline outline-[1px] outline-gray4040 text-[13px] rounded-xl hover:underline'>
+																	{t(filmedIn)}
+																</li>
 															</Link>
 														))}
 												</ul>
 											</section>
 											<section
-												className={`film-page-aside-info-sections ${
+												className={`flex flex-col text-[14.5px] mt-3 ${
 													infoOfChoosedFilm?.keywords.length === 0 ? '!hidden' : 'flex'
 												}`}>
-												<b className='film-page-aside-info-sections-heading-text'>{t('Keywords')}</b>
-												<ul className='film-page-aside-keywords-section-keywords-list'>
+												<b className='font-medium text-[15px] mb-1'>{t('Keywords')}</b>
+												<ul className='flex flex-wrap gap-2 mt-1'>
 													{infoOfChoosedFilm?.keywords &&
 														infoOfChoosedFilm?.keywords.map((keyword: string[] | string, index: number) => (
 															<Link
@@ -274,18 +276,20 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																	normalizePolishCharacters(String(keyword).toLowerCase()).replace(/ /g, '-') as any
 																)}?order=${getCookie('filterOrderChoosed') || 'most_popular'}`}
 																key={index}>
-																<li className='film-page-aside-keywords-section-keyword'>{keyword}</li>
+																<li className='px-2 py-[1px] outline outline-[1px] outline-gray4040 text-[13px] rounded-xl hover:underline'>
+																	{keyword}
+																</li>
 															</Link>
 														))}
 												</ul>
 											</section>
 										</div>
 									</aside>
-									<main className='film-page-main'>
-										<section className='film-page-main-top-info-text-section'>
-											<section className='film-page-main-top-info-heading-section'>
+									<main className='text-sm'>
+										<section className='pb-4'>
+											<section className='flex items-center mb-4'>
 												<section>
-													<h1 className='film-page-film-title'>{t(infoOfChoosedFilm?.title || '')}</h1>
+													<h1 className='text-2xl sm:text-4xl mb-1 leading-6'>{t(infoOfChoosedFilm?.title || '')}</h1>
 													<section>
 														<span>{infoOfChoosedFilm?.releaseDate}</span>
 														<span className='ml-2 mr-2'>•</span>
@@ -311,8 +315,8 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											</section>
 											<p>{t(infoOfChoosedFilm?.description || '')}</p>
 										</section>
-										<section className='film-page-opinion-ab-film'>
-											<section className='films-heading-section'>
+										<section className='mt-6 mb-16'>
+											<section className='films-heading-section mb-4'>
 												<h1 className='films-category-heading-text'>{t('Reviews')}</h1>
 												<section className='sm:flex hidden'>
 													<section className='main-text-rating flex items-center min-w-max'>
@@ -340,7 +344,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												</p>
 											</div>
 										</section>
-										<div className='film-page-sources-container mt-1'>
+										<div>
 											<section className='films-heading-section'>
 												<section className='flex items-center gap-x-2'>
 													<h1 className='films-category-heading-text'>{t('Sources')}</h1>

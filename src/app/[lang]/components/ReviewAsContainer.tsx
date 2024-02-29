@@ -2,10 +2,12 @@ import { StarIcon } from '@heroicons/react/24/solid';
 import getCookie from '../../../helpers/GetCookie';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/navigation';
 
 const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 	const isLogged = getCookie('email');
 	const { t } = useTranslation();
+	const router = useRouter();
 
 	const [isHoveredStar, setHoveredStars] = useState<number | null>(null);
 	const [indexStars, setIndexStars] = useState<number | null>(null);
@@ -20,9 +22,9 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 
 	return (
 		<>
-			<div className='film-page-opinion-ab-film-review-container'>
-				<section className='flex sm:items-center justify-between flex-col sm:flex-row gap-y-2 film-page-opinion-ab-film-heading-section'>
-					<section className='!w-max film-page-opinion-ab-film-left-section'>
+			<div className='bg-dark0f0f p-5 px-3 rounded w-full gap-y-4 flex outline-[1px] outline outline-gray3232 flex-col'>
+				<section className='flex sm:items-center justify-between flex-col sm:flex-row gap-y-2'>
+					<section className='!w-max px-[2px] text-lightGrayD0d0 text-sm flex mb-1'>
 						{isLogged ? (
 							<img
 								src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
@@ -43,7 +45,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 							<section className={`flex mt-1 ${reviewAdded ? 'hidden' : 'block'}`}>
 								{Array.from({ length: 10 }).map((_, index: number) => (
 									<StarIcon
-										className={`film-page-opinions-stars-icons cursor-pointer sm:px-1 pr-1 ${
+										className={`sm:h-6 h-5 cursor-pointer sm:px-1 pr-1 ${
 											(!indexStars &&
 												!isHoveredStar &&
 												infoOfChoosedFilm &&
@@ -66,10 +68,16 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 						</section>
 					</section>
 					<button
-						className={`${isLogged ? 'logged' : ''} ${
+						className={`${isLogged ? 'orange-btn-style' : 'orange-outlined-btn-style brightness-75'} ${
 							isAddOpinionSelected ? 'hidden' : 'flex'
-						} film-page-add-opinion-btn`}
-						onClick={() => setAddOpinionSelected(!isAddOpinionSelected)}>
+						} text-[13.5px] font-medium w-max !px-3 !py-2`}
+						onClick={() => {
+							if (getCookie('email')) {
+								setAddOpinionSelected(!isAddOpinionSelected);
+							} else {
+								router.push(`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/login`);
+							}
+						}}>
 						{t('Add a review')}
 					</button>
 				</section>
@@ -146,7 +154,7 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 			</div>
 			{reviewAdded ? (
 				<div className={`w-full h-max mt-8 ${reviewAdded ? 'block' : 'hidden'}`}>
-					<div className='h-max px-6 flex gap-x-2'>
+					<div className='h-max px-5 flex gap-x-1'>
 						<img
 							src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
 							alt='user avatar'
@@ -162,11 +170,13 @@ const ReviewAs = ({ infoOfChoosedFilm }: any) => {
 						</section>
 					</div>
 				</div>
-			) : (
+			) : getCookie('email') ? (
 				<div className='flex items-center w-full h-full justify-center mt-6 flex-col'>
 					<h1 className='text-zinc-100'>{t('Seems a little quiet over here')}</h1>
 					<span className=' text-sm text-zinc-300'>{t('Be the first to comment')}</span>
 				</div>
+			) : (
+				''
 			)}
 		</>
 	);

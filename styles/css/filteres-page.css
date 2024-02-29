@@ -74,7 +74,7 @@ html.dark {
     width: 93%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .main-container-width-padd-top-1240 {
     padding: var(--main-container-padd-top) 0rem;
   }
@@ -171,7 +171,7 @@ html.dark {
   display: flex;
   column-gap: 1.5rem;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .films-category-control-btns {
     column-gap: 0.8rem;
   }
@@ -758,7 +758,7 @@ body {
   transform: translate(6px);
   transition: transform 0.2s ease;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .films-category-heading-text .popular-films-category-heading-icon {
     display: none;
   }
@@ -920,7 +920,7 @@ body {
 }
 .typical-dropdown-style:not(.active) {
   opacity: 0;
-  left: -100px;
+  bottom: -100px;
 }
 .typical-dropdown-style nav,
 .typical-dropdown-style div {
@@ -990,6 +990,26 @@ body {
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.main-heading-left-container {
+  min-width: calc(100% - 14rem);
+  height: 100%;
+  position: relative;
+  column-gap: 3px;
+}
+@media screen and (max-width: 768px) {
+  .main-heading-left-container {
+    display: grid;
+    overflow-x: auto;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+  }
+  .main-heading-left-container > * {
+    scroll-snap-align: start;
+  }
 }
 
 * {
