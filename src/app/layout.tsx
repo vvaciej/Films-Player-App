@@ -9,7 +9,6 @@ import './[lang]/data/i18-next';
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import CookieConsentComponent from './[lang]/layouts/cookie/CookieConsent';
 import getCookie from '../helpers/GetCookie';
-import { NextSeo } from 'next-seo';
 
 import '../../styles/globals.css';
 import '../../styles/css/global.css';
@@ -54,30 +53,20 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 			<html
 				lang={`${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
 				className='cc--darkmode dark text-base h-max w-full text-white transition-opacity relative bg-1a1a'>
-				<Head>
-					<NextSeo
-						title={t('Free films and serials online!')}
-						description={t('vvaciej.app is a popular database with movies and series fully free of charge')}
-						openGraph={{
-							images: [
-								{
-									url: '/next.svg',
-									width: 16,
-									height: 16,
-									alt: 'Short Cut Icon',
-								},
-							],
-							siteName: 'vvaciej.codes',
-						}}
-						additionalLinkTags={[
-							{
-								rel: 'icon',
-								href: '/next.svg',
-							},
-						]}
-						themeColor='#1a1a1a'
+				<head>
+					<link rel='icon' href='/next.svg' />
+					<meta name='theme-color' content='#1a1a1a' />
+					<meta name='title' content={t('Free films and serials online!')} />
+					<meta
+						property='og:description'
+						content={t('vvaciej.app is a popular database with movies and series fully free of charge')}
 					/>
-				</Head>
+					<meta
+						name='keywords'
+						content='filmy, seriale, filmy i seriale za darmo, filmy za darmo, seriale za darmo, vvaciej, vvaciej.app, vvaciej.codes, films, serials, free films, free serials'
+					/>
+					<meta property='og:site_name' content='vvaciej.codes' />
+				</head>
 				<body className={`${inter.className} h-max w-full`}>{children}</body>
 			</html>
 			<CookieConsentComponent />
