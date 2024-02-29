@@ -245,8 +245,7 @@ i18next.use(initReactI18next).init({
 				Films: 'Filmy',
 				Serials: 'Seriale',
 				Continue: 'Kontynuuj',
-				'A lot of movies and series that you can watch fully for free':
-					'Wiele filmów i seriali, które możesz oglądać w pełni za darmo',
+				'Free films and serials online!': 'Darmowe filmy i seriale online!',
 				'Take me there!': 'Zabierz mnie tam!',
 				'Not found': 'Nie znaleziono',
 				'Sorry about that! Please visit our homepage to get where you need to go.':
