@@ -56,9 +56,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 				<head>
 					<link rel='icon' href='/next.svg' />
 					<meta name='theme-color' content='#1a1a1a' />
-					<meta name='title' content={t('Free films and serials online!')} />
+					<meta property='og:title' content={t('Free films and serials online!')} />
+					<meta property='og:image' content={t('/next.svg')} />
 					<meta
-						property='og:description'
+						name='description'
 						content={t('vvaciej.app is a popular database with movies and series fully free of charge')}
 					/>
 					<meta
