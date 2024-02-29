@@ -12,6 +12,7 @@ import getCookie from '../helpers/GetCookie';
 
 import '../../styles/globals.css';
 import '../../styles/css/global.css';
+import { useTranslation } from 'react-i18next';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,6 +21,8 @@ interface RootLayoutProps {
 }
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+	const { t } = useTranslation();
+
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const url = window.location.pathname;
@@ -53,6 +56,9 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 				<Head>
 					<link rel='icon' href='/vercel.svg' />
 					<meta name='theme-color' content='#1a1a1a' />
+					<meta name='description' content={t('Wiele filmów i seriali, które możesz oglądać w pełni za darmo')} />
+					<meta name='keywords' content='filmy, seriale, filmy i seriale za darmo, filmy za darmo, seriale za darmo' />
+					<meta property='og:image' content='/favicon.ico' />
 				</Head>
 				<body className={`${inter.className} h-max w-full`}>{children}</body>
 			</html>
