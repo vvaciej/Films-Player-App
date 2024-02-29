@@ -54,11 +54,13 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 				lang={`${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
 				className='cc--darkmode dark text-base h-max w-full text-white transition-opacity relative bg-1a1a'>
 				<Head>
-					<link rel='icon' href='/vercel.svg' />
+					<link rel='icon' href='/next.svg' />
 					<meta name='theme-color' content='#1a1a1a' />
 					<meta property='og:title' content={t('Free films and serials online!')} />
+					<meta name='title' content={t('Free films and serials online!')} />
+					<link rel="shortcut icon" href="/next.svg" />
 					<meta
-						property='og:description'
+						name='description'
 						content={t('vvaciej.app is a popular database with movies and series fully free of charge')}
 					/>
 					<meta
