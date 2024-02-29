@@ -1,6 +1,6 @@
 'use client';
 
-import Filters from '@/app/[lang]/components/FilmsFilterContainer';
+import Filters from '@/components/FilmsFilterContainer';
 import useDocumentTitle from '@/helpers/PageTitle';
 import { allFilms } from '../../data/films-data';
 import IteratingFilmsPageArrays from '@/helpers/FilmsIteratingFilterArrays';

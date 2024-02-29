@@ -22,7 +22,7 @@ const Login: React.FC = () => {
 						onSubmit={event => {
 							event.preventDefault();
 						}}
-						className='flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-11/12 bg-1a1a border-[1px] border-gray3232'>
+						className='flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-11/12 bg-dark1a1a border-[1px] border-gray3232'>
 						<h3 className='text-sm mb-1'>{t('Wprowadź swój adres email aby otrzymać link do zresetowania hasła.')}</h3>
 						<section className='flex flex-col gap-y-1 mb-6'>
 							<label className='text-sm mt-4' htmlFor='email'>

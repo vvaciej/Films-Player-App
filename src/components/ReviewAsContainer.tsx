@@ -1,5 +1,5 @@
 import { StarIcon } from '@heroicons/react/24/solid';
-import getCookie from '../../../helpers/GetCookie';
+import getCookie from '../helpers/GetCookie';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/navigation';

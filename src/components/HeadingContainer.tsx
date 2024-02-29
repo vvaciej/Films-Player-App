@@ -1,12 +1,12 @@
 'use client';
 
 import { ChevronLeftIcon, ChevronRightIcon, StarIcon, PlayIcon } from '@heroicons/react/24/solid';
-import { sidebarFilmsData, headingFilmsData } from '../data/heading-films';
+import { sidebarFilmsData, headingFilmsData } from '../app/[lang]/data/heading-films';
 import { useState, useEffect } from 'react';
 
 import Link from 'next/link';
-import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
-import getCookie from '../../../helpers/GetCookie';
+import convertTitleToUrl from '../helpers/ConvertTitleToURL';
+import getCookie from '../helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
 
 interface HeadingProps {

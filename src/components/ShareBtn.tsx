@@ -52,7 +52,7 @@ const ShareBtn = ({ setIsVisibleSthDone, whatBtnLook }: any) => {
 			)}
 			<div
 				ref={shareDropdownRef}
-				className={`absolute h-max w-full min-w-64 top-10 rounded py-1 transition-all z-10 right-0 bg-1a1a outline-[1px] outline outline-gray3232 ${
+				className={`absolute h-max w-full min-w-64 top-10 rounded py-1 transition-all z-10 right-0 bg-dark1a1a outline-[1px] outline outline-gray3232 ${
 					shareDropdownActive ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'
 				}`}>
 				<button

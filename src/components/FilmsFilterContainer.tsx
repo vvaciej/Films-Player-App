@@ -1,11 +1,11 @@
 'use client';
 
-import { Navbar } from '../layouts/Navbar';
-import { Footer } from '../layouts/Footer';
-import useDocumentTitle from '../../../helpers/PageTitle';
-import getCookie from '../../../helpers/GetCookie';
+import { Navbar } from '../app/[lang]/layouts/Navbar';
+import { Footer } from '../app/[lang]/layouts/Footer';
+import useDocumentTitle from '../helpers/PageTitle';
+import getCookie from '../helpers/GetCookie';
 import { useRouter } from 'next/navigation';
-import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
+import convertTitleToUrl from '../helpers/ConvertTitleToURL';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -52,7 +52,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 
 		const filmModeCookie = getCookie('filmModeChoosed');
 		const filterOrderCookie = getCookie('filterOrderChoosed');
-	
+
 		setFilmModeChoosed(filmModeCookie || 'Portrait');
 		setFilterOrderChoosed(filterOrderCookie || 'most_popular');
 	}, [filmModeChoosed, filterOrderChoosed]);
@@ -312,7 +312,11 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
-											<img className='sm:min-w-[136px] min-w-[120px] max-h-[200px] sm:h-[200px] max-h-46 sm:max-w-32 pr-2' src={film.image} alt={`Poster for ${t(film.title)}`} />
+											<img
+												className='sm:min-w-[136px] min-w-[120px] max-h-[200px] sm:h-[200px] max-h-46 sm:max-w-32 pr-2'
+												src={film.image}
+												alt={`Poster for ${t(film.title)}`}
+											/>
 										</Link>
 									</section>
 									<section className='pt-3 flex flex-col gap-y-1'>
@@ -330,7 +334,9 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 												<span>{film.rating} / 10 &nbsp;&nbsp;</span>
 											</section>
 										</section>
-										<p className='w-full hide-scrollbar text-[12px] sm:text-[13px] max-h-[200px] overflow-auto'>{t(film.description)}</p>
+										<p className='w-full hide-scrollbar text-[12px] sm:text-[13px] max-h-[200px] overflow-auto'>
+											{t(film.description)}
+										</p>
 									</section>
 								</article>
 							))}

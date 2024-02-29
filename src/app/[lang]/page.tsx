@@ -1,7 +1,7 @@
 'use client';
 
-import { FilmsCategories } from './components/FilmsCategories';
-import { HeadingFilmsInteraction } from './components/HeadingContainer';
+import { FilmsCategories } from '../../components/FilmsCategories';
+import { HeadingFilmsInteraction } from '../../components/HeadingContainer';
 import useDocumentTitle from '../../helpers/PageTitle';
 
 import { Navbar } from './layouts/Navbar';
@@ -33,7 +33,7 @@ const Home: React.FC<params> = ({ params }) => {
 							</div>
 						</main>
 						<Footer />
-					</> 
+					</>
 				</div>
 			) : (
 				<SiteNotFound />

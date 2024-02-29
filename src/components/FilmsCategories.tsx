@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import { ChevronRightIcon, StarIcon, PlayIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
+import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import Link from 'next/link';
-import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
 import { useTranslation } from 'react-i18next';
 
 import 'swiper/css';
@@ -13,8 +12,9 @@ import 'swiper/css/pagination';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import * as filmData from '../data/main-films';
-import getCookie from '../../../helpers/GetCookie';
+import * as filmData from '../app/[lang]/data/main-films';
+import getCookie from '../helpers/GetCookie';
+import FilmCategoryCard from './FilmCategoryCard';
 
 interface FilmProps {
 	headingText: string;
@@ -105,33 +105,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 				onSwiper={swiper => setSwiper(swiper)}>
 				{filmsData.map((film: FilmData, index: number) => (
 					<SwiperSlide key={index}>
-						<article className='sm:mb-8 mb-6 text-sm font-medium'>
-							<section className='relative transition-all hover:brightness-75'>
-								<Link
-									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
-										film.ref
-									}/${convertTitleToUrl(film.title)}`}>
-									<img
-										className=' max-w-[188px] max-h-[17rem] sm:h-full w-full rounded object-cover brightness-90 cursor-pointer'
-										src={film.image}
-										alt={`Poster for ${t(film.title)}`}
-									/>
-								</Link>
-							</section>
-							<section className='pt-3 flex flex-col gap-y-1 max-h-12'>
-								<section className='flex items-center'>
-									<StarIcon className='h-5 mr-2 text-orange' />
-									<span>{film.rating} / 10</span>
-								</section>
-								<Link
-									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
-										film.ref
-									}/${convertTitleToUrl(film.title)}`}
-									className='film-container-title'>
-									{t(film.title)}
-								</Link>
-							</section>
-						</article>
+						<FilmCategoryCard film={film} />
 					</SwiperSlide>
 				))}
 			</Swiper>

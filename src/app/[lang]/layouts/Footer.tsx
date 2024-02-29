@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
 						<div
 							className={`absolute sm:w-[11rem] w-[8rem] h-18 rounded right-1/2 sm:translate-x-0 translate-x-1/2 sm:right-0 sm:bottom-10 bottom-10 py-1 transition-opacity ${
 								langBtnClickedBool ? 'active visible opacity-100' : 'invisible opacity-0'
-							} border-[1px] border-gray3232 bg-1a1a transition-opacity`}
+							} border-[1px] border-gray3232 bg-dark1a1a transition-opacity`}
 							ref={LangSelectDropdownRef}>
 							<button
 								onClick={() => {

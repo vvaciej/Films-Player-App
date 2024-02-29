@@ -4,7 +4,7 @@ import useDocumentTitle from '@/helpers/PageTitle';
 import Link from 'next/link';
 import getCookie from '../../../helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
-import { LoginForm } from '../components/LoginForm';
+import { LoginForm } from '../../../components/LoginForm';
 
 const Policy: React.FC = () => {
 	const { t } = useTranslation();
@@ -18,7 +18,7 @@ const Policy: React.FC = () => {
 					className='sm:text-6xl text-3xl font-bold'>
 					VVACIEJ.APP
 				</Link>
-				<div className='flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-[93%] bg-1a1a border-[1px] border-gray3232'>
+				<div className='flex flex-col h-4/6 mt-4 rounded p-6 sm:pb-8 pb-6 sm:w-[28rem] w-[93%] bg-dark1a1a border-[1px] border-gray3232'>
 					<h1 className='text-lg'>{t('Create new account')}</h1>
 					<LoginForm loginOrRegister='register' />
 					<section className='flex items-center justify-center flex-col w-full gap-y-5'>

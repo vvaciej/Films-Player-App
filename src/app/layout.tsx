@@ -49,7 +49,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 		<>
 			<html
 				lang={`${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
-				className='cc--darkmode dark text-base h-max w-full text-white transition-opacity relative bg-1a1a'>
+				className='cc--darkmode dark text-base h-max w-full text-white transition-opacity relative bg-dark1a1a'>
 				<head>
 					<link rel='icon' href='/next.svg' />
 					<meta name='theme-color' content='#1a1a1a' />

@@ -13,7 +13,7 @@ const config: Config = {
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
 			colors: {
-				'1a1a': '#1a1a1a',
+				dark1a1a: '#1a1a1a',
 				orangeOpacited: 'rgba(255, 123, 0, 0.5)',
 				orange: '#f27318',
 				orangeOpacited15: '#fe6a0015',

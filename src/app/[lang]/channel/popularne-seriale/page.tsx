@@ -1,7 +1,7 @@
 'use client';
 
 import useDocumentTitle from '@/helpers/PageTitle';
-import Filters from '../../components/FilmsFilterContainer';
+import Filters from '../../../../components/FilmsFilterContainer';
 import IteratingFilmsPage from '@/helpers/FilmsIteratingFilter';
 
 import { allFilms } from '../../data/films-data';

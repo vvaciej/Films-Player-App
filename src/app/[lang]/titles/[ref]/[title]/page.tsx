@@ -29,10 +29,10 @@ import { useEffect, useRef, useState } from 'react';
 
 import { allFilms } from '@/app/[lang]/data/films-data';
 import getCookie from '@/helpers/GetCookie';
-import ReviewAs from '@/app/[lang]/components/ReviewAsContainer';
+import ReviewAs from '@/components/ReviewAsContainer';
 import normalizePolishCharacters from '@/helpers/NormalizePolishSymbols';
-import SomethingDone from '@/app/[lang]/components/SomethingDoneDropdown';
-import ShareBtn from '@/app/[lang]/components/ShareBtn';
+import SomethingDone from '@/components/SomethingDoneDropdown';
+import ShareBtn from '@/components/ShareBtn';
 interface pageProps {
 	params: { ref: number; title: string };
 }
@@ -328,9 +328,13 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 												</section>
 											</section>
 											<ReviewAs infoOfChoosedFilm={infoOfChoosedFilm} />
-											<div className={`w-[95%] h-max py-5 border-[1px] border-dotted border-gray3232 rounded !mt-8 flex items-center justify-center flex-col text-center  ${isLogged ? '!hidden' : 'flex'}`} style={{
-												margin: '0 auto'
-											}}>
+											<div
+												className={`w-[95%] h-max py-5 border-[1px] border-dotted border-gray3232 rounded !mt-8 flex items-center justify-center flex-col text-center  ${
+													isLogged ? '!hidden' : 'flex'
+												}`}
+												style={{
+													margin: '0 auto',
+												}}>
 												<h1 className='sm:text-[1.2rem] text-lg font-medium px-3 mb-1'>{t('Register is required')}</h1>
 												<p className='text-lightGrayD0d0 sm:text-[15px] text-[14px] px-4'>
 													<Link

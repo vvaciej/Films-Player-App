@@ -359,7 +359,7 @@ const AccSettings = () => {
 												</button>
 												<div
 													ref={langDropdownRef}
-													className={`absolute h-max w-full top-16 rounded py-1 transition-all z-10 bg-1a1a outline-[1px] outline outline-gray3232 ${
+													className={`absolute h-max w-full top-16 rounded py-1 transition-all z-10 bg-dark1a1a outline-[1px] outline outline-gray3232 ${
 														langDropdownActive
 															? 'visible opacity-100 pointer-events-auto'
 															: 'invisible opacity-0 pointer-events-none'
@@ -403,7 +403,7 @@ const AccSettings = () => {
 												</button>
 												<div
 													ref={countryDropdownRef}
-													className={`absolute h-max w-full top-16 rounded py-1 transition-all z-10 bg-1a1a outline-[1px] outline outline-gray3232 ${
+													className={`absolute h-max w-full top-16 rounded py-1 transition-all z-10 bg-dark1a1a outline-[1px] outline outline-gray3232 ${
 														countryDropdownActive
 															? 'visible opacity-100 pointer-events-auto'
 															: 'invisible opacity-0 pointer-events-none'
@@ -459,7 +459,7 @@ const AccSettings = () => {
 												</button>
 												<div
 													ref={timeZoneDropdownRef}
-													className={`absolute h-max w-full top-16 rounded py-1 transition-all z-10 bg-1a1a outline-[1px] outline outline-gray3232 ${
+													className={`absolute h-max w-full top-16 rounded py-1 transition-all z-10 bg-dark1a1a outline-[1px] outline outline-gray3232 ${
 														timeZoneDropdownActive
 															? 'visible opacity-100 pointer-events-auto'
 															: 'invisible opacity-0 pointer-events-none'

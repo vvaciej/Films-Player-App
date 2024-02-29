@@ -120,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 
 	return (
 		<>
-			<header className='fixed flex top-0 justify-between w-full bg-dark121212 h-[3.8rem] lg:h-[4.3rem] border-b-[1px] border-1a1a px-3 sm:px-5 z-20'>
+			<header className='fixed flex top-0 justify-between w-full bg-dark121212 h-[3.8rem] lg:h-[4.3rem] border-b-[1px] border-dark1a1a px-3 sm:px-5 z-20'>
 				<section className='flex items-center sm:mr-10 mr-4 w-[70rem]'>
 					<Link
 						href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
@@ -156,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								<MagnifyingGlassIcon className='min-h-9 sm:min-h-[2.2rem] p-2 h-5 text-lightGrayD0d0' />
 							</Link>
 							<div
-								className={`w-full absolute bg-1a1a top-[4rem] rounded outline outline-[1px] outline-gray5050 py-1 overflow-y-auto text-[0.8rem] lg:block hidden ${
+								className={`w-full absolute bg-dark1a1a top-[4rem] rounded outline outline-[1px] outline-gray5050 py-1 overflow-y-auto text-[0.8rem] lg:block hidden ${
 									isTyped
 										? 'opacity-100 pointer-events-auto max-h-[36.9rem] h-max'
 										: 'h-0 opacity-0 pointer-events-none'
@@ -232,7 +232,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								</div>
 							</button>
 							<div
-								className={`h-max bg-1a1a absolute right-0 w-full min-w-max rounded outline outline-[1px] outline-gray5050 transition-all py-1 ${
+								className={`h-max bg-dark1a1a absolute right-0 w-full min-w-max rounded outline outline-[1px] outline-gray5050 transition-all py-1 ${
 									userDropdownClicked
 										? 'opacity-100 top-[57px] pointer-events-auto'
 										: 'opacity-0 top-[64px] pointer-events-none'

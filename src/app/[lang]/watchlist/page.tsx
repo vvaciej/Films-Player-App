@@ -8,7 +8,7 @@ import getCookie from '../../../helpers/GetCookie';
 import { allFilms } from '../data/films-data';
 import { useTranslation } from 'react-i18next';
 
-import Filters from '../components/FilmsFilterContainer';
+import Filters from '../../../components/FilmsFilterContainer';
 
 const Watchlist = () => {
 	const { t } = useTranslation();

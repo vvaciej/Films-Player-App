@@ -11,8 +11,8 @@ import Link from 'next/link';
 import convertTitleToUrl from '@/helpers/ConvertTitleToURL';
 import getCookie from '@/helpers/GetCookie';
 import { useTranslation } from 'react-i18next';
-import SomethingDone from '../../components/SomethingDoneDropdown';
-import ShareBtn from '../../components/ShareBtn';
+import SomethingDone from '../../../../components/SomethingDoneDropdown';
+import ShareBtn from '../../../../components/ShareBtn';
 
 import {
 	HandThumbUpIcon,
