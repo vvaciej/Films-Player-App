@@ -136,7 +136,7 @@ const UserPage = () => {
 									</button>
 								</section>
 							</div>
-							<div className='content-full-space-centered flex-col items-center gap-y-1 mt-10'>
+							<div className='flex w-full justify-center flex-col items-center gap-y-1 mt-10'>
 								{selectedMode === 'Lists' ? (
 									<>
 										<BookmarkSlashIcon className='h-5' />

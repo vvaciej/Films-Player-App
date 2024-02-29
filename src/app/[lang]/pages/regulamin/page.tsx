@@ -12,7 +12,7 @@ const Policy: React.FC = () => {
 	return (
 		<div className='space-dark'>
 			<Navbar isCutted={true} />
-			<div className='content-full-space-centered h-[76vh] overflow-hidden'>
+			<div className='flex w-full justify-center h-[76vh] overflow-hidden'>
 				<main className='main-container-width-padd-top-1240'>
 					<h1 className='text-2xl mb-4'>{t(`Rules`)}</h1>
 					<div>

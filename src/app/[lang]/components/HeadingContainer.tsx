@@ -52,10 +52,15 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 	}, []);
 
 	return (
-		<section className='main-heading-left-container hide-scrollbar'>
+		<section
+			className='min-w-[calc(100%-14rem)] h-full relative gap-x-1 md:block grid md:overflow-x-hidden overflow-x-auto grid-flow-col hide-scrollbar'
+			style={{
+				gridAutoColumns: '100%',
+				scrollSnapType: 'x mandatory',
+			}}>
 			{isWindowUnder768 ? (
 				headingFilmsData.map((film, index: number) => (
-					<div className='flex min-w-full h-full relative' key={index}>
+					<div className='flex min-w-full h-full relative snap-start' key={index}>
 						<img
 							className='w-full h-full object-cover rounded !brightness-50'
 							src={film.imgFullHd1280}
@@ -178,17 +183,15 @@ const SidebarContainer: React.FC<SidebarProps> = ({ currentIndexes, t }) => (
 					<section>
 						<section className='max-h-6 overflow-hidden'>
 							<Link
-								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
-									film.ref
-								}/${convertTitleToUrl(film.title)}`}
+								href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
+									film.title
+								)}`}
 								className='text-[14px] font-medium hover:underline'>
 								{t(film.title)}
 							</Link>
 						</section>
 						<p className='flex mt-1'>
-							<StarIcon
-								className='h-5 mr-2 text-orange'
-							/>
+							<StarIcon className='h-5 mr-2 text-orange' />
 							<span className='text-sm'>{film.rating} / 10</span>
 						</p>
 					</section>

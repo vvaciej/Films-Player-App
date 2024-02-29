@@ -130,15 +130,13 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 	return (
 		<div className='space-light'>
 			<Navbar isCutted={false} />
-			<div className='content-full-space-centered'>
+			<div className='w-full flex justify-center'>
 				<div className='typical-container-comp-with-films'>
 					<section className='films-heading-section items-center mb-7'>
 						<h1 className='films-category-heading-text'>{t(headingTitlePage)}</h1>
 						<section className='flex items-center'>
 							<section className='relative' ref={mostPopularDropdownRef}>
-								<button
-									className={`flex items-center transparent-btn-style`}
-									onClick={handleMostPopularClick}>
+								<button className={`flex items-center transparent-btn-style`} onClick={handleMostPopularClick}>
 									<Bars3BottomLeftIcon className='h-5' />
 									<span className='text-sm font-medium pl-2 lg:flex hidden'>
 										{filterOrderChoosed === 'most_popular'
@@ -263,7 +261,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 										</Link>
 									</section>
 									<section className='pt-3 flex flex-col gap-y-1'>
-										<section className='main-text-rating flex items-center'>
+										<section className='sm:text-[0.9rem] text-[13px] flex items-center'>
 											<StarIcon className='h-5 mr-2 text-orange' />
 											<span>{film.rating} / 10</span>
 										</section>
@@ -299,7 +297,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											{t(film.title)}
 										</Link>
 										<span className='text-xs sm:text-sm'>{film.releaseDate}</span>
-										<section className='main-text-rating flex items-center'>
+										<section className='sm:text-[0.9rem] text-[13px] flex items-center'>
 											<StarIcon className='h-5 mr-2 text-orange' />
 											<span>{film.rating} / 10</span>
 										</section>
@@ -308,15 +306,15 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 							))}
 						</section>
 					) : filmModeChoosed === 'List' ? (
-						<section className='films-wrapper-list'>
+						<section className='h-max w-full flex flex-col gap-y-8'>
 							{mappingBy.map((film, index: number) => (
-								<article className='film-container-list w-full' key={index}>
+								<article className='flex gap-x-2 sm:gap-x-4 h-[200px] w-full' key={index}>
 									<section className='films-image-section'>
 										<Link
 											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
 												film.ref
 											}/${convertTitleToUrl(film.title)}`}>
-											<img className='max-h-46 max-w-32 pr-2' src={film.image} alt={`Poster for ${t(film.title)}`} />
+											<img className='sm:min-w-[136px] min-w-[120px] max-h-[200px] sm:h-[200px] max-h-46 sm:max-w-32 pr-2' src={film.image} alt={`Poster for ${t(film.title)}`} />
 										</Link>
 									</section>
 									<section className='pt-3 flex flex-col gap-y-1'>
@@ -328,13 +326,13 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 											{t(film.title)}
 										</Link>
 										<span className='text-xs sm:text-sm'>{film.time}</span>
-										<section className='main-text-rating'>
+										<section className='flex sm:flex-row flex-col gap-y-[0.15rem] text-[13px] mt-1'>
 											<section className='flex items-center'>
 												<StarIcon className='h-4 mr-2 text-orange' />
 												<span>{film.rating} / 10 &nbsp;&nbsp;</span>
 											</section>
 										</section>
-										<p className='film-list-description'>{t(film.description)}</p>
+										<p className='w-full hide-scrollbar text-[12px] sm:text-[13px] max-h-[200px] overflow-auto'>{t(film.description)}</p>
 									</section>
 								</article>
 							))}
@@ -347,7 +345,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 			<Footer />
 			<div
 				ref={dropdownMobilesRef}
-				className={`typical-dropdown-style ${mostPopularBtnClicked || ModeClicked ? 'active' : ''}`}>
+				className={`typical-dropdown-style-mobiles ${mostPopularBtnClicked || ModeClicked ? 'active' : ''}`}>
 				{mostPopularBtnClicked ? (
 					<div className='!h-52'>
 						<button
@@ -427,7 +425,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 					''
 				)}
 			</div>
-			<div className={`opacity-el ${mostPopularBtnClicked || ModeClicked ? 'active' : ''}`}></div>
+			<div className={`blur-full-space ${mostPopularBtnClicked || ModeClicked ? 'active' : ''}`}></div>
 		</div>
 	);
 };

@@ -80,7 +80,7 @@ const SearchPage: React.FC = () => {
 	return (
 		<div className='space-light'>
 			<Navbar isCutted={false} />
-			<div className='content-full-space-centered'>
+			<div className='flex w-full justify-center'>
 				<div className='typical-container-comp-with-films'>
 					{isLoaded ? (
 						<div>
@@ -134,7 +134,7 @@ const SearchPage: React.FC = () => {
 													</Link>
 												</section>
 												<section className='pt-3 flex flex-col gap-y-1'>
-													<p className='main-text-rating flex items-center'>
+													<p className='sm:text-[0.9rem] text-[13px] flex items-center'>
 														<StarIcon className='h-5 mr-2 text-orange' />
 														<span>{film.rating} / 10</span>
 													</p>

@@ -33,7 +33,7 @@ const Watchlist = () => {
 	return (
 		<div className='space-light'>
 			<Navbar isCutted={false} />
-			<div className='content-full-space-centered'>
+			<div className='flex w-full justify-center'>
 				{isLogged ? (
 					<Filters headingTitlePage={t('Watchlist')} mappingBy={findedMovies as any} />
 				) : (

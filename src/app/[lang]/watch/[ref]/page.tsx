@@ -87,7 +87,7 @@ const WatchFilm: React.FC<pageProps> = ({ params }) => {
 			{isLoaded ? (
 				isFilmExist ? (
 					<>
-						<div className='content-full-space-centered'>
+						<div className='flex w-full justify-center'>
 							<div className='xl:w-[1220px] w-[95%] h-max mt-[calc(var(--main-container-padd-top)-0.7rem)]'>
 								<main className='w-full h-max rounded'>
 									<video controls controlsList='nodownload' className='h-max w-full'>

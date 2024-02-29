@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
 	}, []);
 
 	return (
-		<div className='content-full-space-centered'>
+		<div className='flex w-full justify-center'>
 			<footer className='relative xl:w-[1240px] w-[93%] sm:h-max h-[11rem] mt-28 sm:mt-16 pb-8 text-sm text-lightGrayDdd'>
 				<section className='flex justify-between w-full relative sm:flex-row flex-col sm:gap-y-0 gap-y-4'>
 					<section className='flex gap-x-5 text-sm'>

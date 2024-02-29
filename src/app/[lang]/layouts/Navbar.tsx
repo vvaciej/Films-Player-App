@@ -137,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 								<input
 									type='text'
 									placeholder={t('Search movie or serial')}
-									className='xl:h-[calc(100%-2.2rem)] h-[calc(100%-1.8rem)] lg:block hidden bg-gray3232 rounded outline outline-[1px] outline-gray5050 text-sm w-full px-10 border-[1px] border-transparent orange-outline-focus placeholder:text-lightGrayD0d0'
+									className='lg:h-[calc(100%-2.2rem)] h-[calc(100%-1.8rem)] lg:block hidden bg-gray3232 rounded outline outline-[1px] outline-gray5050 text-sm w-full px-10 border-[1px] border-transparent orange-outline-focus placeholder:text-lightGrayD0d0'
 									onKeyUp={handleSearchDirectPage}
 									value={whatSearchVal}
 									onChange={handleSearchType}
@@ -293,7 +293,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 			</header>
 			<div
 				ref={mobileDropdownsRef}
-				className={`typical-dropdown-style h-max ${
+				className={`typical-dropdown-style-mobiles h-max ${
 					isClickedBtn ? 'active pointer-events-auto' : 'pointer-events-none'
 				}`}>
 				{isUserOrMenuClicked === 'menu' ? (
@@ -349,7 +349,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isCutted }) => {
 					</nav>
 				)}
 			</div>
-			<div className={`opacity-el ${isClickedBtn ? 'active' : ''}`}></div>
+			<div className={`blur-full-space ${isClickedBtn ? 'active' : ''}`}></div>
 		</>
 	);
 };

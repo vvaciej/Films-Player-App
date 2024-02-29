@@ -15,7 +15,7 @@ const SiteNotFound: React.FC = () => {
 	return (
 		<div className='space-light'>
 			<Navbar isCutted={false} />
-			<div className='content-full-space-centered'>
+			<div className='flex justify-center w-full'>
 				<div className='flex items-center sm:pb-32 pb-64 md:justify-between w-11/12 gap-x-24 h-screen lg:w-[1240px] justify-center'>
 					<main className='flex flex-col gap-y-2'>
 						<h1 className='md:text-2xl text-xl font-semibold'>

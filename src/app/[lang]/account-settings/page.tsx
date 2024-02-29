@@ -122,7 +122,7 @@ const AccSettings = () => {
 		<div className='space-dark'>
 			<Navbar isCutted={true} />
 			{isLogged ? (
-				<div className='content-full-space-centered'>
+				<div className='flex w-full justify-center'>
 					<div className='main-container-width-padd-top-1240'>
 						<header className='w-full text-left mb-6 sm:mb-12'>
 							<h1 className='text-3xl'>{t('Account settings')}</h1>

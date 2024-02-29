@@ -49,12 +49,14 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 
 	return (
 		<>
-			<html lang={`${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`} className='cc--darkmode dark'>
+			<html
+				lang={`${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}`}
+				className='cc--darkmode dark text-base h-max w-full text-white transition-opacity relative bg-1a1a'>
 				<Head>
 					<link rel='icon' href='/vercel.svg' />
 					<meta name='theme-color' content='#1a1a1a' />
 				</Head>
-				<body className={inter.className}>{children}</body>
+				<body className={`${inter.className} h-max w-full`}>{children}</body>
 			</html>
 			<CookieConsentComponent />
 			<SpeedInsights />

@@ -147,10 +147,12 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 									/>
 								</div>
 							</div>
-							<div className='content-full-space-centered'>
-								<div className='relative w-[93%] xl:w-[1240px] h-max lg:h-full mb-12 mt-8 flex flex-col lg:grid gap-x-8' style={{
-									gridTemplateColumns: 'minmax(5rem, 17rem) minmax(35rem, 60rem)',
-								}}>
+							<div className='flex w-full justify-center'>
+								<div
+									className='relative w-[93%] xl:w-[1240px] h-max lg:h-full mb-12 mt-8 flex flex-col lg:grid gap-x-8'
+									style={{
+										gridTemplateColumns: 'minmax(5rem, 17rem) minmax(35rem, 60rem)',
+									}}>
 									<aside className='sticky top-[5rem] hidden lg:flex flex-col gap-y-3 h-max w-full'>
 										<img
 											src={infoOfChoosedFilm?.image}
@@ -319,16 +321,18 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 											<section className='films-heading-section mb-4'>
 												<h1 className='films-category-heading-text'>{t('Reviews')}</h1>
 												<section className='sm:flex hidden'>
-													<section className='main-text-rating flex items-center min-w-max'>
+													<section className='sm:text-[0.9rem] text-[13px] flex items-center min-w-max'>
 														<StarIcon className='h-5 mr-2 text-orange' />
 														<span>{infoOfChoosedFilm?.rating} / 10</span>
 													</section>
 												</section>
 											</section>
 											<ReviewAs infoOfChoosedFilm={infoOfChoosedFilm} />
-											<div className={`opinion-must-be-logged-container ${isLogged ? '!hidden' : 'flex'}`}>
-												<h1>{t('Register is required')}</h1>
-												<p>
+											<div className={`w-[95%] h-max py-5 border-[1px] border-dotted border-gray3232 rounded !mt-8 flex items-center justify-center flex-col text-center  ${isLogged ? '!hidden' : 'flex'}`} style={{
+												margin: '0 auto'
+											}}>
+												<h1 className='sm:text-[1.2rem] text-lg font-medium px-3 mb-1'>{t('Register is required')}</h1>
+												<p className='text-lightGrayD0d0 sm:text-[15px] text-[14px] px-4'>
 													<Link
 														href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/login`}
 														className='orange-link'>
@@ -490,7 +494,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 																		</Link>
 																	</section>
 																	<section className='pt-3 flex flex-col gap-y-1'>
-																		<section className='main-text-rating flex items-center'>
+																		<section className='sm:text-[0.9rem] text-[13px] flex items-center'>
 																			<StarIcon className='h-5 mr-2 text-orange' />
 																			<span>{similarFilm?.rating} / 10</span>
 																		</section>
