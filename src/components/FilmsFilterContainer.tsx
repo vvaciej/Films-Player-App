@@ -29,7 +29,6 @@ type FilmData = {
 	imgFullHd500: string;
 	releaseDate: string;
 	ref: number;
-	apiRating: any;
 };
 
 interface FilterPageProps {
@@ -86,7 +85,7 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 			mappingBy.sort((a: FilmData, b: FilmData) => new Date(b.addedDate).getTime() - new Date(a.addedDate).getTime());
 			break;
 		case 'highest_rating':
-			mappingBy.sort((a: FilmData, b: FilmData) => b.apiRating - a.apiRating);
+			mappingBy.sort((a: FilmData, b: FilmData) => b.rating - a.rating);
 			break;
 		case 'highest_budget':
 			mappingBy.sort((a: FilmData, b: FilmData) => b.budget - a.budget);

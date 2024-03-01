@@ -26,7 +26,7 @@ const FilmModesCard = ({ film, mode, indexSource }: any) => {
 					<section className='pt-3 flex flex-col gap-y-1 max-h-12'>
 						<section className='flex items-center'>
 							<StarIcon className='h-5 mr-2 text-orange' />
-							<span>{film.apiRating} / 10</span>
+							<span>{film.rating} / 10</span>
 						</section>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
@@ -58,7 +58,7 @@ const FilmModesCard = ({ film, mode, indexSource }: any) => {
 						<span className='text-xs sm:text-sm'>{film.releaseDate}</span>
 						<section className='sm:text-[0.9rem] text-[13px] flex items-center'>
 							<StarIcon className='h-5 mr-2 text-orange' />
-							<span>{film.apiRating} / 10</span>
+							<span>{film.rating} / 10</span>
 						</section>
 					</section>
 				</article>
@@ -88,7 +88,7 @@ const FilmModesCard = ({ film, mode, indexSource }: any) => {
 						<section className='flex sm:flex-row flex-col gap-y-[0.15rem] text-[13px] mt-1'>
 							<section className='flex items-center'>
 								<StarIcon className='h-4 mr-2 text-orange' />
-								<span>{film.apiRating} / 10 &nbsp;&nbsp;</span>
+								<span>{film.rating} / 10 &nbsp;&nbsp;</span>
 							</section>
 						</section>
 						<p className='w-full hide-scrollbar text-[12px] sm:text-[13px] max-h-[200px] overflow-auto'>

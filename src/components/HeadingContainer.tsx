@@ -81,7 +81,7 @@ export const HeadingContainer: React.FC<HeadingProps> = ({
 										className='text-[17px] mb-1 leading-5'>
 										{t(film.title)}
 									</Link>
-									<p className='max-h-[5.3rem] overflow-hidden text-[14.5px] mb-3 sm:block hidden text-zinc-200'>
+									<p className='max-h-[4.8rem] overflow-hidden text-[15px] mb-3 sm:block hidden text-zinc-200'>
 										{t(film.description)}
 									</p>
 									<Link
