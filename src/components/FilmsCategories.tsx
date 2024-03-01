@@ -105,7 +105,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 				onSwiper={swiper => setSwiper(swiper)}>
 				{filmsData.map((film: FilmData, index: number) => (
 					<SwiperSlide key={index}>
-						<FilmCategoryCard key="" film={film} mode='portrait' indexSource='' />
+						<FilmCategoryCard key='' film={film} mode='portrait' indexSource='' />
 					</SwiperSlide>
 				))}
 			</Swiper>
