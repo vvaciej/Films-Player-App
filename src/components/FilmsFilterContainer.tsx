@@ -247,19 +247,19 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 					{filmModeChoosed === 'Portrait' ? (
 						<section className='films-wrapper-default-mode'>
 							{mappingBy.map((film: FilmData, index: number) => (
-								<FilmModesCard film={film} indexSource={index} mode='portrait' />
+								<FilmModesCard key={index} film={film} indexSource={index} mode='portrait' />
 							))}
 						</section>
 					) : filmModeChoosed === 'Landscape' ? (
 						<section className='films-wrapper-landscape'>
 							{mappingBy.map((film, index: number) => (
-								<FilmModesCard film={film} indexSource={index} mode='landscape' />
+								<FilmModesCard key={index} film={film} indexSource={index} mode='landscape' />
 							))}
 						</section>
 					) : filmModeChoosed === 'List' ? (
 						<section className='h-max w-full flex flex-col gap-y-8'>
 							{mappingBy.map((film, index: number) => (
-								<FilmModesCard film={film} indexSource={index} mode='list' />
+								<FilmModesCard key={index} film={film} indexSource={index} mode='list' />
 							))}
 						</section>
 					) : (
