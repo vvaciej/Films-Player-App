@@ -5,18 +5,16 @@ import { Footer } from '../app/[lang]/layouts/Footer';
 import useDocumentTitle from '../helpers/PageTitle';
 import getCookie from '../helpers/GetCookie';
 import { useRouter } from 'next/navigation';
-import convertTitleToUrl from '../helpers/ConvertTitleToURL';
 import { useTranslation } from 'react-i18next';
 
 import {
-	StarIcon,
 	Bars3BottomLeftIcon,
 	Squares2X2Icon,
 	ListBulletIcon,
 	ViewColumnsIcon,
 } from '@heroicons/react/24/solid';
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import FilmModesCard from './FilmModesCard';
 
 type FilmData = {
 	image: string;
@@ -249,96 +247,19 @@ const Filters: React.FC<FilterPageProps> = ({ headingTitlePage, mappingBy }) => 
 					{filmModeChoosed === 'Portrait' ? (
 						<section className='films-wrapper-default-mode'>
 							{mappingBy.map((film: FilmData, index: number) => (
-								<article className='film-container w-full' key={index}>
-									<section className='films-image-section'>
-										<Link
-											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
-												film.ref
-											}/${convertTitleToUrl(film.title)}`}>
-											<img src={film.image} className='max-h-[17.2rem]' alt={`Poster for ${t(film.title)}`} />
-										</Link>
-									</section>
-									<section className='pt-3 flex flex-col gap-y-1'>
-										<section className='sm:text-[0.9rem] text-[13px] flex items-center'>
-											<StarIcon className='h-5 mr-2 text-orange' />
-											<span>{film.rating} / 10</span>
-										</section>
-										<Link
-											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/${
-												getCookie('langChoosed') === 'polski' ? 'pl' : 'en'
-											}/titles/${film.ref}/${convertTitleToUrl(film.title)}`}
-											className='text-sm font-medium search-title pr-1'>
-											{t(film.title)}
-										</Link>
-									</section>
-								</article>
+								<FilmModesCard film={film} index={index} mode='portrait' />
 							))}
 						</section>
 					) : filmModeChoosed === 'Landscape' ? (
 						<section className='films-wrapper-landscape'>
 							{mappingBy.map((film, index: number) => (
-								<article className='film-container-landscape w-full' key={index}>
-									<section className='films-image-section'>
-										<Link
-											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
-												film.ref
-											}/${convertTitleToUrl(film.title)}`}>
-											<img src={film.imgFullHd500} className='!max-h-[13rem]' alt={`Poster for ${t(film.title)}`} />
-										</Link>
-									</section>
-									<section className='pt-3 flex flex-col gap-y-1'>
-										<Link
-											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
-												film.ref
-											}/${convertTitleToUrl(film.title)}`}
-											className='text-[14.5px] font-medium search-title pr-1'>
-											{t(film.title)}
-										</Link>
-										<span className='text-xs sm:text-sm'>{film.releaseDate}</span>
-										<section className='sm:text-[0.9rem] text-[13px] flex items-center'>
-											<StarIcon className='h-5 mr-2 text-orange' />
-											<span>{film.rating} / 10</span>
-										</section>
-									</section>
-								</article>
+								<FilmModesCard film={film} index={index} mode='landscape' />
 							))}
 						</section>
 					) : filmModeChoosed === 'List' ? (
 						<section className='h-max w-full flex flex-col gap-y-8'>
 							{mappingBy.map((film, index: number) => (
-								<article className='flex gap-x-2 sm:gap-x-4 h-[200px] w-full' key={index}>
-									<section className='films-image-section'>
-										<Link
-											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
-												film.ref
-											}/${convertTitleToUrl(film.title)}`}>
-											<img
-												className='sm:min-w-[136px] min-w-[120px] max-h-[200px] sm:h-[200px] max-h-46 sm:max-w-32 pr-2'
-												src={film.image}
-												alt={`Poster for ${t(film.title)}`}
-											/>
-										</Link>
-									</section>
-									<section className='pt-3 flex flex-col gap-y-1'>
-										<Link
-											href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
-												film.ref
-											}/${convertTitleToUrl(film.title)}`}
-											className='text-[14.5px] font-medium search-title pr-1'>
-											{t(film.title)}
-										</Link>
-										<span className='text-xs sm:text-sm'>{film.time}</span>
-										<section className='flex sm:flex-row flex-col gap-y-[0.15rem] text-[13px] mt-1'>
-											<section className='flex items-center'>
-												<StarIcon className='h-4 mr-2 text-orange' />
-												<span>{film.rating} / 10 &nbsp;&nbsp;</span>
-											</section>
-										</section>
-										<p className='w-full hide-scrollbar text-[12px] sm:text-[13px] max-h-[200px] overflow-auto'>
-											{t(film.description)}
-										</p>
-									</section>
-								</article>
+								<FilmModesCard film={film} index={index} mode='list' />
 							))}
 						</section>
 					) : (

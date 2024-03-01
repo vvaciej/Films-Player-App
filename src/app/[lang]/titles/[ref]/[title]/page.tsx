@@ -33,6 +33,7 @@ import ReviewAs from '@/components/ReviewAsContainer';
 import normalizePolishCharacters from '@/helpers/NormalizePolishSymbols';
 import SomethingDone from '@/components/SomethingDoneDropdown';
 import ShareBtn from '@/components/ShareBtn';
+import FilmModesCard from '@/components/FilmModesCard';
 interface pageProps {
 	params: { ref: number; title: string };
 }
@@ -488,29 +489,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 													{findSimilarFilms(infoOfChoosedFilm?.keywords, infoOfChoosedFilm?.title).map(
 														(similarFilm, index: number) => (
 															<SwiperSlide key={index}>
-																<article className='film-container !max-w-64'>
-																	<section className='films-image-section'>
-																		<Link
-																			href={`/${getCookie('langChoosed') === 'angielski' ? 'en' : 'pl'}/titles/${
-																				similarFilm?.ref
-																			}/${convertTitleToUrl(similarFilm?.title)}`}>
-																			<img src={similarFilm?.image} alt={`Poster for ${t(similarFilm?.title)}`} />
-																		</Link>
-																	</section>
-																	<section className='pt-3 flex flex-col gap-y-1'>
-																		<section className='sm:text-[0.9rem] text-[13px] flex items-center'>
-																			<StarIcon className='h-5 mr-2 text-orange' />
-																			<span>{similarFilm?.rating} / 10</span>
-																		</section>
-																		<Link
-																			href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${
-																				similarFilm?.ref
-																			}/${convertTitleToUrl(similarFilm?.title)}`}
-																			className='text-[14px] font-medium max-h-10'>
-																			{t(similarFilm?.title)}
-																		</Link>
-																	</section>
-																</article>
+																<FilmModesCard film={similarFilm} mode='portrait' />
 															</SwiperSlide>
 														)
 													)}

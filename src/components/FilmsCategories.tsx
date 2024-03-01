@@ -14,7 +14,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import * as filmData from '../app/[lang]/data/main-films';
 import getCookie from '../helpers/GetCookie';
-import FilmCategoryCard from './FilmCategoryCard';
+import FilmCategoryCard from './FilmModesCard';
 
 interface FilmProps {
 	headingText: string;
@@ -105,7 +105,7 @@ const FilmCategory: React.FC<FilmProps> = ({ headingText, filmsData, linkDirectP
 				onSwiper={swiper => setSwiper(swiper)}>
 				{filmsData.map((film: FilmData, index: number) => (
 					<SwiperSlide key={index}>
-						<FilmCategoryCard film={film} />
+						<FilmCategoryCard film={film} mode='portrait' />
 					</SwiperSlide>
 				))}
 			</Swiper>
