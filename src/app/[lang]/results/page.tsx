@@ -5,14 +5,14 @@ import { Footer } from '../layouts/Footer';
 import useDocumentTitle from '../../../helpers/PageTitle';
 
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
-import { PlayIcon, StarIcon } from '@heroicons/react/24/solid';
+import { StarIcon } from '@heroicons/react/24/solid';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import normalizePolishCharacters from '../../../helpers/NormalizePolishSymbols';
 import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
 
-import { allFilms } from '../data/films-data';
+import { allFilms } from '@/data/films-data';
 import getCookie from '../../../helpers/GetCookie';
 
 type FilmData = {

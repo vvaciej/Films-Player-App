@@ -5,7 +5,7 @@ import { Footer } from '../../layouts/Footer';
 import { useState, useEffect } from 'react';
 import React from 'react';
 import useDocumentTitle from '@/helpers/PageTitle';
-import { allFilms } from '../../data/films-data';
+import { allFilms } from '@/data/films-data';
 import SiteNotFound from '../../[...not_found]/page';
 import Link from 'next/link';
 import convertTitleToUrl from '@/helpers/ConvertTitleToURL';

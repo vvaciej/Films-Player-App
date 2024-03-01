@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 import React, { useEffect } from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import './[lang]/data/i18-next';
+import '../data/i18-next';
 import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import CookieConsentComponent from './[lang]/layouts/cookie/CookieConsent';
 import getCookie from '../helpers/GetCookie';

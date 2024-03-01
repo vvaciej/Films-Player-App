@@ -2,7 +2,7 @@
 
 import Filters from '@/components/FilmsFilterContainer';
 import useDocumentTitle from '@/helpers/PageTitle';
-import { allFilms } from '../../data/films-data';
+import { allFilms } from '@/data/films-data';
 import IteratingFilmsPageArrays from '@/helpers/FilmsIteratingFilterArrays';
 
 interface params {

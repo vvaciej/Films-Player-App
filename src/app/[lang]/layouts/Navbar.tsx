@@ -19,7 +19,7 @@ import { useTranslation } from 'react-i18next';
 
 import React from 'react';
 
-import { allFilms } from '../data/films-data';
+import { allFilms } from '@/data/films-data';
 import convertTitleToUrl from '../../../helpers/ConvertTitleToURL';
 
 interface NavbarProps {

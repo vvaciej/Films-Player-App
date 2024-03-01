@@ -2,7 +2,7 @@
 
 import useDocumentTitle from '../../../helpers/PageTitle';
 import Filters from '../../../components/FilmsFilterContainer';
-import { allFilms } from '../data/films-data';
+import { allFilms } from '@/data/films-data';
 
 import { useTranslation } from 'react-i18next';
 

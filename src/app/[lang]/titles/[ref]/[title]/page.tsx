@@ -12,9 +12,7 @@ import {
 	PlayIcon,
 	ChevronLeftIcon,
 	PlusIcon,
-	Bars3BottomLeftIcon,
 	PlayCircleIcon,
-	HeartIcon,
 	CheckIcon,
 } from '@heroicons/react/24/solid';
 import Link from 'next/link';
@@ -27,7 +25,7 @@ import 'swiper/css/pagination';
 
 import { useEffect, useRef, useState } from 'react';
 
-import { allFilms } from '@/app/[lang]/data/films-data';
+import { allFilms } from '@/data/films-data';
 import getCookie from '@/helpers/GetCookie';
 import ReviewAs from '@/components/ReviewAsContainer';
 import normalizePolishCharacters from '@/helpers/NormalizePolishSymbols';

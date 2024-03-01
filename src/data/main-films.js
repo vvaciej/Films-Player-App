@@ -1,4 +1,4 @@
-import { allFilms } from './/films-data';
+import { allFilms } from './films-data';
 // index = filmObj.ref
 
 export const popularFilms = [
@@ -88,7 +88,7 @@ export const popularPolishFilms = [
 	allFilms[58],
 	allFilms[59],
 	allFilms[60],
-	allFilms[61]
+	allFilms[61],
 ];
 
 export const popularSerials = [

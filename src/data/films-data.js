@@ -1,4 +1,4 @@
-// import { MovieAPI } from '../helpers/movies-data';
+import { MovieAPI } from '@/helpers/MovieAPI';
 
 export const allFilms = [
 	{
@@ -42,6 +42,7 @@ export const allFilms = [
 			'https://fwcdn.pl/fph/94/34/10039434/1184476_1.1.jpg',
 			'https://fwcdn.pl/fph/94/34/10039434/1184477_1.1.jpg',
 		],
+		apiRating: MovieAPI(906126, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Napoleon',
@@ -85,6 +86,7 @@ export const allFilms = [
 			'https://fwcdn.pl/fph/49/85/864985/1181214_1.2.jpg',
 			'https://fwcdn.pl/fph/49/85/864985/1181215_1.1.jpg',
 		],
+		apiRating: MovieAPI(753342, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Lift',
@@ -121,6 +123,7 @@ export const allFilms = [
 			'International manhunt',
 			'Terrorist group',
 		],
+		apiRating: MovieAPI(955916, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Aquaman and the Lost Kingdom',
@@ -145,6 +148,7 @@ export const allFilms = [
 		categoryArr: ['Action', 'Adventure', 'Fantasy'],
 		filmedIn: [],
 		keywords: [],
+		apiRating: MovieAPI(572802, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Marvels',
@@ -178,6 +182,7 @@ export const allFilms = [
 			'Teenage girl',
 			'Aftercreditsstinger',
 		],
+		apiRating: MovieAPI(609681, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Wonka',
@@ -202,6 +207,7 @@ export const allFilms = [
 		categoryArr: ['Family', 'Fantasy', 'Comedy'],
 		filmedIn: ['UK', 'USA'],
 		keywords: ['Chocolate', 'Musical', 'Prequel', 'Duringcreditsstinger'],
+		apiRating: MovieAPI(787699, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Role play',
@@ -236,6 +242,7 @@ export const allFilms = [
 			'Woman spy',
 			'Hired killer',
 		],
+		apiRating: MovieAPI(848187, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Oppenheimer',
@@ -307,6 +314,7 @@ export const allFilms = [
 			'Defiant',
 			'Demeaning',
 		],
+		apiRating: MovieAPI(872585, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Super Mario Bros. Film',
@@ -346,6 +354,7 @@ export const allFilms = [
 			'White gloves',
 			'Evil king',
 		],
+		apiRating: MovieAPI(502356, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'The Family Plan',
@@ -378,6 +387,7 @@ export const allFilms = [
 			'Hidden identity',
 			'Las vegas',
 		],
+		apiRating: MovieAPI(1029575, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Rebel Moon - Part One: A Child of Fire',
@@ -411,6 +421,7 @@ export const allFilms = [
 			'Space war',
 			'Super hero girls',
 		],
+		apiRating: MovieAPI(848326, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Wish',
@@ -446,6 +457,7 @@ export const allFilms = [
 			'Star',
 			'Woman director',
 		],
+		apiRating: MovieAPI(1022796, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Darkland 2',
@@ -470,6 +482,7 @@ export const allFilms = [
 		categoryArr: ['Action', 'Thriller'],
 		filmedIn: ['Denmark'],
 		keywords: ['Vigilante'],
+		apiRating: MovieAPI(1085218, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Darkland',
@@ -494,6 +507,7 @@ export const allFilms = [
 		categoryArr: ['Action', 'Thriller'],
 		filmedIn: ['Denmark'],
 		keywords: ['Vigilante', 'Revenge'],
+		apiRating: MovieAPI(425298, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'The Creeping',
@@ -518,6 +532,7 @@ export const allFilms = [
 		categoryArr: ['Horror'],
 		filmedIn: ['UK'],
 		keywords: ['Ghost story'],
+		apiRating: MovieAPI(969725, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Everyone lies',
@@ -542,6 +557,7 @@ export const allFilms = [
 		categoryArr: ['Drama', 'Film TV'],
 		filmedIn: ['Belgium', 'France'],
 		keywords: [],
+		apiRating: MovieAPI(978004, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Cob Web',
@@ -576,6 +592,7 @@ export const allFilms = [
 			'Movie business',
 			'Portrait of a filmmaker',
 		],
+		apiRating: MovieAPI(901121, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Departing Seniors',
@@ -600,6 +617,7 @@ export const allFilms = [
 		categoryArr: ['Horror', 'Comedy'],
 		filmedIn: [],
 		keywords: ['Bullying', 'Clique', 'High school', 'Gay teenger', 'Horror comedy', 'Murder', 'Premonition'],
+		apiRating: MovieAPI(1153913, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Eternals',
@@ -635,6 +653,7 @@ export const allFilms = [
 			'Superhero',
 			'Supernatural',
 		],
+		apiRating: MovieAPI(524434, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Trunk - Locked In',
@@ -659,6 +678,7 @@ export const allFilms = [
 		categoryArr: ['Action', 'Drama', 'Thriller'],
 		filmedIn: ['Germany'],
 		keywords: ['Car trunk', 'Claustrophobia', 'Kidnapping', 'Medical student', 'Survival'],
+		apiRating: MovieAPI(1183905, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Hunters from the ruins',
@@ -689,6 +709,7 @@ export const allFilms = [
 			'Post-apocalyptic future',
 			'Seoul, south korea',
 		],
+		apiRating: MovieAPI(933131, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Bastard',
@@ -724,6 +745,7 @@ export const allFilms = [
 			'King',
 			'Soldier',
 		],
+		apiRating: MovieAPI(980026, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Visions',
@@ -748,6 +770,7 @@ export const allFilms = [
 		categoryArr: ['Drama', 'Thriller'],
 		filmedIn: ['France'],
 		keywords: ['Lesbian relationship'],
+		apiRating: MovieAPI(818721, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Million days',
@@ -771,6 +794,7 @@ export const allFilms = [
 		categoryArr: ['Sci-Fi', 'Thriller'],
 		filmedIn: ['UK'],
 		keywords: [],
+		apiRating: MovieAPI(972423, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'One more shot',
@@ -795,6 +819,7 @@ export const allFilms = [
 		categoryArr: ['Action', 'Thriller'],
 		filmedIn: ['UK', 'USA'],
 		keywords: [],
+		apiRating: MovieAPI(1214314, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'The Hunger Games: The Ballad of Songbirds & Snakes',
@@ -841,6 +866,7 @@ export const allFilms = [
 			'Teenager',
 			'Young adult',
 		],
+		apiRating: MovieAPI(695721, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Fast X',
@@ -865,6 +891,7 @@ export const allFilms = [
 		categoryArr: ['Action', 'Crime', 'Thriller'],
 		filmedIn: ['USA'],
 		keywords: ['Sequel', 'Family', 'Revenge', 'Racing', 'Cars', 'Cliffhanger', 'Betrayal'],
+		apiRating: MovieAPI(385687, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Spider-Man: Across the Spider-Verse',
@@ -914,6 +941,7 @@ export const allFilms = [
 			'Slow burn romance',
 			'Teen romance',
 		],
+		apiRating: MovieAPI(569094, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Spider-Man: No Way Home',
@@ -964,6 +992,7 @@ export const allFilms = [
 			'Vigilante',
 			'Villain',
 		],
+		apiRating: MovieAPI(634649, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Transformers: Rise of the Beasts',
@@ -997,6 +1026,7 @@ export const allFilms = [
 			'Based on toy',
 			'Peru',
 		],
+		apiRating: MovieAPI(667538, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'John Wick 4',
@@ -1036,6 +1066,7 @@ export const allFilms = [
 			'Consequences',
 			'Male protagonist',
 		],
+		apiRating: MovieAPI(603692, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Barbie',
@@ -1076,6 +1107,7 @@ export const allFilms = [
 			'Secret world',
 			'Ghost',
 		],
+		apiRating: MovieAPI(346698, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Trolls Band Together',
@@ -1112,6 +1144,7 @@ export const allFilms = [
 			'Sister sister relationship',
 			'Troll',
 		],
+		apiRating: MovieAPI(901362, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Saltburn',
@@ -1163,6 +1196,7 @@ export const allFilms = [
 			'Woman director',
 			'Shot on film',
 		],
+		apiRating: MovieAPI(930564, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Leo',
@@ -1187,6 +1221,7 @@ export const allFilms = [
 		categoryArr: ['Animation', 'Family', 'Comedy'],
 		filmedIn: ['Australia', 'USA'],
 		keywords: ['Bucket list', 'Classroom', 'Musical'],
+		apiRating: MovieAPI(1075794, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Puss in Boots: The Last Wish',
@@ -1219,6 +1254,7 @@ export const allFilms = [
 			'Talking cat',
 			'Sequel',
 		],
+		apiRating: MovieAPI(315162, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Freelance',
@@ -1251,6 +1287,7 @@ export const allFilms = [
 			'Investigative journalism',
 			'Political assassination',
 		],
+		apiRating: MovieAPI(897087, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Elemental',
@@ -1275,6 +1312,7 @@ export const allFilms = [
 		categoryArr: ['Animation', 'Comedy', 'Fantasy', 'Love story', 'Family', 'Adventure'],
 		filmedIn: ['USA'],
 		keywords: ['City', 'Computer animation', 'Elements', 'Duringcreditsstinger', 'Fire', 'Water'],
+		apiRating: MovieAPI(976573, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'The Jester',
@@ -1299,6 +1337,7 @@ export const allFilms = [
 		categoryArr: ['Horror', 'Tajemnica', 'Thriller'],
 		filmedIn: ['USA'],
 		keywords: ['Detective', 'Horror', 'Thriller'],
+		apiRating: MovieAPI(1118595, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: "Five Nights at Freddy's",
@@ -1341,6 +1380,7 @@ export const allFilms = [
 			'Troubled past',
 			'Child murder',
 		],
+		apiRating: MovieAPI(507089, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Thanksgiving',
@@ -1391,6 +1431,7 @@ export const allFilms = [
 			'Thanksgiving',
 			'Whodunit',
 		],
+		apiRating: MovieAPI(1071215, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Meg 2: The Trench',
@@ -1415,6 +1456,7 @@ export const allFilms = [
 		categoryArr: ['Action', 'Horror', 'Sci-Fi'],
 		filmedIn: ['China', 'USA', 'Canada'],
 		keywords: ['Based on novel or book', 'Kaiju', 'Sequel', 'Civil action', 'Oceans', 'Shark cage', 'Shark'],
+		apiRating: MovieAPI(615656, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Saw X',
@@ -1459,6 +1501,7 @@ export const allFilms = [
 			'Mexico',
 			'Requel',
 		],
+		apiRating: MovieAPI(615656, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'All Fun and Games',
@@ -1483,6 +1526,7 @@ export const allFilms = [
 		categoryArr: ['Horror', 'Thriller'],
 		filmedIn: ['UK', 'USA'],
 		keywords: ['Cursed object', 'Deadly game', 'Salem, massachusetts', 'Salem witch'],
+		apiRating: MovieAPI(926599, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'When Evil Lurks',
@@ -1522,6 +1566,7 @@ export const allFilms = [
 			'Small town',
 			'Village',
 		],
+		apiRating: MovieAPI(744857, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'The Exorcist: Believer',
@@ -1557,6 +1602,7 @@ export const allFilms = [
 			'Reboot',
 			'Sequel',
 		],
+		apiRating: MovieAPI(807171, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'The Nun II',
@@ -1596,6 +1642,7 @@ export const allFilms = [
 			'Duringcreditsstinger',
 			'The conjuring universe',
 		],
+		apiRating: MovieAPI(968051, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Spider Web',
@@ -1631,6 +1678,7 @@ export const allFilms = [
 			'Zlo',
 			'Devil',
 		],
+		apiRating: MovieAPI(709631, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: "The Pope's Exorcist",
@@ -1669,6 +1717,7 @@ export const allFilms = [
 			'Skepticism',
 			'Vatican',
 		],
+		apiRating: MovieAPI(758323, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Evil Dead Rise',
@@ -1712,6 +1761,7 @@ export const allFilms = [
 			'Motherhood',
 			'Necronomicon',
 		],
+		apiRating: MovieAPI(713704, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Margaret I: Queen of the North',
@@ -1736,6 +1786,7 @@ export const allFilms = [
 		categoryArr: ['Drama', 'Historic'],
 		filmedIn: ['Denmark', 'Norway', 'Poland', 'Sweden'],
 		keywords: ['15th century', 'Historical', 'Royal court', 'Usurper'],
+		apiRating: MovieAPI(659370, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Taming of the Shrew 2',
@@ -1760,6 +1811,7 @@ export const allFilms = [
 		categoryArr: ['Comedy', 'Love story'],
 		filmedIn: ['Poland'],
 		keywords: [],
+		apiRating: MovieAPI(1211066, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Quack',
@@ -1784,6 +1836,7 @@ export const allFilms = [
 		categoryArr: ['Drama', 'Love story'],
 		filmedIn: ['Poland'],
 		keywords: ['Based on novel or book', 'Fauther daugther reunion', 'Lost memory', 'Memory loss', 'Surgeon'],
+		apiRating: MovieAPI(1081676, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Freestyle',
@@ -1808,6 +1861,7 @@ export const allFilms = [
 		categoryArr: ['Thriller', 'Action', 'Adventure', 'Crime', 'Drama'],
 		filmedIn: ['Poland'],
 		keywords: ['Drug trafficking'],
+		apiRating: MovieAPI(1152797, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Infinite Storm',
@@ -1832,6 +1886,7 @@ export const allFilms = [
 		categoryArr: ['Drama', 'Thriller', 'Adventure', 'Tajemnica'],
 		filmedIn: ['Australia', 'USA', 'Poland', 'UK'],
 		keywords: ['Hiking', 'Mountain', 'Rescue', 'Survival', 'Life after personal tragedy'],
+		apiRating: MovieAPI(811631, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Peasants',
@@ -1867,6 +1922,7 @@ export const allFilms = [
 			'Peasants',
 			'Polska',
 		],
+		apiRating: MovieAPI(43599, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Web of suspicion',
@@ -1917,6 +1973,7 @@ export const allFilms = [
 			'Suspicion',
 			'Teenage girl',
 		],
+		apiRating: MovieAPI(458109, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Timetable',
@@ -1941,6 +1998,7 @@ export const allFilms = [
 		categoryArr: ['Crime', 'Thriller', 'Action'],
 		filmedIn: ['Poland'],
 		keywords: [],
+		apiRating: MovieAPI(1049233, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'The Palace',
@@ -1965,6 +2023,7 @@ export const allFilms = [
 		categoryArr: ['Drama', 'Comedy'],
 		filmedIn: ['Switzerland', 'France', 'Italy', 'Poland'],
 		keywords: ['Hotel', 'Switzerland'],
+		apiRating: MovieAPI(824016, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Love squared',
@@ -1989,6 +2048,7 @@ export const allFilms = [
 		categoryArr: ['Comedy', 'Love story'],
 		filmedIn: ['Poland'],
 		keywords: [],
+		apiRating: MovieAPI(787298, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Warning',
@@ -2013,6 +2073,7 @@ export const allFilms = [
 		categoryArr: ['Sci-Fi'],
 		filmedIn: ['Canada', 'Poland', 'USA'],
 		keywords: [],
+		apiRating: MovieAPI(583081, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Citizen Jones',
@@ -2037,6 +2098,7 @@ export const allFilms = [
 		categoryArr: ['Drama', 'Historic', 'Thriller'],
 		filmedIn: ['UK', 'Poland', 'Ukraine'],
 		keywords: ['1930s', 'Based on true story', 'Genocide', 'Holodomor', 'Ukraine'],
+		apiRating: MovieAPI(509598, 'movie').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Rick and Morty',
@@ -2074,6 +2136,7 @@ export const allFilms = [
 			'Spaceship',
 			'Time travel',
 		],
+		apiRating: MovieAPI(60625, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Monarch: a legacy of monsters',
@@ -2106,6 +2169,7 @@ export const allFilms = [
 			'Godzilla',
 			'Kaiju',
 		],
+		apiRating: MovieAPI(202411, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Loki',
@@ -2141,6 +2205,7 @@ export const allFilms = [
 			'Time',
 			'Time travel',
 		],
+		apiRating: MovieAPI(84958, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Fear the Walking Dead',
@@ -2175,6 +2240,7 @@ export const allFilms = [
 			'Survive',
 			'Zombie apocalypse',
 		],
+		apiRating: MovieAPI(62286, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Euphoria',
@@ -2229,6 +2295,7 @@ export const allFilms = [
 			'Penis',
 			'Willies',
 		],
+		apiRating: MovieAPI(85552, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Invincible',
@@ -2252,6 +2319,7 @@ export const allFilms = [
 		categoryArr: ['Animation', 'Action', 'Action and Adventure', 'Drama', 'Sci-Fi and Fantasy'],
 		filmedIn: ['Canada', 'USA'],
 		keywords: ['Adult animation', 'Anti hero', 'Based on comic', 'Gore', 'Superhero', 'Teen superhero'],
+		apiRating: MovieAPI(95557, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Mayor of Kingstown',
@@ -2285,6 +2353,7 @@ export const allFilms = [
 			'Prison',
 			'Prison guard',
 		],
+		apiRating: MovieAPI(97951, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'Your Honor',
@@ -2308,6 +2377,7 @@ export const allFilms = [
 		categoryArr: ['Drama', 'Crime'],
 		filmedIn: ['USA'],
 		keywords: ['Legal thriller', 'Remake'],
+		apiRating: MovieAPI(86430, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'BLUE EYE SAMURAI',
@@ -2332,6 +2402,7 @@ export const allFilms = [
 		categoryArr: ['Animation', 'Drama Historic', 'Action and Adventure', 'Drama'],
 		filmedIn: ['France', 'USA'],
 		keywords: ['17th century', 'Adult animation', 'Japan', 'Revenge', 'Samurai'],
+		apiRating: MovieAPI(225180, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'The Night Agent',
@@ -2356,6 +2427,7 @@ export const allFilms = [
 		categoryArr: ['Sensacyjny', 'Thriller', 'Action and Adventure', 'Drama', 'Tajemnica'],
 		filmedIn: ['USA'],
 		keywords: ['Chocolate', 'Musical', 'Prequel', 'Duringcreditsstinger'],
+		apiRating: MovieAPI(129552, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: 'The Equalizer',
@@ -2380,6 +2452,7 @@ export const allFilms = [
 		categoryArr: ['Action and Adventure', 'Drama', 'Crime'],
 		filmedIn: ['USA'],
 		keywords: ['Based on novel or book', 'Conspiracy', 'Fbi', 'Fbi agent', 'Oval office', 'The white house'],
+		apiRating: MovieAPI(95205, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 	{
 		title: "NCIS: Hawai'i",
@@ -2404,5 +2477,6 @@ export const allFilms = [
 		categoryArr: ['Drama', 'Crime'],
 		filmedIn: ['USA'],
 		keywords: ['Hawaii'],
+		apiRating: MovieAPI(124271, 'tv').then(movie => (movie.vote_average).toFixed(1)),
 	},
 ];

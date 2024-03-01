@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronLeftIcon, ChevronRightIcon, StarIcon, PlayIcon } from '@heroicons/react/24/solid';
-import { sidebarFilmsData, headingFilmsData } from '../app/[lang]/data/heading-films';
+import { sidebarFilmsData, headingFilmsData } from '../data/heading-films';
 import { useState, useEffect } from 'react';
 
 import Link from 'next/link';

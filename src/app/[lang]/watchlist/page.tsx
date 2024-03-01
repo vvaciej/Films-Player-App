@@ -5,7 +5,7 @@ import { Navbar } from '../layouts/Navbar';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import getCookie from '../../../helpers/GetCookie';
-import { allFilms } from '../data/films-data';
+import { allFilms } from '@/data/films-data';
 import { useTranslation } from 'react-i18next';
 
 import Filters from '../../../components/FilmsFilterContainer';

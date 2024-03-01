@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import * as filmData from '../app/[lang]/data/main-films';
+import * as filmData from '../data/main-films';
 import getCookie from '../helpers/GetCookie';
 import FilmCategoryCard from './FilmModesCard';
 
