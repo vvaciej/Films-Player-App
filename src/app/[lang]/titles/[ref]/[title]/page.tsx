@@ -130,7 +130,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 							<div className='w-full bg-black h-[18rem] sm:h-[25rem] lg:h-[32rem] overflow-hidden relative sm:pt-0 pt-12'>
 								<Link
 									href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/watch/${infoOfChoosedFilm?.ref}`}
-									className='bg-white right-1/2 translate-x-1/2 top-1/2 absolute z-10 h-12 w-12 flex justify-center items-center rounded-[50%] hover:brightness-75 transition-all'>
+									className='bg-white right-1/2 translate-x-1/2 top-1/2 absolute z-[5] h-12 w-12 flex justify-center items-center rounded-[50%] hover:brightness-75 transition-all'>
 									<PlayIcon className='text-black h-6' />
 								</Link>
 								<img
