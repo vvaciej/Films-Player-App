@@ -10,7 +10,7 @@ const FilmModesCard = ({ film, mode, index }: any) => {
 	return (
 		<>
 			{mode === 'portrait' ? (
-				<article className='sm:mb-8 mb-6 text-sm font-medium'>
+				<article className='sm:mb-8 mb-6 text-sm font-medium' key={index}>
 					<section className='relative transition-all hover:brightness-75'>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
