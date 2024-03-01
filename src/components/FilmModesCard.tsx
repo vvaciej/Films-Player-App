@@ -4,13 +4,13 @@ import getCookie from '@/helpers/GetCookie';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { useTranslation } from 'react-i18next';
 
-const FilmModesCard = ({ film, mode, index }: any) => {
+const FilmModesCard = ({ film, mode, indexSource }: any) => {
 	const { t } = useTranslation();
 
 	return (
 		<>
 			{mode === 'portrait' ? (
-				<article className='sm:mb-8 mb-6 text-sm font-medium' key={index}>
+				<article className='sm:mb-8 mb-6 text-sm font-medium' key={indexSource}>
 					<section className='relative transition-all hover:brightness-75'>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
@@ -38,7 +38,7 @@ const FilmModesCard = ({ film, mode, index }: any) => {
 					</section>
 				</article>
 			) : mode === 'landscape' ? (
-				<article className='film-container-landscape w-full' key={index}>
+				<article className='film-container-landscape w-full' key={indexSource}>
 					<section className='films-image-section'>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
@@ -63,7 +63,7 @@ const FilmModesCard = ({ film, mode, index }: any) => {
 					</section>
 				</article>
 			) : mode === 'list' ? (
-				<article className='flex gap-x-2 sm:gap-x-4 h-[200px] w-full' key={index}>
+				<article className='flex gap-x-2 sm:gap-x-4 h-[200px] w-full' key={indexSource}>
 					<section className='films-image-section'>
 						<Link
 							href={`/${getCookie('langChoosed') === 'english' ? 'en' : 'pl'}/titles/${film.ref}/${convertTitleToUrl(
