@@ -246,7 +246,8 @@ i18next.use(initReactI18next).init({
 				Serials: 'Seriale',
 				Continue: 'Kontynuuj',
 				'Free films and serials online!': 'Darmowe filmy i seriale online!',
-				'vvaciej.app is a popular database with movies and series fully free of charge': 'vvaciej.app to popularna baza z filmami i serialami w pełni za darmo',
+				'vvaciej.app is a popular database with movies and series fully free of charge':
+					'vvaciej.app to popularna baza z filmami i serialami w pełni za darmo',
 				'Take me there!': 'Zabierz mnie tam!',
 				'Not found': 'Nie znaleziono',
 				'Sorry about that! Please visit our homepage to get where you need to go.':

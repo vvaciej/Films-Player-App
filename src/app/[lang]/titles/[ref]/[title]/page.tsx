@@ -507,7 +507,7 @@ const FilmPage: React.FC<pageProps> = ({ params }) => {
 						<div className='loader'></div>
 					</div>
 				)}
-				<SomethingDone visible={isVisibleSthDone} text={t('Skopiowano link do schowka')} />
+				<SomethingDone visible={isVisibleSthDone} text={t('Copied link to clipboard')} />
 			</div>
 		</>
 	);
