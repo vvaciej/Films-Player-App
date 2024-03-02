@@ -31,7 +31,7 @@ const UserPage = () => {
 		<div className='space-light'>
 			<Navbar isCutted={false} />
 			{isLogged ? (
-				<div className='content-full-space-centered'>
+				<div className='flex justify-center'>
 					<div className='main-container-width-padd-top-1240'>
 						<header className='flex sm:flex-row flex-col gap-y-6 justify-between items-center'>
 							<section className='flex gap-x-4 items-center flex-col text-center sm:text-left gap-y-3 sm:flex-row'>
